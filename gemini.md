@@ -108,3 +108,51 @@ public List<ClienteInfo> GetClientesAtivos()
                      .ToList();
 }
 ```
+---
+
+## 3. Análise Arquitetural (Inferida pelo Agente Gemini)
+
+**Objetivo:** Esta seção documenta a arquitetura do sistema de Inscrições (SMC.GPI.Inscricao) conforme analisado pelo agente Gemini. Serve como um guia de alto nível para desenvolvedores que estão conhecendo o projeto.
+
+### Resumo
+
+O projeto é uma aplicação **ASP.NET MVC** robusta e modular, destinada ao gerenciamento de inscrições. A arquitetura segue de perto os princípios de **Domain-Driven Design (DDD)** e é padronizada pelo `SMC.Framework`, um framework customizado que provê a base para segurança, acesso a dados e componentes de UI.
+
+### Arquitetura em Camadas
+
+A solução é organizada em camadas claras, promovendo a separação de responsabilidades:
+
+*   **Apresentação (UI):**
+    *   **Projeto principal:** `SMC.GPI.Inscricao`
+    *   **Responsabilidade:** Contém os Controllers, Views (Razor) e ViewModels. Funciona como uma "Area" MVC autocontida. Os controllers são "leves" (thin controllers), delegando a lógica para a camada de serviço. Utiliza **Angular** para componentes de front-end mais dinâmicos.
+
+*   **Serviços (Application/Service Layer):**
+    *   **Projetos:** `SMC.Inscricoes.ServiceContract` (interfaces) e `SMC.Inscricoes.Service` (implementações).
+    *   **Responsabilidade:** Orquestra as regras de negócio e os casos de uso. Funciona como um intermediário entre a camada de apresentação e a de domínio.
+
+*   **Domínio (Domain Layer):**
+    *   **Projeto:** `SMC.Inscricoes.Domain`
+    *   **Responsabilidade:** É o coração da aplicação. Contém as entidades de negócio (ex: `Inscricao`, `Oferta`, `Inscrito`), agregados e a lógica de negócio central.
+
+*   **Acesso a Dados (Data/Infrastructure Layer):**
+    *   **Projeto:** `SMC.Inscricoes.EntityRepository`
+    *   **Responsabilidade:** Implementa os padrões **Repository** e **Specification** para abstrair a comunicação com o banco de dados.
+    *   **Tecnologias:** Utiliza uma combinação de **Entity Framework** (para operações de CRUD e Unit of Work) e **Dapper** (para consultas otimizadas e projeções).
+
+### Pilha de Tecnologia Principal
+
+*   **Backend:** .NET Framework, C#, ASP.NET MVC 5
+*   **Frontend:** HTML, CSS, JavaScript, Razor, Angular
+*   **Injeção de Dependência:** Unity
+*   **Acesso a Dados:** Entity Framework 6, Dapper
+*   **Frameworks:** SMC.Framework (proprietário)
+
+## 4. DIRETRIZES GERAIS (REGRAS DE OURO)
+
+1.  **KISS (Keep It Simple, Stupid):** A solução mais simples que resolve o problema é a melhor. Evite over-engineering.
+2.  **PERGUNTE PRIMEIRO:** Nunca assuma regras de negócio ambíguas. Se houver dúvida na leitura do legado, **PARE** e pergunte ao usuário.
+3.  **DOC & CODE FIRST:** Nenhuma linha de código é escrita antes da documentação, código proposto e checklist serem aprovados na pasta `refinamento/`.
+4.  **DOCUMENTAÇÃO VIVA:** O checklist de implementação no arquivo de documentação (`refinamento/`) é a única fonte de verdade sobre o progresso e **DEVE** ser atualizado em tempo real durante a implementação.
+5.  **PASSO A PASSO:** Não tente fazer tudo de uma vez. Siga o fluxo de trabalho definido.
+
+
