@@ -1,0 +1,15 @@
+﻿@model OfertaViewModel
+
+@using (Smc.Div("CabecalhoAlteracaoOferta").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.Action("CabecalhoOferta", "AcompanhamentoSelecao", new { seqInscricao = new SMCEncryptedLong(Model.SeqInscricao.Value) })
+}
+
+@Smc.EditorFor(m => m.SeqInscricao)
+@Smc.EditorFor(m => m.SeqInscricaoOferta)
+@Smc.EditorFor(m => m.SeqOfertaOriginal)
+@Smc.EditorFor(m => m.SeqGrupoOferta)
+@Smc.EditorFor(m => m.SeqOferta)
+@Smc.EditorFor(m => m.BloquearJustificativa)
+@Smc.EditorFor(m => m.JustificativaAlteracaoOferta)
+@Smc.HiddenFor(m=> m.SeqProcesso)

@@ -1,0 +1,114 @@
+@mixin prime-icon {
+    font-family: primeicons;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin item-drop-list {
+    border: 1px solid var(--ang-border-default-on-grey);
+    margin-bottom: 2rem;
+    background: var(--white) !important;
+    overflow: visible;
+    padding: 1rem;
+    position: relative;
+    cursor: move;
+
+    &:after,
+    &:before {
+        @include prime-icon;
+        content: "\e950";
+        position: absolute;
+        top: 19px;
+        right: 0.7rem;
+        opacity: 0.7;
+        z-index: 0;
+    }
+
+    &:before {
+        right: 1rem !important;
+    }
+
+    &:has(.smc-gpi-listbox-item-unico) {
+        &:after,
+        &:before {
+            display: none !important;
+        }
+    }
+
+    &:hover {
+        background: var(--white) !important;
+    }
+
+    > div {
+        width: 100%;
+    }
+
+    .p-tag {
+        position: absolute;
+        top: -10px;
+        background: var(--color-primary) !important;
+        padding: 0.2rem 1rem;
+        border-radius: 50px;
+
+        .p-tag-label {
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: .65rem;
+        }
+    }
+
+    textarea {
+        border: 1px solid var(--ang-border-default-on-grey);
+        margin-top: 1rem;
+        margin-bottom: 0 !important;
+        font-size: .95em;
+        min-height: 75px;
+        resize: none;
+    }
+
+    .smc-gpi-desc-oferta {
+        margin-bottom: 0;
+        padding-right: 1rem;
+
+        > span {
+            font-weight: 600;
+            color: var(--color-primary-dark);
+        }
+    }
+
+    .smc-gpi-remove-opcao {
+        position: absolute;
+        right: -40px;
+        top: 11px;
+
+        @media screen and (max-width: 624px) {
+            right: -19px;
+            top: 47px;
+            border-radius: 10rem;
+            border: 1px solid var(--border-default);
+            width: 2.2rem;
+            display: flex;
+            background-color: var(--color-body);
+        }
+
+        button {
+            border: 0 !important;
+            background: transparent !important;
+        }
+    }
+}
+
+@mixin dragging-effect {
+    box-shadow: 0 2px 10px rgba(0,0,0,.4);
+    transition: all ease .1s;
+    .smc-gpi-taxas-container{
+        display: none;
+    }
+}

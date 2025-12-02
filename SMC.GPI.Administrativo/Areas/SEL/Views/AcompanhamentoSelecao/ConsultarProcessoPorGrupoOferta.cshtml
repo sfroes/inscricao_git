@@ -1,0 +1,40 @@
+﻿@model PosicaoConsolidadaPorGrupoOfertaFiltroViewModel
+
+@using (Smc.Header("headerHeaderProcessoGrupoOferta", SMCHeaderType.Primary)
+                      .Item(prop => prop.TipoProcesso, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24)
+                      .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                      .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid22_24, sizeLG: SMCSize.Grid22_24, sizeXS: SMCSize.Grid22_24)
+                      .Item(prop => prop.CandidatosConfirmados, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Item(prop => prop.CandidatosDesistentes, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Item(prop => prop.CandidatosReprovados, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Item(prop => prop.CandidatosSelecionados, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Item(prop => prop.CandidatosExcedentes, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Item(prop => prop.Convocados, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Item(prop => prop.ConvocadosDesistentes, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Item(prop => prop.ConvocadosConfirmados, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Begin())
+{ }
+
+@using (Smc.Form("formPesquisaProcessoGrupoOferta", "ListarProcessoGrupoOferta").Ajax("#divGridProcessoGrupoOferta").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaProcessoGrupoOferta").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(prop => prop.SeqItemHierarquiaOferta)
+        @Smc.EditorFor(prop => prop.SeqOferta)
+
+        @(Smc.ButtonSet()
+        .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon)))
+    }
+}
+
+<div id="divGridProcessoGrupoOferta" data-id="divGridProcessoGrupoOferta">
+    @Smc.ActionList("ListarProcessoGrupoOferta", initialListingDisabled: true)
+</div>
+
+@Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar, "Index", "AcompanhamentoSelecao").DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+
+@Html.Partial("_ModalLegendaPosicaoConsolidada")
+

@@ -1,0 +1,120 @@
+@if (selecaoOfertaHierarquiaService.$isLoading()) {
+  <p-skeleton width="100%" height="130px" /><br />
+} @else {
+  @if (selecaoOfertaHierarquiaService.selecaoOfertaModalInstrucoes) {
+    <p-accordion value="0" class="smc-gpi-orientacoes">
+      <p-accordion-panel value="0">
+        <p-accordion-header>Orientações</p-accordion-header>
+        <p-accordion-content>
+          <p
+            [innerHTML]="
+              selecaoOfertaHierarquiaService.selecaoOfertaModalInstrucoes
+            "
+            class="m-0"
+          ></p>
+        </p-accordion-content>
+      </p-accordion-panel>
+    </p-accordion>
+  }
+}
+
+@if (
+  selecaoOfertaHierarquiaService.selecaoOfertaDataService.$selecaoOferta()
+    .possuiBoletoPago &&
+  selecaoOfertaHierarquiaService.selecaoOfertaDataService.$selecaoOferta()
+    .tipoCobrancaPorQuantidadeOferta
+) {
+  <div class="smc-gpi-dica-icon dica-icon-grey">
+    <p>
+      O boleto já está pago. A quantidade de ofertas selecionadas não pode ser
+      alterada.
+    </p>
+  </div>
+}
+
+@if (selecaoOfertaHierarquiaService.$isLoading()) {
+  <p-skeleton
+    width="100%"
+    height="500px"
+    styleClass="smc-gpi-skeleton-margin"
+  />
+} @else {
+  <div class="card smc-gpi-selecao-oferta-container">
+    <p-tree
+      filterPlaceholder="Pesquisar"
+      emptyMessage="Nenhum item encontrado"
+      [className]="
+        selecaoOfertaHierarquiaService.classeTree + ' n-tree-dynamic'
+      "
+      [value]="selecaoOfertaHierarquiaService.files"
+      [filter]="true"
+      [virtualScroll]="false"
+      [selectionMode]="
+        selecaoOfertaHierarquiaService.tipoSelecaoMultiplaSimples
+      "
+      [(selection)]="selecaoOfertaHierarquiaService.ofertasSelecionados"
+      (selectionChange)="atualizarOfertasSeleciondas($event)"
+      (onNodeSelect)="selecaoOfertaHierarquiaService.habilitarBotaoSelecionar()"
+      (onNodeUnselect)="
+        selecaoOfertaHierarquiaService.habilitarBotaoSelecionar()
+      "
+    >
+      <ng-template let-node pTemplate="folha">
+        @if (node.data) {
+          <p-button
+            type="button"
+            icon="pi pi-info-circle"
+            (onClick)="selecaoOfertaHierarquiaService.abrirModal($event, node)"
+            styleClass="min-w-48"
+          />
+        }
+        {{ node.label }}
+      </ng-template>
+    </p-tree>
+  </div>
+
+  @if (selecaoOfertaHierarquiaService.tipoSelecaoMultiplaSimples !== "single") {
+    @if (selecaoOfertaHierarquiaService.numeroMaximoOferta == null) {
+      <p class="smc-gpi-contador-selecao">
+        <span>{{
+          selecaoOfertaHierarquiaService.ofertasSelecionados.length
+        }}</span>
+        item(ns) selecionado(s)
+      </p>
+    } @else {
+      <p class="smc-gpi-contador-selecao">
+        <span>{{
+          selecaoOfertaHierarquiaService.ofertasSelecionados.length
+        }}</span>
+        de
+        {{ selecaoOfertaHierarquiaService.numeroMaximoOferta }} selecionado(s)
+      </p>
+    }
+  }
+
+  <p-dialog
+    [header]="selecaoOfertaHierarquiaService.$tituloMaisInformacoes()"
+    [modal]="true"
+    [(visible)]="selecaoOfertaHierarquiaService.habilitarModalMaisInformacoes"
+    [style]="{ width: '50rem' }"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+    [draggable]="false"
+  >
+    <div
+      [innerHTML]="
+        selecaoOfertaHierarquiaService.$descricaoModalMaisInformacoes()
+      "
+    ></div>
+    <ng-template #footer>
+      <p-button
+        class="smc-button"
+        styleClass="smc-btn-custom smc-btn-confirmar-icotext-destaque smc-btn-principal"
+        label="Fechar"
+        severity="primary"
+        (click)="
+          selecaoOfertaHierarquiaService.habilitarModalMaisInformacoes = false
+        "
+      />
+    </ng-template>
+  </p-dialog>
+}

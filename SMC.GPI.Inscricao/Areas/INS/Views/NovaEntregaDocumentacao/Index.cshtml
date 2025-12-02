@@ -1,0 +1,65 @@
+﻿@model  NovaEntregaDocumentacaoViewModel
+@using SMC.GPI.Inscricao.Areas.INS.Views.NovaEntregaDocumentacao.App_LocalResources
+
+@{
+    Layout = "~/Views/Shared/_Layout_Novo.cshtml";
+}
+
+<div class="smc-gpi-painel-central">
+    <h1>Nova Entrega de Documentação</h1>
+    @Html.Action("CabecalhoNovaEntregaDocumentacao", Model.SeqInscricao)
+
+    @using (Smc.Div().CssClass("smc-mensagem smc-mensagem-informativa").Begin())
+    {
+        <p>@Model.MensagemInformativa</p>
+
+    }
+
+<div class="smc-legend-box smc-gpi-titulo-legenda smc-legend-orientation-horizontal" data-type="smc-legend">
+    <span class="smc-legend-content-title ">@UIResource.SituacaoEntregaDocumento_Legenda_Titulo</span>
+    <ul class="smc-legend-content">
+        <li class="smc-legenda-status-pendente" data-type="smc-legend-item">
+            <span title="Pendente">Pendente</span>
+        </li>
+        <li class="smc-legenda-status-indeferido" data-type="smc-legend-item">
+            <span title="Indeferido">Indeferido</span>
+        </li>
+        <li>
+            <div class="smc-instrucoes-preenchimento-container smc-gpi-legenda-instrucao">
+                <a class="smc-instrucoes-preenchimento-icone"></a> Passe o mouse sobre o icone para visualizar as inconformidades relacionadas ao documento.
+            </div>
+        </li>
+    </ul>
+</div>
+    @using (Smc.Form("formNodaentregaDocumentacaoadastroSelecaoOferta", "SalvarNovaEntregaDocumentacao").CssClass("smc-entrega-documentos smc-gpi-novaentrega").Ajax().Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqInscricao)
+        @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaPagina)
+        @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(prop => prop.Idioma)
+        @Smc.EditorFor(prop => prop.UidProcesso)
+
+        @Smc.List("listaDocumentos", d => d.Documentos).CssClass("smc-gpi-entrega-documentos-hidden").HtmlTemplate(@<text>@Html.Partial("_Documento", item.Value)</text>)
+
+        @(Smc.ButtonSet().CssClass("smc-gpi-linha-botoes espacamento-esquerda gap-botoes").Orientation(SMCOrientation.Horizontal)
+        .AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+            .CssClass("smc-btn-salvar smc-btn-principal")
+            .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+            .Action("SalvarNovaEntregaDocumentacao", "NovaEntregaDocumentacao").Highlight())
+        .AddButton(Smc.Button("Voltar")
+            .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-secundario")
+                .Action("Index", "Home", new {@area="" }))
+    )
+
+    }
+</div>
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".smc-gpi-paineis > h1").addClass("hide");
+        });
+    </script>
+}

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlteracaoSituacaoViewModel_SeqMotivoSGF" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="AlteracaoSituacaoViewModel_SeqTipoProcessoSituacaoDestino_FillInstructions" xml:space="preserve">
+    <value>Estão disponíveis somente as situações das etapas que foram configuradas para o processo de inscrição. Certifique-se de que a etapa da situação desejada esteja cadastrada e liberada.</value>
+  </data>
+  <data name="AlterarDadosInscritoViewModel_NomeSocial_FillInstructions" xml:space="preserve">
+    <value>RESOLUÇÃO No - 12, DE 16 DE JANEIRO DE 2015&lt;br/&gt;Art. 1° Deve ser garantido pelas instituições e redes de ensino, em todos os níveis e modalidades, o reconhecimento e adoção do nome social àqueles e àquelas cuja identificação civil não reflita adequadamente sua identidade de gênero, mediante solicitação do próprio interessado.&lt;br/&gt;Art. 2° Deve ser garantido, àquelas e àqueles que o solicitarem, o direito ao tratamento oral exclusivamente pelo nome social, em qualquer circunstância, não cabendo qualquer tipo de objeção de consciência.&lt;br/&gt;Fonte: Diário Oficial da União – Publicação: 12 de março de 2015&lt;br/&gt;Veja mais em: http://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?jornal=1&amp;pagina=3&amp;data=12/03/2015&lt;br/&gt;</value>
+  </data>
+  <data name="AnaliseInscricaoLoteFiltroViewModel_FiltroSGF" xml:space="preserve">
+    <value>Mais filtros</value>
+  </data>
+  <data name="AnaliseInscricaoLoteFiltroViewModel_Ofertas" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="AnaliseInscricaoLoteFiltroViewModel_SeqItemHierarquiaOferta" xml:space="preserve">
+    <value>Item da hierarquia de oferta</value>
+  </data>
+  <data name="AnaliseInscricaoLoteListaViewModel_GrupoOferta" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="AnaliseInscricaoLoteListaViewModel_NomeInscrito" xml:space="preserve">
+    <value>Inscrito</value>
+  </data>
+  <data name="AnaliseInscricaoLoteListaViewModel_Ofertas" xml:space="preserve">
+    <value>Oferta(s)</value>
+  </data>
+  <data name="AnaliseInscricaoLoteListaViewModel_Seq" xml:space="preserve">
+    <value>Número de Inscrição</value>
+  </data>
+  <data name="ConsultaConsolidadaGrupoOfertaFiltroViewModel_SeqItemHierarquiaOferta" xml:space="preserve">
+    <value>Item da hierarquia de oferta</value>
+  </data>
+  <data name="ConsultaConsolidadaGrupoOfertaListaViewModel_Descricao" xml:space="preserve">
+    <value>Grupo de ofertas</value>
+  </data>
+  <data name="ConsultaConsolidadaListaViewModel_Descricao" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ConsultaConsolidadaProcessoCabecalhoViewModel_Descricao" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ConsultaConsolidadaProcessoFiltroViewModel_DataFim_FillInstructions" xml:space="preserve">
+    <value>Ao informar um período, serão retornados somente processos cuja etapa de inscrição coincide com o período informado.</value>
+  </data>
+  <data name="ConsultaConsolidadaProcessoFiltroViewModel_SeqProcesso" xml:space="preserve">
+    <value>ID Processo</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_FiltroSGF" xml:space="preserve">
+    <value>Campos da ficha de inscrição</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_Ofertas" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_SeqItemHierarquiaOferta" xml:space="preserve">
+    <value>Item da hierarquia de oferta</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_SeqMotivo" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_DocumentacaoEntregue_FALSE" xml:space="preserve">
+    <value>Pendente</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_DocumentacaoEntregue_TRUE" xml:space="preserve">
+    <value>Entregue</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_GrupoOferta" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_NomeInscrito" xml:space="preserve">
+    <value>Inscrito</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_Ofertas" xml:space="preserve">
+    <value>Oferta(s)</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_Seq" xml:space="preserve">
+    <value>Número de Inscrição</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_SituacaoDocumentacao" xml:space="preserve">
+    <value>Documentação</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_TaxaInscricaoPaga_FALSE" xml:space="preserve">
+    <value>Em aberto</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoListaViewModel_TaxaInscricaoPaga_TRUE" xml:space="preserve">
+    <value>Baixada</value>
+  </data>
+  <data name="DetalheAlteracaoSituacaoViewModel_NomeInscrito" xml:space="preserve">
+    <value>Inscrito</value>
+  </data>
+  <data name="DetalheLancamentoNotaClassificacaoViewModel_NomeInscrito" xml:space="preserve">
+    <value>Inscrito</value>
+  </data>
+  <data name="DocumentoEntregueViewModel_ArquivoAnexado" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="DataEntrega" xml:space="preserve">
+    <value>Data de entrega</value>
+  </data>
+  <data name="DocumentoEntregueViewModel_DescricaoArquivo" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="DocumentoEntregueViewModel_EntregaRegistrada" xml:space="preserve">
+    <value>Documento entregue - Deferido?</value>
+  </data>
+  <data name="DocumentoEntregueViewModel_EntregaRegistrada_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="DocumentoEntregueViewModel_EntregaRegistrada_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="DocumentoEntregueViewModel_FormaEntregaDocumento" xml:space="preserve">
+    <value>Forma de entrega</value>
+  </data>
+  <data name="DocumentoEntregueViewModel_LinkArquivo" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="DocumentoEntregueViewModel_VersaoDocumento" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="DocumentoInscricaoViewModel_ArquivoAnexado" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="DocumentoInscricaoViewModel_DescricaoArquivoAnexado" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="DocumentoInscricaoViewModel_SituacaoEntregaDocumento" xml:space="preserve">
+    <value>Situação de entrega</value>
+  </data>
+  <data name="DocumentosEntreguesViewModel_NomeDocumento" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="HistoricoSituacaoViewModel_SeqMotivoSGF" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="InscricaoViewModel_CidadeNaturalidade" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="InscricaoViewModel_NumeroIdentidade" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="InscricaoViewModel_NumeroOpcoesDesejadas" xml:space="preserve">
+    <value>Quantidade de opções para as quais deseja ser convocado(a), respeitando a ordem de prioridade</value>
+  </data>
+  <data name="InscricaoViewModel_OrgaoEmissorIdentidade" xml:space="preserve">
+    <value>Orgão emissor</value>
+  </data>
+  <data name="InscricaoViewModel_SituacaoInscrito" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="InscricaoViewModel_UfIdentidade" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="InscricaoViewModel_UfNaturalidade" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="JustificativaSituacaoInscricaoViewModel_Justificativa" xml:space="preserve">
+    <value>Justificativa:</value>
+  </data>
+  <data name="JustificativaSituacaoInscricaoViewModel_Motivo" xml:space="preserve">
+    <value>Motivo:</value>
+  </data>
+  <data name="JustificativaSituacaoInscricaoViewModel_NomeInscrito" xml:space="preserve">
+    <value>Nome do inscrito:</value>
+  </data>
+  <data name="ProcessoCabecalhoViewModel_Descricao" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ProcessoCabecalhoViewModel_SeqInscricao" xml:space="preserve">
+    <value>Nº Inscrição</value>
+  </data>
+  <data name="RegistroDocumentacaoViewModel_GrupoOferta" xml:space="preserve">
+    <value>Grupo de Ofertas</value>
+  </data>
+  <data name="RegistroDocumentacaoViewModel_NomeInscrito" xml:space="preserve">
+    <value>Inscrito</value>
+  </data>
+  <data name="SeqInscricao" xml:space="preserve">
+    <value>Nº Inscrição</value>
+  </data>
+  <data name="SituacaoDocumentacao" xml:space="preserve">
+    <value>Documentação</value>
+  </data>
+  <data name="SituacaoEntregaDocumento" xml:space="preserve">
+    <value>Validação</value>
+  </data>
+  <data name="SituacaoEntregaDocumento_Legenda_Titulo" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="SituacaoInscricaoViewModel_NomeInscrito" xml:space="preserve">
+    <value>Inscrito</value>
+  </data>
+  <data name="SituacaoInscrito" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="DataPrazoEntrega" xml:space="preserve">
+    <value>Prazo de entrega</value>
+  </data>
+  <data name="FormaEntregaDocumento" xml:space="preserve">
+    <value>Forma de entrega</value>
+  </data>
+  <data name="InformacaoVersaoExigida" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="ArquivoAnexado" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="SituacaoEntregaDocumentoInicial" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="InscricaoDocumentoViewModel_SituacaoEntregaDocumento" xml:space="preserve">
+    <value>Validação</value>
+  </data>
+  <data name="SituacaoEntregaDocumentoInicialLegenda" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="InscricaoDocumentoViewModel_EntregaPosterior" xml:space="preserve">
+    <value>Entrega posterior</value>
+  </data>
+  <data name="DocumentoInscricaoViewModel_ExibirObservacaoParaInscrito" xml:space="preserve">
+    <value>Exibir observação para inscrito?</value>
+  </data>
+  <data name="DocumentoInscricaoViewModel_ExibirObservacaoParaInscrito_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="DocumentoInscricaoViewModel_ExibirObservacaoParaInscrito_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="InscricaoDocumentoViewModel_ExibirObservacaoParaInscrito" xml:space="preserve">
+    <value>Exibir observação para inscrito?</value>
+  </data>
+  <data name="InscricaoDocumentoViewModel_ExibirObservacaoParaInscrito_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="InscricaoDocumentoViewModel_ExibirObservacaoParaInscrito_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="DataPrazoNovaEntregaDocumentacao" xml:space="preserve">
+    <value>Prazo para nova entrega da documentação</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_RecebeuBolsa" xml:space="preserve">
+    <value>Recebeu bolsa?</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_RecebeuBolsa_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_RecebeuBolsa_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="EmailConfirmacao" xml:space="preserve">
+    <value>Confirmação do e-mail</value>
+  </data>
+  <data name="CodigoPaisEmissaoPassaporte" xml:space="preserve">
+    <value>País de emissão</value>
+  </data>
+  <data name="CodigoPaisNacionalidade" xml:space="preserve">
+    <value>País de origem</value>
+  </data>
+  <data name="DataValidadePassaporte" xml:space="preserve">
+    <value>Data de validade</value>
+  </data>
+  <data name="EnderecosEletronicos_Detalhe_Titulo" xml:space="preserve">
+    <value>Endereços Eletrônicos</value>
+  </data>
+  <data name="SeqCidade" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="EstadoCidadeViewModel_Estado" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_SeqTipoTaxa" xml:space="preserve">
+    <value>Tipo de taxa</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_CheckinRealizado" xml:space="preserve">
+    <value>Check-in realizado?</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_CheckinRealizado_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="ConsultaInscricaoProcessoFiltroViewModel_CheckinRealizado_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+</root>

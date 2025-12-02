@@ -1,0 +1,58 @@
+﻿@model LancamentoResultadoItemViewModel
+
+<div class="smc-gpi-divide-area smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+    @Smc.EditorFor(m => m.SeqInscricaoOferta)
+    @Smc.EditorFor(m => m.SeqInscricao).CssClass("hidden")
+    @Smc.DisplayFor(m => m.SeqInscricao)
+    @Smc.DisplayFor(m => m.Candidato)
+    @Smc.DisplayFor(m => m.Opcao)
+    @if (Model.NumeroOpcoesDesejadas.HasValue)
+    {
+        @Smc.DisplayFor(m => m.NumeroOpcoesDesejadas)
+    }
+    @using (Smc.Div().Size(SMCSize.Grid3_24).Begin())
+    {
+        @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Text(Smc.GetUIResource("Botao_Opcoes"))
+            .Tooltip(Smc.GetUIResource("Botao_Opcoes_Tooltip"))
+            .Ajax(isPost: false)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalOpcoesOfertaInscrito")
+            .Url(Url.Action("ExibirOfertasInscrito", "AnaliseSelecao",
+                    new
+                    {
+                        seqInscricao = (SMCEncryptedLong)Model.SeqInscricao,
+                        opcao = Model.Opcao
+                    }))
+            .Type(SMCButtonType.InputButton)
+            .CssClass("smc-btn-visualizar-icotext-destaque"))
+    }
+
+    @if (!string.IsNullOrWhiteSpace(Model.Justificativa))
+    {
+        @Smc.EditorFor(m => m.Justificativa)
+    }
+
+    @* Verifica se o method http é post, para renderizar a view corretamente em casos de erro ao salvar *@
+    @using (Smc.Div().Size(SMCSize.Grid24_24).Begin())
+    {
+        if (string.IsNullOrWhiteSpace(Model.DescricaoResultadoSelecao))
+        {
+            @Smc.EditorFor(m => m.SeqResultadoSelecao)
+            @Smc.EditorFor(m => m.SeqMotivo)
+            @Smc.EditorFor(m => m.Nota)
+            @Smc.EditorFor(m => m.SegundaNota)
+            @Smc.EditorFor(m => m.Classificacao)
+            @Smc.EditorFor(m => m.ParecerResponsavel)
+        }
+        else
+        {
+            @Smc.HiddenFor(m => m.SeqResultadoSelecao)
+            @Smc.EditorFor(m => m.DescricaoResultadoSelecao)
+            @Smc.EditorFor(m => m.Motivo)
+            @Smc.EditorFor(m => m.Nota)
+            @Smc.EditorFor(m => m.SegundaNota)
+            @Smc.EditorFor(m => m.Classificacao)
+            @Smc.EditorFor(m => m.ParecerResponsavel).Readonly()
+        }
+    }
+</div>

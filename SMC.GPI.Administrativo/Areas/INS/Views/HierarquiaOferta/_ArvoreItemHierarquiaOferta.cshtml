@@ -1,0 +1,117 @@
+﻿@model List<SMCTreeViewNode<ArvoreItemHierarquiaOfertaViewModel>>
+
+@{
+    var treeview = Smc.TreeView("treeviewArvoreHierarquiaOferta" + Request["seqProcesso"], Model)
+                .ContextMenu(i => Smc.ContextMenu("ctx_" + i.Seq)
+                    .OpenEvent(SMCMouseEvent.LeftClick)
+                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Cadastro_Oferta_Hierarquia_Oferta"))
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalCadastroOferta")
+                            .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Cadastrar_Oferta_Hierarquia_Oferta_Modal_Titulo"))
+                            .Ajax(isPost: false)
+                            .SecurityToken(UC_INS_001_01_05.MANTER_OFERTA)
+                            .Url(Html.SMCAction("CadastrarOfertaHierarquiaOferta", "HierarquiaOferta",
+                                                    new
+                                                    {
+                                                        seqItemSuperior = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq),
+                                                        descricaoItemSuperior = i.Value.Descricao,
+                                                        seqProcesso = SMCDESCrypto.EncryptNumberForURL(i.Value.SeqProcesso)
+                                                    }
+                                                )
+                            )
+                            .Hide(i.Value.EOferta || !i.Value.PermiteCadastroOfertaFilha))
+                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Novo_Item_Folha_Hierarquia_Oferta"))
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalAssociarItemHierarquiaOferta")
+                            .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Associar_Item_Hierarquia_Oferta_Modal_Titulo"))
+                            .Ajax(isPost: false)
+                            .SecurityToken(UC_INS_001_01_04.ASSOCIAR_ITEM_HIERARQUIA_OFERTA)
+                            .Url(Html.SMCAction("IncluirItemHierarquiaOferta", "HierarquiaOferta",
+                                                    new
+                                                    {
+                                                        seqItemSuperior = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq),
+                                                        descricaoItemSuperior = i.Value.Descricao,
+                                                        seqProcesso = SMCDESCrypto.EncryptNumberForURL(i.Value.SeqProcesso)
+                                                    }
+                                                )
+                            )
+                            .Hide(i.Value.EOferta || (!i.Value.PermiteCadastroItemFilho && i.Value.PermiteCadastroOfertaFilha && !i.Value.PermiteCadastroNetos)))
+                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Alterar_Oferta_Hierarquia_Oferta"))
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalCadastroOferta")
+                            .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Alterar_Oferta_Hierarquia_Oferta_Modal_Titulo"))
+                            .Ajax(isPost: false)
+                            .SecurityToken(UC_INS_001_01_05.MANTER_OFERTA)
+                            .Url(Html.SMCAction("AlterarOfertaHierarquiaOferta", "HierarquiaOferta",
+                                            new
+                                            {
+                                                seqOfertaHierarquiaOferta = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq)
+                                            }
+                                    )
+                            )
+                            .Hide(!i.Value.EOferta))
+                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Excluir_Oferta_Arvore_Hierarquia_Oferta"))
+                            .Ajax(isPost: true)
+                            .SecurityToken(UC_INS_001_01_04.ASSOCIAR_ITEM_HIERARQUIA_OFERTA, UC_INS_001_01_05.MANTER_OFERTA)
+                            .Url(Html.SMCAction("ExcluirOferta", "HierarquiaOferta",
+                                                new
+                                                {
+                                                    seqItemHierarquiaOferta = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq),
+                                                    seqProcesso = SMCDESCrypto.EncryptNumberForURL(i.Value.SeqProcesso)
+                                                }
+                                            )
+                            )
+                            .Confirm(Smc.GetUIResource("Oferta_Hierarquia_Oferta_Excluir_Titulo"),
+                                            string.Format(Smc.GetUIResource("Oferta_Hierarquia_Oferta_Excluir_Confirmacao")
+                                            , i.Value.Descricao))
+                            .Hide(!i.Value.EOferta))
+                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Alterar_Item_Arvore_Hierarquia_Oferta"))
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalAssociarItemHierarquiaOferta")
+                            .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Alterar_Item_Hierarquia_Oferta_Modal_Titulo"))
+                            .Ajax(isPost: false)
+                            .SecurityToken(UC_INS_001_01_04.ASSOCIAR_ITEM_HIERARQUIA_OFERTA)
+                            .Url(Html.SMCAction("AlterarItemHierarquiaOferta", "HierarquiaOferta",
+                                                    new
+                                                    {
+                                                        seqItemHierarquiaOferta = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq)
+                                                    }
+                                                )
+                            )
+                            .Hide(i.Value.EOferta))
+                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Excluir_Item_Arvore_Hierarquia_Oferta"))
+                            .Ajax(isPost: true)
+                            .SecurityToken(UC_INS_001_01_04.ASSOCIAR_ITEM_HIERARQUIA_OFERTA, UC_INS_001_01_05.MANTER_OFERTA)
+                            .Url(Html.SMCAction("ExcluirItemHierarquiaOferta", "HierarquiaOferta",
+                                            new
+                                            {
+                                                seqItemHierarquiaOferta = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq),
+                                                seqProcesso = SMCDESCrypto.EncryptNumberForURL(i.Value.SeqProcesso)
+                                            }
+                                        )
+                            )
+                            .Confirm(Smc.GetUIResource("Item_Hierarquia_Oferta_Excluir_Titulo"),
+                                    string.Format(Smc.GetUIResource("Item_Hierarquia_Oferta_Excluir_Confirmacao")
+                                    , i.Value.Descricao)
+                            )
+                            .Hide(i.Value.EOferta))
+
+    );
+
+    if ((bool)ViewBag.ExibeArvoreFechada)
+    {
+        treeview.PersistState(true);
+        treeview.Expanded(false);
+        treeview.ExpandAction("ArvoreHierarquiaOferta", "HierarquiaOferta", new
+        {
+            seqProcesso = Request["seqProcesso"]
+        });
+    }
+    else
+    {
+        treeview.PersistState(false);
+        treeview.Expanded(true);
+    }
+}
+
+@treeview

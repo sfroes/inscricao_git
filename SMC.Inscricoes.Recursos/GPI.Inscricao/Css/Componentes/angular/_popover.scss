@@ -1,0 +1,20 @@
+.p-popover-content {
+    ul {
+        padding: 0 0 0 1.2rem !important;
+        margin: 0;
+
+        span {
+            font-size: 0.75rem;
+            margin-left: -6px;
+            font-style:italic;
+        }
+    }
+}
+
+.p-popover:after {
+    margin-left: 50% !important;
+}
+
+.p-popover:before {
+    margin-left: 49% !important;
+}

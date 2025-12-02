@@ -1,0 +1,9 @@
+﻿@model InscricaoDocumentoOpcionalViewModel
+
+@Smc.EditorFor(x => x.Seq)
+@Smc.EditorFor(x => x.SeqDocumentoRequerido)
+@Smc.EditorFor(x => x.SeqArquivoAnexado)
+@Smc.EditorFor(x => x.DescricaoTipoDocumento)
+@Smc.EditorFor(x => x.DescricaoTipoDocumentoApresentacao).Readonly()
+@Smc.EditorFor(x => x.DescricaoArquivoAnexado)
+@Smc.EditorFor(x => x.ArquivoAnexado)

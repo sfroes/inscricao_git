@@ -1,0 +1,10 @@
+﻿@model ObservacaoInscricaoViewModel
+@using (Smc.Header("headerAlterarDados", SMCHeaderType.Primary)
+          .Item(prop => prop.SeqProcesso, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.Nome, sizeSM: SMCSize.Grid19_24, sizeMD: SMCSize.Grid19_24, sizeLG: SMCSize.Grid19_24, sizeXS: SMCSize.Grid19_24)
+          .Begin())
+{
+
+}
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.Observacao)

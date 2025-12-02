@@ -1,0 +1,26 @@
+﻿@model SMCPagerModel<AcompanhamentoInscritoCheckinListaViewModel>
+
+<div id="divGridListagemCheckinLote">
+    @(Smc.Grid("gridConsolidacaoCheckin")
+        .Action("Listar", "AcompanhamentoCheckin")
+        .AllowSelect()
+        .FieldColumn(prop => prop.DescricaoOferta)
+        .FieldColumn(prop => prop.NumeroVagasOferta)
+        .FieldColumn(prop => prop.NumeroInscrito)
+        .FieldColumn(prop => prop.NumeroChecinRealizado)
+        .FieldColumn(prop => prop.RestanteVagas)
+        .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", true,
+        x => Smc.Button("CheckinEmLote")
+            .Tooltip("Check-in em lote")
+            .CssClass("smc-btn-checkinlote-ico")
+            .SecurityToken(UC_INS_005_01_05.REALIZAR_CHECKIN_EM_LOTE)
+            .Type(SMCButtonType.Link)
+            .Action("CheckinLote", null, new 
+            {
+                SeqOferta = new SMCEncryptedLong((x as AcompanhamentoInscritoCheckinListaViewModel).Seq),
+                SeqProcesso = new SMCEncryptedLong((x as AcompanhamentoInscritoCheckinListaViewModel).SeqProcesso),
+                 }))
+
+        .AllowSort()
+    )
+</div>

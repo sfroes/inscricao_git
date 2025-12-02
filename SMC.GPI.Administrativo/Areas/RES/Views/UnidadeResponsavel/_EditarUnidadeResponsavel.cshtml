@@ -1,0 +1,32 @@
+﻿@using SMC.Localidades.UI.Mvc.Extensions
+
+@model UnidadeResponsavelViewModel
+
+@using (Smc.Form("formCadastroUnidadeResponsavel").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    
+
+        @Smc.EditorFor(prop => prop.Seq)
+        @Smc.EditorFor(prop => prop.Nome).Focus()
+        @Smc.EditorFor(prop => prop.Sigla)
+        @Smc.EditorFor(prop => prop.CodigoUnidade)
+        @Smc.EditorFor(prop => prop.SeqUnidadeResponsavelNotificacao)
+        @Smc.EditorFor(prop => prop.SeqUnidadeResponsavelSgf)
+        @Smc.EditorFor(prop => prop.TipoUnidadeResponsavel)
+        @Smc.EditorFor(prop => prop.NomeContato)
+
+
+        @Smc.EditorFor(prop => prop.Enderecos)
+        @Smc.EditorFor(prop => prop.Telefones)
+        @Smc.EditorFor(prop => prop.EnderecosEletronicos)
+        @Smc.EditorFor(prop => prop.CentrosCusto)
+
+    using (Smc.Fieldset("AssinaturaDigital").LegendText(@Smc.GetUIResource("Assinatura Digital")).Begin())
+    {
+        @Smc.EditorFor(prop => prop.TokenSistemaOrigemGad);
+    }
+
+    @Html.Partial("_BotoesEdicaoPadrao")
+
+}
+

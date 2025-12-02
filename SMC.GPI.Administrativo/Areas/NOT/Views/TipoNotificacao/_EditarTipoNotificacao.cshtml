@@ -1,0 +1,15 @@
+﻿@model TipoNotificacaoViewModel
+
+@using (Smc.Form("formCadastroNovoParametroTipoNotificacao").ConfirmUnloadWithoutSaveChanges().Ajax().Begin())
+{
+    using (Smc.Div("fieldsetCadastroTipoNotificacao").Begin())
+    {
+        @Smc.EditorFor(prop => prop.OldSeq)
+        @Smc.EditorFor(prop => prop.Seq)
+        @Smc.EditorFor(prop => prop.PermiteAgendamento)
+
+        @(Smc.MasterDetail(prop => prop.Atributos).CssClass("smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24").ConditionalDisplay("PermiteAgendamento", true));
+    }
+
+    @Html.Partial("_BotoesEdicaoPadrao")
+}

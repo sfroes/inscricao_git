@@ -1,0 +1,48 @@
+﻿@model SMCPagerModel<AnaliseInscricaoLoteListaViewModel>
+
+<div id="divGridAnaliseInscricaoLote">
+    @(Smc.Grid("gridAnaliseInscricaoLote")
+        .Action("ListarAnaliseInscricaoLote", "AcompanhamentoProcesso")
+        .AllowSelect()
+        .FieldColumn(prop => prop.Seq)
+        .FieldColumn(prop => prop.NomeInscrito)
+        .ContentColumn(displayContent:
+        @<text>
+            <span>
+                <p>
+                    @if (!String.IsNullOrEmpty((item as AnaliseInscricaoLoteListaViewModel).JustificativaSituacaoAtual))
+                    {
+                        @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                         .Attribute(SMCMvcConsts.MODAL_ID, "modalJustificativaSituacao")
+                         .CssClass("smc-gpi-btn-link-grid")
+                         .Ajax(isPost: false, updateTargetId: "painelAjaxJustificativaSituacao")
+                         .Text((item as AnaliseInscricaoLoteListaViewModel).DescricaoSituacaoAtual)
+                         .Tooltip((item as AnaliseInscricaoLoteListaViewModel).DescricaoSituacaoAtual)
+                         .Url(Url.Action("ExibirJustificativaSituacao", "AcompanhamentoProcesso",
+                             new
+                             {
+                                 seqInscricao = SMCDESCrypto.EncryptNumberForURL((item as AnaliseInscricaoLoteListaViewModel).Seq)
+
+                             }))
+                             .Type(SMCButtonType.Link)
+                        )
+                    }
+                    else
+                    {
+                        @((item as AnaliseInscricaoLoteListaViewModel).DescricaoSituacaoAtual)
+                    }
+                </p>
+            </span>
+        </text>,header:Smc.GetUIResource("Label_Situacao"))
+        //.FieldColumn(prop => prop.DescricaoGrupoOferta)
+        .ContentColumn(
+        @<text>
+            <ul>
+                @foreach (OfertaInscricaoViewModel oferta in item.OpcoesOferta)
+                {
+                    <li>@Smc.GetUIResource("Label_Opcao", parametros: @oferta.NumeroOpcao.ToString()) @oferta.DescricaoOferta</li>
+                }
+            </ul>
+        </text>, header: Smc.GetUIResource("Coluna_Oferta")).AllowSort()
+    )
+</div>

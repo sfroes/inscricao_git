@@ -1,0 +1,86 @@
+﻿@model AnaliseInscricaoLoteFiltroViewModel
+
+@Html.Action("CabecalhoProcesso", Model.SeqProcesso)
+
+<div class="smc-gpi-instrucoes-iniciais">
+    <span>@Smc.GetUIResource("AnaliseInscricaoLote_Mensagem_Lancamento_Nota")</span>
+</div>
+
+@using (Smc.Form("formPesquisaAnaliseInscricaoLote", "ListarAnaliseInscricaoLote").Ajax("#divGridConsultaInscricaoProcesso").Begin())
+{
+
+    using (Smc.Fieldset("fieldsetPesquisaAnaliseInscricaoLote").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(m => m.SeqItemHierarquiaOferta)
+        @Smc.EditorFor(prop => prop.Oferta)
+
+        @Smc.EditorFor(prop => prop.SeqTipoProcessoSituacao)
+        @Smc.EditorFor(prop => prop.NomeInscrito)
+
+        using (Smc.Div("divFiltroSGF").Dependency("SeqGrupoOferta", "AnalisarInscricaoLoteFiltroSGF", "AcompanhamentoProcesso", "INS", false, "SeqProcesso")
+                                      .Dependency("Oferta", "AnalisarInscricaoLoteFiltroSGF", "AcompanhamentoProcesso", "INS", false, "SeqProcesso").Size(SMCSize.Grid9_24).Begin())
+        {
+            if (Model.FiltroSGF != null)
+            {
+                @Html.Partial("_AnalisarInscricaoLoteFiltroSGF", Model)
+            }
+            else
+            {
+                @Html.Action("AnalisarInscricaoLoteFiltroSGF", new { seqGrupoOferta = Model.SeqGrupoOferta, seqProcesso = Model.SeqProcesso })
+            }
+        }
+
+        @(Smc.ButtonSet().Size(SMCSize.Grid4_24)
+                            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                            .AddButton(Smc.Button(SMCButtonBehavior.Limpar).Attribute("data-clear", "#divGridConsultaInscricaoProcesso").DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+}
+
+
+<div id="divGridConsultaInscricaoProcesso">
+    @Smc.ActionList("ListarAnaliseInscricaoLote", new { filtros = Model }, initialListingDisabled: true)
+</div>
+
+<div id="divBototesLote">
+    @(Smc.ButtonSet()
+                        .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalAlterarSituacao")
+                            .Enabled(false)
+                            .Text(Smc.GetUIResource("Botao_AlterarSituacao"))
+                            .Ajax(isPost: true, updateTargetId: "painelAjaxAlterarSituacao", fieldsContainerToRequest: "#divGridAnaliseInscricaoLote,#formPesquisaAnaliseInscricaoLote")
+                            .CssClass("smc-btn-alterar-icotext")
+                            .SecurityToken(UC_INS_003_01_08.ALTERACAO_SITUACAO)
+                            .Url(Url.Action("ListarAlterarSituacaoLote", "AcompanhamentoProcesso", new { lote = true })))
+                        .AddButton(Smc.Button(SMCButtonBehavior.Voltar, "Index", "AcompanhamentoProcesso").DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    )
+</div>
+
+@using (Smc.ModalWindow("modalAlterarSituacao")
+        .Title(Smc.GetUIResource("AlterarSituacaoLote_Modal_Titulo"))
+        .Form("AlterarSituacaoLote", "SalvarAlteracaoSituacaoLote", "AcompanhamentoProcesso", null, true,
+        x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+            //.Confirm(Smc.GetUIResource("Titulo_Confirmacao_Alteracao_Situacao"),Smc.GetUIResource("Mensagem_Confirmacao_Alteracao_Situacao"))
+        .Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{
+
+}
+
+@using (Smc.ModalWindow("modalJustificativaSituacao")
+        .Title(Smc.GetUIResource("Label_JustificativaSituacao"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{
+
+}
+
+@section Scripts{
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/AnaliseInscricaoLote.js")" type="text/javascript"></script>
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/ReloadPagerAjax.js")" type="text/javascript"></script>
+}

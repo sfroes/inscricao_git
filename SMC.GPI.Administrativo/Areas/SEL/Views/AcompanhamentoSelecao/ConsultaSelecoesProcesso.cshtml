@@ -1,0 +1,77 @@
+﻿@model ConsultaCandidatosProcessoFiltroViewModel
+
+@section Scripts{
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/ReloadPagerAjax.js")" type="text/javascript"></script>
+}
+
+@using (Smc.Header("headerHeaderProcessoGrupoOferta", SMCHeaderType.Primary)
+                                  .Item(prop => prop.TipoProcesso, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                                  .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                                  .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+                                  .Begin())
+{ }
+
+@using (Smc.Form("formPesquisaCandidatos", "ListarCandidatosProcesso").Ajax("#divCandidatosProcesso").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaProcessoGrupoOferta").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SeqTipoProcessoSituacao)
+        @Smc.EditorFor(prop => prop.SeqMotivo)
+        @Smc.EditorFor(prop => prop.SeqInscricao)
+        @Smc.EditorFor(prop => prop.Candidato)
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(prop => prop.SeqItemHierarquiaOferta)
+        @Smc.EditorFor(prop => prop.SeqOferta)
+        @Smc.EditorFor(prop => prop.Opcao)
+
+        @(Smc.ButtonSet()
+                .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon)))
+    }
+}
+
+<div id="divCandidatosProcesso" data-id="divCandidatosProcesso">
+    @Smc.ActionList("ListarCandidatosProcesso", routeValues: Model, initialListingDisabled: true)
+</div>
+
+@Smc.ButtonSet().AddButton(Smc.Button("Voltar", "Index", "AcompanhamentoSelecao").CssClass("smc-btn-voltar-icotext").Type(SMCButtonType.Link))
+
+
+@using (Smc.ModalWindow("modalJustificativaOferta")
+            .Title(Smc.GetUIResource("Label_JustificativaOferta"))
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalMotivoJustificativaSituacao")
+            .Title(Smc.GetUIResource("Label_JustificativaSituacao"))
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalConvocacao")
+            .Title(Smc.GetUIResource("Label_Convocacao"))
+            .Size(SMCModalWindowSize.Large)
+            .Form("AlterarSituacao", "SalvarConvocacao", "AnaliseSelecao", null, true, x => x.Ajax(onSuccess: "reloadPagerAjax()"))
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                .Confirm(Smc.GetUIResource("Titulo_Confirmacao_Alteracao_Situacao"),
+                Smc.GetUIResource("Mensagem_Confirmacao_Alteracao_Situacao")).Highlight())
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalAlteracaoOferta")
+            .Title(Smc.GetUIResource("Titulo_AlterarOferta"))
+            .Size(SMCModalWindowSize.Large)
+            .Form("AlterarOferta", "SalvarOferta", "AcompanhamentoSelecao", null, true, x => x.Ajax(onSuccess: "reloadPagerAjax()"))
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalDadosOferta")
+            .Title(Smc.GetUIResource("Titulo_DadosOferta"))
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin())
+{ }

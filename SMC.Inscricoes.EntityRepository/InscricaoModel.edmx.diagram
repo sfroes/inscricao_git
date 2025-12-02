@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ceddffc7f2d5426dbe08d2cf82d4e716" Name="HIS_INS_002 - Inscrição" ZoomLevel="91">
+        <EntityTypeShape EntityType="InscricaoModel.Endereco" Width="1.75" PointX="1.125" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InscricaoModel.EnderecoEletronico" Width="1.875" PointX="1.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InscricaoModel.Telefone" Width="1.75" PointX="5.375" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InscricaoModel.Inscrito" Width="2.5" PointX="8.25" PointY="11.375" />
+        <AssociationConnector Association="InscricaoModel.inscrito_endereco" />
+        <AssociationConnector Association="InscricaoModel.inscrito_endereco_eletronico" />
+        <AssociationConnector Association="InscricaoModel.inscrito_telefone" />
+        <EntityTypeShape EntityType="InscricaoModel.Inscricao" Width="3" PointX="14.625" PointY="8.375" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoCodigoAutorizacao" Width="2.125" PointX="18.875" PointY="6.125" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoDadoFormulario" Width="2.75" PointX="19.375" PointY="13" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoDadoFormularioCampo" Width="2.375" PointX="23.625" PointY="13" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoHistoricoPagina" Width="2.375" PointX="16.25" PointY="1.25" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoHistoricoSituacao" Width="2.375" PointX="20.125" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_codigo_autorizacao_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_dado_formulario_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_historico_pagina_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_historico_situacao_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_dado_formulario_campo_01" />
+        <EntityTypeShape EntityType="InscricaoModel.ConfiguracaoEtapa" Width="2.5" PointX="8" PointY="4.125" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_03" />
+        <EntityTypeShape EntityType="InscricaoModel.Processo" Width="2.75" PointX="3.875" PointY="3.25" />
+        <AssociationConnector Association="InscricaoModel.processo_endereco_eletronico" />
+        <AssociationConnector Association="InscricaoModel.processo_telefone" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_02" />
+        <EntityTypeShape EntityType="InscricaoModel.ConfiguracaoEtapaPagina" Width="2.75" PointX="12.25" PointY="4.25" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_etapa_pagina_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_historico_pagina_02" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcessoSituacao" Width="2.25" PointX="24.25" PointY="1" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_historico_situacao_03" />
+        <EntityTypeShape EntityType="InscricaoModel.EtapaProcesso" Width="2.375" PointX="0.625" PointY="1.875" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_etapa_01" />
+        <AssociationConnector Association="InscricaoModel.FK_etapa_processo_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_historico_situacao_02" />
+        <EntityTypeShape EntityType="InscricaoModel.Oferta" Width="2.25" PointX="7.75" PointY="20.125" />
+        <AssociationConnector Association="InscricaoModel.oferta_endereco_eletronico" />
+        <AssociationConnector Association="InscricaoModel.oferta_telefone" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoDocumento" Width="2.5" PointX="23" PointY="19.625" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoOferta" Width="2.25" PointX="11.625" PointY="17.125" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_documento_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_oferta_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_oferta_02" />
+        <EntityTypeShape EntityType="InscricaoModel.CodigoAutorizacao" Width="2.125" PointX="23.5" PointY="6" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_codigo_autorizacao_02" />
+        <EntityTypeShape EntityType="InscricaoModel.ArquivoAnexado" Width="2.125" PointX="27.25" PointY="15.25" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_etapa_02" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_documento_03" />
+        <EntityTypeShape EntityType="InscricaoModel.DocumentoRequerido" Width="2.125" PointX="30" PointY="17.875" />
+        <AssociationConnector Association="InscricaoModel.FK_documento_requerido_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_documento_02" />
+        <EntityTypeShape EntityType="InscricaoModel.GrupoOferta" Width="2.125" PointX="19" PointY="17.75" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_oferta_01" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_02" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_04" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_05" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoBoleto" Width="2.25" PointX="18.5" PointY="21.75" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoBoletoTaxa" Width="2.25" PointX="14.625" PointY="24.625" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoBoletoTitulo" Width="2.25" PointX="21.25" PointY="25.75" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_boleto_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_boleto_taxa_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_boleto_titulo_01" />
+        <EntityTypeShape EntityType="InscricaoModel.Taxa" Width="1.875" PointX="11.5" PointY="25.375" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_boleto_taxa_02" />
+        <AssociationConnector Association="InscricaoModel.FK_taxa_01" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoEnvioNotificacao" Width="2.5" PointX="28.625" PointY="8.875" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_envio_notificacao_01" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoTaxa" Width="1.5" PointX="8.125" PointY="27.75" />
+        <AssociationConnector Association="InscricaoModel.FK_taxa_02" />
+        <EntityTypeShape EntityType="InscricaoModel.PermissaoInscricaoForaPrazo" Width="2.625" PointX="8.375" PointY="0.5" />
+        <EntityTypeShape EntityType="InscricaoModel.PermissaoInscricaoForaPrazoInscrito" Width="2.625" PointX="11.875" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_06" />
+        <AssociationConnector Association="InscricaoModel.FK_permissao_inscricao_fora_prazo_inscrito_02" />
+        <AssociationConnector Association="InscricaoModel.FK_permissao_inscricao_fora_prazo_01" />
+        <AssociationConnector Association="InscricaoModel.FK_permissao_inscricao_fora_prazo_inscrito_01" />
+        <EntityTypeShape EntityType="InscricaoModel.OfertaPeriodoTaxa" Width="2.5" PointX="1.25" PointY="23.875" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_periodo_taxa_01" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_periodo_taxa_02" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_periodo_taxa_03" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoOfertaHistoricoSituacao" Width="2.5" PointX="28.75" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_oferta_historico_situacao_03" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_oferta_historico_situacao_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_oferta_historico_situacao_02" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_oferta_03" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoDocumentoEmitido" Width="2.375" PointX="27.875" PointY="24.125" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_documento_emitido_01" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_documento_emitido_02" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoDocumento" Width="1.75" PointX="31.625" PointY="24.375" />
+        <AssociationConnector Association="InscricaoModel.FK_documento_requerido_02" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_documento_emitido_03" />
+        <EntityTypeShape EntityType="InscricaoModel.ConfiguracaoModeloDocumento" Width="2.25" PointX="34.125" PointY="12.75" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_modelo_documento_03" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_modelo_documento_01" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_modelo_documento_02" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_boleto_taxa_03" />
+        </Diagram>
+      <Diagram DiagramId="abdbb9d15a3a44458e6dda7c8f4db40a" Name="HIS_RES_001 - Unidade Responsável" ZoomLevel="94" >
+        <EntityTypeShape EntityType="InscricaoModel.TipoHierarquiaOferta" Width="2" PointX="0.5" PointY="0.625" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcesso" Width="2.125" PointX="12.75" PointY="3.375" />
+        <EntityTypeShape EntityType="InscricaoModel.UnidadeResponsavel" Width="2.75" PointX="4.625" PointY="5.25" />
+        <EntityTypeShape EntityType="InscricaoModel.UnidadeResponsavelTipoFormulario" Width="2.625" PointX="0.5" PointY="4.125" />
+        <EntityTypeShape EntityType="InscricaoModel.UnidadeResponsavelTipoHierarquiaOferta" Width="3" PointX="3.625" PointY="0.75" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_tipo_processo_hierarquia_01" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_tipo_formulario_01" />
+        <EntityTypeShape EntityType="InscricaoModel.Endereco" Width="2" PointX="9.25" PointY="9.375" />
+        <AssociationConnector Association="InscricaoModel.unidade_responsavel_endereco" />
+        <EntityTypeShape EntityType="InscricaoModel.EnderecoEletronico" Width="2.25" PointX="4.375" PointY="11" />
+        <AssociationConnector Association="InscricaoModel.unidade_responsavel_endereco_eletronico" />
+        <EntityTypeShape EntityType="InscricaoModel.Telefone" Width="2.125" PointX="9.25" PointY="6.25" />
+        <AssociationConnector Association="InscricaoModel.unidade_responsavel_telefone" />
+        <EntityTypeShape EntityType="InscricaoModel.UnidadeResponsavelCentroCusto" Width="2.75" PointX="0.5" PointY="7.625" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_centro_custo_01" />
+        <EntityTypeShape EntityType="InscricaoModel.UnidadeResponsavelTipoProcesso" Width="2.25" PointX="8.625" PointY="2" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_tipo_processo_01" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_tipo_processo_02" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_tipo_processo_hierarquia_02" />
+        <EntityTypeShape EntityType="InscricaoModel.UnidadeResponsavelTipoProcessoIdVisual" Width="3.375" PointX="15.625" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_tipo_processo_identidade_visual_01" />
+      </Diagram>
+      <Diagram DiagramId="bcadc01bfbb54844830f8ca9ca98444b" Name="HIS_RES_002 - Cliente" ZoomLevel="53" >
+        <EntityTypeShape EntityType="InscricaoModel.Cliente" Width="2" PointX="4.5" PointY="0.5" />
+        <EntityTypeShape EntityType="InscricaoModel.Telefone" Width="1.875" PointX="4.75" PointY="4.875" />
+        <AssociationConnector Association="InscricaoModel.cliente_telefone" />
+        <EntityTypeShape EntityType="InscricaoModel.Endereco" Width="1.75" PointX="1.5" PointY="2.375" />
+        <AssociationConnector Association="InscricaoModel.cliente_endereco" />
+        <EntityTypeShape EntityType="InscricaoModel.EnderecoEletronico" Width="2" PointX="7.75" PointY="2.625" />
+        <AssociationConnector Association="InscricaoModel.cliente_endereco_eletronico" />
+      </Diagram>
+      <Diagram DiagramId="49de0befedf749a0b3b2ca1b2f2e137d" Name="HIS_INS_001 - Configuração da Inscrição" ZoomLevel="98" >
+        <EntityTypeShape EntityType="InscricaoModel.ArquivoAnexado" Width="2.5" PointX="25.75" PointY="7.375" />
+        <EntityTypeShape EntityType="InscricaoModel.ArquivoSecaoPagina" Width="3" PointX="27.25" PointY="12" />
+        <EntityTypeShape EntityType="InscricaoModel.CodigoAutorizacao" Width="2.625" PointX="5.625" PointY="0.5" />
+        <EntityTypeShape EntityType="InscricaoModel.ConfiguracaoEtapa" Width="2.875" PointX="22.375" PointY="12.75" />
+        <EntityTypeShape EntityType="InscricaoModel.ConfiguracaoEtapaPagina" Width="2.375" PointX="27.75" PointY="24.5" />
+        <EntityTypeShape EntityType="InscricaoModel.ConfiguracaoEtapaPaginaIdioma" Width="2.375" PointX="30.75" PointY="17.75" />
+        <EntityTypeShape EntityType="InscricaoModel.DocumentoRequerido" Width="2.75" PointX="20.5" PointY="19.5" />
+        <EntityTypeShape EntityType="InscricaoModel.EtapaProcesso" Width="2.75" PointX="18.125" PointY="13.375" />
+        <EntityTypeShape EntityType="InscricaoModel.GrupoDocumentoRequerido" Width="2.75" PointX="21.75" PointY="25.125" />
+        <EntityTypeShape EntityType="InscricaoModel.GrupoDocumentoRequeridoItem" Width="2.75" PointX="17.125" PointY="25.75" />
+        <EntityTypeShape EntityType="InscricaoModel.GrupoOferta" Width="2.5" PointX="10" PointY="20.125" />
+        <EntityTypeShape EntityType="InscricaoModel.GrupoOfertaConfiguracaoEtapa" Width="2.75" PointX="17.125" PointY="17.625" />
+        <EntityTypeShape EntityType="InscricaoModel.HierarquiaOferta" Width="2.25" PointX="3.125" PointY="17.75" />
+        <EntityTypeShape EntityType="InscricaoModel.ItemHierarquiaOferta" Width="2.25" PointX="7.875" PointY="13" />
+        <EntityTypeShape EntityType="InscricaoModel.Oferta" Width="2.5" PointX="1.375" PointY="10.875" />
+        <EntityTypeShape EntityType="InscricaoModel.Processo" Width="3.5" PointX="12.75" PointY="8.25" />
+        <EntityTypeShape EntityType="InscricaoModel.ProcessoIdioma" Width="2.625" PointX="22" PointY="4.75" />
+        <EntityTypeShape EntityType="InscricaoModel.TextoSecaoPagina" Width="2.75" PointX="31.75" PointY="22.5" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoDocumento" Width="2.25" PointX="25.75" PointY="20.5" />
+        <AssociationConnector Association="InscricaoModel.FK_arquivo_secao_pagina_02" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_etapa_02" />
+        <AssociationConnector Association="InscricaoModel.FK_arquivo_secao_pagina_01" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_etapa_01" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_etapa_pagina_01" />
+        <AssociationConnector Association="InscricaoModel.FK_documento_requerido_01" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_documento_requerido_01" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_oferta_configuracao_etapa_01" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_etapa_pagina_idioma_01" />
+        <AssociationConnector Association="InscricaoModel.FK_texto_secao_pagina_01" />
+        <AssociationConnector Association="InscricaoModel.FK_documento_requerido_02" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_documento_requerido_item_01" />
+        <AssociationConnector Association="InscricaoModel.FK_etapa_processo_01" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_documento_requerido_item_02" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_oferta_01" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_oferta_configuracao_etapa_02" />
+        <AssociationConnector Association="InscricaoModel.FK_hierarquia_oferta_01" />
+        <AssociationConnector Association="InscricaoModel.FK_hierarquia_oferta_02" />
+        <AssociationConnector Association="InscricaoModel.FK_item_hierarquia_oferta_01" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_idioma_01" />
+        <EntityTypeShape EntityType="InscricaoModel.EnderecoEletronico" Width="2" PointX="3" PointY="4.375" />
+        <AssociationConnector Association="InscricaoModel.oferta_endereco_eletronico" />
+        <AssociationConnector Association="InscricaoModel.processo_endereco_eletronico" />
+        <EntityTypeShape EntityType="InscricaoModel.Telefone" Width="1.875" PointX="5.375" PointY="6.5" />
+        <AssociationConnector Association="InscricaoModel.oferta_telefone" />
+        <AssociationConnector Association="InscricaoModel.processo_telefone" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcesso" Width="2.5" PointX="17.125" PointY="4.875" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_01" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoHierarquiaOferta" Width="2" PointX="7.5" PointY="9.5" />
+        <AssociationConnector Association="InscricaoModel.FK_item_hierarquia_oferta_02" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_04" />
+        <InheritanceConnector EntityType="InscricaoModel.Oferta" />
+        <EntityTypeShape EntityType="InscricaoModel.Cliente" Width="2.5" PointX="10.25" PointY="0.875" />
+        <AssociationConnector Association="InscricaoModel.cliente_endereco_eletronico" />
+        <AssociationConnector Association="InscricaoModel.cliente_telefone" />
+        <AssociationConnector Association="InscricaoModel.FK_codigo_autorizacao_01" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_02" />
+        <EntityTypeShape EntityType="InscricaoModel.OfertaCodigoAutorizacao" Width="2.125" PointX="1" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_codigo_autorizacao_01" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_codigo_autorizacao_02" />
+        <EntityTypeShape EntityType="InscricaoModel.UnidadeResponsavel" Width="2.25" PointX="13.5" PointY="2.25" />
+        <AssociationConnector Association="InscricaoModel.unidade_responsavel_endereco_eletronico" />
+        <AssociationConnector Association="InscricaoModel.unidade_responsavel_telefone" />
+        <AssociationConnector Association="InscricaoModel.FK_codigo_autorizacao_02" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_03" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_02" />
+        <EntityTypeShape EntityType="InscricaoModel.OfertaPeriodoTaxa" Width="2.5" PointX="8" PointY="23.875" />
+        <EntityTypeShape EntityType="InscricaoModel.Taxa" Width="2.125" PointX="12" PointY="24.125" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_periodo_taxa_01" />
+        <AssociationConnector Association="InscricaoModel.FK_oferta_periodo_taxa_02" />
+        <AssociationConnector Association="InscricaoModel.FK_taxa_01" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoTaxa" Width="1.625" PointX="12.375" PointY="28.625" />
+        <AssociationConnector Association="InscricaoModel.FK_taxa_02" />
+        <AssociationConnector Association="InscricaoModel.FK_hierarquia_oferta_031" />
+        <EntityTypeShape EntityType="InscricaoModel.UnidadeResponsavelTipoProcesso" Width="2.25" PointX="17.75" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_tipo_processo_01" />
+        <AssociationConnector Association="InscricaoModel.FK_unidade_responsavel_tipo_processo_02" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoItemHierarquiaOferta" Width="2.25" PointX="7.875" PointY="17.5" />
+        <AssociationConnector Association="InscricaoModel.FK_item_hierarquia_oferta_03" />
+        <EntityTypeShape EntityType="InscricaoModel.ConfiguracaoFormulario" Width="2.375" PointX="20.75" PointY="0.625" />
+        <EntityTypeShape EntityType="InscricaoModel.ConfiguracaoModeloDocumento" Width="2.75" PointX="31.375" PointY="13" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_modelo_documento_03" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_formulario_01" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_modelo_documento_01" />
+        <AssociationConnector Association="InscricaoModel.FK_configuracao_modelo_documento_02" />
+        <EntityTypeShape EntityType="InscricaoModel.ProcessoCampoInscrito" Width="2.25" PointX="15.75" PointY="21.75" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_campo_inscrito_01" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoDadoFormulario" Width="2.875" PointX="35.5" PointY="17.875" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_dado_formulario_02" />
+        <EntityTypeShape EntityType="InscricaoModel.GrupoTaxa" Width="2.5" PointX="17.125" PointY="28.875" />
+        <EntityTypeShape EntityType="InscricaoModel.GrupoTaxaItem" Width="2.25" PointX="13.875" PointY="31.25" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_taxa_01" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_taxa_item_01" />
+        <AssociationConnector Association="InscricaoModel.FK_grupo_taxa_item_02" />
+        </Diagram>
+      <Diagram DiagramId="5ecff80e64b0419c997ee9b3b8cc3b42" Name="VIEWS-INTEGRA" ZoomLevel="91" >
+        <EntityTypeShape EntityType="InscricaoModel.ViewTipoDocumento" Width="2" PointX="1" PointY="1.375" />
+        <EntityTypeShape EntityType="InscricaoModel.DocumentoRequerido" Width="2.125" PointX="4.25" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FKVW_DocumentoRequerido_01" />
+        <EntityTypeShape EntityType="InscricaoModel.ViewInscricaoEnvioNotificacao" Width="3.125" PointX="4.875" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InscricaoModel.Inscricao" Width="2.375" PointX="1" PointY="5.5" />
+        <AssociationConnector Association="InscricaoModel.FKVW_InscricaoEnvioNotificacao_01" />
+        <EntityTypeShape EntityType="InscricaoModel.ViewTipoNotificacao" Width="2.25" PointX="12.875" PointY="0.75" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoNotificacaoAtributoAgendamento" Width="3" PointX="8.5" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FKVW_TipoNotificacaoAtributoAgendamento_01" />
+        <EntityTypeShape EntityType="InscricaoModel.ProcessoConfiguracaoNotificacao" Width="2.5" PointX="12.625" PointY="3.75" />
+        <AssociationConnector Association="InscricaoModel.FKVW_ProcessoConfiguracaoNotificacao_01" />
+        <EntityTypeShape EntityType="InscricaoModel.ViewEventoSae" Width="2.375" PointX="8.625" PointY="4" />
+      </Diagram>
+      <Diagram DiagramId="dba708653d474de189d716793e214a35" Name="HIS_NOT_001 - Notificação" ZoomLevel="37" >
+        <EntityTypeShape EntityType="InscricaoModel.Inscricao" Width="2.25" PointX="13.25" PointY="0.5" />
+        <EntityTypeShape EntityType="InscricaoModel.InscricaoEnvioNotificacao" Width="3.25" PointX="8.125" PointY="4" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_envio_notificacao_01" />
+        <EntityTypeShape EntityType="InscricaoModel.ParametroEnvioNotificacao" Width="3" PointX="11.25" PointY="8.5" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoNotificacao" Width="2.5" PointX="5" PointY="0.5" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoNotificacaoAtributoAgendamento" Width="2.875" PointX="9" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_envio_notificacao_03" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_notificacao_atributo_agendamento_01" />
+        <EntityTypeShape EntityType="InscricaoModel.ProcessoConfiguracaoNotificacao" Width="2.875" PointX="3.75" PointY="8" />
+        <EntityTypeShape EntityType="InscricaoModel.ProcessoConfiguracaoNotificacaoIdioma" Width="3" PointX="7" PointY="12.125" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_envio_notificacao_02" />
+        <AssociationConnector Association="InscricaoModel.FK_parametro_envio_notificacao_011" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_configuracao_notificacao_02" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_configuracao_notificacao_idioma_01" />
+        <EntityTypeShape EntityType="InscricaoModel.Processo" Width="2.625" PointX="0.5" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_inscricao_02" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_configuracao_notificacao_01" />
+        <EntityTypeShape EntityType="InscricaoModel.ProcessoIdioma" Width="2.125" PointX="0.875" PointY="12.25" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_idioma_01" />
+        <AssociationConnector Association="InscricaoModel.FK_processo_configuracao_notificacao_idioma_02" />
+      </Diagram>
+      <Diagram DiagramId="1f9b7d2fcaae4a15a76a5ac4872e2875" Name="HIS_INS_001 - Tipo de Processo" ZoomLevel="106" >
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcesso" Width="2.75" PointX="5.125" PointY="3.875" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcessoConsistencia" Width="2.125" PointX="9.625" PointY="0.625" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_processo_consistencia_01" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcessoSituacao" Width="2.125" PointX="2" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_processo_situacao_01" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcessoTemplate" Width="2.125" PointX="6" PointY="0.5" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_processo_template_01" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcessoTipoTaxa" Width="2.25" PointX="9.625" PointY="5" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_processo_tipo_taxa_01" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoTaxa" Width="1.5" PointX="12.875" PointY="5.375" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_processo_tipo_taxa_02" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcessoDocumento" Width="2.125" PointX="0.875" PointY="5.875" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_processo_documento_01" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoDocumento" Width="1.5" PointX="1.375" PointY="9.875" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_processo_documento_02" />
+        <EntityTypeShape EntityType="InscricaoModel.TipoProcessoCampoInscrito" Width="2.875" PointX="10" PointY="8.75" />
+        <AssociationConnector Association="InscricaoModel.FK_tipo_processo_campo_inscrito_01" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

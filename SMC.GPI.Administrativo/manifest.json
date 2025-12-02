@@ -1,0 +1,25 @@
+{
+  //PUC Aberta
+  "short_name": "GPI Adm",
+  "name": "GPI Administrativo",
+  "description": "GPI Administrativo",
+  "theme_color": "#015459",
+
+  "icons": [
+    {
+      "src": "../../Recursos/Inscricoes/4.0/GPI.Administrativo/GPI/Images/gpi-adm-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "../../Recursos/Inscricoes/4.0/GPI.Administrativo/GPI/Images/gpi-adm-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+
+  "start_url": "../GPI.Administrativo",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff"
+}

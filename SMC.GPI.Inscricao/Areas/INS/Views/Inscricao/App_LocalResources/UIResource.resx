@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Outros_Enderecos_Eletronicos_Label" xml:space="preserve">
+    <value>Outros endereços eletrônicos</value>
+  </data>
+  <data name="Documentos_Detalhe_Titulo" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="CodigoAutorizacao_Botao_Insert_CodigosAutorizacao_Tooltip" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="CodigoAutorizacao_CodigosAutorizacao_Detalhe_Titulo" xml:space="preserve">
+    <value>Código(s) de Autorização</value>
+  </data>
+  <data name="Botao_Insert_DocumentosAdicionais_Tooltip" xml:space="preserve">
+    <value>Novo Documento</value>
+  </data>
+  <data name="InstrucoesFinais_Botao_Sair" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="InstrucoesFinais_Botao_Sair_Tooltip" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="DadosPessoais_Label" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="Contatos_Label" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="Label_Opcao" xml:space="preserve">
+    <value>{0}ª opção</value>
+  </data>
+  <data name="ConfirmarInscricao_fieldsetDocumentos_Fieldset_Legenda" xml:space="preserve">
+    <value>Documento(s)</value>
+  </data>
+  <data name="ConfirmarInscricao_fieldsetProcesso_Fieldset_Legenda" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="Processo_Label" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="Naturalidade_Label" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="Telefones_Label" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="UploadDocumentos_Botao_Insert_DocumentosAdicionais_Tooltip" xml:space="preserve">
+    <value>Adicionar documento</value>
+  </data>
+  <data name="Identidade_Label" xml:space="preserve">
+    <value>RG</value>
+  </data>
+  <data name="InstrucoesFinais_fieldsetComprovantes_Fieldset_Legenda" xml:space="preserve">
+    <value>Comprovantes</value>
+  </data>
+  <data name="InstrucoesFinais_fieldsetTaxas_Fieldset_Legenda" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="Filiacao_Label" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="Email_Label" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ComprovanteInscricao_Protocolo_Assinatura_Atendente" xml:space="preserve">
+    <value>Assinatura (Atendente)</value>
+  </data>
+  <data name="ComprovanteInscricao_Protocolo_Nome_Label" xml:space="preserve">
+    <value>Inscrito(a)</value>
+  </data>
+  <data name="ComprovanteInscricao_Protocolo_Preenchimento_Assinatura" xml:space="preserve">
+    <value>____________________________________ _____/_____/________</value>
+  </data>
+  <data name="Protocolo_Inscricao_Titulo" xml:space="preserve">
+    <value>Protocolo de Inscrição</value>
+  </data>
+  <data name="Mensagem_Nao_Informado" xml:space="preserve">
+    <value>Não informado</value>
+  </data>
+  <data name="Botao_Linkcomprovante" xml:space="preserve">
+    <value>Comprovante</value>
+  </data>
+  <data name="Label_Opcao_Completa" xml:space="preserve">
+    <value>{0}ª opção =&gt; {1}</value>
+  </data>
+  <data name="ConfirmarInscricao_Confirmacao" xml:space="preserve">
+    <value>Ao confirmar, os dados informados não poderão ser alterados. Deseja prosseguir? &lt;br/&gt;Observação: esta operação poderá levar alguns instantes.</value>
+  </data>
+  <data name="ConfirmarInscricao_Confirmacao_Title" xml:space="preserve">
+    <value>Confirmação</value>
+  </data>
+  <data name="SelecaoOferta_Botao_Clear_Tooltip" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="SelecaoOferta_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Botao_Navegacao_Anterior" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="_ListarTaxasOferta_Label_Taxa" xml:space="preserve">
+    <value>Taxa</value>
+  </data>
+  <data name="_ListarTaxasOferta_Label_Taxa_Quantidade" xml:space="preserve">
+    <value>Quantidade</value>
+  </data>
+  <data name="Label_Taxa_Inscricao" xml:space="preserve">
+    <value>Boleto</value>
+  </data>
+  <data name="BoletoInscricao_Label_Banco_Agencia_Cedente" xml:space="preserve">
+    <value>BANCO / AGÊNCIA / CÓDIGO CEDENTE</value>
+  </data>
+  <data name="BoletoInscricao_Label_Cedente" xml:space="preserve">
+    <value>BENEFICIÁRIO</value>
+  </data>
+  <data name="BoletoInscricao_Label_Data_Pagamento" xml:space="preserve">
+    <value>DATA DO PAGAMENTO</value>
+  </data>
+  <data name="BoletoInscricao_Label_Data_Processamento" xml:space="preserve">
+    <value>DATA DO PROCESSAMENTO</value>
+  </data>
+  <data name="BoletoInscricao_Label_Data_Vencimento" xml:space="preserve">
+    <value>DATA DE VENCIMENTO</value>
+  </data>
+  <data name="BoletoInscricao_Label_Demonstrativo_Despesas" xml:space="preserve">
+    <value>DEMONSTRATIVO DE DESPESAS</value>
+  </data>
+  <data name="BoletoInscricao_Label_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="BoletoInscricao_Label_Mensagens" xml:space="preserve">
+    <value>MENSAGENS</value>
+  </data>
+  <data name="BoletoInscricao_Label_Nosso_Numero" xml:space="preserve">
+    <value>NOSSO NÚMERO / CÓDIGO DO DOCUMENTO</value>
+  </data>
+  <data name="BoletoInscricao_Label_Quantidade" xml:space="preserve">
+    <value>Qtd</value>
+  </data>
+  <data name="BoletoInscricao_Label_Sacado" xml:space="preserve">
+    <value>PAGADOR</value>
+  </data>
+  <data name="BoletoInscricao_Label_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="BoletoInscricao_Label_Total_Geral" xml:space="preserve">
+    <value>Total Geral</value>
+  </data>
+  <data name="BoletoInscricao_Label_Valor" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="BoletoInscricao_Label_Valor_Cobrado" xml:space="preserve">
+    <value>VALOR COBRADO</value>
+  </data>
+  <data name="BoletoInscricao_Label_Valor_Documento" xml:space="preserve">
+    <value>VALOR DO DOCUMENTO</value>
+  </data>
+  <data name="BoletoInscricao_Texto_Recibo_Sabado" xml:space="preserve">
+    <value>RECIBO DO SACADO</value>
+  </data>
+  <data name="Botao_Linkcomprovante_Tooltip" xml:space="preserve">
+    <value>Comprovante</value>
+  </data>
+  <data name="Label_Taxa_Inscricao_Toolip" xml:space="preserve">
+    <value>Boleto</value>
+  </data>
+  <data name="_ListarTaxasOferta_Label_Taxa_Valor" xml:space="preserve">
+    <value>Valor unitário</value>
+  </data>
+  <data name="_ListarTaxasOferta_Label_Taxa_ValorTotal" xml:space="preserve">
+    <value>Valor total</value>
+  </data>
+  <data name="Label_Arquivo" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="Label_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Label_Tipo_Documento" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="UploadDocumentos_Botao_Insert_DocumentosAdicionais" xml:space="preserve">
+    <value>Adicionar documento</value>
+  </data>
+  <data name="UploadDocumentos_DocumentosOpcionais_Detalhe_Titulo" xml:space="preserve">
+    <value>Documentos opcionais</value>
+  </data>
+  <data name="Titulo_Documentos_Obrigatorios" xml:space="preserve">
+    <value>Documentos obrigatórios</value>
+  </data>
+  <data name="Label_Grupo_Documentos" xml:space="preserve">
+    <value>Grupos de documentos obrigatórios</value>
+  </data>
+  <data name="ConfirmarInscricao_fieldsetTaxas_Fieldset_Legenda" xml:space="preserve">
+    <value>Taxas da Inscrição</value>
+  </data>
+  <data name="ConfirmarInscricao_gridTaxas_Grid_Titulo" xml:space="preserve">
+    <value>Taxas da Inscrição</value>
+  </data>
+  <data name="ConfirmarInscricao_Total_Taxas" xml:space="preserve">
+    <value>Total das Taxas</value>
+  </data>
+  <data name="Enderecos_Eletronicos_Label" xml:space="preserve">
+    <value>Endereços Eletrônicos</value>
+  </data>
+  <data name="Nacionalidade_Label" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="ComprovanteInscricao_Label_Justificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="ComprovanteInscricao_Label_NumeroInscricao" xml:space="preserve">
+    <value>Registro:</value>
+  </data>
+  <data name="Fieldset_Taxas" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="ConfirmarInscricao_gridTaxas_DescricaoDisplay" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Mensagem_VagasOcupadas" xml:space="preserve">
+    <value>A quantidade máxima de candidatos pré-aprovados para {0} foi atingida. Havendo cancelamento ou indeferimento de alguma inscrição pré-aprovada, convocaremos novos candidatos.</value>
+  </data>
+  <data name="Mensagem_CpfFiador" xml:space="preserve">
+    <value>O CPF do fiador informado é o mesmo do candidato. O candidato não pode ser seu próprio fiador.</value>
+  </data>
+  <data name="Mensagem_NomeFiador" xml:space="preserve">
+    <value>O nome do fiador informado pertence a um dos pais do candidato. Os pais do candidato não podem ser seus fiadores.</value>
+  </data>
+  <data name="Botao_Navegacao_ConfirmarProsseguir" xml:space="preserve">
+    <value>Próximo</value>
+  </data>
+  <data name="Taxa_TituloPago" xml:space="preserve">
+    <value>O boleto já está pago. As taxas não poderão ser alteradas.</value>
+  </data>
+  <data name="Assert_ExisteBoletoInscricaoAlteracaoTaxa" xml:space="preserve">
+    <value>Já existe um boleto registrado, porém as taxas foram alteradas. Ao prosseguir, o boleto anterior será cancelado e um novo boleto será gerado com os novos valores. O sistema reconhecerá somente o pagamento do novo boleto. Deseja continuar?</value>
+  </data>
+  <data name="UploadDocumentos_DocumentosAdicionais_Detalhe_Titulo" xml:space="preserve">
+    <value>Documentos adicionais</value>
+  </data>
+  <data name="Titulo_Documentos_Opcionais" xml:space="preserve">
+    <value>Documentos opcionais</value>
+  </data>
+  <data name="Label_Informacao_Limite_Quantidade_Upload" xml:space="preserve">
+    <value>Para o(s) tipo(s) de documento(s) {0}, será permitido incluir no máximo 10 arquivos. Se a quantidade exceder este valor, agrupe-os e compacte-os em um único arquivo, respeitando o limite de tamanho de 5 MB.</value>
+  </data>
+  <data name="Label_Informacao_Limite_Upload" xml:space="preserve">
+    <value>Os arquivos anexados devem ter um tamanho máximo de 5 MB. Caso o arquivo ultrapasse esse tamanho, utilize ferramentas de compactação/compressão para reduzí-lo, antes de anexá-lo. Existem sites que permitem reduzir o tamanho de arquivos PDF de forma gratuita.</value>
+  </data>
+  <data name="Label_EntregaPosterior" xml:space="preserve">
+    <value>Entregarei posteriormente</value>
+  </data>
+  <data name="Label_EntregaPosterior_Data" xml:space="preserve">
+    <value>Entregarei até </value>
+  </data>
+  <data name="ConfirmarInscricao_fieldsetTermosEntrega_Fieldset_Legenda" xml:space="preserve">
+    <value>Termo de responsabilidade de entrega da documentação</value>
+  </data>
+  <data name="ComprovanteInscricao_fieldsetTermosEntrega_Fieldset_Legenda" xml:space="preserve">
+    <value>Termo de responsabilidade de entrega da documentação</value>
+  </data>
+  <data name="InscricaoDocumentoListaViewModel_NomeArquivoAnexado" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="MensagemBolsaExAluno" xml:space="preserve">
+    <value>Curso elegível à Bolsa Ex-aluno PUC Minas.</value>
+  </data>
+  <data name="MSG_Informativa_PDF" xml:space="preserve">
+    <value>Após clicar em "Próximo", os arquivos postados serão convertidos para o formato PDF. Para finalizar a inscrição, será necessário conferir e dar o aceite nas novas versões geradas.</value>
+  </data>
+  <data name="ConfirmarInscricao_fieldsetTermosOrientacaoPDF_Fieldset_Legenda" xml:space="preserve">
+    <value>Termo de aceite conversão PDF</value>
+  </data>
+  <data name="ComprovanteInscricaoPUCAberta_Protocolo_Assinatura_Atendente" xml:space="preserve">
+    <value>Assinatura (Atendente)</value>
+  </data>
+  <data name="ComprovanteInscricaoPUCAberta_Protocolo_Nome_Label" xml:space="preserve">
+    <value>Inscrito(a)</value>
+  </data>
+  <data name="ComprovanteInscricaoPUCAberta_Protocolo_Preenchimento_Assinatura" xml:space="preserve">
+    <value>____________________________________ _____/_____/________</value>
+  </data>
+  <data name="Titulo_Inscricoes" xml:space="preserve">
+    <value>Suas inscrições</value>
+  </data>
+  <data name="Titulo_Inscricoes_Agendamento" xml:space="preserve">
+    <value>Seus agendamentos</value>
+  </data>
+  <data name="Titulo_Inscricoes_Em_Aberto" xml:space="preserve">
+    <value>Veja o que temos para você:</value>
+  </data>
+  <data name="Titulo_Inscricoes_Entrega_De_Documentacao" xml:space="preserve">
+    <value>Seus Documentos</value>
+  </data>
+  <data name="Titulo_Inscricoes_Inscricao" xml:space="preserve">
+    <value>Suas Inscrições</value>
+  </data>
+  <data name="Texto_Imprimir_Qrcodes" xml:space="preserve">
+    <value>Baixar ingressos</value>
+  </data>
+  <data name="Botao_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Titulo_Pagina_Ingressos" xml:space="preserve">
+    <value>Ingressos</value>
+  </data>
+  <data name="Botao_Ingressos" xml:space="preserve">
+    <value>Ingressos</value>
+  </data>
+  <data name="MSG_Ingressos" xml:space="preserve">
+    <value>O credenciamento para a atividade pode ser realizado com {0} antes de seu início.</value>
+  </data>
+  <data name="Mensagem_Informativa_Checkin_Possui_Boleto" xml:space="preserve">
+    <value>Pagamento de taxa em aberto.</value>
+  </data>
+  <data name="Mensagem_Informativa_Checkin_Possui_Deferimento_Inscricao" xml:space="preserve">
+    <value>Aguardando deferimento da inscrição.</value>
+  </data>
+  <data name="Mensagem_Informativa_Checkin_Possui_Documentacao_Pendente" xml:space="preserve">
+    <value>Documentação {0}.</value>
+  </data>
+  <data name="Mensagem_Informativa_Checkin_Possui_Situacao_Indeferida_Cancelada" xml:space="preserve">
+    <value>Ingresso indisponível. {0}.</value>
+  </data>
+</root>

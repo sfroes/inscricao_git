@@ -1,0 +1,43 @@
+@model SMCPagerModel<InscricaoProcessoItemViewModel>
+
+<div class="smc-gpi-ingressos-menu">
+    @(Smc.List("listaInscricoesProcesso").HideRowTotalizer()
+         .AutoHideNavigator()
+         .DenyChangeNumberOfRowsPerPage()
+         .HtmlTemplate(
+        @<text>
+	        <div class="smc-gpi-painel-ingressos">
+                <p class="smc-gpi-ingresso-informacao">QR Codes disponíveis para acesso ao evento.</p>
+                @(Smc.Button("Home")
+                    .Type(SMCButtonType.Link)
+                    .CssClass("smc-btn-principal margin-top-30 margin-bottom-10")
+                    .Action("IndexProcesso", "Home", new { uidProcesso = Session["GuidProcesso"], @area = "" }))
+
+                @*@if (!item.PosssuiTaxas && item.PermiteEmitirComprovante) {
+                    @(Smc.Button("LinkComprovante").Action("DownloadDocumento", "Inscricao", new
+                                                            {
+                                                                @area = "INS",
+                                                                @id = SMCDESCrypto.EncryptNumberForURL(item.SeqArquivoComprovante)
+                                                            })
+                        .Type(SMCButtonType.Link)
+                        .CssClass("smc-btn-secundario")
+                        .Attribute("target", "_blank"))
+                }
+                else {*@
+                    @(Smc.Button(SMCButtonBehavior.Visualizar)
+                            .DisplayMode(SMCButtonDisplayMode.Text)
+                            .CssClass("smc-btn-principal")
+                            .Action("Visualizar", "Inscricao",
+                                    new
+                                    {
+                                        @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(item.SeqConfiguracaoEtapa),
+                                        @seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(item.SeqGrupoOferta),
+                                        @seqInscricao = SMCDESCrypto.EncryptNumberForURL(item.SeqInscricao),
+                                        @idioma = item.IdiomaInscricao,
+                                        @area = "INS"
+                                    }))
+
+                @*}*@
+
+        </text>))
+

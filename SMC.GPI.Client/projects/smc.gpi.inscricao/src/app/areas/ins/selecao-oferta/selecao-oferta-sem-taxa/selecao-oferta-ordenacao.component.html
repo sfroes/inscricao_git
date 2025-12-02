@@ -1,0 +1,81 @@
+@if (isLoading()) {
+  <p-skeleton width="100%" height="60px" styleClass="smc-gpi-skeleton-margin" />
+} @else {
+  <div cdkDropList (cdkDropListDropped)="ordernar($event)">
+    @for (oferta of listaOferta(); track oferta) {
+      <div
+        [class.smc-gpi-listbox-item-unico]="
+          !(
+            numeroNoFolha > 1 &&
+            selecaoOferta.numeroMaximoOfertaPorInscricao != 1
+          )
+        "
+        class="flex flex-wrap p-2 align-items-center gap-3 {{
+          verificaOfertaAtiva(oferta)
+        }}"
+        cdkDrag
+        [cdkDragDisabled]="desabilitarDragDrop()"
+        [cdkDragStartDelay]="{ touch: 500, mouse: 0 }"
+        (touchstart)="adcionarClasseMobile($event)"
+        (touchend)="removeClasseMobile($event)"
+      >
+        @if (
+          numeroNoFolha > 1 && selecaoOferta.numeroMaximoOfertaPorInscricao != 1
+        ) {
+          <p-tag
+            severity="info"
+            [value]="'opção ' + oferta.oferta.numeroOpcao.toString()"
+          />
+        } @else if (numeroNoFolha == 1) {
+          <p-tag severity="info" [value]="'Opção única'" />
+        } @else if (numeroNoFolha > 1) {
+          <p-tag severity="info" [value]="'Opção selecionada'" />
+        }
+
+        <div class="smc-gpi-desc-oferta flex-1 flex flex-column gap-2">
+          <span class="font-bold">{{ oferta.hierquia?.descricao }}</span>
+        </div>
+
+        @if (selecaoOferta.exigeJustificativaOferta) {
+          <textarea
+            maxlength="1000"
+            placeholder="* Informe a sua justificativa"
+            (keydown)="$event.stopPropagation()"
+            (blur)="
+              atulizarTextoJustificativa($event, oferta.oferta.numeroOpcao)
+            "
+            >{{ oferta.oferta.justificativaInscricao }}</textarea
+          >
+        }
+
+        @if (
+          numeroNoFolha > 1 && selecaoOferta.numeroMaximoOfertaPorInscricao != 1
+        ) {
+          <p-button
+            icon="pi pi-trash"
+            (onClick)="apagarOferta(oferta.oferta.numeroOpcao)"
+            class="smc-gpi-remove-opcao"
+          ></p-button>
+        }
+      </div>
+    }
+  </div>
+
+  @if (opcoesParaConvocacao().length > 0) {
+    <div class="smc-gpi-form-block">
+      <label for="opcoesParaConvocacao">
+        *Quantidade de opções para as quais deseja ser convocado(a), respeitando
+        a ordem de prioridade
+      </label>
+      <p-select
+        id="opcoesParaConvocacao"
+        [options]="opcoesParaConvocacao()"
+        [(ngModel)]="selecaoOferta.numeroOpcoesDesejadas"
+        (onChange)="opcaoSelecionadaConvocacao($event)"
+        [checkmark]="true"
+        placeholder="Selecione..."
+        class="w-full md:w-56"
+      />
+    </div>
+  }
+}

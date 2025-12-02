@@ -1,0 +1,12 @@
+﻿@model TipoProcessoViewModel
+
+@using (Smc.Div("fieldsetCadastroTipoProcessoTemplateProcesso").Begin())
+{
+    @Smc.MasterDetail(prop => prop.Templates).CssClass("smc-gpi-mestre-detalhe-customizado").MinimumItens(1)
+}
+
+@using (Smc.Div("fieldsetCadastroTipoProcessoSituacao").Begin())
+{
+    //TODO: CSS ou alteração do controle para esconder os botões do master detais (Adicionar e Excluir)
+    @Smc.MasterDetail(prop => prop.Situacoes).HideButtons().CssClass("smc-gpi-mestre-detalhe-customizado")
+}

@@ -1,0 +1,16 @@
+﻿//MESTRE DETALHE
+.smc-detalhe-editavel-ordenacao {
+    background-color: var(--white);
+
+    > span {
+        color: var(--color-primary) !important;
+    }
+}
+
+.smc-detalhe-editavel-titulo {
+    border-bottom: 1px solid var(--color-detail-h4) !important;
+}
+
+.smc-detalhe-editavel-botao-inserir {
+    border: 1px solid var(--color-detail-h4);
+}

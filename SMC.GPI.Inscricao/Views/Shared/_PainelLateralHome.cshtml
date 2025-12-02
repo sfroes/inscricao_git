@@ -1,0 +1,34 @@
+﻿
+@{
+    var buttons = Smc.ButtonSet();
+    if (TempData.ContainsKey("___seqProcessoAtual___"))
+    {
+        var uidProcesso = TempData["___seqProcessoAtual___"];
+        buttons.AddButton(Smc.Button("link-inicio")
+                 .CssClass("smc-gpi-btn-inicio")
+                 .Action("IndexProcesso", "Home", new { area = string.Empty, uidProcesso= uidProcesso })
+                 .SecurityToken(SMC.Inscricoes.Common.Areas.INS.Constants.UC_INS_002_03_01.HOME_INSCRICOES)
+                 .Type(SMCButtonType.Link))
+            .AddButton(Smc.Button("link-meusdados")
+                .CssClass("smc-gpi-btn-dados")
+                .Action("Cadastrar", "Inscrito", new { area = "INS", uidProcesso = uidProcesso })
+                .SecurityToken(SMC.Inscricoes.Common.Areas.INS.Constants.UC_INS_002_01_01.MANTER_INSCRITO)
+                .Type(SMCButtonType.Link));
+
+
+    } else {
+        buttons.AddButton(Smc.Button("link-inicio")
+         .CssClass("smc-gpi-btn-inicio")
+         .Action("IndexHome", "Home", new { area = string.Empty })
+         .SecurityToken(SMC.Inscricoes.Common.Areas.INS.Constants.UC_INS_002_03_01.HOME_INSCRICOES)
+         .Type(SMCButtonType.Link))
+    .AddButton(Smc.Button("link-meusdados")
+        .CssClass("smc-gpi-btn-dados")
+        .Action("Cadastrar", "Inscrito", new { area = "INS" })
+        .SecurityToken(SMC.Inscricoes.Common.Areas.INS.Constants.UC_INS_002_01_01.MANTER_INSCRITO)
+        .Type(SMCButtonType.Link));
+    }
+
+}
+@buttons
+

@@ -1,0 +1,71 @@
+﻿@using SMC.GPI.Administrativo.Models
+
+@model BotaoConfigurarEtapaProcessoViewModel
+
+@{
+    List<LinkViewModel> listaLinks = new List<LinkViewModel>();
+
+    Dictionary<string, object> parametros = new Dictionary<string, object>();
+    parametros.Add("seqConfiguracaoEtapa", (SMCEncryptedLong)Model.SeqConfiguracaoEtapa);
+    parametros.Add("seqEtapa", (SMCEncryptedLong)Model.SeqEtapa);
+    parametros.Add("seqProcesso", (SMCEncryptedLong)Model.SeqProcesso);    
+
+    LinkViewModel Alterar = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "EditarConfiguracaoEtapa")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "EditarConfiguracaoEtapa")),
+        Controller = "ConfiguracaoEtapa",
+        Action = "Editar",
+        Parameters = new Dictionary<string, object>()
+        {
+            { "seq", (SMCEncryptedLong)Model.SeqConfiguracaoEtapa }
+        }
+    };
+
+    LinkViewModel ConfiguracaoPagina = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "Configuracaopaginaetapa")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "Configuracaopaginaetapa")),
+        Controller = "ConfiguracaoEtapaPagina",
+        Action = "Index",
+        Parameters = parametros
+    };
+
+    LinkViewModel DocumentacaoRequerida = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "Documentacaorequerida")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "Documentacaorequerida")),
+        Controller = "DocumentoRequerido",
+        Action = "Index",
+        Parameters = parametros
+    };
+
+    LinkViewModel GrupoDocumentacaoRequerida = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "Grupodocumentacaorequerida")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "Grupodocumentacaorequerida")),
+        Controller = "GrupoDocumentoRequerido",
+        Action = "Index",
+        Parameters = parametros
+    };
+
+    listaLinks = new List<LinkViewModel>() { Alterar, ConfiguracaoPagina, DocumentacaoRequerida, GrupoDocumentacaoRequerida };
+
+    switch (Model.Action)
+    {
+        case EtapaProcessoActionsEnum.Alterar:
+            listaLinks.Remove(Alterar);
+            break;
+        case EtapaProcessoActionsEnum.ConfiguracaoPagina:
+            listaLinks.Remove(ConfiguracaoPagina);
+            break;
+        case EtapaProcessoActionsEnum.DocumentacaoRequerida:
+            listaLinks.Remove(DocumentacaoRequerida);
+            break;
+        case EtapaProcessoActionsEnum.GrupoDocumentacaoRequerida:
+            listaLinks.Remove(GrupoDocumentacaoRequerida);
+            break;
+    }
+
+    @Html.Partial("_BotaoConfigurar", listaLinks);
+}

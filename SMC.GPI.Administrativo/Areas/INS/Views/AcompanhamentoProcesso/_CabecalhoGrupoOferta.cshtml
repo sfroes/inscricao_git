@@ -1,0 +1,31 @@
+﻿@model ConsultaConsolidadaGrupoOfertaListaViewModel
+
+@using (Smc.Header("header_" + Model.Seq, SMCHeaderType.Secondary).CssClass("smc-header-button")
+                    .Item(prop => prop.Descricao, sizeSM: SMCSize.Grid23_24, sizeMD: SMCSize.Grid23_24, sizeLG: SMCSize.Grid23_24, sizeXS: SMCSize.Grid23_24)
+                    .Item(prop => prop.Total, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.OfertasNaoSelecionadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.Iniciadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.Finalizadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.Pagas, sizeSM: SMCSize.Grid2_24, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                    .Item(prop => prop.DocumentacoesEntregues, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.Confirmadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.NaoConfirmadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.Deferidos, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.Indeferidos, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Item(prop => prop.Canceladas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                    .Begin())
+{
+
+    string guid = Guid.NewGuid().ToString();
+
+    @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).Orientation(SMCOrientation.Vertical)
+            .AddComponent(Smc.ContextMenu("menu-componente-config-" + guid)
+                                .DefaultButton()
+                                .OpenEvent(SMCMouseEvent.LeftClick)
+                                .Item(@Smc.GetUIResource("Botao_Consultar_Inscricoes_Grupo_Oferta"), "ConsultarInscricaoProcesso", "AcompanhamentoProcesso",
+                                new
+                                {
+                                    seqGrupoOFerta = (SMCEncryptedLong)Model.Seq,
+                                    seqProcesso = (SMCEncryptedLong)Model.SeqProcesso
+                                })))
+}

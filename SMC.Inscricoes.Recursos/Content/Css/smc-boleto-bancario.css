@@ -1,0 +1,486 @@
+body {
+    font-family: Verdana;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.boleto-legenda {
+    font-size: 8px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.boleto-abaixo {
+    vertical-align: bottom !important;
+}
+
+.boleto-item {
+    font-size: 11px;
+    vertical-align: bottom;
+}
+
+.boleto-item-destaque {
+    font-size: 13px;
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+.boleto-titulo {
+    text-align: right;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.boleto-destaque {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.boleto-banco {
+    font-size: 17px;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.boleto-divisor {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.boleto-tabela {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.boleto-table td {
+    padding: 0; /*text-align: center;*/
+}
+
+.boleto-com-borda {
+    border: solid 1px #000000;
+}
+
+.smc-gpi-titulo-instituicao-boleto {
+    width: 100%;
+    min-height: 25px;
+    min-height: 80px;
+}
+
+.smc-gpi-titulo-instituicao-boleto-img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border: 1px solid red;
+}
+
+.smc-gpi-titulo-instituicao-boleto-img img {
+        width: 100%;
+        height: auto;
+    }
+
+.smc-gpi-titulo-instituicao-boleto-txt {
+    float: left;
+    min-height: 80px;
+}
+
+.smc-gpi-titulo-instituicao-boleto-txt h1 {
+        font-size: 15px;
+        float: left;
+        margin: 30px 0 0 35px;
+    }
+
+.smc-gpi-cabecalho-boleto {
+    display: inline-table;
+    width: 99.9%;
+    border: solid 1px #000000;
+}
+
+.smc-gpi-cabecalho-boleto li {
+        float: left;
+        display: inline-table;
+        font-size: 9px;
+
+    }
+
+/*.smc-gpi-cabecalho-boleto > li > span {
+        text-transform: uppercase;
+        margin-left: 2px;
+    }*/
+
+/*.smc-gpi-cabecalho-boleto li span p {
+        font-size: 12px;
+        margin: 0px 0px 0px 4px;
+    }*/
+
+.smc-gpi-cabecalho-boleto li div {
+            margin: 8px 8px 0 8px;
+            display: block;
+        }
+
+.smc-gpi-cabecalho-boleto li div label {
+                margin: 0;
+                padding: 0;
+            }
+
+.smc-gpi-cabecalho-boleto li div p {
+                clear: both;
+                font-weight: 600;
+                font-size: 13px;
+                margin: 0;
+                padding: 0;
+            }
+
+.smc-gpi-cabecalho-boleto-espaco-base {
+    height: 45px;
+    margin-top: 13px;
+}
+
+.smc-gpi-cabecalho-boleto-sacado {
+    width: 59.5%;
+    min-height: 90px;
+    border-right: solid 1px #000000;
+}
+
+.smc-gpi-cabecalho-boleto-sacado > span > label {
+        color: #000000;
+        font-family: Verdana;
+        text-transform: uppercase;
+        font-size: 9px;
+        padding-left: 2px;
+        display: inline-block;
+        margin-top: 2px;
+    }
+
+.smc-gpi-cabecalho-boleto-sacado > span > p {
+    color: #000000;
+    font-family: Verdana;
+    font-size: 14px;
+    margin: 0px 0px 0px 4px;
+    margin-right: 5px;
+}
+
+.smc-gpi-cabecalho-boleto-processamento {
+    width: 20%;
+    min-height: 90px;
+    border-right: solid 1px #000000;
+}
+
+.smc-gpi-cabecalho-boleto-processamento > span > label {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 9px;
+        padding-left: 2px;
+        display: inline-block;
+        margin-top: 2px;
+    }
+
+.smc-gpi-cabecalho-boleto-processamento > span p {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 14px;
+        margin: 0px 0px 0px 4px;
+        text-align: right;
+        margin-right: 5px;
+    }
+
+.smc-gpi-cabecalho-boleto-vencimento {
+    width: 20%;
+    min-height: 90px;
+}
+
+.smc-gpi-cabecalho-boleto-conteudo-vencimento {
+    width: 100%;
+    display: inline-table;
+}
+
+.smc-gpi-cabecalho-boleto-conteudo-vencimento > li  {
+        width: 100%;
+        min-height: 45px;
+    }
+
+.smc-gpi-cabecalho-boleto-conteudo-vencimento > li > span > label {
+            color: #000000;
+            font-family: Verdana;
+            font-size: 9px;
+            padding-left: 2px;
+            text-align: right;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+.smc-gpi-cabecalho-boleto-conteudo-vencimento > li > span > p {
+            color: #000000;
+            font-family: Verdana;
+            font-size: 14px;
+            margin: 0px 0px 0px 4px;
+            text-align: right;
+            margin-right: 5px;
+            text-align: right;
+        }
+
+.smc-gpi-cabecalho-boleto-conteudo-vencimento li:first-child {
+            border-bottom: solid 1px #000000;
+        }
+
+.smc-gpi-demonstrativo-boleto {
+    border: solid 1px #000000;
+    width: 99.85%;
+    min-height: 185px;
+    margin-top: 10px;
+}
+
+.smc-gpi-demonstrativo-coluna-despesas {
+    width: 59.6%;
+    float: left;
+    border-right: solid 1px #000000;
+    min-height: 260px;
+}
+
+.smc-gpi-demonstrativo-coluna-despesas span {
+        margin-top: 12px;
+        /*background-color: #ff0000;*/
+    }
+
+.smc-gpi-demonstrativo-coluna-mensagens {
+    width: 40%;
+    float: left;
+    min-height: 260px;
+}
+
+.smc-gpi-demonstrativo-boleto-cabecalho {
+    display: inline-table;
+    min-height: 25px;
+    width: 100%;
+    text-align: center;
+    border-bottom: solid 1px #000000;
+}
+
+.smc-gpi-demonstrativo-boleto-cabecalho > ul > li {
+        font-kerning: auto;
+    }
+
+.smc-gpi-demonstrativo-boleto-cabecalho li {
+        min-height: 19px;
+        font-weight: 600;
+        /*font-size: 12px;*/
+        padding-top: 6px;
+    }
+
+.smc-gpi-demonstrativo-boleto-corpo {
+    display: inline-table;
+    min-height: 25px;
+    width: 100%;
+}
+
+.smc-gpi-demonstrativo-boleto-corpo ul li table {
+        font-size: 11px;
+        width: 98%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+.smc-gpi-demonstrativo-boleto-corpo ul li table thead {
+            font-weight: 600;
+        }
+
+.smc-gpi-demonstrativo-boleto-corpo ul li table thead tr td {
+                padding: 5px 10px 5px 7px;
+            }
+
+.smc-gpi-demonstrativo-boleto-corpo ul li table tbody tr td {
+            padding: 5px 10px 5px 7px;
+        }
+
+.smc-gpi-demonstrativo-label-total {
+    text-align: right;
+}
+
+.smc-gpi-demonstrativo-valor-total {
+    border-top: solid 1px #000000;
+}
+
+.smc-gpi-demonstrativo-boleto-corpo p {
+    font-size: 11px;
+    width: 96%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.smc-gpi-demonstrativo-boleto-corpo div {
+    font-size: 11px;
+    width: 96%;
+    margin-top: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-weight: 600;
+    display: block;
+}
+
+.smc-gpi-demonstrativo-boleto-rodape {
+    display: inline-table;
+    min-height: 90px;
+    width: 100%;
+    border-top: solid 1px #000000;
+}
+
+.smc-gpi-demonstrativo-boleto-rodape ul li ul li div {
+        margin: 8px 8px 0 8px;
+        display: block;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape ul li ul li div label {
+            margin: 0;
+            padding: 0;
+            font-size: 8px;
+        }
+
+.smc-gpi-demonstrativo-boleto-rodape ul li ul li div p {
+            clear: both;
+            font-weight: 600;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+        }
+
+.smc-gpi-demonstrativo-boleto-rodape li {
+        min-height: 45px;
+        padding-top: 1px;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-cedente {
+    width: 66.8%;
+    float: left;
+    border-right: solid 1px #000000;
+    border-bottom: solid 1px #000000;
+}
+
+.smc-gpi-demonstrativo-boleto-rodape-cedente > span > label {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 9px;
+        padding-left: 2px;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-cedente > span > p {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 14px;
+        margin: 0px 0px 0px 4px;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-valor {
+    width: 33%;
+    float: left;
+    border-bottom: solid 1px #000000;
+}
+
+.smc-gpi-demonstrativo-boleto-rodape-valor > span > label {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 9px;
+        padding-left: 2px;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-valor > span > p {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 14px;
+        margin: 0px 0px 0px 4px;
+        text-align: right;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-codigodoc {
+    width: 33.35%;
+    float: left;
+    border-right: solid 1px #000000;
+}
+
+.smc-gpi-demonstrativo-boleto-rodape-codigodoc > span > label {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 9px;
+        padding-left: 2px;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-codigodoc > span > p {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 14px;
+        margin: 0px 0px 0px 4px;
+        text-align: left;
+        padding-right: 2px;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-banco {
+    width: 33.38%;
+    float: left;
+    border-right: solid 1px #000000;
+}
+
+.smc-gpi-demonstrativo-boleto-rodape-banco > span > label {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 9px;
+        padding-left: 2px;
+        text-align: left;
+        display: block;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-banco > span > p {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 14px;
+        margin: 0px 0px 0px 4px;
+        text-align: left;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-datapg {
+    width: 33%;
+    float: left;
+}
+
+.smc-gpi-demonstrativo-boleto-rodape-datapg > span > label {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 9px;
+        padding-left: 2px;
+        text-align: left;
+        display: block;
+    }
+
+.smc-gpi-demonstrativo-boleto-rodape-datapg > span > p {
+        color: #000000;
+        font-family: Verdana;
+        font-size: 14px;
+        margin: 0px 0px 0px 4px;
+        text-align: right;
+    }
+
+.smc-gpi-separador-boleto {
+    border-bottom: dashed 1px #000000;
+    margin: 15px 0 15px 0;
+    padding-bottom: 10px;
+}
+
+.smc-gpi-separador-boleto > span{
+    font-size: 14px;
+}
+
+.smc-gpi-separador-boleto div {
+    font-size: 8px;
+    text-align: right;
+    display: block;
+    width: 100%;
+}

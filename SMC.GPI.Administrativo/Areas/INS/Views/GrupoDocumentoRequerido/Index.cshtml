@@ -1,0 +1,45 @@
+﻿@model GrupoDocumentosRequeridosFiltroViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.ContextMenu)
+}
+
+@Html.Action("CabecalhoProcessoEtapaConfiguracao", "ConfiguracaoEtapa", new { @seqEtapa = Model.SeqEtapa, @seqProcesso = Model.SeqProcesso, @seqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa, @action = EtapaProcessoActionsEnum.GrupoDocumentacaoRequerida, @exibirBotaoConfiguracaoEtapaProcesso = true })
+
+@using (Smc.Form("formPesquisaGrupoDocumentacaoRequerida", "ListarGrupoDocumentacaoRequerida").Ajax("#divGridGrupoDocumentacaoRequerida").Begin())
+{
+    using (Smc.Div("fieldsetPesquisaGrupoDocumentacaoRequerida").Begin())
+    {
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirGrupoDocumentacaoRequerida")
+                .Text(Smc.GetUIResource("Botao_Incluir_Grupo_Documentacao_Requerida"))
+                .Tooltip(Smc.GetUIResource("Botao_Incluir_Grupo_Documentacao_Requerida_Tooltip"))
+                .Ajax(isPost: false, updateTargetId: "modalIncluirGrupoDocumentacaoRequerida")
+                .CssClass("smc-btn-novo-icotext-destaque")
+                .SecurityToken(UC_INS_001_03_16.MANTER_GRUPO_DOCUMENTACAO_REQUERIDA)
+                    .Url(Url.Action("Incluir", "GrupoDocumentoRequerido", new { @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(Model.SeqConfiguracaoEtapa) })))
+        )
+    }
+}
+
+<div id="divGridGrupoDocumentacaoRequerida">
+    @Html.Action("ListarGrupoDocumentacaoRequerida")
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Index", new { @seqEtapaProcesso = (SMCEncryptedLong)Model.SeqEtapa, @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso }, "ConfiguracaoEtapa")
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-voltar-icotext"))
+)
+
+@using (Smc.ModalWindow("modalIncluirGrupoDocumentacaoRequerida")
+        .Title(Smc.GetUIResource("Incluir_Grupo_Documentacao_Requerida"))
+        .Size(SMCModalWindowSize.Large)
+        .Form("IncluirGrupoDocumentacaoRequerida", "Salvar", "GrupoDocumentoRequerido", null, true, x=>x.Ajax("#divGridGrupoDocumentacaoRequerida"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{
+
+}

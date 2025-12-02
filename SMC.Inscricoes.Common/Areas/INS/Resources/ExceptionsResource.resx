@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdiantamentoOfertaDataFimMaiorException" xml:space="preserve">
+    <value>Existem ofertas que não foram selecionadas para alteração do período da etapa, que ficarão com a data fim maior que a nova data fim da configuração. A alteração de período da configuração {0} não pode ser realizada.</value>
+  </data>
+  <data name="AdiantamentoProrrogacaoEtapaException" xml:space="preserve">
+    <value>Na lista de ofertas selecionadas para a configuração {0}, existem ofertas com data fim maior e com data fim menor que a nova data informada. Não é possível prorrogar e antecipar ofertas ao mesmo tempo.</value>
+  </data>
+  <data name="AdicionarPaginaEtapaLiberadaException" xml:space="preserve">
+    <value>Uma página só pode ser adicionada se a etapa do processo estiver "Aguardando Liberação" ou "Em  Manutenção".</value>
+  </data>
+  <data name="AlteracaoConfiguracaoEtapaLiberadaException" xml:space="preserve">
+    <value>Para realizar essa alteração a situação da etapa precisa estar em "Manutenção" ou "Aguardando Liberação".</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoEtapaLiberadaException" xml:space="preserve">
+    <value>Alteração de documento não permitida. É necessário que a situação da etapa esteja "Em Manutenção" ou "Aguardando Liberação".</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoObrigatorioException" xml:space="preserve">
+    <value>A obrigatoriedade de entrega deste documento não pode ser alterada, pois existem inscrições com documentação entregue.</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoObrigatorioGrupoException" xml:space="preserve">
+    <value>Este documento não pode ser alterado para entrega obrigatória, pois faz parte de um grupo de documentação requerida.</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoTipoDocumentoException" xml:space="preserve">
+    <value>Alteração do tipo de documento não permitida. Já existem inscrições com este tipo de documento cadastrado.</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoUploadEmGrupoException" xml:space="preserve">
+    <value>Este documento não pode ser alterado para upload obrigatório pois faz parte de um grupo de documentação requerida.</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoUploadObrigatorioException" xml:space="preserve">
+    <value>A obrigatoriedade de upload deste documento não pode ser alterada, pois existem inscrições com documentação cadastrada.</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoVersaoException" xml:space="preserve">
+    <value>Alteração de versão de documento não permitida. Existem inscrições com este documento cadastrado com versão "Cópia Simples".</value>
+  </data>
+  <data name="AlteracaoEtapaDataInvalidaException" xml:space="preserve">
+    <value>Alteração não permitida. O período de vigência da etapa deve ser maior ou igual ao período de vigência de suas configurações.</value>
+  </data>
+  <data name="AlteracaoEtapaNaoPermitidaException" xml:space="preserve">
+    <value>Alteração não permitida. A etapa já possui configurações cadastradas.</value>
+  </data>
+  <data name="AlteracaoGrupoOfertaEtapaLiberadaException" xml:space="preserve">
+    <value>Para incluir ou alterar um grupo de ofertas, a situação da etapa de inscrição deve estar “Aguardando Liberação“ ou “Em Manutenção”.</value>
+  </data>
+  <data name="AlteracaoOfertaCodigoAutorizacaoComInscricaoException" xml:space="preserve">
+    <value>Existe inscrição com o código de autorização {0}. Não foi possível excluí-lo.</value>
+  </data>
+  <data name="ERR_ProcessoPossuiTaxaENaoPossuiEventoSaeException" xml:space="preserve">
+    <value>Em processos que possuem gestão de eventos e taxa associada, o Evento SAE deve ser informado, para o controle orçamentário das receitas.</value>
+  </data>
+  <data name="AlteracaoOfertaComInscricaoException" xml:space="preserve">
+    <value>Existe inscrição nesta oferta, não é possível alterar o tipo de item de hierarquia de oferta.</value>
+  </data>
+  <data name="AlteracaoOfertaEtapaLiberadaException" xml:space="preserve">
+    <value>Para alterar os dados da oferta, a situação da etapa de inscrição deve estar "Aguardando liberação" ou "Em manutenção".</value>
+  </data>
+  <data name="AlteracaoOfertaGrupoOfertaComInscricaoException" xml:space="preserve">
+    <value>Existe inscrição para esta oferta no grupo {0}. Não é possível alterá-lo.</value>
+  </data>
+  <data name="AlteracaoOfertaSomenteComCodigoException" xml:space="preserve">
+    <value>Existe inscrição nesta oferta onde nenhum código de autorização foi informado. Não é possível configurar a oferta para que as inscrições sejam feitas somente com o código de autorização.</value>
+  </data>
+  <data name="AlteracaoPaginaEtapaComInscricaoException" xml:space="preserve">
+    <value>Alteração não permitida. Já existem inscrições com este formulário preenchido.</value>
+  </data>
+  <data name="AlteracaoPaginaEtapaLiberadaException" xml:space="preserve">
+    <value>Alteração não permitida. É necessário que a situação da etapa esteja "Em Manutenção" ou "Aguardando liberação" para realizá-la.</value>
+  </data>
+  <data name="AlteracaoProcessoEventoTaxaCadastradaException" xml:space="preserve">
+    <value>Existe taxa cadastrada para as ofertas do processo. Não é possível alterar o evento financeiro.</value>
+  </data>
+  <data name="AlteracaoProcessoHieraquiaCadastradaException" xml:space="preserve">
+    <value>Existe hierarquia cadastrada para este processo, não é possível alterar o tipo de hierarquia de oferta.</value>
+  </data>
+  <data name="AlteracaoProcessoIdiomasAlteradosException" xml:space="preserve">
+    <value>Existe página configurada para o idioma {0} no processo. Não é possível alterar este idioma</value>
+  </data>
+  <data name="AlteracaoProcessoInscricaoLiberadaException" xml:space="preserve">
+    <value>Para alterar os dados do processo, a situação de todas as etapas do processo, que ainda não foram encerradas, deve estar “Aguardando Liberação“ ou “Em Manutenção".</value>
+  </data>
+  <data name="AlteracaoProcessoMaximoInscricoesInvalidoException" xml:space="preserve">
+    <value>A quantidade máxima de inscrições não pode ser diminuída, pois existe inscrito com {0} inscrições, que excede o valor máximo informado de {1}.</value>
+  </data>
+  <data name="AlteracaoProcessoMaximoOpcoesInvalidoException" xml:space="preserve">
+    <value>Existe inscrição em que foram escolhidas mais opções que o valor informado. Não é possível diminuir o número máximo de opções por inscrição para este valor.</value>
+  </data>
+  <data name="AlteracaoProcessoTemplateProcessoException" xml:space="preserve">
+    <value>Existe etapa cadastrada para este processo, não é possível alterar o template de processo.</value>
+  </data>
+  <data name="AlteracaoProcessoTipoHierarquiaDesativadoException" xml:space="preserve">
+    <value>Este tipo de hierarquia foi desativado para o tipo de processo informado. Ele não pode mais ser utilizado.</value>
+  </data>
+  <data name="AlteracaoProcessoTipoProcessoDesativadoException" xml:space="preserve">
+    <value>Este tipo de processo foi desativado. Ele não pode mais ser utilizado.</value>
+  </data>
+  <data name="AlteracaoProcessoTipoTaxaDesativadaException" xml:space="preserve">
+    <value>O tipo de taxa {0} foi desativado para o tipo de processo informado. Ele não pode mais ser utilizado.</value>
+  </data>
+  <data name="AlteracaoTemplateProcessoDesativadoException" xml:space="preserve">
+    <value>O template {0} foi desativado. Ele não pode mais ser utilizado.</value>
+  </data>
+  <data name="AlteracoDocumentoRequeridoSexoException" xml:space="preserve">
+    <value>Alteração da obrigatoriedade de documentação por sexo não permitida, pois existem inscrições com documentação entregue.</value>
+  </data>
+  <data name="AssociacaoOfertaGrupoException" xml:space="preserve">
+    <value>Associação não permitida. A data de vigência da oferta {0} não está dentro do período da configuração da etapa de inscrição do grupo de oferta em questão.</value>
+  </data>
+  <data name="BoletoInscricaoCanceladaException" xml:space="preserve">
+    <value>Não é possível emitir o boleto. {0}</value>
+  </data>
+  <data name="BoletoInscricaoOfertaPeriodoTaxaFechadaException" xml:space="preserve">
+    <value>Não é possível emitir o boleto, pois ele está vencido e não existe outro válido para ser emitido.</value>
+  </data>
+  <data name="CadastroOfertaPeriodoTaxaNaoPermitidoException" xml:space="preserve">
+    <value>Para cadastrar taxa em lote, é necessário que o processo tenha taxa, evento financeiro e oferta cadastrados.</value>
+  </data>
+  <data name="CancelamentoOfertaInvalidoException" xml:space="preserve">
+    <value>Para cancelar uma oferta é necessário informar a data e o motivo do cancelamento.</value>
+  </data>
+  <data name="CodigoAutorizacaoInvalidoParaInscricaoException" xml:space="preserve">
+    <value>Código de autorização inválido.</value>
+  </data>
+  <data name="ConfiguracaoEtapaImagemObrigatoriaException" xml:space="preserve">
+    <value>A imagem é obrigatória para a etapa de inscrição.</value>
+  </data>
+  <data name="ConfiguracaoEtapaInvalidaException" xml:space="preserve">
+    <value>Configuração de etapa inválida.</value>
+  </data>
+  <data name="ConfiguracaoEtapaNaoVigenteException" xml:space="preserve">
+    <value>O período de {0} para {1} terminou.</value>
+  </data>
+  <data name="ConfiguracaoEtapaPaginaIdiomaInvalidaException" xml:space="preserve">
+    <value>Configuração de página x etapa x idioma inválida.</value>
+  </data>
+  <data name="ConfiguracaoNotificacaoEtapaLiberadaException" xml:space="preserve">
+    <value>Para incluir ou alterar uma configuração de notificação, a situação de todas as etapas do processo que ainda não foram encerradas deve estar “Aguardando Liberação“ ou “Em Manutenção”.</value>
+  </data>
+  <data name="ConfiguracaoOfertaForaPeriodoException" xml:space="preserve">
+    <value>Existe pelo menos uma oferta no grupo "{0}" cujo período de vigência não está contido no período de vigência desta configuração.</value>
+  </data>
+  <data name="ConfiguracaoPaginaExibicaoInvalidaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Existe página cujos itens a seguir não foram configurados: “Exibir dados na página de confirmação de inscrição?” e “Exibir dados no comprovante de inscrição?".</value>
+  </data>
+  <data name="ConfiguracaoPaginaIdiomaTipoFormularioDesativadoException" xml:space="preserve">
+    <value>O tipo de formulário do formulário informado foi desativado. Ele não pode mais ser utilizado.</value>
+  </data>
+  <data name="ConfiguracaoVigenciaForaEtapaException" xml:space="preserve">
+    <value>O período de vigência da configuração deve estar contido no período de vigência da etapa do processo.</value>
+  </data>
+  <data name="CopiaConfiguracaoEtapaLiberadaException" xml:space="preserve">
+    <value>Para realizar cópia de configuração, a situação da etapa destino precisa estar em “Manutenção” ou “Aguardando Liberação”.</value>
+  </data>
+  <data name="DataEntregaDocumentacaoNotificacaoException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Existe notificação configurada para este processo utilizando a data limite de entrega da documentação e esta informação não foi preenchida em todas as configurações desta etapa.</value>
+  </data>
+  <data name="DesassociacaoOfertaComInscricaoException" xml:space="preserve">
+    <value>Alteração não permitida. Já foram realizadas inscrições para a oferta {0}.</value>
+  </data>
+  <data name="DescricaoDocumentacaoNotificacaoException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Existe notificação configurada para este processo utilizando a descrição da entrega da documentação e esta informação não foi preenchida em todas as configurações desta etapa.</value>
+  </data>
+  <data name="DesfazerSituacaoMaximoExcedidoException" xml:space="preserve">
+    <value>Existe inscrito que já atingiu o limite inscrições permitidas no processo. Não é permitido desfazer a situação.</value>
+  </data>
+  <data name="DocumentoRequeridoNaoObrigatorioUploadObrigatorioException" xml:space="preserve">
+    <value>Um documento cujo upload é obrigatório deverá ter entrega obrigatória.</value>
+  </data>
+  <data name="DocumentoRequeridoNaoPermiteVariosArquivosException" xml:space="preserve">
+    <value>Não é permitido fazer o upload de mais de um arquivo para o documento "{0}".</value>
+  </data>
+  <data name="DuplicacaoPaginaEtapaLiberadaException" xml:space="preserve">
+    <value>Uma página só pode ser duplicada se a etapa do processo estiver "Em manutenção" ou "Aguardando liberação".</value>
+  </data>
+  <data name="EnderecoEletronicoUnidadeReponsavelNotificacaoException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe notificação configurada para este processo utilizando a tag de endereço eletrônico da unidade responsável e não existe nenhum endereço eletrônico cadastrado para a unidade responsável deste processo.</value>
+  </data>
+  <data name="EnderecoUnidadeReponsavelNotificacaoException" xml:space="preserve">
+    <value>Não é permitda a liberação desta etapa. Existe notificação configurada para este processo utilizando a tag de endereço da unidade responsável e não existe nenhum endereço cadastrado para a unidade responsável deste processo.</value>
+  </data>
+  <data name="EntregaDocumentoSemDataException" xml:space="preserve">
+    <value>Por favor informe a data de entrega do documento.</value>
+  </data>
+  <data name="EnvioNotificacaoException" xml:space="preserve">
+    <value>Erro inesperado ao enviar notificação.</value>
+  </data>
+  <data name="EtapaProcessoEmManutencaoException" xml:space="preserve">
+    <value>O processo de {0} encontra-se em manutenção.</value>
+  </data>
+  <data name="EtapaProcessoTipoProcessoDesativadoException" xml:space="preserve">
+    <value>O tipo de processo informado para o processo foi desativado. Informe um tipo de processo ativo pra o processo antes de cadastrar a etapa.</value>
+  </data>
+  <data name="EtapaProcessoTipoTemplateDesativadoException" xml:space="preserve">
+    <value>O template de processo informado para o processo foi desativado. Informe um template de processo ativo para o processo antes de cadastrar a etapa.</value>
+  </data>
+  <data name="EtapaProrrogacaoSituacaoInvalidaException" xml:space="preserve">
+    <value>Para alterar o período da etapa do processo, é necessário que ela esteja "Em manutenção".</value>
+  </data>
+  <data name="ExclusaoConfiguracaoEtapaLiberadaException" xml:space="preserve">
+    <value>Uma configuração de etapa só pode ser excluída se a etapa do processo estiver "Aguardando Liberação" ou "Em Manutenção".</value>
+  </data>
+  <data name="ExclusaoDocumentoRequeridoComInscricaoException" xml:space="preserve">
+    <value>Exclusão de documento requerido não permitida. Existem inscrições com documentação entregue.</value>
+  </data>
+  <data name="ExclusaoDocumentoRequeridoEtapaLiberadaException" xml:space="preserve">
+    <value>Exclusão de documento requerido não permitida. É necessário que a situação da etapa esteja "Em Manutenção" ou "Aguardando Liberação" para realizá-la.</value>
+  </data>
+  <data name="ExclusaoEtapaLiberadaException" xml:space="preserve">
+    <value>Uma etapa só pode ser excluída se ela estiver "Aguardando Liberação" ou "Em Manutenção".</value>
+  </data>
+  <data name="ExclusaoGrupoDocumentoComInscricaoException" xml:space="preserve">
+    <value>Exclusão de grupo de documentação requerida não permitida. Existem inscrições com documentação entregue.</value>
+  </data>
+  <data name="ExclusaoGrupoDocumentoInscricaoComDocumentosException" xml:space="preserve">
+    <value>Exclusão de grupo de documentação requerida não permitida. Existem inscrições com documento cadastrado.</value>
+  </data>
+  <data name="ExclusaoInscricaoDocumentoInvalidaException" xml:space="preserve">
+    <value>Para o documento {0} é necessário existir ao menos um registro.</value>
+  </data>
+  <data name="ExclusaoPaginaEtapaLiberadaException" xml:space="preserve">
+    <value>Uma página só pode ser excluída se a etapa do processo estiver "Aguardando Liberação" ou "Em Manutenção".</value>
+  </data>
+  <data name="ExclusaoPeriodoTaxaEtapaLiberadaExcetpion" xml:space="preserve">
+    <value>Para exclusão de um período de taxa a situação da etapa de inscrição do processo deve estar "Aguardando Liberação" ou "Em Manutenção".</value>
+  </data>
+  <data name="ExclusaoTaxaComBoletoException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem inscrições realizadas para esta(s) oferta(s) com a taxa {0}</value>
+  </data>
+  <data name="ExclusaoTipoTaxaJaUtilizadaException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem inscrições realizadas com a taxa {0}.</value>
+  </data>
+  <data name="ExtensaoDocumentoInvalidaException" xml:space="preserve">
+    <value>O arquivo {0} não é permitido. Favor enviar uma das extensões válidas: doc, docx, xls, xlsx, jpg, jpeg, png, pdf, rar, zip, ps, xml. &lt;br&gt;</value>
+  </data>
+  <data name="FK_codigo_autorizacao_02" xml:space="preserve">
+    <value>Não é possível excluir a unidade responsável pois ela já possui códigos de autorização cadastrados.</value>
+  </data>
+  <data name="FK_configuracao_etapa_01" xml:space="preserve">
+    <value>Não é possível excluir a etapa. Ela já possui configurações cadastradas.</value>
+  </data>
+  <data name="FK_configuracao_etapa_notificacao_01" xml:space="preserve">
+    <value>Não é possível excluir a configuração de etapa. Já existe(m) notificação(ões) cadastradas para a configuração.</value>
+  </data>
+  <data name="FK_configuracao_etapa_pagina_01" xml:space="preserve">
+    <value>Não é possível excluir a configuração de etapa. Já existe(m) página(s) cadastradas para a configuração.</value>
+  </data>
+  <data name="FK_documento_requerido_01" xml:space="preserve">
+    <value>Não é possível excluir a configuração de etapa. Já existe(m) documento(s)  requerido(s) cadastrados para a configuração.</value>
+  </data>
+  <data name="FK_documento_requerido_02" xml:space="preserve">
+    <value>Não é possível excluir o tipo de documento. Ele já está sendo utilizado por um ou mais documento requerido.</value>
+  </data>
+  <data name="FK_etapa_processo_01" xml:space="preserve">
+    <value>Não é possível excluir o processo pois ele já possui etapas cadastradas.</value>
+  </data>
+  <data name="FK_grupo_documento_requerido_01" xml:space="preserve">
+    <value>Não é possível excluir a configuração de etapa. Já existe(m) grupo(s) de documentos  requeridos cadastrados para a configuração.</value>
+  </data>
+  <data name="FK_grupo_documento_requerido_item_01" xml:space="preserve">
+    <value>Não é possível excluir a documentação requerida. Ela já foi associada a um grupo de documentação.</value>
+  </data>
+  <data name="FK_grupo_oferta_01" xml:space="preserve">
+    <value>Não é possível excluir o processo pois ele já possui grupos de oferta cadastrados.</value>
+  </data>
+  <data name="FK_grupo_oferta_configuracao_etapa_01" xml:space="preserve">
+    <value>Não é possível excluir a configuração de etapa. Já existe(m) grupo(s) de ofertas associados à configuração.</value>
+  </data>
+  <data name="FK_grupo_oferta_configuracao_etapa_02" xml:space="preserve">
+    <value>Exclusão não permitida. Este grupo de oferta já foi associado a uma configuração de etapa.</value>
+  </data>
+  <data name="FK_hierarquia_oferta_01" xml:space="preserve">
+    <value>Não é possível excluir o processo pois ele já possui hierarquia de oferta cadastrada.</value>
+  </data>
+  <data name="FK_hierarquia_oferta_03" xml:space="preserve">
+    <value>Não é possível excluir o tipo de item hierarquia oferta. Ele já está sendo utilizado por uma ou mais hierarquia oferta.</value>
+  </data>
+  <data name="FK_inscricao_02" xml:space="preserve">
+    <value>Não é possível excluir o processo pois ele já possui inscrições.</value>
+  </data>
+  <data name="FK_inscricao_03" xml:space="preserve">
+    <value>Não é possível excluir a configuração de etapa. Já existe(m) inscrição(ões) cadastradas que estão nesta configuração.</value>
+  </data>
+  <data name="FK_inscricao_historico_pagina_02" xml:space="preserve">
+    <value>Não é permitido excluir a página. Existe inscrição com esta página em seu histórico de navegação.</value>
+  </data>
+  <data name="FK_inscricao_historico_situacao_02" xml:space="preserve">
+    <value>Não é possível excluir a etapa. Já existem inscrições com situação nesta etapa.</value>
+  </data>
+  <data name="FK_inscricao_historico_situacao_03" xml:space="preserve">
+    <value>Não é possível excluir a situação do tipo de processo. Já existem inscrições que estão nesta situação.</value>
+  </data>
+  <data name="FK_inscricao_oferta_02" xml:space="preserve">
+    <value>Exclusão não permitida. Já existe inscrição para esta oferta.</value>
+  </data>
+  <data name="FK_item_hierarquia_oferta_02" xml:space="preserve">
+    <value>Não é possível excluir o tipo de hierarquia de oferta. Ele já está sendo utilizado por um ou mais item hierarquia oferta.</value>
+  </data>
+  <data name="FK_item_hierarquia_oferta_03" xml:space="preserve">
+    <value>Não é possível excluir o tipo de item de hierarquia de oferta. Ele já está sendo utilizado por um ou mais itens de hierarquia oferta.</value>
+  </data>
+  <data name="FK_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida. A hierarquia de oferta já possui ofertas associadas.</value>
+  </data>
+  <data name="FK_oferta_02" xml:space="preserve">
+    <value>Não é possível excluir o Grupo de Oferta. Ele já possui ofertas associadas.</value>
+  </data>
+  <data name="FK_oferta_codigo_autorizacao_01" xml:space="preserve">
+    <value>Exclusão não permitida. Código de Autorização já foi associado a uma oferta.</value>
+  </data>
+  <data name="FK_oferta_codigo_autorizacao_02" xml:space="preserve">
+    <value>Não é possível excluir a hierarquia de oferta. Ela já está sendo utilizada por outras hierarquias de oferta.</value>
+  </data>
+  <data name="FK_oferta_periodo_taxa_02" xml:space="preserve">
+    <value>Não foi possível excluir a taxa. Ela já está sendo utilizada por uma oferta do processo.</value>
+  </data>
+  <data name="FK_processo_01" xml:space="preserve">
+    <value>Não é possível excluir o tipo de processo. Ele já foi associado a um ou mais processos.</value>
+  </data>
+  <data name="FK_processo_configuracao_notificacao_01" xml:space="preserve">
+    <value>Não é possível excluir o processo pois ele possui notificações cadastradas.</value>
+  </data>
+  <data name="FK_processo_configuracao_notificacao_idioma_02" xml:space="preserve">
+    <value>Não é possível excluir o processo pois ele possui notificações cadastradas.</value>
+  </data>
+  <data name="FK_taxa_02" xml:space="preserve">
+    <value>Não é possível excluir o tipo de taxa. Ele já está sendo utilizado por uma ou mais taxas.</value>
+  </data>
+  <data name="FK_tipo_processo_situacao_01" xml:space="preserve">
+    <value>Não é possível excluir o tipo de processo. Ele já possui situações cadastradas.</value>
+  </data>
+  <data name="FK_tipo_processo_template_01" xml:space="preserve">
+    <value>Não é possível excluir o tipo de processo. Ele já possui templates cadastrados.</value>
+  </data>
+  <data name="FK_tipo_processo_tipo_taxa_01" xml:space="preserve">
+    <value>Não é possível excluir o tipo de processo. Ela já possui tipos de taxa cadastrados.</value>
+  </data>
+  <data name="FK_tipo_processo_tipo_taxa_02" xml:space="preserve">
+    <value>Não é possível excluir o tipo de taxa. Ela está configurada para uso por um ou mais tipos de processo.</value>
+  </data>
+  <data name="FK_unidade_responsavel_tipo_processo_01" xml:space="preserve">
+    <value>Não foi possível excluir o tipo de processo. Ele já está sendo utilizado por uma ou mais unidades responsáveis.</value>
+  </data>
+  <data name="GrupoDocumentoAlteracaoMinimoException" xml:space="preserve">
+    <value>Não é permitido alterar a quantidade mínima de documentos obrigatórios, pois existe inscrição com documentos cadastrados.</value>
+  </data>
+  <data name="GrupoDocumentoAlteradoItemAlteracoException" xml:space="preserve">
+    <value>Não é permitido remover o documento {0} do grupo, pois existe inscrição com este documento entregue.</value>
+  </data>
+  <data name="GrupoDocumentoAumentoMinimoException" xml:space="preserve">
+    <value>Não é permitido alterar a quantidade mínima de documentos obrigatórios, pois existe inscrição com a documentação entregue.</value>
+  </data>
+  <data name="GrupoDocumentoDocumentoSemUploadException" xml:space="preserve">
+    <value>Não é permitido criar um grupo com upload obrigatório se algum de seus documentos não tiver sido configurado para permitir upload.</value>
+  </data>
+  <data name="GrupoDocumentoMinimoItensInvalidoException" xml:space="preserve">
+    <value>A quantidade de documentos deve ser maior que o número mínimo de documentos obrigatórios.</value>
+  </data>
+  <data name="GrupoDocumentoUploadItensAlteradosException" xml:space="preserve">
+    <value>Não é permitido alterar os itens do grupo. Já existem inscrições com documentos pertencentes ao grupo.</value>
+  </data>
+  <data name="GrupoDocumentoUploadObrigatorioInvalidoException" xml:space="preserve">
+    <value>{0} de grupo de documentação requerida não permitida. Existem inscrições com documentação cadastrada.</value>
+  </data>
+  <data name="GrupoJaAssociadoOutraConfiguracaoException" xml:space="preserve">
+    <value>Este grupo já foi associado a outra configuração da etapa {0}.</value>
+  </data>
+  <data name="HierarquiaOfertaEtapaLiberadaException" xml:space="preserve">
+    <value>Para excluir um item da hierarquia, a situação da etapa de inscrição deve estar “Aguardando Liberação“ ou “Em Manutenção”.</value>
+  </data>
+  <data name="HierarquiaOfertaTipoHierarquiaOfertaDesativadoException" xml:space="preserve">
+    <value>O tipo de hierarquia de oferta informado para o processo foi desativado. Informe um tipo de hierarquia de oferta ativo pra o processo antes de criar sua hierarquia de ofertas.</value>
+  </data>
+  <data name="HierarquiaOfertaTipoProcessoDesativadoException" xml:space="preserve">
+    <value>O tipo de processo informado para o processo foi desativado. Informe um tipo de processo ativo pra o processo antes de criar sua hierarquia de ofertas.</value>
+  </data>
+  <data name="HierquiaOfertaAlteradaInvalidaException" xml:space="preserve">
+    <value>Este item de hierarquia de oferta possui filhos.Não é possível alterá-lo.</value>
+  </data>
+  <data name="InclusaoDocumentoRequeridoDocumentacaoEntregueException" xml:space="preserve">
+    <value>Inclusão de documento requerido não permitida. Existem inscrições com documentação entregue, portanto só é permitida a inclusão de documentos não obrigatórios.</value>
+  </data>
+  <data name="InclusaoDocumentoRequeridoEtapaLiberadaException" xml:space="preserve">
+    <value>Inclusão de documento requerido não permitida. É necessário que a situação da etapa esteja "Em Manutenção" ou "Aguardando liberação" para realizá-la.</value>
+  </data>
+  <data name="InclusaoDocumentoRequeridoUploadObrigatorioException" xml:space="preserve">
+    <value>Inclusão de documento requerido não permitida. Existem inscrições realizadas com documentos cadastrados, portanto só é permitida a inclusão de documentos com upload não obrigatório.</value>
+  </data>
+  <data name="InclusaoPeriodoTaxaEtapaLiberadaExcetpion" xml:space="preserve">
+    <value>Para inclusão de taxas em lote a situação da etapa de inscrição do processo deve estar "Aguardando Liberação" ou "Em Manutenção".</value>
+  </data>
+  <data name="InsclusaoGrupoDocumentoDocumentacaoEntregueException" xml:space="preserve">
+    <value>Inclusão de grupo de documentação requerida não permitida. Existem inscrições com documentação entregue.</value>
+  </data>
+  <data name="InscricaoComOfertaInvalidaException" xml:space="preserve">
+    <value>{0} {1} para {2} não está mais disponível. Retorne à página de seleção e escolha outra opção.</value>
+  </data>
+  <data name="InscricaoExigeCodigoAutorizacaoException" xml:space="preserve">
+    <value>A oferta selecionada exige a informação de um código de autorização.</value>
+  </data>
+  <data name="InscricaoExistenteComCodigoAutorizacaoException" xml:space="preserve">
+    <value>Existe inscrição com o código de autorização {0}. Somente a descrição pode ser alterada.</value>
+  </data>
+  <data name="InscricaoInvalidaException" xml:space="preserve">
+    <value>Inscrição inválida.</value>
+  </data>
+  <data name="InscricaoJaExistenteException" xml:space="preserve">
+    <value>Inscrição já existe!</value>
+  </data>
+  <data name="InscricaoJaFinalizadaException" xml:space="preserve">
+    <value>Essa inscrição já está finalizada, não é permitido realizar alterações. Localize suas inscrições em “Minhas Inscrições” e clique em “Visualizar” para ver os dados das suas inscrições finalizadas.</value>
+  </data>
+  <data name="InscricaoNaOfertaSemTaxaException" xml:space="preserve">
+    <value>Existe inscrição para esta oferta. Não é possível incluir uma nova taxa obrigatória.</value>
+  </data>
+  <data name="InscricaoQuantidadeTaxasInferiorMininoException" xml:space="preserve">
+    <value>Existe inscrição com uma quantidade mínima inferior ao novo valor informado para a taxa {0}. Não é possível aumentar a quantidade mínima para {1}.</value>
+  </data>
+  <data name="InscricaoQuantidadeTaxasSuperiorMaximoException" xml:space="preserve">
+    <value>Existe inscrição com uma quantidade máxima superior ao novo valor informado para a taxa {0}, Não é possível diminuir a quantidade máxima para {1}.</value>
+  </data>
+  <data name="InscricaoSemTaxaException" xml:space="preserve">
+    <value>Para a oferta selecionada o pagamento de taxa é obrigatório, gentileza informar uma taxa.</value>
+  </data>
+  <data name="InscritoInvalidoException" xml:space="preserve">
+    <value>Inscrito inválido.</value>
+  </data>
+  <data name="JaExisteInscricaoIniciadaParaEsseGrupoOfertaINSCRICAOException" xml:space="preserve">
+    <value>Você possui uma inscrição iniciada. Localize-a em "Suas inscrições" e clique em "Continuar inscrição".</value>
+  </data>
+  <data name="LiberacaoEtapaCodigoSemPaginaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe oferta com código de autorização cadastrado, cujo fluxo de páginas da configuração da etapa de inscrição do grupo ao qual a oferta pertence não possui a página de Código de Autorização.</value>
+  </data>
+  <data name="LiberacaoEtapaNotificacaoNaoConfiguradaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe notificação que não foi configurada para todos os idiomas do processo.</value>
+  </data>
+  <data name="LiberacaoEtapaSemConfiguracaoException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Não existe configuração cadastrada.</value>
+  </data>
+  <data name="LiberacaoEtapaSemIdiomasConfiguradosException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Existe página cujo título não foi configurado para todos os idiomas do processo.</value>
+  </data>
+  <data name="LiberacaoEtapaSemOfertaAtivaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Não existe grupo de oferta com ofertas ativas e não canceladas associado à sua configuração.</value>
+  </data>
+  <data name="MaximoInscricoesPorInscritoAtingidoAGENDAMENTOException" xml:space="preserve">
+    <value>Você atingiu o número máximo de agendamentos permitidos para este processo.</value>
+  </data>
+  <data name="MesmaTaxaLancamentosConcorrentesException" xml:space="preserve">
+    <value>Uma mesma taxa não pode ter dois lançamentos com períodos coincidentes.</value>
+  </data>
+  <data name="MudancaGrupoDocumentoEtapaLiberadaException" xml:space="preserve">
+    <value>{0} de grupo de documentação requerida não permitida. É necessário que a situação da etapa esteja "Em Manutenção" ou "Aguardando Liberação" para realizá-la.</value>
+  </data>
+  <data name="NotifacaoSemConfiguracaoIdiomaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe notificação que não foi configurada para todos os idiomas do processo.</value>
+  </data>
+  <data name="NotificacaoAgendamentoSemParametroException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe notificação que permite agendamento sem parametrização de envio de notificação.</value>
+  </data>
+  <data name="NotificaoExisteDescricaoDocumentacaoException" xml:space="preserve">
+    <value>Existe notificação configurada para esta configuração de etapa utilizando a data de limite da entrega da documentação, não é permitido apagar essa informação.</value>
+  </data>
+  <data name="NotificaoExistenteConfiguracaoEtapaException" xml:space="preserve">
+    <value>Existe notificação configurada para esta configuração de etapa utilizando a data de limite da entrega da documentação, não é permitido apagar essa informação.</value>
+  </data>
+  <data name="NovaOfertaEtapaLiberadaException" xml:space="preserve">
+    <value>Para incluir uma nova oferta, a situação da etapa de inscrição deve estar “Aguardando Liberação“ ou “Em Manutenção”.</value>
+  </data>
+  <data name="NumeroEditalNotificacaoException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe notificação configurada para este processo utilizando o número do edital e esta informação não foi preenchida em todas as configurações da etapa</value>
+  </data>
+  <data name="NumeroMaximoTaxasExcedidoException" xml:space="preserve">
+    <value>O número de taxas para {0} é maior que o máximo ({1}).</value>
+  </data>
+  <data name="NumeroMinimoTaxasExcedidoException" xml:space="preserve">
+    <value>O número de taxas para {0} é inferior ao mínimo ({1}).</value>
+  </data>
+  <data name="OfertaComCodigoSemPaginaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe oferta com código de autorização cadastrado, cujo fluxo de páginas da configuração da etapa de inscrição do grupo ao qual a oferta pertence não possui a página de Código de Autorização.</value>
+  </data>
+  <data name="OfertaPeriodoTaxaFechadaException" xml:space="preserve">
+    <value>A taxa não se encontra em aberto para a oferta selecionada</value>
+  </data>
+  <data name="OfertaVencimentoInvalidoException" xml:space="preserve">
+    <value>A data de vencimento do título das taxas deve ser maior ou igual à data fim de seus períodos de taxa e à data fim inscrição da oferta.</value>
+  </data>
+  <data name="PaginaSemFormularioException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Não foi configurado formulário para todos os idiomas do processo.</value>
+  </data>
+  <data name="PeriodoIncompletoTaxaOfertaException" xml:space="preserve">
+    <value>O período total cadastrado para a taxa {0} deve ser consecutivo e igual ao período da oferta.</value>
+  </data>
+  <data name="PeriodoVigenciaOfertaInvalidoException" xml:space="preserve">
+    <value>O período de vigência da oferta deve estar contido no período de vigência da configuração da etapa de inscrição do grupo ao qual a oferta está associada.</value>
+  </data>
+  <data name="PermissaoInscricaoForaPrazoCoincidenteException" xml:space="preserve">
+    <value>Operação não permitida. Existe permissão de inscrição fora do prazo com período coincidente ao informado.</value>
+  </data>
+  <data name="PesquisaInscricaoInvalidaException" xml:space="preserve">
+    <value>Não foi possível pesquisar as inscrições. Informe mais opções de filtro.</value>
+  </data>
+  <data name="ProcessoCanceladoException" xml:space="preserve">
+    <value>Processo cancelado.</value>
+  </data>
+  <data name="ProcessoCentroCustoDesativadoException" xml:space="preserve">
+    <value>O centro de custo deste evento foi desativado. Ele não pode mais ser utilizado.</value>
+  </data>
+  <data name="ProcessoDestinoNaoPossuiEtapaException" xml:space="preserve">
+    <value>O processo {0} não possui a etapa {1}. Não é possível copiar as configurações.</value>
+  </data>
+  <data name="ProcessoEventoVencidoException" xml:space="preserve">
+    <value>O evento informado está vencido. Ele não pode ser associado ao processo.</value>
+  </data>
+  <data name="ProcessoNaoConfiguradoNoIdiomaException" xml:space="preserve">
+    <value>Processo não está devidamente configurado no idioma informado.</value>
+  </data>
+  <data name="ProcessoTemplateDesativadoException" xml:space="preserve">
+    <value>Este template foi desativado para o tipo de processo informado. Ele não pode mais ser utilizado.</value>
+  </data>
+  <data name="ProrrogacaoEtapaDataInvalidaException" xml:space="preserve">
+    <value>A nova data/hora fim da configuração não pode ser menor que a data/hora de agora, tampouco pode ser menor que a data/hora atualmente atribuída à configuração.</value>
+  </data>
+  <data name="ProrrogacaoEtapaDataOfertaMaiorConfiguracaoException" xml:space="preserve">
+    <value>Existe oferta da configuração "{0}", que possui data fim maior que a nova data informada. Não é possível antecipar a data da configuração.</value>
+  </data>
+  <data name="ProrrogacaoEtapaDataVencimentoInvalidaException" xml:space="preserve">
+    <value>A data de vencimento do título não pode ser menor que a data da configuração.</value>
+  </data>
+  <data name="ProrrogacaoEtapaDiferenteInscricaoException" xml:space="preserve">
+    <value>A prorrogação de etapa está disponível somente para etapas de inscrição.</value>
+  </data>
+  <data name="RegistroDocumentacaoSituacaoInscricaoInvalidaException" xml:space="preserve">
+    <value>A inscrição ainda não foi finalizada. Não é possivel registrar a documentação entregue.</value>
+  </data>
+  <data name="RemocaoGrupoComOfertaException" xml:space="preserve">
+    <value>Existem inscrições realizadas para oferta(s) do grupo {0}. Não é permitido desassociá-lo.</value>
+  </data>
+  <data name="SecaoArquivoNaoCadastradaIdiomasException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Existe página cuja seção de arquivo não foi configurada para todos os idiomas do processo.</value>
+  </data>
+  <data name="SecaoTextoNaoCadastradaIdiomasException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. Existe página cuja seção de texto não foi configurada para todos os idiomas do processo.</value>
+  </data>
+  <data name="SeqParametroCreiDiferentesException" xml:space="preserve">
+    <value>Existe mais de um SeqParametroCrei configurado para esta oferta</value>
+  </data>
+  <data name="SituacaoExigeMotivoException" xml:space="preserve">
+    <value>A situação informada exige a seleção de um motivo.</value>
+  </data>
+  <data name="SituacaoInscricaoAlteradaAnteriormenteException" xml:space="preserve">
+    <value>A inscrição do(a) inscrito(a) {0} não se encontra na situação {1} e não pode ser alterada para a situação {2}.</value>
+  </data>
+  <data name="SituacaoNaoPossuiDestinosManuaisException" xml:space="preserve">
+    <value>A situação {0} não permite mudança manual de situação.</value>
+  </data>
+  <data name="SituacaoTokenNaoIdentificadaException" xml:space="preserve">
+    <value>Não foi possível identificar a situação com token "{0}" para o tipo de processo.</value>
+  </data>
+  <data name="SitucaoExigeJustificativaException" xml:space="preserve">
+    <value>O motivo informado exige justificativa.</value>
+  </data>
+  <data name="TelefoneUnidadeReponsavelNotificacaoException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe notificação configurada para este processo utilizando a tag de telefone da unidade responsável e não existe nenhum telefone cadastrado para a unidade responsável deste processo.</value>
+  </data>
+  <data name="TemplateProcessoAssociadoProcessoException" xml:space="preserve">
+    <value>O template de processo {0} já foi associado a um processo do tipo {1}. Ele não pode ser alterado, tampouco excluído, somente desativado.</value>
+  </data>
+  <data name="TipoHierarquiaOfertaAssociadoException" xml:space="preserve">
+    <value>Não é permitido alterar o tipo de hierarquia de oferta, pois ele já foi associado a um processo.</value>
+  </data>
+  <data name="TipoTaxaAssociadaProcessoException" xml:space="preserve">
+    <value>O tipo de taxa {0} já foi associado a um processo do tipo {1}. Ele não pode ser alterado, tampouco excluído, somente desativado.</value>
+  </data>
+  <data name="UN_arquivo_secao_pagina_01" xml:space="preserve">
+    <value>Já existe arquivo configurado com essa ordem nessa seção página x idioma.</value>
+  </data>
+  <data name="ArquivosSecaoOrdemRepetidaException" xml:space="preserve">
+    <value>Já existe arquivo configurado com essa ordem nessa seção página.</value>
+  </data>
+  <data name="UN_codigo_autorizacao_01" xml:space="preserve">
+    <value>Esse código de autorização já existe para essa unidade responsável.</value>
+  </data>
+  <data name="UN_configuracao_etapa_01" xml:space="preserve">
+    <value>Já existe uma configuração de etapa com esse nome.</value>
+  </data>
+  <data name="UN_configuracao_etapa_notificacao_01" xml:space="preserve">
+    <value>Essa notificação já está configurada para essa configuração de etapa x idioma.</value>
+  </data>
+  <data name="UN_configuracao_etapa_pagina_01" xml:space="preserve">
+    <value>Já existe página configurada com essa ordem nessa configuração de etapa.</value>
+  </data>
+  <data name="UN_configuracao_etapa_pagina_idioma_01" xml:space="preserve">
+    <value>Essa página já está configurada nesse idioma para essa configuração de etapa.</value>
+  </data>
+  <data name="UN_documento_requerido_01" xml:space="preserve">
+    <value>Esse tipo de documento já está configurado como documento requerido para essa configuração de etapa.</value>
+  </data>
+  <data name="UN_etapa_processo_01" xml:space="preserve">
+    <value>Etapa já está configurada para esse processo.</value>
+  </data>
+  <data name="UN_etapa_processo_02" xml:space="preserve">
+    <value>Etapa já cadastrada neste processo.</value>
+  </data>
+  <data name="UN_grupo_documento_requerido_01" xml:space="preserve">
+    <value>Já existe um grupo de documento requerido com essa descrição para essa configuração de etapa.</value>
+  </data>
+  <data name="UN_grupo_documento_requerido_item_01" xml:space="preserve">
+    <value>Tipo de documento já está associado a esse grupo de documento requerido.</value>
+  </data>
+  <data name="UN_grupo_oferta_01" xml:space="preserve">
+    <value>Já existe um grupo de oferta cadastrado com esse nome nesse processo.</value>
+  </data>
+  <data name="UN_grupo_oferta_configuracao_etapa_01" xml:space="preserve">
+    <value>Um dos grupos de oferta já está associado a outra configuração de etapa.</value>
+  </data>
+  <data name="UN_hierarquia_oferta_01" xml:space="preserve">
+    <value>Já existe oferta cadastrada com esse nome nesse processo com o mesmo "pai".</value>
+  </data>
+  <data name="UN_inscricao_boleto_01" xml:space="preserve">
+    <value>Já existe um boleto cadastrado para essa inscrição com esse tipo.</value>
+  </data>
+  <data name="UN_inscricao_boleto_taxa_01" xml:space="preserve">
+    <value>Taxa já está associada a esse boleto dessa inscrição.</value>
+  </data>
+  <data name="UN_inscricao_codigo_autorizacao_01" xml:space="preserve">
+    <value>Código de autorização já está associado à inscrição.</value>
+  </data>
+  <data name="UN_inscricao_dado_formulario_01" xml:space="preserve">
+    <value>Formulário já está associado à inscrição.</value>
+  </data>
+  <data name="UN_inscricao_oferta_01" xml:space="preserve">
+    <value>Não é permitido selecionar o mesmo valor para as duas ou mais opções.</value>
+  </data>
+  <data name="UN_inscrito_01" xml:space="preserve">
+    <value>Já existe inscrito cadastrado para este usuário logado.</value>
+  </data>
+  <data name="UN_inscrito_02" xml:space="preserve">
+    <value>Já existe inscrito cadastrado com esse CPF.</value>
+  </data>
+  <data name="UN_item_hierarquia_oferta_01" xml:space="preserve">
+    <value>Já existe um item com este tipo cadastrado para esta hierarquia oferta. Por favor selecione outro tipo de item.</value>
+  </data>
+  <data name="UN_oferta_codigo_autorizacao_01" xml:space="preserve">
+    <value>Código de autorização já está associado à essa oferta.</value>
+  </data>
+  <data name="UN_oferta_periodo_taxa_01" xml:space="preserve">
+    <value>Taxa já está configurada para essa oferta nesse período.</value>
+  </data>
+  <data name="UN_processo_01" xml:space="preserve">
+    <value>Já existe processo cadastrado com essa descrição.</value>
+  </data>
+  <data name="UN_processo_02" xml:space="preserve">
+    <value>Já existe processo cadastrado com esse UID.</value>
+  </data>
+  <data name="UN_processo_idioma_01" xml:space="preserve">
+    <value>Idioma já está configurado para esse processo.</value>
+  </data>
+  <data name="UN_taxa_01" xml:space="preserve">
+    <value>Já existe uma taxa cadastrada com esse tipo de taxa nesse processo.</value>
+  </data>
+  <data name="UN_texto_secao_pagina_01" xml:space="preserve">
+    <value>Essa seção já está configurada para essa página nesse idioma.</value>
+  </data>
+  <data name="UN_texto_secao_pagina_02" xml:space="preserve">
+    <value>Já existe seção cadastrada com esse token para essa configuração de página x idioma.</value>
+  </data>
+  <data name="UN_tipo_hierarquia_oferta_01" xml:space="preserve">
+    <value>Já existe um tipo de hierarquia de oferta cadastrado com essa descrição.</value>
+  </data>
+  <data name="UN_tipo_item_hierarquia_oferta_01" xml:space="preserve">
+    <value>Já existe um tipo de item de hierarquia de oferta cadastrado com essa descrição.</value>
+  </data>
+  <data name="UN_tipo_processo_01" xml:space="preserve">
+    <value>Já existe um tipo de processo cadastrado com essa descrição.</value>
+  </data>
+  <data name="UN_tipo_processo_situacao_01" xml:space="preserve">
+    <value>Situação já está configurada para esse tipo de processo.</value>
+  </data>
+  <data name="UN_tipo_processo_situacao_02" xml:space="preserve">
+    <value>Situação com esse token já foi configurada para esse tipo de processo.</value>
+  </data>
+  <data name="UN_tipo_processo_template_01" xml:space="preserve">
+    <value>Template de processo já está configurado para esse tipo de processo.</value>
+  </data>
+  <data name="UN_tipo_processo_tipo_taxa_01" xml:space="preserve">
+    <value>Esse tipo de taxa já está associado ao tipo de processo.</value>
+  </data>
+  <data name="UN_tipo_taxa_01" xml:space="preserve">
+    <value>Já existe um tipo de taxa com essa descrição</value>
+  </data>
+  <data name="UploadPermitidoSemPaginaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. Existe documento requerido que permite upload, porém, a página de Upload de Documentos não está no fluxo de páginas.</value>
+  </data>
+  <data name="UsuarioInvalidoException" xml:space="preserve">
+    <value>Não foi possível identificar o sequencial do usuário logado.</value>
+  </data>
+  <data name="VersaoEntregueDiferenteExigidaSemObservacaoException" xml:space="preserve">
+    <value>A versão de entrega do documento {0} não pode ser cópia simples gentileza informar uma justificativa no campo "Observação".</value>
+  </data>
+  <data name="ExclusaoPaginaEtapaComInscricaoException" xml:space="preserve">
+    <value>Não é permitido excluir a página. Existe inscrição com esta página em seu histórico de navegação.</value>
+  </data>
+  <data name="AlteracaoTaxaOfertaNaoCobreBoletosGeradosException" xml:space="preserve">
+    <value>Alteração não permitida. O novo período de taxa não cobrirá os boletos que já foram gerados para inscrições desta oferta.</value>
+  </data>
+  <data name="AlterarOfertaTaxaParametroCreiException" xml:space="preserve">
+    <value>Alteração não permitida. Existe boleto gerado com o vencimento anterior.</value>
+  </data>
+  <data name="AlterarTaxaOfertaEventoTaxaException" xml:space="preserve">
+    <value>Alteração não permitida. Existe boleto gerado com o evento taxa anterior.</value>
+  </data>
+  <data name="OfertaNaoDisponivelException" xml:space="preserve">
+    <value>{0} {1} para {2} não está mais disponível. Retorne à página de seleção e escolha outra opção.</value>
+  </data>
+  <data name="PermissaoInscricaoForaPrazoCoincideOfertaException" xml:space="preserve">
+    <value>Operação não permitida. O período da permissão de inscrição fora do prazo não pode coincidir com o período das ofertas do processo.</value>
+  </data>
+  <data name="PermissaoInscricaoForaPrazoOfertaComTaxaSemVencimentoException" xml:space="preserve">
+    <value>Existem ofertas que exigem pagamento de taxa. Informe a data de vencimento do boleto.</value>
+  </data>
+  <data name="PermissaoInscricaoForaPrazoVencimentoMenorOfertaException" xml:space="preserve">
+    <value>Operação não permitida. A data de vencimento deve ser maior ou igual à data fim de todas as ofertas do processo que possuem cobrança de taxa.</value>
+  </data>
+  <data name="AlteracaoPermissaoInscricaoForaPrazoComInscricaoException" xml:space="preserve">
+    <value>Alteração não permitida. Existem inscrições fora do período da permissão de inscrição fora do prazo.</value>
+  </data>
+  <data name="PermissaoInscricaoForaPrazoInscricaoComBoletoException" xml:space="preserve">
+    <value>Alteração não permitida. Existem inscrições realizadas para essa permissão de inscrição fora do prazo.</value>
+  </data>
+  <data name="OfertaCoincideComPermissaoForaPrazoException" xml:space="preserve">
+    <value>Operação não permitida. O período da oferta não pode coincidir com o período das permissões de inscrição fora do prazo cadastradas.</value>
+  </data>
+  <data name="EtapaProrrogacaoCoincidePermissaoForaPrazoException" xml:space="preserve">
+    <value>Operação não permitida. O período das ofertas não pode coincidir com o período das permissões de inscrição fora do prazo cadastradas.</value>
+  </data>
+  <data name="CopiaProcessoDataOfertaExcedeDataEtapaException" xml:space="preserve">
+    <value>O período de inscrição das ofertas não pode ultrapassar o período da etapa de inscrição.</value>
+  </data>
+  <data name="ExcluirPermissaoInscricaoForaPrazoComInscricaoException" xml:space="preserve">
+    <value>Exclusão não permitida. Existem inscrições para essa permissão de inscrição fora do prazo.</value>
+  </data>
+  <data name="FK_inscricao_06" xml:space="preserve">
+    <value>Exclusão não permitida. Existem inscrições para esta permissão de inscrição fora do prazo.</value>
+  </data>
+  <data name="LiberacaoEtapaProcessoComEventoOfertasSemTaxaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa de inscrição. O evento da taxa foi associado ao processo, mas as taxas não foram configuradas nas ofertas.</value>
+  </data>
+  <data name="PermissaoInscricaoAposOfertasException" xml:space="preserve">
+    <value>Operação não permitida. Não é possível cadastrar uma permissão de inscrição fora do prazo após o término das inscrições.</value>
+  </data>
+  <data name="AlterarCobrancaPorOfertaException" xml:space="preserve">
+    <value>Existem taxas cadastradas com valores distintos entre as ofertas do processo. Para que o tipo de cobrança da taxa seja por quantidade de ofertas, é necessário que todos os valores das ofertas do processo sejam iguais.</value>
+  </data>
+  <data name="OfertaPeriodoTaxaCobradaPorOfertaException" xml:space="preserve">
+    <value>Operação não permitida. A taxa {0} está configurada para cobrar {1}, porém, a configuração do período de taxa está diferente da configuração de outras ofertas. Neste caso, o valor, a quantidade mínima e máxima e o vencimento devem ser iguais em todas as ofertas do processo que possuírem esta taxa.</value>
+  </data>
+  <data name="ProrrogarEtapaValoresDistintosPeriodosCoincidentesException" xml:space="preserve">
+    <value>A taxa {0} está configurada para cobrar por oferta, porém, a prorrogação fará com que existam valores distintos entre as ofertas para esta taxa. Neste caso, os valores devem ser iguais.</value>
+  </data>
+  <data name="EtapaSelecaoProcessoNaoExistenteException" xml:space="preserve">
+    <value>Não é possível lançar o resultado. Verifique se existe etapa de seleção cadastrada, liberada e vigente para este processo.</value>
+  </data>
+  <data name="InscricaoOfertaCandidadoSituacaoInvalidaLancamentoException" xml:space="preserve">
+    <value>Existe candidato cuja inscrição não está mais {0}. Não é possível lançar o resultado.</value>
+  </data>
+  <data name="EtapaConvocacaoProcessoNaoExistenteException" xml:space="preserve">
+    <value>Não existe etapa de convocação ativa para este processo.</value>
+  </data>
+  <data name="FK_inscricao_oferta_historico_situacao_03" xml:space="preserve">
+    <value>Não é possível excluir a etapa. Ela já possui inscrições.</value>
+  </data>
+  <data name="ProcessoTagInvalidaNotificacaoException" xml:space="preserve">
+    <value>A(s) tag(s) "{0}" é(são) inválida(s) para a notificação do tipo "{1}".</value>
+  </data>
+  <data name="LiberacaoEtapaTaxaPorOfertaException" xml:space="preserve">
+    <value>Não é permitida a liberação desta etapa. A taxa {0} deve ser associada a todas as ofertas do grupo {1}.</value>
+  </data>
+  <data name="InscricaoComMaisOpcoesDesejadasQueOfertasException" xml:space="preserve">
+    <value>A quantidade de opções para as quais deseja ser convocado não pode ultrapassar a quantidade de opções selecionadas.</value>
+  </data>
+  <data name="InscricaoSemOpcoesDesejadasException" xml:space="preserve">
+    <value>Selecione a quantidade de opções para as quais deseja ser convocado.</value>
+  </data>
+  <data name="InscricaoNaoPermitidaException" xml:space="preserve">
+    <value>{0} não autorizad{1}.</value>
+  </data>
+  <data name="VisaoGestaoInvalidaException" xml:space="preserve">
+    <value>A visão da gestão deve ser diferente da visão da inscrição.</value>
+  </data>
+  <data name="UsuarioComDebidoFinanceiroException" xml:space="preserve">
+    <value>Prezado(a) candidato(a), informamos que sua solicitação foi indeferida por não se enquadrar nas condições do(a) {0}. Para maiores esclarecimentos gentileza entrar em contato através do(s) e-mail(s) {1}.</value>
+  </data>
+  <data name="FK_item_hierarquia_oferta_01" xml:space="preserve">
+    <value>Exclusão não permitida Tipo de Hierarquia possui itens associados.</value>
+  </data>
+  <data name="UN_inscricao_oferta_historico_situacao_01" xml:space="preserve">
+    <value>Não é permitido atribuir a mesma situação mais de uma vez para a inscrição.</value>
+  </data>
+  <data name="OfertaComCodigoAutorizacaoEtapaNaoLiberadaException" xml:space="preserve">
+    <value>Para incluir uma oferta com código de autorização a situação da etapa de inscrição deve estar “Aguardando Liberação“ ou “Em Manutenção”.</value>
+  </data>
+  <data name="InscricaoBolsaSocialException" xml:space="preserve">
+    <value>Para agendar uma entrevista para a unidade {0}, você deve estar inscrito no processo de Bolsa Social de {1}º/{2}, em um curso desta mesma unidade.</value>
+  </data>
+  <data name="InscricaoOfertaSemVagasException" xml:space="preserve">
+    <value>Não existem mais vagas para {0}. Volte à página {1} e selecione um(a) novo(a) {2}.</value>
+  </data>
+  <data name="SituacaoInscricaoAlteradaIgualAtualException" xml:space="preserve">
+    <value>A situação {0} já foi atribuída ao candidato {1}.</value>
+  </data>
+  <data name="PermissaoInscricaoDataTaxaOfertaCoincidenteException" xml:space="preserve">
+    <value>Operação não permitida. Existe período de taxa coincidente ao período informado.</value>
+  </data>
+  <data name="InscricaoComBoletoPagoException" xml:space="preserve">
+    <value>Exclusão não permitida. O candidato já pagou o boleto.</value>
+  </data>
+  <data name="InscricaoComEtapaInativaException" xml:space="preserve">
+    <value>A etapa de inscrição do processo não está mais ativa</value>
+  </data>
+  <data name="InscricaoForaSituacaoPermitidaAlteracaoExclusaoException" xml:space="preserve">
+    <value>Para liberar a alteração dos dados é necessário que a inscrição esteja na situação “Inscrição Finalizada” ou “Inscrição Confirmada” e não haja lançamento de resultado.</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoVariosArquivosException" xml:space="preserve">
+    <value>Alteração não permitida. Existe inscrição com mais de um arquivo para este tipo de documento.</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoPermiteEntregaPosteriorException" xml:space="preserve">
+    <value>Alteração não permitida. Existe inscrição com este documento registrado como "Pendente".</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoValidacaoOutroSetorException" xml:space="preserve">
+    <value>Alteração não permitida. Existe inscrição com este documento registrado como "Aguardando validação por outro setor".</value>
+  </data>
+  <data name="InscricaoHistoricoSituacaoSemHistoricoAtualException" xml:space="preserve">
+    <value>Não existe histórico da situação atual para a inscrição.</value>
+  </data>
+  <data name="InscricaoHistoricoSituacaoSemHistoricoAnteriorException" xml:space="preserve">
+    <value>Não existe histórico da situação anterior para a inscrição.</value>
+  </data>
+  <data name="InscricaoOfertaAlterarOfertaCandidatoJaExportadoException" xml:space="preserve">
+    <value>O(A) candidato(a) {0} já foi exportado(a) para a oferta {1}. Não é possível alterá-la.</value>
+  </data>
+  <data name="NumeroAnexosGrupoMinimoUltrapassadoInscricaoIniciadaException" xml:space="preserve">
+    <value>Não é permitido anexar mais de {0} arquivo(s) para o grupo {1}, enquanto a inscrição do candidato não for finalizada.</value>
+  </data>
+  <data name="NumeroDeDocumentosExcedidoException" xml:space="preserve">
+    <value>Não é permitido anexar mais de 10 arquivos para o tipo de documento {0}.</value>
+  </data>
+  <data name="AlteracaoOfertaTaxaNaoPermitidaBoletoPagoValoresDiferentesException" xml:space="preserve">
+    <value>O valor da taxa "{0}" paga é de R${1} e na nova oferta selecionada é de R${2}. Não é permitido selecionar uma nova oferta com valor de taxa distinto, pois o boleto já está pago.</value>
+  </data>
+  <data name="InscricaoOfertaAlterarOfertaLimiteDescontoDiferenteException" xml:space="preserve">
+    <value>A alteração não pode ser realizada, pois o percentual limite de desconto da oferta original é diferente do percentual da nova oferta. Neste caso, para realizar a troca de oferta, é necessário cancelar a inscrição e orientar o candidato a realizar uma nova.</value>
+  </data>
+  <data name="LiberacaoEtapaOfertaSemCodigoOrigemException" xml:space="preserve">
+    <value>Não é permitida a liberação da etapa de inscrição. O código de origem não foi cadastrado para a(s) oferta(s) {0}.</value>
+  </data>
+  <data name="InscricaoExportadaAlterarDeferimentoException" xml:space="preserve">
+    <value>Não é possível alterar o deferimento da inscrição, pois o candidato já foi exportado para o SGA.</value>
+  </data>
+  <data name="AlteracaoDocumentoRequeridoExibirTermoResponsabilidadeEntregaException" xml:space="preserve">
+    <value>O campo "Exibe termo de responsabilidade de entrega?” não pode ser alterado, pois existe inscrito que informou que irá entregar esse documento posteriormente.</value>
+  </data>
+  <data name="GrupoDocumentoTermoResponsabilidadePermiteEntregaPosteriorException" xml:space="preserve">
+    <value>Não é permitido criar um grupo que exibe o termo de responsabilidade de entrega se algum de seus documentos não estiver configurado para permitir entrega posterior.</value>
+  </data>
+  <data name="AlteracaoGrupoDocumentoDocumentoRequeridoEntregaPosteriorException" xml:space="preserve">
+    <value>O campo “Exibe termo de responsabilidade de entrega?” não pode ser alterado, pois existe inscrito que informou que irá entregar o documento relativo a este grupo posteriormente.</value>
+  </data>
+  <data name="LiberacaoEtapaComDescricaoTermoResponsabilidadeEntregaException" xml:space="preserve">
+    <value>Não é permitida a liberação da etapa de inscrição. A descrição do termo de responsabilidade de entrega da documentação foi preenchida, porém não existe documento requerido, tampouco grupo de documentação, configurado para exibir o termo de responsabilidade de entrega.</value>
+  </data>
+  <data name="LiberacaoEtapaSemDescricaoTermoResponsabilidadeEntregaException" xml:space="preserve">
+    <value>Não é permitida a liberação da etapa de inscrição. Existe documento requerido. ou grupo de documentação, configurado para exibir o termo de responsabilidade de entrega, porém a descrição do termo não foi informada.</value>
+  </data>
+  <data name="DocumentoRequeridoExibirTermoResponsabilidadeEntregaException" xml:space="preserve">
+    <value>Para prosseguir sua inscrição com alguma documentação pendente, é necessário aceitar o termo de
+entrega da documentação.</value>
+  </data>
+  <data name="DocumentoRequeridoObrigatorioNaoSubmetidoException" xml:space="preserve">
+    <value>O documento {0} é obrigatório. Favor anexar o documento.&lt;br&gt;</value>
+  </data>
+  <data name="EntregaDocumentoNotificacaoSemDataPrazoNovaEntregaDocumentacaoException" xml:space="preserve">
+    <value>O prazo para nova entrega da documentação deve ser informado.</value>
+  </data>
+  <data name="DocumentoRequeridoPermiteEntregaPosteriorAlteradoException" xml:space="preserve">
+    <value>O campo "Permite entrega posterior?" não pode ser alterado, pois este documento pertence a um grupo de documentos configurado para exibir o termo de responsabilidade de entrega.</value>
+  </data>
+  <data name="LiberacaoEtapaDataLimiteEntregaMenorDataFimEtapaException" xml:space="preserve">
+    <value>Não é permitida a liberação da etapa de inscrição. Existe documento requerido ou grupo de documentação cuja data limite de entrega é menor que a data fim de sua configuração de etapa.</value>
+  </data>
+  <data name="DocumentoRequeridoAdicionalObrigatorioPosteriormenteException" xml:space="preserve">
+    <value>Ao informar que o documento {0} será entregue posteriormente, nenhum arquivo poderá ser anexado para ele na lista de Documentos adicionais.</value>
+  </data>
+  <data name="BonusExAlunoNumeroVagasNaoInformadoException" xml:space="preserve">
+    <value>Informe o número de vagas de bolsa.</value>
+  </data>
+  <data name="BonusExAlunoPercentualDescontoNaoInformadoException" xml:space="preserve">
+    <value>Informe o percentual de desconto.</value>
+  </data>
+  <data name="BonusExAlunoDescontoZeroException" xml:space="preserve">
+    <value>O percentual de desconto deve ser maior que zero.</value>
+  </data>
+  <data name="BonusExAlunoNumeroVagasInvalidoException" xml:space="preserve">
+    <value>O número de vagas de bolsa não pode ultrapassar o número de vagas da oferta.</value>
+  </data>
+  <data name="ConfiguracaoEtapaIntegracaoNumeroOfertasException" xml:space="preserve">
+    <value>Operação não permitida. Este processo possui integração com o SGA, portanto, o “Máximo de ofertas por inscrição” deve ser 1.</value>
+  </data>
+  <data name="BonusExAlunoNumeroVagasMenorBolsaSelecionadas" xml:space="preserve">
+    <value>O número de vagas não pode ser menor que a quantidade de inscrições que receberam bolsa.</value>
+  </data>
+  <data name="ERR_TipoProcessoOrientacaoObrigatoriaException" xml:space="preserve">
+    <value>Ao preencher o campo "Termo de aceite da conversão dos arquivos" o campo "Orientação para o aceite da conversão dos arquivos" também deve ser preenchido.</value>
+  </data>
+  <data name="ERR_TipoProcessoTermoObrigatoriaException" xml:space="preserve">
+    <value>Ao preencher o campo "Orientação para o aceite da conversão dos arquivos" o campo "Termo de aceite da conversão dos arquivos" também deve ser preenchido.</value>
+  </data>
+  <data name="ExtensaoDocumentoInvalidaPDFException" xml:space="preserve">
+    <value>O arquivo {0} não é permitido. Favor enviar uma das extensões válidas: jpg, jpeg, png, pdf, xml. &lt;br&gt;</value>
+  </data>
+  <data name="ERR_IncricaoIniciacaoCientificaException" xml:space="preserve">
+    <value>Somente alunos da Iniciação científica podem fazer inscrição.</value>
+  </data>
+  <data name="ERR_InscricaoSeminarioInvalidaException" xml:space="preserve">
+    <value>Já existe uma inscrição para o projeto {0}</value>
+  </data>
+  <data name="BolsaNaoPodeUltrapassarDescontoException" xml:space="preserve">
+    <value>O % Bolsa não pode ultrapassar o % Desconto configurado para esta oferta.</value>
+  </data>
+  <data name="DataNascimentoInvalidaException" xml:space="preserve">
+    <value>Data de nascimento inválida.</value>
+  </data>
+  <data name="PercentualBolsaNaoPodeSerZeroException" xml:space="preserve">
+    <value>O % Bolsa não pode ser 0 (zero).</value>
+  </data>
+  <data name="FK_tipo_processo_documento_01" xml:space="preserve">
+    <value>Não é possícel excluir o tipo de processo. Ele já possui documentos.</value>
+  </data>
+  <data name="FK_tipo_processo_documento_02" xml:space="preserve">
+    <value>Não é possível excluir o tipo de documento. Ele já está associado a tipo de processos.</value>
+  </data>
+  <data name="UN_tipo_processo_documento_01" xml:space="preserve">
+    <value>Esse tipo de documento já está associado ao tipo de processo.</value>
+  </data>
+  <data name="TipoDocumentoDesativadoException" xml:space="preserve">
+    <value>Este tipo de documento foi desativado para o tipo de processo utilizado. Ele não pode mais ser
+utilizado para emissão.</value>
+  </data>
+  <data name="TipoFormularioDesativadoException" xml:space="preserve">
+    <value>O tipo de formulário do formulário informado foi desativado. Ele não pode mais ser utilizado.</value>
+  </data>
+  <data name="HorarioEDataCoicidenteException" xml:space="preserve">
+    <value>Não é possível incluir um(a) {0} que possua coincidência de horário e data com outro(a) {0}.</value>
+  </data>
+  <data name="InscricoesValidasFormularioPreenchidoException" xml:space="preserve">
+    <value>Alteração não permitida. Existem inscrições validas com este formulário preenchido.</value>
+  </data>
+  <data name="ERR_FormatoDeTokenInvalidoException" xml:space="preserve">
+    <value>Formato inválido.</value>
+  </data>
+  <data name="InscricaoJaFinalizadaAgendamentoException" xml:space="preserve">
+    <value>Esse agendamento já está finalizado, não é permitido realizar alterações.</value>
+  </data>
+  <data name="InscricaoJaFinalizadaEntregaDocumentacaoException" xml:space="preserve">
+    <value>Essa entrega de documentação já está finalizada, não é permitido realizar alterações.</value>
+  </data>
+  <data name="InscricaoJaFinalizadaInscricaoException" xml:space="preserve">
+    <value>Essa inscrição já está finalizada, não é permitido realizar alterações.</value>
+  </data>
+  <data name="ERR_NaoEhProfessorDaCasaException" xml:space="preserve">
+    <value>Prezado candidato, apenas professores que já são da carreira docente da PUC podem se inscrever neste processo. Para maiores esclarecimentos gentileza entrar em contato com a PRORH através do(s) telefone(s) {0}.</value>
+  </data>
+  <data name="ERR_ComprovanteInscricaoCanceladaException" xml:space="preserve">
+    <value>Não é possível emitir o comprovante. {0}.</value>
+  </data>
+  <data name="ERR_InscricaoComTaxasNaoPermitidaException" xml:space="preserve">
+    <value>A quantidade informada para a taxa {0} não é mais permitida. Volte à página {1} e informe um valor válido.</value>
+  </data>
+  <data name="ERR_ProcessoEncerradoException" xml:space="preserve">
+    <value>Processo encerrado.</value>
+  </data>
+  <data name="ExtensaoDocumentoNovaDocumentacaoException" xml:space="preserve">
+    <value>O arquivo {0} não é permitido. Favor enviar na extensão válida: {1}. &lt;br&gt;</value>
+  </data>
+  <data name="JaExisteInscricaoIniciadaParaEsseGrupoOfertaAGENDAMENTOException" xml:space="preserve">
+    <value>Você possui um agendamento iniciado. Localize-o em "Seus agendamentos" e clique em "Continuar agendamento".</value>
+  </data>
+  <data name="JaExisteInscricaoIniciadaParaEsseGrupoOfertaENTREGA_DE_DOCUMENTACAOException" xml:space="preserve">
+    <value>Você possui uma entrega de documentação iniciada. Localize-a em "Seus documentos" e clique em "Continuar entrega".</value>
+  </data>
+  <data name="MaximoInscricoesPorInscritoAtingidoENTREGA_DE_DOCUMENTACAOException" xml:space="preserve">
+    <value>Você atingiu o número máximo de entregas de documentação permitidas para este processo.</value>
+  </data>
+  <data name="MaximoInscricoesPorInscritoAtingidoINSCRICAOException" xml:space="preserve">
+    <value>Você atingiu o número máximo de inscrições permitidas para este processo.</value>
+  </data>
+  <data name="ERR_DossieCriadoGedException" xml:space="preserve">
+    <value>Existem inscrições em processos deste tipo de processo com dossiê criado no GED. Não é possível alterar  biblioteca.</value>
+  </data>
+  <data name="ERR_ArquivoAssociadoInscricaoConvertidoPDFException" xml:space="preserve">
+    <value>Para confirmar, é necessário aceitar o termo de conversão dos arquivos para PDF.</value>
+  </data>
+  <data name="ERR_CamposInscritoFaltandoPorTipoProcessoException" xml:space="preserve">
+    <value>É obrigatório configurar o(s) campo(s) {0} no cadastro de inscrito do tipo de processo {1}</value>
+  </data>
+  <data name="ERR_CamposInscritoIncosistentesRGException" xml:space="preserve">
+    <value>Ao selecionar o campo "Órgão emissor identidade" ou o campo "UF identidade", é necessário selecionar também o campo "Nº de identidade".</value>
+  </data>
+  <data name="ERR_CamposInscritoIncosistentesNaturalidadeException" xml:space="preserve">
+    <value>Ao selecionar o campo "Naturalidade" é necessário selecionar também o campo "País de origem".</value>
+  </data>
+  <data name="CampoExcedeLimiteCaracteresException" xml:space="preserve">
+    <value>O campo {} permite somente {} caracteres.</value>
+  </data>
+  <data name="DadosPassaporteException" xml:space="preserve">
+    <value>Ao preencher um dos campos do passaporte, os demais campos deste se tornam obrigatórios.</value>
+  </data>
+  <data name="DataNascimentoInscritoObrigatorioException" xml:space="preserve">
+    <value>O campo Data de nascimento deve ser informado.</value>
+  </data>
+  <data name="IdentidadeObrigatoriaException" xml:space="preserve">
+    <value>Os campos do RG são obrigatórios para a nacionalidade brasileira e brasileira - naturalizado.</value>
+  </data>
+  <data name="InscritoCpfObrigatorioException" xml:space="preserve">
+    <value>O campo CPF é obrigatório para a nacionalidade brasileira e brasileira - naturalizado.</value>
+  </data>
+  <data name="InscritoNomeMaeNomePaiIdenticosException" xml:space="preserve">
+    <value>O 'Nome da Mãe' e o 'Nome do Pai' não podem ser iguais.</value>
+  </data>
+  <data name="InscritoPassaporteObrigatorioException" xml:space="preserve">
+    <value>Os campos Passaporte, Data de validade e País de emissão são obrigatórios para nacionalidade estrangeira.</value>
+  </data>
+  <data name="InscritoSemNomeMaeOuNomePaiException" xml:space="preserve">
+    <value>O preenchimento do campo "Nome da mãe" ou "Nome do pai" é obrigatório.</value>
+  </data>
+  <data name="NacionalidadeInscritoObrigatorioException" xml:space="preserve">
+    <value>O campo Nacionalidade deve ser informado.</value>
+  </data>
+  <data name="NaturalidadeBrasileiraInvalidaException" xml:space="preserve">
+    <value>Informe a UF e Cidade de sua naturalidade.</value>
+  </data>
+  <data name="NaturalidadeEstrangeiraInvalidaException" xml:space="preserve">
+    <value>Informe a descrição de sua naturalidade.</value>
+  </data>
+  <data name="NomeInscritoObrigatorioException" xml:space="preserve">
+    <value>O campo Nome deve ser informado.</value>
+  </data>
+  <data name="NomeSobrenomeObrigariorioException" xml:space="preserve">
+    <value>O {} deve conter sobrenome.</value>
+  </data>
+  <data name="PaisInvalidoParaNacionalidadeEstrangeiraException" xml:space="preserve">
+    <value>Não é possivel selecionar o país Brasil quando a nacionalidade é diferente de Brasileira.</value>
+  </data>
+  <data name="SexoInscritoObrigatorioException" xml:space="preserve">
+    <value>O campo Sexo deve ser informado.</value>
+  </data>
+  <data name="InscritoCpfInvalidoException" xml:space="preserve">
+    <value>CPF inválido.</value>
+  </data>
+  <data name="DocumentoRequeridoParaSexoNaoConfiguradoException" xml:space="preserve">
+    <value>Existe documento requerido obrigatório por sexo e o campo "Sexo" não foi configurado na lista de campos do cadastro do inscrito deste processo.</value>
+  </data>
+  <data name="EnderecoObrigatorioException" xml:space="preserve">
+    <value>O campo Endereço deve ser informado.</value>
+  </data>
+  <data name="TelefoneObrigatorioException" xml:space="preserve">
+    <value>O campo Telefone deve ser informado.</value>
+  </data>
+  <data name="CpfObrigatorioException" xml:space="preserve">
+    <value>O campo CPF é obrigatório.</value>
+  </data>
+  <data name="ERR_TipoProcessoCampoInscritoCPFPassaporteException" xml:space="preserve">
+    <value>É obrigatório selecionar o CPF ou o Passaporte na lista de campos do cadastro do inscrito".</value>
+  </data>
+  <data name="ERR_TipoProcessoCampoInscritoEmailException" xml:space="preserve">
+    <value>É obrigatório selecionar "E-mail" na lista de campos do cadastro do inscrito.</value>
+  </data>
+  <data name="ERR_TipoProcessoCampoInscritoNomeException" xml:space="preserve">
+    <value>É obrigatório selecionar o "Nome" na lista de campos do cadastro do inscrito".</value>
+  </data>
+  <data name="ERR_TipoProcessoCampoInscritoRGException" xml:space="preserve">
+    <value>Para selecionar os campos "Órgão emissor identidade" ou "UF identidade" o campo "Nº identidade" também deverá ser selecionado.</value>
+  </data>
+  <data name="EnderecoResidencialObrigatorioException" xml:space="preserve">
+    <value>É necessário informar o endereço residencial.</value>
+  </data>
+  <data name="EmailInvalidoException" xml:space="preserve">
+    <value>Email inválido!</value>
+  </data>
+  <data name="EnderecoCorrespondenciaObrigatorioException" xml:space="preserve">
+    <value>Informe ao menos um endereço para correspondência.</value>
+  </data>
+  <data name="EnderecoDuplicadoException" xml:space="preserve">
+    <value>Não é permitido incluir endereços iguais.</value>
+  </data>
+  <data name="MultiploEnderecoCorrespondenciaException" xml:space="preserve">
+    <value>Não é permitido selecionar mais de um endereço para correspondência.</value>
+  </data>
+  <data name="PaisEnderecoObrigatorioException" xml:space="preserve">
+    <value>O campo País do endereço deve ser informado.</value>
+  </data>
+  <data name="TelefonePreenchidoMasInvalidoException" xml:space="preserve">
+    <value>Os campos Tipo de telefone, Cód. de país, Cód. de área e Número do telefone devem ser informados.</value>
+  </data>
+  <data name="BairroEnderecoException" xml:space="preserve">
+    <value>O campo Bairro do endereço deve ser informado.</value>
+  </data>
+  <data name="CepEnderecoObrigatorioException" xml:space="preserve">
+    <value>O campo CEP do endereço deve ser informado.</value>
+  </data>
+  <data name="CidadeEnderecoException" xml:space="preserve">
+    <value>O campo Cidade do endereço deve ser informado.</value>
+  </data>
+  <data name="EnderecoEletronicoObrigatorioException" xml:space="preserve">
+    <value>Os campos Tipo de endereço eletrônico e Descrição devem ser informados.</value>
+  </data>
+  <data name="EstadoEnderecoException" xml:space="preserve">
+    <value>O campo Estado do endereço deve ser informado.</value>
+  </data>
+  <data name="LogradouroEnderecoObrigatorioException" xml:space="preserve">
+    <value>O campo Logradouro do endereço deve ser informado.</value>
+  </data>
+  <data name="NumeroEnderecoObrigatorioException" xml:space="preserve">
+    <value>O campo Número do endereço deve ser informado.</value>
+  </data>
+  <data name="EmailObrigatorioException" xml:space="preserve">
+    <value>O campo email é obrigatório.</value>
+  </data>
+  <data name="TelefoneInvalidoException" xml:space="preserve">
+    <value>Informe ao menos um telefone.</value>
+  </data>
+  <data name="PaisOrigemInscritoObrigatorioException" xml:space="preserve">
+    <value>O campo Pais de Origem deve ser informado.</value>
+  </data>
+  <data name="ERR_ExisteInscricaoRegistradaParaEssaInscricaoException" xml:space="preserve">
+    <value>Existe check-in registrado para esta inscrição. Não é possível realizar o cancelamento.</value>
+  </data>
+  <data name="ERR_CheckinRealizadoException" xml:space="preserve">
+    <value>Já foi realizado check-in para {0}</value>
+  </data>
+  <data name="ERR_EnderecoObrigatorioParaBoletoException" xml:space="preserve">
+    <value>É necessário informar um endereço para a geração do boleto.</value>
+  </data>
+  <data name="Err_UsarMesmoFormularioException" xml:space="preserve">
+    <value>Não é possível utilizar nos Formulários do Evento o mesmo formulário configurado no fluxo de páginas da inscrição.</value>
+  </data>
+  <data name="PeriodoEventoAtividadeException" xml:space="preserve">
+    <value>Alteração  não permitida. Existem ofertas associadas a este processo cujo período da atividade ultrapassa o período do evento.</value>
+  </data>
+  <data name="Err_PeriodoAtividadeContidoPeriodoEnventoException" xml:space="preserve">
+    <value>O período da atividade deve estar contido no período do evento configurado no processo.</value>
+  </data>
+  <data name="Err_UsarMesmoFormularioInscricaoEventoProcessoException" xml:space="preserve">
+    <value>Alteração não permitida. O formulário de inscrição não pode ser o mesmo formulário do evento configurado no processo.</value>
+  </data>
+  <data name="InscricaoCanceladaException" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InscricaoExigeCodigoException" xml:space="preserve">
+    <value />
+  </data>
+  <data name="JaExisteInscricaoIniciadaParaEsseGrupoOfertaException" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LancamentoNotaClassificacaoDuplicadaException" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LancamentoNotaInscricaoCanceladaException" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LancamentoNotaInscricaoNaoPossuiConfirmadaException" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LancamentoNotaInscricaoNaoPossuiDeferidaException" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MaximoInscricoesPorInscritoAtingidoException" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Err_ExisteNotificacaoAvaliacaoEventoNoProcessoException" xml:space="preserve">
+    <value>Não foi possível liberar a etapa de inscrição. Existe notificação de
+Formulário de avaliação
+no processo, mas nenhum formulário do evento foi configurado.</value>
+  </data>
+  <data name="Err_OfertaCadastradaSemPeriodoAtividadeConfiguradoException" xml:space="preserve">
+    <value>Não foi possível liberar a etapa de inscrição. Existe oferta cadastrada cujo período da atividade não foi configurado.</value>
+  </data>
+  <data name="Err_PeriodoDoEventoNaoConfiguradoNoProcessoException" xml:space="preserve">
+    <value>Não foi possível liberar a etapa de inscrição. O período do evento não foi configurado no processo.</value>
+  </data>
+  <data name="ERR_ProcessoNaoPossuiTaxaEPossuiEventoSaeException" xml:space="preserve">
+    <value>Em processos que possuem gestão de eventos e Evento SAE, a taxa deve ser informada.</value>
+  </data>
+  <data name="ERR_CamposNaoIdentificadosException" xml:space="preserve">
+    <value>Não foi possível identificar os campos a seguir nos seguintes modelos de documento. Verifique os campos informados nos modelos configurados. {0}</value>
+  </data>
+  <data name="FK_processo_05" xml:space="preserve">
+    <value>Não é possível excluir a idendidade visual. Já existe processo configurado para utilizá-la.</value>
+  </data>
+  <data name="ERR_IdVisualDesativadaException" xml:space="preserve">
+    <value>A identidade visual {0} foi desativada. Ela não pode mais ser utilizada</value>
+  </data>
+  <data name="Err_ExisteInscricaoComTaxaDentreOsBoletos" xml:space="preserve">
+    <value>Já existem inscrições com "{0}" associada ao boleto. Não é possível alterar a cobrança por oferta.</value>
+  </data>
+  <data name="TaxaAssaociadaAOfertaException" xml:space="preserve">
+    <value>Não é possível trocar a taxa "{0}", porque ela já foi associada a alguma oferta do processo.</value>
+  </data>
+  <data name="ERR_DevePossuirPeriodoTaxaIguaisException" xml:space="preserve">
+    <value>Operação não permitida. Para selecionar mais de uma oferta por inscrição, as taxas cujo tipo de cobrança não é por oferta devem ter configurações de período de taxa iguais.</value>
+  </data>
+  <data name="UN_grupo_taxa_01" xml:space="preserve">
+    <value>Já existe grupo de taxa cadastrado com esta descrição neste processo.</value>
+  </data>
+  <data name="UN_grupo_taxa_item_01" xml:space="preserve">
+    <value>Taxa já está configurada neste grupo de taxa.</value>
+  </data>
+  <data name="FK_grupo_taxa_01" xml:space="preserve">
+    <value>Não é possível excluir o processo. Ele já possui grupo de taxa configurado.</value>
+  </data>
+  <data name="FK_grupo_taxa_item_01" xml:space="preserve">
+    <value>Não é possível excluir o grupo de taxa. Ele possui item configurado.</value>
+  </data>
+  <data name="FK_grupo_taxa_item_02" xml:space="preserve">
+    <value>Não é possível excluir a taxa. Ela já foi configurada em um grupo de taxa.</value>
+  </data>
+  <data name="MinimoItensTaxaException" xml:space="preserve">
+    <value>O grupo de taxas deve possuir mais de um item de taxa.</value>
+  </data>
+  <data name="TaxaDuplicadaException" xml:space="preserve">
+    <value>Operação não permitida. Uma taxa não pode ser selecionada mais de uma vez em um mesmo grupo de taxas.</value>
+  </data>
+  <data name="AssociacaoDuplicadaTaxaException" xml:space="preserve">
+    <value>A taxa {0} está associada ao grupo {1}. Não é permitido associar uma mesma taxa a mais de um grupo de taxas.</value>
+  </data>
+  <data name="MaiorQueNumeroMaximoItensGrupoException" xml:space="preserve">
+    <value>Operação não permitida. A quantidade mínima ou a quantidade máxima configurada para {0} na oferta {1} é maior que o número máximo de itens do grupo.</value>
+  </data>
+  <data name="TipoCobrancaTaxaDiferenteException" xml:space="preserve">
+    <value>As taxas do grupo de taxas devem ter o mesmo tipo de cobrança.</value>
+  </data>
+  <data name="QuantidadeTaxaExcedidaNasOfertasDoProcessoException" xml:space="preserve">
+    <value>O somatório da quantidade mínima configurada nos períodos de taxa das ofertas não pode ultrapassar o número máximo de itens do grupo.</value>
+  </data>
+  <data name="FK_inscricao_boleto_taxa_03" xml:space="preserve">
+    <value>Não é possível excluir a oferta. Já existe(m) boleto-taxa cadastrados para esta oferta.</value>
+  </data>
+  <data name="FK_inscricao_boleto_taxa_02" xml:space="preserve">
+    <value>Não é possível excluir a taxa. Já existe(m) boleto-taxa cadastrados com esta taxa.</value>
+  </data>
+  <data name="FK_inscricao_boleto_taxa_01" xml:space="preserve">
+    <value>Não é possível excluir o boleto. Já existe(m) taxas cadastradas para este boleto.</value>
+  </data>
+  <data name="QtdMinOuMaxTaxasOfertaExcedeMaxItensGrpTaxaException" xml:space="preserve">
+    <value>A Qtd. mínima ou a Qtd. máxima da taxa {0} não pode ultrapassar o número máximo de itens do grupo de taxa {1}.</value>
+  </data>
+  <data name="SomatorioQtdMinTaxasOfertaMesmoGrpTaxaExcedeException" xml:space="preserve">
+    <value>Operação não permitida.O somatório da Qtd. mínima dos Períodos de taxa da oferta {0} cujas taxas pertencem ao grupo {1} ultrapassou o número máximo de itens deste grupo.</value>
+  </data>
+  <data name="ERR_ExigeJustificativaException" xml:space="preserve">
+    <value>A Justificativa da oferta deve ser informada.</value>
+  </data>
+  <data name="SelecionarPeloMenosUmaOfertaException" xml:space="preserve">
+    <value>É necessário informar ao menos uma oferta.</value>
+  </data>
+  <data name="Err_OfertaImpedidaException" xml:space="preserve">
+    <value>Para prosseguir, remova  as opções que estão indisponíveis.</value>
+  </data>
+  <data name="AlteracaoProcessoTipoCobrancaTaxaAssociadaPeriodoTaxaOfertaException" xml:space="preserve">
+    <value>Existe oferta associada à taxa {0}. Não é possível alterar seu tipo de cobrança.</value>
+  </data>
+  <data name="AlteracaoProcessoGrupoTaxaComTaxaTipoCobrDistintosException" xml:space="preserve">
+    <value>Operação não permitida. A alteração fará com que o(s) grupos(s) de taxa cadastrados tenha(m) taxas com tipos de cobranças distintos.</value>
+  </data>
+  <data name="AlteracaoProcessoTipoCobrancaTaxaAssociadaGrupoTaxaException" xml:space="preserve">
+    <value>Operação não permitida. A taxa {0} está associada ao grupo de taxas {1}. Taxas cujo tipo de cobrança é por quantidade de ofertas não podem fazer parte de um grupo de taxas.</value>
+  </data>
+  <data name="InscricaoJaCanceladaInscricaoException" xml:space="preserve">
+    <value>Essa inscrição está cancelada, não é permitido realizar alterações.</value>
+  </data>
+  <data name="InscricaoNaoDeferidaException" xml:space="preserve">
+    <value>Não é possível emitir a declaração de participação para os seguinte(s) inscrito(s), pois a situação da inscrição está diferente de {0} do {1}. &lt;br /&gt; {2}</value>
+  </data>
+  <data name="Err_PermissaoEmitirDocumentacaoException" xml:space="preserve">
+    <value>Emissão de documentação inválida</value>
+  </data>
+</root>

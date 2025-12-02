@@ -1,0 +1,28 @@
+﻿@model ProrrogacaoEtapaFiltroViewModel
+
+@Html.Action("CabecalhoProcessoEtapa", "EtapaProcesso", new { @seqEtapa = Model.SeqEtapaProcesso, @seqProcesso = Model.SeqProcesso })
+
+@using (Smc.Wizard("wizard03")
+    .ButtonSet(1,
+        item => Smc.Button(SMCButtonBehavior.Salvar).Highlight().DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("ProrrogarEtapa").Ajax(isPost: true))
+    .ButtonSet(1, alwaysVisible: true,
+        buttons: item => Smc.Button(SMCButtonBehavior.Cancelar)
+            .Action("Index", routeValues: new { seqProcesso = Model.SeqProcesso }).DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+{
+    using (Smc.WizardStep(0)
+        .Title(Smc.GetUIResource("Titulo_Selecao_Oferta")).Action("SelecionarOfertasProrrogacao"
+        , "EtapaProcesso", new
+        {
+            seqEtapaProcesso = (SMCEncryptedLong)Model.SeqEtapaProcesso,
+            seqProcesso = (SMCEncryptedLong)Model.SeqProcesso
+        })
+        .Begin())
+    { }
+    using (Smc.WizardStep(1)
+        .Title(Smc.GetUIResource("Titulo_Dados_Prorrogacao")).Action("EditarDadosProrrogacao").Begin())
+    { }
+    using (Smc.WizardStep(2)
+        .Title(Smc.GetUIResource("Titulo_Sumario_Prorrogacao")).Action("SumarioProrrogacao").Begin())
+    { }
+
+}

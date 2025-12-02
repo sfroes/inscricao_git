@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Processo</value>
+  </data>
+  <data name="EnderecosEletronicos_Detalhe_Titulo" xml:space="preserve">
+    <value>Endereços Eletrônicos</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Novo Processo</value>
+  </data>
+  <data name="Index_Botao_Novo" xml:space="preserve">
+    <value>Novo processo</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Cadastro de Processo</value>
+  </data>
+  <data name="Telefones_Detalhe_Titulo" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="_EditarProcesso_Aba_Title_tabDadosProcesso" xml:space="preserve">
+    <value>Dados do processo</value>
+  </data>
+  <data name="_EditarProcesso_Aba_Title_tabDadosContato" xml:space="preserve">
+    <value>Dados do contato</value>
+  </data>
+  <data name="_ListarProcesso_gridProcesso_Grid_Titulo" xml:space="preserve">
+    <value>Processos</value>
+  </data>
+  <data name="Botao_Insert_CodigosAutorizacao_Tooltip" xml:space="preserve">
+    <value>Inserir código de autorização</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_AssociacaoEtapa" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_Editar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_GrupoOferta" xml:space="preserve">
+    <value>Grupo de ofertas</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_GrupoTaxa" xml:space="preserve">
+    <value>Grupo de taxas</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_HierarquiaOferta" xml:space="preserve">
+    <value>Hierarquia de oferta</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_AssociacaoEtapa_Tooltip" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_Editar_Tooltip" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_GrupoOferta_Tooltip" xml:space="preserve">
+    <value>Grupo de ofertas</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_GrupoTaxa_Tooltip" xml:space="preserve">
+    <value>Grupo de taxas</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_HierarquiaOferta_Tooltip" xml:space="preserve">
+    <value>Hierarquia de oferta</value>
+  </data>
+  <data name="_ListarProcesso_Exclusao_Processo_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão do processo "{0}"?</value>
+  </data>
+  <data name="_ListarProcesso_Exclusao_Processo_Title" xml:space="preserve">
+    <value>Excluir Processo</value>
+  </data>
+  <data name="Botao_Notificacoes" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="Botao_Notificacoes_tooltip" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="_EditarProcesso_Aba_Title_tabDadosTaxas" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="TaxasDetalhe_Detalhe_Titulo" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="Taxas_Detalhe_Titulo" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="Botao_Configuracaopaginaetapa" xml:space="preserve">
+    <value>Configuração de páginas da etapa</value>
+  </data>
+  <data name="Botao_Configuracaopaginaetapa_Tooltip" xml:space="preserve">
+    <value>Configuração de páginas da etapa</value>
+  </data>
+  <data name="Botao_Documentacaorequerida" xml:space="preserve">
+    <value>Documentação requerida</value>
+  </data>
+  <data name="Botao_Documentacaorequerida_Tooltip" xml:space="preserve">
+    <value>Documentação requerida</value>
+  </data>
+  <data name="Botao_Grupodocumentacaorequerida" xml:space="preserve">
+    <value>Grupo de documentação requerida</value>
+  </data>
+  <data name="Botao_Grupodocumentacaorequerida_Tooltip" xml:space="preserve">
+    <value>Grupo de documentação requerida</value>
+  </data>
+  <data name="Modal_Editar_Titulo" xml:space="preserve">
+    <value>Alterar Idioma</value>
+  </data>
+  <data name="Modal_Inserir_Titulo" xml:space="preserve">
+    <value>Novo Idioma</value>
+  </data>
+  <data name="Idiomas_Detalhe_Titulo" xml:space="preserve">
+    <value>Idiomas</value>
+  </data>
+  <data name="Botao_Associacaoetapa" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="Botao_Associacaoetapa_Tooltip" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="Botao_Grupooferta" xml:space="preserve">
+    <value>Grupo de ofertas</value>
+  </data>
+  <data name="Botao_Grupooferta_Tooltip" xml:space="preserve">
+    <value>Grupo de ofertas</value>
+  </data>
+	<data name="Botao_Grupotaxa" xml:space="preserve">
+    <value>Grupo de taxas</value>
+  </data>
+	<data name="Botao_Grupootaxa_Tooltip" xml:space="preserve">
+    <value>Grupo de taxas</value>
+  </data>
+  <data name="Botao_Hierarquiaoferta" xml:space="preserve">
+    <value>Hierarquia de oferta</value>
+  </data>
+  <data name="Botao_Hierarquiaoferta_Tooltip" xml:space="preserve">
+    <value>Hierarquia de oferta</value>
+  </data>
+  <data name="Index_Copia_Processo_Botao_Cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Copia_Processo_Botao_Cancelar_Tooltip" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Index_Copiar_Processo" xml:space="preserve">
+    <value>Cópia de Processo</value>
+  </data>
+  <data name="Index_Copia_Processo_Botao_Copiar" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="Copia_Processo_Botao_Copiar_Tooltip" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="_ListarProcesso_Botao_CopiarProcesso" xml:space="preserve">
+    <value>Cópia de Processo</value>
+  </data>
+  <data name="Index_Copia_Processo_Confirmacao_Mensagem" xml:space="preserve">
+    <value>Confirma a cópia do processo selecionado?</value>
+  </data>
+  <data name="Index_Copia_Processo_Confirmacao_Titulo" xml:space="preserve">
+    <value>Confirmação de Cópia</value>
+  </data>
+  <data name="CopiarProcesso_copiaEtapas_Fieldset_Legenda" xml:space="preserve">
+    <value>Etapas a serem copiadas</value>
+  </data>
+  <data name="CopiarProcesso_copiaItens_Fieldset_Legenda" xml:space="preserve">
+    <value>Itens a serem copiados</value>
+  </data>
+  <data name="CopiarProcesso_copiaProcessoDestino_Fieldset_Legenda" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="CopiarProcesso_copiaProcessoOrigem_Fieldset_Legenda" xml:space="preserve">
+    <value>Origem</value>
+  </data>
+  <data name="CopiarProcesso_Label_MensagemInformativa" xml:space="preserve">
+    <value>As datas início e fim da etapa serão replicadas para as ofertas.</value>
+  </data>
+  <data name="_ListarProcesso_Botao_Taxasoferta" xml:space="preserve">
+    <value>Período taxa em lote</value>
+  </data>
+  <data name="_ListarProcesso_Botao_CopiarProcesso_Tooltip" xml:space="preserve">
+    <value>Cópia de Processo</value>
+  </data>
+  <data name="_ListarProcesso_Botao_Open_Tooltip" xml:space="preserve">
+    <value>Ordenação</value>
+  </data>
+  <data name="_ListarProcesso_Botao_Taxasoferta_Tooltip" xml:space="preserve">
+    <value>Período taxa em lote</value>
+  </data>
+  <data name="_DadosContatoProcesso_Botao_Insert_EnderecosEletronicos" xml:space="preserve">
+    <value>Novo endereço eletrônico</value>
+  </data>
+  <data name="_DadosContatoProcesso_Botao_Insert_EnderecosEletronicos_Tooltip" xml:space="preserve">
+    <value>Novo endereço eletrônico</value>
+  </data>
+  <data name="_EditarProcesso_Botao_Insert_Taxas" xml:space="preserve">
+    <value>Nova taxa</value>
+  </data>
+  <data name="_EditarProcesso_Botao_Insert_Taxas_Tooltip" xml:space="preserve">
+    <value>Nova taxa</value>
+  </data>
+  <data name="_DadosContatoProcesso_Botao_Insert_Telefones" xml:space="preserve">
+    <value>Novo Telefone</value>
+  </data>
+  <data name="_DadosContatoProcesso_Botao_Insert_Telefones_Tooltip" xml:space="preserve">
+    <value>Novo Telefone</value>
+  </data>
+  <data name="_EditarProcesso_Botao_Open" xml:space="preserve">
+    <value>Novo idioma</value>
+  </data>
+  <data name="_EditarProcesso_Botao_Open_Tooltip" xml:space="preserve">
+    <value>Novo idioma</value>
+  </data>
+  <data name="_ListarProcesso_Botao_Configurarnotificacao" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="Botao_Editar" xml:space="preserve">
+    <value>Editar idioma</value>
+  </data>
+  <data name="_ListarProcesso_Botao_Configurarnotificacao_Tooltip" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_TaxaOfertaLote" xml:space="preserve">
+    <value>Período taxa em lote</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_TaxaOfertaLote_Tooltip" xml:space="preserve">
+    <value>Período taxa em lote</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_ConfigurarNotificacao" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_ConfigurarNotificacao_Tooltip" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="_EditarProcesso_Botao_Salvar" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="_EditarProcesso_Botao_Salvar_Tooltip" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="Mensagem_Copia_Processo_Template_Desativado" xml:space="preserve">
+    <value>O template de processo do processo de origem está desativado, portanto, as etapas não poderão ser copiadas.</value>
+  </data>
+  <data name="Mensagem_Copia_Processo_Tipo_Desativado" xml:space="preserve">
+    <value>O tipo de processo do processo de origem selecionado está desativado, portanto, a hierarquia de ofertas, com seus grupos de oferta, e as etapas não poderão ser copiados.</value>
+  </data>
+  <data name="Mensagem_Copia_Processo_Tipo_Hierarquia_Desativada" xml:space="preserve">
+    <value>O tipo de hierarquia do processo de origem selecionado está desativado, portanto, a hierarquia de oferta, com seus grupos de oferta não poderão ser copiados.</value>
+  </data>
+  <data name="_ListarProcesso_Botao_Inscricaoforaprazo" xml:space="preserve">
+    <value>Permissão de Inscrição Fora do Prazo</value>
+  </data>
+  <data name="_ListarProcesso_Botao_Inscricaoforaprazo_Tooltip" xml:space="preserve">
+    <value>Permissão de Inscrição Fora do Prazo</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_InscricaoForaPrazo" xml:space="preserve">
+    <value>Permissão de Inscrição Fora do Prazo</value>
+  </data>
+  <data name="_BotaoConfigurarProcesso_Botao_InscricaoForaPrazo_Tooltip" xml:space="preserve">
+    <value>Permissão de Inscrição Fora do Prazo</value>
+  </data>
+  <data name="Assert_AlteracaoCobrancaOfertaOutroTipoParaQuantidadeOferta" xml:space="preserve">
+    <value>Se existir oferta no processo com a(s) taxa(s) {0} cadastrada(s), esta operação apagará os valores da quantidade mínima e máxima dessa(s) taxa(s), deseja continuar?</value>
+  </data>
+  <data name="Assert_AlteracaoCobrancaOfertaQuantidadeOfertaParaOutroTipo" xml:space="preserve">
+    <value>Se existirem ofertas no processo com a(s) taxa(s) "{0}" cadastradas, esta operação apagará os valores das quantidades mínima e máxima dessa taxa, que precisarão ser configurados novamente. Deseja continuar?</value>
+  </data>
+  <data name="Label_PossuiIntegracao" xml:space="preserve">
+    <value>A unidade responsável, o tipo de processo, o ano e o semestre de referência não podem ser alterados, porque este processo possui integração com outro sistema.</value>
+  </data>
+  <data name="Idiomas_Modal_Editar_Titulo" xml:space="preserve">
+    <value>Editar idioma</value>
+  </data>
+  <data name="Aba_Title_tabDocumentosEFormularios" xml:space="preserve">
+    <value>Documentos e Formulários</value>
+  </data>
+  <data name="ConfiguracoesModeloDocumento_Detalhe_Titulo" xml:space="preserve">
+    <value>Configuração de Emissão de Documentos</value>
+  </data>
+  <data name="ConfiguracoesFormulario_Detalhe_Titulo" xml:space="preserve">
+    <value>Formulários do Evento</value>
+  </data>
+  <data name="Assert_InscricoesValidasFormularioPreenchido" xml:space="preserve">
+    <value>Existem inscrições com este formulário preenchido. A troca do formulário se aplicará somente às novas inscrições. As inscrições que já responderam o formulário permanecerão com a versão anterior. Deseja continuar?</value>
+  </data>
+  <data name="_EditarProcesso_Aba_Title_tabCamposCadastroInscrito" xml:space="preserve">
+    <value>Campos do Cadastro do Inscrito</value>
+  </data>
+  <data name="MensagemInformativaCamposInscrito" xml:space="preserve">
+    <value>Marque abaixo os campos que deverão estar visíveis na tela de Cadastro do Inscrito durante a inscrição. Os campos de visibilidade obrigatória para o tipo de processo informado serão marcados por padrão e não poderão ser desmarcados.</value>
+  </data>
+  <data name="Assert_DocumentosEmitidosAssociados" xml:space="preserve">
+    <value>Já existem documentos emitidos com configuração de assinatura do GAD. Deseja confirmar a alteração?</value>
+  </data>
+  <data name="_EditarProcesso_Aba_Title_tabDadosEvento" xml:space="preserve">
+    <value>Evento</value>
+  </data>
+</root>

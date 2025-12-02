@@ -1,0 +1,42 @@
+﻿//MESTRE DETALHE
+.smc-detalhe-editavel-ordenacao {
+    background-color: var(--color-secondary-2);
+
+    > span {
+        color: var(--white) !important;
+    }
+}
+
+.smc-detalhe-editavel-titulo {
+    border-bottom: 1px solid var(--input-border-color) !important;
+}
+
+.smc-detalhe-editavel-botao-inserir {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+
+    &:hover {
+        border: 1px solid var(--color-hover) !important;
+        color: var(--color-hover) !important;
+        background-color: var(--color-header);
+    }
+}
+
+input[type=text],
+input[type=password],
+textarea,
+select,
+.smc-select-conteudo,
+.smc-select-focus {
+    &:focus {
+        background-color: #fffcf6 !important;
+    }
+}
+
+.smc-upload .smc-uploadFile-filesCounter {
+    background-color: var(--color-secondary);
+}
+
+.smc-orderpick-btn-up, .smc-orderpick-btn-down {
+    color: var(--white) !important;
+}

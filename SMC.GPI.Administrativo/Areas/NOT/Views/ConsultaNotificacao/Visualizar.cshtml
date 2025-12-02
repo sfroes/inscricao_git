@@ -1,0 +1,53 @@
+﻿@model ConsultaNotificacaoViewModel
+
+@using (Smc.Header("CabecalhoDetalhesNotificacao", SMCHeaderType.Primary)
+    .Item(prop => prop.Seq, sizeSM: SMCSize.Grid3_24, sizeMD: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24, sizeXS: SMCSize.Grid3_24)
+    .Item(prop => prop.Processo, sizeSM: SMCSize.Grid21_24, sizeMD: SMCSize.Grid21_24, sizeLG: SMCSize.Grid21_24, sizeXS: SMCSize.Grid21_24)
+    .Item(prop => prop.Inscrito, sizeSM: SMCSize.Grid18_24, sizeMD: SMCSize.Grid18_24, sizeLG: SMCSize.Grid18_24, sizeXS: SMCSize.Grid18_24)
+    .Item(prop => prop.GrupoOferta, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+    .Item(prop => prop.Oferta, sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24)
+
+    .Begin())
+{
+}
+
+@using (Smc.Fieldset("fieldsetDetalhes").CssClass("smc-gpi-fieldset").Begin())
+{
+    @Smc.DisplayFor(prop => prop.DescricaoTipoNotificacao)
+    @Smc.DisplayFor(prop => prop.NomeRementente)
+    @Smc.DisplayFor(prop => prop.EmailRemetente)
+    @Smc.DisplayFor(prop => prop.EmailResposta)
+    @Smc.DisplayFor(prop => prop.AssuntoNotificacao)
+    @Smc.DisplayFor(prop => prop.DataPrevistaEnvio)
+    @Smc.DisplayFor(prop => prop.DataEnvio)
+    @Smc.DisplayFor(prop => prop.SucessoEnvio)
+    if (Model.SucessoEnvio.HasValue && !Model.SucessoEnvio.Value)
+    {
+        @Smc.DisplayFor(prop => prop.DescricaoErroEnvio)
+    }
+    @Smc.DisplayFor(prop => prop.EmailDestinatario)
+    @Smc.DisplayFor(prop => prop.EmailComCopia)
+    @Smc.DisplayFor(prop => prop.EmailComCopiaOculta)
+}
+
+@using (Smc.Fieldset("fieldsetMensagem").CssClass("smc-gpi-fieldset smc-gpi-mensagem-notificacao").Begin())
+{
+    @Html.Raw(@Model.Mensagem)
+}
+
+@if (Model.Arquivos.SMCCount() > 0)
+{
+    using (Smc.Fieldset("fieldsetAnexosNotificacao").CssClass("smc-gpi-fieldset smc-gpi-secao-arquivos").Begin())
+    {
+        foreach (var arquivo in @Model.Arquivos)
+        {
+            <li class="smc-gpi-secao-arquivos-item">
+                <span><a href="@Url.Action("DownloadDocumento", new { id = (SMCEncryptedLong)arquivo.Seq })" target="_blank">@arquivo.Descricao</a></span>
+            </li>
+        }
+    }
+}
+
+
+@Smc.ButtonSet().AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon));
+

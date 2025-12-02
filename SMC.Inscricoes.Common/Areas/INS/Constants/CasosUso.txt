@@ -1,0 +1,91 @@
+﻿UC;Descrição
+UC_INS_001_01_01.Pesquisar_Processo;Este caso de uso tem como objetivo pesquisar os processos, permitindo também a exclusão.
+UC_INS_001_01_02.Manter_Processo;Este caso de uso tem como objetivo cadastrar ou alterar processos.
+UC_INS_001_01_03.Manter_Hierarquia_Oferta;Este caso de uso tem como objetivo consultar a hierarquia de oferta, bem como adicionar, alterar ou excluir itens. Também é possível adicionar, alterar ou excluir ofertas.
+UC_INS_001_01_04.Associar_Item_Hierarquia_Oferta;Este caso de uso tem como objetivo possibilitar a seleção dos tipos de item de hierarquia de oferta, para associação na hierarquia de oferta.
+UC_INS_001_01_05.Manter_Oferta;Este caso de uso tem como objetivo cadastrar ou alterar ofertas.
+UC_INS_001_01_06.Copiar_Processo;Este caso de uso tem como objetivo copiar processos e suas configurações.
+UC_INS_001_01_07.Consultar_Periodo_Taxa;Este caso de uso tem como objetivo consultar as taxas e seus períodos associados às ofertas.
+UC_INS_001_01_08.Selecionar_Ofertas_Manutencao_Taxa_Lote;Este caso de uso tem como objetivo selecionar ofertas para a inclusão ou exclusão de períodos de taxas em lote.
+UC_INS_001_01_09.Manter_Periodo_Taxa;Este caso de uso tem como objetivo cadastrar períodos de taxas em lote.
+UC_INS_001_01_10.Visualizar_Detalhes_Taxa;Este caso de uso tem como objetivo consultar os detalhes dos períodos de taxa de uma oferta.
+UC_INS_001_01_11.Pesquisar_Configuracao_Notificacao;Este caso de uso tem como objetivo pesquisar as configurações de notificação de um processo, permitindo também a exclusão.
+UC_INS_001_01_12.Manter_Configuracao_Notificacao;Este caso de uso tem como objetivo cadastrar ou alterar configurações de notificações de um processo.
+UC_INS_001_01_13.Configurar_Envio_Notificacao;Este caso de uso tem como objetivo cadastrar ou alterar os parâmetros de envio de notificação.
+UC_INS_001_03_01.Pesquisar_Associacao_Etapa_Processo;Este caso de uso tem como objetivo pesquisar as etapas associadas a um processo, permitindo também a exclusão.
+UC_INS_001_03_02.Associar_Etapa_Processo;Este caso de uso tem como objetivo associar ou alterar associação de etapas a processos.
+UC_INS_001_03_03.Pesquisar_Configuracao_Etapa;Este caso de uso tem como objetivo pesquisar as configurações de etapas, permitindo também a exclusão.  
+UC_INS_001_03_04.Manter_Configuracao_Etapa;Este caso de uso tem como objetivo cadastrar ou alterar configurações de etapas.  
+UC_INS_001_03_05.Copiar_Configuracoes_Etapa;Este caso de uso tem como objetivo copiar configurações e itens de configurações de uma etapa.
+UC_INS_001_03_06.Configurar_Paginas_Etapa;Este caso de uso tem como objetivo configurar as páginas de uma configuração de etapa.  
+UC_INS_001_03_07.Associar_Desassociar_Idioma;Este caso de uso tem como objetivo associar ou desassociar idiomas a configuração de páginas da etapa.  
+UC_INS_001_03_08.Recuperar_Pagina;Este caso de uso tem como objetivo recuperar uma página excluida da configuração de etapa.  
+UC_INS_001_03_09.Configurar_Pagina;Este caso de uso tem como objetivo configurar uma página na configuração de etapa  
+UC_INS_001_03_10.Configurar_Pagina_Idioma;Este caso de uso tem como objetivo configurar uma página em um idioma  
+UC_INS_001_03_11.Configurar_Texto;Este caso de uso tem como objetivo configurar o texto de uma seção de uma página no idioma.  
+UC_INS_001_03_12.Configurar_Arquivos;Este caso de uso tem como objetivo configurar os arquivos de uma seção de uma página no idioma.  
+UC_INS_001_03_13.Pesquisar_Documentacao_Requerida;Este caso de uso tem como objetivo pesquisar os documentos requeridos em uma configuração de etapa.
+UC_INS_001_03_14.Manter_Documentacao_Requerida;Este caso de uso tem como objetivo cadastrar ou alterar os documentos requeridos em uma configuração de etapa.
+UC_INS_001_03_15.Pesquisar_Grupo_Documentacao_Requerida;Este caso de uso tem como objetivo pesquisar os grupos de documento requeridos de uma configuração de etapa.
+UC_INS_001_03_16.Manter_Grupo_Documentacao_Requerida;Este caso de uso tem como objetivo cadastrar ou alterar os grupos de documento requerido em uma configuração de etapa.  
+UC_INS_001_03_17.Alterar_Periodo_Etapa_Processo;Este caso de uso tem como objetivo permitir a alteração do período da etapa de um processo.
+UC_INS_001_04_01.Pesquisar_Tipo_Hierarquia_Oferta;Este caso de uso tem como objetivo pesquisar os tipos de hierarquia de oferta, permitindo também a exclusão.
+UC_INS_001_04_02.Manter_Tipo_Hierarquia_Oferta;Este caso de uso tem como objetivo cadastrar ou alterar os dados de um tipo de hierarquia de oferta.
+UC_INS_001_04_03.Montar_Tipo_Hierarquia_Oferta;Este caso de uso tem como objetivo consultar o tipo de hierarquia de oferta, bem como adicionar, alterar ou excluir itens da hierarquia.
+UC_INS_001_04_04.Associar_Tipo_Item;Este caso de uso tem como objetivo possibilitar a seleção e configuração dos tipos de itens para associação ao tipo de  hierarquia de oferta.
+UC_INS_001_05_01.Pesquisar_Tipo_Documento;Este caso de uso tem como objetivo consultar os tipos de documento associados, permitindo também a exclusão.
+UC_INS_001_05_02.Manter_Tipo_Documento;Este caso de uso tem como objetivo manter o cadastro de tipo de documento, permitindo somente a associação de um novo tipo de documento.
+UC_INS_001_06_01.Manter_Tipo_Item_Hierarquia_Oferta;Este caso de uso tem como objetivo manter o cadastro de tipo de item de hierarquia de oferta, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_INS_001_07_01.Manter_Codigo_Autorizacao;Este caso de uso tem como objetivo manter o cadastro de código de autorização, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_INS_001_08_01.Pesquisar_Grupo_Ofertas;Este caso de uso tem como objetivo pesquisar os grupos de ofertas, permitindo também a exclusão.
+UC_INS_001_08_02.Manter_Grupo_Ofertas;Este caso de uso tem como objetivo cadastrar ou alterar grupos de ofertas.
+UC_INS_001_09_01.Pesquisar_Tipo_Processo;Este caso de uso tem como objetivo consultar os tipos de processo, permitindo também a exclusão.
+UC_INS_001_09_02.Manter_Tipo_Processo;Este caso de uso tem como objetivo cadastrar ou alterar os dados de um tipo de processo.
+UC_INS_001_10_01.Manter_Tipo_Taxa;Este caso de uso tem como objetivo manter o cadastro de tipo de taxa, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão)    É um cadastro dynamic.
+UC_INS_001_11_01.Pesquisar_Permissao_Inscricao_Fora_Prazo;Este caso de uso tem por objetivo permitir a pesquisa e exclusão das permissões de inscrição fora do prazo do processo.
+UC_INS_001_11_02.Criar_Permissao_Inscricao_Apos_Prazo;Permitir criar inscrição após o prazo.
+UC_INS_001_11_02.Manter_Permissao_Inscricao_Fora_Prazo;Este caso de uso tem por objetivo cadastrar e alterar as permissões de inscrção fora do prazo do processo.
+UC_INS_001_12_01.Pesquisar_Grupo_Taxas;Este caso de uso tem por objetivo permitir a pesquisa e exclusão dos <b>Grupos de taxa</b>.
+UC_INS_001_12_02.Manter_Grupo_Taxas;Este caso de uso tem por objetivo cadastrar e alterar os <b>Grupos de taxa</b>.
+UC_INS_002_01_01.Manter_Inscrito;Este caso de uso tem como objetivo cadastrar os dados de um inscrito.
+UC_INS_002_02_01.Confirmacao_Dados_Inscrito;Este caso de uso tem como objetivo confirmar os dados do inscrito.
+UC_INS_002_02_02.Selecao_Oferta;Este caso de uso tem como objetivo selecionar uma oferta a partir de um grupo de oferta.
+UC_INS_002_02_03.Instrucoes_Iniciais;Este caso de uso tem como objetivo visualizar as instruções iniciais do processo de inscrição.
+UC_INS_002_02_04.Codigo_Autorizacao;Este caso de uso tem como objetivo informar códigos de autorização para inscrição em um processo.
+UC_INS_002_02_05.Formulario_Inscricao;Este caso de uso tem como objetivo preencher os dados dos formulários de inscrição.
+UC_INS_002_02_06.Upload_Documentos;Este caso de uso tem como objetivo realizar o ulpload de documentos requeridos na etapa do processo.
+UC_INS_002_02_07.Confirmacao_Inscricao;Este caso de uso tem como objetivo confirmar a inscrição.
+UC_INS_002_02_08.Finalizacao_Inscricao;Este caso de uso tem como objetivo visualizar as instruções  finais da inscrição.
+UC_INS_002_02_09.Taxa_Inscricao;Este caso de uso tem como objetivo emitir o boleto.
+UC_INS_002_02_10.Comprovante_Inscricao;Este caso de uso tem como objetivo emitir o comprovante.
+UC_INS_002_02_11.Dados_Cadastrais;Este caso de uso tem como objetivo permitir o cadastro e alteração dos dados do inscrito e da pré-inscrição.
+UC_INS_002_03_01.Home_Inscricoes;Este caso de uso tem como objetivo apresentar a página home de inscrições.
+UC_INS_002_04_01.Home_Processo_Inscrito;Este caso de uso tem como objetivo apresentar a página home de um processo.
+UC_INS_002_05_01.Pre_Cadastro;Este caso de uso tem como objetivo cadastrar o usuário, o inscrito e a pré-inscrição.
+UC_INS_002_06_01.Nova_Entrega_Documentacao;Este caso de uso tem como objetivo permitir a nova entrega da documentação.
+UC_INS_002_07_01.Visualizar_Formulario_Impacto;<font color="#ff0000">Este caso de uso tem o objetivo de permitir a visualização e registro de respostas do formulário de impacto do processo.
+UC_INS_002_08_01.Visualizar_Ingressos;Este caso de uso tem o objetivo de permitir, em tela, a visualização dos ingressos (QR Codes) de um processo que possua gestão de eventos.
+UC_INS_003_01_01.Consulta_Posicao_Consolidada_por_Processo;Este caso de uso tem como objetivo visualizar os dados estatísticos das inscrições por processo.
+UC_INS_003_01_02.Consulta_Posicao_Consolidada_Grupo_Oferta_Oferta;Este caso de uso tem por objetivo visualizar os dados estatísticos das inscrições por grupo de ofertas ou por oferta.
+UC_INS_003_01_03.Consulta_Inscricoes_Processo;Este caso de uso tem por objetivo visualizar inscrições, alterar a situação e lançar nota e classificação do inscrito.
+UC_INS_003_01_04.Analise_Inscricao_Lote;Este caso de uso tem por objetivo visualizar inscrições, alterar a situação e lançar nota e classificação dos inscritos.
+UC_INS_003_01_05.Registro_Documentacao_Entregue;Este caso de uso tem como objetivo registrar a entrega de documentos requeridos na etapa de um processo.
+UC_INS_003_01_05.Validacao_Outro_Setor;Se a pessoa logada tiver permissão nesse token, verificar se o documento requerido em questão foi parametrizado para ser validado por outro setor.     1. Se foi, exibir as situações:  - Aguardando análise do setor responável;  - Aguardando entrega;  - Aguardando validação;  - Deferido;  - Indeferido;  - Verificar se o documento pode ser entregue posteriormente. Se sim, exibir também a situação: Pendente.    2. Se não foi, todos os campos deverão ser exibidos desabilitados e preenchidos com os valores atuais da situação do documento em questão.
+UC_INS_003_01_05.Validacao_Setor_Responsavel;Se a pessoa logada tiver permissão nesse token, verificar se o documento requerido em questão foi parametrizado para ser validado por outro setor.     1. Se foi, verificar se a situação atual do documento é Deferido ou Indeferido   - Se sim, exibir todos os campos referentes ao documento em questão desabilitados e preenchidos com os valores atuais da situação do documento;   - Se não, exibir as situações:     - Aguardando entrega;    - Aguardando validação;    - Aguardando análise do setor responsável;    - Verificar se o documento pode ser entregue posteriormente. Se sim, exibir também a situação: Pendente.    2. Se não foi, exibir as situações:  - Aguardando entrega;  - Aguardando validação;  - Deferido;  - Indeferido;  - Verificar se o documento pode ser entregue posteriormente. Se sim, exibir também a situação: Pendente.
+UC_INS_003_01_06.Consulta_Inscrito;Este caso de uso tem por objetivo visualizar os dados do inscrito.
+UC_INS_003_01_06.ExcluirInscricao;Habilita a exclusão da inscrição.
+UC_INS_003_01_06.LiberarAlteracaoInscricao;Habilita a liberação da alteração da inscrição.
+UC_INS_003_01_07.Lancamento_Nota_Classificacao;Este caso de uso tem por objetivo permitir o lançamento de nota e classificação para um ou mais inscritos.
+UC_INS_003_01_08.Alteracao_Situacao;Este caso de uso tem por objetivo permitir alterar a situação de um ou mais inscrito.
+UC_INS_003_01_09.Alteracao_Dados_Inscrito;Este caso de uso tem por objetivo alterar os dados do inscrito.
+UC_INS_003_01_10.Pesquisar_Historico_Situacao;Este caso de uso tem por objetivo visualizar o histórico de situações do inscrito.
+UC_INS_003_01_11.Manter_Historico_Situacao;Este caso de uso tem como objetivo alterar os dados de um registro de histórico de situação.
+UC_INS_003_01_12.Cadastro_Observacao_Inscricao;Este caso de uso tem como objetivo permitir o cadastro de uma observação sobre a inscrição.
+UC_INS_003_01_13.Alterar_Formulario_Inscricao;Este caso de usuo tem como objetivo permitir a alteração dos dados preenchidos pelo candidato no formulário de inscrição.  
+UC_INS_004_01_01.Pesquisar_Inscrito;Este caso de uso tem como objetivo permitir a pesquisa de inscritos e suas inscrições.
+UC_INS_005_01_01.Pesquisar_Atividade;Este caso de uso tem como objetivo permitir a pesquisa e seleção de de atividades para a relização do check-in
+UC_INS_005_01_02.Realizar_Checkin_por_QRCode;Este caso de uso tem como objetivo realizar o check-in dos participantes nas atividades dos eventos, a partir de um QR Code
+UC_INS_005_01_03.Realizar_Checkin_por_CPF;Este caso de uso tem como objetivo realizar o check-in manual dos participantes nas atividades dos eventos.
+UC_INS_005_01_04.Consulta_Posicao_Consolidada_Checkin;Este caso de uso tem como objetivo permitir a consulta da posição consolidada dos check-ins realizados no evento, acionar a funcionalidade de check-in em Lote e emitir a listagem dos inscritos por atividade.
+UC_INS_005_01_05.Realizar_Checkin_em_Lote;Este caso de uso tem como objetivo realizar e desfazer o check-in em lote dos participantes na atividade do evento.  
+UC_INS_005_01_06.Listagem_Inscritos_Atividade;Este caso de uso tem como objetivo exibir a listagem dos inscritos por atividade.

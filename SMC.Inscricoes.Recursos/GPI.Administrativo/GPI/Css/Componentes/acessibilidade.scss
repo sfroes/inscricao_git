@@ -1,0 +1,200 @@
+﻿
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --contraste-hover: #4b4b4b;
+    --font-size-acessibilidade1: 16px;
+    --font-size-acessibilidade2: 18px;
+    --font-size-acessibilidade-1: 12px;
+    --font-size-acessibilidade-2: 10px;
+}
+
+
+
+.smc-acessibilidade-contraste {
+    .smc-gpi-processo-passo-concluido:before,
+    .smc-gpi-processo-passo-atual:before,
+    .smc-wizard-selecionado {
+        border: 1px solid var(--contraste-hover);
+        background-color: var(--contraste-hover);
+    }
+
+    .smc-gpi-processo-passo-emaberto:before {
+        border: 1px solid var(--contraste-hover);
+        background-color: var(--black);
+    }
+
+    .smc-gpi-processo-passos:before,
+    .smc-instrucoes-preenchimento-container .smc-instrucoes-preenchimento-icone:before {
+        background-color: var(--contraste-hover) !important;
+    }
+
+    img, .smc-aplicaco-logotipo {
+        filter: brightness(0) invert(1);
+    }
+
+    h1, h2, h3, h4, h5, span, p, label, a, ::before, .smc-wizard-passo, .smc-modal-window .smc-modal-header > h2 {
+        color: var(--white) !important;
+    }
+
+    .smc-gpi-inicio-botao .smc-btn-custom,
+    .smc-gpi-inicio-botao .smc-button,
+    .smc-gpi-inicio-botao, a {
+        background-color: transparent !important;
+
+        &:hover {
+            background-color: transparent !important;
+        }
+    }
+
+    .smc-btn-usuario, .smc-btn-acessibilidade, .smc-btn-custom.smc-gpi-btn-link-grid, .smc-btn-custom.smc-gpi-link {
+        border: none !important;
+    }
+
+    .smc-gpi-data,
+    .smc-gpi-situacao,
+    .smc-gpi-painel-lateral,
+    .smc-instrucoes-preenchimento-container .smc-instrucoes-preenchimento-icone:before,
+    .smc-detalhe-editavel-painel-nao-encontrado {
+        border: 1px solid var(--white) !important;
+    }
+
+    .smc-gpi-data-inicio:before {
+        border-color: transparent transparent transparent var(--white);
+    }
+
+    .smc-list-item, .smc-modal-footer, .fancytree-selected,
+    .smc-btn-custom.smc-btn-lookup-open-modal.smc-lookup-open-command,
+    .fancytree-title, .smc-datagrid-alinhamento-vertical-topo {
+        background-color: var(--black) !important;
+    }
+
+    div, header, footer, section, aside, legend, fieldset, pre, ul, li, ol, .cke_button_on, .cke_combo_button, .cke_top, .cke_reset span, .smc-tabs-tab, //abas
+    .smc-modal-footer {
+        background-color: var(--black);
+        color: var(--white);
+    }
+
+    .smc-gpi-usuario::before {
+        background-color: var(--white);
+    }
+
+    button,
+    textarea,
+    .smc-select-custom .smc-select,
+    .smc-select-multiplo .smc-select,
+    .smc-select-itens,
+    .smc-select-custom .smc-select-itens > input,
+    .smc-select-multiplo .smc-select-itens > input,
+    .smc-select > select,
+    .smc-select > select > option,
+    .smc-select-multiple,
+    .smc-modal-window,
+    .smc-pager .smc-pager-numero,
+    .dropdown-menu,
+    .smc-sortpicker .dropdown .dropdown-menu,
+    .dropdown .dropdown-menu,
+    input,
+    input[readonly],
+    textarea[readonly],
+    select[readonly],
+    select[disabled],
+    :focus,
+    .smc-select-focus,
+    .smc-busca-funcionalidade > input,
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    textarea:focus,
+    select:focus,
+    .smc-select-conteudo:focus,
+    .smc-select-focus,
+    input.cke_dialog_ui_input_text:focus,
+    input.cke_dialog_ui_input_password:focus,
+    textarea.cke_dialog_ui_input_textarea:focus,
+    select.cke_dialog_ui_input_select:focus,
+    th,
+    tr,
+    td,
+    .smc-simplelist-conteudo div > ul > li:nth-child(2n+1),
+    .smc-simplelist-conteudo div > ul > li.odd,
+    .smc-simplelist-conteudo div > ul > li:nth-child(2n),
+    .smc-simplelist-conteudo div > ul > li.even,
+    .smc-timeline-conteudo-principal,
+    .smc-button a,
+    .smc-busca-funcionalidade-painel,
+    .smc-sortpicker .dropdown .dropdown-menu > .smc-sortpicker-items-selecionados > .smc-sortpicker-item,
+    .smc-pager-ico-paginaprimeira, .smc-pager-ico-paginaanterior, .smc-pager-ico-paginaproxima, .smc-pager-ico-paginaultima,
+    div.ui-draggable,
+    .smc-btn-anterior-icotext,
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default,
+    .ui-datepicker-month, .ui-datepicker-year {
+        background-color: var(--black) !important;
+        color: var(--white) !important;
+        border: 1px solid var(--white) !important;
+    }
+
+    .input-validation-error {
+        background-color: var(--contraste-hover) !important;
+        border: 3px solid var(--white) !important;
+    }
+
+    header, .input-validation-error {
+        border-color: var(--white) !important;
+    }
+
+    .smc-tab-error,
+    .span-validation-error,
+    .field-validation-error {
+        background-color: var(--black) !important;
+        color: var(--white) !important;
+
+        span,
+        p {
+            color: var(--white) !important;
+        }
+    }
+
+    .smc-grid .smc-datagrid > table,
+    .smc-header-tipo-primary {
+        border: 1px solid var(--white) !important;
+        border-collapse: inherit;
+    }
+
+    .smc-datepicker {
+        div.smc-ico-datepicker::before {
+            color: var(--white) !important;
+        }
+    }
+
+    .smc-message-success, .smc-message-error, .smc-message-alert {
+        div.ui-draggable {
+            .smc-modal-header {
+                h2 {
+                    color: var(--white) !important;
+                }
+            }
+
+            .smc-modal-content {
+                color: var(--white) !important;
+            }
+        }
+    }
+}
+
+// ----- ACESSIBILIDADE AUMENTA COM DOIS CLIQUES ----- //
+.smc-acessibilidade2 {
+    font-size: var(--font-size-acessibilidade2);
+}
+
+// ----- ACESSIBILIDADE AUMENTA COM UM CLIQUE ----- //
+.smc-acessibilidade1 {
+    font-size: var(--font-size-acessibilidade1);
+}
+// ----- ACESSIBILIDADE REDUZ COM UM CLIQUE ----- //
+.smc-acessibilidade-1 {
+    font-size: var(--font-size-acessibilidade-1);
+}
+// ----- ACESSIBILIDADE REDUZ COM DOIS CLIQUES ----- //
+.smc-acessibilidade-2 {
+    font-size: var(--font-size-acessibilidade-2);
+}

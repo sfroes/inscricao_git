@@ -1,0 +1,1024 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BB80531-F6ED-4CB2-B5F9-2EEAE28545B8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.GPI.Inscricao</RootNamespace>
+    <AssemblyName>SMC.GPI.Inscricao</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.StrongName, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e3e8412083d25dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.StrongName.2.0.30\lib\net461\Dapper.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.1.0\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.EF6, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.EF6.4.1.0\lib\net461\MiniProfiler.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Mvc5, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Mvc5.4.1.0\lib\net461\MiniProfiler.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Providers.SqlServer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Providers.SqlServer.4.1.0\lib\net461\MiniProfiler.Providers.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.1.0\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SautinSoft.Document, Version=5.6.8.16, Culture=neutral, PublicKeyToken=e759c76c7515592a, processorArchitecture=MSIL">
+      <HintPath>..\packages\sautinsoft.document.5.6.8.16\lib\net461\SautinSoft.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.Common, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.DadosMestres.Common.4.2.250513.2\lib\net471\SMC.DadosMestres.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.ServiceContract, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.DadosMestres.ServiceContract.4.2.250513.2\lib\net471\SMC.DadosMestres.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.EstruturaOrganizacional.UI.Mvc, Version=4.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.EstruturaOrganizacional.UI.Mvc.4.2.250926.1\lib\net471\SMC.EstruturaOrganizacional.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.ServiceContract, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.UI.Mvc, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Core, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Core.4.2.251008.1\lib\net471\SMC.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Data, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Data.4.2.241024.1\lib\net471\SMC.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.DataAnnotations, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.DataAnnotations.4.2.251008.1\lib\net471\SMC.Framework.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Entity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Entity.4.2.251008.1\lib\net471\SMC.Framework.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Fake, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Fake.4.2.251008.1\lib\net471\SMC.Framework.Fake.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Json, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Json.4.2.251008.1\lib\net471\SMC.Framework.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Model, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Model.4.2.251008.1\lib\net471\SMC.Framework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Repository, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Repository.4.2.251008.1\lib\net471\SMC.Framework.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Rest, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Rest.4.2.251008.1\lib\net471\SMC.Framework.Rest.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Security, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Security.4.2.251008.1\lib\net471\SMC.Framework.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.4.2.251008.1\lib\net471\SMC.Framework.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Specification, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Specification.4.2.251008.1\lib\net471\SMC.Framework.Specification.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Transaction, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Transaction.4.2.251008.1\lib\net471\SMC.Framework.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.UI.Mvc, Version=4.2.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.UI.Mvc.4.2.251021.1\lib\net471\SMC.Framework.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.UI.Mvc.Security, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.UI.Mvc.Security.4.2.251008.1\lib\net471\SMC.Framework.UI.Mvc.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Unity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Unity.4.2.251008.1\lib\net471\SMC.Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Infraestrutura.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Infraestrutura\4.2\SMC.Infraestrutura.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Infraestrutura.ServiceContract">
+      <HintPath>..\..\Referencias\Infraestrutura\4.2\SMC.Infraestrutura.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.UI.Mvc">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.ServiceContract">
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.UI.Mvc">
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Localidades\4.2\SMC.Localidades.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.Service, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Localidades\4.2\SMC.Localidades.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.ServiceContract">
+      <HintPath>..\..\Referencias\Localidades\4.2\SMC.Localidades.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.UI.Mvc, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Localidades\4.2\SMC.Localidades.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.PDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\SMCPDF\4.2\SMC.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.PDFCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\SMCPDF\4.2\SMC.PDFCore.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.PDFDatas, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\SMCPDF\4.2\SMC.PDFDatas.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Pessoas.UI.Mvc">
+      <HintPath>..\..\Referencias\Pessoas\4.2\SMC.Pessoas.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.ServiceContract, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.UI.Mvc">
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\MessagesResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MetadataResource.en.designer.cs">
+      <DependentUpon>MetadataResource.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\MetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\UIResource.en.designer.cs">
+      <DependentUpon>UIResource.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FakeConfig.cs" />
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Areas\INS\Controllers\FrontController.cs" />
+    <Compile Include="Areas\INS\Controllers\InscricaoController.cs" />
+    <Compile Include="Areas\INS\Controllers\FormularioImpactoController.cs" />
+    <Compile Include="Areas\INS\Controllers\NovaEntregaDocumentacaoController.cs" />
+    <Compile Include="Areas\INS\Controllers\InscritoController.cs" />
+    <Compile Include="Areas\INS\Fake\ComprovanteInscricaoStrategy.cs" />
+    <Compile Include="Areas\INS\Fake\DadoFormularioStrategy.cs" />
+    <Compile Include="Areas\INS\Fake\InstrucoesFinaisStrategy.cs" />
+    <Compile Include="Areas\INS\Models\ConfiguracaoEtapaPagina\ConfiguracaoEtapaPaginaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\FiltroAngularModel.cs" />
+    <Compile Include="Areas\INS\Models\Front\FluxoPaginaMenuViewModel.cs" />
+    <Compile Include="Areas\INS\Models\GrupoOferta\TipoItemHierarquiaOfertaDynamicModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\IIdioma.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\IngressoOfertaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\IniciarContinuarInscricaoFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\ContinuarInscricaoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoDadoFormularioViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoDadoFormularioListaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoDocumentoGrupoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoDocumentoObrigatorioViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoDocumentoAdicionalViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoTaxaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\IngressoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Front\ModeloPaginaAngularViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\Shared\ProcessoCamposInscritoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\VisualizarPdfQrCodeViewModel.cs" />
+    <Compile Include="Areas\INS\Models\NovaEntregaDocumentacao\NovaEntregaDocumentacaoDocumentoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\NovaEntregaDocumentacao\NovaEntregaDocumentacaoFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Models\NovaEntregaDocumentacao\NovaEntregaDocumentacaoCabecalhoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\NovaEntregaDocumentacao\NovaEntregaDocumentacaoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\OfertaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\Shared\DadosInscritoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\Shared\PaginaFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Views\Inscricao\App_LocalResources\UIResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\Inscrito\App_LocalResources\UIResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Services\InscricaoControllerService.cs" />
+    <Compile Include="Areas\INS\Services\ProcessoControllerService.cs" />
+    <Compile Include="Areas\INS\Views\NovaEntregaDocumentacao\App_LocalResources\MetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\NovaEntregaDocumentacao\App_LocalResources\MetadataResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\NovaEntregaDocumentacao\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\NovaEntregaDocumentacao\App_LocalResources\UIResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Fake\HomeProcessoInscritoStrategy.cs" />
+    <Compile Include="Fake\ProcessosListaStrategy.cs" />
+    <Compile Include="Fake\InscricoesListaStrategy.cs" />
+    <Compile Include="Areas\INS\Fake\CodigoAutorizacaoStrategy.cs" />
+    <Compile Include="Areas\INS\Fake\FormularioInscricaoStrategy.cs" />
+    <Compile Include="Areas\INS\Fake\InstrucaoInicialStrategy.cs" />
+    <Compile Include="Areas\INS\Fake\ConfirmarDadosInscritoStrategy.cs" />
+    <Compile Include="Areas\INS\Fake\ConfirmarInscricaoStrategy.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoCodigoAutorizacaoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaCodigoAutorizacaoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaComprovanteInscricaoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaFormularioInscricaoViewModel.cs" />
+    <Compile Include="Areas\INS\Fake\SelecaoOfertaStrategy.cs" />
+    <Compile Include="Areas\INS\Fake\UploadDocumentosStrategy.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaInstrucoesFinaisViewModel.cs" />
+    <Compile Include="Models\Home\InscricaoProcessoItemViewModel.cs" />
+    <Compile Include="Models\Home\InscricaoListaViewModel.cs" />
+    <Compile Include="Models\Home\GrupoOfertaProcessoListaVewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\Shared\FluxoPaginaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaInstrucaoInicialViewModel.cs" />
+    <Compile Include="Areas\INS\Services\InscritoControllerService.cs" />
+    <Compile Include="Areas\INS\Views\Inscricao\App_LocalResources\MetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\Inscricao\App_LocalResources\MetadataResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\Inscricao\App_LocalResources\UIResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\Inscrito\App_LocalResources\MetadataResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\Shared\App_LocalResources\MetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\Shared\App_LocalResources\MetadataResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\Shared\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaConfirmarInscricaoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoOfertaListaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoDocumentoOpcionalViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaUploadDocumentosViewModel.cs" />
+    <Compile Include="Areas\INS\Views\Shared\App_LocalResources\UIResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Fake\EnderecoEletronicoStrategy.cs" />
+    <Compile Include="Areas\INS\INSAreaRegistration.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaConfirmarDadosInscritoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscrito\InscritoViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoOfertaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\PaginaSelecaoOfertaViewModel.cs" />
+    <Compile Include="Models\Home\InscricoesFiltroViewModel.cs" />
+    <Compile Include="Models\Home\ProcessoAbertoListaViewModel.cs" />
+    <Compile Include="Areas\INS\Views\Inscrito\App_LocalResources\MetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Views\Inscrito\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Fake\DadoFormularioViewModelStrategy.cs" />
+    <Compile Include="Models\Home\ProcessoAbertoFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\Shared\PaginaViewModel.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao\InscricaoDocumentoListaViewModel.cs" />
+    <Compile Include="Models\Home\FormularioImpactoViewModel.cs" />
+    <Compile Include="Models\Home\ProcessoHomeViewModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\EnderecoEletronicoViewModel.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Ioc\MvcIocMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Home\App_LocalResources\MessagesResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\App_LocalResources\MetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\App_LocalResources\MetadataResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetadataResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\App_LocalResources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\App_LocalResources\UIResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\App_LocalResources\DetailMetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetailMetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\App_LocalResources\DetailUIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetailUIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\App_LocalResources\DynamicMetadataResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DynamicMetadataResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\App_LocalResources\DynamicUIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DynamicUIResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\App_LocalResources\UIResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.en.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="app.js" />
+    <Content Include="FederationMetadata\2007-06\FederationMetadata.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="service-worker.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\MetadataResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.en.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\MessagesResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\UIResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.en.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Inscricao\App_LocalResources\MetadataResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Inscricao\App_LocalResources\UIResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Inscricao\App_LocalResources\UIResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Inscricao\App_LocalResources\MetadataResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\NovaEntregaDocumentacao\App_LocalResources\MetadataResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\NovaEntregaDocumentacao\App_LocalResources\UIResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\NovaEntregaDocumentacao\App_LocalResources\UIResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Shared\App_LocalResources\MetadataResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Shared\App_LocalResources\MetadataResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Shared\App_LocalResources\UIResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Shared\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home\App_LocalResources\MetadataResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home\App_LocalResources\UIResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home\App_LocalResources\UIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Home\App_LocalResources\MetadataResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Views\Home\App_LocalResources\MessagesResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesResource.Designer.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\DetailMetadataResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DetailMetadataResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\DetailUIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DetailUIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\DynamicMetadataResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DynamicMetadataResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\DynamicUIResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DynamicUIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Inscrito\App_LocalResources\MetadataResource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Inscrito\App_LocalResources\UIResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\UIResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\App_LocalResources\UIResource.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\MetadataResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\UIResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\INS\Views\Inscrito\App_LocalResources\MetadataResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Views\Inscrito\App_LocalResources\UIResource.en.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Areas\INS\Views\Shared\_BotoesNavegacaoConfirmarDadosInscrito.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\_TaxaOferta.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\_ListarTaxasOferta.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\BoletoInscricao.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\_DocumentoGrupoUpload.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\_DocumentoUploadObrigatorio.cshtml" />
+    <Content Include="Areas\INS\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\_VisualizarDetalhesOferta.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\_DocumentoUploadOpcional.cshtml" />
+    <Content Include="Areas\INS\Views\NovaEntregaDocumentacao\Index.cshtml" />
+    <Content Include="Areas\INS\Views\NovaEntregaDocumentacao\_Cabecalho.cshtml" />
+    <Content Include="Areas\INS\Views\NovaEntregaDocumentacao\_Documento.cshtml" />
+    <EmbeddedResource Include="Areas\INS\Views\NovaEntregaDocumentacao\App_LocalResources\MetadataResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MetadataResource.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Areas\INS\Views\Inscricao\ComprovanteInscricaoPUCAberta.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\PdfListaQrCode.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\_MenuLateralDireitaIngressos.cshtml" />
+    <Content Include="manifest.json" />
+    <Content Include="Areas\INS\Views\FormularioImpacto\Index.cshtml" />
+    <Content Include="Areas\INS\Views\FormularioImpacto\FormularioRespondido.cshtml" />
+    <Content Include="Areas\INS\Views\FormularioImpacto\FomularioIndisponivel.cshtml" />
+    <None Include="App\web.config" />
+    <Content Include="Areas\INS\Views\Front\_PartialHeader.cshtml" />
+    <Content Include="Areas\INS\Views\Front\_PartialFooter.cshtml" />
+    <Content Include="Areas\INS\Views\Shared\_PainelLateralProcessoAngular.cshtml" />
+    <Content Include="Areas\INS\Views\Shared\_BotoesNavegacaoAngular.cshtml" />
+    <None Include="Microsoft.IdentityModel.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\Publish.pubxml" />
+    <Content Include="Views\Shared\_SGFReport.cshtml" />
+    <Content Include="Views\Home\IndexProcesso.cshtml" />
+    <Content Include="Views\Home\_ListarEtapaInscricaoProcesso.cshtml" />
+    <Content Include="Views\Home\_ListarInscricoesProcesso.cshtml" />
+    <Content Include="Views\Shared\_SGFIndex.cshtml" />
+    <Content Include="Views\Shared\_Layout_Novo.cshtml" />
+    <Content Include="Areas\INS\Views\Inscricao\Ingressos.cshtml" />
+    <Content Include="Views\Shared\_SGFImpacto.cshtml" />
+    <Content Include="Views\Shared\_Layout_NaoAutenticado.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SMC.Content.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ConnectionStrings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscrito\_InscritoStep1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscrito\_InscritoStep2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMC.Inscricoes.Common\SMC.Inscricoes.Common.csproj">
+      <Project>{a94711a1-2a12-43dd-8262-d2b60c2084bb}</Project>
+      <Name>SMC.Inscricoes.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Inscricoes.ServiceContract\SMC.Inscricoes.ServiceContract.csproj">
+      <Project>{f7ae8a51-d919-43a4-8af5-d115de4b85be}</Project>
+      <Name>SMC.Inscricoes.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Inscricoes.Service\SMC.Inscricoes.Service.csproj">
+      <Project>{33f40893-8bca-4b47-b799-83c0f603ed7c}</Project>
+      <Name>SMC.Inscricoes.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Inscricoes.UI.Mvc\SMC.Inscricoes.UI.Mvc.csproj">
+      <Project>{5260bfff-7787-4292-9aae-bdc7cc0e00b1}</Project>
+      <Name>SMC.Inscricoes.UI.Mvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscrito\Cadastrar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\_ListarEtapaInscricao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\SelecaoOferta.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\ConfirmarDadosInscrito.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\UploadDocumentos.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\ConfirmarInscricao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\InstrucoesIniciais.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\CodigoAutorizacao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Shared\_BotoesNavegacao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\FormularioInscricao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\_ListarDocumentos.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Shared\_PainelLateralProcesso.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\InstrucoesFinais.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Views\Inscricao\ComprovanteInscricao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\_ListarInscricoes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_PainelLateralHome.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5249</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Dev/GPI.Inscricao</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/SMC.GPI.Inscricao</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets" Condition="Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

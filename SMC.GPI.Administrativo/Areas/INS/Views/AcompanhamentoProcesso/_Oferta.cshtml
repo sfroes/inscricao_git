@@ -1,0 +1,44 @@
+﻿@model ConsultaConsolidadaOfertaListaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("row smc-list-item-agrupado").Begin())
+{
+using (Smc.Div().Size(SMCSize.Grid23_24).Begin())
+{
+    @Smc.DisplayFor(prop => prop.Descricao)
+    @Smc.DisplayFor(prop => prop.Total)
+    @Smc.DisplayFor(prop => prop.Iniciadas)
+    @Smc.DisplayFor(prop => prop.Finalizadas)
+    @Smc.DisplayFor(prop => prop.Pagas)
+    @Smc.DisplayFor(prop => prop.DocumentacoesEntregues)
+    @Smc.DisplayFor(prop => prop.Confirmadas)
+    @Smc.DisplayFor(prop => prop.NaoConfirmadas)
+    @Smc.DisplayFor(prop => prop.Deferidos)
+    @Smc.DisplayFor(prop => prop.Indeferidos)
+    @Smc.DisplayFor(prop => prop.Canceladas)
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid1_24).CssClass("smc-buttonset-vertical-secundario").Begin())
+    {
+
+        string guid = Guid.NewGuid().ToString();
+
+    @*@(Smc.Button(SMCButtonBehavior.Configurar)
+             .Attribute("data-context", "menu-componente-config-" + guid)
+             .DisplayMode(SMCButtonDisplayMode.Icon)
+             .Highlight()
+             .Type(SMCButtonType.InputButton)
+    )*@
+
+    @(Smc.ContextMenu("menu-componente-config-" + guid)
+                    .DefaultButton()
+                    .OpenEvent(SMCMouseEvent.LeftClick)
+                     .Item(@Smc.GetUIResource("Botao_Consultar_Inscricoes_Oferta"), "ConsultarInscricaoProcesso", "AcompanhamentoProcesso",
+                            new
+                            {
+                                seqOferta = (SMCEncryptedLong)Model.Seq,
+                                seqProcesso = (SMCEncryptedLong)Model.SeqProcesso,
+                                seqGrupoOferta = (SMCEncryptedLong)Model.SeqGrupoOferta
+                            })
+    )
+}
+}

@@ -1,0 +1,279 @@
+﻿// GRID
+.smc-container {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.smc-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.smc-col,
+.smc-col-1,
+.smc-col-2,
+.smc-col-3,
+.smc-col-4,
+.smc-col-5,
+.smc-col-6,
+.smc-col-7,
+.smc-col-8,
+.smc-col-9,
+.smc-col-10,
+.smc-col-11,
+.smc-col-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.smc-col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+@mixin grid-breakpoints($size, $col, $flex-value, $max-width) {
+    @media screen and ($size) {
+        .smc-col-#{$col} {
+            flex: $flex-value;
+            max-width: $max-width;
+        }
+    }
+}
+
+// @media >768px
+@include grid-breakpoints("min-width: 768px", "3", 0 0 50%, 50%);
+
+// @media >1200px
+@include grid-breakpoints("min-width: 1200px", "1", 0 0 8.33333%, 8.33333%);
+@include grid-breakpoints("min-width: 1200px", "2", 0 0 16.66667%, 16.66667%);
+@include grid-breakpoints("min-width: 1200px", "3", 0 0 25%, 25%);
+@include grid-breakpoints("min-width: 1200px", "4", 0 0 33.33333%, 33.33333%);
+@include grid-breakpoints("min-width: 1200px", "5", 0 0 41.66667%, 41.66667%);
+@include grid-breakpoints("min-width: 1200px", "6", 0 0 50%, 50%);
+@include grid-breakpoints("min-width: 1200px", "7", 0 0 58.33333%, 58.33333%);
+@include grid-breakpoints("min-width: 1200px", "8", 0 0 66.66667%, 66.66667%);
+@include grid-breakpoints("min-width: 1200px", "9", 0 0 75%, 75%);
+@include grid-breakpoints("min-width: 1200px", "10", 0 0 83.33333%, 83.33333%);
+@include grid-breakpoints("min-width: 1200px", "11", 0 0 91.66667%, 91.66667%);
+@include grid-breakpoints("min-width: 1200px", "12", 0 0 100%, 100%);
+
+
+// HELPERS
+.display-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+// flex justify
+@mixin flex-justify($value) {
+    .flex-j-#{$value} {
+        @if $value == center {
+            justify-content: $value;
+        }
+        @else if $value == start {
+            justify-content: flex-#{$value};
+        }
+        @else if $value == end {
+            justify-content: flex-#{$value};
+        }
+        @else {
+            justify-content: space-#{$value};
+        }
+    }
+}
+
+// classe => .flex-j-[posição]
+@include flex-justify(center);
+@include flex-justify(start);
+@include flex-justify(end);
+@include flex-justify(between);
+@include flex-justify(around);
+@include flex-justify(evenly);
+
+// flex align
+@mixin flex-align($value) {
+    .flex-a-#{$value} {
+        @if $value == center {
+            align-items: $value;
+        }
+        @else {
+            align-items: flex-#{$value};
+        }
+    }
+}
+
+// classe => .flex-a-[posição]
+@include flex-align(center);
+@include flex-align(start);
+@include flex-align(end);
+
+// text align
+@mixin text-align($value) {
+    .text-#{$value} {
+        text-align: $value;
+    }
+}
+
+// classe => .text-[posição]
+@include text-align(center);
+@include text-align(left);
+@include text-align(right);
+
+.margin-0 {
+    margin: 0;
+}
+
+@mixin espacamentos($propriedade,$eixo, $value, $name) {
+    @for $i from 0 to $value {
+        .#{$propriedade}-#{($eixo)}-#{($i + 1) * $name} {
+            #{$propriedade}-#{($eixo)}: (($i + 1) * $name)+px;
+        }
+    }
+}
+@include espacamentos(margin,top,1,0);
+@include espacamentos(margin,top,6,5);
+@include espacamentos(margin,bottom,1,0);
+@include espacamentos(margin,bottom,6,5);
+@include espacamentos(margin,left,1,0);
+@include espacamentos(margin,left,6,5);
+@include espacamentos(margin,right,1,0);
+@include espacamentos(margin,right,6,5);
+
+.padding-0 {
+    padding: 0;
+}
+
+@include espacamentos(padding,top,1,0);
+@include espacamentos(padding,top,6,5);
+@include espacamentos(padding,bottom,1,0);
+@include espacamentos(padding,bottom,6,5);
+@include espacamentos(padding,left,1,0);
+@include espacamentos(padding,left,6,5);
+@include espacamentos(padding,right,1,0);
+@include espacamentos(padding,right,6,5);
+
+// DIRECTION
+.flex-d-row {
+    flex-direction: row;
+}
+
+.circle-img {
+    border-radius: 50%;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th,
+    td {
+        text-align: left;
+        padding: 0.75em 1.5em;
+       // white-space: nowrap;
+    }
+
+    thead {
+        tr {
+            th {
+                font-weight: 700;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                border-top: 1px solid;
+            }
+        }
+    }
+}
+
+.show {
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.hide {
+    opacity: 0 !important;
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.border-0 {
+    border: 0;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.btn-block {
+    width: 100%;
+    display: block;
+}
+
+.float-none{
+    float:none;
+}

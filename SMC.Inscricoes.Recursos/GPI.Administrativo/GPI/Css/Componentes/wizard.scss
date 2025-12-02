@@ -1,0 +1,51 @@
+﻿.btn-circle {
+    padding: 0.57em 1.14em;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border: 2px solid;
+    font-weight: bold;
+    background-color: var(--color-body);
+    border-color: var(--white);
+    color: var(--border-button);
+}
+
+.smc-wizard-selecionado {
+    background-color: var(--color-font-paths);
+    border-color: var(--white);
+    color: var(--white);
+
+    + p {
+        color: var(--color-font-paths) !important;
+    }
+}
+
+.stepwizard {
+    background-color: var(--color-body);
+    border-color: var(--border-button);
+
+    &::before {
+        background-color: var(--white);
+    }
+}
+
+.smc-wizard-step {
+    p {
+        text-transform: uppercase;
+        margin-top: 1.42em;
+        color: var(--border-button);
+    }
+}
+
+//BARRA DE BOTÕES
+.smc-wizard-barra-acoes {
+    border-top: 1px solid var(--color-detail-h3) !important;
+    margin-top: 2.85em !important;
+    width: 100%;
+    padding: 2.85em 0 0 0 !important;
+    display: flex;
+}
+
+.smc-wizard {
+    display:block;
+}

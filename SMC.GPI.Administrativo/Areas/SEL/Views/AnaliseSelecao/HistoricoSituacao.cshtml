@@ -1,0 +1,56 @@
+﻿@model HistoricoSituacaoListaViewModel
+
+@using (Smc.Header("headerLancamentoResultado", SMCHeaderType.Primary)
+                                    .Item(prop => prop.TipoProcesso, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                                    .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                                    .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+                                    .Item(prop => prop.SeqInscricao, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                                    .Item(prop => prop.Candidato, sizeMD: SMCSize.Grid13_24, sizeLG: SMCSize.Grid13_24, sizeXS: SMCSize.Grid13_24)
+                                    .Item(prop => prop.GrupoOferta, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                                    .Item(prop => prop.Opcao, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                                    .Item(prop => prop.Oferta, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+                                    .Begin())
+{ }
+
+
+
+@(Smc.Grid("listaHistoricoSituacoes", new SMCPagerModel<HistoricoSituacaoItemViewModel>(Model.Historicos))
+     .AutoGenerateColumns()
+     .HideNavigator()
+     .HidePager()
+     .HideRowNumber()
+     .HideRowsTotalizer()
+     .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", false,
+            item => Smc.Button(SMCButtonBehavior.Alterar, "EditarHistoricoSituacao", new {
+                                seqHistoricoSituacao = SMCDESCrypto.EncryptNumberForURL((item as HistoricoSituacaoItemViewModel).Seq),
+                                seqInscricaoOferta = SMCDESCrypto.EncryptNumberForURL((item as HistoricoSituacaoItemViewModel).SeqInscricaoOferta),
+                                backUrl = Model.BackURL
+                            } )
+                       .DisplayMode(SMCButtonDisplayMode.Icon)
+                       .SecurityToken(UC_SEL_001_01_07.MANTER_HISTORICO_SITUACAO_SELECAO)
+     ))
+
+@{
+    var buttonSet = Smc.ButtonSet();
+
+    if (Model.BackURL != null)
+    {
+
+        buttonSet.AddButton(Smc.Button("Voltar")
+            .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-voltar-icotext")
+            .Url(Model.BackURL));
+    }
+    else
+    {
+        buttonSet.AddButton(Smc.Button("Voltar", "ConsultaSelecoesProcesso",
+                    new { seqProcesso = Model.SeqProcesso, backUrl = Model.BackURL },
+                    "AcompanhamentoSelecao").CssClass("smc-btn-voltar-icotext").Type(SMCButtonType.Link));
+    }
+
+}
+@buttonSet
+
+
+
+

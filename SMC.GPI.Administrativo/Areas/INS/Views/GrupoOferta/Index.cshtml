@@ -1,0 +1,37 @@
+﻿@model GrupoOfertaFiltroViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.ContextMenu)
+}
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.GrupoOferta, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = true })
+
+@using (Smc.Form("formPesquisaGrupoOferta", "ListarGrupoOferta").Ajax("#divGridGrupoOferta").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaGrupoOferta").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.Seq).Focus()
+        @Smc.EditorFor(prop => prop.Descricao)
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_INS_001_08_02.MANTER_GRUPO_OFERTAS)
+                 .Url(Url.Action("Incluir", new { @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso })))
+        )
+    }
+}
+
+<div id="divGridGrupoOferta">
+    @Html.Action("ListarGrupoOferta")
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Index", "Processo")
+        .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-voltar-icotext"))
+)

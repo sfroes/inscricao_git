@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5260BFFF-7787-4292-9AAE-BDC7CC0E00B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Inscricoes.UI.Mvc</RootNamespace>
+    <AssemblyName>SMC.Inscricoes.UI.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.1.0\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Mvc5, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Mvc5.4.1.0\lib\net461\MiniProfiler.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.1.0\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Core, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Core.4.2.251008.1\lib\net471\SMC.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.DataAnnotations, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.DataAnnotations.4.2.251008.1\lib\net471\SMC.Framework.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Model, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Model.4.2.251008.1\lib\net471\SMC.Framework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.4.2.251008.1\lib\net471\SMC.Framework.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Specification, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Specification.4.2.251008.1\lib\net471\SMC.Framework.Specification.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.UI.Mvc, Version=4.2.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.UI.Mvc.4.2.251021.1\lib\net471\SMC.Framework.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.UI.Mvc.Security, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.UI.Mvc.Security.4.2.180619.2\lib\net471\SMC.Framework.UI.Mvc.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Unity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Unity.4.2.251008.1\lib\net471\SMC.Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.5.3\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\INS\Lookups\HierarquiaOferta\LookupHierarquiaOfertaAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\HierarquiaOferta\LookupHierarquiaOfertaFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\HierarquiaOferta\LookupHierarquiaOfertaViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\ItemGrupoOferta\LookupItemGrupoOfertaPrepareFilter.cs" />
+    <Compile Include="Areas\INS\Lookups\ItemGrupoOferta\Views\_LookupItemGrupoCustomView.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LookupItemGrupoCustomView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupSelecaoOfertaInscricaoFolhaTransformer.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaPeriodoInscricaoPrepareFilter.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaPrepareFilter.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupSelecaoOfertaInscricaoViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\Views\_LookupOfertaPeriodoInscricao.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LookupOfertaPeriodoInscricao.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\INS\Lookups\Oferta\Views\_LookupSelecaoOfertaLista.generated.cs">
+      <DependentUpon>_LookupSelecaoOfertaLista.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\INS\Lookups\Oferta\Views\_LookupSelecaoOfertaInscricaoLista.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LookupSelecaoOfertaInscricaoLista.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Attributes\GoogleTagManagerFilterAttribute.cs" />
+    <Compile Include="ExternalViews.cs" />
+    <Compile Include="Areas\INS\Lookups\GPILookupViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Etapa\LookupEtapaFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Etapa\LookupEtapaFiltroExemploViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Etapa\LookupEtapaViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Etapa\LookupSelecaoEtapaAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\GrupoOferta\LookupGrupoOfertaFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\GrupoOferta\LookupGrupoOfertaAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\GrupoOferta\LookupGrupoOfertaViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Inscrito\LookupInscritoAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\Inscrito\LookupInscritoController.cs" />
+    <Compile Include="Areas\INS\Lookups\Inscrito\LookupInscritoFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Inscrito\LookupInscritoListaViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Inscrito\LookupInscritoViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\ItemGrupoOferta\LookupItemGrupoOfertaFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\ItemGrupoOferta\LookupItemGrupoOfertaViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\ItemGrupoOferta\LookupItemGrupoOfertaFolhaTransformer.cs" />
+    <Compile Include="Areas\INS\Lookups\ItemGrupoOferta\LookupSelecaoItemGrupoOfertaAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaFolhaTransformer.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaPeriodoInscricaoFolhaTransformer.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaPeriodoInscricaoFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaPeriodoInscricaoAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupSelecaoOfertaAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupSelecaoOfertaInscricaoAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\Oferta\LookupOfertaPeriodoInscricaoViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Processo\LookupProcessoAttribute.cs" />
+    <Compile Include="Areas\INS\Lookups\Processo\LookupProcessoPrepareFilter.cs" />
+    <Compile Include="Areas\INS\Lookups\Processo\LookupProcessoFiltroViewModel.cs" />
+    <Compile Include="Areas\INS\Lookups\Processo\LookupProcessoViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMC.Inscricoes.ServiceContract\SMC.Inscricoes.ServiceContract.csproj">
+      <Project>{f7ae8a51-d919-43a4-8af5-d115de4b85be}</Project>
+      <Name>SMC.Inscricoes.ServiceContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\INS\Lookups\ItemGrupoOferta\Views\_LookupItemGrupoCustomView.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_LookupItemGrupoCustomView.generated.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\INS\Lookups\Oferta\Views\_LookupSelecaoOfertaInscricaoLista.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_LookupSelecaoOfertaInscricaoLista.generated.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Areas\INS\Lookups\Oferta\Views\_LookupSelecaoOfertaLista.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_LookupSelecaoOfertaLista.generated.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Lookups\Oferta\Views\_LookupOfertaPeriodoInscricao.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_LookupOfertaPeriodoInscricao.generated.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)..\Referencias\Inscricoes\4.2\"  /R /Y /I /D</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

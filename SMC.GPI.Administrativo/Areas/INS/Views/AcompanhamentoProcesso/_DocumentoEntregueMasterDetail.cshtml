@@ -1,0 +1,41 @@
+﻿@model DocumentoRequeridoEntregueViewModel
+
+@Smc.HiddenFor(d => d.Seq)
+@Smc.EditorFor(d => d.SeqDocumentoRequerido)
+@Smc.EditorFor(d => d.SeqInscricao)
+@Smc.HiddenFor(d => d.Obrigatorio)
+@Smc.HiddenFor(d => d.Opcional)
+@Smc.HiddenFor(d => d.PermiteEntregaPosterior)
+@Smc.HiddenFor(d => d.PermiteUploadArquivo)
+@Smc.HiddenFor(d => d.SeqInscricao)
+@Smc.HiddenFor(d => d.Sexo)
+@Smc.HiddenFor(d => d.SituacaoEntregaDocumentos)
+@Smc.HiddenFor(d => d.UploadObrigatorio)
+@Smc.HiddenFor(d => d.ValidacaoOutroSetor)
+@Smc.HiddenFor(d => d.VersaoDocumento)
+@Smc.HiddenFor(d => d.VersaoDocumentoExigido)
+@Smc.HiddenFor(d => d.DescricaoTipoDocumento)
+
+@Smc.EditorFor(d => d.SeqTipoDocumento)
+@Smc.EditorFor(d => d.PermiteVarios)
+@{
+    var displayModal = (bool?)ViewBag.Modal;
+    Model.InscricaoDocumentos.DefaultModel = Model.InscricaoDocumentos.DefaultModel ?? new InscricaoDocumentoViewModel
+    {
+        SeqDocumentoRequerido = Model.SeqDocumentoRequerido,
+        SeqTipoDocumento = Model.SeqTipoDocumento,
+        SeqInscricao = Model.SeqInscricao,
+        SituacaoEntregaDocumento = SMC.DadosMestres.Common.Areas.PES.Enums.SituacaoEntregaDocumento.AguardandoEntrega,
+        SituacaoEntregaDocumentoInicial = SMC.DadosMestres.Common.Areas.PES.Enums.SituacaoEntregaDocumento.AguardandoEntrega,
+        VersaoDocumentoExigido = Model.VersaoDocumentoExigido,
+        Obrigatorio = Model.Obrigatorio
+    };
+
+    var bloquearTodos = Model.InscricaoDocumentos.Any(a => a.BloquearTodosOsCampos);
+}
+@(Smc.MasterDetail(d => d.InscricaoDocumentos, displayModal.GetValueOrDefault() ? SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Modal : SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Tabular)
+    .HideButtons(!Model.PermiteVarios || bloquearTodos ? SMCMasterDetailButtonHidden.Add | SMCMasterDetailButtonHidden.Remove : SMCMasterDetailButtonHidden.None)
+    .TitleMasterDetail(Model.DescricaoTipoDocumento)
+    .MinimumItens(1).CssClass("smc-gpi-docs-fix")
+    .ModalSize(SMCModalWindowSize.Largest))
+

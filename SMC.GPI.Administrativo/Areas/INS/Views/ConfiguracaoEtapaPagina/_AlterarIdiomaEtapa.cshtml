@@ -1,0 +1,18 @@
+﻿@model AlterarIdiomaEtapaViewModel
+
+@using (Smc.Fieldset("fieldsetAlterarIdiomaEtapa").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+
+    using (Smc.Header("headerCabecalho", SMCHeaderType.Primary)
+              .Item(prop => prop.IdiomaPadrao, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+              .Begin())
+    { }
+    
+    @Smc.EditorFor(prop=>prop.IdiomaPadrao)
+    if (Model.IdiomasDisponiveis != null && Model.IdiomasDisponiveis.Count > 0)
+    { 
+       @Smc.EditorFor(prop => prop.IdiomasEmUso)
+    }
+}
+

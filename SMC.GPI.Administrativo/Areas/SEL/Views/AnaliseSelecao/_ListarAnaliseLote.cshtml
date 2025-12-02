@@ -1,0 +1,69 @@
+﻿@model SMCPagerModel<ConsultaCandidatosProcessoListaViewModel>
+
+<input type="hidden" name="SeqOferta" value="@ViewBag.SeqOferta" />
+
+@(Smc.Grid("inscricoesOfertas", Model)
+    .Action("ListarAnaliseLote", "AnaliseSelecao")    
+    .AllowSelect(f => f.SeqInscricaoOferta)
+    .AllowSort()
+    .FieldColumn(m => m.SeqInscricao)
+    .FieldColumn(m => m.Candidato)    
+    .FieldColumn(m => m.DataInscricao)
+    .FieldColumn(m => m.Opcao)    
+    .ContentColumn(
+    @<text>
+        @{
+            var m = item as ConsultaCandidatosProcessoListaViewModel;
+        }
+        @if (!m.PossuiJustificativa)
+        {
+            @m.Oferta
+        }
+        else
+        {
+            @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalJustificativaOferta")
+                .CssClass("smc-gpi-btn-link-grid")
+                .Ajax(isPost: false)
+                .Text(m.Oferta)
+                .Tooltip(Smc.GetUIResource("ModalJustificativaOferta_Title"))
+                .Url(Url.Action("ExibirJustificativaOferta", "AcompanhamentoSelecao",
+                    new
+                    {
+                        @seqInscricaoOferta = m.SeqInscricaoOferta
+                    }))
+                    .Type(SMCButtonType.Link)
+            )
+        }
+    </text>, Smc.GetUIResource("Oferta"))
+    //.FieldColumn(m => m.Situacao)
+    .ContentColumn(
+    @<text>
+        @{
+            var m = item as ConsultaCandidatosProcessoListaViewModel;
+        }
+
+        @if (!m.SeqInscricaoHistoricoSituacao.HasValue)
+        {
+            @m.Situacao
+        }
+        else
+        {
+            @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalMotivoJustificativaSituacao")
+                .CssClass("smc-gpi-btn-link-grid")
+                .Ajax(isPost: false)
+                .Text(m.Situacao)
+                .Tooltip(Smc.GetUIResource("ModalParecerResponsavel_Title"))
+                .Url(Url.Action("ExibirMotivoJustificativaSituacao", "AcompanhamentoSelecao",
+                    new
+                    {
+                        @seqInscricaoHistoricoSituacao = m.SeqInscricaoHistoricoSituacao
+                    }))
+                    .Type(SMCButtonType.Link)
+            )
+        }
+    </text>, Smc.GetUIResource("Situacao"))
+    .FieldColumn(m => m.Nota)
+    .FieldColumn(m => m.Classificacao)    
+)

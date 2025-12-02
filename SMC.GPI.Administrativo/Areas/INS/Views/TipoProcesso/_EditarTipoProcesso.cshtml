@@ -1,0 +1,90 @@
+﻿@model TipoProcessoViewModel
+@using SMC.GPI.Administrativo.Areas.INS.Views.TipoProcesso.App_LocalResources
+
+@using (Smc.Form("formCadastroTipoProcesso").Ajax().ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.TabSet("tabTipoProcesso").Begin())
+    {
+        using (Smc.Tab("tab1").Begin())
+        {
+            using (Smc.Div("fieldsetCadastroTipoProcesso").Begin())
+            {
+                @Smc.EditorFor(prop => prop.Seq)
+                @Smc.EditorFor(prop => prop.Descricao).Focus()
+                @Smc.EditorFor(prop => prop.Token)
+                @(Smc.EditorFor(prop => prop.SeqTipoTemplateProcessoSGF)
+                                    .Attribute("data-ajax-url", @Html.SMCAction("BuscarConfiguracaoTemplateProcesso", "TipoProcesso"))
+                                    .Attribute("data-changetitle", Smc.GetUIResource("SeqTipoTemplateProcessoSGF_Editar_Titulo"))
+                                    .Attribute("data-changemsg", Smc.GetUIResource("SeqTipoTemplateProcessoSGF_Editar_Mensagem"))
+                )
+                @Smc.EditorFor(prop => prop.IdsTagManager)
+                @Smc.EditorFor(prop => prop.TokenResource)
+                @Smc.EditorFor(prop => prop.ExigeCodigoOrigemOferta)
+                @Smc.EditorFor(prop => prop.IntegraSGALegado)
+                @Smc.EditorFor(prop => prop.IntegraGPC)
+                @Smc.EditorFor(prop => prop.GestaoEventos)
+
+            }
+
+            <div id="divTermoConsentimentoLGPD" class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                @Smc.EditorFor(prop => prop.TermoConsentimentoLGPD)
+
+            </div>
+
+            <div id="divTermoConsentimentoLGPD" class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+
+                @using (Smc.Fieldset("fieldsetGED").Begin())
+                {
+
+                    @Smc.EditorFor(prop => prop.HabilitaGed)
+                    @Smc.EditorFor(prop => prop.SeqContexto)
+                    @Smc.EditorFor(prop => prop.SeqContextoBibliotecaGed)
+                    @Smc.EditorFor(prop => prop.SeqHierarquiaClassificacaoGed)
+
+                }
+            </div>
+
+            <div id="divConfiguracaoTipoProcesso" class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                @if (Model.Seq > 0)
+                {
+                    @Html.Partial("_ConfiguracaoTipoProcesso", Model)
+                }
+            </div>
+        }
+
+        using (Smc.Tab("Tab2").Begin())
+        {
+            @Smc.EditorFor(prop => prop.CamposInscrito)
+        }
+
+        using (Smc.Tab("Tab3").Begin())
+        {
+            using (Smc.Div("fieldsetCadastroTipoProcesso").Begin())
+            {
+                @Smc.EditorFor(prop => prop.HabilitaPercentualDesconto)
+                @Smc.EditorFor(prop => prop.ValidaLimiteDesconto)
+                @Smc.EditorFor(prop => prop.IsencaoP1)
+                @Smc.EditorFor(prop => prop.BolsaExAluno)
+                @Smc.EditorFor(prop => prop.PermiteRegerarTitulo)
+            }
+            @Smc.MasterDetail(prop => prop.TiposTaxa).Size(SMCSize.Grid24_24).CssClass("smc-size-md-24 smc-size-xs-24 smc-size-sm-24")
+
+        }
+
+        using (Smc.Tab("Tab4").Begin())
+        {
+            @Smc.EditorFor(prop => prop.OrientacaoAceiteConversaoPDF);
+            @Smc.EditorFor(prop => prop.TermoAceiteConversaoPDF);
+        }
+        using (Smc.Tab("Tab5").Begin())
+        {
+            @Smc.EditorFor(m => m.Documentos)
+        }
+        using (Smc.Tab("Tab6").Begin())
+        {
+            @Smc.EditorFor(m => m.Consistencias)
+        }
+    }
+
+    @Html.Partial("_BotoesEdicaoPadrao")
+}

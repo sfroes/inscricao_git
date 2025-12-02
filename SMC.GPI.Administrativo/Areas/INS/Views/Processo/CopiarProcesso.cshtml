@@ -1,0 +1,59 @@
+﻿@model CopiaProcessoViewModel
+
+@using (Smc.Header("headerCabecalho", SMCHeaderType.Secondary)
+              .Item(prop => prop.SeqProcessoOrigem, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+              .Item(prop => prop.DescricaoTipoProcesso, sizeSM: SMCSize.Grid19_24, sizeMD: SMCSize.Grid19_24, sizeLG: SMCSize.Grid19_24, sizeXS: SMCSize.Grid19_24)
+              .Item(prop => prop.Descricao, sizeSM: SMCSize.Grid15_24, sizeMD: SMCSize.Grid15_24, sizeLG: SMCSize.Grid15_24, sizeXS: SMCSize.Grid15_24)
+              .Item(prop => prop.AnoReferencia, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+              .Item(prop => prop.SemestreReferencia, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24)
+              .Begin()) { }
+
+
+@using (Smc.Fieldset("copiaProcessoDestino").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqProcessoOrigem)
+    @Smc.EditorFor(prop => prop.SeqProcessoGpi)
+    @Smc.EditorFor(prop => prop.NovoProcessoDescricao)
+    @Smc.EditorFor(prop => prop.NovoProcessoAnoReferencia)
+    @Smc.EditorFor(prop => prop.NovoProcessoSemestreReferencia)
+    @Smc.EditorFor(prop => prop.TipoProcessoDesativado)
+    @Smc.EditorFor(prop => prop.TemplateProcessoDesativado)
+    @Smc.EditorFor(prop => prop.TipoHierarquiaOfertaDesativado)
+
+}
+
+@using (Smc.Fieldset("copiaItens").Begin())
+{
+    <div class="smc-grupo-copia">
+        @Smc.EditorFor(prop => prop.CopiarNotificacoes).CssClass("smc-espaco-label")
+    </div>
+    <div class="smc-grupo-copia">
+        @Smc.EditorFor(prop => prop.CopiarItens).CssClass("smc-espaco-label")
+        @Smc.EditorFor(prop => prop.DataInicioInscricao)
+        @Smc.EditorFor(prop => prop.DataFimInscricao)
+    </div>
+    if (Model.PossuiFormularioConfigurado)
+    {
+        <div class="smc-grupo-copia">
+            @Smc.EditorFor(prop => prop.CopiarFormularioEvento).CssClass("smc-espaco-label")
+            @Smc.EditorFor(prop => prop.DataInicioFormulario)
+            @Smc.EditorFor(prop => prop.DataFimFormulario)
+        </div>
+    }
+    if (!String.IsNullOrEmpty(Model.MensagemInformativa))
+    {
+        <div class="smc-gpi-copia-processo-mensagem">
+            <p>@Model.MensagemInformativa</p>
+        </div>
+    }
+}
+
+@using (Smc.Fieldset("copiaEtapas").CssClass("smc-gpi-lista-itens").Begin())
+{
+    @(Smc.List("listaEtapasProcesso", prop => prop.Etapas)
+        .HtmlTemplate(
+                        @<text>
+                            @Html.Partial("_CopiarEtapasProcesso", item.Value)
+                        </text>)
+    )
+}

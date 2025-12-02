@@ -1,0 +1,9 @@
+﻿@model HierarquiaOfertaViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.ContextMenu, RegisterHelperControls.Tabs)
+}
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.HierarquiaOferta, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = true })
+
+@Html.Partial("_EditarHierarquiaOferta", Model)

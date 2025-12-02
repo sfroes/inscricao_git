@@ -1,0 +1,7 @@
+﻿@model List<OpcaoOfertaViewModel>
+
+@if (Model.Any())
+{
+    @(Smc.List("ofertas", Model)
+       .HtmlTemplate(item =>  @Html.Partial("_OfertasDetailList", item)))
+}

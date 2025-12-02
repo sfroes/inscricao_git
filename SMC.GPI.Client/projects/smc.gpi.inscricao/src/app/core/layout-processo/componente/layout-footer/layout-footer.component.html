@@ -1,0 +1,6 @@
+
+@if (layoutFooterServe.isLoading$()){
+  <p-skeleton width="100%" height="79px" />
+} @else {
+  <div id="footer" [innerHtml]="layoutFooterServe.conteudo$()"></div>
+}

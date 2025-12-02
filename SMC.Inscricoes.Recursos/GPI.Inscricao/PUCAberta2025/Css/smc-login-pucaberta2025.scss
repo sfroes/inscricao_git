@@ -1,0 +1,288 @@
+@import "../../Css/smc-login.scss";
+
+:root {
+    --color-primary: #fff3de;
+    --color-secondary: #f39200;
+    --color-secondary-1: #3b4a6b;
+    --color-secondary-2: #f8b133;
+    --color-grey: #c5c5c5;
+    --color-font: #515151;
+    --bg-msg-boas-vindas: #FFF9F5;
+    --border-msg-boas-vindas: #f39200;
+    --color-msg-boas-vindas: #3b4a6b;
+    --color-msg-boas-vindas: #ce641e;
+    --color-btn-secondary: #3b4a6b;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fffefe;
+    border-left: 1px solid var(--color-grey);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-grey);
+
+    &:hover {
+        background-color: var(--color-grey);
+    }
+}
+
+.smc-login-body {
+    background-color: #fff;
+
+    &:before {
+        background-image: url('../Images/logo-puc-preto.svg'),url('../Images/logo-puc-aberta.png');
+
+        @media screen and (max-width: 767px) {
+            background-position: 67% 0,30% .1em;
+        }
+
+        box-shadow: none;
+    }
+}
+
+.container-fluid {
+    &:before {
+        filter: none;
+    }
+}
+
+.smc-login-section {
+    @media screen and (max-width: 767px) {
+        margin-top: 9em;
+    }
+}
+
+.smc-login-conteudo .smc-message-container.smc-mensagens-principal {
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+#formularioLogin {
+    @media screen and (max-width: 767px) {
+        padding: 0 10% !important;
+    }
+
+    &:before {
+        font-size: 1.3em;
+        color: var(--color-font);
+        margin-top: 6rem;
+        padding-left: 5px;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 3rem !important;
+        }
+    }
+}
+
+.smc-login-lembrar-senha {
+    a {
+        color: var(--color-secondary-1) !important;
+        text-decoration: underline !important;
+    }
+}
+
+.smc-preenchimento-obrigatorio {
+    color: var(--color-secondary) !important;
+}
+
+.smc-detalhe-editavel-titulo {
+    color: var(--color-font) !important;
+    padding-left: 0 !important;
+
+    &:before {
+        border-color: transparent transparent transparent var(--color-secondary) !important;
+    }
+}
+
+#Emails.smc-login-lista-itens {
+    > .smc-detalhe-editavel-organizador {
+        > .smc-detalhe-editavel-header {
+            > .smc-size-md-18,
+            > .smc-size-md-6 {
+                padding: 0 !important;
+            }
+        }
+    }
+}
+
+.smc-login-separador {
+    border: 1px solid var(--color-secondary-1);
+    box-shadow: none;
+
+    span {
+        color: var(--color-font);
+        font-size: 0;
+
+        &:before {
+            content: "Crie sua conta";
+            color: var(--color-font);
+            font-size: 1.9rem;
+            padding-left: 6%;
+
+            @media screen and (max-width: 767px) {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+#formularioLembrarSenha {
+    @media screen and (max-width: 767px) {
+        padding: 0 10% !important;
+    }
+
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-font);
+    }
+}
+
+#formularioRedefinirSenha {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-font);
+    }
+
+    .smc-buttonset-horizontal-primario {
+        padding: 0;
+
+        div.smc-button {
+            padding: 0;
+        }
+    }
+}
+
+.smc-btn-cadastrar {
+    background-color: var(--color-secondary-1);
+
+    &:hover {
+        border: 1px solid var(--color-secondary-1);
+        color: var(--color-secondary-1);
+    }
+}
+
+.smc-btn-voltar-icotext {
+    color: var(--color-primary-2);
+}
+
+#formularioCadastrarUsuario {
+    @media screen and (max-width: 767px) {
+        padding: 1rem !important;
+    }
+
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-font);
+    }
+}
+
+#SMCLoginFormAutentication {
+    @media screen and (max-width: 767px) {
+        padding: 0 10% !important;
+    }
+}
+
+.smc-login-texto-reenvio-senha {
+    @media screen and (max-width: 767px) {
+        margin-top: 0 !important;
+    }
+
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-font);
+
+        @media screen and (max-width: 767px) {
+            margin-top: 0 !important;
+        }
+    }
+
+    .smc-display-collection {
+        p {
+            color: var(--color-secondary);
+
+            &:before {
+                background: var(--color-secondary-1) !important;
+            }
+        }
+    }
+}
+
+.welcome-message {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#fieldsetCadastrarUsuario {
+    &:first-child {
+        a.smc-form-ver-senha {
+            bottom: -38px;
+            float: left;
+            margin-left: -10px;
+        }
+    }
+}
+
+.smc-message-error {
+    .smc-message-fixed {
+        @media screen and (max-width: 992px) {
+            width: 98% !important;
+        }
+    }
+
+    a {
+        color: #92302e !important;
+        font-weight: 600;
+    }
+
+    .smc-modal-header {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+    }
+
+    .smc-modal-header h2 {
+        font-size: 1.2em !important;
+        width: 100%;
+    }
+
+    > div.ui-draggable .smc-modal-header > .smc-button {
+        position: relative;
+        top: 0 !important;
+        left: 0 !important;
+    }
+
+    .smc-modal-content{
+        overflow:hidden;
+    }
+}
+
+input[type=text],
+input[type=password],
+select, 
+.smc-select > select {
+    &:focus {
+        border: 1px solid var(--color-secondary) !important;
+        background-color: #fffbf5 !important;
+    }
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+    background: var(--color-secondary) !important;
+    box-shadow: var(--color-secondary) 0 1px 3px 0 inset !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div {
+    &:hover {
+        background: var(--color-secondary) !important;
+    }
+}

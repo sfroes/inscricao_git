@@ -1,0 +1,17 @@
+﻿@model SMCPagerModel<ConsultaNotificacaoListaViewModel>
+
+@(Smc.Grid("gridNotificaoes")
+     .AutoGenerateColumns()
+     .Action("ListarNotificacoes", "ConsultaNotificacao")
+     .AllowSort()  
+     .HideRowNumber()
+     .HideGridTitle()
+     .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes",
+                    item => Smc.Button(SMCButtonBehavior.Visualizar, "Visualizar", 
+                                    new { 
+                                        @seq = SMCDESCrypto.EncryptNumberForURL((item as ConsultaNotificacaoListaViewModel).Seq)
+                                    }, "ConsultaNotificacao")
+                            .Type(SMCButtonType.Link)
+                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                            .SecurityToken(UC_NOT_001_01_02.VISUALIZAR_DETALHES_NOTIFICACAO))
+)

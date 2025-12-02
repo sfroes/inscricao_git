@@ -1,0 +1,12 @@
+﻿@model TaxaOfertaViewModel
+
+@Smc.EditorFor(m => m.Seq)
+@Smc.EditorFor(m => m.SeqTaxa)
+@Smc.EditorFor(m => m.SeqOferta)
+@Smc.EditorFor(m => m.DataInicio).Readonly().Attribute("data-val", "false")
+@Smc.EditorFor(m => m.DataFim).Readonly().Attribute("data-val", "false")
+@Smc.EditorFor(m => m.NumeroMinimo)
+@Smc.EditorFor(m => m.NumeroMaximo)
+@Smc.EditorFor(m => m.SeqEventoTaxa)
+@Smc.EditorFor(m => m.SeqParametroCrei).Readonly()
+@Smc.EditorFor(m => m.SeqPermissaoInscricaoForaPrazo)

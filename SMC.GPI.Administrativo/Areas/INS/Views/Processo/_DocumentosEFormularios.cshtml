@@ -1,0 +1,8 @@
+﻿@model ProcessoViewModel
+@using SMC.Localidades.UI.Mvc.Extensions
+
+@using (Smc.Div("fieldsetDocumentosEFormularios").Begin())
+{
+    @Smc.EditorFor(prop => prop.ConfiguracoesModeloDocumento).CssClass("smc-gpi-configuracao-emissao-documentos")
+    @Smc.EditorFor(prop => prop.ConfiguracoesFormulario)
+}

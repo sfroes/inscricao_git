@@ -1,0 +1,54 @@
+{
+  //PUC Aberta
+  "short_name": "PUC Aberta",
+  "name": "GPI - PUC Aberta",
+  "description": "GPI - PUC Aberta",
+  "theme_color": "#DDDB00",
+
+  // PUCMINAS
+  //"short_name": "GPI - PUC Minas",
+  //"name": "GPI - PUC Minas",
+  //"description": "GPI - PUC Minas",
+  //"theme_color": "#005480",
+
+  //GPI
+  //"short_name": "GPI",
+  //"name": "GPI",
+  //"description": "GPI",
+  //"theme_color": "#015459",
+
+
+  "icons": [
+    {
+      //PUC Aberta
+      "src": "../../Recursos/Inscricoes/4.0/GPI.Inscricao/PUCAberta2024/Images/logo-puc-aberta-192.png",
+
+      // PUC Minas
+      //"src": "../../Recursos/Inscricoes/4.0/GPI.Inscricao/PUCMinas/Images/logo-vemprapuc-192.png",
+
+      //GPI
+      //"src": "../../Recursos/Inscricoes/4.0/GPI.Inscricao/GPI/Images/logo-gpi-192.png",
+
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      //PUC Aberta
+      "src": "../../Recursos/Inscricoes/4.0/GPI.Inscricao/PUCAberta2024/Images/logo-puc-aberta-512.png",
+
+      // PUC Minas
+      //"src": "../../Recursos/Inscricoes/4.0/GPI.Inscricao/PUCMinas/Images/logo-vemprapuc-512.png",
+
+      //GPI
+      //"src": "../../Recursos/Inscricoes/4.0/GPI.Inscricao/GPI/Images/logo-gpi-512.png",
+
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+
+  "start_url": "../GPI.Inscricao",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff"
+}

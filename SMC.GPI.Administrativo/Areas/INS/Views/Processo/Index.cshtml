@@ -1,0 +1,46 @@
+﻿@model ProcessoFiltroViewModel
+
+@using (Smc.Form("formPesquisaProcesso", "ListarProcesso").Ajax("#divGridProcesso").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaProcesso").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Seq).Focus()
+        @Smc.EditorFor(prop => prop.Descricao)
+        @Smc.EditorFor(prop => prop.SeqUnidadeResponsavel)
+        @Smc.EditorFor(prop => prop.SeqTipoProcesso)
+        @Smc.EditorFor(prop => prop.AnoReferencia)
+        @Smc.EditorFor(prop => prop.SemestreReferencia)
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar)
+            .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight()
+            .Action("ListarProcesso", routeValues: new { listagemInicial = false})
+            )
+
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_INS_001_01_02.MANTER_PROCESSO)
+                 .Url(Url.Action("Incluir")))
+        )
+    }
+}
+
+<div id="divGridProcesso">
+    @Smc.ActionList("ListarProcesso", "Processo", initialListingDisabled: true)
+</div>
+
+@using (Smc.ModalWindow("modalCopiarProcesso")
+        .Title(Smc.GetUIResource("Copiar_Processo"))
+        .Size(SMCModalWindowSize.Large)
+        .CssClass("smc-modal-expandida")
+        .Form("CopiarProcesso", "CopiarProcesso", "Processo", null, true, x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.Text)
+            .Text(Smc.GetUIResource("Copia_Processo_Botao_Copiar"))
+            .Tooltip(Smc.GetUIResource("Copia_Processo_Botao_Copiar"))
+            .Confirm(Smc.GetUIResource("Copia_Processo_Confirmacao_Titulo"), Smc.GetUIResource("Copia_Processo_Confirmacao_Mensagem"))
+            .Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.Text).Text(Smc.GetUIResource("Copia_Processo_Botao_Cancelar")).Tooltip(Smc.GetUIResource("Copia_Processo_Botao_Cancelar")))
+        .Begin())
+{ }

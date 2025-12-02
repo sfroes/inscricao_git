@@ -1,0 +1,49 @@
+﻿@model CadastroTaxaOfertaLoteViewModel
+
+@using (Smc.TabSet("abasTaxasLote").Begin())
+{
+    using (Smc.Tab("Inclusao").Begin())
+    {
+        <div id="divInclusaoTaxaLote">
+            @(Smc.Grid("GridIncluir", Model.ItensAdicionar)
+                .FieldColumn(a => a.Seq, order: 1)
+                .FieldColumn(a => a.Descricao, order: 2)
+                .HidePager()
+                .AllowSelect(order: 0))
+            @(Smc.ButtonSet()
+                .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Enabled(Model.ItensAdicionar.Count > 0)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirTaxaLote")
+                .Text(Smc.GetUIResource("Botao_Incluir_Taxa"))
+                .Tooltip(Smc.GetUIResource("Botao_Incluir_Taxa_Tooltip"))
+                .Ajax(isPost: true, updateTargetId: "divOfertaPeriodo", fieldsContainerToRequest: "#divInclusaoTaxaLote #fieldsetPesquisaInscricaoProcesso")
+                .SecurityToken(UC_INS_001_01_09.MANTER_PERIODO_TAXA)
+                .Url(Url.Action("IncluirTaxasOferta", "HierarquiaOferta")))
+            )
+        </div>
+
+    }
+
+    using (Smc.Tab("Exclusao").Begin())
+    {
+        <div id="divExclusaoTaxaLote">
+            @(Smc.Grid("GridExcluir", Model.ItensExcluir)
+                .FieldColumn(a => a.Seq, order: 1)
+                .FieldColumn(a => a.Descricao, order: 2)
+                .CssClass("smc-gpi-grid-taxa-lote")
+                .HidePager()
+                .AllowSelect(order: 0))
+            @(Smc.ButtonSet()
+                .AddButton(Smc.Button("ExcluirTaxaEmLote")
+                .CssClass("smc-btn-excluir-icotext")
+                .Enabled(false)
+                .Confirm(@Smc.GetUIResource("Titulo_Exclusao_Taxa"), @Smc.GetUIResource("Mensagem_Exclusao_Taxa"))
+                .Ajax(isPost: true, updateTargetId: "divOfertaPeriodo", fieldsContainerToRequest: "#divExclusaoTaxaLote #fieldsetPesquisaInscricaoProcesso")
+                .SecurityToken(UC_INS_001_01_09.MANTER_PERIODO_TAXA)
+                .Url(Url.Action("ExcluirTaxaOfertas", "HierarquiaOferta")))
+            )
+        </div>
+    }
+}
+
+

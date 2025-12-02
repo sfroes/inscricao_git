@@ -1,0 +1,126 @@
+﻿@using SMC.GPI.Administrativo.Models
+
+@model BotaoConfigurarProcessoViewModel
+
+@{
+    List<LinkViewModel> listaLinks = new List<LinkViewModel>();
+
+    Dictionary<string, object> parametros = new Dictionary<string, object>();
+    parametros.Add("seqProcesso", Model.SeqProcesso);
+
+    LinkViewModel Alterar = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "Editar")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "Editar")),
+        Controller = "Processo",
+        Action = "Editar",
+        Parameters = new Dictionary<string,object>{{"seq",Model.SeqProcesso}},
+        SecurityToken = new string[] { UC_INS_001_01_02.MANTER_PROCESSO }
+    };
+
+    LinkViewModel HierarquiaOferta = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "HierarquiaOferta")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "HierarquiaOferta")),
+        Controller = "HierarquiaOferta",
+        Action = "HierarquiaOferta",
+        Parameters = parametros,
+        SecurityToken = new string[] { UC_INS_001_01_03.MANTER_HIERARQUIA_OFERTA }
+    };
+
+    LinkViewModel AssociacaoEtapa = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "AssociacaoEtapa")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "AssociacaoEtapa")),
+        Controller = "EtapaProcesso",
+        Action = "Index",
+        Parameters = parametros,
+        SecurityToken = new string[] { UC_INS_001_03_01.PESQUISAR_ASSOCIACAO_ETAPA_PROCESSO }
+    };
+
+    LinkViewModel GrupoOferta = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "GrupoOferta")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "GrupoOferta")),
+        Controller = "GrupoOferta",
+        Action = "Index",
+        Parameters = parametros,
+        SecurityToken = new string[] { UC_INS_001_08_01.PESQUISAR_GRUPO_OFERTAS }
+    };
+
+    LinkViewModel GrupoTaxa = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "GrupoTaxa")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "GrupoTaxa")),
+        Controller = "GrupoTaxa",
+        Action = "Index",
+        Parameters = parametros,
+        SecurityToken = new string[] { UC_INS_001_12_01.PESQUISAR_GRUPO_TAXAS }
+    };
+
+    LinkViewModel TaxaOfertaLote = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "TaxaOfertaLote")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "TaxaOfertaLote")),
+        Controller = "HierarquiaOferta",
+        Action = "TaxaOfertaLote",
+        Parameters = parametros,
+        SecurityToken = new string[] { UC_INS_001_01_08.SELECIONAR_OFERTAS_MANUTENCAO_TAXA_LOTE }
+    };
+    TaxaOfertaLote.Ajax(isPost: true);
+
+    Dictionary<string, object> parametrosNot = new Dictionary<string, object>();
+    parametrosNot.Add("seqProcesso", Model.SeqProcesso);
+    parametrosNot.Add("area", "NOT");
+    LinkViewModel ConfigurarNotificacao = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "ConfigurarNotificacao")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "ConfigurarNotificacao")),
+        Controller = "ConfigurarNotificacao",
+        Action = "Index",
+        Parameters = parametrosNot,
+        SecurityToken = new string[] { UC_INS_001_01_11.PESQUISAR_CONFIGURACAO_NOTIFICACAO }
+    };
+
+    LinkViewModel InscricaoForaPrazo = new LinkViewModel()
+    {
+        Label = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_LABEL, "InscricaoForaPrazo")),
+        Tooltip = Smc.GetUIResource(string.Format(LinkViewModel.BUTTON_TOOLTIP, "InscricaoForaPrazo")),
+        Controller = "InscricaoForaPrazo",
+        Action = "Index",
+        Parameters = parametros,
+        SecurityToken = new string[] { UC_INS_001_11_01.PESQUISAR_PERMISSAO_INSCRICAO_FORA_PRAZO }
+    };
+
+    listaLinks = new List<LinkViewModel>() { Alterar, AssociacaoEtapa, HierarquiaOferta, GrupoOferta, GrupoTaxa, TaxaOfertaLote, ConfigurarNotificacao, InscricaoForaPrazo };
+
+    switch (Model.Action)
+    {
+        case ProcessoActionsEnum.Alterar:
+            listaLinks.Remove(Alterar);
+            break;
+        case ProcessoActionsEnum.HierarquiaOferta:
+            listaLinks.Remove(HierarquiaOferta);
+            break;
+        case ProcessoActionsEnum.AssociacaoEtapa:
+            listaLinks.Remove(AssociacaoEtapa);
+            break;
+        case ProcessoActionsEnum.GrupoOferta:
+            listaLinks.Remove(GrupoOferta);
+            break;
+        case ProcessoActionsEnum.GrupoTaxa:
+            listaLinks.Remove(GrupoTaxa);
+            break;
+        case ProcessoActionsEnum.TaxaOfertaLote:
+            listaLinks.Remove(TaxaOfertaLote);
+            break;
+        case ProcessoActionsEnum.ConfigurarNotificacao:
+            listaLinks.Remove(ConfigurarNotificacao);
+            break;
+        case ProcessoActionsEnum.InscricaoForaPrazo:
+            listaLinks.Remove(InscricaoForaPrazo);
+            break;
+    }
+
+    @Html.Partial("_BotaoConfigurar", listaLinks);
+}

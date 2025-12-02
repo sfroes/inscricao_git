@@ -1,0 +1,9 @@
+﻿@model ProcessoViewModel
+@using SMC.Localidades.UI.Mvc.Extensions
+
+@using (Smc.Div("fieldsetCadastroDadosContato").Begin())
+{
+    @Smc.EditorFor(prop => prop.NomeContato)
+    @Smc.EditorFor(prop => prop.Telefones)
+    @Smc.EditorFor(prop => prop.EnderecosEletronicos)
+}

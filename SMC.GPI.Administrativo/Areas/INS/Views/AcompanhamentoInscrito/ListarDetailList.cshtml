@@ -1,0 +1,24 @@
+﻿@model SMCPagerModel<AcompanhamentoInscritoListaViewModel>
+@using SMC.Inscricoes.Common.Shared
+
+@if (Model.Any())
+{
+    @(Smc.List("itens", Model)
+       .HtmlTemplate(item => {
+           if(item.BackUrl == null)
+           {
+
+               item.BackUrl = HttpContextAmbiente.UrlAmbiente("/GPI.Administrativo/INS/AcompanhamentoInscrito");
+
+           }
+
+           return @Html.Partial("_DetailList", item);
+       } ))
+}
+else
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        <span class="smc-datagrid-no-results">Nenhum registro encontrado</span>
+    }
+}

@@ -1,0 +1,15 @@
+﻿@model ItemHierarquiaOfertaViewModel
+
+@using (Smc.Div("fieldsetAssociarTipoHierarquiaOferta").Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)
+    if (Model.SeqPai != null && Model.SeqPai > 0)
+    {
+        @Smc.EditorFor(prop=> prop.SeqPai)        
+        @Smc.EditorFor(prop => prop.DescricaoPai)
+    }
+
+    @Smc.EditorFor(prop => prop.SeqTipoHierarquiaOferta)
+    @Smc.EditorFor(prop => prop.SeqTipoItemHierarquiaOferta)
+    @Smc.EditorFor(prop => prop.HabilitaCadastroOferta)
+}

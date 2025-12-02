@@ -1,0 +1,227 @@
+﻿
+.smc-grid {
+    border: none;
+    background-color: transparent;
+
+}
+
+
+
+.smc-datagrid {
+
+    th {
+        font-size: 1em !important;
+        padding: 0.21em 0.7em !important;
+    }
+
+    thead {
+        background-color: #efefef;
+    }
+
+    > table {
+        border-spacing: 0;
+
+        > thead > tr > th {
+            padding: 0.21em 0.7em !important;
+            color: var(--color-font-h4) !important;
+        }
+
+        tr, th {
+            background-color: transparent !important;
+        }
+
+        td {
+            border-top: none !important;
+            border-left: none !important;
+            border-right: none !important;
+            border-bottom: 1px solid var(--white) !important;
+        }
+    }
+
+    .smc-gpi-btn-link-grid {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        color: var(--color-primary);
+        text-decoration: underline !important;
+        font-size: 1.2em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 25.7em;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.smc-datagrid-header {
+    background-color: transparent;
+
+    span {
+        color: var(--color-font-paths) !important;
+        text-transform: uppercase !important;
+        font-weight: bold;
+        font-size: 1em !important;
+        margin: 0 !important;
+    }
+}
+
+.smc-gpi-grid-docs {
+    tr {
+        display: flex;
+        flex-direction: row;
+        height: auto !important;
+
+        td, th {
+            flex: 1 1 30%;
+            align-items: center;
+            display: flex;
+
+            .smc-gpi-btn-link-grid {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 250px;
+                white-space: nowrap !important;
+            }
+
+            .smc-gpi-docs-container {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: normal
+            }
+
+            .smc-display {
+                margin: 0;
+            }
+        }
+
+        td {
+            .smc-display p, a {
+                font-size: 1.1em !important;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .smc-gpi-grid-docs {
+        // TABLES
+        .smc-datagrid {
+            table, tbody, th, td, tr {
+                display: block !important;
+            }
+
+            thead {
+                display: none !important;
+            }
+
+            table {
+                tbody {
+                    tr {
+                        border: 1px solid #ccc !important;
+                        height: auto !important;
+
+                        &:hover {
+                            background: #fcfcfc !important;
+                        }
+
+                        td {
+                            border: none !important;
+                            border-bottom: 1px solid #eee !important;
+                            position: relative !important;
+                            padding-left: 25% !important;
+                            white-space: normal !important;
+                            text-align: left !important;
+                            min-height: 2.42em !important;
+                            font-size: 0.92em !important;
+                            padding-top: 0.35em !important;
+
+                            $num_celulas: 3;
+
+                            @for $i from 1 to $num_celulas+1 {
+                                &:nth-of-type(#{$i}) {
+                                    &:before {
+                                        @if $i == 1 {
+                                            content: "Tipo documento";
+                                        }
+                                        @else if $i == 2 {
+                                            content: "Descrição";
+                                        }
+                                        @else if $i == 3 {
+                                            content: "Arquivo";
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:before {
+                                position: absolute;
+                                top: 0.42em;
+                                left: 0.42em;
+                                width: 45%;
+                                padding-right: 0.71em;
+                                white-space: nowrap;
+                                text-align: left;
+                                font-weight: bold;
+                                font-size: 0.85em;
+
+                                @media screen and (max-width: 470px) {
+                                    position: initial;
+                                }
+                            }
+
+                            &:hover {
+                                background: transparent !important;
+                            }
+
+                            &:nth-child(odd) {
+                                background: #f1f1f1 !important;
+                            }
+
+                            @media screen and (max-width: 470px) {
+                                padding-left: 0.71em !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-csc-acao-link {
+        white-space: nowrap;
+    }
+}
+
+.smc-gpi-texto-entrega-posterior {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.smc-sgf-agrupador {
+    .smc-display-collection {
+        .smc-datagrid {
+            tbody {
+                display: flex;
+                flex-direction: column;
+
+                tr {
+                    display: flex;
+                    flex-direction: row;
+                    height: auto !important;
+                    border-bottom: 1px solid var(--white);
+                    flex-wrap: wrap;
+
+                    td {
+                        flex: 1 1 24%;
+                        border: none !important;
+                    }
+                }
+            }
+        }
+    }
+}

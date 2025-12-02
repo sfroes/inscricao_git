@@ -1,0 +1,20 @@
+﻿@model InscricaoTaxaViewModel
+
+@Smc.EditorFor(x => x.SeqInscricaoBoleto)
+
+@Smc.EditorFor(x => x.SeqTaxa)
+
+@*Gera o campo hidden para postar a descrição, para que esta possa ser exibida na tela de salvar caso ocorra algum problema*@
+@(Smc.EditorFor(x => x.NumeroItens).CssClass("quantidade").HideLabel()
+     .Attribute("data-cobrarporoferta", Model.CobrarPorOferta.ToString().ToLower())
+     .Readonly(Model.NumeroMaximo == Model.NumeroMinimo || Model.TituloPago || Model.CobrarPorOferta.GetValueOrDefault()))
+@Smc.EditorFor(x => x.Descricao)
+@Smc.DisplayFor(x => x.DescricaoDisplay).HideLabel().CssClass("descricao")
+@Smc.EditorFor(x => x.NumeroMaximo)
+@Smc.EditorFor(x => x.NumeroMinimo)
+
+@Smc.EditorFor(x => x.ValorItem).CssClass("valor").HideLabel()
+@Smc.HiddenFor(x => x.ValorEventoTaxa)
+@Smc.EditorFor(x => x.ValorTitulo)
+
+@Smc.EditorFor(x => x.ValorTotalTaxa).CssClass("total").HideLabel()

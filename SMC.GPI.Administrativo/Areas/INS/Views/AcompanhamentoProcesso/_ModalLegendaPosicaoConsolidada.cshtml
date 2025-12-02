@@ -1,0 +1,96 @@
+﻿@using (Smc.ModalWindow("modalLegendaPosicaoConsolidada")
+        .Title(Smc.GetUIResource("Titulo_Modal_Legenda"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{        
+    <div class="row">
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Total"):
+                </b>
+                @Smc.GetUIResource("Texto_Total")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_OfertaNaoSelecionada"):
+                </b>
+                @Smc.GetUIResource("Texto_OfertaNaoSelecionada")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Iniciadas"):
+                </b>
+                @Smc.GetUIResource("Texto_Iniciadas")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Finalizadas"):
+                </b>
+                @Smc.GetUIResource("Texto_Finalizadas")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Pagas"):
+                </b>
+                @Smc.GetUIResource("Texto_Pagas")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_DocumentacaoEntregue"):
+                </b>
+                @Smc.GetUIResource("Texto_DocumentacaoEntregue")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Confirmadas"):
+                </b>
+                @Smc.GetUIResource("Texto_Confirmadas")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_NaoConfirmadas"):
+                </b>
+                @Smc.GetUIResource("Texto_NaoConfirmadas")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Deferidas"):
+                </b>
+                @Smc.GetUIResource("Texto_Deferidas")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Indeferidas"):
+                </b>
+                @Smc.GetUIResource("Texto_Indeferidas")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Canceladas"):
+                </b>
+                @Smc.GetUIResource("Texto_Canceladas")
+            </p>
+        </div>
+    </div>
+}

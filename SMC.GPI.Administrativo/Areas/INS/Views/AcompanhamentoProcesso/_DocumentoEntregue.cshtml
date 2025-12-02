@@ -1,0 +1,98 @@
+﻿@model DocumentoEntregueViewModel
+<div data-type="gpi-div-documento-entregue">
+    @using (Smc.Form("formRegistraEntrega", "SalvarDocumento").Ajax("#divListaDocumentosEntregues" + Model.Seq.ToString()).CssClass("smc-list-item-agrupado row").Begin())
+    {
+        using (Smc.Div("fieldsetRegistraEntrega").Begin())
+        {
+            @Smc.EditorFor(prop => prop.Seq)
+            @Smc.EditorFor(prop => prop.SituacaoEntregaDocumentoAntiga)
+            @Smc.EditorFor(prop => prop.DocumentacaoEntregue)
+            @Smc.EditorFor(x => x.SeqInscricao)
+            @Smc.EditorFor(x => x.SeqDocumentoRequerido)
+            @*@@Smc.EditorFor(x => x.SeqArquivoAnexado)*@
+            <input data-type="smc-hidden" data-val="false" data-val-number="O campo 'SeqArquivoAnexado' deve ser numérico"
+                   id="SeqArquivoAnexado" name="SeqArquivoAnexado" type="hidden" value="@Model.SeqArquivoAnexado" data-hidden-configurated="true">
+            <span class="field-validation-valid span-validation-error smc-span-error-hidden" data-valmsg-for="SeqArquivoAnexado" data-valmsg-replace="true"></span>
+
+            using (Smc.Div("Agrupamento-titulo").Size(SMCSize.Grid24_24).Begin())
+            {
+                @*<div class="smc-size-md-1 smc-size-xs-1 smc-size-sm-1 smc-size-lg-1">
+                        @Smc.LegendItem(prop => prop.SituacaoEntregaDocumento, false)
+                    </div>*@
+
+                @Smc.DisplayFor(prop => prop.DescricaoTipoDocumento).CssClass("smc-label").HideLabel()
+            }
+            <div class="smc-size-md-1 smc-size-xs-1 smc-size-sm-1 smc-size-lg-1">
+                @Smc.LegendItem(prop => prop.SituacaoEntregaDocumento, false)
+            </div>
+            @Smc.EditorFor(prop => prop.SituacaoEntregaDocumentos)
+            @Smc.EditorFor(prop => prop.DataEntrega)
+            @Smc.EditorFor(prop => prop.FormaEntrega)
+            @(Smc.EditorFor(prop => prop.VersaoDocumento)
+                                        .FillInstructions(@Smc.GetUIResource("FillInstructions_Versao", null,
+                                            Model.VersaoDocumentoExigido.SMCGetDescription())))
+
+            @Smc.EditorFor(prop => prop.Observacao)
+            @Smc.EditorFor(prop => prop.ExibirInformacaoExibirObservacaoParaInscrito)
+            @Smc.EditorFor(prop => prop.InformacaoExibirObservacaoParaInscrito)
+            @Smc.EditorFor(prop => prop.ExibirExibirObservacaoParaInscrito)
+            @Smc.EditorFor(prop => prop.ExibirObservacaoParaInscrito)
+            if (!string.IsNullOrEmpty(Model.LinkArquivo))
+            {
+                using (Smc.ContextWindow("contextArquivo").Begin())
+                {
+                    @Smc.DisplayFor(prop => prop.LinkArquivo)
+                    @Smc.DisplayFor(prop => prop.DescricaoArquivoAnexado)
+                }
+                @(Smc.Button(SMCMvcConsts.CONTEXTWINDOW_BEHAVIOR_OPEN)
+                                        .Attribute(SMCMvcConsts.CONTEXTWINDOW_ID, "contextArquivo")
+                                        .Text(@Smc.GetUIResource("Botao_Ver_Anexo"))
+                                        .Tooltip(@Smc.GetUIResource("Botao_Ver_Anexo"))
+                                        .CssClass("smc-btn-visualizar-icotext-destaque"))
+            }
+            else
+            {
+                @Smc.EditorFor(prop => prop.ArquivoAnexado)
+            }
+            @Smc.EditorFor(prop => prop.EntregaRegistrada)
+
+            if (Model.TipoDocumentoPermiteVariosArquivos)
+            {
+                var buttonset = Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).CssClass("smc-espaco-botoes").Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(1, SMCButtonSetGroupedStyle.Arrow)
+                        .AddButton(Smc.Button(SMCButtonBehavior.Salvar).CssClass("smc-btn-salvar-icotext-destaque"));
+
+
+                if (Model.TipoDocumentoPermiteVariosArquivos)
+                {
+                    buttonset.AddButton(Smc.Button("DuplicarDocumentoEntregue", "DuplicarDocumentoEntregue",
+                                            new
+                                            {
+                                                @seqInscricaoDocumento = SMCDESCrypto.EncryptNumberForURL(Model.Seq),
+                                                @seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao)
+                                            }, "AcompanhamentoProcesso")
+                                               .Ajax(isPost: false, updateTargetId: "divDocumentosEntregues")
+                                               .Type(SMCButtonType.Link));
+                    if (!Model.EntregaRegistrada)
+                    {
+                        buttonset.AddButton(Smc.Button("ExcluirInscricaoDocumento", "ExcluirDocumento",
+                            new
+                            {
+                                @seqInscricaoDocumento = SMCDESCrypto.EncryptNumberForURL(Model.Seq),
+                                @seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao)
+                            }, "AcompanhamentoProcesso")
+                            .Type(SMCButtonType.Link)
+                            .Ajax(isPost: false, updateTargetId: "divDocumentosEntregues", onSuccess: "smc.contextWindow.fechaJanelas();"));
+                    }
+                }
+
+                @buttonset;
+            }
+            else
+            {
+                @(Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).CssClass("smc-espaco-botoes").Type(SMCButtonSetType.Primary)
+                                                    .AddButton(Smc.Button(SMCButtonBehavior.Salvar).CssClass("smc-btn-salvar-icotext-destaque")))
+            }
+        }
+
+    }
+</div>

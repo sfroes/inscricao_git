@@ -1,0 +1,8 @@
+﻿@model ProcessoViewModel
+
+@section Scripts{
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/InclusaoProcesso.js")" type="text/javascript"></script>
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/CamposInscrito.js")" type="text/javascript"></script>
+}
+
+@Html.Partial("_EditarProcesso", Model)

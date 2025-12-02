@@ -1,0 +1,735 @@
+﻿.smc-btn-mais {
+    float: right;
+    border: 1px solid var(--border-button);
+    background-color: var(--white);
+    border-radius: 3px;
+    font-size: 0;
+    height: 2em;
+    padding: 0.5em 0.3em 0em 0.3em;
+
+    i {
+        font-size: 1.6em;
+        color: var(--gray);
+    }
+}
+
+.smc-linha-btn-terciario {
+    text-align: right;
+
+    a {
+        font-size: 0.9em;
+        font-weight: 600;
+        border: 1px solid var(--border-button-secondary);
+        color: var(--border-button-secondary);
+        background-color: var(--background-button-secondary);
+        border-radius: 3px;
+        height: 1.4em;
+        padding: 0.4em 1em 0.4em 1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-style: normal;
+
+        &:hover, &:focus {
+            border: 1px solid var(--color-hover);
+            background-color: var(--white);
+            color: var(--color-hover);
+        }
+    }
+
+    .smc-button{
+        display:block;
+    }
+}
+
+div.smc-button {
+    width: 100%;
+    display: flex;
+
+    > [disabled] {
+        background-color: var(--color-primary-2) !important;
+        color: var(--white) !important;
+        border: 1px solid var(--color-primary-2) !important;
+    }
+}
+
+@mixin basebotoes {
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 1.2em;
+    padding: 1em 0 0.1em 0;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    height: 2.2em;
+}
+
+.smc-btn-principal {
+    @include basebotoes;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    width: 100%;
+    height: 2.2em;
+    font-style: normal;
+    font-weight: 600;
+
+    &:hover, &:focus {
+        border: 1px solid var(--color-secondary);
+        background-color: var(--white);
+        color: var(--color-secondary);
+    }
+}
+
+button.smc-btn-principal {
+    height: 3.4em;
+    padding: 0.8em 0 0.5em 0;
+}
+
+.smc-btn-secundario {
+    @include basebotoes;
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    width: 100%;
+
+    &:hover, &:focus {
+        border: 1px solid var(--color-primary-3);
+        background-color: var(--white);
+        color: var(--color-primary-3);
+    }
+}
+
+a.smc-btn-secundario {
+    font-style: normal;
+}
+
+.smc-btn-desabilitado {
+    @include basebotoes;
+    background-color: var(--border-button);
+    border: 1px solid var(--border-button);
+    cursor: no-drop;
+
+    &:hover, &:focus {
+        border: 1px solid var(--border-button) !important;
+        background-color: var(--border-button) !important;
+        color: var(--white) !important;
+    }
+}
+// BUTTONSET DA ÁREA DE CADASTRO
+.smc-gpi-linha-botoes {
+    margin-top: 2.85em;
+    width: 100%;
+    padding: 2.85em 0 0 0 !important;
+    display: flex;
+}
+
+.gap-botoes {
+    gap: 0.71em;
+}
+
+.smc-gpi-linha-botoes-espacamento {
+    > div:first-child {
+        margin-left: 20%;
+        order: 2;
+
+        @media screen and ("max-width: 850px") {
+            margin-right: 0;
+        }
+    }
+
+    > div:nth-child(2) {
+        order: 2;
+    }
+
+    > div:last-child {
+        order: 1 !important;
+    }
+}
+//ICONOGRAFIA PARA BOTÕES
+
+.proximo {
+    &:after {
+        content: "\f054";
+        font-family: var(--fa-font);
+        color: var(--white);
+        display: inline-block;
+        font-size: 1.28em;
+        margin-left: 1.42em;
+
+        @media screen and ("max-width: 850px") {
+            display: none;
+        }
+    }
+
+    &:hover:after, &:focus:after {
+        color: var(--color-secondary);
+    }
+}
+
+@mixin base-iconografia($icon, $color, $color-hover) {
+    &:before {
+        content: $icon;
+        font-family: var(--fa-font);
+        color: $color;
+        display: inline-block;
+        font-size: 1.28em;
+        margin-right: 1.42em;
+    }
+
+    &:hover:after, &:focus:after {
+        color: $color-hover;
+    }
+}
+
+.voltar, .smc-btn-anterior-icotext {
+    @include base-iconografia("\f053", var(--color-primary-2),var(--color-primary-3));
+
+    @media screen and ("max-width: 850px") {
+        height: 3em;
+        padding: 1.74rem;
+        font-size: 0;
+        width: 2em;
+        margin-left: auto;
+
+        &:before {
+            margin-right: 0;
+        }
+
+        i {
+            &:before {
+                content: "\f053";
+                font-family: var(--fa-font);
+                color: var(--color-primary-2);
+                font-size: 1.28rem;
+                position: relative;
+                left: -6px;
+                top: -10px;
+                font-style: normal;
+            }
+        }
+    }
+}
+
+.voltar {
+    &:hover {
+        &:before {
+            color: var(--color-primary-3);
+        }
+    }
+}
+
+.alterar {
+    @include base-iconografia("\f044", var(--color-primary-2),var(--color-primary-3));
+
+    @media screen and ("max-width:1120px") {
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &:hover {
+        &:before {
+            color: var(--color-primary-3);
+        }
+    }
+}
+
+.concluir {
+    @include base-iconografia("\f00c", var(--white),var(--color-secondary));
+}
+
+.boleto {
+    @include base-iconografia("\f02a", var(--color-primary-2),var(--color-primary-3));
+}
+
+.documento {
+    @include base-iconografia("\f15b",var(--color-primary-2),var(--color-primary-3));
+}
+// BOTÕES PRE DEFINIDOS
+.smc-btn-fechar-icotext {
+    @extend .smc-btn-secundario;
+    height: 3.5em;
+    padding: 0 1.78em;
+
+    i {
+        display: none;
+    }
+}
+
+.smc-btn-confirmar-icotext-destaque {
+    @extend .smc-btn-principal;
+    height: 3.5em !important;
+    padding: 1em 1.78em !important;
+    display: flex;
+
+    > i {
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\f00c";
+        }
+    }
+}
+// BOTÕES DO WIZARD
+.smc-wizard-barra-acoes {
+    .smc-btn-proximo-icotext-destaque {
+        @extend .smc-btn-principal;
+        @extend .proximo;
+        width: 14.28em;
+        order: 2;
+
+        i {
+            display: none;
+            // @media screen and ("max-width: 992px") {
+            //      display: block;
+            //   }
+        }
+    }
+
+    .smc-btn-anterior-icotext {
+        position: relative;
+        @extend .smc-btn-secundario;
+        @extend .voltar;
+        margin-right: 51%;
+        height: 2.3em;
+
+        @media screen and ("max-width: 1200px") {
+            margin-right: 31%;
+        }
+
+        i {
+            display: none;
+
+            @media screen and ("max-width: 992px") {
+                //display: block !important;
+            }
+
+            &::before {
+                @media screen and ("max-width: 992px") {
+                    display: block !important;
+                    width: 20px;
+                }
+            }
+        }
+
+        @media screen and ("max-width: 992px") {
+            margin-right: 45%;
+        }
+
+
+        @media screen and ("max-width: 850px") {
+            margin-right: 1%;
+            padding: 1.74rem;
+
+            &:before {
+                font-size: 1.28rem;
+                margin-top: -8px;
+                margin-left: -5px;
+            }
+        }
+    }
+
+    .smc-btn-custom.smc-btn-principal {
+        display: flex;
+        padding: .8em 3.21em .5em 3.21em !important;
+        @extend .smc-btn-principal;
+        @extend .concluir;
+
+        @media screen and ("max-width: 992px") {
+            padding: .8em 1.07em .5em 1.07em !important;
+        }
+
+        &:before {
+            margin-right: 0.71em;
+            margin-top: 0.14em;
+        }
+    }
+
+    .smc-btn-custom.smc-btn-secundario {
+        padding: 1em 3.21em .5em 3.21em !important;
+
+        @media screen and ("max-width: 992px") {
+            padding: 1em 0.8em 0.5em 0.8em !important;
+        }
+    }
+
+    .smc-btn-custom.smc-btn-secundario {
+        height: 1.8em !important;
+    }
+
+    .smc-buttonset-horizontal-primario[data-id="ButtonSetDropdown0"] {
+        order: 2;
+    }
+}
+//BOTÕES SOMENTE ÍCONES
+.smc-btn-excluir-ico {
+    background-color: transparent;
+    border-color: var(--color-error);
+    color: var(--color-error);
+    padding: 0.14rem 0.5rem 0 0.92rem;
+    height: 2.6rem;
+    text-align: center;
+    margin-bottom: 0.35em;
+
+    i {
+        margin: 0.71rem 0.57rem 0 0;
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\f2ed";
+            font-weight: 300;
+        }
+    }
+
+    &:focus {
+        background-color: transparent;
+        border-color: var(--color-error);
+        color: var(--color-error);
+    }
+}
+
+.smc-btn-restaurar-ico {
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    padding: .14rem .42rem 0 .78rem;
+    height: 2.6rem;
+    margin-bottom: 0.35em;
+
+    i {
+        margin: .71rem .57rem 0 0;
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\f2ea";
+        }
+    }
+
+    &:focus {
+        background-color: var(--white);
+        color: var(--color-primary-2);
+        border: 1px solid var(--color-primary-2);
+    }
+}
+
+.smc-btn-buscacep {
+    margin: 1.28rem 0 0 -0.78rem;
+    height: 3.05rem;
+    border-radius: 0 0.21em 0.21em 0;
+    padding: 0 0.71rem;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -1.68rem;
+
+    i {
+        margin: 0 5px;
+    }
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--color-font-h3);
+        border: 1px solid var(--color-font-h3);
+
+        i {
+            color: var(--color-font-h3);
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        left: -2.08rem;
+    }
+
+    @media screen and (max-width: 992px) {
+        width: auto !important;
+    }
+}
+
+.smc-btn-limpacep {
+    margin: 1.2rem 0 0 0;
+    height: 3.15rem;
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    width: 100%;
+    min-width: 51px;
+    padding: 0;
+
+    i {
+        margin: 0.35em 0.78em 0.35em 0.35em;
+        color: var(--color-primary-2);
+    }
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--color-font-h3);
+        border: 1px solid var(--color-font-h3);
+
+        i {
+            color: var(--color-font-h3);
+        }
+    }
+}
+
+.smc-detalhe-editavel-botao-inserir {
+    i {
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\2b";
+        }
+    }
+}
+
+.smc-btn-fontenormal,
+.smc-btn-fontemenor,
+.smc-btn-fontemaior {
+    > i {
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\41";
+        }
+    }
+}
+
+.smc-btn-contraste {
+    i {
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\f042";
+        }
+    }
+}
+
+.smc-lookup,
+.smc-treeview {
+    .smc-lookup-open-command,
+    .smc-treeview-botao-buscar {
+        > i {
+            font-family: var(--fa-font);
+
+            &:before {
+                content: "\f002";
+            }
+        }
+    }
+}
+
+.smc-btn-buscacep,
+.smc-btn-pesquisar-ico-destaque {
+    > i {
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\f002";
+        }
+    }
+}
+
+.smc-treeview-botao-limpar,
+.smc-btn-limpacep,
+.smc-btn-limparenviar-ico-destaque {
+    > i {
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\f12d";
+        }
+    }
+}
+
+.fancytree-expander.fa-plus-square-o {
+    &:before {
+        font-family: var(--fa-font);
+        content: "\f0fe";
+    }
+}
+.fancytree-expander.fa-minus-square-o {
+    &:before {
+        font-family: var(--fa-font);
+        content: "\f146";
+    }
+}
+
+.smc-orderpick-btn-down {
+    > i {
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\f0d7";
+        }
+    }
+}
+.smc-orderpick-btn-up {
+    > i {
+        font-family: var(--fa-font);
+
+        &:before {
+            content: "\f0d8";
+        }
+    }
+}
+
+.smc-btn-visualizar-ico {
+    > i {
+        font-family: var(--fa-font) !important;
+
+        &:before {
+            content: "\f06e" !important;
+        }
+    }
+}
+
+.smc-btn-voltar-icotext {
+    > i {
+        font-family: var(--fa-font) !important;
+
+        &:before {
+            content: "\f104" !important;
+        }
+    }
+}
+
+.smc-btn-salvar-icotext-destaque {
+    > i {
+        font-family: var(--fa-font) !important;
+
+        &:before {
+            content: "\f00c" !important;
+        }
+    }
+}
+
+//BOTÕES MODAL
+.smc-btn-yes, .smc-btn-no {
+    @extend .smc-btn-secundario;
+    height: 3.5em;
+    padding: 0.5em 1.42em 0.5em 1.42em;
+
+    &:focus {
+        border: 1px solid var(--color-hover) !important;
+        background-color: var(--color-hover) !important;
+        color: var(--white) !important;
+    }
+}
+
+
+
+.smc-botoes-finais {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    float: none;
+    margin-bottom: 3em;
+}
+
+.smc-gpi-link {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: var(--color-primary);
+    text-decoration: underline !important;
+    font-size: 1.2em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:hover {
+        background-color: transparent;
+        border: none;
+        color: var(--color-primary);
+    }
+}
+
+.smc-gpi-linha-sair {
+    .smc-button {
+        display: block;
+        text-align: right;
+    }
+}
+
+// BOTÃO UPLOAD
+.smc-uploadFile-contextWindowControls.smc-btn-desabilitado {
+    padding: 0 0.57em 0 0;
+    background-color: transparent !important;
+    border: none !important;
+
+    .dropdown-toggle.smc-dropdown-btn-toggle-arrow, .smc-btn-custom {
+        background-color: #e3e3e3 !important;
+        color: #8d8d8d !important;
+        border: 1px solid #e3e3e3 !important;
+        cursor: no-drop !important;
+        height: 3.0rem !important;
+        opacity: 1;
+    }
+}
+
+.smc-uploadFile-contextWindowControls {
+    > .smc-button {
+        > button {
+            > i {
+                font-family: var(--fa-font);
+
+                &:before {
+                    content: "\f0c6";
+                }
+            }
+        }
+    }
+
+    > .dropdown {
+        > .smc-dropdown-btn-toggle-arrow {
+            > i {
+                font-family: var(--fa-font);
+
+                &:before {
+                    content: "\f107";
+                }
+            }
+        }
+    }
+}
+
+.espacamento-esquerda {
+    .smc-button:first-child {
+        padding-left: 60%;
+
+        @media screen and ("max-width: 992px") {
+            padding-left: 0;
+        }
+    }
+}
+
+.smc-btn-download-icotext-destaque {
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    width: 11.14em;
+    text-transform: uppercase;
+    font-size: 1em;
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    font-style: normal;
+    padding-left: 1rem;
+
+    &:hover, &:focus {
+        background-color: var(--white);
+        color: var(--color-primary-2);
+        border: 1px solid var(--color-primary-2);
+    }
+}
+
+button.smc-btn-sm {
+    width: auto;
+    height: auto;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+}

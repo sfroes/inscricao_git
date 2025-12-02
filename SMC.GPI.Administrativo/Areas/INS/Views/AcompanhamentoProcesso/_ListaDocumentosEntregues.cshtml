@@ -1,0 +1,48 @@
+﻿@using SMC.GPI.Administrativo.Areas.INS.Views.AcompanhamentoProcesso.App_LocalResources;
+@model SumarioDocumentosEntreguesViewModel
+
+@{ 
+    if (string.IsNullOrEmpty(Model.BackURL))
+    {
+        Model.BackURL = Request.UrlReferrer.ToString();
+    }
+}
+
+@*FIX: remover este campo após a correção do problema do foco no primeirio campo da tela*@
+@*<input type="text" style="opacity:0;" />*@
+@Html.HiddenFor(m => m.SeqInscricao)
+@Html.HiddenFor(m => m.InscricaoConfirmada)
+@Html.HiddenFor(m => m.BackURL)
+
+@if (Model.DocumentosObrigatorios != null && Model.DocumentosObrigatorios.Count > 0)
+{
+    <div class="smc-detalhe-editavel-blocos row" id="divDocumentosObrigatorios">
+        <h3>@Smc.GetUIResource("Titulo_Documentos_Obrigatorios")</h3>
+        <div class="smc-detalhe-editavel-organizador">
+
+            @Smc.List("listaDocumentosObrigatorios", r => r.DocumentosObrigatorios).HtmlTemplate(@<text>@Html.Partial("_DocumentoEntregueMasterDetail", item.Value)</text>)
+        </div>
+    </div>
+}
+
+@if (Model.GruposDocumentos != null && Model.GruposDocumentos.Count > 0)
+{
+    <div class="smc-detalhe-editavel-blocos smc-gpi-documentos-agrupados" id="divGrupos">
+        <h3>@Smc.GetUIResource("Titulo_Grupos_Obrigatorios")</h3>
+        <div class="smc-detalhe-editavel-organizador">
+
+            @Smc.List("listaGrupoDocumentos", r => r.GruposDocumentos).HtmlTemplate(@<text>@Html.Partial("_DocumentoRequeridoGrupo", item.Value)</text>)
+        </div>
+    </div>
+}
+
+@if (Model.DocumentosOpcionais != null && Model.DocumentosOpcionais.Count > 0)
+{
+    <div class="smc-detalhe-editavel-blocos" id="divGrupos">
+        <h3>@Smc.GetUIResource("Titulo_Documentos_Opcionais")</h3>
+        <div class="smc-detalhe-editavel-organizador">
+
+            @Smc.List("listaDocumentosOpcionais", r => r.DocumentosOpcionais).CssClass("smc-gpi-documento-opcional-label-hidden").HtmlTemplate(@<text>@Html.Partial("_DocumentoEntregueMasterDetail", item.Value)</text>)
+        </div>
+    </div>
+}

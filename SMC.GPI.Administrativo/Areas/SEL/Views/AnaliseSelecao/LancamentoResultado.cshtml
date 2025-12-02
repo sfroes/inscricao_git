@@ -1,0 +1,66 @@
+﻿@model LancamentoResultadoViewModel
+@{
+
+    var buttonSet = Smc.ButtonSet();
+
+    if (!string.IsNullOrEmpty(Model.BackUrl))
+    {
+        buttonSet
+            .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).CssClass("smc-btn-salvar-icotext-destaque"))
+            .AddButton(Smc.Button("Voltar")
+                 .Type(SMCButtonType.Link)
+                 .CssClass("smc-btn-voltar-icotext")
+                 .Url(Model.BackUrl));
+    }
+    else
+    {
+        buttonSet
+     .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).CssClass("smc-btn-salvar-icotext-destaque"))
+     .AddButton(Smc.Button("Voltar").CssClass("smc-btn-voltar-icotext").Type(SMCButtonType.Link)
+         .Url(Request["edicaoLote"] == "True" ?
+             Url.Action("AnaliseLote", "AnaliseSelecao", new { seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso) }) :
+             Url.Action("ConsultaSelecoesProcesso", "AcompanhamentoSelecao", new { seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso) })));
+    }
+
+}
+
+
+
+@using (Smc.Header("headerLancamentoResultado", SMCHeaderType.Primary)
+                        .Item(prop => prop.TipoProcesso, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                        .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                        .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+                        .Item(prop => prop.GrupoOferta, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                        .Item(prop => prop.DescricaoOferta, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+                        .Begin())
+{ }
+
+@using (Smc.Form("formLancamentoResultados", "SalvarLancamento").Ajax().Begin())
+{
+    @Smc.EditorFor(m => m.EdicaoLote)
+    @Smc.EditorFor(m => m.SeqProcesso)
+    @Smc.EditorFor(m => m.SeqOferta)
+    @Smc.EditorFor(m => m.InscricoesOfertas)
+    @Smc.HiddenFor(m => m.BackUrl)
+    @(Smc.List("lancamentoResultados", m => m.Lancamentos)
+                .HtmlTemplate(
+        @<text>
+            @Html.Partial("_LancamentoResultadoItem", item.Value)
+        </text>)
+    )
+
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-list-item-destaque").Begin())
+    {
+        @Html.Raw(Smc.GetUIResource("Label_AvisoEmailConfirmacao"))
+    }
+    @buttonSet
+}
+
+
+
+@using (Smc.ModalWindow("modalOpcoesOfertaInscrito")
+            .Title(Smc.GetUIResource("Label_OpcoesOfertaInscrito"))
+            .Size(SMCModalWindowSize.Large)
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin())
+{ }

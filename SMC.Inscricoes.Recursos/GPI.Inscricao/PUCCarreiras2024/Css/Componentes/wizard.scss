@@ -1,0 +1,59 @@
+﻿//BARRA DE BOTÕES
+.smc-wizard-barra-acoes {
+    border-top: 1px solid var(--color-primary-3) !important;
+}
+
+.smc-wizard-selecionado {
+    background-color: var(--color-primary);
+
+    + p {
+        color: var(--color-primary) !important;
+    }
+}
+
+.smc-gpi-processo-passo-atual {
+    &:before {
+        border: 1px solid var(--color-primary) !important;
+        background-color: var(--color-primary) !important;
+    }
+
+    a,span {
+        color: var(--color-text) !important;
+    }
+}
+
+.smc-gpi-processo-passo-emaberto {
+    &:before {
+        border: 1px solid var(--color-primary) !important;
+        background-color: var(--light-grey) !important;
+    }
+
+    a,span {
+        color: var(--color-text-secondary) !important;
+    }
+}
+
+.smc-gpi-processo-passo-concluido {
+    &:before {
+        border: 1px solid var(--color-primary) !important;
+        background-color: var(--color-primary) !important;
+    }
+
+    a,span {
+        color: var(--color-text) !important;
+    }
+}
+
+.smc-gpi-processo-passos {
+    &:before {
+        background-color: var(--color-primary);
+    }
+}
+
+.smc-gpi-lista-oferta {
+    p {
+        &:before {
+            border-color: transparent transparent transparent var(--color-primary-2) !important;
+        }
+    }
+}

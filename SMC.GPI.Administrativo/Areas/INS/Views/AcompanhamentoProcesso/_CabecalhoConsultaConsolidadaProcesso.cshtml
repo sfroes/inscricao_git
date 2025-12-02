@@ -1,0 +1,23 @@
+﻿@model ConsultaConsolidadaProcessoCabecalhoViewModel
+
+@using (Smc.Header("headerHeaderProcessoGrupoOferta", SMCHeaderType.Primary)
+          .Item(prop => prop.DescricaoTipoProcesso, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+          .Item(prop => prop.NomeCliente, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+          .Item(prop => prop.Seq, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+          .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid22_24, sizeLG: SMCSize.Grid22_24, sizeXS: SMCSize.Grid22_24)          
+          .Item(prop => prop.PosicaoConsolidada.Total, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.OfertasNaoSelecionadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.Iniciadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.Finalizadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.Pagas, sizeSM: SMCSize.Grid2_24, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+          .Item(prop => prop.PosicaoConsolidada.DocumentacoesEntregues, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.Confirmadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.NaoConfirmadas, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.Deferidos,  sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.Indeferidos, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.PosicaoConsolidada.Canceladas, sizeSM: SMCSize.Grid2_24, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+          .Begin())
+{
+
+}
+

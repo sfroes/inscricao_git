@@ -1,0 +1,35 @@
+﻿
+@model AcompanhamentoInscritoFiltroViewModel
+
+@using (Smc.Form("formPesquisaInscrito", "ListarInscritos").Ajax("#divGridAcompanhamentoInscrito").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaInscrito").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqUnidadeResponsavel)
+        @Smc.EditorFor(prop => prop.SeqTipoProcesso)
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SemestreReferencia)
+        @Smc.EditorFor(prop => prop.AnoReferencia)
+        @Smc.EditorFor(prop => prop.Oferta)
+        @Smc.EditorFor(prop => prop.SeqInscrito)
+        @Smc.EditorFor(prop => prop.NomeInscrito)
+        @Smc.EditorFor(prop => prop.Cpf)
+        @Smc.EditorFor(prop => prop.NumeroPassaporte)
+        @Smc.EditorFor(prop => prop.SeqInscricao)
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+}
+
+
+<div id="divGridAcompanhamentoInscrito" class="smc-inscricoes-candidato smc-list-sem-rolagem">
+    @Smc.ActionList("ListarInscritos", "AcompanhamentoInscrito", Model, initialListingDisabled: true)
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/ReloadPagerAjaxDiv.js")></script>
+
+}

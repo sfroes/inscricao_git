@@ -1,0 +1,64 @@
+﻿@*
+    BaseType: SMC.Framework.UI.Mvc.SMCWebViewPage
+    DisableLinePragmas: true
+    Imports: SMC.Framework,
+    SMC.Framework.DataAnnotations,
+    SMC.Framework.Extensions,
+    SMC.Framework.Ioc,
+    SMC.Framework.Mapper,
+    SMC.Framework.Model,
+    SMC.Framework.Security,
+    SMC.Framework.Service.Security,
+    SMC.Framework.UI.Mvc.Dynamic,
+    SMC.Framework.UI.Mvc.Exceptions,
+    SMC.Framework.UI.Mvc.Helpers,
+    SMC.Framework.UI.Mvc.Html,
+    SMC.Framework.UI.Mvc.Util,
+    SMC.Framework.UI.Mvc,
+    SMC.Framework.Util,
+    System,
+    System.Collections.Generic,
+    System.Configuration,
+    System.Web,
+    System.Web.Mvc,
+    System.Web.Mvc.Html
+*@
+
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Framework.UI.Mvc.Html.DataSelector;
+
+@{
+    object sel = ViewBag.DataSelectorSelectedValue;
+    bool allowSearch = (bool)!ViewBag.DataSelectorTreeViewAllowSearch;
+    bool expandedTree = (bool)Session["TreeExpanded"];
+    var result = Smc.DataSelectorTreeView(sel, false, allowSearch, expandedTree);
+
+    if (result is SMCTreeViewFluentConfiguration<object>)
+    {
+        var treeview = result as SMCTreeViewFluentConfiguration<object>;
+        treeview.Expanded(expandedTree);
+        treeview.CssClass("smc-gpi-treeview-button ");
+        treeview.ContentTemplate(
+@<text>
+    @{
+        var node = item.Value as SMC.Inscricoes.UI.Mvc.Areas.INS.Lookups.LookupSelecaoOfertaInscricaoViewModel;
+    }
+    @if (node.IsLeaf && node.DescricaoComplementar != null)
+    {
+        @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).CssClass("smc-sga-alinhamento-botao-secundario")
+                        .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalVisualizarMaisInformacoes")
+                            .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("MaisInformacoes"))
+                            .Ajax(isPost: false)
+                            .CssClass("smc-btn-visualizar-ico").Tooltip(Smc.GetUIResource("MaisInformacoes"))
+                            .Text(Smc.GetUIResource("MaisInformacoes"))
+                            .Action("VisualizarDetalhesOferta", "Inscricao", new { seqOferta = SMC.Framework.Security.SMCDESCrypto.EncryptNumberForURL(node.Seq) })
+                            )
+        )
+    }
+</text>);
+}
+}
+
+@result

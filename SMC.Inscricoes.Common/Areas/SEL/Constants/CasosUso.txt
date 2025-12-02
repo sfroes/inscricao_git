@@ -1,0 +1,11 @@
+﻿UC;Descrição
+UC_SEL_001_01_01.Consulta_Posicao_Consolidada_Selecao_Processo;Este caso de uso tem como objetivo visualizar os dados estatísticos da seleção por processo.
+UC_SEL_001_01_02.Consulta_Posicao_Consolidada_Selecao_Grupo_Ofertas;Este caso de uso tem por objetivo visualizar os dados estatísticos da seleção por grupo de ofertas ou por oferta.
+UC_SEL_001_01_03.Consulta_Candidatos_Processo;Este caso de uso tem por objetivo listar os candidatos e a situação do mesmo nas etapas de seleção e convocação.
+UC_SEL_001_01_04.Lancamento_Resultado;Este caso de uso tem por objetivo permitir o lançamento do resultado, da nota e da classificação para um ou mais candidatos.
+UC_SEL_001_01_05.Convocacao;Este caso de uso tem por objetivo permitir a convocação dos candidatos.
+UC_SEL_001_01_06.Pesquisar_Historico_Situacao_Selecao;Este caso de uso tem por objetivo visualizar o histórico de situações da inscrição oferta.
+UC_SEL_001_01_07.Manter_Historico_Situacao_Selecao;Este caso de uso tem como objetivo alterar os dados de um registro de histórico de situação da inscrição oferta.
+UC_SEL_001_01_08.Analise_Selecao_Lote;Este caso de uso tem por objetivo visualizar os candidatos, lançar resultado e fazer a convocação em lote.
+UC_SEL_001_01_09.Emitir_Relatorio_Gestao_Selecao;Esse caso de uso tem por objetivo emitir as seguintes declarações:  &nbsp;  <ul>   <li>Declaração de participação</li>   <li>Declaração de aprovação</li>   <li>Declaração de aprovação - orientador</li>   <li>Declaração de aprovação - excedente</li>  </ul>
+UC_SEL_001_01_10.Alterar_Oferta;Esse caso de uso tem por objetivo permitr a troca da oferta do candidato.

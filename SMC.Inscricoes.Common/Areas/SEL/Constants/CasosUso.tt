@@ -1,0 +1,103 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #> 
+<#
+
+    string area = this.Host.GetHostOption("Area") as string;
+    string projeto = this.Host.GetHostOption("Projeto") as string;
+	string caminhoTxt = this.Host.GetHostOption("CaminhoTxt") as string;
+
+#>
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+
+namespace SMC.Inscricoes.Common.Areas.SEL.Constants
+{
+<#
+    var lines = File.ReadAllLines(@"D:\SMC\InscricaoRegistroDocumento\SMC.Inscricoes.Common\Areas\SEL\Constants\CasosUso.txt");
+	var currentUC = (string)null;
+    foreach (var line in lines.Skip(1))
+    {
+	    var index = line.IndexOf(';');
+		var title = line.Substring(0, index);
+		var desc = line.Substring(index + 1);
+		index = title.IndexOf('.');
+		var uc = title.Substring(0, index);
+		var func = Configurar(title.Substring(index + 1));	
+
+		if (uc != currentUC)
+		{
+
+		    if (currentUC != null)
+		    {
+#>
+    }
+
+<#
+		    }
+            currentUC = uc;
+#>
+    /// <summary>
+	/// Contém a lista de funcionalidades para o caso de uso <#=uc#>.
+	/// </summary>
+    public static class <#=uc#>
+    {
+
+<#
+		}
+#>
+        /// <summary>
+	    /// <#=desc#>
+	    /// </summary>
+        public const string <#=func#> = "<#=title#>";
+
+<#
+    }
+
+	if (currentUC != null)
+    {
+#>
+    }
+
+<#
+    }
+#>
+}
+
+<#+
+	public string Configurar(string valor)
+	{
+		var builder = new StringBuilder();
+		var lastUnderscore = false;
+		var lastLower = false;
+		foreach (var c in valor)
+		{
+			if ((char.IsUpper(c) && builder.Length > 0) || !char.IsLetterOrDigit(c))
+			{
+				if (!lastUnderscore && lastLower)
+				{
+					builder.Append("_");
+					lastUnderscore = true;
+				}
+			}
+
+			if (char.IsLetterOrDigit(c))
+			{
+				builder.Append(c);
+				lastUnderscore = false;
+				lastLower = char.IsLower(c);
+			}
+		}
+		return builder.ToString().ToUpper();
+	}
+#>

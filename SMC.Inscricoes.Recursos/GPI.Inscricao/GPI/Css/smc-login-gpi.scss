@@ -1,0 +1,92 @@
+@import "../../Css/smc-login.scss";
+
+:root {
+    --color-primary: #015459;
+    --color-secondary: #008000;
+    --bg-msg-boas-vindas: #E6F1F2;
+    --border-msg-boas-vindas: #82CBCF;
+    --color-msg-boas-vindas: #015459;
+    --color-btn-secondary: #015459;
+}
+
+.smc-login-body {
+    &:before {
+        background-image: url('../Images/smc-logo-gpi.svg');
+
+        @media screen and ("max-width: 767px") {
+            background-position: 50% .51em;
+        }
+    }
+}
+
+.smc-login-section {
+    @media screen and ("max-width: 767px") {
+        margin-top: 9.1em;
+    }
+}
+
+.smc-login-conteudo .smc-message-container.smc-mensagens-principal {
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+#formularioLogin {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+        margin-top: 6rem;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 3rem !important;
+        }
+    }
+}
+
+.smc-login-lembrar-senha {
+    a {
+        color: var(--color-primary);
+    }
+}
+
+.smc-login-separador {
+    span {
+        color: var(--color-primary);
+    }
+}
+
+#formularioLembrarSenha {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+    }
+}
+
+.smc-btn-voltar-icotext {
+    color: var(--color-primary);
+}
+
+#formularioCadastrarUsuario {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+    }
+}
+
+.smc-login-texto-reenvio-senha {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+    }
+}
+
+#fieldsetCadastrarUsuario {
+    &:first-child {
+        a.smc-form-ver-senha {
+            bottom: -38px;
+            float: left;
+            margin-left: -10px;
+        }
+    }
+}

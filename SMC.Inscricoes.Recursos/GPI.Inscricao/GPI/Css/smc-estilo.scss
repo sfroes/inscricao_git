@@ -1,0 +1,106 @@
+@import "Componentes/buttons";
+@import "Componentes/form";
+@import "Componentes/header";
+@import "Componentes/wizard";
+@import "Componentes/info_card";
+
+:root {
+    --color-text: #333333;
+    --color-label: #4b4b4b;
+    --color-text-reading: #000000;
+    --color-text-secondary: #a7a7a7;
+    --color-body: #e9e9e9;
+    --color-primary: #015459;
+    --color-primary-dark: #043a3d;
+    --color-hover: #047a81;
+    --color-primary-2: #5c7f81;
+    --color-primary-3: #02494d;
+    --color-secondary: #008000;
+    --color-secondary-2: #d58468;
+    --color-secondary-3: #18def0;
+    --color-font-h3: #12848e;
+    --color-font-paths: #12848e;
+    --color-detail-h3: #7bb3b8;
+    --color-font-h4: #7e989a;
+    --color-detail-h4: #bbc5c6;
+    --color-error: #b02614;
+    --color-alert: #ff7a08;
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #777777;
+    --border-default: #dfdfdf;
+    --border-button: #afafaf;
+    --border-button-secondary: #5c7f81;
+    --background-button-secondary: #e9e9e9;
+    --text-button-secondary: #5c7f81;
+    --message-alert-icon: #dcc39b;
+    --input-border-color: #dbdbdb;
+    --progress-bar-color: #9e9e9e;
+    --progress-value-color: #13ed41;
+}
+.smc-gpi-ingresso-informacao{
+    color:var(--white);
+}
+.smc-gpi-painel-lateral {
+    h2 {
+        color: var(--white);
+        font-weight: 100;
+    }
+}
+
+.smc-gpi-data-fim {
+    background-color: var(--color-hover);
+}
+
+.smc-gpi-pendencia {
+    color: var(--white);
+
+    &:before {
+        border-color: transparent transparent transparent var(--color-secondary-3);
+    }
+}
+
+.smc-gpi-lista-oferta {
+    p {
+        color: var(--white);
+
+        &:before {
+            border-color: transparent transparent transparent var(--color-secondary-3);
+        }
+    }
+}
+
+//TELAS INTERNAS DO PROCESSO
+.smc-gpi-nome-grupooferta {
+    color: var(--color-secondary-3);
+}
+
+.smc-gpi-processo-passo-atual {
+    @include passos-processo(var(--color-font-paths), var(--color-font-paths), var(--white), var(--white),"\f101");
+}
+
+.smc-gpi-processo-passo-concluido {
+    @include passos-processo(var(--color-font-paths), var(--color-font-paths), var(--white), var(--white),"\f00c");
+}
+
+.smc-barra-progresso {
+    p, span {
+        color: #84c4e6;
+    }
+}
+
+// INSCRIÇÕES NÃO INICIADAS
+.smc-gpi-lista-vazia {
+    color: var(--color-detail-h4);
+}
+
+// SELEÇÃO SEM OFERTA
+.smc-gpi-oferta-vazio {
+    .oferta-vazio-path {
+        fill: var(--color-primary);
+    }
+}
+
+.smc-gpi-img-sem-itens {
+    background-image: url(../Images/smc-gpi-sem-itens.png);
+}

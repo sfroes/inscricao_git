@@ -1,0 +1,11 @@
+﻿@model MotivoSituacaoViewModel
+
+@if (Model.SeqMotivoSituacao.HasValue)
+{
+    @Smc.DisplayFor(m => m.Motivo)
+}
+
+@if (Model.Justificativa != null)
+{
+    @Smc.DisplayFor(m => m.Justificativa)
+}

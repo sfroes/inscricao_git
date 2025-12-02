@@ -1,0 +1,27 @@
+﻿@model ConfigurarNotificacaoViewModel
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.ConfigurarNotificacao, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = false, area = "INS" })
+
+@using (Smc.Wizard("wizardConfigurarNotificacao")
+    .ButtonSet(1,
+        item => Smc.Button(SMCButtonBehavior.Salvar)
+            .Type(SMCButtonType.Submit)
+            .Action("Salvar")
+            .Ajax(isPost: true)
+            .DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .ButtonSet(1, alwaysVisible: true,
+        buttons: item => @Smc.Button(SMCButtonBehavior.Voltar).CssClass("smc-btn-voltar-icotext").Url(Url.Action("Index", routeValues: new { seqProcesso = (SMCEncryptedLong)Model.SeqProcesso })))
+            .Begin())
+{
+    using (Smc.WizardStep(0)
+        .Title(Smc.GetUIResource("Passo1_SelecaoTipoNotificacao"))
+        .Action("WizardSelecaoTipoNotificacao")
+        .Begin())
+    { }
+    using (Smc.WizardStep(1)
+        .Title(Smc.GetUIResource("Passo2_ConfiguracaoEmail"))
+        .Action("WizardConfiguracaoEmail")
+        .Selected(Model.Seq != 0)
+        .Begin())
+    { }
+}

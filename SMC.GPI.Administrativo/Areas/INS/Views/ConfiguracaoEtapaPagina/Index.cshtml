@@ -1,0 +1,90 @@
+﻿@model ConfiguracaoPaginaEtapaViewModel
+
+@section Scripts {
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/RecuperarPagina.js")" type="text/javascript"></script>
+}
+
+@Html.Action("CabecalhoProcessoEtapaConfiguracao", "ConfiguracaoEtapa", new { @seqEtapa = Model.SeqEtapa, @seqProcesso = Model.SeqProcesso, @seqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa, @action = EtapaProcessoActionsEnum.ConfiguracaoPagina, @exibirBotaoConfiguracaoEtapaProcesso = true })
+
+@using (Smc.Form("formCadastroConfiguracaoPaginaEtapa").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.Div("fieldsetCadastroConfiguracaoPaginaEtapa").Begin())
+    {
+        @(Smc.ButtonSet().Type(SMCButtonSetType.Primary).CssClass("smc-gpi-treeview-botao-novo")
+            .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalRecuperarPaginasConfiguracaoPaginaEtapa")
+                .Text(Smc.GetUIResource("Botao_Recuperar_Paginas_Configuracao_Pagina_Etapa"))
+                .Tooltip(Smc.GetUIResource("Botao_Recuperar_Paginas_Configuracao_Pagina_Etapa_Tooltip"))
+                .Ajax(isPost: false, updateTargetId: "modalRecuperarPaginasConfiguracaoPaginaEtapa")
+                .CssClass("smc-btn-novo-icotext-destaque").Enabled(Model.PossuiPaginas)
+                .SecurityToken(UC_INS_001_03_08.RECUPERAR_PAGINA)
+                                .Url(Url.Action("RecuperarPaginasConfiguracaoPaginaEtapa", "ConfiguracaoEtapaPagina", new { @seqConfiguracaoEtapa = (SMCEncryptedLong)Model.SeqConfiguracaoEtapa })))
+        )
+
+        <div id="divConfiguracaoPaginaEtapa" >
+            @Html.Action("ArvoreConfiguracaoPaginaEtapa", new { @seqEtapa = Model.SeqEtapa, @seqProcesso = Model.SeqProcesso })
+        </div>
+
+    }
+
+    @(Smc.ButtonSet()
+        .AddButton(Smc.Button("Voltar", "Index",
+            new
+            {
+                @seqEtapaProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqEtapa),
+                @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso)
+            }, "ConfiguracaoEtapa")
+            .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-voltar-icotext"))
+    )
+}
+
+@using (Smc.ModalWindow("modalAlterarIdiomaConfiguracaoPaginaEtapa")
+                    .Title(Smc.GetUIResource("Alterar_Idioma_Configuracao_Pagina_Etapa_Titulo"))
+                    .Form("AlterarIdiomaConfiguracaoPaginaEtapa", "SalvarAlteraracaoIdiomaConfiguracaoPaginaEtapa", "ConfiguracaoEtapaPagina", null, true, x => x.Ajax("#divConfiguracaoPaginaEtapa", fieldsContainerToRequest: "#divConfiguracaoPaginaEtapa"))
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Alterar_Idioma_Configuracao_Pagina_Etapa_Botao_Cancelar")).Tooltip(Smc.GetUIResource("Alterar_Idioma_Configuracao_Pagina_Etapa_Botao_Cancelar_Tooltip")))
+                    .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalRecuperarPaginasConfiguracaoPaginaEtapa")
+                    .Title(Smc.GetUIResource("Recuperar_Paginas_Configuracao_Pagina_Etapa_Titulo"))
+                    .Form("RecuperarPaginasConfiguracaoPaginaEtapa", "SalvarRecuperacaoPaginasConfiguracaoPaginaEtapa", "ConfiguracaoEtapaPagina", null, true, x => x.Ajax("#divConfiguracaoPaginaEtapa", fieldsContainerToRequest: "#divConfiguracaoPaginaEtapa"))
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Recuperar_Paginas_Configuracao_Pagina_Etapa_Botao_Cancelar")).Tooltip(Smc.GetUIResource("Recuperar_Paginas_Configuracao_Pagina_Etapa_Botao_Cancelar_Tooltip")))
+                    .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalConfigurarPaginaEtapa")
+                    .Title(Smc.GetUIResource("Configurar_Paginas_Etapa_Titulo"))
+                    .Form("ConfigurarPaginaEtapa", "SalvarConfiguracaoPaginaEtapa", "ConfiguracaoEtapaPagina", null, true, x => x.Ajax())
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Configurar_Paginas_Etapa_Botao_Cancelar")).Tooltip(Smc.GetUIResource("Configurar_Paginas_Etapa_Botao_Cancelar_Tooltip")))
+                    .Begin())
+{ }
+
+
+@using (Smc.ModalWindow("modalConfigurarPaginaIdiomaEtapa")
+                    .Title(Smc.GetUIResource("Configurar_Paginas_Idioma_Etapa_Titulo"))
+                    .Form("ConfigurarPaginaIdiomaEtapa", "SalvarConfiguracaoPaginaIdiomaEtapa", "ConfiguracaoEtapaPagina", null, true, x => x.Ajax())
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Configurar_Paginas_Idioma_Etapa_Botao_Cancelar")).Tooltip(Smc.GetUIResource("Configurar_Paginas_Idioma_Etapa_Botao_Cancelar_Tooltip")))
+                    .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalConfigurarTextoSecao")
+                    .Title(Smc.GetUIResource("Configurar_Texto_Secao_Titulo"))
+                    .Form("ConfigurarTextoSecao", "SalvarConfiguracaoTextoSecao", "ConfiguracaoEtapaPagina", null, true, x => x.Ajax())
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                    .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalConfigurarArquivoSecao")
+                    .Size(SMCModalWindowSize.Large)
+                    .Title(Smc.GetUIResource("Configurar_Arquivo_Secao_Titulo"))
+                    .Form("ConfigurarArquivoSecao", "SalvarConfiguracaoArquivoSecao", "ConfiguracaoEtapaPagina", null, true, x => x.Ajax())
+                    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+                    .Begin())
+{ }

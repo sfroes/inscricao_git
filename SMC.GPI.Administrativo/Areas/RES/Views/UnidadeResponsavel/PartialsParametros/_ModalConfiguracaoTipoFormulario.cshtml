@@ -1,0 +1,12 @@
+﻿@model UnidadeResponsavelTipoFormularioViewModel
+
+@Smc.EditorFor(prop => prop.CodigoUnidade)
+
+@using (Smc.Div("fieldsetConfiguracaoTipoFornulario").Begin())
+{
+    @Smc.EditorFor(x => x.SeqUnidadeResponsavel)
+    @Smc.EditorFor(x => x.Seq)
+    @Smc.EditorFor(x => x.SeqTipoFormulario)
+    @Smc.EditorFor(x => x.TiposFormulario)
+    @Smc.EditorFor(x => x.Ativo)
+}

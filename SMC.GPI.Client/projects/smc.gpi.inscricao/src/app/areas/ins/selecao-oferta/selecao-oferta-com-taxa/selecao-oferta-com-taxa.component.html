@@ -1,0 +1,240 @@
+@if (selecaoOfertaComTaxaService.$isLoading()) {
+  <p-skeleton width="100%" height="130px" /><br />
+} @else {
+  <section>
+    <div
+      [class]="eventoMostrarOcultarTaxas()"
+      cdkDropList
+      (cdkDropListDropped)="ordernar($event)"
+    >
+      @for (
+        oferta of selecaoOfertaComTaxaService.$listaOferta();
+        track oferta
+      ) {
+        <div
+          [class.smc-gpi-listbox-item-unico]="
+            !(
+              selecaoOfertaComTaxaService.numeroNoFolha > 1 &&
+              selecaoOfertaComTaxaService.selecaoOferta
+                .numeroMaximoOfertaPorInscricao != 1
+            )
+          "
+          class="flex flex-wrap p-2 align-items-center gap-3 {{
+            verificaOfertaAtiva(oferta)
+          }}"
+          cdkDrag
+          [cdkDragDisabled]="selecaoOfertaComTaxaService.$desabilitarDragDrop()"
+          [cdkDragStartDelay]="{ touch: 500, mouse: 100 }"
+          (cdkDragStarted)="ajustarOffset($event)"
+        >
+          <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+          @if (
+            selecaoOfertaComTaxaService.numeroNoFolha > 1 &&
+            selecaoOfertaComTaxaService.selecaoOferta
+              .numeroMaximoOfertaPorInscricao != 1
+          ) {
+            <p-tag
+              severity="info"
+              [value]="'opção ' + oferta.oferta.numeroOpcao.toString()"
+            />
+          } @else if (selecaoOfertaComTaxaService.numeroNoFolha == 1) {
+            <p-tag severity="info" [value]="'Opção única'" />
+          } @else if (selecaoOfertaComTaxaService.numeroNoFolha > 1) {
+            <p-tag severity="info" [value]="'Opção selecionada'" />
+          }
+
+          <div
+            cdkDragHandle
+            (touchstart)="adcionarClasseMobile($event)"
+            (touchend)="removeClasseMobile($event)"
+            (mousedown)="adcionarClasseDesktop($event)"
+            (mouseup)="removeClasseDesktop()"
+            class="smc-gpi-desc-oferta flex-1 flex flex-column gap-2"
+            cdkDragHandle
+          >
+            <span class="font-bold">{{ oferta.hierquia?.descricao }}</span>
+          </div>
+          <div class="smc-gpi-oferta-content">
+            @if (
+              selecaoOfertaComTaxaService.selecaoOferta.exigeJustificativaOferta
+            ) {
+              <textarea
+                maxlength="1000"
+                placeholder="* Informe a sua justificativa"
+                (keydown)="$event.stopPropagation()"
+                (blur)="
+                  atulizarTextoJustificativa($event, oferta.oferta.numeroOpcao)
+                "
+                >{{ oferta.oferta.justificativaInscricao }}</textarea
+              >
+            }
+
+            @if (selecaoOfertaComTaxaService.$taxasPorOferta().length > 0) {
+              <div class="smc-gpi-taxas-container linha-inscricao">
+                <div class="smc-gpi-taxas-container-inner-insc">
+                  @for (
+                    taxas of taxasFiltradas(oferta.oferta.seqOferta.seq!);
+                    track taxas.seqOferta
+                  ) {
+                    <div class="smc-gpi-taxas-container-inner">
+                      <app-selecao-oferta-com-taxa-simples
+                        [$taxas]="taxas.taxasOferta"
+                        [$seqOferta]="taxas.seqOferta"
+                        [tipoCobranca]="2"
+                      ></app-selecao-oferta-com-taxa-simples>
+
+                      @if (
+                        selecaoOfertaComTaxaService.$grupoTaxa()
+                          .grupoTaxaOferta &&
+                        selecaoOfertaComTaxaService.$grupoTaxa().grupoTaxaOferta
+                          .length > 0
+                      ) {
+                        <app-selecao-oferta-com-taxa-grupo
+                          [$grupoTaxas]="
+                            selecaoOfertaComTaxaService.$grupoTaxa()
+                              .grupoTaxaOferta
+                          "
+                          [$seqOferta]="taxas.seqOferta"
+                        ></app-selecao-oferta-com-taxa-grupo>
+                      }
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+
+            @if (
+              selecaoOfertaService.exibirBotaoExcluir(
+                selecaoOfertaComTaxaService.numeroNoFolha,
+                selecaoOfertaComTaxaService.selecaoOferta
+                  .numeroMaximoOfertaPorInscricao,
+                oferta.oferta.ofertaImpedida
+              )
+            ) {
+              <p-button
+                icon="pi pi-trash"
+                (onClick)="apagarOferta(oferta.oferta.numeroOpcao)"
+                class="smc-gpi-remove-opcao"
+              ></p-button>
+            }
+          </div>
+
+          <div *cdkDragPreview>
+            <div
+              [class.smc-gpi-listbox-item-unico]="
+                !(
+                  selecaoOfertaComTaxaService.numeroNoFolha > 1 &&
+                  selecaoOfertaComTaxaService.selecaoOferta
+                    .numeroMaximoOfertaPorInscricao != 1
+                )
+              "
+              class="flex flex-wrap p-2 align-items-center gap-3 {{
+                verificaOfertaAtiva(oferta)
+              }}"
+            >
+              @if (
+                selecaoOfertaComTaxaService.numeroNoFolha > 1 &&
+                selecaoOfertaComTaxaService.selecaoOferta
+                  .numeroMaximoOfertaPorInscricao != 1
+              ) {
+                <p-tag
+                  severity="info"
+                  [value]="'opção ' + oferta.oferta.numeroOpcao.toString()"
+                />
+              } @else if (selecaoOfertaComTaxaService.numeroNoFolha == 1) {
+                <p-tag severity="info" [value]="'Opção única'" />
+              } @else if (selecaoOfertaComTaxaService.numeroNoFolha > 1) {
+                <p-tag severity="info" [value]="'Opção selecionada'" />
+              }
+
+              <div
+                class="smc-gpi-desc-oferta flex-1 flex flex-column gap-2"
+                cdkDragHandle
+              >
+                <span class="font-bold">{{ oferta.hierquia?.descricao }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    @if (
+      selecaoOfertaComTaxaService.$taxasPorInscricao() ||
+      selecaoOfertaComTaxaService.$taxasPorQuantidadeOferta() ||
+      (selecaoOfertaComTaxaService.$grupoTaxa().grupoTaxaInscricao &&
+        selecaoOfertaComTaxaService.$grupoTaxa().grupoTaxaInscricao.length > 0)
+    ) {
+      <div class="smc-gpi-taxas-container linha-inscricao">
+        <div class="smc-gpi-taxas-container-inner-insc taxas-por-inscricao">
+          @if (selecaoOfertaComTaxaService.$taxasPorInscricao()) {
+            <app-selecao-oferta-com-taxa-simples
+              [$taxas]="
+                selecaoOfertaComTaxaService.$taxasPorInscricao().taxasOferta
+              "
+              [$seqOferta]="
+                selecaoOfertaComTaxaService.$taxasPorInscricao().seqOferta
+              "
+              [tipoCobranca]="1"
+            ></app-selecao-oferta-com-taxa-simples>
+          }
+
+          @if (selecaoOfertaComTaxaService.$taxasPorQuantidadeOferta()) {
+            <app-selecao-oferta-com-taxa-simples
+              [$taxas]="
+                selecaoOfertaComTaxaService.$taxasPorQuantidadeOferta()
+                  .taxasOferta
+              "
+              [$seqOferta]="
+                selecaoOfertaComTaxaService.$taxasPorQuantidadeOferta()
+                  .seqOferta
+              "
+              [tipoCobranca]="3"
+            ></app-selecao-oferta-com-taxa-simples>
+          }
+        </div>
+
+        @if (
+          selecaoOfertaComTaxaService.$grupoTaxa().grupoTaxaInscricao &&
+          selecaoOfertaComTaxaService.$grupoTaxa().grupoTaxaInscricao.length > 0
+        ) {
+          <app-selecao-oferta-com-taxa-grupo
+            [$grupoTaxas]="
+              selecaoOfertaComTaxaService.$grupoTaxa().grupoTaxaInscricao
+            "
+          ></app-selecao-oferta-com-taxa-grupo>
+        }
+      </div>
+    }
+    <div class="smc-gpi-taxas-container-total">
+      <div>
+        <div class="smc-gpi-taxas-total-icone"></div>
+        <span>Total:</span>
+        <span>{{
+          formartarTotal(selecaoOfertaDataService.$selecaoOferta().totalGeral)
+        }}</span>
+      </div>
+    </div>
+  </section>
+
+  @if (opcoesParaConvocacao().length > 0) {
+    <div class="smc-gpi-form-block">
+      <label for="opcoesParaConvocacao">
+        *Quantidade de opções para as quais deseja ser convocado(a), respeitando
+        a ordem de prioridade
+      </label>
+      <p-select
+        id="opcoesParaConvocacao"
+        [options]="opcoesParaConvocacao()"
+        [showClear]="true"
+        [(ngModel)]="
+          selecaoOfertaComTaxaService.selecaoOferta.numeroOpcoesDesejadas
+        "
+        (onChange)="opcaoSelecionadaConvocacao($event)"
+        [checkmark]="true"
+        placeholder="Selecione..."
+        class="w-full md:w-56"
+      />
+    </div>
+  }
+}

@@ -1,0 +1,28 @@
+﻿@model PaginaSelecaoOfertaViewModel
+
+@if (Model.Taxas != null && Model.Taxas.Count() > 0)
+{
+    if (Model.PossuiBoletoPago)
+    {
+        using (Smc.Div("Mensagem_Titulo_Pago").CssClass("smc-gpi-mensagem").Begin())
+        {
+            <h3>@Smc.GetUIResource("Taxa_TituloPago")</h3>
+        }
+    }
+
+    <div data-type="smc-formfieldset" id="fieldsetTaxas">
+
+        <h4>@Smc.GetUIResource("Fieldset_Taxas")</h4>
+        <div class="display-flex TAXAS">
+            @*<div class="smc-size-md-12 smc-size-xs-24 smc-size-sm-12 smc-size-lg-12"><span>@Smc.GetUIResource("Label_Taxa")</span></div>
+            <div class="smc-size-md-4 smc-size-xs-24 smc-size-sm-4 smc-size-lg-4"><span>@Smc.GetUIResource("Label_Taxa_Quantidade")</span></div>
+            <div class="smc-size-md-4 smc-size-xs-24 smc-size-sm-4 smc-size-lg-4"><span>@Smc.GetUIResource("Label_Taxa_Valor")</span></div>
+            <div class="smc-size-md-4 smc-size-xs-24 smc-size-sm-4 smc-size-lg-4"><span>@Smc.GetUIResource("Label_Taxa_ValorTotal")</span></div>*@
+
+
+            @(Smc.List("listaTaxas", prop => prop.Taxas).HtmlTemplate( @<text> @Html.Partial("_TaxaOferta", item.Value) </text>))
+        </div>
+        @Smc.EditorFor(x => x.TotalGeral).CssClass("display-flex totalizador").Readonly()
+
+    </div>
+}

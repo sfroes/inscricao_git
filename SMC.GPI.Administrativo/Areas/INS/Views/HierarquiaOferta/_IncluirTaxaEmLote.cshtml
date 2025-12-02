@@ -1,0 +1,28 @@
+﻿@model IncluirTaxaOfertaViewModel
+
+@{Html.SetViewMode(SMCViewMode.Insert);}
+
+@Smc.DisplayFor(prop => prop.Periodo)
+
+<div class="smc-gpi-lista-ofertas-taxa-lote">
+    @(Smc.List("listaOfertas", prop => prop.Ofertas)
+            .HtmlTemplate(
+            @<text>
+                @Html.Partial("_ListarOfertaInclusaoLote", item.Value)
+            </text>)
+    )
+</div>
+
+@using (Smc.Div("fieldsetDadosTaxaLote").Begin())
+{
+    <p>@Smc.GetUIResource("Mensagem_Taxa_Oferta")</p>
+    @Smc.EditorFor(prop => prop.Periodo)
+    @Smc.EditorFor(prop => prop.SeqTipoTaxa)
+    @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+    @Smc.EditorFor(prop => prop.SeqProcesso)
+    @Smc.EditorFor(prop => prop.Taxas)
+}
+
+
+
+

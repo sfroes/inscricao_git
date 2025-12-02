@@ -1,0 +1,24 @@
+﻿@model PaginaCodigoAutorizacaoViewModel
+
+@{
+    ViewBag.InscricaoNaoPermiteTrocaLingua = true;
+    Layout = "~/Areas/INS/Views/Shared/_Layout.cshtml";
+}
+
+@section PainelLateral
+{
+    @Html.Partial("_PainelLateralProcesso", Model)
+}
+
+<h1>@Model.Titulo</h1>
+
+@(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_INSTRUCOES))
+
+@using (Smc.Form("formCodigosAutorizacao", "SalvarCodigoAutorizacao").Begin())
+{
+    @Smc.MasterDetail(prop => prop.CodigosAutorizacao).MinimumItens(1).HideTitles().TitleMasterDetail(@Model.LabelCodigoAutorizacao)
+
+    @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_ARQUIVOS))
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

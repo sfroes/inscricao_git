@@ -1,0 +1,981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Class_Classificacao" xml:space="preserve">
+    <value>Classificação</value>
+  </data>
+  <data name="Class_Cliente" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="Class_Cnpj" xml:space="preserve">
+    <value>CNPJ</value>
+  </data>
+  <data name="Class_Codigo" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="Class_CodigoArea" xml:space="preserve">
+    <value>Cód. de área</value>
+  </data>
+  <data name="Class_CodigoPais" xml:space="preserve">
+    <value>Cód. de país</value>
+  </data>
+  <data name="Class_SeqPais" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Class_DataInscricao" xml:space="preserve">
+    <value>Data de inscrição</value>
+  </data>
+  <data name="Class_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Class_DescricaoProcesso" xml:space="preserve">
+    <value>Descrição do processo</value>
+  </data>
+  <data name="Class_DescricaoTipoDocumento" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="Class_Documentacao" xml:space="preserve">
+    <value>Documentação</value>
+  </data>
+  <data name="Class_Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="Class_ExibeRelacaoGeral" xml:space="preserve">
+    <value>Exibe na relação geral?</value>
+  </data>
+  <data name="Class_ExibeRelacaoGeral_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_ExibeRelacaoGeral_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_Grupo" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="Class_NomeCliente" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="Class_NomeFantasia" xml:space="preserve">
+    <value>Nome fantasia</value>
+  </data>
+  <data name="Class_Nota" xml:space="preserve">
+    <value>Nota</value>
+  </data>
+  <data name="Class_Numero" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="Class_Ofertas" xml:space="preserve">
+    <value>Ofertas</value>
+  </data>
+  <data name="Class_OpcaoLookupOfertas" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="Class_Padrao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_Padrao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_PermiteVariosArquivos_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_PermiteVariosArquivos_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_DocumentacoesEntregues" xml:space="preserve">
+    <value>Documentação entregue</value>
+  </data>
+  <data name="Class_Total" xml:space="preserve">
+    <value>Qtd. inscrições</value>
+  </data>
+  <data name="Class_Confirmadas" xml:space="preserve">
+    <value>Confirmadas</value>
+  </data>
+  <data name="Class_Deferidos" xml:space="preserve">
+    <value>Deferidas</value>
+  </data>
+  <data name="Class_NaoConfirmadas" xml:space="preserve">
+    <value>Não confirmadas</value>
+  </data>
+  <data name="Class_Indeferidos" xml:space="preserve">
+    <value>Indeferidas</value>
+  </data>
+  <data name="Class_Pagas" xml:space="preserve">
+    <value>Pagas</value>
+  </data>
+  <data name="Class_RazaoSocial" xml:space="preserve">
+    <value>Razão social</value>
+  </data>
+  <data name="Class_Seq" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Class_SeqCliente" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="Class_SeqTipoProcesso" xml:space="preserve">
+    <value>Tipo de processo</value>
+  </data>
+  <data name="Class_SeqUnidadeResponsavel" xml:space="preserve">
+    <value>Unidade responsável</value>
+  </data>
+  <data name="Class_TipoProcesso" xml:space="preserve">
+    <value>Tipo de processo</value>
+  </data>
+  <data name="Class_Situacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_TaxaInscricao" xml:space="preserve">
+    <value>Taxa de inscrição</value>
+  </data>
+  <data name="Class_DataEntrega" xml:space="preserve">
+    <value>Data de entrega</value>
+  </data>
+  <data name="Class_DataImpressaoBoleto" xml:space="preserve">
+    <value>Data impressão boleto</value>
+  </data>
+  <data name="Class_DataPagamento" xml:space="preserve">
+    <value>Data de pagamento</value>
+  </data>
+  <data name="Class_DataVencimentto" xml:space="preserve">
+    <value>Data vencimento</value>
+  </data>
+  <data name="Class_FormaEntrega" xml:space="preserve">
+    <value>Forma entrega</value>
+  </data>
+  <data name="Class_VersaoDocumento" xml:space="preserve">
+    <value>Versão do documento</value>
+  </data>
+  <data name="Class_CidadeNaturalidade" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="Class_Cpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="Class_DataNascimento" xml:space="preserve">
+    <value>Data de nascimento</value>
+  </data>
+  <data name="Class_EstadoCivil" xml:space="preserve">
+    <value>Estado civil</value>
+  </data>
+  <data name="Class_EstadoNaturalidade" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="Class_NomeMae" xml:space="preserve">
+    <value>Nome da mãe</value>
+  </data>
+  <data name="Class_NomePai" xml:space="preserve">
+    <value>Nome do pai</value>
+  </data>
+  <data name="Class_NomeSocial" xml:space="preserve">
+    <value>Nome social</value>
+  </data>
+  <data name="Class_NumeroPassaporte" xml:space="preserve">
+    <value>Passaporte</value>
+  </data>
+  <data name="Class_NumeroRg" xml:space="preserve">
+    <value>RG</value>
+  </data>
+  <data name="Class_OrgaoEmissorRg" xml:space="preserve">
+    <value>Orgão emissor RG</value>
+  </data>
+  <data name="Class_TipoDocumento" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="Class_PaisOrigem" xml:space="preserve">
+    <value>País de origem</value>
+  </data>
+  <data name="Class_Observacao" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="Class_SeqGrupoOferta" xml:space="preserve">
+    <value>Grupo de oferta</value>
+  </data>
+  <data name="Class_Opcao" xml:space="preserve">
+    <value>Opção</value>
+  </data>
+  <data name="Class_SeqSituacaoProcesso" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_NomeInscrito" xml:space="preserve">
+    <value>Nome do inscrito</value>
+  </data>
+  <data name="Class_DescricaoGrupoOferta" xml:space="preserve">
+    <value>Grupo de oferta</value>
+  </data>
+  <data name="Class_DescricaoOferta" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="Class_AnoReferencia" xml:space="preserve">
+    <value>Ano de referência</value>
+  </data>
+  <data name="Class_SemestreReferencia" xml:space="preserve">
+    <value>Semestre referência</value>
+  </data>
+  <data name="Class_SeqProcessoOrigem" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Class_NomeContato" xml:space="preserve">
+    <value>Nome do contato</value>
+  </data>
+  <data name="Class_TipoUnidadeResponsavel" xml:space="preserve">
+    <value>Tipo de unidade responsável</value>
+  </data>
+  <data name="Class_Canceladas" xml:space="preserve">
+    <value>Canceladas</value>
+  </data>
+  <data name="Class_UfNaturalidade" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="Class_GrupoOferta" xml:space="preserve">
+    <value>Grupo de oferta</value>
+  </data>
+  <data name="Class_DescPaisSelecionado" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Class_NomeUnidadeResponsavel" xml:space="preserve">
+    <value>Unidade responsável</value>
+  </data>
+  <data name="Class_Ativo_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_Ativo_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_DescricaoInformada" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Class_ExigeJustificativa_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_ExigeJustificativa_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_SeqTemplateProcessoSelecionado" xml:space="preserve">
+    <value>Template de processo</value>
+  </data>
+  <data name="Class_SeqTipoTemplateProcessoSelecionado" xml:space="preserve">
+    <value>Tipo de template de processo</value>
+  </data>
+  <data name="Class_SeqTipoProcessoSelecionado" xml:space="preserve">
+    <value>Tipo de processo</value>
+  </data>
+  <data name="Class_SeqUnidadeResponsavelSelecionado" xml:space="preserve">
+    <value>Unidade responsável</value>
+  </data>
+  <data name="Class_DataCancelamento" xml:space="preserve">
+    <value>Data de cancelamento</value>
+  </data>
+  <data name="Class_DataEncerramento" xml:space="preserve">
+    <value>Data de encerramento</value>
+  </data>
+  <data name="Class_ExibirNaRelacaoGeral" xml:space="preserve">
+    <value>Exibir na relação geral?</value>
+  </data>
+  <data name="Class_ExibirNaRelacaoGeral_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_ExibirNaRelacaoGeral_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_ExisteNumeroMaximoInscricoesPessoa" xml:space="preserve">
+    <value>Existe um nº máx. de inscrições por pessoa?</value>
+  </data>
+  <data name="Class_ExisteNumeroMaximoInscricoesPessoa_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_ExisteNumeroMaximoInscricoesPessoa_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_NomeResponsavel" xml:space="preserve">
+    <value>Nome do responsável</value>
+  </data>
+  <data name="Class_NumeroMaximoInscricoesPessoa" xml:space="preserve">
+    <value>Nº máx. de inscrições por pessoa</value>
+  </data>
+  <data name="Class_NumeroMaximoOfertasInscricao" xml:space="preserve">
+    <value>Nº máx. de ofertas por inscrição</value>
+  </data>
+  <data name="Class_NumeroMaximoOpcoesInscricao" xml:space="preserve">
+    <value>Nº máx. de opções por inscrição</value>
+  </data>
+  <data name="Class_SeqClienteSelecionado" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="Class_SeqTipoHierarquiaOfertaSelecionado" xml:space="preserve">
+    <value>Tipo de hierarquia de oferta</value>
+  </data>
+  <data name="Class_DescricaoComplementarProcesso" xml:space="preserve">
+    <value>Descrição complementar do processo</value>
+  </data>
+  <data name="Class_DescricaoLabelCodigoAutorizacao" xml:space="preserve">
+    <value>Descrição do label do código de autorização</value>
+  </data>
+  <data name="Class_DescricaoLabelGrupoOferta" xml:space="preserve">
+    <value>Descrição do label do grupo de oferta</value>
+  </data>
+  <data name="Class_DescricaoLabelOferta" xml:space="preserve">
+    <value>Descrição do label de oferta</value>
+  </data>
+  <data name="Class_SeqIdiomaSelecionado" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="Class_OpcaoLookupEditais" xml:space="preserve">
+    <value>Edital</value>
+  </data>
+  <data name="Class_Edital" xml:space="preserve">
+    <value>Nº do edital</value>
+  </data>
+  <data name="Class_Unidade" xml:space="preserve">
+    <value>Unidade</value>
+  </data>
+  <data name="Class_DescricaoItemHierarquiaOfertaSuperior" xml:space="preserve">
+    <value>Item de hierarquia de oferta superior</value>
+  </data>
+  <data name="Class_SeqTipoItemHierarquiaOfertaSelecionado" xml:space="preserve">
+    <value>Tipo de item de hierarquia de oferta</value>
+  </data>
+  <data name="Class_DataFim" xml:space="preserve">
+    <value>Fim</value>
+  </data>
+  <data name="Class_DataInicio" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="Class_ExigePagamentoTaxa" xml:space="preserve">
+    <value>Exige pagamento de taxa?</value>
+  </data>
+  <data name="Class_ExigePagamentoTaxa_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_ExigePagamentoTaxa_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_ExisteNumeroMaximoInscricoes" xml:space="preserve">
+    <value>Existe número máximo de inscrições?</value>
+  </data>
+  <data name="Class_ExisteNumeroMaximoInscricoes_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_ExisteNumeroMaximoInscricoes_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_InscricaoSomenteComCodigoAutorizacao" xml:space="preserve">
+    <value>Inscrição somente com código de autorização?</value>
+  </data>
+  <data name="Class_InscricaoSomenteComCodigoAutorizacao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_InscricaoSomenteComCodigoAutorizacao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_InscricaoSomentePeloCliente" xml:space="preserve">
+    <value>Inscrição somente pelo cliente?</value>
+  </data>
+  <data name="Class_InscricaoSomentePeloCliente_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_InscricaoSomentePeloCliente_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_MotivoCancelamento" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="Class_NumeroMaximoInscricoes" xml:space="preserve">
+    <value>Número máximo de inscrições</value>
+  </data>
+  <data name="Class_NumeroVagas" xml:space="preserve">
+    <value>Nº de vagas</value>
+  </data>
+  <data name="Class_OfertaAtiva" xml:space="preserve">
+    <value>Oferta ativa?</value>
+  </data>
+  <data name="Class_OfertaAtiva_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_OfertaAtiva_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_PermiteVariosCodigosAutorizacao" xml:space="preserve">
+    <value>Permite vários códigos de autorização?</value>
+  </data>
+  <data name="Class_PermiteVariosCodigosAutorizacao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_PermiteVariosCodigosAutorizacao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_SeqGrupoOfertaSelecionado" xml:space="preserve">
+    <value>Grupo de oferta</value>
+  </data>
+  <data name="Class_SeqCodigoAutorizacaoSelecionado" xml:space="preserve">
+    <value>Código de autorização</value>
+  </data>
+  <data name="Class_TipoEnderecoEletronico" xml:space="preserve">
+    <value>Tipo de endereço eletrônico</value>
+  </data>
+  <data name="Class_TipoTelefone" xml:space="preserve">
+    <value>Tipo de telefone</value>
+  </data>
+  <data name="Class_DescricaoTipoProcesso" xml:space="preserve">
+    <value>Tipo de processo</value>
+  </data>
+  <data name="Class_PermiteInformarMaisDeUmaOpcao" xml:space="preserve">
+    <value>Permite informar mais de uma opção?</value>
+  </data>
+  <data name="Class_PermiteInformarMaisDeUmaOpcao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_PermiteInformarMaisDeUmaOpcao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_DescricaoSituacaoAtual" xml:space="preserve">
+    <value>Situação atual</value>
+  </data>
+  <data name="Class_DocumentacaoEntregue" xml:space="preserve">
+    <value>Documentação Entregue?</value>
+  </data>
+  <data name="Class_DocumentacaoEntregue_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_DocumentacaoEntregue_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_SeqSituacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_EOferta" xml:space="preserve">
+    <value>É oferta?</value>
+  </data>
+  <data name="Class_EOferta_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_EOferta_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_NotaGeral" xml:space="preserve">
+    <value>Nota</value>
+  </data>
+  <data name="Class_NumeroClassificacao" xml:space="preserve">
+    <value>Classificação</value>
+  </data>
+  <data name="Class_SeqEtapaSelecionado" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="Class_SeqSituacaoSelecionado" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_DataLimiteDocumentacao" xml:space="preserve">
+    <value>Data limite</value>
+  </data>
+  <data name="Class_DescricaoDocumentacao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Class_PossuiDeferimento" xml:space="preserve">
+    <value>Possui deferimento?</value>
+  </data>
+  <data name="Class_PossuiDeferimento_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_PossuiDeferimento_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_ConfiguracaoEtapa" xml:space="preserve">
+    <value>Configuração da etapa</value>
+  </data>
+  <data name="Class_Configuracao" xml:space="preserve">
+    <value>Configuração</value>
+  </data>
+  <data name="Class_DescricaoEtapaAtual" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="Class_SeqSituacaoDestino" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_ExibirDadosComprovanteInscricao" xml:space="preserve">
+    <value>Exibir dados no comprovante de inscrição?</value>
+  </data>
+  <data name="Class_ExibirDadosComprovanteInscricao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_ExibirDadosComprovanteInscricao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_ExibirDadosPaginaConfirmacaoInscricao" xml:space="preserve">
+    <value>Exibir dados na página de confirmação de inscrição?</value>
+  </data>
+  <data name="Class_ExibirDadosPaginaConfirmacaoInscricao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_ExibirDadosPaginaConfirmacaoInscricao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_Pagina" xml:space="preserve">
+    <value>Página</value>
+  </data>
+  <data name="Configurar_Paginas_Etapa_Botao_Cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Configurar_Paginas_Etapa_Botao_Cancelar_Tooltip" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Class_SeqFormularioSelecionado" xml:space="preserve">
+    <value>Formulário</value>
+  </data>
+  <data name="Class_SeqTipoFormularioSelecionado" xml:space="preserve">
+    <value>Tipo de Formulário</value>
+  </data>
+  <data name="Class_seqVisaoSelecionado" xml:space="preserve">
+    <value>Visão</value>
+  </data>
+  <data name="Class_DescricaoLink" xml:space="preserve">
+    <value>Descrição do link</value>
+  </data>
+  <data name="Class_Secao" xml:space="preserve">
+    <value>Seção</value>
+  </data>
+  <data name="Class_Obrigatoria" xml:space="preserve">
+    <value>Obrigatória?</value>
+  </data>
+  <data name="Class_Obrigatoria_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_Obrigatoria_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_PermiteUpload" xml:space="preserve">
+    <value>Permite upload?</value>
+  </data>
+  <data name="Class_Versao" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="Class_NumeroCopiasRequeridas" xml:space="preserve">
+    <value>Nº de cópias requeridas</value>
+  </data>
+  <data name="Class_PermiteUpload_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_PermiteUpload_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_SeqTipoDocumentoSelecionado" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="Class_SeqVersaoDocumentoSelecionado" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="Class_DescricaoGrupo" xml:space="preserve">
+    <value>Descrição do grupo</value>
+  </data>
+  <data name="Class_MinimoDocumentosObrigatorios" xml:space="preserve">
+    <value>Mínimo de documentos obrigatórios</value>
+  </data>
+  <data name="Class_SeqItenGrupoDocumentacaoRequeridaSelecionado" xml:space="preserve">
+    <value>Itens</value>
+  </data>
+  <data name="Class_DataFimTaxa" xml:space="preserve">
+    <value>Data fim</value>
+  </data>
+  <data name="Class_DataInicioTaxa" xml:space="preserve">
+    <value>Data início</value>
+  </data>
+  <data name="Class_EventoTaxa" xml:space="preserve">
+    <value>Evento taxa</value>
+  </data>
+  <data name="Class_ParametroCREI" xml:space="preserve">
+    <value>Parâmetro CREI</value>
+  </data>
+  <data name="Class_PermiteSelecaoInscricao" xml:space="preserve">
+    <value>Permite seleção na inscrição?</value>
+  </data>
+  <data name="Class_PermiteSelecaoInscricao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_PermiteSelecaoInscricao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_QuantidadeMaxima" xml:space="preserve">
+    <value>Quantidade máxima</value>
+  </data>
+  <data name="Class_QuantidadeMinima" xml:space="preserve">
+    <value>Quantidade mínima</value>
+  </data>
+  <data name="Class_SeqTaxaSelecionado" xml:space="preserve">
+    <value>Taxa</value>
+  </data>
+  <data name="Class_ConfirmarNovaSenha" xml:space="preserve">
+    <value>Confirmação da nova senha​​</value>
+  </data>
+  <data name="Class_NomeReduzido" xml:space="preserve">
+    <value>Nome reduzido (Apelido)</value>
+  </data>
+  <data name="Class_NovaSenha" xml:space="preserve">
+    <value>Nova senha</value>
+  </data>
+  <data name="Class_Finalizadas" xml:space="preserve">
+    <value>Inscrições concluídas</value>
+  </data>
+  <data name="Class_Iniciadas" xml:space="preserve">
+    <value>Inscrições iniciadas</value>
+  </data>
+  <data name="Class_DataGeracao" xml:space="preserve">
+    <value>Data de geração</value>
+  </data>
+  <data name="Class_DataVencimento" xml:space="preserve">
+    <value>Data de vencimento</value>
+  </data>
+  <data name="Class_SeqTitulo" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="Class_TipoBoleto" xml:space="preserve">
+    <value>Boleto</value>
+  </data>
+  <data name="ProcessoCabecalhoViewModel_Descricao" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="Class_NumeroIdentidade" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="Class_OrgaoEmissorIdentidade" xml:space="preserve">
+    <value>Orgão Emissor</value>
+  </data>
+  <data name="Class_PaisNacionalidade" xml:space="preserve">
+    <value>País de origem</value>
+  </data>
+  <data name="Class_UfIdentidade" xml:space="preserve">
+    <value>UF</value>
+  </data>
+  <data name="Class_OfertasNaoSelecionadas" xml:space="preserve">
+    <value>Oferta não selecionada</value>
+  </data>
+  <data name="Class_SeqInscricao" xml:space="preserve">
+    <value>Nº de inscrição</value>
+  </data>
+  <data name="Class_TaxaInscricaoPaga" xml:space="preserve">
+    <value>Taxa de inscrição</value>
+  </data>
+  <data name="Class_DescricaoNaturalidadeEstrangeira" xml:space="preserve">
+    <value>Descrição da naturalidade:</value>
+  </data>
+  <data name="Class_Correspondencia" xml:space="preserve">
+    <value>Correspondência</value>
+  </data>
+  <data name="Class_Correspondencia_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_Correspondencia_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="UnidadeFiltroLookupViewModel_CodigoCentroCusto" xml:space="preserve">
+    <value>Código Centro de Custo</value>
+  </data>
+  <data name="UnidadeListaLookupViewModel_CodigoEstabelecimentoEms" xml:space="preserve">
+    <value>Código EMS</value>
+  </data>
+  <data name="UnidadeListaLookupViewModel_NomeCentroCusto" xml:space="preserve">
+    <value>Nome centro de custo</value>
+  </data>
+  <data name="UnidadeListaLookupViewModel_Vigencia" xml:space="preserve">
+    <value>Vigência</value>
+  </data>
+  <data name="Class_CodigoEms" xml:space="preserve">
+    <value>Código EMS</value>
+  </data>
+  <data name="Class_PossuiGrupo_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Class_PossuiGrupo_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="ItemGrupoOfertaViewModel_DescricaoCompleta" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="ItemGrupoOfertaViewModel_NomeGrupoOferta" xml:space="preserve">
+    <value>Grupo Atual</value>
+  </data>
+  <data name="Class_SeqProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="LookupProcessoFiltroViewModel_UnidadeResponsavel" xml:space="preserve">
+    <value>Unidade Responsável</value>
+  </data>
+  <data name="Class_PermiteAgendamento" xml:space="preserve">
+    <value>Permite agendamento de envio da notificação?</value>
+  </data>
+  <data name="Class_TipoNotificacao" xml:space="preserve">
+    <value>Tipo de Notificação</value>
+  </data>
+  <data name="Class_UnidadeResponsavel" xml:space="preserve">
+    <value>Unidade Responsável</value>
+  </data>
+  <data name="LookupOfertaPeriodoInscricaoViewModel_DataFim" xml:space="preserve">
+    <value>Data Fim</value>
+  </data>
+  <data name="LookupOfertaPeriodoInscricaoViewModel_DataInicio" xml:space="preserve">
+    <value>Data início</value>
+  </data>
+  <data name="LookupOfertaPeriodoInscricaoViewModel_ExigeEntregaDocumentaaco" xml:space="preserve">
+    <value>Exige entrega documentação?</value>
+  </data>
+  <data name="LookupOfertaPeriodoInscricaoViewModel_ExigeEntregaDocumentaaco_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="LookupOfertaPeriodoInscricaoViewModel_ExigeEntregaDocumentaaco_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="LookupOfertaPeriodoInscricaoViewModel_InscricoesConfirmadas" xml:space="preserve">
+    <value>Inscrições confirmadas</value>
+  </data>
+  <data name="Class_DataFimAntiga" xml:space="preserve">
+    <value>Data fim antiga</value>
+  </data>
+  <data name="Class_NomeDisplay" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Class_Responsavel" xml:space="preserve">
+    <value>Responsável</value>
+  </data>
+  <data name="Class_NomeCidade" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="Class_SiglaUf" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="LookupHierarquiaOfertaFiltroViewModel_SeqTipoItem" xml:space="preserve">
+    <value>Tipo de item</value>
+  </data>
+  <data name="LookupHierarquiaOfertaFiltroViewModel_SeqItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="LookupHierarquiaOfertaViewModel_HierarquiaOferta" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="LookupHierarquiaOfertaViewModel_TipoItemHierarquiaOferta" xml:space="preserve">
+    <value>Tipo de item</value>
+  </data>
+  <data name="LookupHierarquiaOfertaFiltroViewModel_DescricaoHierarquia" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_DescricaoComplementar" xml:space="preserve">
+    <value>Descrição complementar do processo</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_Idioma" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_LabelCodigoAutorizacao" xml:space="preserve">
+    <value>Descrição label código de autorização</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_LabelGrupoOferta" xml:space="preserve">
+    <value>Descrição label grupo de oferta</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_LabelOferta" xml:space="preserve">
+    <value>Descrição label oferta</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_Padrao" xml:space="preserve">
+    <value>Padrão ?</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_Padrao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_Padrao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_TipoEndereco" xml:space="preserve">
+    <value>Tipo de endereço</value>
+  </data>
+  <data name="Class_LimitePercentualDesconto" xml:space="preserve">
+    <value>Limite % desconto</value>
+  </data>
+  <data name="LookupProcessoFiltroViewModel_AnoReferencia" xml:space="preserve">
+    <value>Ano referência</value>
+  </data>
+  <data name="LookupProcessoFiltroViewModel_SemestreReferencia" xml:space="preserve">
+    <value>Semestre referência</value>
+  </data>
+  <data name="LookupProcessoFiltroViewModel_TipoProcesso" xml:space="preserve">
+    <value>Tipo processo</value>
+  </data>
+  <data name="LookupProcessoViewModel_AnoReferencia" xml:space="preserve">
+    <value>Ano referência</value>
+  </data>
+  <data name="LookupProcessoViewModel_SemestreReferencia" xml:space="preserve">
+    <value>Semestre referência </value>
+  </data>
+  <data name="LookupProcessoViewModel_TipoProcesso" xml:space="preserve">
+    <value>Tipo processo</value>
+  </data>
+  <data name="Class_SeqTipoProcessoSituacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_SeqTipoProcessoSituacaoDestino" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Class_SeqElemento" xml:space="preserve">
+    <value>Elemento</value>
+  </data>
+  <data name="Class_ValorElemento" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="Class_ArquivoAnexado" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="Class_DataPrazoEntrega" xml:space="preserve">
+    <value>Prazo de entrega</value>
+  </data>
+  <data name="Class_FormaEntregaDocumento" xml:space="preserve">
+    <value>Forma de entrega</value>
+  </data>
+  <data name="Class_SituacaoEntregaDocumento" xml:space="preserve">
+    <value>Validação</value>
+  </data>
+  <data name="InscricaoDocumentoViewModel_ExibirObservacaoParaInscrito" xml:space="preserve">
+    <value>Exibir observação para inscrito?</value>
+  </data>
+  <data name="InscricaoDocumentoViewModel_ExibirObservacaoParaInscrito_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="InscricaoDocumentoViewModel_ExibirObservacaoParaInscrito_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Class_SeqInscrito" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Class_NumeroOpcaoFormatado" xml:space="preserve">
+    <value>Opção</value>
+  </data>
+  <data name="Class_SemestreAno" xml:space="preserve">
+    <value>Sem/Ano</value>
+  </data>
+  <data name="Class_SituacaoEtapa" xml:space="preserve">
+    <value>Situação da Inscrição</value>
+  </data>
+  <data name="Class_CpfouPassaporte" xml:space="preserve">
+    <value>CPF ou Passaporte</value>
+  </data>
+  <data name="Class_SituacaoInscricao" xml:space="preserve">
+    <value>Situação da inscrição</value>
+  </data>
+  <data name="Class_SituacaoOferta" xml:space="preserve">
+    <value>Situação da seleção</value>
+  </data>
+  <data name="CheckinLoteFiltroViewModel_CheckinRealizado_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="CheckinLoteFiltroViewModel_CheckinRealizado_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+</root>

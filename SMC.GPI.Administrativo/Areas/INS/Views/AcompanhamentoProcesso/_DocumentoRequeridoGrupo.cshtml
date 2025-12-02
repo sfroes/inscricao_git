@@ -1,0 +1,14 @@
+﻿@model GrupoDocumentoEntregueViewModel
+
+@Smc.HiddenFor(d => d.Descricao)
+@Smc.HiddenFor(d => d.MinimoObrigatorio)
+<div class="smc-detalhe-editavel-blocos">
+    <h3>@Model.Descricao</h3>
+    <div class="smc-detalhe-editavel-organizador">
+        <label>@Smc.GetUIResource("Label_Minimo_Itens"):&nbsp;</label>
+        <span>@Model.MinimoObrigatorio</span>
+
+        @Smc.List("listaDocumentosGrupo", r => r.DocumentosRequeridosGrupo).HtmlTemplate(@<text>@Html.Partial("_DocumentoEntregueMasterDetail", item.Value)</text>)
+
+    </div>
+</div>

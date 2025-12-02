@@ -1,0 +1,55 @@
+@for (taxa of taxasAtualizadas(); track taxa.seqTaxa) {
+  <div class="linha-taxa">
+    <div class="nome-taxa">
+      <label>
+        <span>Taxa</span>
+      </label>
+      <p class="descricao">
+        {{ taxa.descricaoTaxa
+        }}<small class="sub-descricao">{{ taxa.descricaoComplementar }}</small>
+      </p>
+    </div>
+    <div class="precos vlr-unit">
+      <label>Valor Unitário</label>
+      <span>{{ formartarTotal(taxa.valorItem) }}</span>
+    </div>
+    <div class="quantidade">
+      <label>Quantidade</label>
+
+      <p-inputnumber
+        buttonLayout="horizontal"
+        spinnerMode="horizontal"
+        inputId="horizontal"
+        [max]="taxa.numeroMaximo"
+        [readonly]="readonly(taxa)"
+        [min]="taxa.numeroMinimo"
+        [showButtons]="true"
+        [(ngModel)]="taxa.numeroItens"
+        [inputStyle]="{ width: '3rem' }"
+        (onInput)="
+          selecaoOfertaComTaxaService.numeroItens(
+            $event,
+            taxa.seqTaxa,
+            $seqOferta(),
+            null
+          )
+        "
+        (onFocus)="
+          selecaoOfertaComTaxaService.bloquearInserirDadosPorTeclado($event)
+        "
+        pInputNumberSingleClick
+      >
+        <ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span>
+        </ng-template>
+      </p-inputnumber>
+    </div>
+    <div class="precos vlr-total">
+      <label>Valor Total</label>
+      <span>{{ formartarTotal(taxa.valorTotalTaxa) }}</span>
+    </div>
+  </div>
+}

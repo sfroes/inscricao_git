@@ -1,0 +1,14 @@
+﻿@model ConfigurarNotificacaoViewModel
+
+@(Smc.List("listaConfiguracoes", prop => prop.ConfiguracoesEmail).HtmlTemplate(
+    @<text>
+        @using(Smc.Div("divConfiguracaoNotificacao_" + item.Index).Begin())
+        {
+            ViewBag.Index = item.Index;
+            @Html.Partial("_ConfigurarNotificacao", item.Value)
+        }
+    </text>
+    )
+)
+
+@Smc.WizardView()

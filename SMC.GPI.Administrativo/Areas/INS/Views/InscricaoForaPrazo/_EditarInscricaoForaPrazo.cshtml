@@ -1,0 +1,23 @@
+﻿@model InscricaoForaPrazoViewModel
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.InscricaoForaPrazo, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = false })
+
+@using (Smc.Form("formInscricaoForaPrazo").Begin())
+{
+    using (Smc.Div("fieldsetInscricaoForaPrazo").Begin())
+    {
+        @Smc.EditorFor(m => m.SeqProcesso)
+        @Smc.EditorFor(m => m.Seq)
+        @Smc.EditorFor(m => m.SeqInscritoEdicao)
+        @Smc.EditorFor(m => m.DataInicio)
+        @Smc.EditorFor(m => m.DataFim)
+        @Smc.EditorFor(m => m.DataVencimento)
+        @Smc.EditorFor(m => m.Inscritos)
+
+        @(Smc.ButtonSet()
+                .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Salvar").Highlight())
+                .AddButton(Smc.Button("voltar").CssClass("smc-btn-voltar-icotext").Type(SMCButtonType.Link)
+                            .Action("Index", routeValues: new { area = "INS", seqProcesso = (SMCEncryptedLong)Model.SeqProcesso }))
+        )
+    }
+}

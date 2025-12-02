@@ -1,0 +1,23 @@
+﻿
+@model SMCPagerModel<TipoHierarquiaOfertaListaViewModel>
+
+@(Smc.Grid("gridTipoHierarquiaOferta")
+             .Action("ListarTipoHierarquiaOferta", "TipoHierarquiaOferta")
+     .AutoGenerateColumns()
+         .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes",
+                             item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as TipoHierarquiaOfertaListaViewModel).Seq) }, "TipoHierarquiaOferta")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_INS_001_04_02.MANTER_TIPO_HIERARQUIA_OFERTA),
+
+                             item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { @seqTipoHierarquiaOferta = SMCDESCrypto.EncryptNumberForURL((item as TipoHierarquiaOfertaListaViewModel).Seq) }, "TipoHierarquiaOferta")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .Ajax(isPost: true, updateTargetId: "#divGridTipoHierarquiaOferta")
+                                .SecurityToken(UC_INS_001_04_02.MANTER_TIPO_HIERARQUIA_OFERTA)
+                                .Confirm(Smc.GetUIResource("Exclusao_Tipo_Hierarquia_Oferta_Title"),
+                                                     string.Format(Smc.GetUIResource("Exclusao_Tipo_Hierarquia_Oferta_Confirmacao"), (item as TipoHierarquiaOfertaListaViewModel).Descricao)),
+                             
+                            item => Smc.Button("MontarHierarquia").Type(SMCButtonType.Link)
+                                    .Action("MontarArvoreTipoHierarquiaOferta", "TipoHierarquiaOferta", new { @seqTipoHierarquiaOferta = SMCDESCrypto.EncryptNumberForURL((item as TipoHierarquiaOfertaListaViewModel).Seq) })                                
+                                .SecurityToken(UC_INS_001_04_02.MANTER_TIPO_HIERARQUIA_OFERTA)
+))
+

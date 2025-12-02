@@ -1,0 +1,37 @@
+﻿@model OfertaTaxaFiltroViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.Pager, RegisterHelperControls.DetailedList)
+}
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.TaxaOfertaLote, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = true })
+
+@using (Smc.Form("formPesquisarOfertaPeriodoTaxa", "ListarOfertaPeriodoTaxa").Ajax("#divOfertaPeriodoTaxa").Begin())
+{
+    using (Smc.Div("fieldsetPesquisaInscricaoProcesso").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(prop => prop.Oferta)
+        @Smc.EditorFor(prop => prop.SeqTipoTaxa)
+
+        @(Smc.ButtonSet()
+                .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+                .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_INS_001_01_09.MANTER_PERIODO_TAXA)
+                 .Url(Url.Action("CadastrarTaxaOferta", new { @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso }))))        
+    }
+}
+
+<div id="divOfertaPeriodoTaxa" data-id="divListaOfertaPeriodoTaxa">
+    @Html.Action("ListarOfertaPeriodoTaxa", "HierarquiaOferta", new { @seqProcesso = Model.SeqProcesso })
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Index", "Processo")
+            .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-voltar-icotext"))
+)

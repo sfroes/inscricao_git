@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Botao_Insert_uploads_Tooltip" xml:space="preserve">
+    <value>New document</value>
+  </data>
+  <data name="Botao_LinkComprovante" xml:space="preserve">
+    <value>Proof of Registration</value>
+  </data>
+  <data name="Botao_Navegacao_Anterior" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="CodigoAutorizacao_Botao_Insert_CodigosAutorizacao_Tooltip" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CodigoAutorizacao_CodigosAutorizacao_Detalhe_Titulo" xml:space="preserve">
+    <value>Authorization code(s)</value>
+  </data>
+  <data name="ComprovanteInscricao_Protocolo_Assinatura_Atendente" xml:space="preserve">
+    <value>Signature (Attendant)</value>
+  </data>
+  <data name="ComprovanteInscricao_Protocolo_Nome_Label" xml:space="preserve">
+    <value>Subscriber</value>
+  </data>
+  <data name="ComprovanteInscricao_Protocolo_Preenchimento_Assinatura" xml:space="preserve">
+    <value>____________________________________ _____/_____/________</value>
+  </data>
+  <data name="ConfirmarInscricao_fieldsetDocumentos_Fieldset_Legenda" xml:space="preserve">
+    <value>Document(s)</value>
+  </data>
+  <data name="ConfirmarInscricao_fieldsetProcesso_Fieldset_Legenda" xml:space="preserve">
+    <value>Processes</value>
+  </data>
+  <data name="Contatos_Label" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="DadosPessoais_Label" xml:space="preserve">
+    <value>Personal information</value>
+  </data>
+  <data name="Documentos_Detalhe_Titulo" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="Email_Label" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="Filiacao_Label" xml:space="preserve">
+    <value>Filiation</value>
+  </data>
+  <data name="Identidade_Label" xml:space="preserve">
+    <value>RG</value>
+  </data>
+  <data name="InstrucoesFinais_Botao_Sair" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="InstrucoesFinais_Botao_Sair_Tooltip" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="InstrucoesFinais_fieldsetComprovantes_Fieldset_Legenda" xml:space="preserve">
+    <value>Vouchers</value>
+  </data>
+  <data name="InstrucoesFinais_fieldsetTaxas_Fieldset_Legenda" xml:space="preserve">
+    <value>Fees</value>
+  </data>
+  <data name="Label_Opcao" xml:space="preserve">
+    <value>Option {0}</value>
+  </data>
+  <data name="Label_Opcao_Completa" xml:space="preserve">
+    <value>Option {0} =&gt; {1}</value>
+  </data>
+  <data name="Mensagem_Nao_Informado" xml:space="preserve">
+    <value>Uninformed</value>
+  </data>
+  <data name="Naturalidade_Label" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="Outros_Enderecos_Eletronicos_Label" xml:space="preserve">
+    <value>Other Eletronic Adresses:</value>
+  </data>
+  <data name="Processo_Label" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="Protocolo_Inscricao_Titulo" xml:space="preserve">
+    <value>Subscription protocol</value>
+  </data>
+  <data name="SelecaoOferta_Botao_Clear_Tooltip" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="SelecaoOferta_DataSelector_Botao_Abrir_Tooltip" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Telefones_Label" xml:space="preserve">
+    <value>Phone numbers</value>
+  </data>
+  <data name="UploadDocumentos_Botao_Insert_Documentos_Tooltip" xml:space="preserve">
+    <value>Add document</value>
+  </data>
+  <data name="ConfirmarInscricao_Confirmacao" xml:space="preserve">
+    <value>After confirming your subscription, you won't be able to edit your data. Do you want to proceed? &lt;br/&gt; NOTE: This operation may take a few moments .</value>
+  </data>
+  <data name="ConfirmarInscricao_Confirmacao_Title" xml:space="preserve">
+    <value>Subscription Confirmations</value>
+  </data>
+  <data name="Botao_Linkcomprovante_Tooltip" xml:space="preserve">
+    <value>Proof of Registration</value>
+  </data>
+  <data name="_ListarTaxasOferta_Label_Taxa" xml:space="preserve">
+    <value>Fee</value>
+  </data>
+  <data name="_ListarTaxasOferta_Label_Taxa_Quantidade" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Label_Taxa_Inscricao" xml:space="preserve">
+    <value>Subscription billet</value>
+  </data>
+  <data name="_ListarTaxasOferta_Label_Taxa_Valor" xml:space="preserve">
+    <value>Item value</value>
+  </data>
+  <data name="_ListarTaxasOferta_Label_Taxa_ValorTotal" xml:space="preserve">
+    <value>Total value</value>
+  </data>
+  <data name="Label_Arquivo" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Label_Descricao" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Label_Tipo_Documento" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="UploadDocumentos_Botao_Insert_Documentos" xml:space="preserve">
+    <value>Add document</value>
+  </data>
+  <data name="UploadDocumentos_DocumentosOpcionais_Detalhe_Titulo" xml:space="preserve">
+    <value>Additional documents</value>
+  </data>
+  <data name="Titulo_Documentos_Obrigatorios" xml:space="preserve">
+    <value>Required documents</value>
+  </data>
+  <data name="Label_Grupo_Documentos" xml:space="preserve">
+    <value>Required document groups</value>
+  </data>
+  <data name="ConfirmarInscricao_fieldsetTaxas_Fieldset_Legenda" xml:space="preserve">
+    <value>Inscription Fees</value>
+  </data>
+  <data name="ConfirmarInscricao_gridTaxas_Grid_Titulo" xml:space="preserve">
+    <value>Inscription Fees</value>
+  </data>
+  <data name="Taxa_TituloPago" xml:space="preserve">
+    <value>The enrollment billet is already paid. The fees can’t be changed.</value>
+  </data>
+  <data name="Label_Informacao_Limite_Quantidade_Upload" xml:space="preserve">
+    <value>For the document type (s) {0}, a maximum of 10 files will be allowed. If the quantity exceeds this value, group them and compress them into a single file, respecting the size limit of 5 MB.</value>
+  </data>
+  <data name="Label_Informacao_Limite_Upload" xml:space="preserve">
+    <value>Attached files must have a maximum size of 5 MB. If the file exceeds this size, use compression tools to reduce it, before attaching it. There are websites that allow you to reduce the size of PDF files for free.</value>
+  </data>
+</root>

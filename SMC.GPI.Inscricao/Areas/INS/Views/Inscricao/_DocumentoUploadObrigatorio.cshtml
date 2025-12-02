@@ -1,0 +1,26 @@
+﻿@model InscricaoDocumentoObrigatorioViewModel
+
+@Smc.EditorFor(x => x.Seq)
+@Smc.EditorFor(x => x.SeqDocumentoRequerido)
+@Smc.EditorFor(x => x.SeqArquivoAnexado)
+@Smc.EditorFor(x => x.DescricaoTipoDocumento)
+@Smc.EditorFor(x => x.DescricaoTipoDocumentoApresentacao).Readonly()
+@Smc.EditorFor(x => x.DescricaoArquivoAnexado)
+@Smc.EditorFor(x => x.ArquivoAnexado)
+@Smc.EditorFor(x => x.ExibeTermoResponsabilidadeEntrega)
+@Smc.EditorFor(x => x.DataLimiteEntrega)
+
+@if (Model.ExibeTermoResponsabilidadeEntrega == true)
+{<div class="smc-gpi-entrega-posterior">
+        @if (Model.DataLimiteEntrega.HasValue)
+        {
+            @Smc.EditorFor(x => x.EntregaPosterior)
+            <label class="smc-size-md-4 smc-size-xs-24 smc-size-sm-4 smc-size-lg-4 smc-gpi-entrega-posterior-label">Entregarei até @Model.DataLimiteEntrega.Value.ToShortDateString()</label>
+        }
+        else
+        {
+            @Smc.EditorFor(x => x.EntregaPosterior);
+            <label class="smc-size-md-4 smc-size-xs-24 smc-size-sm-4 smc-size-lg-4 smc-gpi-entrega-posterior-label">Entregarei posteriormente</label>
+        }
+    </div>
+}

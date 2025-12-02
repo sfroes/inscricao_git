@@ -1,0 +1,968 @@
+.smc-gpi-selecao-oferta-container {
+    .p-tree {
+        padding: 0;
+    }
+
+    .p-iconfield {
+        margin-bottom: 1rem;
+    }
+
+    .p-tree-node {
+        height: auto !important;
+
+        > .p-tree-node-content {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .p-tree-node-label {
+            line-height: 1.6;
+
+            > span {
+                font-weight: 600;
+
+                .p-button {
+                    background: none;
+                    border: 0;
+                    width: 1.5rem;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    position: relative;
+                    top: 3px;
+                }
+            }
+        }
+    }
+
+    .p-tree-node.p-tree-node-leaf {
+        .p-tree-node-label {
+            > span {
+                font-weight: 500 !important;
+            }
+        }
+    }
+
+    .p-tree-node-leaf {
+        .p-tree-node-content {
+            padding-left: 1.5rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            align-items: baseline;
+        }
+    }
+
+    .p-tree-node-content.p-tree-node-selected {
+        background: var(--color-secondary-6);
+        color: var(--color-secondary);
+        border: 1px solid var(--color-secondary);
+        transition: none !important;
+
+        .p-tree-node-toggle-button {
+            transition: none !important;
+        }
+    }
+
+    .p-tree-node-content.p-tree-node-selectable:not(.p-tree-node-selected) {
+        &:hover {
+            background: var(--color-secondary-6);
+        }
+    }
+
+    .p-tree-node-selectable {
+        padding: 0.45rem 0.5rem;
+        border: 1px solid transparent;
+
+        .p-tree-node-label {
+            position: relative;
+            top: -2px;
+        }
+    }
+
+    .p-tree-node-content.p-tree-node-selected {
+        .p-tree-node-icon {
+            color: var(--color-font-h3);
+        }
+
+        .p-tree-node-toggle-button:hover {
+            background: transparent;
+            color: var(--color-secondary);
+        }
+
+        .p-tree-node-label {
+            .ng-star-inserted {
+                color: var(--color-secondary);
+            }
+        }
+    }
+
+    .p-tree-filter-input {
+        border: 1px solid var(--ang-border-default) !important;
+        padding-right: 40px !important;
+        font-size: 0.8rem;
+    }
+
+    .p-inputicon {
+        .p-tree-filter-icon {
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+
+    .smc-gpi-selecao-multipla,
+    .smc-gpi-selecao-simples {
+        .p-tree-node-leaf {
+            .p-tree-node-label {
+                &:before {
+                    @include prime-icon;
+                    font-size: 1rem;
+                    margin-right: 0.1rem;
+                }
+            }
+        }
+    }
+
+    .smc-gpi-selecao-multipla {
+        .p-tree-node-leaf {
+            .p-tree-node-content {
+                .p-tree-node-label {
+                    &:before {
+                        content: "";
+                        width: 15px;
+                        height: 15px;
+                        display: inline-block;
+                        border: 1px solid var(--grey);
+                        position: relative;
+                        top: 3px;
+                    }
+                }
+            }
+
+            .p-tree-node-content.p-tree-node-selected {
+                .p-tree-node-label {
+                    &:before {
+                        content: "\e98c" !important;
+                        border: 0 !important;
+                        color: var(--color-secondary);
+                    }
+                }
+            }
+        }
+    }
+
+    .smc-gpi-selecao-simples {
+        .p-tree-node-leaf {
+            .p-tree-node-content {
+                .p-tree-node-label {
+                    &:before {
+                        content: "";
+                        width: 15px;
+                        height: 15px;
+                        display: inline-block;
+                        border: 1px solid var(--grey);
+                        border-radius: 30px;
+                        position: relative;
+                        top: 3px;
+                    }
+                }
+            }
+
+            .p-tree-node-content.p-tree-node-selected {
+                .p-tree-node-label {
+                    &:before {
+                        content: "\e90a" !important;
+                        border: 0 !important;
+                        color: var(--color-secondary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cdk-drag {
+    height: 30px !important;
+}
+
+.cdk-drop-list {
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+    background: transparent !important;
+    max-height: 100% !important;
+    overflow: visible;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+
+    .cdk-drag {
+        @include item-drop-list;
+        height: auto !important;
+    }
+
+    .smc-gpi-selecao-touch {
+        @include dragging-effect;
+    }
+
+    > div.cdk-drag.smc-gpi-listbox-item-desativado {
+        position: relative !important;
+        border-color: var(--background-button-secondary) !important;
+
+        .smc-gpi-desc-oferta {
+            span {
+                opacity: 0.5;
+            }
+        }
+
+        &:before {
+            content: "" !important;
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            background: rgba(250,250,250,.8) !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 1 !important;
+            border-radius: 4px !important;
+            opacity: 1;
+        }
+
+        &:after {
+            //Esta opcao nao esta mais disponivel
+            content: "Op\00E7 \00E3 o indispon\00ED vel. Remova-a para prosseguir.";
+            z-index: 2;
+            font-weight: 600;
+            font-size: .65rem;
+            position: absolute;
+            height: 35px;
+            width: 280px;
+            top: calc(50% - 17px);
+            left: calc(50% - 140px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-primary);
+            border-radius: 40px;
+            color: var(--color-primary);
+            background: var(--white);
+            text-transform: uppercase;
+            text-align: center;
+            font-family: var(--body-fonts);
+            opacity: 1;
+        }
+
+        > .p-tag {
+            z-index: 1 !important;
+            background: var(--background-button-secondary) !important;
+
+            span {
+                color: var(--ang-color-text-item-desativado) !important;
+            }
+        }
+    }
+}
+
+.smc-gpi-dica-icon {
+    margin: 1.8rem 0;
+
+    p {
+        &:before {
+            @include prime-icon;
+            margin-right: 5px;
+            content: "\ea28";
+        }
+    }
+}
+
+.smc-gpi-alert-icon {
+    margin: 1.8rem 0;
+    border: 0.03rem solid var(--color-alert);
+    background-color: var(--white) !important;
+    margin: 1rem 0;
+    position: fixed;
+    z-index: 1000;
+    bottom: 1vh;
+    width: auto;
+    right: 1vw;
+    padding: .3rem 1rem !important;
+    text-align: center;
+
+    p {
+        color: var(--black);
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        &:before {
+            @include prime-icon;
+            margin-right: 5px;
+            font-size: 1rem;
+            content: "\e989";
+            color: var(--color-alert);
+        }
+
+        @media screen and (max-width: 850px) {
+            text-align: left;
+            line-height: 1rem;
+        }
+    }
+
+    @media screen and (max-width:850px) {
+        margin: 0 !important;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+
+
+div.dica-icon-grey {
+    background: var(--ang-bg-orientacoes);
+    padding: 1rem;
+    margin: 1rem 0;
+
+    p {
+        margin: 0;
+    }
+}
+
+.smc-gpi-orientacoes {
+    .p-accordionheader,
+    .p-accordionheader,
+    .p-accordioncontent,
+    .p-accordioncontent-content {
+        background: var(--ang-bg-orientacoes) !important;
+    }
+
+    .p-accordionheader {
+        text-transform: uppercase;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .p-accordioncontent-content {
+        padding-bottom: .5rem;
+
+        p {
+            margin-top: 0;
+            margin-bottom: .5rem;
+        }
+    }
+
+    .p-accordionpanel {
+        border: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.smc-gpi-contador-selecao {
+    position: absolute;
+    bottom: 2.5rem;
+    text-transform: uppercase;
+    margin: 0;
+
+    @media screen and (max-width: 495px) {
+        width: 100px;
+        bottom: 2rem;
+        font-size: .75rem;
+    }
+
+    > span {
+        font-weight: 600;
+        text-decoration: underline;
+    }
+}
+
+.smc-gpi-modal-taxas {
+    .p-dialog-mask {
+        justify-content: flex-end !important;
+
+        @media screen and (max-width: 991px) {
+            justify-content: center !important;
+        }
+    }
+}
+
+.smc-gpi-taxas-container {
+    margin-top: 0.7rem;
+
+    .linha-taxa {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.5rem 0 0 0;
+        border-top: 1px solid var(--ang-border-default) !important;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-top: .7rem;
+
+        @media screen and (max-width: 725px) {
+            > div {
+                &:nth-child(2) {
+                    label, span {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 624px) {
+            padding: 1rem 0;
+            gap: 0.5rem;
+        }
+
+        &:last-child {
+            border-bottom: 0 !important;
+        }
+
+        .descricao {
+            //  width: 200px;
+            margin: 0;
+            font-size: .85rem;
+            flex-shrink: 0;
+        }
+
+        .sub-descricao {
+            display: block;
+            font-style: italic;
+            font-weight: 500;
+            margin-top: -3px;
+        }
+
+        p-inputnumber {
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid var(--ang-border-default);
+
+            .p-inputtext {
+                height: 2em !important;
+                border: none !important;
+            }
+
+            .pi-minus:before, .pi-plus:before {
+                font-size: 0.8rem !important;
+            }
+
+            @media screen and (max-width: 415px) {
+                input, button {
+                    width: 2rem !important;
+                }
+            }
+        }
+
+        p-inputnumber[ng-reflect-readonly="[Input Signal: true]"],
+        p-inputnumber[ng-reflect-readonly="[Input Signal: false]"] {
+            input {
+                cursor: not-allowed;
+            }
+
+            button {
+                background-color: #f1f1f1 !important;
+                cursor: not-allowed;
+
+                span {
+                    color: #999 !important;
+                }
+            }
+        }
+
+        .p-inputnumber-horizontal .p-inputnumber-button {
+            border: 0 !important;
+        }
+
+        .p-inputnumber-horizontal .p-inputnumber-input {
+            text-align: center;
+        }
+
+        .precos {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            width: 90px;
+
+            @media screen and (max-width: 460px) {
+                width: 70px;
+            }
+
+            label {
+                font-size: 0.7rem;
+                text-align: right;
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 14px;
+                min-width: 60px;
+                text-align: right;
+                display: inline-block;
+                margin-top: 0.3em;
+            }
+        }
+
+        .quantidade, .nome-taxa {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-size: 0.7rem;
+
+                > span {
+                    display: block;
+                }
+            }
+        }
+
+        .quantidade {
+            label {
+                text-align: center;
+            }
+        }
+
+        .nome-taxa {
+            width: 50%;
+
+            @media screen and (max-width: 1200px) {
+                width: 40%;
+            }
+
+            @media screen and (max-width: 1020px) {
+                width: 38%;
+            }
+
+            @media screen and (max-width: 992px) {
+                width: 50%;
+            }
+
+            @media screen and (max-width: 855px) {
+                width: 40%;
+            }
+
+            @media screen and (max-width: 725px) {
+                width: 100%;
+            }
+
+            p {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .card-evento {
+        border: 1px solid var(--ang-border-default);
+        border-radius: 6px;
+        padding: 1rem;
+        background-color: var(--background-button-secondary);
+        margin-top: 1rem;
+
+        .descricao-evento {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .titulo-evento {
+                font-weight: 700;
+                font-size: 16px;
+                color: var(--color-primary);
+            }
+
+            .grupo-evento {
+                font-weight: 500;
+                font-size: 14px;
+                color: var(--color-text);
+            }
+        }
+    }
+
+    .smc-gpi-taxas-container-inner-insc {
+        .linha-taxa {
+            border-top: 0 !important;
+        }
+
+        .linha-taxa ~ .linha-taxa {
+            border-top: 1px solid var(--ang-border-default) !important;
+
+            label {
+                display: none;
+
+                @media screen and (max-width: 725px) {
+                    display: block;
+
+                    .limite-taxa {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+
+        .linha-taxa {
+            &:last-child {
+                padding-bottom: .7rem;
+            }
+        }
+    }
+}
+
+.smc-gpi-grupo-taxas {
+    border: 0.03rem solid var(--color-primary);
+    padding: 0 1rem 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--white);
+}
+
+.smc-gpi-desc-oferta {
+    position: relative;
+    z-index: 2;
+    touch-action: pan-y !important;
+}
+
+.taxas-por-inscricao {
+    .linha-taxa {
+        padding: 0 1rem 0.5rem 1rem;
+        margin-bottom: 0;
+        background-color: var(--white);
+        margin-top: .7rem !important;
+    }
+
+    .linha-taxa:first-child {
+        border-top: 0 !important;
+    }
+
+    .linha-taxa ~ .linha-taxa {
+        border-top: 1px solid var(--ang-border-default);
+
+        label {
+            display: none;
+
+            @media screen and (max-width: 725px) {
+                display: block;
+
+                .limite-taxa {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+.smc-gpi-taxas-container.linha-inscricao {
+    > .smc-gpi-taxas-container-inner-insc.taxas-por-inscricao > app-selecao-oferta-com-taxa-simples .linha-taxa {
+        border-top: 0.03rem solid var(--ang-border-default) !important;
+        margin: 0 1rem .5rem 1rem;
+        padding: 0.5rem 0 0 0;
+        display: flex;
+    }
+}
+
+.smc-gpi-taxas-container.linha-inscricao {
+    > .smc-gpi-taxas-container-inner-insc.taxas-por-inscricao > app-selecao-oferta-com-taxa-simples:first-child .linha-taxa {
+        border-top: none !important;
+    }
+}
+
+app-selecao-oferta-com-taxa-simples {
+    ~ app-selecao-oferta-com-taxa-simples {
+        background-color: var(--white);
+        border-top: 1px solid var(--ang-border-default) !important;
+        //  &::before {
+        //      content: "";
+        //      width: 100%;
+        //      height: 0.03rem;
+        //      background-color: var(--ang-border-default);
+        //      display: block;
+        //  }
+
+        .linha-taxa:first-child {
+            margin-top: 0;
+
+            label {
+                display: none;
+
+                @media screen and (max-width: 725px) {
+                    display: block;
+
+                    .limite-taxa {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.smc-gpi-taxas-container-inner-insc.taxas-por-inscricao {
+    border: 0.03rem solid var(--color-primary) !important;
+    background-color: var(--white) !important;
+    margin-bottom: 1.5rem;
+}
+
+.cdk-drag {
+    .smc-gpi-grupo-taxas {
+        border: none;
+        padding: 0;
+    }
+}
+
+.limite-taxa {
+    top: 15px;
+    background: var(--color-primary) !important;
+    padding: .1rem .6rem 0 .6rem;
+    border-radius: 50px;
+    color: var(--white);
+    font-size: .65rem;
+    margin-left: 0;
+    position: relative;
+    display: inline-block !important;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.smc-gpi-taxas-container-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    position: fixed;
+    background-color: var(--white);
+    right: -1px;
+    top: 20vh;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    border-radius: 0.6rem 0 0 0.6rem;
+    transform: translateX(100%);
+    animation: slideInFromRight 0.5s ease-out forwards;
+
+    @media screen and (max-width:850px) {
+        top: 5vh;
+    }
+
+    .smc-gpi-taxas-total-icone {
+        position: relative;
+
+        &::before {
+            @include prime-icon;
+            margin-right: 0;
+            content: "\e96b";
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            border-radius: 1rem;
+            padding: 5px;
+            font-size: 0.7rem;
+            margin-right: 5px;
+            animation: rotateOnce 0.5s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes rotateOnce {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    > div {
+        margin: 0;
+        padding: 0.7rem 1.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        text-transform: uppercase;
+
+
+
+        > span {
+            color: var(--color-primary);
+            font-weight: 600;
+            padding: 0 .2rem;
+
+            ~ span {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+.smc-gpi-modal-selecao-ofertas {
+    .p-dialog-footer {
+        @media screen and (max-width: 410px) {
+            gap: 0.2rem;
+
+            > p-button {
+                font-size: 0.7rem;
+
+                &:first-child {
+                    width: 80px !important;
+                }
+
+                &:last-child {
+                    width: 90px !important;
+                }
+            }
+        }
+    }
+}
+
+.smc-gpi-oferta-content {
+    overflow: hidden;
+    max-height: 1000px;
+    transition: max-height 0.5s ease;
+}
+
+.smc-gpi-esconde-oferta-content {
+    .smc-gpi-oferta-content {
+        max-height: 0 !important;
+    }
+}
+
+
+.smc-gpi-orientacoes-taxas {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--p-accordion-header-active-color);
+}
+
+.smc-gpi-desc-oferta ~ .smc-gpi-oferta-content > .smc-gpi-taxas-container {
+    border-top: 1px solid var(--ang-border-default);
+
+    .smc-gpi-taxas-container-inner-insc {
+        .smc-gpi-taxas-container-inner {
+            app-selecao-oferta-com-taxa-simples {
+                .linha-taxa {
+                    border-top: 0.03rem solid var(--ang-border-default) !important;
+                }
+
+                &:first-child {
+                    .linha-taxa {
+                        border-top: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+p-inputnumber[ng-reflect-readonly="true"] {
+    button {
+        background-color: #f1f1f1 !important;
+        cursor: no-drop;
+
+        span {
+            color: #999 !important;
+        }
+    }
+}
+
+@mixin botoes-desabilitados-inputnumber {
+    background-color: #f1f1f1 !important;
+    cursor: no-drop;
+
+    span {
+        color: #999 !important;
+    }
+}
+
+@for $i from 0 through 500 {
+
+    .quantidade {
+        input[aria-valuemin="0"][aria-valuenow="0"] ~ .p-inputnumber-increment-button ~ .p-inputnumber-decrement-button,
+        input[aria-valuemin="#{$i}"][aria-valuenow="#{$i}"] ~ .p-inputnumber-increment-button ~ .p-inputnumber-decrement-button,
+        input[aria-valuemax="#{$i}"][aria-valuenow="#{$i}"] ~ .p-inputnumber-increment-button,
+        input[readonly] ~ .p-inputnumber-increment-button, input[readonly] ~ .p-inputnumber-increment-button ~ .p-inputnumber-decrement-button,
+        p-inputnumber[ng-reflect-max="#{$i}"][ng-reflect-model="#{$i}"] .p-inputnumber-increment-button {
+            @include botoes-desabilitados-inputnumber
+        }
+    }
+}
+
+p-button {
+    > .smc-btn-principal[disabled],
+    > .smc-btn-princip[disabled] {
+        background-color: var(--grey) !important;
+        border-color: var(--grey) !important;
+        color: var(--white) !important;
+        cursor: no-drop;
+
+        &:hover {
+            color: var(--grey) !important;
+        }
+    }
+}
+
+/// drag
+.example-list {
+    width: 500px;
+    max-width: 100%;
+    border: solid 1px #ccc;
+    min-height: 60px;
+    display: block;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.example-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.example-list.cdk-drop-list-dragging
+.example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-custom-placeholder {
+    background: #ccc;
+    border: dotted 3px #999;
+    min-height: 60px;
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    ~ .cdk-drag {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

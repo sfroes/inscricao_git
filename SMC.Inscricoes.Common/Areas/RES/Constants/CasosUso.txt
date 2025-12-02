@@ -1,0 +1,8 @@
+﻿UC;Descrição
+UC_RES_001_01_01.Pesquisar_Unidade_Responsavel;Este caso de uso tem como objetivo consultar as unidades responsáveis, permitindo também a exclusão.
+UC_RES_001_01_02.Manter_Unidade_Responsavel;Este caso de uso tem como objetivo cadastrar ou alterar os dados de uma unidade responsável.
+UC_RES_001_01_03.Pesquisar_Configuracao_Unidade_Responsavel;Este caso de uso tem como objetivo consultar os parâmetros associados e configurados para cada unidade responsável.
+UC_RES_001_01_04.Manter_Tipo_Formulario;Este caso de uso tem como objetivo manter o cadastro de tipos de formulário de uma unidade responsável, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão).
+UC_RES_001_01_05.Manter_Tipo_Processo;Este caso de uso tem como objetivo manter o cadastro de tipos de processos de uma unidade responsável, permitindo todas as funcionalidades de um CRUD básico (consulta, cadastro, alteração e exclusão).
+UC_RES_002_01_01.Pesquisar_Cliente;Este caso de uso tem como objetivo consultar os clientes, permitindo também a exclusão.
+UC_RES_002_01_02.Manter_Cliente;Este caso de uso tem como objetivo cadastrar ou alterar os dados de um cliente.

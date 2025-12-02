@@ -1,0 +1,16 @@
+﻿@model JustificativaSituacaoInscricaoViewModel
+
+@Smc.DisplayFor(x=>x.NomeInscrito)
+
+@if (Model != null)
+{
+    if (!string.IsNullOrWhiteSpace(Model.Motivo))
+    {
+        @Smc.DisplayFor(x => x.Motivo)
+    }
+
+    if (!string.IsNullOrWhiteSpace(Model.Justificativa))
+    {
+        @Smc.DisplayFor(x => x.Justificativa)
+    }
+}

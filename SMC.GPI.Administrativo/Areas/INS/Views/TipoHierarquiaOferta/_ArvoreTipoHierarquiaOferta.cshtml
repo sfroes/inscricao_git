@@ -1,0 +1,49 @@
+﻿@model  List<SMCTreeViewNode<NoArvoreTipoHierarquiaOfertaViewModel>>
+
+@(Smc.TreeView("treeviewArvoreTipoHierarquiaOferta", Model)
+            .Expanded()
+            .ContextMenu(i => Smc.ContextMenu("ctx_" + i.Seq)
+                        .OpenEvent(SMCMouseEvent.LeftClick)
+                        .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Novo_Item_Folha_Hierarquia_Oferta"))
+                                                .Attribute(SMCMvcConsts.MODAL_ID, "modalAssociarTipoHierarquiaOferta")
+                                                .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                .Ajax(isPost: true, updateTargetId: "#divHierarquiaOferta", fieldsContainerToRequest: "#divHierarquiaOferta")
+                                                .SecurityToken(UC_INS_001_04_02.MANTER_TIPO_HIERARQUIA_OFERTA)
+                                                .Url(Html.SMCAction("AssociarTipoHierarquiaOferta", "TipoHierarquiaOferta",
+                                                                        new
+                                                                        {
+                                                                            seqTipoHieraquiaOferta = SMCDESCrypto.EncryptNumberForURL(i.Value.SeqTipoHierarquiaOferta),
+                                                                            seqPai = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq),
+                                                                            descricaoPai = i.Value.Descricao,
+                                                                        }
+                                                                   )
+                                                ))
+                        .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Alterar_item_Hierarquia_Oferta"))
+                                                .Attribute(SMCMvcConsts.MODAL_ID, "modalAssociarTipoHierarquiaOferta")
+                                                .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                .Ajax(isPost: true, updateTargetId: "#divHierarquiaOferta", fieldsContainerToRequest: "#divHierarquiaOferta")
+                                                .SecurityToken(UC_INS_001_04_02.MANTER_TIPO_HIERARQUIA_OFERTA)
+                                                .Url(Html.SMCAction("EditarAssocicaoTipoHierarquiaOferta", "TipoHierarquiaOferta",
+                                                                        new
+                                                                        {
+                                                                            seq = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq)
+                                                                        }
+                                                                   )
+                                                ))
+                        .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Excluir_Item_Arvore_Hierarquia_Oferta"))
+                                                .Confirm(Smc.GetUIResource("Titulo_Exclusao_Item_Hierarquia_Oferta"),
+                                                        Smc.GetUIResource("Mensagem_Exclusao_Item_Hierarquia_Oferta"))
+                                                  .Ajax(isPost: true, updateTargetId: "#divHierarquiaOferta", fieldsContainerToRequest: "#divHierarquiaOferta")
+                                                  .SecurityToken(UC_INS_001_04_02.MANTER_TIPO_HIERARQUIA_OFERTA)
+                                                  .Url(Html.SMCAction("ExcluirItemHierarquiaOferta", "TipoHierarquiaOferta",
+                                                                       new
+                                                                       {
+                                                                           seqItemHierarquiaOferta = SMCDESCrypto.EncryptNumberForURL(i.Value.Seq),
+                                                                           seqTipoHierarquiaOferta = SMCDESCrypto.EncryptNumberForURL(i.Value.SeqTipoHierarquiaOferta)
+                                                                       }
+                                                                   )
+                                                    )
+                        )
+            
+            )
+)

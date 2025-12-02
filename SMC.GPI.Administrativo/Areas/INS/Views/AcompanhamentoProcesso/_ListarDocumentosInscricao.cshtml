@@ -1,0 +1,48 @@
+﻿@model SMCPagerModel<DocumentoInscricaoViewModel>
+
+@(Smc.Grid("gridDocumentos").CssClass("smc-gpi-grid-arquivos")
+     .AutoGenerateColumns()
+     .ContentColumn(displayContent:
+        @<text>
+            <span>
+                <p>
+                    @if (String.IsNullOrEmpty((item as DocumentoInscricaoViewModel).Arquivo))
+                    {
+                        if ((item as DocumentoInscricaoViewModel).EntregaPosterior)
+                        {
+                            if ((item as DocumentoInscricaoViewModel).DataLimiteEntrega.HasValue)
+                            {
+                                <p>Entregarei até @((item as DocumentoInscricaoViewModel).DataLimiteEntrega.Value.ToShortDateString())</p>
+                            }
+                            else
+                            {
+                                <p>Entregarei posteriormente</p>
+                            }
+                        }
+                     }
+                     else
+                     {
+                       @(Smc.Button("LinkArquivo")
+                         .Attribute("target", "_blank")
+                         .CssClass("smc-gpi-btn-link-grid")
+                         .Text((item as DocumentoInscricaoViewModel).Arquivo)
+                         .Tooltip((item as DocumentoInscricaoViewModel).Arquivo)
+                         .Url(Url.Action("CarregarDocumento", "Home",
+                             new
+                             {
+                                 Area = "",
+                                 @seqArquivo = (item as DocumentoInscricaoViewModel).seqArquivo
+                             }))
+                             .Type(SMCButtonType.Link)
+                        )
+                     }
+                </p>
+            </span>
+        </text>,header: @Smc.GetUIResource("DocumentoInscricaoViewModel_Arquivo"), order: 3)
+     .HideNavigator()
+     .HideRowNumber()
+     .HideRowsTotalizer()
+     .HidePager()
+     .HideGridTitle()
+
+)

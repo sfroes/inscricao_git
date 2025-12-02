@@ -1,0 +1,43 @@
+﻿@model GrupoTaxaFiltroViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.ContextMenu)
+}
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.GrupoTaxa, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = true })
+
+
+@using (Smc.Form("formPesquisaGrupoTaxa", "ListarGrupoTaxa").Ajax("#divGridGrupoTaxa").Begin())
+{
+    using (Smc.Div("fieldsetPesquisaGrupoTaxa").Begin())
+    {
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirGrupoTaxa")
+                .Text(Smc.GetUIResource("Botao_Incluir_Grupo_Taxa"))
+                .Tooltip(Smc.GetUIResource("Botao_Incluir_Grupo_Taxa_Tooltip"))
+                .Ajax(isPost: false, updateTargetId: "modalIncluirGrupoTaxa")
+                .CssClass("smc-btn-novo-icotext-destaque")
+                .SecurityToken(UC_INS_001_12_02.MANTER_GRUPO_TAXAS)
+                    .Url(Url.Action("Incluir", "GrupoTaxa", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso) })))
+        )
+    }
+}
+
+
+<div id="divGridGrupoTaxa">
+    @Html.Action("ListarGrupoTaxa")
+</div>
+
+@(Smc.ButtonSet().AddButton(Smc.Button("Voltar", "Index", "Processo").Type(SMCButtonType.Link).CssClass("smc-btn-voltar-icotext")))
+
+@using (Smc.ModalWindow("modalIncluirGrupoTaxa")
+        .Title(Smc.GetUIResource("Incluir_Grupo_Taxa"))
+        .Size(SMCModalWindowSize.Large)
+        .Form("IncluirGrupoTaxa", "Salvar", "GrupoTaxa", null, true, x => x.Ajax("#divGridGrupoTaxa"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{
+
+}

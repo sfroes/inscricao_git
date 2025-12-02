@@ -1,0 +1,25 @@
+﻿@model ConfigurarPaginaEtapaViewModel
+
+@using (Smc.Header("headerCabecalhoConfigurarPaginaEtapa", SMCHeaderType.Primary)
+               .Item(prop => prop.DescricaoPagina, sizeSM: SMCSize.Grid22_24, sizeMD: SMCSize.Grid22_24, sizeLG: SMCSize.Grid22_24, sizeXS: SMCSize.Grid22_24)
+               .Begin())
+{
+
+}
+
+@using (Smc.Div("fieldsetConfigurarPaginaEtapa").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaPagina)
+
+    if (Model.PaginaToken.Equals(TOKENS.PAGINA_COMPROVANTE_INSCRICAO))
+    {
+        @Smc.EditorFor(prop => prop.ExibeDadosPessoais)
+        @Smc.HiddenFor(prop => prop.PaginaToken)
+    }
+    else
+    {
+        @Smc.EditorFor(prop => prop.ExibirConfirmacao)
+        @Smc.EditorFor(prop => prop.ExibirComprovante)
+    }
+
+}

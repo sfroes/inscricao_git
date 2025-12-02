@@ -1,0 +1,17 @@
+﻿@model SMCPagerModel<TipoDocumentoListaViewModel>
+
+@(Smc.Grid("gridTipoDocumento")
+         .Action("ListarTipoDocumento", "TipoDocumento")
+         .AutoGenerateColumns()
+         .ButtonColumn(SMCButtonSetType.Secondary, "smc-grid-coluna-botoes", 
+            item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as TipoDocumentoListaViewModel).Seq) }, "TipoDocumento")
+                    .DisplayMode(SMCButtonDisplayMode.Icon)
+                    .SecurityToken(UC_INS_001_05_02.MANTER_TIPO_DOCUMENTO),
+            item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { @seqTipoDocumento = SMCDESCrypto.EncryptNumberForURL((item as TipoDocumentoListaViewModel).Seq) }, "TipoDocumento")
+                    .DisplayMode(SMCButtonDisplayMode.Icon)
+                    .SecurityToken(UC_INS_001_05_02.MANTER_TIPO_DOCUMENTO)
+                    .Ajax(isPost: true, updateTargetId: "#divGridTipoDocumento")
+                    .Confirm(Smc.GetUIResource("Exclusao_Tipo_Documento_Title"),
+                                            string.Format(Smc.GetUIResource("Exclusao_Tipo_Documento_Confirmacao"), (item as TipoDocumentoListaViewModel).DescricaoTipoDocumento))
+))
+

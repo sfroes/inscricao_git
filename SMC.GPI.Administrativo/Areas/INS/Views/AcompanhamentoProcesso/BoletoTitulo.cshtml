@@ -1,0 +1,161 @@
+﻿@*
+    DisableLinePragmas: true
+    Imports: SMC.Framework, SMC.Framework.DataAnnotations, SMC.Framework.Extensions, SMC.Framework.Ioc, SMC.Framework.Mapper, SMC.Framework.Model, SMC.Framework.Security, SMC.Framework.Service.Security, SMC.Framework.UI.Mvc.Dynamic, SMC.Framework.UI.Mvc.Exceptions, SMC.Framework.UI.Mvc.Helpers, SMC.Framework.UI.Mvc.Html, SMC.Framework.UI.Mvc.Util, SMC.Framework.Util, System, System.Collections.Generic, System.Configuration, System.Web, System.Web.Mvc, System.Web.Mvc.Html
+*@
+
+@using SMC.Financeiro.UI.Mvc.BoletoBancario.Html
+@using SMC.Financeiro.ServiceContract.BLT.Data
+@using SMC.Framework.Extensions
+
+@model BoletoData
+
+@{
+    Layout = "";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    @*@Url.SMCBuscarRecursoGlobalAplicacao("Css/smc-boleto-bancario.css")*@
+    <link rel="stylesheet" type="text/css" href="E:/Aplicativos/Recursos/Inscricoes/4.0/Content/Css/smc-boleto-bancario.css" />
+</head>
+<body>
+
+    <ul class="smc-gpi-titulo-instituicao-boleto">
+        <li class="smc-gpi-titulo-instituicao-boleto-img"><img src="E:/Aplicativos/Recursos/Academico/4.0/Content/Images/smc-puc-minas-brasao-preto.png" alt="Pontifícia Universidade Católica de Minas Gerais" /></li>
+        <li class="smc-gpi-titulo-instituicao-boleto-txt"><h1>Pontifícia Universidade Católica de Minas Gerais</h1></li>
+    </ul>
+
+    <ul class="smc-gpi-cabecalho-boleto">
+        <li class="smc-gpi-cabecalho-boleto-sacado">
+            <span>
+                <label>@Smc.GetUIResource("Label_Sacado")</label>
+                <p>@Model.Sacado.Nome</p>
+            </span>
+            <div class="smc-gpi-cabecalho-boleto-espaco-base"></div>
+        </li>
+        <li class="smc-gpi-cabecalho-boleto-processamento">
+            <span>
+                <label>@Smc.GetUIResource("Label_Data_Processamento")</label>
+                <p>@Model.DataProcessamentoTitulo</p>
+            </span>
+            <div class="smc-gpi-cabecalho-boleto-espaco-base"></div>
+        </li>
+        <li class="smc-gpi-cabecalho-boleto-vencimento">
+            <ul class="smc-gpi-cabecalho-boleto-conteudo-vencimento">
+                <li>
+                    <span>
+                        <label>@Smc.GetUIResource("Label_Data_Vencimento")</label>
+                        <p>@Model.DataVencimentoTitulo</p>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <label>@Smc.GetUIResource("Label_Valor_Documento")</label>
+                        <p>@Model.ValorCobradoTitulo</p>
+                    </span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <ul class="smc-gpi-demonstrativo-boleto">
+        <li class="smc-gpi-demonstrativo-boleto-cabecalho">
+            <ul>
+                <li class="smc-gpi-demonstrativo-coluna-despesas">
+                    <span>@Smc.GetUIResource("Label_Demonstrativo_Despesas")</span>
+                </li>
+                <li class="smc-gpi-demonstrativo-coluna-mensagens">
+                    <span>@Smc.GetUIResource("Label_Mensagens")</span>
+                </li>
+            </ul>
+        </li>
+        <li class="smc-gpi-demonstrativo-boleto-corpo">
+            <ul>
+                <li class="smc-gpi-demonstrativo-coluna-despesas">
+                    <span>@Model.Cedente.DescricaoCarteira</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>@Smc.GetUIResource("Label_Descricao")</td>
+                                <td>@Smc.GetUIResource("Label_Quantidade")</td>
+                                <td>@Smc.GetUIResource("Label_Valor")</td>
+                                <td>@Smc.GetUIResource("Label_Total")</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Taxas != null)
+                            {
+                                foreach (TaxaCreiData taxa in Model.Taxas)
+                                {
+                                    <tr>
+                                        <td>@taxa.Descricao</td>
+                                        <td>@taxa.Quantidade</td>
+                                        <td>@taxa.ValorUnitarioTaxa.SMCMoeda()</td>
+                                        <td>@taxa.ValorLancamento.SMCMoeda()</td>
+                                    </tr>
+                                }
+                            }
+                            <tr>
+                                <td class="smc-gpi-demonstrativo-label-total">@Smc.GetUIResource("Label_Total_Geral")</td>
+                                <td class="smc-gpi-demonstrativo-valor-total"></td>
+                                <td class="smc-gpi-demonstrativo-valor-total"></td>
+                                <td class="smc-gpi-demonstrativo-valor-total">@Model.ValorCobradoTitulo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li class="smc-gpi-demonstrativo-coluna-mensagens"><p>@Model.Titulo.MensagemAluno</p></li>
+            </ul>
+        </li>
+        <li class="smc-gpi-demonstrativo-boleto-rodape">
+            <ul>
+                <li>
+                    <ul>
+                        <li class="smc-gpi-demonstrativo-boleto-rodape-cedente">
+                            <span>
+                                <label>@Smc.GetUIResource("Label_Cedente")</label>
+                                <p>@Model.Cedente.Nome</p>
+                            </span>
+                        </li>
+                        <li class="smc-gpi-demonstrativo-boleto-rodape-valor">
+                            <span>
+                                <label>@Smc.GetUIResource("Label_Valor_Cobrado")</label>
+                                <p>@Model.ValorCobradoTitulo</p>
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li class="smc-gpi-demonstrativo-boleto-rodape-codigodoc">
+                            <span>
+                                <label>@Smc.GetUIResource("Label_Nosso_Numero")</label>
+                                <p>@Model.NossoNumero</p>
+                            </span>
+                        </li>
+                        <li class="smc-gpi-demonstrativo-boleto-rodape-banco">
+                            <span>
+                                <label>@Smc.GetUIResource("Label_Banco_Agencia_Cedente")</label>
+                                <p>@Model.Banco.Numero / @{@Model.AgenciaCedente} / @Model.Cedente.Codigo</p>
+                            </span>
+                        </li>
+                        <li class="smc-gpi-demonstrativo-boleto-rodape-datapg">
+                            <span>
+                                <label>@Smc.GetUIResource("Label_Data_Pagamento")</label>
+                                <p></p>
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="smc-gpi-separador-boleto">
+        <span>@Smc.GetUIResource("Texto_Recibo_Sabado")</span>
+    </div>
+    @Html.SMCRenderFichaCompensacao(Model)
+</body>
+</html>

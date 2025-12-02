@@ -1,0 +1,60 @@
+﻿@model UnidadeResponsavelCabecalhoViewModel
+
+@*Painel de exibição do título*@
+
+@using (Smc.Header("CabecalhoUnidadeResponsavel", SMCHeaderType.Primary).CssClass("smc-header-botao")    
+    .Item(prop => prop.UnidadeResponsavel, sizeSM: SMCSize.Grid10_24, sizeMD: SMCSize.Grid10_24, sizeLG: SMCSize.Grid10_24, sizeXS: SMCSize.Grid10_24)
+    .Begin())
+{
+    @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+        .AddButton(Smc.Button(SMCButtonBehavior.Alterar)
+            .DisplayMode(SMCButtonDisplayMode.Icon)
+            .Url(Url.Action("Editar", "UnidadeResponsavel", new { @seq = new SMCEncryptedLong(Model.Seq) }))
+            .SecurityToken(UC_RES_001_01_02.MANTER_UNIDADE_RESPONSAVEL)
+            .Highlight())
+    )
+}
+
+<div class="smc-gpi-painel-gadgets">
+    @(Smc.Gadgets("gadgetsParametros")
+        .MaxGadgetsPerRow(2)
+        .Gadget("PainelTipoFormulario", "UnidadeResponsavel", new { seqParametro = new SMCEncryptedLong(Model.Seq), codigoUnidade = Model.CodigoUnidade }, Smc.GetUIResource("Titulo_Gadget_Tipo_Formulario"), "gadgetTipoFormulario", g => g.Row(0).Column(0)
+            .AllowRemove()
+            .AllowSort()
+            .SecurityToken(UC_RES_001_01_03.PESQUISAR_CONFIGURACAO_UNIDADE_RESPONSAVEL))
+        .Gadget("PainelTipoProcesso", "UnidadeResponsavel", new { seqParametro = new SMCEncryptedLong(Model.Seq) }, Smc.GetUIResource("Titulo_Gadget_Tipo_Processo"), "gadgetTipoProcesso", g => g.Row(0).Column(1)
+            .AllowRemove()
+            .AllowSort())
+            .SecurityToken(UC_RES_001_01_03.PESQUISAR_CONFIGURACAO_UNIDADE_RESPONSAVEL))
+</div>
+
+@(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+    .AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Url(Url.Action("Index")))
+)
+
+@using (Smc.ModalWindow("modalEditarParametro")
+       .Size(SMCModalWindowSize.Auto)
+       .AllowEscKeyToClose()
+       .ContentId("painelAjaxIncluirItem")
+       .Form("formEditarParametro", "Salvar", "UnidadeResponsavel", config: prop => prop.Ajax("#divGridParametros"))
+       .Title(Smc.GetUIResource("Modal_EditarParametro"))
+       .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+       .Begin()) { }
+
+@using (Smc.ModalWindow("modalEditarParametroTipoFormulario")
+       .Size(SMCModalWindowSize.Auto)
+       .AllowEscKeyToClose()
+       .ContentId("painelAjaxIncluirTipoFormulario")
+       .Title(Smc.GetUIResource("Modal_TipoFormulario"))
+       .Form("formEditarConfiguracaoTipoFormulario", "SalvarConfiguracaoTipoFormulario", "UnidadeResponsavel", config: prop => prop.Ajax("#divGridTipoFormulario"))
+       .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+       .Begin()) { }
+
+@using (Smc.ModalWindow("modalEditarParametroTipoProcesso")
+       .Size(SMCModalWindowSize.Large)
+       .AllowEscKeyToClose()
+       .Title(Smc.GetUIResource("Modal_TipoProcesso"))
+       .ContentId("painelAjaxIncluirTipoProcesso")
+       .Form("formEditarConfiguracaoTipoProcesso", "SalvarConfiguracaoTipoProcesso", "UnidadeResponsavel", config: prop => prop.Ajax("#divGridTipoProcesso"))
+       .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+       .Begin()) { }

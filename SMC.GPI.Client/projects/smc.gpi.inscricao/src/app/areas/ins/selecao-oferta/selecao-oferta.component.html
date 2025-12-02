@@ -1,0 +1,137 @@
+<p-confirmdialog styleClass="smc-gpi-modal-confirmacao-taxas" />
+@if (selecaoOfertaService.$isLoading()) {
+  <p-skeleton width="100%" height="30px" styleClass="smc-gpi-skeleton-margin" />
+} @else {
+  <h3 id="ancora-mobile">{{ selecaoOfertaService.$titulo() }}</h3>
+}
+@if (selecaoOfertaService.$isLoading()) {
+  <p-skeleton width="100%" height="90px" styleClass="smc-gpi-skeleton-margin" />
+  <br />
+} @else {}
+@if (selecaoOfertaService.$isLoading()) {
+  <p-skeleton width="100%" height="90px" /><br />
+} @else {
+  @if (
+    (selecaoOfertaService.$selecaoOfertaInstrucoes() ||
+      selecaoOfertaComTaxaService.$instrucoes()) &&
+    selecaoOfertaDataService.$selecaoOferta().ofertas &&
+    selecaoOfertaDataService.$selecaoOferta().ofertas.length > 0
+  ) {
+    <p-accordion value="0" class="smc-gpi-orientacoes">
+      <p-accordion-panel value="0">
+        @if (selecaoOfertaService.$selecaoOfertaInstrucoes() != null) {
+          <p-accordion-header>Orientações</p-accordion-header>
+          <p-accordion-content>
+            <div
+              [innerHTML]="selecaoOfertaService.$selecaoOfertaInstrucoes()"
+            ></div>
+            @if (selecaoOfertaComTaxaService.$instrucoes()) {
+              <div>
+                <p class="smc-gpi-orientacoes-taxas">Sobre as taxas</p>
+                <div
+                  [innerHTML]="selecaoOfertaComTaxaService.$instrucoes()"
+                ></div>
+              </div>
+            }
+          </p-accordion-content>
+        } @else {
+          <p-accordion-header>Sobre as taxas</p-accordion-header>
+          <p-accordion-content>
+            <div [innerHTML]="selecaoOfertaComTaxaService.$instrucoes()"></div>
+          </p-accordion-content>
+        }
+      </p-accordion-panel>
+    </p-accordion>
+  }
+}
+@if (
+  selecaoOfertaDataService.$selecaoOferta().ofertas != null &&
+  selecaoOfertaDataService.$selecaoOferta().ofertas.length === 0
+) {
+  @if (selecaoOfertaService.$isLoading()) {
+    <p-skeleton width="100%" height="90px" /><br />
+  } @else {
+    <app-selecao-oferta-vazio></app-selecao-oferta-vazio>
+  }
+} @else {
+  @if (this.selecaoOfertaService.exibirBotaoSelecionarHierarquia()) {
+    <p-button
+      class="smc-button btn-block"
+      styleClass="smc-btn-salvar smc-btn-custom-secundario smc-btn-sm"
+      [disabled]="selecaoOfertaDataService.$desabilitarBotaoAlterarHierarquia()"
+      (onClick)="selecionarHierarquia()"
+    >
+      Alterar {{ selecionaDataService.$selecaoOferta().labelOferta }}
+    </p-button>
+  }
+
+  @if (
+    selecaoOfertaService.$numeroNoFolha() > 1 &&
+    selecaoOfertaDataService.$selecaoOferta().numeroMaximoOfertaPorInscricao !=
+      1
+  ) {
+    <div class="smc-gpi-dica-icon">
+      <p>
+        @if (ehCelular()) {
+          <b>Dica: </b>Para reordenar uma opção, toque e segure um item para
+          selecioná-lo e, em seguida, arraste-o para a posição desejada.
+        } @else {
+          <b>Dica: </b>Para reordenar uma opção, arraste e solte o item na
+          posição desejada.
+        }
+      </p>
+    </div>
+  }
+
+  <br />
+  @if (selecaoOfertaDataService.$selecaoOferta().processoPossuiTaxa) {
+    <app-selecao-oferta-com-taxa></app-selecao-oferta-com-taxa>
+  } @else {
+    <app-selecao-oferta-sem-taxa> </app-selecao-oferta-sem-taxa>
+  }
+}
+@if (selecionaDataService.$exibirMensagemBoletoPago()) {
+  <div class="smc-gpi-alert-icon dica-icon-grey">
+    <p>
+      Não será possível realizar alterações nos valores das taxas, uma vez que o
+      boleto de inscrição já foi pago.
+    </p>
+  </div>
+}
+<app-layout-navegacao> </app-layout-navegacao>
+
+<p-dialog
+  class="smc-gpi-modal-selecao-ofertas"
+  [header]="selecaoOfertaService.$tituloModalSelecaoOferta()"
+  [modal]="true"
+  [style]="{ width: '70rem' }"
+  [breakpoints]="{ '1199px': '90vw', '575px': '95vw' }"
+  [maximizable]="true"
+  [(visible)]="selecaoOfertaService.abrirModal"
+  (onHide)="botaoCancelarSelecionarOferta()"
+>
+  @if (selecaoOfertaService.abrirModal) {
+    <app-selecao-oferta-hierarquia
+      [dadosHierarquia]="selecaoOfertaDataService.$hierarquia()"
+    ></app-selecao-oferta-hierarquia>
+  }
+
+  <ng-template #footer>
+    <p-button
+      class="smc-button"
+      styleClass="smc-btn-custom-secundario"
+      label="Cancelar"
+      [text]="true"
+      severity="secondary"
+      (click)="botaoCancelarSelecionarOferta()"
+    />
+    <p-button
+      class="smc-button"
+      styleClass="smc-btn-custom smc-btn-confirmar-icotext-destaque smc-btn-principal"
+      label="Selecionar"
+      severity="primary"
+      [disabled]="selecionaDataService.$ativarBotaoSelecionaModalHierarquia()"
+      (click)="botaoSelecionarOferta()"
+    />
+  </ng-template>
+</p-dialog>

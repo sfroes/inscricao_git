@@ -1,0 +1,170 @@
+﻿@model SMCPagerModel<ConsultaCandidatosProcessoListaViewModel>
+
+
+
+@(Smc.Grid("gridListaCandidatos", Model)
+    .Action("ListarCandidatosProcesso", "AcompanhamentoSelecao")
+    .AllowExportToExcel(true)
+    .AllowSort()
+    .FieldColumn(m => m.SeqInscricao)
+    .FieldColumn(m => m.Candidato)
+    .FieldColumn(m => m.DataInscricao, allowSort: true)
+    .FieldColumn(m => m.Opcao)
+    .ContentColumn(
+    @<text>
+        @{
+            var m = item as ConsultaCandidatosProcessoListaViewModel;
+        }
+        @* Quando houver uma justificativa do candidato para a oferta, ou a oferta original for diferente da oferta atual,
+         exibir a descrição da oferta como um link, para que o usuário possa clicar e visualizar as informações. *@
+        @if (!m.PossuiJustificativa && m.SeqOferta == m.SeqOfertaOriginal)
+        {
+            @m.Oferta
+        }
+        else
+        {
+            @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+    .Attribute(SMCMvcConsts.MODAL_ID, "modalDadosOferta")
+    .CssClass("smc-gpi-btn-link-grid")
+    .Ajax(isPost: false)
+    .Text(m.Oferta)
+    .Tooltip(Smc.GetUIResource("ModalDadosOferta_Title"))
+    .Url(Url.Action("ExibirDadosOferta", "AcompanhamentoSelecao",
+        new
+        {
+            @seqInscricaoOferta = new SMCEncryptedLong(m.SeqInscricaoOferta)
+        }))
+        .Type(SMCButtonType.Link)
+            )
+        }
+    </text>, Smc.GetUIResource("Oferta"))
+    //.FieldColumn(m => m.Situacao)
+    .ContentColumn(
+    @<text>
+        @{
+            var m = item as ConsultaCandidatosProcessoListaViewModel;
+        }
+
+        @if (!m.SeqInscricaoHistoricoSituacao.HasValue)
+        {
+            @m.Situacao
+        }
+        else
+        {
+            @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                            .Attribute(SMCMvcConsts.MODAL_ID, "modalMotivoJustificativaSituacao")
+                            .CssClass("smc-gpi-btn-link-grid")
+                            .Ajax(isPost: false)
+                            .Text(m.Situacao)
+                            .Tooltip(Smc.GetUIResource("ModalParecerResponsavel_Title"))
+                            .Url(Url.Action("ExibirMotivoJustificativaSituacao", "AcompanhamentoSelecao",
+                                new
+                                {
+                                    @seqInscricaoHistoricoSituacao = m.SeqInscricaoHistoricoSituacao
+                                }))
+                                .Type(SMCButtonType.Link)
+            )
+        }
+    </text>, Smc.GetUIResource("Situacao"))
+    .FieldColumn(m => m.Nota)
+    .FieldColumn(m => m.SegundaNota)
+    .FieldColumn(m => m.Classificacao)
+    .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "smc-grid-coluna-botoes", false,
+            item => Smc.Button("ConsultaInscricao", "ConsultaInscricao", new {
+                area = "INS",
+                seqInscricao = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqInscricao),
+                origem = "SEL"
+            }, "AcompanhamentoProcesso")
+                        .Type(SMCButtonType.Link)
+                        .SecurityToken(UC_INS_003_01_06.CONSULTA_INSCRITO),
+
+            item => Smc.Button("LancamentoResultado", "LancamentoResultado", new {
+                seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqProcesso),
+                seqOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqOferta),
+                seqInscricaoOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqInscricaoOferta)
+            }, "AnaliseSelecao")
+                        .Type(SMCButtonType.Link)
+                        .SecurityToken(UC_SEL_001_01_04.LANCAMENTO_RESULTADO),
+
+            item => Smc.Button("DesfazerLancamentoResultado", "DesfazerLancamento", new {
+                seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqProcesso),
+                seqInscricaoOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqInscricaoOferta)
+            }, "AnaliseSelecao")
+                        .Ajax(isPost: false, onSuccess: "$('[data-behavior=\"smc-behavior-pesquisar\"]').trigger('click');")
+                        .Type(SMCButtonType.Link)
+                        .Confirm(Smc.GetUIResource("Mensagem_Titulo_DesfazerLancamento"),
+                                 string.Format(Smc.GetUIResource("Mensagem_Texto_DesfazerLancamento"), (item as ConsultaCandidatosProcessoListaViewModel).Candidato))
+                        .SecurityToken(UC_SEL_001_01_04.LANCAMENTO_RESULTADO),
+
+             item => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                         .Attribute(SMCMvcConsts.MODAL_ID, "modalAlteracaoOferta")
+                         .Text(Smc.GetUIResource("Botao_AlterarOferta"))
+                         .Tooltip(Smc.GetUIResource("Botao_AlterarOferta_Tooltip"))
+                         .Ajax(isPost: true, updateTargetId: "divCandidatosProcesso")
+                         .SecurityToken(UC_SEL_001_01_10.ALTERAR_OFERTA)
+                         .Url(Url.Action("AlterarOferta", "AcompanhamentoSelecao",
+                             new
+                             {
+                                 seqInscricao = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqInscricao),
+                                 seqOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqOferta),
+                                 seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqGrupoOferta),
+                                 seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqProcesso)
+                             }))
+                         .Type(SMCButtonType.Link),
+
+             item => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                         .Attribute(SMCMvcConsts.MODAL_ID, "modalConvocacao")
+                         .Text(Smc.GetUIResource("Botao_Convocacao"))
+                         .Tooltip(Smc.GetUIResource("Botao_Convocacao_Tooltip"))
+                         .Ajax(isPost: false, updateTargetId: "divCandidatosProcesso")
+                         .SecurityToken(UC_SEL_001_01_05.CONVOCACAO)
+                         .Url(Url.Action("Convocacao", "AnaliseSelecao",
+                             new
+                             {
+                                 seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqProcesso),
+                                 seqOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqOferta),
+                                 InscricoesOfertas = (item as ConsultaCandidatosProcessoListaViewModel).SeqInscricaoOferta
+                             }))
+                         .Type(SMCButtonType.Link),
+
+            item => {
+                var m = item as ConsultaCandidatosProcessoListaViewModel;
+
+                return Smc.Button("HistoricoSituacao", "HistoricoSituacao", new
+                {
+                    seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqProcesso),
+                    seqInscricaoOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqInscricaoOferta),
+                }, "AnaliseSelecao")
+                   .Type(SMCButtonType.Link)
+                   .SecurityToken(UC_SEL_001_01_06.PESQUISAR_HISTORICO_SITUACAO_SELECAO);
+            },
+
+            item =>
+            {
+                var m = item as ConsultaCandidatosProcessoListaViewModel;
+
+                if (m.BackURL == null || m.BackURL != Request.Url.AbsoluteUri.Replace("AcompanhamentoInscrito/Listar", "AcompanhamentoInscrito"))
+                {
+                    if (Request.UrlReferrer == null)
+                    {
+                        m.BackURL = Request.Url.AbsoluteUri;
+                    }
+                    else
+                    {
+                        m.BackURL = Request.UrlReferrer.AbsoluteUri;
+                    }
+                }
+
+                return Smc.Button("ConsultaNotificacao", "Index", new
+                {
+                    seqInscrito = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqInscrito),
+                    seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqGrupoOferta),
+                    seqOferta = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqOferta),
+                    seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConsultaCandidatosProcessoListaViewModel).SeqProcesso),
+                    backURL = m.BackURL,
+                    area = "NOT"
+                }, "ConsultaNotificacao")
+                         .Type(SMCButtonType.Link)
+                         .SecurityToken(UC_NOT_001_01_01.CONSULTAR_NOTIFICACAO);
+
+            }))

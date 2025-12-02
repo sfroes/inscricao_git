@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout_Mobile.cshtml";
+}
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
+
+    .cam {
+        width: 100%;
+        height: 30%;
+    }
+
+    .success h2 {
+        color: #27935b !important;
+    }
+
+    .fail h2 {
+        color: #c51b1b !important;
+    }
+
+    .leitura {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem;
+    }
+
+    #invalido {
+        list-style: none;
+        padding: 0;
+    }
+
+    #valido {
+        list-style: none;
+        padding: 0;
+    }
+
+        #invalido li,
+        #valido li {
+            display: flex;
+            align-items: center;
+        }
+
+            #invalido li svg,
+            #valido li svg {
+                width: 25px;
+                height: 25px;
+            }
+
+    .valido h2 {
+        color: green !important;
+    }
+
+    .invalido h2 {
+        color: darkred !important;
+    }
+
+    .video {
+        position: relative;
+    }
+
+    #qr-video {
+        width: 100%;
+        max-width: 600px;
+    }
+</style>
+
+<div class="container">
+
+    <div class="video">
+        <video id="qr-video"></video>
+    </div>
+
+    <div class="leitura">
+        <div class="valido">
+            <h2>Sucesso:</h2>
+            <ul id="valido" class="success">
+            </ul>
+        </div>
+
+        <div class="invalido">
+            <h2>Falha:</h2>
+            <ul id="invalido" class="fail">
+            </ul>
+        </div>
+    </div>
+
+</div>

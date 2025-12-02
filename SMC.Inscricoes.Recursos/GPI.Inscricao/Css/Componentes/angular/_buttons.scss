@@ -1,0 +1,148 @@
+p-button {
+    button.smc-btn-secundario.smc-gpi-navegacao,
+    button.smc-btn-fechar-icotext.smc-gpi-navegacao,
+    button.smc-wizard-barra-acoes.smc-gpi-navegacao,
+    button.smc-btn-anterior-icotext.smc-gpi-navegacao,
+    button.smc-btn-yes.smc-gpi-navegacao,
+    button.smc-btn-no.smc-gpi-navegacao,
+    button.smc-btn-custom-secundario {
+        text-transform: uppercase !important;
+        font-size: 1.2em;
+        padding: 1px 10px !important;
+        border: none !important;
+        border-radius: 5px !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        text-align: center !important;
+        height: 58px !important;
+        width: 100% !important;
+        font-weight: 500 !important;
+
+        @media screen and (min-width: 1130px) {
+            min-width: 213px;
+        }
+
+        > i {
+            display: none;
+        }
+    }
+
+    > button.voltar {
+        @media screen and (max-width: 850px) {
+            font-size: 0 !important;
+
+            &:before {
+                font-size: 1.28rem !important;
+            }
+        }
+    }
+
+    button.smc-btn-principal.smc-gpi-navegacao,
+    button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-principal.smc-gpi-navegacao,
+    button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-confirmar-icotext-destaque.smc-gpi-navegacao,
+    button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-proximo-icotext-destaque.smc-gpi-navegacao,
+    button.smc-wizard-barra-acoes.smc-btn-proximo-icotext-destaque.smc-gpi-navegacao,
+    button.smc-btn-confirmar-icotext-destaque.smc-gpi-navegacao,
+    button.smc-btn-custom {
+        text-transform: uppercase !important;
+        font-size: 1.2em;
+        padding: 1px 10px !important;
+        border: 0 !important;
+        border-radius: 5px !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        text-align: center !important;
+        width: 100% !important;
+        height: 58px !important;
+        font-style: normal !important;
+        font-weight: 600 !important;
+        margin-left: 1rem;
+
+        @media screen and (max-width: 850px) {
+            margin-left: .5rem;
+        }
+
+        @media screen and (min-width: 1130px) {
+            min-width: 213px;
+        }
+
+        > i {
+            display: none;
+        }
+    }
+}
+
+.smc-gpi-linha-botoes-espacamento {
+    > p-button:last-child {
+        order: 1 !important;
+    }
+
+    > p-button:first-child {
+        margin-left: 20%;
+        order: 2;
+    }
+
+    > p-button:nth-child(2) {
+        order: 2;
+    }
+}
+
+app-layout-navegacao {
+    .smc-gpi-linha-botoes {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .smc-gpi-agrupa-linha-btn {
+        margin: 0 !important;
+        display: flex;
+        align-items: center;
+    }
+}
+
+p-button.smc-gpi-taxas-btn {
+    position: fixed;
+    width: 90px;
+    right: 0;
+    bottom: 7em;
+    z-index: 100;
+
+    @media screen and (max-width: 991px) {
+        width: 80px !important;
+    }
+
+    > button.p-button {
+        padding: 0 !important;
+        min-width: 100% !important;
+        border-color: var(--ang-border-default) !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+        border-radius: 1em 0 0 1em !important;
+        font-weight: 600 !important;
+        font-size: 1em;
+
+        &:before {
+            content: "\e96b";
+            @include prime-icon;
+            margin-right: -4px;
+            border: 1px solid var(--color-primary);
+            border-radius: 40px;
+            padding: 0.3rem;
+            font-size: 0.7rem;
+        }
+    }
+}
+
+.smc-gpi-oferta-vazio {
+    .smc-btn-principal[disabled],
+    .smc-btn-princip[disabled] {
+        background-color: var(--white) !important;
+        border-color: var(--grey) !important;
+        color: var(--grey) !important;
+        cursor: no-drop;
+
+        &:hover {
+            color: var(--grey) !important;
+        }
+    }
+}
+

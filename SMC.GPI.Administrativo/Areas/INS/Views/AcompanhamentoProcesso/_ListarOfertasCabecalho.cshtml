@@ -1,0 +1,11 @@
+﻿@*@model OfertaViewModel
+
+
+<li><h2>Oferta: @Model.Descricao</h2></li>
+<li>Quantidade - Pagas - Documentação entregue - Confirmadas - Não Confirmadas -Deferidas -Não deferidas</li>
+<li>
+	@Model.QtdInscricoes  -  @Model.QtdInscricoesPagas - @Model.QtdDocumentacaoEntregue
+	@Model.QtdInscricoesConfirmadas  - @Model.QtdInscricoesNaoConfirmadas  - @Model.QtdInscricoesDeferidas
+	@Model.QtdInscricoesNaoDeferidas
+</li>
+*@

@@ -1,0 +1,28 @@
+﻿@model SMCPagerModel<DocumentoRequeridoListaViewModel>
+
+@(Smc.Grid("gridDocumentacaoRequerida")
+     .Action("ListarDocumentosRequeridos", "DocumentoRequerido")
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary,2,"","", "smc-grid-coluna-botoes",
+                                                        item => Smc.Button(SMCButtonBehavior.Alterar, "Editar",
+                                                            new {
+                                                                @seqEtapa = SMCDESCrypto.EncryptNumberForURL((item as DocumentoRequeridoListaViewModel).SeqEtapaProcesso),
+                                                                @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as DocumentoRequeridoListaViewModel).SeqProcesso),
+                                                                @seq = SMCDESCrypto.EncryptNumberForURL((item as DocumentoRequeridoListaViewModel).Seq)
+                                                            }, "DocumentoRequerido")
+                                                           .DisplayMode(SMCButtonDisplayMode.Icon)
+                                                           .SecurityToken(UC_INS_001_03_14.MANTER_DOCUMENTACAO_REQUERIDA),
+
+                                                                item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir",
+                                                                    new {
+                                                                        @seqEtapaProcesso = SMCDESCrypto.EncryptNumberForURL((item as DocumentoRequeridoListaViewModel).SeqEtapaProcesso),
+                                                                        @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as DocumentoRequeridoListaViewModel).SeqProcesso),
+                                                                        @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL((item as DocumentoRequeridoListaViewModel).SeqConfiguracaoEtapa),
+                                                                        @seq = SMCDESCrypto.EncryptNumberForURL((item as DocumentoRequeridoListaViewModel).Seq) }, "DocumentoRequerido")
+                                                           .DisplayMode(SMCButtonDisplayMode.Icon)
+                                                           .SecurityToken(UC_INS_001_03_14.MANTER_DOCUMENTACAO_REQUERIDA)
+                                                           .Ajax(isPost: true, updateTargetId: "#divGridDocumentacaoRequerida")
+                                                           .Confirm(Smc.GetUIResource("Exclusao_Documentacao_Requerida_Title"),
+                                                         string.Format(Smc.GetUIResource("Exclusao_Documentacao_Requerida_Confirmacao"), (item as DocumentoRequeridoListaViewModel).DescricaoTipoDocumento))
+
+))

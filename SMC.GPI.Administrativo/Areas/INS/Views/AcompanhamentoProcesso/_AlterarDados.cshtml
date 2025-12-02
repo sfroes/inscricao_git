@@ -1,0 +1,138 @@
+﻿@model AlterarDadosInscritoViewModel
+
+@***************************************************************************************************************
+       Esta pagina contem JS(LimparEstadosCidadesLocalidade) do administrativo
+       que manipula o estado e cidade do inscrito, por isso o script esta no final da pagina.
+    ***************************************************************************************************************@
+
+@using (Smc.Header("headerAlterarDados", SMCHeaderType.Primary)
+          .Item(prop => prop.Seq, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+          .Item(prop => prop.Nome, sizeSM: SMCSize.Grid19_24, sizeMD: SMCSize.Grid19_24, sizeLG: SMCSize.Grid19_24, sizeXS: SMCSize.Grid19_24)
+          .Begin())
+{
+
+}
+
+@using (Smc.Form("formAtualizarInscrito", "AlterarDados").Begin())
+{
+    @Smc.EditorFor(e => e.ExibirCPF)
+    @Smc.EditorFor(e => e.ExibirDataNascimento)
+    @Smc.EditorFor(e => e.ExibirEmail)
+    @Smc.EditorFor(e => e.ExibirEndereco)
+    @Smc.EditorFor(e => e.ExibirEstadoCivil)
+    @Smc.EditorFor(e => e.ExibirFiliacao)
+    @Smc.EditorFor(e => e.ExibirNacionalidade)
+    @Smc.EditorFor(e => e.ExibirNaturalidade)
+    @Smc.EditorFor(e => e.ExibirNomeSocial)
+    @Smc.EditorFor(e => e.ExibirNome)
+    @Smc.EditorFor(e => e.ExibirNumeroIdentidade)
+    @Smc.EditorFor(e => e.ExibirOrgaoEmissorIdentidade)
+    @Smc.EditorFor(e => e.ExibirOutrosEnderecosEletronicos)
+    @Smc.EditorFor(e => e.ExibirPaisOrigem)
+    @Smc.EditorFor(e => e.ExibirPassaporte)
+    @Smc.EditorFor(e => e.ExibirSexo)
+    @Smc.EditorFor(e => e.ExibirTelefone)
+    @Smc.EditorFor(e => e.ExibirUfIdentidade)
+    @Smc.EditorFor(e => e.BackUrl)
+    using (Smc.Div("fieldsetCadastroInscrito").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.Seq)
+        @Smc.EditorFor(prop => prop.SeqUsuarioSas)
+        @Smc.EditorFor(prop => prop.Nome).Focus()
+        @Smc.EditorFor(prop => prop.NomeSocial)
+
+        @Smc.EditorFor(prop => prop.DataNascimento)
+        @Smc.EditorFor(prop => prop.Sexo)
+        @Smc.EditorFor(prop => prop.EstadoCivil)
+    }
+
+    using (Smc.Fieldset("fieldsetCadastroNacionalidadeInscrito").Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.Nacionalidade)
+        @Smc.EditorFor(prop => prop.CodigoPaisNacionalidade)
+    }
+
+    using (Smc.Fieldset("fieldsetCadastroNaturalidadeInscrito").Size(SMCSize.Grid12_24, SMCSize.Grid24_24, SMCSize.Grid12_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.EstadoCidade)
+        @Smc.EditorFor(prop => prop.DescricaoNaturalidadeEstrangeira)
+    }
+
+    using (Smc.Fieldset("fieldsetCpfPassaporte").Size(SMCSize.Grid16_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.Cpf)
+        @Smc.EditorFor(prop => prop.NumeroPassaporte)
+        @Smc.EditorFor(m => m.DataValidadePassaporte)
+        @Smc.EditorFor(m => m.CodigoPaisEmissaoPassaporte)
+    }
+
+    using (Smc.Fieldset("fieldsetRGInscrito").Size(SMCSize.Grid8_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.NumeroIdentidade)
+        @Smc.EditorFor(prop => prop.OrgaoEmissorIdentidade)
+        @Smc.EditorFor(prop => prop.UfIdentidade)
+    }
+
+    using (Smc.Fieldset("fieldsetCadastroFiliacaoInscrito").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.NomeMae)
+        @Smc.EditorFor(prop => prop.NomePai)
+    }
+
+    using (Smc.Div("fieldSetEnderecos").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Enderecos)
+    }
+
+    @Smc.EditorFor(prop => prop.Telefones)
+
+    using (Smc.Fieldset("fieldsetCadastroEmailInscrito").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Email)
+        @Smc.EditorFor(prop => prop.EmailConfirmacao)
+    }
+
+    @Smc.MasterDetail(prop => prop.EnderecosEletronicos)
+
+
+    var origem = Model.Origem != null ? SMCDESCrypto.EncryptNumberForURL((long)Model.Origem) : string.Empty;
+
+    var buttonset = Smc.ButtonSet().CssClass("smc-gpi-linha-botoes").Size(SMCSize.Grid24_24);
+
+    buttonset.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+        .Highlight()
+                .Text("Salvar")
+                .Tooltip("Salvar")
+                .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                .Action("AlterarDados", "AcompanhamentoProcesso", new { area = "INS", origem = origem })
+
+                );
+
+    buttonset.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+                .Text("Salvar e Sincronizar com GDM/CAD")
+                .Tooltip("Salvar e Sincronizar com GDM/CAD")
+                .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                .Action("AlterarDadosSincronizar", "AcompanhamentoProcesso", new { area = "INS", origem = origem })
+                );
+
+    if (origem.Length > 0)
+    {
+        buttonset.AddButton(Smc.Button("cancelarProcesso")
+                .Type(SMCButtonType.Link)
+                .Action("CancelarAlterarDados", "AcompanhamentoProcesso", new { area = "INS", origem = origem, backUrl = Model.BackUrl })
+                .CssClass("smc-btn-cancelar-icotext"));
+    }
+    else
+    {
+        buttonset.AddButton(Smc.Button("cancelarAlteracao")
+                .Type(SMCButtonType.Link)
+                .Action("CancelarAlterarDados", "AcompanhamentoProcesso", new { area = "INS" })
+                .CssClass("smc-btn-cancelar-icotext"));
+    }
+
+    @buttonset
+}
+
+@section Scripts{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/LimparEstadosCidadesLocalidade.js")"></script>
+}

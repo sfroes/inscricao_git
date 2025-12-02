@@ -1,0 +1,17 @@
+﻿@model ConfigurarNotificacaoViewModel
+
+@using (Smc.Div("fieldsetSelecaoTipoNotificacao").Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.SeqProcesso)
+    @Smc.EditorFor(prop => prop.SeqTipoNotificacao)
+    @Smc.EditorFor(prop => prop.OldSeqTipoNotificacao)
+    @Smc.EditorFor(prop => prop.EnvioAutomatico)
+}
+
+<div id="ObsTipoNotificacao" data-url="@Url.Action("CarregaObservacoes", "ConfigurarNotificacao")" class="smc-gpi-instrucoes-iniciais" style="display:none">
+    <label>@Smc.GetUIResource("Label_ObservacaoTipoNotificacao")</label>
+    <span></span>
+</div>
+
+@Smc.WizardView()

@@ -1,0 +1,25 @@
+﻿@model SMCPagerModel<PosicaoConsolidadaPorGrupoOfertaListaViewModel>
+
+
+@(Smc.List("listaDetalhadaGrupoOferta", Model)
+        .AllowExportExcel()
+        .Button(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalLegendaPosicaoConsolidada")
+            .Text(Smc.GetUIResource("Botao_LegendaPosicao"))
+                .CssClass("smc-btn-ico-ajuda"))
+        .Pager("divGridProcessoGrupoOferta", "ListarProcessoGrupoOferta", "AcompanhamentoSelecao")
+        .GroupByProperty(prop => prop.Descricao,
+        @<text>
+
+            @Html.Partial("_CabecalhoProcessoGrupoOferta", item)
+
+        </text>)
+        .HtmlTemplate(
+        @<text>
+            @foreach (var oferta in item.PosicoesConsolidadasOfertas)
+            {
+                @Html.Partial("_DetalheOfertaGrupoOferta", oferta)
+            }
+        </text>
+    )
+)

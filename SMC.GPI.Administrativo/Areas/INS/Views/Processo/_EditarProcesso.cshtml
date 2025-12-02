@@ -1,0 +1,126 @@
+﻿@model ProcessoViewModel
+@using SMC.GPI.Administrativo.Areas.INS.Views.Processo.App_LocalResources
+
+@using (Smc.Form("formCadastroProcesso").Ajax().ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.TabSet("tabCadastroProcesso").Begin())
+    {
+        using (Smc.Tab("tabDadosProcesso").Begin())
+        {
+            using (Smc.Div("fieldsetCadastroProcesso").Begin())
+            {
+                if (Model.PossuiIntegracao)
+                {
+                    <div class="smc-gpi-instrucoes-iniciais">
+                        <span>
+                            @Smc.GetUIResource("Label_PossuiIntegracao")
+                        </span>
+                    </div>
+                }
+                @Smc.EditorFor(prop => prop.Seq)
+                @Smc.EditorFor(prop => prop.UidProcesso)
+                @Smc.EditorFor(prop => prop.Descricao).Focus()
+
+                @(Smc.EditorFor(prop => prop.SeqUnidadeResponsavel).Attribute("data-url-reload",
+                            Url.Action("RecarregarContatosProcesso", "Processo")).Readonly(Model.PossuiIntegracao))
+                @Smc.EditorFor(prop => prop.SeqCliente)
+
+                @Smc.EditorFor(prop => prop.SeqTipoProcesso).Readonly(Model.PossuiIntegracao)
+                @Smc.EditorFor(prop => prop.SeqTipoHierarquiaOferta)
+                @Smc.EditorFor(prop => prop.SeqTemplateProcessoSGF)
+                @Smc.EditorFor(prop => prop.SeqUnidadeResponsavelTipoProcessoIdVisual)
+
+                @Smc.EditorFor(prop => prop.AnoReferencia).Readonly(Model.PossuiIntegracao)
+                @Smc.EditorFor(prop => prop.SemestreReferencia).Readonly(Model.PossuiIntegracao)
+                @Smc.EditorFor(prop => prop.DataCancelamento)
+                @Smc.EditorFor(prop => prop.DataEncerramento)
+                @Smc.EditorFor(prop => prop.SeqEvento)
+
+                @Smc.EditorFor(prop => prop.ExibeRelacaoGeral)
+
+                @Smc.EditorFor(prop => prop.ExisteNumeroMaximoInscricoesPessoa).Required()
+                @Smc.EditorFor(prop => prop.MaximoInscricoesPorInscrito)
+
+                @Smc.EditorFor(m => m.ControlaVagaInscricao)
+                @Smc.EditorFor(m => m.ExibeArvoreFechada)
+
+                @Smc.EditorFor(prop => prop.IdsTagManager)
+
+                @Smc.EditorFor(x => x.DataInicioAtividade)
+                @Smc.EditorFor(prop => prop.HabilitaDatasEvento)
+
+
+
+                using (Smc.Div("divLink").Dependency("IdsTagManager", "BuscarLinkProcesso", "Processo", "INS", false, "UidProcesso").Begin())
+                {
+                    @Html.Partial("_LinkProcesso")
+                }
+
+
+
+                @Smc.EditorFor(x => x.Idiomas)
+
+                @Smc.EditorFor(x => x.HabilitaGestaoEvento)
+            }
+        }
+
+        using (Smc.Tab("tabCamposCadastroInscrito").Begin())
+        {
+
+            <div>
+                @*<div class="ui-draggable smc-modal-window-auto smc-message-fixed">
+                    <div class="smc-modal-header">
+                        <h2><i></i>Atenção</h2>
+                    </div>*@
+                <!--<div class="smc-modal-content">--><p class="smc-gpi-orientacao-cad-inscrito">@UIResource.MensagemInformativaCamposInscrito</p>@*</div>*@
+                @*</div>*@
+            </div>
+
+            @Smc.EditorFor(e => e.CamposInscrito)
+        }
+
+        using (Smc.Tab("tabDadosEvento").ConditionalDisplay("HabilitaGestaoEvento", true).Begin())
+        {
+            using (Smc.Div("fieldsetDadosEvento").ConditionalDisplay("HabilitaGestaoEvento", true).Begin())
+            {
+                @Smc.EditorFor(x => x.DataInicioEvento)
+                @Smc.EditorFor(x => x.DataFimEvento)
+                @Smc.EditorFor(prop => prop.CodigoEventoSAE)
+                @Smc.EditorFor(prop => prop.ExibirPeriodoAtividadeOferta).CssClass("smc-gpi-responsividade-radio")
+                @Smc.EditorFor(prop => prop.VerificaCoincidenciaHorario).CssClass("smc-gpi-responsividade-radio")
+                @Smc.EditorFor(prop => prop.HoraAberturaCheckin).Required()
+
+
+            }
+        }
+
+
+        using (Smc.Tab("tabDocumentosEFormularios").Begin())
+        {
+            @Html.Partial("_DocumentosEFormularios", Model)
+        }
+
+        using (Smc.Tab("tabDadosTaxas").Begin())
+        {
+            using (Smc.Div("fieldsetCadastroDadosTaxas").Begin())
+            {
+                @Smc.EditorFor(prop => prop.Taxas)
+            }
+        }
+
+        using (Smc.Tab("tabDadosContato").Begin())
+        {
+            <div id="divContatosProcesso">
+                @Html.Partial("_DadosContatoProcesso", Model)
+            </div>
+        }
+    }
+
+    @(Smc.ButtonSet()
+                .AddComponent(Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(1, SMCButtonSetGroupedStyle.Arrow)
+                                    .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Salvar").Highlight())
+                                    .AddButton(Smc.Button(SMCButtonBehavior.SalvarNovo).Action("SalvarNovo"))
+                                    .AddButton(Smc.Button(SMCButtonBehavior.SalvarSair).Action("SalvarSair")))
+                .AddButton(Smc.Button("voltar").CssClass("smc-btn-voltar-icotext").Type(SMCButtonType.Link).Url("Index"))
+    )
+}

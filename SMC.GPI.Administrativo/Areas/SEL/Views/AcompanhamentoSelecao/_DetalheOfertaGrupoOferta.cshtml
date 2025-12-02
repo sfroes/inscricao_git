@@ -1,0 +1,35 @@
+﻿@model PosicaoConsolidadaPorOfertaListaViewModel
+
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("row smc-list-item-agrupado").Begin())
+{
+    using (Smc.Div().Size(SMCSize.Grid23_24).Begin())
+    {
+        @Smc.DisplayFor(prop => prop.Descricao)
+        @Smc.DisplayFor(prop => prop.CandidatosConfirmados)
+        @Smc.DisplayFor(prop => prop.CandidatosDesistentes)
+        @Smc.DisplayFor(prop => prop.CandidatosReprovados)
+        @Smc.DisplayFor(prop => prop.CandidatosSelecionados)
+        @Smc.DisplayFor(prop => prop.CandidatosExcedentes)
+        @Smc.DisplayFor(prop => prop.Convocados)
+        @Smc.DisplayFor(prop => prop.ConvocadosDesistentes)
+        @Smc.DisplayFor(prop => prop.ConvocadosConfirmados)
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid1_24).CssClass("smc-buttonset-vertical-secundario").Begin())
+    {
+
+        string guid = Guid.NewGuid().ToString();
+
+        @(Smc.ContextMenu("menu-componente-config-" + guid)
+                    .DefaultButton()
+                    .OpenEvent(SMCMouseEvent.LeftClick)
+                     .Item(@Smc.GetUIResource("Botao_Consultar_Inscricoes_Oferta"), "ConsultaSelecoesProcesso", "AcompanhamentoSelecao",
+                            new
+                            {
+                                seqOferta = (SMCEncryptedLong)Model.Seq,
+                                seqProcesso = (SMCEncryptedLong)Model.SeqProcesso,
+                                seqGrupoOferta = (SMCEncryptedLong)Model.SeqGrupoOferta
+                            })
+        )
+    }
+}

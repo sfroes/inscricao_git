@@ -1,0 +1,13 @@
+﻿@model ParametroNotificacaoViewModel
+
+@using (Smc.Header("headerParametros", SMCHeaderType.Primary)
+    .Item(prop => prop.TipoNotificacao, sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24)
+    .Begin())
+{ }
+
+<div class="smc-gpi-instrucoes-iniciais">
+    <span>@Smc.GetUIResource("Info")</span>
+</div>
+
+@Smc.EditorFor(prop => prop.Seq)
+@Smc.EditorFor(prop => prop.ParametrosEnvioNotificacao)

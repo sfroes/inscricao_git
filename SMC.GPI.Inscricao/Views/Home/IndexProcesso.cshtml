@@ -1,0 +1,114 @@
+﻿@model ProcessoHomeViewModel
+
+@*@section PainelLateral
+    {
+        @Html.Partial("_PainelLateralHome")
+    }*@
+<div class="smc-gpi-painel-central">
+    <h1>@Model.DescricaoProcesso</h1>
+
+    <div class="display-flex flex-column smc-gpi-lista-home-processo">
+        @Html.Raw(HttpUtility.HtmlDecode(@Model.DescricaoComplementarProcesso))
+
+        @*@foreach (var idioma in @Model.IdiomasDisponiveis)
+            {
+                @Smc.LanguageButton(@idioma).AllowChange(true)
+            }*@
+        @if (!string.IsNullOrEmpty(Model.MensagemInformativa))
+        {
+            <div class="smc-gpi-lista-inscricoes-mensagem">@Model.MensagemInformativa</div>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.UrlInformacaoComplementar))
+        {
+            <div class="smc-linha-btn-terciario margin-top-30">
+
+                <a href="@Model.UrlInformacaoComplementar" target="_blank">@Smc.GetUIResource("Texto_Mais_Informacoes")</a>
+            </div>
+        }
+
+    </div>
+    @*@if ( !Model.TodasOfertasProcessoInativas)
+        {
+            @Html.Action("ListarEtapaInscricaoProcesso", new { @seqProcesso = @Model.SeqProcesso })
+        }*@
+
+    @if (Model.FormularioImpacto.ExibirFormularioImpacto)
+    {
+        <div id="chama-formulario" class="smc-gpi-box-conteudo-formulario">
+            <input type="hidden" value="@Model.FormularioImpacto.ExibirFormularioImpacto.ToString()" id="exibir-formulario-impacto" />
+            <div class="smc-gpi-formulario-data">
+                <h2>@Model.FormularioImpacto.DescricaoMensagemInformativa</h2>
+                @if (Model.FormularioImpacto.DataFimResposta.HasValue)
+                {
+                    <div class="smc-gpi-data-formulario"><p>@Smc.GetUIResource("Chamada_Formulario_Impacto_Disponivel")</p><p>@Model.FormularioImpacto.DataFimResposta.Value.ToShortDateString()</p></div>@*ESTE DIV AQUI NÃO APARECERÁ CASO NÃO TENHA DATA FIM*@
+                }
+            </div>
+
+            @*<p>@Smc.GetUIResource("Chamada_Formulario_Impacto_Complemento")</p>*@
+            <p>@Model.FormularioImpacto.MensagemInformativa</p>
+            @{
+                SMCButtonFluentConfiguration AvaliarFormulario = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalFormularioImpacto")
+                .Attribute("id", "btn-formulario-impacto")
+                .Ajax(isPost: false)
+                .CssClass("smc-btn-principal")
+                .Text(Smc.GetUIResource("Botao_FormularioImpacato"))
+                .Tooltip(Smc.GetUIResource("Botao_FormularioImpacato"))
+                .Url(Url.Action("CarregarFormularioImpacto", "Inscricao",
+                new
+                {
+                    seqDadoFormulario = Model.FormularioImpacto.SeqDadoFormulario,
+                    SeqInscricao = Model.FormularioImpacto.SeqInscricao,
+                    seqFormularioSGF = Model.FormularioImpacto.SeqFormulario,
+                    seqVisaoSGF = Model.FormularioImpacto.SeqVisaoSGF,
+                    seqProcesso = Model.SeqProcesso,
+                    uidProcesso = Model.UidProcesso,
+                    area = "INS"
+                }))
+                .Type(SMCButtonType.InputButton);
+
+                @(Smc.ButtonSet().Type(SMCButtonSetType.Primary).AddButton(AvaliarFormulario))
+            }
+        </div>
+    }
+
+    @if (!Model.TodasOfertasProcessoInativas)
+    {
+        @Html.Action("ListarEtapaInscricaoProcesso", new { @seqProcesso = @Model.SeqProcesso })
+    }
+
+</div>
+<div class="smc-gpi-painel-lateral">
+    <div class="smc-gpi-painel-conteudo">
+        <h2>@Smc.GetUIResource(Model.TituloInscricoes)</h2>
+        @Html.Action("ListarInscricoesProcesso", new { @seqProcesso = @Model.SeqProcesso, @tokenResource = Model.TokenResource })
+    </div>
+</div>
+
+@using (Smc.ModalWindow("modalFormularioImpacto")
+            .Title(Smc.GetUIResource("FormualarioImpacto_Modal_Titulo"))
+            .Attribute("id", "modal-formulario-impacto")
+            .Size(SMCModalWindowSize.Largest)
+            .CssClass("smc-gpi-modal-formulario-impacto")
+            .Form("FormularioImpacto", "SalvarFormularioImpacto", "Inscricao", null, true,
+                x => x.Ajax(onSuccess: "ControlarEstrelas()"))
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.Text).Text("Enviar").CssClass("smc-btn-principal").Highlight())
+            .Begin())
+{ }
+
+@section Scripts{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/Inscricao/FormularioImpacto.js")"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+

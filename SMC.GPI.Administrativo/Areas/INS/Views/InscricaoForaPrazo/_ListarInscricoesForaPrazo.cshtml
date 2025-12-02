@@ -1,0 +1,23 @@
+﻿@model SMCPagerModel<InscricaoForaPrazoListaViewModel>
+
+@(Smc.Grid("gridInscritosForaPrazo")
+    .AutoGenerateColumns()    
+    .AllowSort()
+    .Action("ListarInscricoesForaPrazo", "InscricaoForaPrazo")
+    .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", false,
+                             item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as InscricaoForaPrazoListaViewModel).Seq) }, "InscricaoForaPrazo")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_INS_001_11_02.MANTER_PERMISSAO_INSCRICAO_FORA_PRAZO),
+
+                             item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new {
+                                    @seq = SMCDESCrypto.EncryptNumberForURL((item as InscricaoForaPrazoListaViewModel).Seq),
+                                    @seqProcesso = Request["seqProcesso"]
+                                }, "InscricaoForaPrazo")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .Ajax(isPost: true, updateTargetId: "#divInscricoesForaPrazo")
+                                .SecurityToken(UC_INS_001_11_02.MANTER_PERMISSAO_INSCRICAO_FORA_PRAZO)
+                                .Confirm(Smc.GetUIResource("Exclusao_Permissao_Fora_Prazo_Title"),
+                                                     string.Format(Smc.GetUIResource("Exclusao_Permissao_Fora_Prazo_Confirmacao"), (item as InscricaoForaPrazoListaViewModel).DataInicio))
+
+    )
+)

@@ -1,0 +1,19 @@
+﻿@model ConfigurarTextoSecaoViewModel
+
+@using (Smc.Header("headerCabecalhoConfigurarTextoSecao", SMCHeaderType.Primary)
+               .Item(prop => prop.Pagina, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+               .Item(prop => prop.Idioma, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+               .Item(prop => prop.Secao, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+               .Begin())
+{
+
+}
+
+@using (Smc.Div("fieldsetTextoConfigurarTextoSecao").Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.Texto)
+}
+
+
+

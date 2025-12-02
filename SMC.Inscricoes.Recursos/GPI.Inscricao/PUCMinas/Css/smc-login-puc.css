@@ -1,0 +1,5170 @@
+﻿@charset "UTF-8";
+.smc-container {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.smc-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.smc-col,
+.smc-col-1,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2,
+fieldset.smc-sgf-agrupador > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+fieldset.smc-sgf-agrupador > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2,
+.smc-gpi-conteudo-sgf > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-gpi-conteudo-sgf > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2,
+.smc-gpi-conteudo-sgf .smc-size-md-1.smc-size-xs-24.smc-size-sm-1.smc-size-lg-1,
+.smc-gpi-conteudo-sgf .smc-size-md-2.smc-size-xs-24.smc-size-sm-2.smc-size-lg-2,
+.endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2,
+.endereco-eletronico .smc-detalhe-editavel-header::after,
+.smc-col-2,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4,
+fieldset.smc-sgf-agrupador > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+fieldset.smc-sgf-agrupador > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4,
+.smc-gpi-conteudo-sgf > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-gpi-conteudo-sgf > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4,
+.smc-gpi-conteudo-sgf .smc-size-md-3.smc-size-xs-24.smc-size-sm-3.smc-size-lg-3,
+.smc-gpi-conteudo-sgf .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4,
+.smc-col-3,
+#formularioLembrarSenha #Emails .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6,
+fieldset.smc-sgf-agrupador > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+fieldset.smc-sgf-agrupador > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6,
+.smc-gpi-conteudo-sgf > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-gpi-conteudo-sgf > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6,
+.smc-gpi-conteudo-sgf .smc-size-md-5.smc-size-xs-24.smc-size-sm-5.smc-size-lg-5,
+.smc-gpi-conteudo-sgf .smc-size-md-6.smc-size-xs-24.smc-size-sm-6.smc-size-lg-6,
+.smc-col-4,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+fieldset.smc-sgf-agrupador > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+fieldset.smc-sgf-agrupador > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+.smc-gpi-conteudo-sgf > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-gpi-conteudo-sgf > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+.smc-gpi-conteudo-sgf .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-gpi-conteudo-sgf .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+.endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.endereco-eletronico .smc-detalhe-editavel-header .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-col-5,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10,
+fieldset.smc-sgf-agrupador > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+fieldset.smc-sgf-agrupador > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+fieldset.smc-sgf-agrupador > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10,
+.smc-gpi-conteudo-sgf > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-gpi-conteudo-sgf > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10,
+.smc-gpi-conteudo-sgf .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-gpi-conteudo-sgf .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf .smc-size-md-10.smc-size-xs-24.smc-size-sm-10.smc-size-lg-10,
+.smc-col-6,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+fieldset.smc-sgf-agrupador > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+fieldset.smc-sgf-agrupador > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+.smc-gpi-conteudo-sgf > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-gpi-conteudo-sgf > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+.smc-gpi-conteudo-sgf .smc-size-md-11.smc-size-xs-24.smc-size-sm-11.smc-size-lg-11,
+.smc-gpi-conteudo-sgf .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+.endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+.endereco-eletronico .smc-detalhe-editavel-header .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8,
+.smc-col-7,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14,
+fieldset.smc-sgf-agrupador > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+fieldset.smc-sgf-agrupador > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-gpi-conteudo-sgf > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-gpi-conteudo-sgf > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-gpi-conteudo-sgf .smc-size-md-13.smc-size-xs-24.smc-size-sm-13.smc-size-lg-13,
+.smc-gpi-conteudo-sgf .smc-size-md-14.smc-size-xs-24.smc-size-sm-14.smc-size-lg-14,
+.smc-col-8,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16,
+fieldset.smc-sgf-agrupador > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+fieldset.smc-sgf-agrupador > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16,
+.smc-gpi-conteudo-sgf > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-gpi-conteudo-sgf > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16,
+.smc-gpi-conteudo-sgf .smc-size-md-15.smc-size-xs-24.smc-size-sm-15.smc-size-lg-15,
+.smc-gpi-conteudo-sgf .smc-size-md-16.smc-size-xs-24.smc-size-sm-16.smc-size-lg-16,
+.smc-col-9,
+#formularioLembrarSenha #Emails .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18,
+fieldset.smc-sgf-agrupador > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+fieldset.smc-sgf-agrupador > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18,
+.smc-gpi-conteudo-sgf > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-gpi-conteudo-sgf > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18,
+.smc-gpi-conteudo-sgf .smc-size-md-17.smc-size-xs-24.smc-size-sm-17.smc-size-lg-17,
+.smc-gpi-conteudo-sgf .smc-size-md-18.smc-size-xs-24.smc-size-sm-18.smc-size-lg-18,
+.smc-col-10,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20,
+fieldset.smc-sgf-agrupador > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+fieldset.smc-sgf-agrupador > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20,
+.smc-gpi-conteudo-sgf > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-gpi-conteudo-sgf > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20,
+.smc-gpi-conteudo-sgf .smc-size-md-19.smc-size-xs-24.smc-size-sm-19.smc-size-lg-19,
+.smc-gpi-conteudo-sgf .smc-size-md-20.smc-size-xs-24.smc-size-sm-20.smc-size-lg-20,
+.smc-col-11,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22,
+fieldset.smc-sgf-agrupador > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+fieldset.smc-sgf-agrupador > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22,
+.smc-gpi-conteudo-sgf > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-gpi-conteudo-sgf > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22,
+.smc-gpi-conteudo-sgf .smc-size-md-21.smc-size-xs-24.smc-size-sm-21.smc-size-lg-21,
+.smc-gpi-conteudo-sgf .smc-size-md-22.smc-size-xs-24.smc-size-sm-22.smc-size-lg-22,
+.smc-col-12,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24,
+fieldset.smc-sgf-agrupador > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+fieldset.smc-sgf-agrupador > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24,
+.smc-gpi-conteudo-sgf > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-gpi-conteudo-sgf > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24,
+.smc-gpi-conteudo-sgf .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24.smc-sgf-agrupador,
+.smc-gpi-conteudo-sgf .smc-size-md-23.smc-size-xs-24.smc-size-sm-23.smc-size-lg-23,
+.smc-gpi-conteudo-sgf .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.smc-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .smc-col-3, #formularioLembrarSenha #Emails .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, fieldset.smc-sgf-agrupador > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  fieldset.smc-sgf-agrupador > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf .smc-size-md-5.smc-size-xs-24.smc-size-sm-5.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf .smc-size-md-6.smc-size-xs-24.smc-size-sm-6.smc-size-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-1, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, fieldset.smc-sgf-agrupador > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+  fieldset.smc-sgf-agrupador > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-gpi-conteudo-sgf > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+  .smc-gpi-conteudo-sgf > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-gpi-conteudo-sgf .smc-size-md-1.smc-size-xs-24.smc-size-sm-1.smc-size-lg-1,
+  .smc-gpi-conteudo-sgf .smc-size-md-2.smc-size-xs-24.smc-size-sm-2.smc-size-lg-2, .endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .endereco-eletronico .smc-detalhe-editavel-header::after {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-2, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, fieldset.smc-sgf-agrupador > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+  fieldset.smc-sgf-agrupador > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, .smc-gpi-conteudo-sgf > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+  .smc-gpi-conteudo-sgf > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, .smc-gpi-conteudo-sgf .smc-size-md-3.smc-size-xs-24.smc-size-sm-3.smc-size-lg-3,
+  .smc-gpi-conteudo-sgf .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-3, #formularioLembrarSenha #Emails .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, fieldset.smc-sgf-agrupador > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  fieldset.smc-sgf-agrupador > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf .smc-size-md-5.smc-size-xs-24.smc-size-sm-5.smc-size-lg-5,
+  .smc-gpi-conteudo-sgf .smc-size-md-6.smc-size-xs-24.smc-size-sm-6.smc-size-lg-6 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-4, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, fieldset.smc-sgf-agrupador > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+  fieldset.smc-sgf-agrupador > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .smc-gpi-conteudo-sgf > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+  .smc-gpi-conteudo-sgf > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .smc-gpi-conteudo-sgf .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+  .smc-gpi-conteudo-sgf .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6, .endereco-eletronico .smc-detalhe-editavel-header .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-5, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, fieldset.smc-sgf-agrupador > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+  fieldset.smc-sgf-agrupador > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+  fieldset.smc-sgf-agrupador > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, .smc-gpi-conteudo-sgf > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+  .smc-gpi-conteudo-sgf > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+  .smc-gpi-conteudo-sgf > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, .smc-gpi-conteudo-sgf .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+  .smc-gpi-conteudo-sgf .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+  .smc-gpi-conteudo-sgf .smc-size-md-10.smc-size-xs-24.smc-size-sm-10.smc-size-lg-10 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-6, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12, fieldset.smc-sgf-agrupador > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+  fieldset.smc-sgf-agrupador > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12, .smc-gpi-conteudo-sgf > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+  .smc-gpi-conteudo-sgf > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12, .smc-gpi-conteudo-sgf .smc-size-md-11.smc-size-xs-24.smc-size-sm-11.smc-size-lg-11,
+  .smc-gpi-conteudo-sgf .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12, .endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .endereco-eletronico .smc-detalhe-editavel-header .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-7, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14, fieldset.smc-sgf-agrupador > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+  fieldset.smc-sgf-agrupador > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14, .smc-gpi-conteudo-sgf > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+  .smc-gpi-conteudo-sgf > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14, .smc-gpi-conteudo-sgf .smc-size-md-13.smc-size-xs-24.smc-size-sm-13.smc-size-lg-13,
+  .smc-gpi-conteudo-sgf .smc-size-md-14.smc-size-xs-24.smc-size-sm-14.smc-size-lg-14 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-8, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, fieldset.smc-sgf-agrupador > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+  fieldset.smc-sgf-agrupador > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, .smc-gpi-conteudo-sgf > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+  .smc-gpi-conteudo-sgf > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, .smc-gpi-conteudo-sgf .smc-size-md-15.smc-size-xs-24.smc-size-sm-15.smc-size-lg-15,
+  .smc-gpi-conteudo-sgf .smc-size-md-16.smc-size-xs-24.smc-size-sm-16.smc-size-lg-16 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-9, #formularioLembrarSenha #Emails .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, fieldset.smc-sgf-agrupador > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+  fieldset.smc-sgf-agrupador > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, .smc-gpi-conteudo-sgf > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+  .smc-gpi-conteudo-sgf > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, .smc-gpi-conteudo-sgf .smc-size-md-17.smc-size-xs-24.smc-size-sm-17.smc-size-lg-17,
+  .smc-gpi-conteudo-sgf .smc-size-md-18.smc-size-xs-24.smc-size-sm-18.smc-size-lg-18 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-10, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, fieldset.smc-sgf-agrupador > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+  fieldset.smc-sgf-agrupador > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, .smc-gpi-conteudo-sgf > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+  .smc-gpi-conteudo-sgf > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, .smc-gpi-conteudo-sgf .smc-size-md-19.smc-size-xs-24.smc-size-sm-19.smc-size-lg-19,
+  .smc-gpi-conteudo-sgf .smc-size-md-20.smc-size-xs-24.smc-size-sm-20.smc-size-lg-20 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-11, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, fieldset.smc-sgf-agrupador > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+  fieldset.smc-sgf-agrupador > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, .smc-gpi-conteudo-sgf > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+  .smc-gpi-conteudo-sgf > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, .smc-gpi-conteudo-sgf .smc-size-md-21.smc-size-xs-24.smc-size-sm-21.smc-size-lg-21,
+  .smc-gpi-conteudo-sgf .smc-size-md-22.smc-size-xs-24.smc-size-sm-22.smc-size-lg-22 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .smc-col-12, .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+  #CodigosAutorizacao .smc-size-md-24 > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+  .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+  .smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+  .smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, fieldset.smc-sgf-agrupador > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+  fieldset.smc-sgf-agrupador > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, .smc-gpi-conteudo-sgf > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+  .smc-gpi-conteudo-sgf > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, .smc-gpi-conteudo-sgf .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24.smc-sgf-agrupador, .smc-gpi-conteudo-sgf .smc-size-md-23.smc-size-xs-24.smc-size-sm-23.smc-size-lg-23,
+  .smc-gpi-conteudo-sgf .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+.display-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-j-center {
+  justify-content: center;
+}
+
+.flex-j-start {
+  justify-content: flex-start;
+}
+
+.flex-j-end {
+  justify-content: flex-end;
+}
+
+.flex-j-between {
+  justify-content: space-between;
+}
+
+.flex-j-around {
+  justify-content: space-around;
+}
+
+.flex-j-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-a-center {
+  align-items: center;
+}
+
+.flex-a-start {
+  align-items: flex-start;
+}
+
+.flex-a-end {
+  align-items: flex-end;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.margin-top-0 {
+  margin-top: 0px;
+}
+
+.margin-top-5 {
+  margin-top: 5px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-top-25 {
+  margin-top: 25px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0px;
+}
+
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+
+.margin-left-0 {
+  margin-left: 0px;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.margin-left-20 {
+  margin-left: 20px;
+}
+
+.margin-left-25 {
+  margin-left: 25px;
+}
+
+.margin-left-30 {
+  margin-left: 30px;
+}
+
+.margin-right-0 {
+  margin-right: 0px;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.margin-right-15 {
+  margin-right: 15px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-right-25 {
+  margin-right: 25px;
+}
+
+.margin-right-30 {
+  margin-right: 30px;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-top-0 {
+  padding-top: 0px;
+}
+
+.padding-top-5 {
+  padding-top: 5px;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+.padding-top-15 {
+  padding-top: 15px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+.padding-top-25 {
+  padding-top: 25px;
+}
+
+.padding-top-30 {
+  padding-top: 30px;
+}
+
+.padding-bottom-0 {
+  padding-bottom: 0px;
+}
+
+.padding-bottom-5 {
+  padding-bottom: 5px;
+}
+
+.padding-bottom-10 {
+  padding-bottom: 10px;
+}
+
+.padding-bottom-15 {
+  padding-bottom: 15px;
+}
+
+.padding-bottom-20 {
+  padding-bottom: 20px;
+}
+
+.padding-bottom-25 {
+  padding-bottom: 25px;
+}
+
+.padding-bottom-30 {
+  padding-bottom: 30px;
+}
+
+.padding-left-0 {
+  padding-left: 0px;
+}
+
+.padding-left-5 {
+  padding-left: 5px;
+}
+
+.padding-left-10 {
+  padding-left: 10px;
+}
+
+.padding-left-15 {
+  padding-left: 15px;
+}
+
+.padding-left-20 {
+  padding-left: 20px;
+}
+
+.padding-left-25 {
+  padding-left: 25px;
+}
+
+.padding-left-30 {
+  padding-left: 30px;
+}
+
+.padding-right-0 {
+  padding-right: 0px;
+}
+
+.padding-right-5 {
+  padding-right: 5px;
+}
+
+.padding-right-10 {
+  padding-right: 10px;
+}
+
+.padding-right-15 {
+  padding-right: 15px;
+}
+
+.padding-right-20 {
+  padding-right: 20px;
+}
+
+.padding-right-25 {
+  padding-right: 25px;
+}
+
+.padding-right-30 {
+  padding-right: 30px;
+}
+
+.flex-d-row {
+  flex-direction: row;
+}
+
+.circle-img {
+  border-radius: 50%;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.75em 1.5em;
+}
+.table thead tr th {
+  font-weight: 700;
+}
+.table tbody tr td {
+  border-top: 1px solid;
+}
+
+.show {
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.hide {
+  opacity: 0 !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.border-0 {
+  border: 0;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.btn-block {
+  width: 100%;
+  display: block;
+}
+
+.float-none {
+  float: none;
+}
+
+.smc-btn-mais {
+  float: right;
+  border: 1px solid var(--border-button);
+  background-color: var(--white);
+  border-radius: 3px;
+  font-size: 0;
+  height: 2em;
+  padding: 0.5em 0.3em 0em 0.3em;
+}
+.smc-btn-mais i {
+  font-size: 1.6em;
+  color: var(--gray);
+}
+
+.smc-linha-btn-terciario {
+  text-align: right;
+}
+.smc-linha-btn-terciario a {
+  font-size: 0.9em;
+  font-weight: 600;
+  border: 1px solid var(--border-button-secondary);
+  color: var(--border-button-secondary);
+  background-color: var(--background-button-secondary);
+  border-radius: 3px;
+  height: 1.4em;
+  padding: 0.4em 1em 0.4em 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-style: normal;
+}
+.smc-linha-btn-terciario a:hover, .smc-linha-btn-terciario a:focus {
+  border: 1px solid var(--color-hover);
+  background-color: var(--white);
+  color: var(--color-hover);
+}
+.smc-linha-btn-terciario .smc-button {
+  display: block;
+}
+
+div.smc-button {
+  width: 100%;
+  display: flex;
+}
+div.smc-button > [disabled] {
+  background-color: var(--color-primary-2) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--color-primary-2) !important;
+}
+
+.smc-btn-principal, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-proximo-icotext-destaque, .smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque, .smc-btn-confirmar-icotext-destaque {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.2em;
+  padding: 1em 0 0.1em 0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  height: 2.2em;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  width: 100%;
+  height: 2.2em;
+  font-style: normal;
+  font-weight: 600;
+}
+.smc-btn-principal:hover, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal:hover, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque:hover, .smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque:hover, .smc-btn-confirmar-icotext-destaque:hover, .smc-btn-principal:focus, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal:focus, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque:focus, .smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque:focus, .smc-btn-confirmar-icotext-destaque:focus {
+  border: 1px solid var(--color-secondary);
+  background-color: var(--white);
+  color: var(--color-secondary);
+}
+
+button.smc-btn-principal, .smc-wizard-barra-acoes button.smc-btn-custom.smc-btn-principal, .smc-wizard-barra-acoes button.smc-btn-custom.smc-btn-confirmar-icotext-destaque, .smc-wizard-barra-acoes button.smc-btn-custom.smc-btn-proximo-icotext-destaque, .smc-wizard-barra-acoes button.smc-btn-proximo-icotext-destaque, button.smc-btn-confirmar-icotext-destaque {
+  height: 3.4em;
+  padding: 0.8em 0 0.5em 0;
+}
+
+.smc-btn-secundario, .smc-btn-yes, .smc-btn-no, .smc-wizard-barra-acoes .smc-btn-anterior-icotext, .smc-btn-fechar-icotext {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.2em;
+  padding: 1em 0 0.1em 0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  height: 2.2em;
+  background-color: var(--white);
+  color: var(--color-primary-2);
+  border: 1px solid var(--color-primary-2);
+  width: 100%;
+}
+.smc-btn-secundario:hover, .smc-btn-yes:hover, .smc-btn-no:hover, .smc-wizard-barra-acoes .smc-btn-anterior-icotext:hover, .smc-btn-fechar-icotext:hover, .smc-btn-secundario:focus, .smc-btn-yes:focus, .smc-btn-no:focus, .smc-wizard-barra-acoes .smc-btn-anterior-icotext:focus, .smc-btn-fechar-icotext:focus {
+  border: 1px solid var(--color-primary-3);
+  background-color: var(--white);
+  color: var(--color-primary-3);
+}
+
+a.smc-btn-secundario, a.smc-btn-yes, a.smc-btn-no, .smc-wizard-barra-acoes a.smc-btn-anterior-icotext, a.smc-btn-fechar-icotext {
+  font-style: normal;
+}
+
+.smc-btn-desabilitado {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.2em;
+  padding: 1em 0 0.1em 0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  height: 2.2em;
+  background-color: var(--border-button);
+  border: 1px solid var(--border-button);
+  cursor: no-drop;
+}
+.smc-btn-desabilitado:hover, .smc-btn-desabilitado:focus {
+  border: 1px solid var(--border-button) !important;
+  background-color: var(--border-button) !important;
+  color: var(--white) !important;
+}
+
+.smc-gpi-linha-botoes {
+  margin-top: 2.85em;
+  width: 100%;
+  padding: 2.85em 0 0 0 !important;
+  display: flex;
+}
+
+.gap-botoes {
+  gap: 0.71em;
+}
+
+.smc-gpi-linha-botoes-espacamento > div:first-child {
+  margin-left: 20%;
+  order: 2;
+}
+@media screen and (max-width: 850px) {
+  .smc-gpi-linha-botoes-espacamento > div:first-child {
+    margin-right: 0;
+  }
+}
+.smc-gpi-linha-botoes-espacamento > div:nth-child(2) {
+  order: 2;
+}
+.smc-gpi-linha-botoes-espacamento > div:last-child {
+  order: 1 !important;
+}
+
+.proximo:after, .smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque:after {
+  content: "\f054";
+  font-family: var(--fa-font);
+  color: var(--white);
+  display: inline-block;
+  font-size: 1.28em;
+  margin-left: 1.42em;
+}
+@media screen and (max-width: 850px) {
+  .proximo:after, .smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque:after {
+    display: none;
+  }
+}
+.proximo:hover:after, .smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque:hover:after, .proximo:focus:after, .smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque:focus:after {
+  color: var(--color-secondary);
+}
+
+.voltar:before, .smc-wizard-barra-acoes .smc-btn-anterior-icotext:before, .smc-btn-anterior-icotext:before {
+  content: "\f053";
+  font-family: var(--fa-font);
+  color: var(--color-primary-2);
+  display: inline-block;
+  font-size: 1.28em;
+  margin-right: 1.42em;
+}
+.voltar:hover:after, .voltar:focus:after, .smc-btn-anterior-icotext:hover:after, .smc-btn-anterior-icotext:focus:after {
+  color: var(--color-primary-3);
+}
+@media screen and (max-width: 850px) {
+  .voltar, .smc-wizard-barra-acoes .smc-btn-anterior-icotext, .smc-btn-anterior-icotext {
+    height: 3em;
+    padding: 1.74rem;
+    font-size: 0;
+    width: 2em;
+    margin-left: auto;
+  }
+  .voltar:before, .smc-wizard-barra-acoes .smc-btn-anterior-icotext:before, .smc-btn-anterior-icotext:before {
+    margin-right: 0;
+  }
+  .voltar i:before, .smc-wizard-barra-acoes .smc-btn-anterior-icotext i:before, .smc-btn-anterior-icotext i:before {
+    content: "\f053";
+    font-family: var(--fa-font);
+    color: var(--color-primary-2);
+    font-size: 1.28rem;
+    position: relative;
+    left: -6px;
+    top: -10px;
+    font-style: normal;
+  }
+}
+
+.voltar:hover:before, .smc-wizard-barra-acoes .smc-btn-anterior-icotext:hover:before {
+  color: var(--color-primary-3);
+}
+
+.alterar:before {
+  content: "\f044";
+  font-family: var(--fa-font);
+  color: var(--color-primary-2);
+  display: inline-block;
+  font-size: 1.28em;
+  margin-right: 1.42em;
+}
+.alterar:hover:after, .alterar:focus:after {
+  color: var(--color-primary-3);
+}
+@media screen and (max-width:1120px) {
+  .alterar:before {
+    display: none;
+  }
+}
+.alterar:hover:before {
+  color: var(--color-primary-3);
+}
+
+.concluir:before, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal:before, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque:before, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-proximo-icotext-destaque:before {
+  content: "\f00c";
+  font-family: var(--fa-font);
+  color: var(--white);
+  display: inline-block;
+  font-size: 1.28em;
+  margin-right: 1.42em;
+}
+.concluir:hover:after, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal:hover:after, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque:hover:after, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-proximo-icotext-destaque:hover:after, .concluir:focus:after, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal:focus:after, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque:focus:after, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-proximo-icotext-destaque:focus:after {
+  color: var(--color-secondary);
+}
+
+.boleto:before {
+  content: "\f02a";
+  font-family: var(--fa-font);
+  color: var(--color-primary-2);
+  display: inline-block;
+  font-size: 1.28em;
+  margin-right: 1.42em;
+}
+.boleto:hover:after, .boleto:focus:after {
+  color: var(--color-primary-3);
+}
+
+.documento:before {
+  content: "\f15b";
+  font-family: var(--fa-font);
+  color: var(--color-primary-2);
+  display: inline-block;
+  font-size: 1.28em;
+  margin-right: 1.42em;
+}
+.documento:hover:after, .documento:focus:after {
+  color: var(--color-primary-3);
+}
+
+.smc-btn-fechar-icotext {
+  height: 3.5em;
+  padding: 0 1.78em;
+}
+.smc-btn-fechar-icotext i {
+  display: none;
+}
+
+.smc-btn-confirmar-icotext-destaque {
+  height: 3.5em !important;
+  padding: 1em 1.78em !important;
+  display: flex;
+}
+.smc-btn-confirmar-icotext-destaque > i {
+  font-family: var(--fa-font);
+}
+.smc-btn-confirmar-icotext-destaque > i:before {
+  content: "\f00c";
+}
+
+.smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque {
+  width: 14.28em;
+  order: 2;
+}
+.smc-wizard-barra-acoes .smc-btn-proximo-icotext-destaque i {
+  display: none;
+}
+.smc-wizard-barra-acoes .smc-btn-anterior-icotext {
+  position: relative;
+  margin-right: 51%;
+  height: 2.3em;
+}
+@media screen and (max-width: 1200px) {
+  .smc-wizard-barra-acoes .smc-btn-anterior-icotext {
+    margin-right: 31%;
+  }
+}
+.smc-wizard-barra-acoes .smc-btn-anterior-icotext i {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .smc-wizard-barra-acoes .smc-btn-anterior-icotext i::before {
+    display: block !important;
+    width: 20px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .smc-wizard-barra-acoes .smc-btn-anterior-icotext {
+    margin-right: 45%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .smc-wizard-barra-acoes .smc-btn-anterior-icotext {
+    margin-right: 1%;
+    padding: 1.74rem;
+  }
+  .smc-wizard-barra-acoes .smc-btn-anterior-icotext:before {
+    font-size: 1.28rem;
+    margin-top: -8px;
+    margin-left: -5px;
+  }
+}
+.smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-proximo-icotext-destaque {
+  display: flex;
+  padding: 0.8em 3.21em 0.5em 3.21em !important;
+}
+@media screen and (max-width: 992px) {
+  .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-proximo-icotext-destaque {
+    padding: 0.8em 1.07em 0.5em 1.07em !important;
+  }
+}
+.smc-wizard-barra-acoes .smc-btn-custom.smc-btn-principal:before, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-confirmar-icotext-destaque:before, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-proximo-icotext-destaque:before {
+  margin-right: 0.71em;
+  margin-top: 0.14em;
+}
+.smc-wizard-barra-acoes .smc-btn-custom.smc-btn-secundario, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-yes, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-no, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-fechar-icotext, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-anterior-icotext {
+  padding: 1em 3.21em 0.5em 3.21em !important;
+}
+@media screen and (max-width: 992px) {
+  .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-secundario, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-yes, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-no, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-fechar-icotext, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-anterior-icotext {
+    padding: 1em 0.8em 0.5em 0.8em !important;
+  }
+}
+.smc-wizard-barra-acoes .smc-btn-custom.smc-btn-secundario, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-yes, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-no, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-fechar-icotext, .smc-wizard-barra-acoes .smc-btn-custom.smc-btn-anterior-icotext {
+  height: 1.8em !important;
+}
+.smc-wizard-barra-acoes .smc-buttonset-horizontal-primario[data-id=ButtonSetDropdown0] {
+  order: 2;
+}
+
+.smc-btn-excluir-ico {
+  background-color: transparent;
+  border-color: var(--color-error);
+  color: var(--color-error);
+  padding: 0.14rem 0.5rem 0 0.92rem;
+  height: 2.6rem;
+  text-align: center;
+  margin-bottom: 0.35em;
+}
+.smc-btn-excluir-ico i {
+  margin: 0.71rem 0.57rem 0 0;
+  font-family: var(--fa-font);
+}
+.smc-btn-excluir-ico i:before {
+  content: "\f2ed";
+  font-weight: 300;
+}
+.smc-btn-excluir-ico:focus {
+  background-color: transparent;
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.smc-btn-restaurar-ico {
+  background-color: var(--white);
+  color: var(--color-primary-2);
+  border: 1px solid var(--color-primary-2);
+  padding: 0.14rem 0.42rem 0 0.78rem;
+  height: 2.6rem;
+  margin-bottom: 0.35em;
+}
+.smc-btn-restaurar-ico i {
+  margin: 0.71rem 0.57rem 0 0;
+  font-family: var(--fa-font);
+}
+.smc-btn-restaurar-ico i:before {
+  content: "\f2ea";
+}
+.smc-btn-restaurar-ico:focus {
+  background-color: var(--white);
+  color: var(--color-primary-2);
+  border: 1px solid var(--color-primary-2);
+}
+
+.smc-btn-buscacep {
+  margin: 1.28rem 0 0 -0.78rem;
+  height: 3.05rem;
+  border-radius: 0 0.21em 0.21em 0;
+  padding: 0 0.71rem;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: -1.68rem;
+}
+.smc-btn-buscacep i {
+  margin: 0 5px;
+}
+.smc-btn-buscacep:hover {
+  background-color: var(--white);
+  color: var(--color-font-h3);
+  border: 1px solid var(--color-font-h3);
+}
+.smc-btn-buscacep:hover i {
+  color: var(--color-font-h3);
+}
+@media screen and (max-width: 1024px) {
+  .smc-btn-buscacep {
+    left: -2.08rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .smc-btn-buscacep {
+    width: auto !important;
+  }
+}
+
+.smc-btn-limpacep {
+  margin: 1.2rem 0 0 0;
+  height: 3.15rem;
+  background-color: var(--white);
+  color: var(--color-primary-2);
+  border: 1px solid var(--color-primary-2);
+  width: 100%;
+  min-width: 51px;
+  padding: 0;
+}
+.smc-btn-limpacep i {
+  margin: 0.35em 0.78em 0.35em 0.35em;
+  color: var(--color-primary-2);
+}
+.smc-btn-limpacep:hover {
+  background-color: var(--white);
+  color: var(--color-font-h3);
+  border: 1px solid var(--color-font-h3);
+}
+.smc-btn-limpacep:hover i {
+  color: var(--color-font-h3);
+}
+
+.smc-detalhe-editavel-botao-inserir i {
+  font-family: var(--fa-font);
+}
+.smc-detalhe-editavel-botao-inserir i:before {
+  content: "+";
+}
+
+.smc-btn-fontenormal > i,
+.smc-btn-fontemenor > i,
+.smc-btn-fontemaior > i {
+  font-family: var(--fa-font);
+}
+.smc-btn-fontenormal > i:before,
+.smc-btn-fontemenor > i:before,
+.smc-btn-fontemaior > i:before {
+  content: "A";
+}
+
+.smc-btn-contraste i {
+  font-family: var(--fa-font);
+}
+.smc-btn-contraste i:before {
+  content: "\f042";
+}
+
+.smc-lookup .smc-lookup-open-command > i,
+.smc-lookup .smc-treeview-botao-buscar > i,
+.smc-treeview .smc-lookup-open-command > i,
+.smc-treeview .smc-treeview-botao-buscar > i {
+  font-family: var(--fa-font);
+}
+.smc-lookup .smc-lookup-open-command > i:before,
+.smc-lookup .smc-treeview-botao-buscar > i:before,
+.smc-treeview .smc-lookup-open-command > i:before,
+.smc-treeview .smc-treeview-botao-buscar > i:before {
+  content: "\f002";
+}
+
+.smc-btn-buscacep > i,
+.smc-btn-pesquisar-ico-destaque > i {
+  font-family: var(--fa-font);
+}
+.smc-btn-buscacep > i:before,
+.smc-btn-pesquisar-ico-destaque > i:before {
+  content: "\f002";
+}
+
+.smc-treeview-botao-limpar > i,
+.smc-btn-limpacep > i,
+.smc-btn-limparenviar-ico-destaque > i {
+  font-family: var(--fa-font);
+}
+.smc-treeview-botao-limpar > i:before,
+.smc-btn-limpacep > i:before,
+.smc-btn-limparenviar-ico-destaque > i:before {
+  content: "\f12d";
+}
+
+.fancytree-expander.fa-plus-square-o:before {
+  font-family: var(--fa-font);
+  content: "\f0fe";
+}
+
+.fancytree-expander.fa-minus-square-o:before {
+  font-family: var(--fa-font);
+  content: "\f146";
+}
+
+.smc-orderpick-btn-down > i {
+  font-family: var(--fa-font);
+}
+.smc-orderpick-btn-down > i:before {
+  content: "\f0d7";
+}
+
+.smc-orderpick-btn-up > i {
+  font-family: var(--fa-font);
+}
+.smc-orderpick-btn-up > i:before {
+  content: "\f0d8";
+}
+
+.smc-btn-visualizar-ico > i {
+  font-family: var(--fa-font) !important;
+}
+.smc-btn-visualizar-ico > i:before {
+  content: "\f06e" !important;
+}
+
+.smc-btn-voltar-icotext > i {
+  font-family: var(--fa-font) !important;
+}
+.smc-btn-voltar-icotext > i:before {
+  content: "\f104" !important;
+}
+
+.smc-btn-salvar-icotext-destaque > i {
+  font-family: var(--fa-font) !important;
+}
+.smc-btn-salvar-icotext-destaque > i:before {
+  content: "\f00c" !important;
+}
+
+.smc-btn-yes, .smc-btn-no {
+  height: 3.5em;
+  padding: 0.5em 1.42em 0.5em 1.42em;
+}
+.smc-btn-yes:focus, .smc-btn-no:focus {
+  border: 1px solid var(--color-hover) !important;
+  background-color: var(--color-hover) !important;
+  color: var(--white) !important;
+}
+
+.smc-botoes-finais {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  float: none;
+  margin-bottom: 3em;
+}
+
+.smc-gpi-link {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-primary);
+  text-decoration: underline !important;
+  font-size: 1.2em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.smc-gpi-link:hover {
+  background-color: transparent;
+  border: none;
+  color: var(--color-primary);
+}
+
+.smc-gpi-linha-sair .smc-button {
+  display: block;
+  text-align: right;
+}
+
+.smc-uploadFile-contextWindowControls.smc-btn-desabilitado {
+  padding: 0 0.57em 0 0;
+  background-color: transparent !important;
+  border: none !important;
+}
+.smc-uploadFile-contextWindowControls.smc-btn-desabilitado .dropdown-toggle.smc-dropdown-btn-toggle-arrow, .smc-uploadFile-contextWindowControls.smc-btn-desabilitado .smc-btn-custom {
+  background-color: #e3e3e3 !important;
+  color: #8d8d8d !important;
+  border: 1px solid #e3e3e3 !important;
+  cursor: no-drop !important;
+  height: 3rem !important;
+  opacity: 1;
+}
+
+.smc-uploadFile-contextWindowControls > .smc-button > button > i {
+  font-family: var(--fa-font);
+}
+.smc-uploadFile-contextWindowControls > .smc-button > button > i:before {
+  content: "\f0c6";
+}
+.smc-uploadFile-contextWindowControls > .dropdown > .smc-dropdown-btn-toggle-arrow > i {
+  font-family: var(--fa-font);
+}
+.smc-uploadFile-contextWindowControls > .dropdown > .smc-dropdown-btn-toggle-arrow > i:before {
+  content: "\f107";
+}
+
+.espacamento-esquerda .smc-button:first-child {
+  padding-left: 60%;
+}
+@media screen and (max-width: 992px) {
+  .espacamento-esquerda .smc-button:first-child {
+    padding-left: 0;
+  }
+}
+
+.smc-btn-download-icotext-destaque {
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  width: 11.14em;
+  text-transform: uppercase;
+  font-size: 1em;
+  background-color: var(--white);
+  color: var(--color-primary-2);
+  border: 1px solid var(--color-primary-2);
+  font-style: normal;
+  padding-left: 1rem;
+}
+.smc-btn-download-icotext-destaque:hover, .smc-btn-download-icotext-destaque:focus {
+  background-color: var(--white);
+  color: var(--color-primary-2);
+  border: 1px solid var(--color-primary-2);
+}
+
+button.smc-btn-sm {
+  width: auto;
+  height: auto;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+}
+
+.hidden {
+  display: none;
+}
+
+input, select, .smc-select > select {
+  border: 1px solid var(--input-border-color) !important;
+  padding: 0.57em 0.64em !important;
+  height: 3.5em !important;
+}
+
+input[type=text],
+input[type=password] {
+  width: calc(100% - 1.42em) !important;
+}
+
+.smc-select-simple {
+  position: relative;
+}
+
+div[data-type=smc-textbox] label {
+  font-size: 0.8rem;
+  color: var(--color-label);
+}
+
+.smc-gpi-dados-formulario {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.smc-gpi-dados-formulario div[data-type=smc-hidden] {
+  display: none;
+}
+.smc-gpi-dados-formulario .smc-endereco-logradouro {
+  width: 45%;
+}
+.smc-gpi-dados-formulario .smc-display {
+  display: flex;
+  flex-direction: column;
+}
+.smc-gpi-dados-formulario label {
+  font-size: 0.8rem;
+  color: var(--color-label);
+}
+.smc-gpi-dados-formulario p {
+  font-size: 1.3em;
+  color: var(--color-text-reading);
+  margin: 0;
+}
+.smc-gpi-dados-formulario fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 1.42em;
+}
+.smc-gpi-dados-formulario fieldset legend {
+  font-size: 1.1em;
+  color: var(--color-font-h4);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-detail-h4);
+  padding-bottom: 0.35em;
+  margin-top: 1.42em;
+  margin-bottom: 0.71em;
+  width: 100%;
+}
+.smc-gpi-dados-formulario fieldset legend:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 5px;
+  border-color: transparent transparent transparent var(--color-detail-h4);
+  margin: 0.14em 0.71em 0 0;
+}
+.smc-gpi-dados-formulario fieldset .smc-display {
+  margin-bottom: 1.42em;
+}
+
+@media screen and (min-width:769px) and (max-width: 1100px) {
+  .smc-gpi-dados-formulario.smc-gpi-formulario#dadospessoais > div {
+    flex: 100%;
+  }
+}
+.nacionalidade-naturalidade {
+  flex-direction: row;
+}
+.nacionalidade-naturalidade .smc-preenchimento-obrigatorio {
+  position: absolute;
+}
+.nacionalidade-naturalidade label {
+  margin-left: 8px;
+}
+.nacionalidade-naturalidade div[data-dependency-controlname=HabilitaDesricaoNaturalidade] {
+  display: none;
+}
+.nacionalidade-naturalidade > div {
+  flex: auto !important;
+  display: flex;
+  flex-direction: column;
+  width: 29%;
+}
+@media screen and (max-width: 850px) {
+  .nacionalidade-naturalidade > div {
+    flex: 100% !important;
+    width: 100%;
+  }
+}
+
+.smc-gpi-dados-pessoais .smc-gpi-dados-pessoais-naturalidade {
+  display: flex;
+  gap: 0.71rem;
+  flex-direction: row;
+  width: 50% !important;
+}
+@media screen and (max-width: 850px) {
+  .smc-gpi-dados-pessoais .smc-gpi-dados-pessoais-naturalidade {
+    flex: 100% !important;
+    width: 100% !important;
+  }
+}
+.smc-gpi-dados-pessoais .smc-gpi-dados-pessoais-naturalidade > div {
+  flex: 49%;
+}
+@media screen and (max-width: 768px) {
+  .smc-gpi-dados-pessoais {
+    flex-direction: column;
+  }
+}
+.smc-gpi-dados-pessoais > div {
+  flex: 50%;
+  position: relative;
+}
+@media screen and (max-width: 850px) {
+  .smc-gpi-dados-pessoais > div {
+    flex: 100%;
+  }
+}
+.smc-gpi-dados-pessoais > div > div[data-type=smc-statecity] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .smc-gpi-dados-pessoais {
+    flex: 100% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .smc-col {
+    flex-basis: auto;
+  }
+}
+.smc-gpi-dados-telefone p {
+  white-space: nowrap;
+}
+.smc-gpi-dados-telefone .container-fluid {
+  display: flex;
+  margin-right: -23em;
+  gap: inherit;
+  flex-direction: row;
+  flex-wrap: inherit;
+  border: none !important;
+}
+.smc-gpi-dados-telefone .container-fluid div:first-child {
+  flex: 0 0 41.66667%;
+  max-width: 41.66667%;
+  position: relative;
+  width: 100%;
+  padding-right: 1.07em;
+}
+.smc-gpi-dados-telefone .container-fluid + .container-fluid label, .smc-gpi-dados-telefone .container-fluid + .container-fluid div:nth-child(2):before {
+  display: none;
+}
+.smc-gpi-dados-telefone .container-fluid + .container-fluid p {
+  margin-top: 0 !important;
+}
+.smc-gpi-dados-telefone .container-fluid div:nth-child(2), .smc-gpi-dados-telefone .container-fluid div:nth-child(3), .smc-gpi-dados-telefone .container-fluid div:last-child {
+  margin-right: 2%;
+  position: relative;
+}
+.smc-gpi-dados-telefone .container-fluid div:nth-child(2) label, .smc-gpi-dados-telefone .container-fluid div:nth-child(3) label, .smc-gpi-dados-telefone .container-fluid div:last-child label {
+  display: none;
+}
+.smc-gpi-dados-telefone .container-fluid div:nth-child(2) p, .smc-gpi-dados-telefone .container-fluid div:nth-child(3) p, .smc-gpi-dados-telefone .container-fluid div:last-child p {
+  margin-top: 1.21em;
+}
+.smc-gpi-dados-telefone .container-fluid div:nth-child(2):before {
+  content: "Número";
+  font-size: 0.8em;
+  color: var(--color-label);
+  margin: 0;
+  position: absolute;
+  padding-right: 0.71em;
+  white-space: nowrap;
+  text-align: left;
+  z-index: 1;
+}
+
+.smc-gpi-outros-enderecos {
+  margin-bottom: 0 !important;
+  margin-top: 0.71em;
+}
+.smc-gpi-outros-enderecos + .smc-gpi-outros-enderecos {
+  margin-top: 0;
+}
+@media screen and (max-width: 768px) {
+  .smc-gpi-outros-enderecos p {
+    width: auto;
+  }
+}
+
+.smc-datepicker > div.smc-ico-datepicker {
+  font-family: var(--fa-font);
+}
+.smc-datepicker > div.smc-ico-datepicker:before {
+  font-size: 1.1em;
+  margin-top: 0.8em !important;
+  right: 17px;
+  top: 5px;
+  content: "\f073";
+}
+
+.smc-gpi-formulario {
+  gap: 0.71em;
+}
+.smc-gpi-formulario > div {
+  flex: 49%;
+  margin-bottom: 1.42em;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .smc-gpi-formulario {
+    flex: 100%;
+  }
+}
+.smc-gpi-formulario > div {
+  gap: 0.71em;
+}
+.smc-gpi-formulario .smc-gpi-formulario-statecity {
+  flex: 49%;
+  margin-bottom: 1.42em;
+}
+.smc-gpi-formulario .smc-gpi-formulario-statecity div[id=DescricaoNaturalidadeEstrangeira] {
+  flex-direction: column;
+}
+.smc-gpi-formulario .smc-gpi-formulario-statecity div[id=DescricaoNaturalidadeEstrangeira] .smc-preenchimento-obrigatorio {
+  position: absolute;
+}
+.smc-gpi-formulario .smc-gpi-formulario-statecity div[id=DescricaoNaturalidadeEstrangeira] label {
+  margin-left: 0.57em;
+}
+.smc-gpi-formulario .smc-gpi-formulario-statecity > div {
+  display: flex;
+  flex: 100%;
+}
+.smc-gpi-formulario .smc-gpi-formulario-statecity > div div {
+  flex: 49%;
+}
+.smc-gpi-formulario .smc-gpi-formulario-statecity > div div:first-child {
+  margin-right: 0.71em;
+}
+.smc-gpi-formulario .smc-gpi-formulario-statecity > div div:last-child {
+  display: none;
+}
+
+.smc-detalhe-editavel-ordenacao {
+  z-index: 1;
+  position: absolute;
+  border-radius: 50px;
+  padding: 0 0.1rem 0 0.1rem;
+  margin-left: -0.3rem;
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: row;
+}
+.smc-detalhe-editavel-ordenacao > span {
+  font-size: 0.71em;
+  margin-right: -0.21em;
+  margin-left: 0.35em;
+}
+
+.smc-sortpicker-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: none;
+  margin-top: 0.21em;
+  width: 1.07em;
+}
+
+.smc-orderpick-btn-up {
+  color: var(--color-primary) !important;
+}
+.smc-orderpick-btn-up > i {
+  font-size: 1rem;
+  right: -0.14em;
+  position: relative;
+  top: -0.21em;
+}
+
+.smc-orderpick-btn-down {
+  line-height: 0;
+  color: var(--color-primary) !important;
+}
+.smc-orderpick-btn-down > i {
+  font-size: 1rem;
+  right: 2px;
+  margin-top: 7px !important;
+}
+
+.smc-detalhe-editavel-ordenacao .smc-sortpicker-arrows > div.smc-button {
+  height: 0 !important;
+  margin: 0 0 !important;
+  overflow: inherit;
+  width: 1.28em;
+  display: flex;
+}
+
+.smc-buttonset-horizontal-primario + .smc-detalhe-editavel-organizador > span.smc-detalhe-editavel-titulo {
+  font-size: 1.1em !important;
+}
+@media screen and (max-width: 992px) {
+  .smc-buttonset-horizontal-primario + .smc-detalhe-editavel-organizador > span.smc-detalhe-editavel-titulo {
+    width: 74%;
+  }
+}
+
+.smc-detalhe-editavel-blocos > span.smc-detalhe-editavel-titulo, .smc-detalhe-editavel-tabular > span.smc-detalhe-editavel-titulo {
+  font-size: 1.1em !important;
+}
+
+.smc-detalhe-editavel-titulo {
+  font-size: 1.1em !important;
+  color: var(--color-font-h4) !important;
+  text-transform: uppercase;
+  padding-bottom: 0.35em !important;
+  background-color: transparent !important;
+  font-weight: bold;
+  font-family: var(--body-fonts) !important;
+}
+.smc-detalhe-editavel-titulo:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 5px;
+  border-color: transparent transparent transparent var(--color-detail-h4);
+  margin: 0.14em 0.71em 0 0;
+}
+
+.smc-detalhe-editavel-tabular > .smc-buttonset-horizontal-primario,
+.smc-detalhe-editavel-blocos > .smc-buttonset-horizontal-primario {
+  border-bottom: none;
+}
+
+.smc-detalhe-editavel-blocos, .smc-detalhe-editavel-tabular {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.smc-detalhe-editavel-tabular {
+  overflow: inherit;
+}
+
+.smc-detalhe-editavel-header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+.smc-detalhe-editavel-header span, .smc-detalhe-editavel-header label {
+  font-size: 0.8rem;
+  color: var(--color-label);
+}
+.smc-detalhe-editavel-header label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.smc-detalhe-editavel-header div {
+  margin-bottom: 0 !important;
+}
+
+.smc-detalhe-editavel-linha-dados, .smc-detalhe-editavel-linha-dados:nth-child(2n) {
+  background-color: transparent !important;
+}
+.smc-detalhe-editavel-linha-dados div, .smc-detalhe-editavel-linha-dados:nth-child(2n) div {
+  margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 992px) {
+  .smc-detalhe-editavel-linha-dados {
+    width: 94%;
+  }
+}
+
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados {
+  display: flex !important;
+  flex-direction: row;
+  width: 100%;
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--white);
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+@media screen and (max-width: 992px) {
+  .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados div {
+    flex-direction: column;
+  }
+}
+
+.smc-detalhe-editavel-blocos .smc-size-md-24 {
+  flex-flow: column wrap;
+  flex-direction: row;
+  display: flex;
+  column-gap: 0.71em !important;
+}
+.smc-detalhe-editavel-blocos .smc-size-md-24 > div {
+  flex-grow: 4;
+  position: relative;
+  margin-bottom: 1.42em;
+}
+.smc-detalhe-editavel-blocos .smc-size-md-24 div[data-type=smc-hidden] {
+  display: none;
+}
+.smc-detalhe-editavel-blocos .smc-size-md-24 .smc-button {
+  width: auto;
+}
+.smc-detalhe-editavel-blocos .smc-textarea.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  width: 92%;
+  flex: 1 1 92.4%;
+}
+.smc-detalhe-editavel-blocos .smc-textarea.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 label {
+  width: 97%;
+}
+.smc-detalhe-editavel-blocos .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  align-items: flex-end;
+  flex: 1 1 1% !important;
+  justify-content: center;
+}
+.smc-detalhe-editavel-blocos .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 .smc-btn-excluir-ico {
+  margin-bottom: 0.35em;
+}
+.smc-detalhe-editavel-blocos .smc-linha-removida {
+  align-items: center;
+  text-align: center;
+}
+.smc-detalhe-editavel-blocos .smc-detalhe-editavel-linha-dados {
+  border-bottom: 1px solid var(--white);
+}
+.smc-detalhe-editavel-blocos .smc-detalhe-editavel-linha-dados:last-child {
+  border-bottom: none;
+}
+.smc-detalhe-editavel-blocos .smc-detalhe-editavel-linha-dados-nova {
+  background-color: #f1f1f1 !important;
+}
+.smc-detalhe-editavel-blocos .smc-span-linha-removida {
+  margin-top: 0 !important;
+}
+
+.smc-detalhe-editavel-botao-inserir {
+  height: 3rem;
+  padding: 0.28rem 0.35rem 0.35rem 0.92rem;
+  margin-top: 0.5em;
+  position: absolute;
+  right: -0.14em;
+  background-color: var(--background-button-secondary);
+  color: var(--color-primary-2);
+  margin-top: 0.1rem;
+}
+@media screen and (max-width: 992px) {
+  .smc-detalhe-editavel-botao-inserir {
+    width: 4rem !important;
+  }
+}
+.smc-detalhe-editavel-botao-inserir[disabled] {
+  background-color: #e3e3e3 !important;
+  color: #8d8d8d !important;
+  border: 1px solid #e3e3e3 !important;
+  cursor: no-drop !important;
+  opacity: 1;
+}
+
+#Enderecos .smc-detalhe-editavel-linha-dados {
+  padding: 0;
+}
+#Enderecos .smc-detalhe-editavel-estrutura {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .telefone {
+    flex: 100% !important;
+  }
+}
+.telefone div[data-control=hidden] {
+  display: none;
+}
+.telefone .smc-size-md-24 {
+  gap: 0.71em;
+  column-gap: 0.71em !important;
+}
+.telefone .smc-size-md-24 > div {
+  padding: 0 !important;
+  position: relative;
+}
+.telefone .smc-detalhe-editavel-organizador {
+  padding-left: 10px;
+}
+@media screen and (max-width: 992px) {
+  .telefone .smc-detalhe-editavel-organizador {
+    padding-left: 0;
+    margin-left: 0;
+    width: 94%;
+  }
+}
+.telefone .smc-detalhe-editavel-header .smc-size-md-8.smc-size-xs-8.smc-size-sm-8.smc-size-lg-8 {
+  flex: 0 0 30%;
+  max-width: 30%;
+  padding-left: 1.64em;
+}
+.telefone .smc-detalhe-editavel-header .smc-size-md-4.smc-size-xs-4.smc-size-sm-4.smc-size-lg-4 {
+  flex: 0 0 11.33333%;
+  max-width: 11.33333%;
+}
+.telefone .smc-detalhe-editavel-header .smc-size-md-4.smc-size-xs-4.smc-size-sm-4.smc-size-lg-4 label {
+  position: absolute;
+}
+.telefone .smc-detalhe-editavel-header .smc-size-md-6.smc-size-xs-6.smc-size-sm-6.smc-size-lg-6 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+@media screen and (max-width: 992px) {
+  .telefone .smc-detalhe-editavel-linha-dados .smc-size-md-24 {
+    flex: 100%;
+    gap: 0.71em;
+    flex-direction: row;
+    align-items: end;
+  }
+}
+.telefone .smc-detalhe-editavel-linha-dados .smc-size-md-24 .smc-select.smc-size-md-8.smc-size-xs-8.smc-size-sm-8.smc-size-lg-8.smc-select-simple {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+.telefone .smc-detalhe-editavel-linha-dados .smc-size-md-24 .smc-size-md-4.smc-size-xs-4.smc-size-sm-4.smc-size-lg-4 {
+  flex: 0 0 11.33333%;
+  max-width: 11.33333%;
+}
+.telefone .smc-detalhe-editavel-linha-dados .smc-size-md-24 .smc-size-md-6.smc-size-xs-6.smc-size-sm-6.smc-size-lg-6 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.endereco-eletronico .smc-detalhe-editavel-header {
+  gap: 0.71em;
+}
+.endereco-eletronico .smc-detalhe-editavel-header::after {
+  content: "";
+}
+.endereco-eletronico .smc-detalhe-editavel-header .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6 {
+  padding: 0;
+}
+@media screen and (max-width: 992px) {
+  .endereco-eletronico .smc-detalhe-editavel-header .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+.endereco-eletronico .smc-detalhe-editavel-header .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  padding: 0;
+}
+@media screen and (max-width: 992px) {
+  .endereco-eletronico .smc-detalhe-editavel-header .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.endereco-eletronico .smc-detalhe-editavel-header label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 93%;
+  white-space: nowrap !important;
+}
+@media screen and (max-width: 992px) {
+  .endereco-eletronico .smc-size-md-24 {
+    flex-direction: row !important;
+    flex: 100%;
+    gap: 0.71em;
+  }
+}
+.endereco-eletronico .smc-detalhe-editavel-organizador {
+  padding-left: 10px;
+}
+.endereco-eletronico .smc-detalhe-editavel-linha-dados {
+  display: inline-block !important;
+}
+.endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-24 {
+  gap: 0.71em;
+}
+@media screen and (max-width: 992px) {
+  .endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-24 {
+    align-items: end;
+  }
+}
+.endereco-eletronico .smc-detalhe-editavel-linha-dados div[data-control=hidden] {
+  display: none;
+}
+@media screen and (max-width: 850px) {
+  .endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-24 {
+    flex: auto;
+  }
+  .endereco-eletronico .smc-detalhe-editavel-linha-dados div[data-type=smc-editabledetail-data-container] {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6 {
+  padding: 0;
+}
+@media screen and (max-width: 992px) {
+  .endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+.endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  padding: 0;
+  position: relative;
+}
+@media screen and (max-width: 992px) {
+  .endereco-eletronico .smc-detalhe-editavel-linha-dados .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.smc-linha-removida-painel {
+  position: absolute !important;
+  width: 50% !important;
+}
+.smc-linha-removida-painel .smc-span-linha-removida {
+  position: relative;
+  text-transform: uppercase;
+  color: var(--color-secondary-2) !important;
+  margin-top: 0.5em;
+}
+
+.smc-detalhe-editavel-li-erro {
+  margin-top: -0.35em;
+}
+.smc-detalhe-editavel-li-erro .span-validation-error span span {
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+  border-radius: 0;
+  padding: 0.21em 0.35em 0 0.35em;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.span-validation-error {
+  width: 95%;
+}
+.span-validation-error > span > span {
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+  border-radius: 0;
+  padding: 0.21em 0.35em 0 0.35em;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.smc-radiobutton-list-itens, .smc-checkbox-list-itens {
+  display: flex;
+  padding-top: 0.78em;
+}
+.smc-radiobutton-list-itens label, .smc-checkbox-list-itens label {
+  font-size: 1.2em !important;
+}
+
+.smc-radiobutton label input {
+  margin-right: 5px !important;
+}
+
+.smc-radiobutton label > input::before,
+.smc-checkbox label > input::before {
+  top: -0.78em !important;
+  left: -0.9em !important;
+  width: 1.5em !important;
+  height: 1.5em !important;
+}
+
+.smc-radiobutton label > input:checked::after {
+  top: -2em !important;
+  left: -0.47em !important;
+  width: 0.78em !important;
+  height: 0.78em !important;
+}
+
+.smc-checkbox label > input:checked::after {
+  top: -32px !important;
+  left: -6px !important;
+}
+
+div[data-type=smc-editabledetail-data-container] {
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
+}
+
+.smc-gpi-conteudo-sgf {
+  display: flex;
+  flex-direction: column;
+}
+.smc-gpi-conteudo-sgf fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex-flow: column wrap;
+}
+.smc-gpi-conteudo-sgf fieldset legend {
+  font-size: 1.1em !important;
+  color: var(--color-font-h4) !important;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-detail-h4) !important;
+  padding-bottom: 0.35em !important;
+  background-color: transparent !important;
+  font-weight: bold;
+  font-family: var(--body-fonts) !important;
+  width: 100%;
+  margin-bottom: 0.71em;
+}
+.smc-gpi-conteudo-sgf fieldset legend:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 5px;
+  border-color: transparent transparent transparent var(--color-detail-h4);
+  margin: 0.14em 0.71em 0 0;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular {
+  padding: 0;
+  position: relative;
+  margin-bottom: 1.42em;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-preenchimento-obrigatorio {
+  margin-bottom: -0.57em;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-estrutura {
+  display: none;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados {
+  display: block !important;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados label p, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados label, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador label p, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador label {
+  font-size: 0.8rem;
+  color: var(--color-label);
+  margin: 0;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados .smc-size-md-24, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador .smc-size-md-24 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 94%;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados .smc-size-md-24, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador .smc-size-md-24 {
+    flex-direction: column;
+  }
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados .smc-size-md-24 > div, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador .smc-size-md-24 > div {
+  width: 49%;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados .smc-size-md-24 > div, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador .smc-size-md-24 > div {
+    width: 100%;
+  }
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados .smc-size-md-24 .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador .smc-size-md-24 .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  width: 10%;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados .smc-size-md-24 .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador .smc-size-md-24 .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+    width: 89%;
+    margin-left: 30px;
+  }
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-linha-dados .smc-size-md-24 div[data-type=smc-hidden], .smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-organizador .smc-size-md-24 div[data-type=smc-hidden] {
+  display: none;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-buttonset-horizontal-primario + .smc-detalhe-editavel-organizador .smc-detalhe-editavel-header::after {
+  width: 9%;
+  content: "";
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-buttonset-horizontal-primario + .smc-detalhe-editavel-organizador .smc-detalhe-editavel-header div {
+  width: 49%;
+  padding-left: 0.5em;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-tabular .smc-detalhe-editavel-header div {
+  width: 49%;
+  padding-left: 0.5em;
+}
+.smc-gpi-conteudo-sgf .smc-sgf-agrupador {
+  display: flex;
+  gap: 0.71em;
+  flex-direction: row;
+  column-gap: 0.71em;
+  align-items: flex-start;
+}
+.smc-gpi-conteudo-sgf .smc-sgf-agrupador label {
+  font-size: 0.8rem;
+  color: var(--color-label);
+}
+.smc-gpi-conteudo-sgf .smc-sgf-agrupador label p {
+  margin: 0;
+}
+.smc-gpi-conteudo-sgf .smc-sgf-agrupador div {
+  margin-bottom: 1.42em;
+  position: relative;
+  flex-grow: 4;
+}
+.smc-gpi-conteudo-sgf .smc-radiobutton-list-itens, .smc-gpi-conteudo-sgf .smc-checkbox-list-itens {
+  margin-bottom: 0 !important;
+}
+.smc-gpi-conteudo-sgf .smc-radiobutton-list-itens .smc-radiobutton, .smc-gpi-conteudo-sgf .smc-radiobutton-list-itens .smc-checkbox, .smc-gpi-conteudo-sgf .smc-checkbox-list-itens .smc-radiobutton, .smc-gpi-conteudo-sgf .smc-checkbox-list-itens .smc-checkbox {
+  margin-bottom: 0 !important;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-blocos .smc-detalhe-editavel-estrutura {
+  display: none;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-blocos .smc-lookup-unico {
+  width: 92%;
+  flex: 1 1 88% !important;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-blocos .smc-size-md-24 > div {
+  flex: 1 1 25%;
+  flex-direction: column;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-conteudo-sgf .smc-detalhe-editavel-blocos .smc-size-md-24 > div {
+    flex: 1 1 100%;
+  }
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-blocos .smc-size-md-24 .smc-textarea {
+  flex-direction: inherit;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-blocos .smc-size-md-24 .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  padding-top: 1.42em;
+  padding-right: 0.35em;
+}
+.smc-gpi-conteudo-sgf .smc-detalhe-editavel-blocos .smc-size-md-24 .smc-lookup.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24.smc-lookup-unico + div.smc-dependency + div.smc-dependency + div[data-control=hidden] + div.smc-dependency + div.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 + div.smc-textarea.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 + div.smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  align-items: center;
+  flex: 1 1 1% !important;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-conteudo-sgf .smc-detalhe-editavel-blocos .smc-size-md-24 .smc-lookup.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24.smc-lookup-unico + div.smc-dependency + div.smc-dependency + div[data-control=hidden] + div.smc-dependency + div.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 + div.smc-textarea.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 + div.smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 a {
+    width: 90%;
+  }
+}
+.smc-gpi-conteudo-sgf .smc-size-md-1.smc-size-xs-24.smc-size-sm-1.smc-size-lg-1,
+.smc-gpi-conteudo-sgf .smc-size-md-2.smc-size-xs-24.smc-size-sm-2.smc-size-lg-2 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-3.smc-size-xs-24.smc-size-sm-3.smc-size-lg-3,
+.smc-gpi-conteudo-sgf .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-5.smc-size-xs-24.smc-size-sm-5.smc-size-lg-5,
+.smc-gpi-conteudo-sgf .smc-size-md-6.smc-size-xs-24.smc-size-sm-6.smc-size-lg-6 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-gpi-conteudo-sgf .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-gpi-conteudo-sgf .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf .smc-size-md-10.smc-size-xs-24.smc-size-sm-10.smc-size-lg-10 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-11.smc-size-xs-24.smc-size-sm-11.smc-size-lg-11,
+.smc-gpi-conteudo-sgf .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-13.smc-size-xs-24.smc-size-sm-13.smc-size-lg-13,
+.smc-gpi-conteudo-sgf .smc-size-md-14.smc-size-xs-24.smc-size-sm-14.smc-size-lg-14 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-15.smc-size-xs-24.smc-size-sm-15.smc-size-lg-15,
+.smc-gpi-conteudo-sgf .smc-size-md-16.smc-size-xs-24.smc-size-sm-16.smc-size-lg-16 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-17.smc-size-xs-24.smc-size-sm-17.smc-size-lg-17,
+.smc-gpi-conteudo-sgf .smc-size-md-18.smc-size-xs-24.smc-size-sm-18.smc-size-lg-18 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-19.smc-size-xs-24.smc-size-sm-19.smc-size-lg-19,
+.smc-gpi-conteudo-sgf .smc-size-md-20.smc-size-xs-24.smc-size-sm-20.smc-size-lg-20 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-21.smc-size-xs-24.smc-size-sm-21.smc-size-lg-21,
+.smc-gpi-conteudo-sgf .smc-size-md-22.smc-size-xs-24.smc-size-sm-22.smc-size-lg-22 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-23.smc-size-xs-24.smc-size-sm-23.smc-size-lg-23,
+.smc-gpi-conteudo-sgf .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24.smc-sgf-agrupador {
+  padding: 0;
+}
+
+.smc-detalhe-editavel-blocos textarea {
+  width: 98%;
+}
+
+.smc-detalhe-editavel-linha-dados .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  align-items: end !important;
+  padding-bottom: 6px !important;
+}
+
+.smc-detalhe-editavel-linha-dados .span-validation-error {
+  bottom: 0;
+}
+
+#formulario .smc-sgf-agrupador > div {
+  flex: 1 1 23%;
+}
+@media screen and (max-width: 992px) {
+  #formulario .smc-sgf-agrupador > div {
+    flex: 1 1 100% !important;
+  }
+}
+
+.smc-textarea {
+  position: relative;
+}
+.smc-textarea .smc-barra-progresso {
+  padding: 0;
+}
+
+.smc-textarea label, .smc-textarea > label > p > span {
+  font-size: 0.8rem !important;
+  color: var(--color-label) !important;
+  width: 99%;
+}
+
+.smc-textarea > label {
+  width: auto;
+}
+
+.smc-textarea label p {
+  margin: 0;
+}
+
+.smc-detalhe-editavel-painel-nao-encontrado {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  background-color: var(--white);
+  border-radius: 0;
+  padding: 0.21em 0.71em;
+  position: absolute;
+  top: 1.92em;
+  left: 0.71em;
+  z-index: 2;
+}
+@media screen and (max-width: 992px) {
+  .smc-detalhe-editavel-painel-nao-encontrado {
+    position: relative;
+    top: -2px;
+    width: 85%;
+  }
+}
+.smc-detalhe-editavel-painel-nao-encontrado:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7.5px 7px 7.5px;
+  border-color: transparent transparent #ffffff transparent;
+  webkit-filter: drop-shadow(0px -1px 1px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px -1px 1px rgba(0, 0, 0, 0.3));
+  position: absolute;
+  top: -0.5em;
+  left: 0.71em;
+}
+.smc-detalhe-editavel-painel-nao-encontrado span {
+  display: none;
+}
+.smc-detalhe-editavel-painel-nao-encontrado:after {
+  content: "Clique  no botão + para incluir um novo item";
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+.smc-gpi-upload-documentos .smc-detalhe-editavel-organizador {
+  padding: 0 10px;
+}
+.smc-gpi-upload-documentos div[data-control-child=smc-list] {
+  position: relative;
+}
+.smc-gpi-upload-documentos div[data-control=submitlist] {
+  width: 100%;
+}
+.smc-gpi-upload-documentos div[data-type=smc-submitlist-body] {
+  display: flex;
+  column-gap: 0.71em;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-upload-documentos div[data-type=smc-submitlist-body] label {
+    display: block;
+  }
+}
+.smc-gpi-upload-documentos div[data-type=smc-submitlist-body] > div {
+  display: flex;
+  column-gap: 0.71em;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  border-bottom: 1px solid var(--white);
+  margin-bottom: 0.12em;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-upload-documentos div[data-type=smc-submitlist-body] > div {
+    flex-direction: column;
+  }
+}
+.smc-gpi-upload-documentos div[data-type=smc-submitlist-body] > div:last-child {
+  border-bottom: none;
+}
+.smc-gpi-upload-documentos div[data-type=smc-submitlist-body] > div > div {
+  width: 49%;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-upload-documentos div[data-type=smc-submitlist-body] > div > div {
+    width: 100%;
+  }
+}
+.smc-gpi-upload-documentos div[data-type=smc-submitlist-body] div[data-type=smc-hidden] {
+  display: none;
+}
+.smc-gpi-upload-documentos .smc-detalhe-editavel-header {
+  padding-left: 0 !important;
+  column-gap: 0.71em;
+}
+.smc-gpi-upload-documentos .smc-detalhe-editavel-header > .smc-size-md-8 {
+  max-width: 40%;
+}
+.smc-gpi-upload-documentos .smc-detalhe-editavel-header > .smc-size-md-4 {
+  max-width: 18%;
+}
+.smc-gpi-upload-documentos .smc-detalhe-editavel-header::after {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-upload-documentos .smc-detalhe-editavel-header {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .smc-gpi-upload-documentos-opcionais .smc-detalhe-editavel-titulo {
+    width: 95% !important;
+  }
+}
+.smc-gpi-upload-documentos-opcionais .smc-detalhe-editavel-header {
+  column-gap: 0.41rem;
+}
+.smc-gpi-upload-documentos-opcionais .smc-detalhe-editavel-header:after {
+  display: none;
+}
+.smc-gpi-upload-documentos-opcionais .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4 {
+  width: 49%;
+  padding-left: 0.8em;
+}
+.smc-gpi-upload-documentos-opcionais .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  width: 31.5%;
+  padding-left: 0.8em;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-upload-documentos-opcionais .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+    width: 96%;
+  }
+}
+.smc-gpi-upload-documentos-opcionais #listaDocumentosOpcionais, .smc-gpi-upload-documentos-opcionais div[data-type=smc-submitlist-body], .smc-gpi-upload-documentos-opcionais div[data-control-child=smc-list] {
+  width: 99%;
+}
+@media screen and (max-width: 1199px) {
+  .smc-gpi-upload-documentos-opcionais #listaDocumentosOpcionais, .smc-gpi-upload-documentos-opcionais div[data-type=smc-submitlist-body], .smc-gpi-upload-documentos-opcionais div[data-control-child=smc-list] {
+    width: 115%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-upload-documentos-opcionais #listaDocumentosOpcionais, .smc-gpi-upload-documentos-opcionais div[data-type=smc-submitlist-body], .smc-gpi-upload-documentos-opcionais div[data-control-child=smc-list] {
+    width: 100%;
+  }
+}
+.smc-gpi-upload-documentos-opcionais div[data-type=smc-submitlist-body] {
+  flex-direction: column;
+}
+
+#DocumentosAdicionais .smc-detalhe-editavel-linha-dados .smc-size-md-24 {
+  column-gap: 0.71em !important;
+}
+#DocumentosAdicionais .smc-detalhe-editavel-linha-dados .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  width: 36% !important;
+  max-width: 35% !important;
+  flex: 0 0 36%;
+}
+@media screen and (max-width: 992px) {
+  #DocumentosAdicionais .smc-detalhe-editavel-linha-dados .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: auto;
+  }
+}
+#DocumentosAdicionais .smc-detalhe-editavel-linha-dados .smc-button {
+  width: 15% !important;
+}
+#DocumentosAdicionais .smc-detalhe-editavel-linha-dados .smc-upload .smc-dropdown-btn-toggle-arrow {
+  right: -9.5em;
+}
+#DocumentosAdicionais .smc-detalhe-editavel-header {
+  column-gap: 0.71em !important;
+}
+#DocumentosAdicionais .smc-detalhe-editavel-header div:first-child, #DocumentosAdicionais .smc-detalhe-editavel-header div:nth-child(2) {
+  width: 36% !important;
+  max-width: 34.5% !important;
+  flex: 0 0 36.5%;
+}
+@media screen and (max-width: 992px) {
+  #DocumentosAdicionais .smc-detalhe-editavel-header div:first-child, #DocumentosAdicionais .smc-detalhe-editavel-header div:nth-child(2) {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  #DocumentosAdicionais .smc-button.smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .smc-uploadFile-contextWindowControls.smc-btn-desabilitado {
+    height: 3em;
+  }
+}
+.smc-uploadFile-contextWindowControls.smc-btn-desabilitado .smc-btn-custom {
+  font-size: 0.9em !important;
+}
+
+.smc-upload .smc-uploadFile-contextWindowControls {
+  position: relative;
+}
+.smc-upload .smc-uploadFile-contextWindowControls .dropdown {
+  position: absolute;
+  display: flex;
+}
+.smc-upload .smc-uploadFile-contextWindowControls .open > .dropdown-menu {
+  display: block;
+  position: absolute !important;
+  z-index: 3;
+  padding: 0 10px;
+}
+.smc-upload .smc-uploadFile-contextWindowControls .dropdown-menu {
+  display: none;
+  width: 20.71em;
+}
+.smc-upload .smc-dropdown-btn-toggle-arrow {
+  height: 3.063rem !important;
+  right: -10em;
+  color: var(--white) !important;
+  border: 1px solid var(--color-primary) !important;
+  border-left: none !important;
+  background-color: var(--color-primary) !important;
+}
+.smc-upload .smc-uploadFile-contextWindowControls > .smc-button > button {
+  height: 3.5em;
+  display: flex;
+  align-items: center;
+  width: 7.14em;
+  text-transform: uppercase;
+  font-size: 1em;
+  background-color: var(--color-primary);
+  color: var(--white);
+  border: 1px solid var(--color-primary);
+}
+.smc-upload p[data-type=smc-uploadFile-noFiles] {
+  font-size: 0.9em;
+  border-top: none;
+}
+.smc-upload .smc-uploadFile-filesCounter {
+  height: 1rem;
+  top: -0.1rem;
+  left: 6.42rem !important;
+  padding: 0.2rem 0.35rem 0 0.2rem;
+  background-color: var(--color-hover);
+  width: 1.42em !important;
+  position: absolute;
+  flex-direction: row !important;
+}
+.smc-upload .smc-uploadFile-filesCounter i {
+  margin: 0;
+  font-family: var(--fa-font);
+}
+.smc-upload .smc-uploadFile-filesCounter i:before {
+  font-size: 0.5rem;
+  margin-right: 0.14rem;
+  content: "\f00c";
+}
+
+.smc-uploadFile-filesCounter-0 {
+  display: none !important;
+}
+
+.smc-uploadFile-filesCounter-0.smc-uploadFile-filesCounter-uploading {
+  font-size: 0;
+  width: 10px !important;
+  background-color: var(--white);
+  display: block !important;
+}
+.smc-uploadFile-filesCounter-0.smc-uploadFile-filesCounter-uploading i {
+  display: none;
+}
+
+.smc-uploadFile .smc-uploadFile-arquivos > .smc-uploadFile-arquivo {
+  padding: 2px 5px 0 5px;
+  border-bottom: none;
+  display: flex;
+}
+
+.smc-uploadFile-arquivo-imagem, .smc-uploadFile-arquivo-download {
+  background-color: transparent;
+  border: none;
+  padding: 0.35em 0.14em;
+  font-family: var(--fa-font);
+}
+.smc-uploadFile-arquivo-imagem:before, .smc-uploadFile-arquivo-download:before {
+  font-size: 0.85em;
+}
+
+.smc-uploadFile-arquivo-imagem:before {
+  content: "\f15b";
+}
+
+.smc-uploadFile-arquivo-download:before {
+  content: "\f019";
+}
+
+.smc-uploadFile-arquivo-remover {
+  font-family: var(--fa-font);
+}
+.smc-uploadFile-arquivo-remover:before {
+  content: "\f2ed";
+}
+
+.smc-uploadFile-arquivo-nome {
+  width: 11.07em !important;
+  font-size: 0.9em;
+  margin-bottom: 0;
+  margin-top: 4px;
+}
+
+.smc-uploadFile-arquivo-tamanho {
+  width: 5em;
+  font-size: 0.9em;
+  margin-bottom: 0;
+  margin-top: 4px;
+}
+
+.smc-uploadFile-arquivo {
+  background-color: transparent !important;
+  flex-direction: initial !important;
+}
+
+.smc-uploadFile-fileProgress-waiting {
+  height: 1em;
+  background-color: orange;
+  position: absolute;
+}
+
+.smc-uploadFile .smc-uploadFile-fileProgress-done,
+.smc-uploadFile-fileProgress-done {
+  width: 88%;
+  height: 0.15rem !important;
+  margin-top: 1.6rem;
+  position: absolute;
+  background-color: #13ed41 !important;
+  font-size: 0;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+  left: 15px;
+}
+
+.smc-uploadFile-arquivo-download {
+  right: 1.5em !important;
+  top: 0.7em !important;
+  padding: 0em 0.14em;
+}
+.smc-uploadFile-arquivo-download:before {
+  color: var(--color-primary);
+}
+
+.smc-uploadFile-arquivo-remover {
+  margin: 6px 0 11px 5px !important;
+  color: var(--color-error);
+  display: inline-block !important;
+}
+
+.smc-uploadFile-fileProgress-div {
+  font-size: 0;
+  background-color: #13ed41 !important;
+  position: absolute;
+}
+
+.smc-uploadFile .smc-uploadFile-fileProgress-div {
+  position: absolute;
+  left: 15px;
+  margin-right: 15px;
+  height: 0.15rem;
+  max-width: 88%;
+  webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 1.8rem;
+}
+
+.smc-uploadFile-progresso-div {
+  width: 88%;
+  height: 0.28em !important;
+  margin-top: 2.07em;
+  position: absolute;
+  background-color: orange;
+}
+
+.smc-lookup .smc-btn-lookup-open-modal.smc-lookup-open-command {
+  background-color: var(--color-primary) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--color-primary) !important;
+}
+
+.smc-lookup-corpo-acoes label {
+  font-size: 0.8rem;
+  color: var(--color-label);
+}
+
+.smc-lookup-pesquisar {
+  position: absolute !important;
+  right: -0.5em !important;
+  top: -0.14em;
+  z-index: 1;
+}
+.smc-lookup-pesquisar .smc-btn-lookup-open-modal {
+  height: 3.05rem !important;
+  padding: 0 0.64rem 0 0.92rem;
+  background-color: #f8f8f8 !important;
+  color: var(--color-primary-2) !important;
+  border: 1px solid #cccccc !important;
+  border-left: none !important;
+  border-radius: 0 3px 3px 0;
+  right: 0.61rem !important;
+  top: 1.3rem;
+}
+@media screen and (min-width: 1600px) {
+  .smc-lookup-pesquisar .smc-btn-lookup-open-modal {
+    height: 3.12rem !important;
+  }
+}
+
+.smc-lookup-corpo-limpar {
+  position: relative;
+}
+
+.smc-lookup-unico .smc-lookup-corpo .smc-lookup-corpo-limpar .smc-button .smc-btn-limpar-ico {
+  opacity: 0.2 !important;
+  right: 4rem !important;
+  border: none !important;
+  top: 2.1rem !important;
+  border-color: transparent !important;
+}
+
+.smc-lookup-unico {
+  flex-direction: column;
+  width: 98%;
+}
+
+div.smc-lookup-input-width > input.smc-horizontal-align-left {
+  width: 97% !important;
+}
+@media screen and (min-width: 1920px) {
+  div.smc-lookup-input-width > input.smc-horizontal-align-left {
+    width: 99% !important;
+  }
+}
+
+.smc-dependency {
+  display: none;
+}
+
+.smc-gpi-entrega-posterior {
+  position: absolute;
+  right: 0;
+  width: 8.21em !important;
+  top: 0.71em;
+  z-index: 2;
+}
+@media screen and (max-width: 992px) {
+  .smc-gpi-entrega-posterior {
+    position: relative;
+    width: 100% !important;
+    top: 0;
+    flex-direction: row !important;
+    align-items: center;
+    display: flex;
+  }
+  .smc-gpi-entrega-posterior .smc-checkbox {
+    margin-top: 0 !important;
+  }
+}
+.smc-gpi-entrega-posterior .smc-checkbox > label {
+  font-size: 0 !important;
+}
+.smc-gpi-entrega-posterior .smc-checkbox label > input::before {
+  top: -0.78em !important;
+  left: -0.85em !important;
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+}
+.smc-gpi-entrega-posterior .smc-checkbox label > input::after {
+  top: -0.95rem !important;
+  left: 0.28rem !important;
+}
+.smc-gpi-entrega-posterior .smc-checkbox label > input {
+  top: 0.5em;
+}
+.smc-gpi-entrega-posterior .smc-gpi-entrega-posterior-label {
+  display: flex !important;
+  line-height: 1.2em;
+  margin-top: 0rem !important;
+  margin-left: 0.3rem !important;
+  flex: 60% !important;
+  max-width: 100% !important;
+}
+
+.smc-sgf-agrupador {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.smc-sgf-agrupador > div {
+  flex: 50%;
+}
+
+.smc-sgf-template-arquivo-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.smc-radiobutton-list-vertical {
+  flex: 1 1 100% !important;
+}
+.smc-radiobutton-list-vertical .smc-radiobutton-list-itens {
+  display: flex;
+  flex-direction: column;
+}
+
+.smc-radiobutton-list-itens > .smc-radiobutton {
+  flex-grow: unset !important;
+}
+
+.smc-radiobutton-list-itens > .smc-radiobutton {
+  flex-grow: unset !important;
+}
+
+.smc-sgf-rotulo, fieldset.smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  flex: 1 1 100% !important;
+  flex-wrap: wrap;
+}
+
+.smc-sgf-rotulo {
+  margin-top: 1rem;
+}
+
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  border-bottom: 1px solid var(--white);
+}
+.container-fluid div {
+  flex: 1 1 19%;
+}
+@media screen and (max-width: 992px) {
+  .container-fluid {
+    flex: 1 1 100%;
+  }
+}
+
+#formFormularioInscricao .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24.smc-sgf-agrupador > div {
+  flex: auto;
+}
+
+#formulario .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24.smc-sgf-agrupador > div {
+  flex: 100%;
+}
+
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > div {
+  position: relative;
+}
+
+.smc-radiobutton-list-horizontal > .span-validation-error,
+.smc-checkbox-list-horizontal > .span-validation-error {
+  margin: 60px 0 0 0;
+  bottom: 0;
+}
+
+.smc-radiobutton-list-horizontal .smc-radiobutton-list-itens,
+.smc-checkbox-list-horizontal .smc-checkbox-list-itens {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+@media screen and (max-width: 992px) {
+  .smc-radiobutton-list-horizontal .smc-radiobutton-list-itens,
+  .smc-checkbox-list-horizontal .smc-checkbox-list-itens {
+    flex-direction: column;
+  }
+}
+
+.smc-checkbox-list-vertical > .smc-checkbox-list-itens {
+  flex-direction: column;
+}
+
+.smc-checkbox label {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+.smc-checkbox label input {
+  top: -1px !important;
+}
+
+fieldset > div > fieldset.smc-sgf-agrupador legend {
+  font-size: 1.1em !important;
+  font-weight: 600;
+  padding-bottom: 0 !important;
+  color: var(--color-primary-3) !important;
+  border-bottom: none !important;
+}
+fieldset > div > fieldset.smc-sgf-agrupador legend:before {
+  display: none !important;
+}
+
+.smc-gpi-campo-qtd-opcoes {
+  margin-top: 2em;
+}
+.smc-gpi-campo-qtd-opcoes select {
+  width: 20% !important;
+}
+
+fieldset.smc-sgf-agrupador, .smc-gpi-conteudo-sgf {
+  gap: inherit !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+fieldset.smc-sgf-agrupador > div input[type=text], .smc-gpi-conteudo-sgf > div input[type=text] {
+  width: calc(100% - 1.9em) !important;
+}
+fieldset.smc-sgf-agrupador > div select, .smc-gpi-conteudo-sgf > div select {
+  width: calc(100% - 0.5em) !important;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+fieldset.smc-sgf-agrupador > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-gpi-conteudo-sgf > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-gpi-conteudo-sgf > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+fieldset.smc-sgf-agrupador > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, .smc-gpi-conteudo-sgf > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-gpi-conteudo-sgf > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+fieldset.smc-sgf-agrupador > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-gpi-conteudo-sgf > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-gpi-conteudo-sgf > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+fieldset.smc-sgf-agrupador > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .smc-gpi-conteudo-sgf > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-gpi-conteudo-sgf > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+fieldset.smc-sgf-agrupador > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+fieldset.smc-sgf-agrupador > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, .smc-gpi-conteudo-sgf > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-gpi-conteudo-sgf > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+fieldset.smc-sgf-agrupador > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12, .smc-gpi-conteudo-sgf > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-gpi-conteudo-sgf > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+fieldset.smc-sgf-agrupador > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14, .smc-gpi-conteudo-sgf > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-gpi-conteudo-sgf > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+fieldset.smc-sgf-agrupador > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, .smc-gpi-conteudo-sgf > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-gpi-conteudo-sgf > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+fieldset.smc-sgf-agrupador > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, .smc-gpi-conteudo-sgf > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-gpi-conteudo-sgf > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+fieldset.smc-sgf-agrupador > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, .smc-gpi-conteudo-sgf > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-gpi-conteudo-sgf > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+fieldset.smc-sgf-agrupador > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, .smc-gpi-conteudo-sgf > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-gpi-conteudo-sgf > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22 {
+  padding: 0;
+}
+fieldset.smc-sgf-agrupador > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+fieldset.smc-sgf-agrupador > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, .smc-gpi-conteudo-sgf > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-gpi-conteudo-sgf > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  padding: 0;
+}
+
+.smc-gpi-conteudo-sgf {
+  gap: inherit !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.smc-gpi-conteudo-sgf #formulario > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.smc-gpi-conteudo-sgf #formulario > div > div {
+  flex: auto;
+  width: 100%;
+}
+.smc-gpi-conteudo-sgf #formulario > div div input[type=text] {
+  width: calc(100% - 1.9em) !important;
+}
+.smc-gpi-conteudo-sgf #formulario > div div select {
+  width: calc(100% - 0.5em) !important;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  padding: 0;
+  margin-bottom: 1.42em;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-gpi-conteudo-sgf #formulario > div > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset {
+  margin-top: 10px;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22 {
+  padding: 0;
+}
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-gpi-conteudo-sgf #formulario fieldset > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  padding: 0;
+}
+
+.smc-detalhe-editavel-blocos {
+  min-height: 60px;
+  margin-bottom: 20px;
+}
+
+div .container-fluid:last-child {
+  border-bottom: none;
+}
+
+.smc-radiobutton-list-horizontal > .smc-radiobutton-list-itens > .smc-radiobutton > label {
+  margin-right: 10px;
+}
+
+.smc-currency .smc-instrucoes-preenchimento-icone {
+  margin-top: -0.05em !important;
+}
+
+.smc-btn-buscacep-desabilitado {
+  opacity: 1 !important;
+}
+
+.smc-checkbox-list > label, .smc-radiobutton-list > label {
+  min-height: 24px;
+  font-size: 0.8rem;
+}
+
+.smc-radiobutton-list-vertical > span + label {
+  float: none;
+}
+
+#CodigosAutorizacao .smc-size-md-24, .smc-detalhe-editavel-linha-dados .smc-size-md-24 {
+  width: 100%;
+  column-gap: 0;
+}
+@media screen and (max-width: 992px) {
+  #CodigosAutorizacao .smc-size-md-24 .smc-btn-excluir-ico, .smc-detalhe-editavel-linha-dados .smc-size-md-24 .smc-btn-excluir-ico {
+    width: 92%;
+  }
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22 {
+  padding: 0;
+}
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+#CodigosAutorizacao .smc-size-md-24 > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24, .smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-detalhe-editavel-linha-dados .smc-size-md-24 > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  padding: 0;
+}
+
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header {
+  padding-left: 10px;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-2.smc-size-xs-24.smc-size-sm-4.smc-size-lg-2 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-3.smc-size-xs-24.smc-size-sm-4.smc-size-lg-3,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-4.smc-size-xs-24.smc-size-sm-4.smc-size-lg-4 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-5.smc-size-xs-24.smc-size-sm-4.smc-size-lg-5,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-5.smc-size-xs-24.smc-size-sm-8.smc-size-lg-5,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-6.smc-size-xs-24.smc-size-sm-8.smc-size-lg-6,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-6.smc-size-xs-24.smc-size-sm-4.smc-size-lg-6 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-7.smc-size-xs-24.smc-size-sm-7.smc-size-lg-7,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-7.smc-size-xs-24.smc-size-sm-8.smc-size-lg-7,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-8.smc-size-xs-24.smc-size-sm-8.smc-size-lg-8 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-9.smc-size-xs-24.smc-size-sm-9.smc-size-lg-9,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-9.smc-size-xs-24.smc-size-sm-12.smc-size-lg-9,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-10.smc-size-xs-24.smc-size-sm-12.smc-size-lg-10 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-11.smc-size-xs-24.smc-size-sm-24.smc-size-lg-11,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-11.smc-size-xs-24.smc-size-sm-12.smc-size-lg-11,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-12.smc-size-xs-24.smc-size-sm-12.smc-size-lg-12,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-12.smc-size-xs-24.smc-size-sm-24.smc-size-lg-12 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-13.smc-size-xs-24.smc-size-sm-24.smc-size-lg-13,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-14.smc-size-xs-24.smc-size-sm-24.smc-size-lg-14,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-14.smc-size-xs-24.smc-size-sm-12.smc-size-lg-14 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-15.smc-size-xs-24.smc-size-sm-24.smc-size-lg-15,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-16.smc-size-xs-24.smc-size-sm-24.smc-size-lg-16 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-17.smc-size-xs-24.smc-size-sm-24.smc-size-lg-17,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-18.smc-size-xs-24.smc-size-sm-24.smc-size-lg-18 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-19.smc-size-xs-24.smc-size-sm-24.smc-size-lg-19,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-20.smc-size-xs-24.smc-size-sm-24.smc-size-lg-20 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-21.smc-size-xs-24.smc-size-sm-24.smc-size-lg-21,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-22.smc-size-xs-24.smc-size-sm-24.smc-size-lg-22 {
+  padding: 0;
+}
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-23.smc-size-xs-24.smc-size-sm-24.smc-size-lg-23,
+.smc-detalhe-editavel-tabular .smc-detalhe-editavel-header > .smc-size-md-24.smc-size-xs-24.smc-size-sm-24.smc-size-lg-24 {
+  padding: 0;
+}
+
+.smc-grid {
+  border: none;
+  background-color: transparent;
+}
+
+.smc-datagrid th {
+  font-size: 1em !important;
+  padding: 0.21em 0.7em !important;
+}
+.smc-datagrid thead {
+  background-color: #efefef;
+}
+.smc-datagrid > table {
+  border-spacing: 0;
+}
+.smc-datagrid > table > thead > tr > th {
+  padding: 0.21em 0.7em !important;
+  color: var(--color-font-h4) !important;
+}
+.smc-datagrid > table tr, .smc-datagrid > table th {
+  background-color: transparent !important;
+}
+.smc-datagrid > table td {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid var(--white) !important;
+}
+.smc-datagrid .smc-gpi-btn-link-grid {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-primary);
+  text-decoration: underline !important;
+  font-size: 1.2em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 25.7em;
+}
+.smc-datagrid .smc-gpi-btn-link-grid:hover {
+  background-color: transparent;
+}
+
+.smc-datagrid-header {
+  background-color: transparent;
+}
+.smc-datagrid-header span {
+  color: var(--color-font-paths) !important;
+  text-transform: uppercase !important;
+  font-weight: bold;
+  font-size: 1em !important;
+  margin: 0 !important;
+}
+
+.smc-gpi-grid-docs tr {
+  display: flex;
+  flex-direction: row;
+  height: auto !important;
+}
+.smc-gpi-grid-docs tr td, .smc-gpi-grid-docs tr th {
+  flex: 1 1 30%;
+  align-items: center;
+  display: flex;
+}
+.smc-gpi-grid-docs tr td .smc-gpi-btn-link-grid, .smc-gpi-grid-docs tr th .smc-gpi-btn-link-grid {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 250px;
+  white-space: nowrap !important;
+}
+.smc-gpi-grid-docs tr td .smc-gpi-docs-container, .smc-gpi-grid-docs tr th .smc-gpi-docs-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: normal;
+}
+.smc-gpi-grid-docs tr td .smc-display, .smc-gpi-grid-docs tr th .smc-display {
+  margin: 0;
+}
+.smc-gpi-grid-docs tr td .smc-display p, .smc-gpi-grid-docs tr td a {
+  font-size: 1.1em !important;
+}
+
+@media screen and (max-width: 1100px) {
+  .smc-gpi-grid-docs .smc-datagrid table, .smc-gpi-grid-docs .smc-datagrid tbody, .smc-gpi-grid-docs .smc-datagrid th, .smc-gpi-grid-docs .smc-datagrid td, .smc-gpi-grid-docs .smc-datagrid tr {
+    display: block !important;
+  }
+  .smc-gpi-grid-docs .smc-datagrid thead {
+    display: none !important;
+  }
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr {
+    border: 1px solid #ccc !important;
+    height: auto !important;
+  }
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr:hover {
+    background: #fcfcfc !important;
+  }
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td {
+    border: none !important;
+    border-bottom: 1px solid #eee !important;
+    position: relative !important;
+    padding-left: 25% !important;
+    white-space: normal !important;
+    text-align: left !important;
+    min-height: 2.42em !important;
+    font-size: 0.92em !important;
+    padding-top: 0.35em !important;
+  }
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td:nth-of-type(1):before {
+    content: "Tipo documento";
+  }
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td:nth-of-type(2):before {
+    content: "Descrição";
+  }
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td:nth-of-type(3):before {
+    content: "Arquivo";
+  }
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td:before {
+    position: absolute;
+    top: 0.42em;
+    left: 0.42em;
+    width: 45%;
+    padding-right: 0.71em;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.85em;
+  }
+}
+@media screen and (max-width: 1100px) and (max-width: 470px) {
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td:before {
+    position: initial;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td:hover {
+    background: transparent !important;
+  }
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td:nth-child(odd) {
+    background: #f1f1f1 !important;
+  }
+}
+@media screen and (max-width: 1100px) and (max-width: 470px) {
+  .smc-gpi-grid-docs .smc-datagrid table tbody tr td {
+    padding-left: 0.71em !important;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .smc-csc-acao-link {
+    white-space: nowrap;
+  }
+}
+.smc-gpi-texto-entrega-posterior {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.smc-sgf-agrupador .smc-display-collection .smc-datagrid tbody {
+  display: flex;
+  flex-direction: column;
+}
+.smc-sgf-agrupador .smc-display-collection .smc-datagrid tbody tr {
+  display: flex;
+  flex-direction: row;
+  height: auto !important;
+  border-bottom: 1px solid var(--white);
+  flex-wrap: wrap;
+}
+.smc-sgf-agrupador .smc-display-collection .smc-datagrid tbody tr td {
+  flex: 1 1 24%;
+  border: none !important;
+}
+
+.smc-header {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 0 2em 1em;
+}
+
+.smc-ribbon {
+  height: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.smc-aplicaco-logotipo {
+  width: 15em;
+  margin-left: 5%;
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  display: flex;
+  background-size: contain;
+}
+
+.smc-gpi-usuario {
+  display: flex;
+  align-self: center;
+  margin-right: 40px;
+}
+@media (max-width: 992px) {
+  .smc-gpi-usuario {
+    margin-right: 0;
+  }
+}
+.smc-gpi-usuario .smc-gpi-nome-usuario {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-top: 0.2em;
+  margin-right: 0.35em;
+}
+@media (max-width: 992px) {
+  .smc-gpi-usuario .smc-gpi-nome-usuario {
+    display: none;
+  }
+}
+.smc-gpi-usuario:before {
+  content: "";
+  width: 30%;
+  height: 1px;
+  position: absolute;
+  top: 69px;
+  right: 0;
+}
+@media (max-width: 850px) {
+  .smc-gpi-usuario:before {
+    display: none;
+  }
+}
+
+.smc-btn-usuario {
+  font-family: var(--fa-font);
+  background-color: transparent;
+  border: none;
+  margin-right: 0.71em;
+  cursor: pointer;
+}
+.smc-btn-usuario:before {
+  font-size: 1.57em;
+}
+.smc-btn-usuario:before {
+  content: "\f007";
+}
+
+.smc-btn-acessibilidade {
+  font-family: var(--fa-font);
+  background-color: transparent;
+  border: none;
+  margin-right: 0.71em;
+  cursor: pointer;
+}
+.smc-btn-acessibilidade:before {
+  font-size: 1.57em;
+}
+.smc-btn-acessibilidade:before {
+  content: "\f29a";
+}
+
+.smc-ico-meusdados div {
+  font-family: var(--fa-font);
+  background-color: transparent;
+  border: none;
+  margin-right: 0.71em;
+  cursor: pointer;
+}
+.smc-ico-meusdados div:before {
+  font-size: 1.57em;
+}
+.smc-ico-meusdados div:before {
+  content: "\f2c2";
+  margin-top: 0.1rem;
+}
+.smc-ico-meusdados .smc-btn-meudados {
+  position: absolute;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  font-style: normal;
+  width: 0.3rem;
+}
+
+.user-footer > ul > .btn-default > .smc-button > a,
+.user-footer > ul > .btn > .smc-button > a,
+.smc-btn-fontenormal,
+.smc-btn-fontemenor,
+.smc-btn-fontemaior,
+.smc-btn-contraste {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.smc-btn-acessibilidade > i {
+  color: var(--color-primary);
+  font-size: 1.57em;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.smc-ribbon .open > .dropdown-menu {
+  display: block;
+  display: block;
+  position: absolute !important;
+  right: 1.42em !important;
+  left: auto !important;
+  top: 3.57em !important;
+  z-index: 2;
+}
+
+.nav {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+  align-self: center;
+  margin: 0;
+  margin-right: 1.5em;
+}
+@media (max-width: 992px) {
+  .nav > li:last-child {
+    display: none;
+  }
+}
+
+.dropdown-menu > ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+  align-self: center;
+  margin: 0;
+  text-align: center;
+}
+.dropdown-menu > ul:first-child {
+  flex-direction: column;
+}
+.dropdown-menu .user-footer ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+  align-self: center;
+  margin: 0;
+  flex-direction: row;
+}
+.dropdown-menu .user-footer ul .smc-btn-custom {
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 2.35em;
+  font-size: 1em;
+  padding: 0 1.42em;
+  font-style: normal;
+  height: 2.1em;
+}
+@media screen and (max-width: 992px) {
+  .dropdown-menu .user-footer ul .smc-btn-custom {
+    line-height: 1em;
+    padding: 0.5em 1.42em;
+    display: flex;
+    justify-items: stretch;
+    height: 10 !important;
+    align-items: center;
+  }
+}
+.dropdown-menu .user-footer ul .smc-btn-custom:hover {
+  background-color: var(--color-hover);
+  border-color: var(--color-hover);
+}
+
+.user-header img {
+  width: 4.64em;
+}
+
+.smc-acessibilidade .smc-buttonset-horizontal-primario {
+  display: flex;
+  flex-direction: row;
+}
+.smc-acessibilidade .smc-buttonset-horizontal-primario .smc-button {
+  margin: 0 0.21em;
+}
+.smc-acessibilidade .smc-buttonset-horizontal-primario .smc-button .smc-btn-custom:hover {
+  background-color: var(--color-hover);
+  border-color: var(--color-hover);
+  color: var(--white);
+}
+
+.smc-mensagem {
+  position: relative;
+  margin: 10px 0 25px 0;
+}
+
+.smc-gpi-mensagem-alerta, .smc-gpi-instrucoes-iniciais, .smc-gpi-mensagem {
+  background-color: var(--white);
+  padding: 1.42em 2.14em;
+  font-family: var(--fa-font);
+  display: flex;
+  align-items: center;
+  margin: 2.14em 0 0 0;
+  -webkit-box-shadow: 0px 0px 4px 0px rgb(166, 166, 166);
+  -moz-box-shadow: 0px 0px 4px 0px rgb(166, 166, 166);
+  box-shadow: 0px 0px 4px 0px rgb(166, 166, 166);
+}
+.smc-gpi-mensagem-alerta:before, .smc-gpi-instrucoes-iniciais:before, .smc-gpi-mensagem:before {
+  content: "\f071";
+  color: var(--message-alert-icon);
+  font-size: 3.24em;
+  margin-right: 2.14rem;
+}
+@media screen and (max-width: 850px) {
+  .smc-gpi-mensagem-alerta:before, .smc-gpi-instrucoes-iniciais:before, .smc-gpi-mensagem:before {
+    margin-right: 15px;
+  }
+}
+.smc-gpi-mensagem-alerta p, .smc-gpi-instrucoes-iniciais p, .smc-gpi-mensagem p {
+  color: var(--color-text-reading) !important;
+  margin: 0 !important;
+  line-height: 1.4em !important;
+  font-size: 1.1em !important;
+}
+
+.smc-gpi-mensagem {
+  padding: 0.5em 1em !important;
+}
+.smc-gpi-mensagem:before {
+  font-size: 2.24em !important;
+  margin-right: 1.5rem !important;
+}
+.smc-gpi-mensagem h3 {
+  border: none;
+  text-transform: none !important;
+  padding: 0;
+  color: var(--color-text-reading) !important;
+  margin: 0 !important;
+  line-height: 1.4em !important;
+  font-size: 1em !important;
+  font-weight: 200;
+}
+.smc-gpi-mensagem h3:before {
+  display: none;
+}
+
+.smc-message-success > div.ui-draggable {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(99, 173, 75, 0.6);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(99, 173, 75, 0.6);
+  box-shadow: 0px 0px 5px 0px rgba(99, 173, 75, 0.6);
+  border: none;
+  border-radius: 0;
+}
+.smc-message-success .smc-modal-header {
+  justify-content: space-between;
+}
+.smc-message-success .smc-modal-header h2 {
+  font-size: 1.2rem !important;
+  display: flex !important;
+  margin-bottom: 0.5em;
+  flex-direction: row;
+  align-items: end;
+  margin-top: 0;
+}
+.smc-message-success .smc-modal-header h2 i {
+  margin: 0.14em 0.64em 0 0 !important;
+  color: #546d3e !important;
+  font-size: 2.14rem !important;
+}
+.smc-message-success .smc-modal-content {
+  font-size: 1em;
+  margin: 0 0 0.71em 1.85em !important;
+}
+.smc-message-success .smc-message-fixed {
+  padding: 0.71em 2.14em 0 2.14em !important;
+  position: fixed;
+  width: 86%;
+  left: 5%;
+  top: 0.78em;
+  z-index: 3;
+}
+@media screen and (max-width: 992px) {
+  .smc-message-success .smc-message-fixed {
+    padding: 0.71em 1em 0 1em !important;
+    width: 90% !important;
+    left: 1% !important;
+  }
+}
+
+.smc-message-error > div.ui-draggable {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(146, 48, 46, 0.6);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(146, 48, 46, 0.6);
+  box-shadow: 0px 0px 5px 0px rgba(146, 48, 46, 0.6);
+  border: none;
+  border-radius: 0;
+}
+.smc-message-error .smc-modal-header {
+  justify-content: space-between;
+}
+.smc-message-error .smc-modal-header h2 {
+  font-size: 1.2rem !important;
+  display: flex !important;
+  margin-bottom: 0.5em;
+  flex-direction: row;
+  align-items: end;
+  margin-top: 0;
+}
+.smc-message-error .smc-modal-header h2 i {
+  margin: 0.14em 0.64em 0 0 !important;
+  color: #92302e !important;
+  font-size: 2.14rem !important;
+}
+.smc-message-error .smc-modal-content {
+  font-size: 1em;
+  margin: 0 0 0.71em 1.85em !important;
+}
+.smc-message-error .smc-message-fixed {
+  padding: 0.71em 2.14em 0 2.14em !important;
+  position: fixed;
+  width: 86%;
+  left: 5%;
+  top: 0.78em;
+  z-index: 3;
+}
+@media screen and (max-width: 992px) {
+  .smc-message-error .smc-message-fixed {
+    padding: 0.71em 1em 0 1em !important;
+    width: 90% !important;
+    left: 1% !important;
+  }
+}
+
+.smc-mensagem-informativa {
+  background-color: var(--white);
+  border: none;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(89, 170, 195, 0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(89, 170, 195, 0.5);
+  box-shadow: 0px 0px 5px 0px rgba(89, 170, 195, 0.5);
+}
+.smc-mensagem-informativa:before {
+  font-size: 2.14rem !important;
+  margin: 0.3rem 0 0 0.8rem;
+  font-family: var(--fa-font);
+  content: "\f05a";
+}
+
+.smc-message-alert > div.ui-draggable .smc-modal-header > h2 {
+  font-size: 1.2em !important;
+  margin-left: 0 !important;
+}
+.smc-message-alert > div.ui-draggable .smc-modal-header > h2 > i {
+  font-family: var(--fa-font);
+}
+.smc-message-alert > div.ui-draggable .smc-modal-header > h2 > i:before {
+  font-size: 2.14rem;
+  content: "\f06a";
+}
+
+.smc-message-alert > div.ui-draggable {
+  border: none;
+  border-radius: 0;
+}
+.smc-message-alert > div.ui-draggable .smc-modal-header .smc-button {
+  left: 92%;
+}
+.smc-message-alert > div.ui-draggable .smc-modal-content {
+  margin: 0 0 0 0.85em;
+}
+.smc-message-alert > div.ui-draggable .smc-modal-content p {
+  margin: 0;
+  font-size: 1em;
+}
+.smc-message-alert > div.ui-draggable .smc-modal-footer {
+  padding: 0;
+  min-height: 0;
+}
+
+.ui-draggable.smc-modal-window-auto.smc-message-fixed > .smc-modal-content {
+  margin-bottom: 2.28em !important;
+}
+
+@media screen and (max-width: 992px) {
+  .mensagem-com-botao {
+    flex-direction: column;
+  }
+}
+.mensagem-com-botao div[data-type=smc-sgf-template-arquivo] {
+  width: 70%;
+}
+.mensagem-com-botao .smc-button {
+  width: 18em;
+}
+@media screen and (max-width: 992px) {
+  .mensagem-com-botao .smc-button {
+    margin-top: 2em;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mensagem-com-botao .smc-sgf-template-texto-item {
+    text-align: center;
+  }
+}
+
+.smc-message-error > div.ui-draggable .smc-modal-header > h2 > i {
+  font-family: var(--fa-font);
+}
+.smc-message-error > div.ui-draggable .smc-modal-header > h2 > i:before {
+  content: "\f057";
+}
+
+.smc-message-container.smc-mensagens-centro .smc-message-error.smc-modal .ui-draggable.smc-modal-window-auto.smc-message-fixed .smc-modal-header {
+  position: relative;
+}
+.smc-message-container.smc-mensagens-centro .smc-message-error.smc-modal .ui-draggable.smc-modal-window-auto.smc-message-fixed .smc-modal-header .smc-button {
+  left: 98% !important;
+  top: 0px;
+  right: 0 !important;
+  width: 50px !important;
+}
+
+@media screen and (max-width: 992px) {
+  .smc-message-container.smc-mensagens-centro .smc-message-error.smc-modal .ui-draggable.smc-modal-window-auto.smc-message-fixed .smc-modal-header .smc-button {
+    left: 87% !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .smc-message-fixed .smc-modal-header .smc-button {
+    left: 87% !important;
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .smc-modal > .ui-draggable.smc-modal-window-auto.smc-modal-window {
+    width: 91% !important;
+    left: 1% !important;
+    padding: 0.71em 1em 0 1em !important;
+  }
+  .smc-modal > .ui-draggable.smc-modal-window-auto.smc-modal-window .smc-modal-header > div.smc-button {
+    width: 6%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .smc-modal-window .smc-modal-header > div.smc-button {
+    float: right;
+    width: 3%;
+    margin-left: -15px;
+  }
+}
+
+.smc-info-card {
+  background: var(--white);
+  padding: 1em 2em;
+  border: 1px solid var(--color-primary);
+  margin: 3em 1em;
+  display: flex;
+  flex-direction: row;
+  column-gap: 2em;
+  align-items: center;
+}
+.smc-info-card > .icon-container {
+  background: var(--color-detail-h3);
+  width: 12em;
+  height: 5em;
+}
+
+@font-face {
+  font-family: "heebo.light";
+  src: url("../../Fonts/heebo.light.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "fa-solid-900";
+  src: url("../../Fonts/fa-solid-900.ttf") format("truetype");
+  font-display: swap;
+}
+:root {
+  --font-size-default: 14px;
+  --color-text: #333333;
+  --color-label: #4b4b4b;
+  --color-text-reading: #000000;
+  --color-text-secondary: #a7a7a7;
+  --color-body: #f5f5f5;
+  --color-hover: #35789a;
+  --color-primary-2: #2e526f;
+  --color-primary-3: #123c5d;
+  --color-secondary-2: #7f9baa;
+  --color-secondary-3: #84c4e6;
+  --color-font-h3: #6c99b0;
+  --color-font-paths: #35789a;
+  --color-detail-h3: #cad9e0;
+  --color-font-h4: #6c99b0;
+  --color-detail-h4: #cad9e0;
+  --color-error: #b02614;
+  --white: #ffffff;
+  --black: #000000;
+  --grey: #777777;
+  --border-default: #dfdfdf;
+  --border-button: #afafaf;
+  --border-button-secondary: #2e526f;
+  --background-button-secondary: #f5f5f5;
+  --text-button-secondary: #5c7f81;
+  --body-fonts: "heebo.light";
+  --fa-font: "FontAwesome";
+  --message-alert-icon: #dcc39b;
+  --input-border-color: #dbdbdb;
+  --progress-bar-color: #9e9e9e;
+  --progress-value-color: #13ed41;
+  --progress-empty-color-h: 4.1;
+  --progress-empty-color-s: 89.6;
+  --progress-empty-color-l: 58.4;
+  --progress-filled-color-h: 122.4;
+  --progress-filled-color-s: 39.4;
+  --progress-filled-color-l: 49.2;
+}
+
+::selection {
+  background: var(--color-secondary-3);
+  color: var(--white);
+  text-shadow: none;
+}
+
+input:-internal-autofill-selected {
+  background-color: #fff !important;
+}
+
+body, p, span, a, li, button, input, select, textarea, font, label, h1, h2, h3, h4 {
+  font-family: var(--body-fonts);
+}
+
+body, p, span, label, li, a, td, button, input, select, textarea, font {
+  font-size: 1em;
+  color: var(--color-text);
+}
+
+body {
+  background-color: var(--color-body);
+  margin: 0;
+  font-size: var(--font-size-default);
+}
+
+h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: var(--color-primary);
+}
+
+h2 {
+  font-size: 1.7em;
+  color: var(--color-primary);
+}
+
+h3 {
+  font-size: 1.2em;
+  color: var(--color-font-h3);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-font-h3);
+  padding-bottom: 0.35em;
+}
+h3:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 5px;
+  border-color: transparent transparent transparent var(--color-detail-h3);
+  margin: 2.14em 0.71em 0 0;
+}
+
+h4 {
+  font-size: 1.1em;
+  color: var(--color-font-h4);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-detail-h4);
+  padding-bottom: 0.35em;
+  margin-top: 1.42em;
+}
+h4:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 5px;
+  border-color: transparent transparent transparent var(--color-detail-h4);
+  margin: 0.14em 0.71em 0 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-style: italic;
+  padding: 0 0.35em;
+  background-color: transparent;
+}
+
+div[data-type=smc-textbox] label {
+  font-size: 1em !important;
+}
+
+input, select, .smc-select > select, input[type=text], input[type=password] {
+  border: 1px solid var(--input-border-color) !important;
+  padding: 0.57em 0.64em !important;
+  height: 3.5em !important;
+}
+
+input[type=text], input[type=password] {
+  width: 100% !important;
+}
+input[type=text]:focus, input[type=password]:focus {
+  border: 1px solid #6bbeef !important;
+  background-color: #f0f6fd !important;
+}
+
+.row {
+  margin: 0;
+}
+
+.container-fluid {
+  padding: 0;
+  border-bottom: none !important;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  gap: unset;
+}
+.container-fluid:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 0 40px 12px;
+  border-color: transparent transparent transparent var(--color-primary);
+  position: fixed;
+  left: 32.9%;
+  top: 2em;
+  webkit-filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.2));
+}
+@media screen and (max-width: 767px) {
+  .container-fluid:before {
+    display: none;
+  }
+}
+
+.smc-login-body:before {
+  content: "";
+  background-color: var(--color-primary);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center 25em, center 9em;
+  background-size: 11em;
+  position: fixed;
+  width: 33%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.38);
+  box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.38);
+}
+@media screen and (max-width: 767px) {
+  .smc-login-body:before {
+    width: 100%;
+    height: 6em;
+    background-size: 6em;
+    position: absolute;
+  }
+}
+
+#SMCColunaEstrutural1, #SMCColunaEstrutural2 {
+  display: none;
+}
+
+div.smc-login-msg-boas-vindas {
+  margin-top: 3rem;
+  width: 90%;
+  margin-left: -10%;
+}
+@media screen and (max-width: 767px) {
+  div.smc-login-msg-boas-vindas {
+    width: 100%;
+    padding: 0 10% !important;
+    margin: 0;
+  }
+}
+div.smc-login-msg-boas-vindas div.smc-login-informacoes {
+  padding: 15px;
+  font-size: 0.96em;
+  color: var(--color-msg-boas-vindas);
+  border: 1px solid var(--border-msg-boas-vindas);
+  background: var(--bg-msg-boas-vindas);
+}
+div.smc-login-msg-boas-vindas div.smc-login-informacoes p, div.smc-login-msg-boas-vindas div.smc-login-informacoes li, div.smc-login-msg-boas-vindas div.smc-login-informacoes span, div.smc-login-msg-boas-vindas div.smc-login-informacoes a, div.smc-login-msg-boas-vindas div.smc-login-informacoes font {
+  font-size: 0.97em;
+  color: var(--color-msg-boas-vindas);
+}
+div.smc-login-msg-boas-vindas div.smc-login-informacoes:before {
+  color: var(--color-msg-boas-vindas);
+}
+
+.smc-login-section {
+  margin-left: 10%;
+  width: 45%;
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .smc-login-section {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+.smc-login-section div {
+  padding: 0 5px;
+}
+.smc-login-section .smc-orientacao-senha {
+  padding: 20px !important;
+}
+.smc-login-section .smc-form-ver-senha {
+  bottom: -38px;
+}
+.smc-login-section .smc-form-ver-senha i {
+  position: absolute;
+}
+.smc-login-section .smc-form-ver-senha {
+  right: 20px;
+  bottom: 43px;
+  float: right;
+}
+.smc-login-section fieldset input[type=text],
+.smc-login-section fieldset input[type=password] {
+  margin-bottom: 10px !important;
+}
+.smc-login-section .smc-ico-datepicker {
+  padding-left: 0;
+  padding-right: 0;
+}
+.smc-login-section .smc-captcha {
+  padding: 0;
+  margin-left: -10px;
+}
+.smc-login-section .smc-login-btn-acao-principal {
+  padding: 0;
+}
+.smc-login-section h1, .smc-login-section h2, .smc-login-section legend {
+  display: none;
+}
+.smc-login-section fieldset {
+  border: none !important;
+  background-color: transparent;
+  margin: 0;
+}
+.smc-login-section fieldset input[type=text] {
+  margin-bottom: 1em;
+}
+.smc-login-section #SMCLoginContentAutenticacaoEstrutura1 {
+  display: none;
+}
+
+fieldset.smc-login-agrupador-acesso {
+  margin-top: 20px !important;
+}
+
+fieldset.smc-login-agrupador-acesso,
+fieldset.smc-login-agrupador-cadastro {
+  border-top: 1px solid #e3e3e3 !important;
+  margin: 15px 0;
+}
+fieldset.smc-login-agrupador-acesso legend,
+fieldset.smc-login-agrupador-cadastro legend {
+  display: inline-block !important;
+}
+fieldset.smc-login-agrupador-acesso > div,
+fieldset.smc-login-agrupador-cadastro > div {
+  padding: 0;
+}
+fieldset.smc-login-agrupador-acesso .smc-button a, fieldset.smc-login-agrupador-acesso .smc-button button,
+fieldset.smc-login-agrupador-cadastro .smc-button a,
+fieldset.smc-login-agrupador-cadastro .smc-button button {
+  background: #fff !important;
+  color: var(--color-btn-secondary) !important;
+  border: 1px solid var(--color-btn-secondary) !important;
+}
+@media screen and (max-width: 991px) {
+  fieldset.smc-login-agrupador-acesso .smc-button a, fieldset.smc-login-agrupador-acesso .smc-button button,
+  fieldset.smc-login-agrupador-cadastro .smc-button a,
+  fieldset.smc-login-agrupador-cadastro .smc-button button {
+    padding-top: 0.8em;
+    font-size: 0.9em;
+  }
+}
+fieldset.smc-login-agrupador-acesso .smc-button .smc-login-btn-m365:before,
+fieldset.smc-login-agrupador-cadastro .smc-button .smc-login-btn-m365:before {
+  font-family: "Font Awesome 6 Brands";
+  content: "\f3ca";
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+#SMCLoginContentAutenticacao {
+  padding: 0;
+  width: 70%;
+}
+@media screen and (max-width: 767px) {
+  #SMCLoginContentAutenticacao {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #formularioLogin {
+    width: 100%;
+    padding: 0 15%;
+  }
+}
+#formularioLogin label {
+  font-size: 1em !important;
+}
+#formularioLogin:before {
+  content: "ACESSE SUA CONTA";
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: 600;
+  display: flex;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 767px) {
+  #formularioLogin:before {
+    margin-top: 0 !important;
+  }
+}
+
+.smc-preenchimento-obrigatorio {
+  color: var(--color-secondary-3) !important;
+  font-size: 0.5em !important;
+  top: -3px;
+  position: relative;
+}
+
+.smc-login-lembrar-senha {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+}
+.smc-login-lembrar-senha a {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.smc-login-lembrar-senha a:hover {
+  color: var(--color-hover);
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.smc-login-lembrar-senha .smc-button {
+  flex-direction: row-reverse;
+}
+
+.smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.2em;
+  padding: 0.3em 0 0.1em 0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  height: 5rem !important;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  width: 100%;
+  font-style: normal;
+}
+@media screen and (max-width: 991px) {
+  .smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque {
+    font-size: 1.3rem;
+  }
+}
+.smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque:hover, .smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque:focus {
+  border: 1px solid var(--color-secondary);
+  background-color: var(--white);
+  color: var(--color-secondary);
+}
+.smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque:hover i:before, .smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque:focus i:before {
+  color: var(--color-secondary);
+}
+.smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque i {
+  display: block;
+  font-size: 0;
+}
+.smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque i:before {
+  font-size: 0;
+}
+
+form#formularioLogin .smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque {
+  font-size: 0 !important;
+}
+form#formularioLogin .smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque:hover i:before, form#formularioLogin .smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque:focus i:before {
+  color: var(--color-secondary) !important;
+}
+form#formularioLogin .smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque i:before {
+  font-size: 1.6rem;
+  content: "Acessar";
+  text-transform: uppercase;
+  color: #fff;
+  font-family: var(--body-fonts);
+}
+@media screen and (max-width: 991px) {
+  form#formularioLogin .smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque i:before {
+    font-size: 1.3rem !important;
+  }
+}
+form#formularioLogin .smc-form-ver-senha {
+  float: right;
+  top: -41px;
+  bottom: 0;
+  right: 28px;
+}
+
+.smc-btn-cadastrar {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.2em;
+  padding: 0.3em 0 0.1em 0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  height: 5rem !important;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  width: 100%;
+  font-style: normal;
+  margin-top: 0;
+  padding: 0.7em 0 0.1em 0;
+}
+@media screen and (max-width: 991px) {
+  .smc-btn-cadastrar {
+    padding-top: 1.2em !important;
+  }
+}
+.smc-btn-cadastrar:hover, .smc-btn-cadastrar:focus {
+  border: 1px solid var(--color-primary);
+  background-color: var(--white);
+  color: var(--color-primary);
+}
+
+.smc-login-separador {
+  margin-top: 4em;
+  background-color: var(--white);
+  -webkit-box-shadow: 0px 0px 4px 0px rgb(166, 166, 166);
+  -moz-box-shadow: 0px 0px 4px 0px rgb(166, 166, 166);
+  box-shadow: 0px 0px 4px 0px rgb(166, 166, 166);
+  padding: 2em 2em 7em 2em !important;
+  width: 120%;
+  margin-left: -10%;
+}
+@media screen and (max-width: 767px) {
+  .smc-login-separador {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.smc-login-separador span {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 767px) {
+  .smc-login-separador span {
+    text-align: center;
+    display: block;
+  }
+}
+
+.footer {
+  background-color: var(--white);
+  padding: 1.42em 3.92em 0.85em 3.92em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: 100%;
+  bottom: 0;
+}
+
+.smc-login-footer-conteudo {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  align-items: end;
+}
+
+.smc-login-footer-logo-gti {
+  width: 5em;
+  background-image: url("../Images/smc-logo-gti-cinza.svg");
+  height: 2.14em;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.smc-login-footer-copyright {
+  margin: 0 0 0 0.21em;
+  color: var(--grey);
+  font-size: 1.1rem;
+}
+.smc-login-footer-copyright p {
+  color: var(--grey);
+  margin-top: 0;
+  font-size: 0.8em;
+}
+
+.smc-radiobutton-list-horizontal .smc-radiobutton-list-itens {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+  #SMCLoginFormAutentication {
+    width: 100%;
+    padding: 0 15%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #formularioLembrarSenha {
+    width: 100%;
+    padding: 0 15%;
+  }
+}
+#formularioLembrarSenha:before {
+  content: "REDEFINA SUA SENHA";
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: 600;
+  margin-top: 5rem !important;
+  display: flex;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 767px) {
+  #formularioLembrarSenha:before {
+    margin-left: 0;
+  }
+}
+#formularioLembrarSenha #Emails .smc-detalhe-editavel-header label {
+  font-size: 1em !important;
+}
+#formularioLembrarSenha #Emails .smc-detalhe-editavel-estrutura {
+  display: none;
+}
+#formularioLembrarSenha .smc-btn-voltar-icotext {
+  position: absolute;
+  margin-top: 24em;
+}
+
+.smc-btn-voltar-icotext {
+  position: absolute;
+  margin-top: 7em;
+  right: -25px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+.smc-btn-voltar-icotext i {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .smc-btn-voltar-icotext {
+    right: 37px;
+  }
+}
+.smc-btn-voltar-icotext:hover {
+  color: var(--color-hover);
+  border: none;
+  background-color: transparent;
+  text-decoration: underline !important;
+}
+
+#SMCLoginRow {
+  position: relative;
+}
+
+.smc-login-conteudo .smc-message-container.smc-mensagens-principal {
+  flex: none;
+  width: 33%;
+}
+
+@media screen and (max-width: 767px) {
+  #formularioCadastrarUsuario {
+    padding: 3rem;
+  }
+}
+#formularioCadastrarUsuario:before {
+  content: "FAÇA O SEU CADASTRO";
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: 600;
+  margin-top: 5rem !important;
+  display: flex;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 767px) {
+  #formularioCadastrarUsuario:before {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #formularioRedefinirSenha {
+    padding: 3rem;
+  }
+}
+#formularioRedefinirSenha:before {
+  content: "REDEFINA SUA SENHA";
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: 600;
+  display: flex;
+  margin-bottom: 2rem;
+  font-size: 1.7em;
+  color: var(--color-primary-2);
+  margin-top: 8rem !important;
+}
+@media screen and (max-width: 767px) {
+  #formularioRedefinirSenha:before {
+    margin-left: 0;
+  }
+}
+#formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha > .smc-size-md-12 {
+  width: 100% !important;
+}
+#formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha .smc-btn-login-destaque {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.2em;
+  padding: 0.3em 0 0.1em 0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  height: 5rem !important;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  width: 100%;
+  font-style: normal;
+  margin-top: 2rem;
+}
+#formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha .smc-btn-login-destaque:hover, #formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha .smc-btn-login-destaque:focus {
+  border: 1px solid var(--color-secondary);
+  background-color: var(--white);
+  color: var(--color-secondary);
+}
+#formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha .smc-btn-login-destaque:hover i:before, #formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha .smc-btn-login-destaque:focus i:before {
+  color: var(--color-secondary);
+}
+#formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha .smc-btn-login-destaque i {
+  display: block;
+  font-size: 0;
+}
+#formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha .smc-btn-login-destaque i:before {
+  font-size: 0;
+}
+#formularioRedefinirSenha fieldset#fieldsetFormularioRedefinirSenha .smc-form-ver-senha {
+  right: 20px;
+  bottom: 43px;
+  float: right;
+}
+
+div[data-control=hidden] {
+  display: none !important;
+}
+
+.smc-detalhe-editavel-estrutura {
+  display: none;
+}
+
+.smc-display > label {
+  font-weight: normal;
+  color: var(--color-text);
+}
+
+.smc-login-btn-acao-secundaria-usuarioderede {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.2em;
+  padding: 0.3em 0 0.1em 0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  height: 5rem !important;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  width: 100%;
+  font-style: normal;
+  font-style: normal;
+  line-height: 2.2em;
+}
+.smc-login-btn-acao-secundaria-usuarioderede:hover, .smc-login-btn-acao-secundaria-usuarioderede:focus {
+  border: 1px solid var(--color-secondary);
+  background-color: var(--white);
+  color: var(--color-secondary);
+}
+.smc-login-btn-acao-secundaria-usuarioderede i {
+  display: none;
+}
+
+.smc-login-texto-reenvio-senha {
+  margin-top: 40px;
+}
+.smc-login-texto-reenvio-senha:before {
+  content: "REDEFINIÇÃO DE SENHA";
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: 600;
+  margin-top: 5rem !important;
+  display: flex;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .smc-login-texto-reenvio-senha:before {
+    margin-left: 0%;
+  }
+}
+.smc-login-texto-reenvio-senha .smc-display-collection p {
+  color: var(--color-primary);
+  margin: 10px 0;
+}
+
+.smc-login-instrucao {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.smc-login-fieldset-lembrar-senha .smc-checkbox-list > label, .smc-login-fieldset-lembrar-senha .smc-radiobutton-list > label {
+  font-size: 1em !important;
+}
+
+#recuperaSenhaFieldset {
+  margin-top: 40px;
+}
+#recuperaSenhaFieldset:before {
+  content: "RECUPERE SUA SENHA";
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 5rem !important;
+  display: flex;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 767px) {
+  #recuperaSenhaFieldset:before {
+    margin-left: 0;
+  }
+}
+
+.smc-message-error > div.ui-draggable .smc-modal-header > .smc-button {
+  position: absolute;
+  left: 90% !important;
+  top: -8px !important;
+}
+
+.smc-alterarsenha {
+  margin-top: 40px;
+}
+.smc-alterarsenha:before {
+  content: "CADASTRE SUA NOVA SENHA";
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 5rem !important;
+  display: flex;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .smc-alterarsenha:before {
+    margin-left: 0;
+  }
+}
+.smc-alterarsenha .smc-botao-login-trocasenha {
+  width: 100%;
+  display: flex;
+}
+.smc-alterarsenha .smc-btn-salvar-icotext-destaque {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.2em;
+  padding: 0.3em 0 0.1em 0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  height: 5rem !important;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  width: 100%;
+  font-style: normal;
+  line-height: 2.2em;
+}
+.smc-alterarsenha .smc-btn-salvar-icotext-destaque:hover, .smc-alterarsenha .smc-btn-salvar-icotext-destaque:focus {
+  border: 1px solid var(--color-secondary);
+  background-color: var(--white);
+  color: var(--color-secondary);
+}
+.smc-alterarsenha .smc-btn-salvar-icotext-destaque i {
+  display: none;
+}
+
+.smc-login-lista-itens .smc-detalhe-editavel-linha-dados div {
+  padding: 0 !important;
+}
+
+@media screen and (max-width: 767px) {
+  form#recuperaSenhaForm {
+    width: 100%;
+    padding: 0 15%;
+  }
+}
+
+.welcome-message {
+  color: #333333;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-family: var(--body-fonts);
+}
+
+.smc-radiobutton-list-horizontal .smc-radiobutton > label > input,
+.smc-checkbox-list-horizontal .smc-radiobutton > label > input,
+.smc-radiobutton label > input,
+.smc-radiobutton-list-horizontal .smc-checkbox > label > input,
+.smc-checkbox-list-horizontal .smc-checkbox > label > input,
+.smc-checkbox label > input {
+  border: 0 !important;
+}
+
+.smc-radiobutton label > input::before,
+.smc-checkbox label > input::before {
+  top: -11px !important;
+  left: -13px !important;
+  width: 23px !important;
+  height: 23px !important;
+  background: #fff !important;
+}
+
+.smc-radiobutton label > input:checked::after {
+  width: 13px !important;
+  height: 13px !important;
+  top: -29px !important;
+  left: -8px !important;
+}
+
+:root {
+  --color-primary: #005480;
+  --color-secondary: #539e41;
+  --bg-msg-boas-vindas: #E6EEF3;
+  --border-msg-boas-vindas: #88BFDD;
+  --color-msg-boas-vindas: #005480;
+  --color-btn-secondary: #005480;
+}
+
+.smc-login-body:before {
+  background-image: url("../Images/logo-vemprapuc-branco.svg"), url("../Images/logo-puc-branco.svg");
+}
+@media screen and (max-width: 767px) {
+  .smc-login-body:before {
+    background-position: 67% 1.9em, 30% 0.2em;
+    height: 7.05em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .smc-login-section {
+    margin-top: 9em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .smc-login-conteudo .smc-message-container.smc-mensagens-principal {
+    display: none;
+  }
+}
+
+#formularioLogin:before {
+  font-size: 2em;
+  color: var(--color-primary);
+  margin-top: 6rem;
+}
+@media screen and (max-width: 767px) {
+  #formularioLogin:before {
+    margin-top: 3rem !important;
+  }
+}
+
+.smc-login-lembrar-senha a {
+  color: var(--color-primary);
+}
+
+.smc-login-separador span {
+  color: var(--color-primary);
+}
+
+#formularioLembrarSenha:before {
+  font-size: 2em;
+  color: var(--color-primary);
+}
+
+.smc-btn-voltar-icotext {
+  color: var(--color-primary);
+}
+
+#formularioCadastrarUsuario:before {
+  font-size: 2em;
+  color: var(--color-primary);
+}
+
+.smc-login-texto-reenvio-senha:before {
+  font-size: 2em;
+  color: var(--color-primary);
+}
+
+#fieldsetCadastrarUsuario:first-child a.smc-form-ver-senha {
+  bottom: -38px;
+  float: left;
+  margin-left: -10px;
+}

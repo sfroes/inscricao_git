@@ -1,0 +1,5 @@
+﻿@model ConfiguracaoEtapaViewModel
+
+@Html.Action("CabecalhoProcessoEtapa", "EtapaProcesso", new {@seqEtapa = Model.SeqEtapaProcesso, @seqProcesso = Model.SeqProcesso })
+
+@Html.Partial("_EditarConfiguracaoEtapa", Model)

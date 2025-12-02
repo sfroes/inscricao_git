@@ -1,0 +1,24 @@
+﻿@model SMCPagerModel<HistoricoSituacaoListaViewModel>
+
+@(Smc.Grid("gridProcesso")
+        .AutoGenerateColumns()
+        .HideNavigator()
+        .HideNumberOfRowsPerPageSelector()
+        .HidePager()
+        .HideRowNumber()
+        .HideRowsTotalizer()
+        .ButtonColumn(SMCButtonSetType.Secondary, 1, "", "", "smc-grid-coluna-botoes", false,
+            item => Smc.Button(SMCButtonBehavior.Alterar, "EditarHistoricoSituacao",
+                new
+                {
+                    @seqHistoricoSituacao = SMCDESCrypto.EncryptNumberForURL((item as HistoricoSituacaoListaViewModel).Seq),
+                    @seqInscrito = Request.QueryString["seqInscrito"],
+                    @seqInscricao = Request.QueryString["seqInscricao"],
+                    @seqProcesso = Request.QueryString["seqProcesso"],
+                    @origem = Request.QueryString["origem"],
+                    @backURL = (item as HistoricoSituacaoListaViewModel).BackURL
+                }, "AcompanhamentoProcesso")
+                       .Type(SMCButtonType.Link).DisplayMode(SMCButtonDisplayMode.Icon)
+                       .SecurityToken(UC_INS_003_01_11.MANTER_HISTORICO_SITUACAO)
+        )
+)

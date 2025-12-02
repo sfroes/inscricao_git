@@ -1,0 +1,26 @@
+﻿@using SMC.Localidades.UI.Mvc.Extensions
+
+@model ClienteViewModel
+
+@using (Smc.Form("formCadastroCliente").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.Div("fieldsetCadastroCliente").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Seq)
+        @Smc.EditorFor(prop => prop.Nome).Focus()
+        @Smc.EditorFor(prop => prop.Sigla)
+
+        @Smc.EditorFor(prop => prop.NomeFantasia)
+        @Smc.EditorFor(prop => prop.RazaoSocial)
+        @Smc.EditorFor(prop => prop.Cnpj)
+
+    }
+
+    @Smc.EditorFor(prop => prop.Enderecos)
+
+    @Smc.EditorFor(prop => prop.Telefones)
+
+    @Smc.EditorFor(prop => prop.EnderecosEletronicos)
+
+    @Html.Partial("_BotoesEdicaoPadrao")
+}

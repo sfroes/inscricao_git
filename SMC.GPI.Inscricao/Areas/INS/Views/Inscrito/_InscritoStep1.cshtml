@@ -1,0 +1,116 @@
+﻿@using SMC.Localidades.UI.Mvc.Views
+@using SMC.Localidades.UI.Mvc.Extensions;
+
+@model  InscritoViewModel
+
+
+@using (Smc.Div("dadospessoais").CssClass("smc-gpi-dados-formulario smc-gpi-formulario").Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.SeqUsuarioSas)
+
+    if (Model.ExibirNome)
+    {
+        @Smc.EditorFor(prop => prop.Nome).Focus()
+    }
+
+    if (Model.ExibirDataNascimento || Model.ExibirSexo || Model.ExibirEstadoCivil)
+    {
+        <div class="display-flex smc-gpi-dados-pessoais">
+
+            @if (Model.ExibirDataNascimento)
+            {
+                @Smc.EditorFor(prop => prop.DataNascimento)
+            }
+
+            @if (Model.ExibirSexo)
+            {
+                @Smc.EditorFor(prop => prop.Sexo)
+            }
+
+            @if (Model.ExibirEstadoCivil)
+            {
+                @Smc.EditorFor(prop => prop.EstadoCivil)
+            }
+        </div>
+    }
+    if (Model.ExibirNacionalidade || Model.ExibirPaisOrigem || Model.ExibirNaturalidade)
+    {
+        <div class="display-flex smc-gpi-dados-pessoais nacionalidade-naturalidade">
+            @if (Model.ExibirNacionalidade)
+            {
+                @Smc.EditorFor(prop => prop.Nacionalidade)
+            }
+
+            @if (Model.ExibirPaisOrigem)
+            {
+                @Smc.EditorFor(prop => prop.CodigoPaisNacionalidade)
+            }
+            else
+            {
+            //Foi feito dessa maneira pois utilizando o SMC.Hiddenfor, estava intermitente e como o valor 800 é default
+            //    quando o pais de origem estiver oculto, manteve-se dessa forma 
+
+            <select id="select_CodigoPaisNacionalidade" hidden>
+                <option value="800"></option>
+            </select>
+            }
+
+            @if (Model.ExibirNaturalidade)
+            {
+                @Smc.EditorFor(d => d.HabilitaDesricaoNaturalidade)
+                @Smc.EditorFor(p => p.EstadoCidade).CssClass("smc-gpi-dados-pessoais-naturalidade")
+                @Smc.EditorFor(prop => prop.DescricaoNaturalidadeEstrangeira)
+            }
+        </div>
+    }
+
+    if (Model.ExibirCPF || Model.ExibirPassaporte)
+    {
+        <div class="display-flex smc-gpi-dados-pessoais">
+            @if (Model.ExibirCPF)
+            {
+                @Smc.EditorFor(prop => prop.Cpf)
+            }
+            @if (Model.ExibirPassaporte)
+            {
+                @Smc.EditorFor(prop => prop.NumeroPassaporte)
+                @Smc.EditorFor(m => m.DataValidadePassaporte)
+                @Smc.EditorFor(m => m.CodigoPaisEmissaoPassaporte)
+            }
+        </div>
+    }
+
+    if (Model.ExibirNumeroIdentidade || Model.ExibirOrgaoEmissorIdentidade || Model.ExibirUfIdentidade)
+    {
+        <div class="display-flex smc-gpi-dados-pessoais">
+
+            @if (Model.ExibirNumeroIdentidade)
+            {
+                @Smc.EditorFor(prop => prop.NumeroIdentidade)
+            }
+
+            @if (Model.ExibirOrgaoEmissorIdentidade)
+            {
+                @Smc.EditorFor(prop => prop.OrgaoEmissorIdentidade)
+            }
+
+            @if (Model.ExibirUfIdentidade)
+            {
+                @Smc.EditorFor(prop => prop.UfIdentidade)
+            }
+
+        </div>
+    }
+
+    if (Model.ExibirFiliacao)
+    {
+        <div class="display-flex smc-gpi-dados-pessoais">
+            @Smc.EditorFor(prop => prop.NomeMae)
+            @Smc.EditorFor(prop => prop.NomePai)
+        </div>
+    }
+
+}
+
+@Smc.WizardView()

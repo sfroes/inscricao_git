@@ -1,0 +1,5 @@
+﻿@model GrupoTaxaViewModel
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.GrupoTaxa, @exibirInformacoesCabecalho = true })
+
+@Html.Partial("_EditarGrupoTaxa", Model)

@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlterarSituacaoLote_Modal_Titulo" xml:space="preserve">
+    <value>Alteração da situação</value>
+  </data>
+  <data name="AnalisarInscricaoLote_Title" xml:space="preserve">
+    <value>Análise de Inscrição em Lote</value>
+  </data>
+  <data name="AnaliseInscricaoLote_Mensagem_Lancamento_Nota" xml:space="preserve">
+    <value>Para alterar a situação da inscrição, é necessário filtrar a situação e selecionar ao menos um inscrito.</value>
+  </data>
+  <data name="Botao_AlterarSituacao" xml:space="preserve">
+    <value>Alterar situação da inscrição</value>
+  </data>
+  <data name="Botao_Analiseinscricaolote" xml:space="preserve">
+    <value>Análise de Inscrição em Lote</value>
+  </data>
+  <data name="Botao_Analiseinscricaolote_Tooltip" xml:space="preserve">
+    <value>Análise de Inscrição em Lote</value>
+  </data>
+  <data name="Botao_Anexar" xml:space="preserve">
+    <value>Anexar</value>
+  </data>
+  <data name="Botao_Consultainscricoesprocesso" xml:space="preserve">
+    <value>Consulta de Inscrições do Processo</value>
+  </data>
+  <data name="Botao_Consultainscricoesprocesso_Tooltip" xml:space="preserve">
+    <value>Consulta de Inscrições do Processo</value>
+  </data>
+  <data name="Botao_Consultaposiçãoconsolidadagrupoofertasoferta" xml:space="preserve">
+    <value>Consulta Posição Consolidada das Inscrições por Grupo de Oferta e por Oferta</value>
+  </data>
+  <data name="Botao_Consultaposiçãoconsolidadagrupoofertasoferta_Tooltip" xml:space="preserve">
+    <value>Consulta Posição Consolidada das Inscrições por Grupo de Oferta e por Oferta</value>
+  </data>
+  <data name="Botao_Consultar_Inscricoes_Grupo_Oferta" xml:space="preserve">
+    <value>Consulta de Inscrições do Grupo de Oferta</value>
+  </data>
+  <data name="Botao_Consultar_Inscricoes_Oferta" xml:space="preserve">
+    <value>Consulta de Inscrições da Oferta</value>
+  </data>
+  <data name="Botao_Desfazerentrega" xml:space="preserve">
+    <value>Desfazer entrega</value>
+  </data>
+  <data name="Botao_Duplicardocumentoentregue" xml:space="preserve">
+    <value>Adicionar documento</value>
+  </data>
+  <data name="Botao_Duplicardocumentoentregue_Tooltip" xml:space="preserve">
+    <value>Adicionar documento</value>
+  </data>
+  <data name="Botao_LancarNotaClassificacao" xml:space="preserve">
+    <value>Lançamento de Nota e Classificação</value>
+  </data>
+  <data name="Botao_Registrarentrega" xml:space="preserve">
+    <value>Registrar entrega</value>
+  </data>
+  <data name="Botao_Ver_Anexo" xml:space="preserve">
+    <value>Ver anexo</value>
+  </data>
+  <data name="Coluna_Oferta" xml:space="preserve">
+    <value>Oferta(s)</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Title" xml:space="preserve">
+    <value>Registro de Documentação Entregue</value>
+  </data>
+  <data name="ConsultarInscricaoProcesso_Title" xml:space="preserve">
+    <value>Consulta de Inscrições do Processo</value>
+  </data>
+  <data name="ConsultarInscricao_fieldsetCodigosInscricao_Fieldset_Legenda" xml:space="preserve">
+    <value>Código(s) de Autorização</value>
+  </data>
+  <data name="ConsultarInscricao_fieldsetContatos_Fieldset_Legenda" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="ConsultarInscricao_fieldsetDadosPessoais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="ConsultarInscricao_fieldsetDocumentos_Fieldset_Legenda" xml:space="preserve">
+    <value>Documento(s)</value>
+  </data>
+  <data name="ConsultarInscricao_fieldsetTitulos_Fieldset_Legenda" xml:space="preserve">
+    <value>Titulo(s)</value>
+  </data>
+  <data name="ConsultarInscricao_Title" xml:space="preserve">
+    <value>Consulta de Inscrição</value>
+  </data>
+  <data name="ConsultarProcessoPorGrupoOferta_Title" xml:space="preserve">
+    <value>Consulta Posição Consolidada das Inscrições por Grupo de Oferta e por Oferta</value>
+  </data>
+  <data name="Filiacao_Label" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="FillInstructions_Formato" xml:space="preserve">
+    <value>Formato exigido: {0}</value>
+  </data>
+  <data name="FillInstructions_Versao" xml:space="preserve">
+    <value>Versão exigida: {0}</value>
+  </data>
+  <data name="Identidade_Label" xml:space="preserve">
+    <value>RG</value>
+  </data>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Consulta Posição Consolidada das Inscrições por Processo</value>
+  </data>
+  <data name="Label_Opcao" xml:space="preserve">
+    <value>{0}ª opção: </value>
+  </data>
+  <data name="LancamentoNotaClassificacaoLote_Modal_Titulo" xml:space="preserve">
+    <value>Lançamento de Nota e Classificação</value>
+  </data>
+  <data name="Mensagem_Documentacao_Entregue" xml:space="preserve">
+    <value>Relação de documentos entregues para o processo de inscrição</value>
+  </data>
+  <data name="Naturalidade_Label" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="Outros_Enderecos_Eletronicos_Label" xml:space="preserve">
+    <value>Outros Endereços Eletrônicos:</value>
+  </data>
+  <data name="SituacaoInscricao_Modal_Title" xml:space="preserve">
+    <value>Justificativa da situação</value>
+  </data>
+  <data name="Telefones_Label" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="_ListarAnaliseInscricaoLote_gridAnaliseInscricaoLote_Grid_Titulo" xml:space="preserve">
+    <value>Inscrições</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_Consultainscricao" xml:space="preserve">
+    <value>Consultar inscrição</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_Consultainscricao_Tooltip" xml:space="preserve">
+    <value>Consultar inscrição</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_Registrardocumentacaoentregue" xml:space="preserve">
+    <value>Registrar documentação entregue</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_Registrardocumentacaoentregue_Tooltip" xml:space="preserve">
+    <value>Registrar documentação entregue</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_gridConsultaInscricaoProcesso_Grid_Titulo" xml:space="preserve">
+    <value>Inscrições</value>
+  </data>
+  <data name="_ListarProcessoPosicaoConsolidada_gridProcesso_Grid_Titulo" xml:space="preserve">
+    <value>Posição dos processos</value>
+  </data>
+  <data name="_ListarSituacaoInscricao_Modal_Title" xml:space="preserve">
+    <value>Justificativa da situação</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Label_Anexos" xml:space="preserve">
+    <value>Anexos</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Label_Acoes" xml:space="preserve">
+    <value>Ações</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Label_Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Label_Forma" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Label_Formato" xml:space="preserve">
+    <value>Forma</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Label_Observação" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Label_Versao" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+  <data name="fieldsetAlterarSituacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Nova Situação</value>
+  </data>
+  <data name="Botao_Configurar_Tooltip" xml:space="preserve">
+    <value>Mais</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Label_Documento" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="Botao_AlterarSituacao_Tooltip" xml:space="preserve">
+    <value>Alterar situação da inscrição</value>
+  </data>
+  <data name="Botao_LancarNotaClassificacao_Tooltip" xml:space="preserve">
+    <value>Lançamento de Nota e Classificação</value>
+  </data>
+  <data name="Botao_Fechar_Modal_Alterar_Situacao" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Botao_Fechar_Modal_Lancamento_Nota_Classificacao" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Mensagem_Sucesso_Alteracao_Lancamento_Nota_Classificacao" xml:space="preserve">
+    <value>Lançamento de nota e classificação realizado com sucesso.</value>
+  </data>
+  <data name="Mensagem_Sucesso_Alteracao_Situacao" xml:space="preserve">
+    <value>Alteração de situação realizada com sucesso.</value>
+  </data>
+  <data name="Grid_Select_All" xml:space="preserve">
+    <value>Selecionar todos</value>
+  </data>
+  <data name="ConsultaInscricao_fieldsetContatos_Fieldset_Legenda" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="ConsultaInscricao_fieldsetDadosPessoais_Fieldset_Legenda" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="ConsultaInscricao_fieldsetDocumentos_Fieldset_Legenda" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="ConsultaInscricao_fieldsetTitulos_Fieldset_Legenda" xml:space="preserve">
+    <value>Títulos</value>
+  </data>
+  <data name="Coluna_DataGeracao" xml:space="preserve">
+    <value>Data de geração</value>
+  </data>
+  <data name="ConsultaInscricao_Title" xml:space="preserve">
+    <value>Consulta de Inscrição</value>
+  </data>
+  <data name="Texto_Ativo" xml:space="preserve">
+    <value>Válido</value>
+  </data>
+  <data name="Texto_Cancelado" xml:space="preserve">
+    <value>Cancelado</value>
+  </data>
+  <data name="Coluna_Taxas" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="BoletoTitulo_Label_Cedente" xml:space="preserve">
+    <value>CEDENTE</value>
+  </data>
+  <data name="BoletoTitulo_Label_Data_Pagamento" xml:space="preserve">
+    <value>DATA DO PAGAMENTO</value>
+  </data>
+  <data name="BoletoTitulo_Label_Data_Processamento" xml:space="preserve">
+    <value>DATA DO PROCESSAMENTO</value>
+  </data>
+  <data name="BoletoTitulo_Label_Data_Vencimento" xml:space="preserve">
+    <value>DATA DE VENCIMENTO</value>
+  </data>
+  <data name="BoletoTitulo_Label_Demonstrativo_Despesas" xml:space="preserve">
+    <value>DEMONSTRATIVO DE DESPESAS</value>
+  </data>
+  <data name="BoletoTitulo_Label_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="BoletoTitulo_Label_Mensagens" xml:space="preserve">
+    <value>MENSAGENS</value>
+  </data>
+  <data name="BoletoTitulo_Label_Nosso_Numero" xml:space="preserve">
+    <value>NOSSO NÚMERO / CÓDIGO DO DOCUMENTO</value>
+  </data>
+  <data name="BoletoTitulo_Label_Quantidade" xml:space="preserve">
+    <value>Qtd</value>
+  </data>
+  <data name="BoletoTitulo_Label_Sacado" xml:space="preserve">
+    <value>Sacado</value>
+  </data>
+  <data name="BoletoTitulo_Label_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="BoletoTitulo_Label_Total_Geral" xml:space="preserve">
+    <value>Total Geral</value>
+  </data>
+  <data name="BoletoTitulo_Label_Valor" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="BoletoTitulo_Label_Valor_Cobrado" xml:space="preserve">
+    <value>VALOR COBRADO</value>
+  </data>
+  <data name="BoletoTitulo_Label_Valor_Documento" xml:space="preserve">
+    <value>VALOR DO DOCUMENTO</value>
+  </data>
+  <data name="BoletoTitulo_Texto_Recibo_Sabado" xml:space="preserve">
+    <value>RECIBO DO SACADO</value>
+  </data>
+  <data name="BoletoTitulo_Label_Banco_Agencia_Cedente" xml:space="preserve">
+    <value>BANCO / AGÊNCIA / CÓDIGO CEDENTE</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Label_Situacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="_ListarAnaliseInscricaoLote_Label_Situacao" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="Botao_Excluirinscricaodocumento" xml:space="preserve">
+    <value>Excluir documento</value>
+  </data>
+  <data name="Botao_Excluirinscricaodocumento_Tooltip" xml:space="preserve">
+    <value>Excluir documento</value>
+  </data>
+  <data name="Label_Canceladas" xml:space="preserve">
+    <value>Canceladas</value>
+  </data>
+  <data name="Label_Pagas" xml:space="preserve">
+    <value>Pagas</value>
+  </data>
+  <data name="Botao_LegendaPosicao" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_Confirmadas" xml:space="preserve">
+    <value>Confirmadas</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_Deferidas" xml:space="preserve">
+    <value>Deferidas</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_DocumentacaoEntregue" xml:space="preserve">
+    <value>Documentação entregue</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_Finalizadas" xml:space="preserve">
+    <value>Inscrições concluídas</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_Indeferidas" xml:space="preserve">
+    <value>Indeferidas</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_Iniciadas" xml:space="preserve">
+    <value>Inscrições Iniciadas</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_NaoConfirmadas" xml:space="preserve">
+    <value>Não confirmadas</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_OfertaNaoSelecionada" xml:space="preserve">
+    <value>Oferta não selecionada</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Label_Total" xml:space="preserve">
+    <value>Qtd. Inscrições</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_Canceladas" xml:space="preserve">
+    <value>Total de inscrições nas quais a situação atual é cancelada e o motivo do cancelamento, quando existir, não é inscrição de teste.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_Confirmadas" xml:space="preserve">
+    <value>Total de inscrições cuja situação atual é confirmada, deferida, ou indeferida (desde que tenha sido confirmada).</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_Deferidas" xml:space="preserve">
+    <value>Total de inscrições nas quais a última situação na etapa de inscrição é deferida.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_DocumentacaoEntregue" xml:space="preserve">
+    <value>Total de inscrições em que toda a documentação obrigatória foi entregue e a situação atual não é cancelada.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_Finalizadas" xml:space="preserve">
+    <value>Total de inscrições finalizadas pelos inscritos que não foram canceladas.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_Indeferidas" xml:space="preserve">
+    <value>Total de inscrições nas quais a situação atual é indeferida.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_Iniciadas" xml:space="preserve">
+    <value>Total de inscrições iniciadas em que a oferta já foi selecionada, porém a inscrição não foi finalizada.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_NaoConfirmadas" xml:space="preserve">
+    <value>Total de inscrições cuja situação atual é finalizada, ou indeferida (sem ter sido confirmada).</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_OfertaNaoSelecionada" xml:space="preserve">
+    <value>Total de inscrições iniciadas nas quais a oferta ainda não foi selecionada.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_Pagas" xml:space="preserve">
+    <value>Total de inscrições onde todos os títulos foram pagos e a situação atual não é cancelada.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Texto_Total" xml:space="preserve">
+    <value>Quantidade total de inscrições, exceto inscrições de teste.</value>
+  </data>
+  <data name="_ModalLegendaPosicaoConsolidada_Titulo_Modal_Legenda" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="Botao_Open" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Botao_Open" xml:space="preserve">
+    <value>Ver Anexo</value>
+  </data>
+  <data name="_DocumentoEntregue_Botao_Open" xml:space="preserve">
+    <value>Ver Anexo</value>
+  </data>
+  <data name="_ListaDocumentosEntregues_Botao_Open" xml:space="preserve">
+    <value>Ver Anexo</value>
+  </data>
+  <data name="ConsultaInscricao_Botao_Downloadcomprovante" xml:space="preserve">
+    <value>Comprovante de inscrição</value>
+  </data>
+  <data name="ConsultaInscricao_Botao_Downloadcomprovante_Tooltip" xml:space="preserve">
+    <value>Download do comprovante de inscrição</value>
+  </data>
+  <data name="AnalisarInscricaoLote_Mensagem_Confirmacao_Alteracao_Situacao" xml:space="preserve">
+    <value>Esta alteração de situação enviará um e-mail de notificação automático para o(s) candidato(s) selecionado(s), caso isso tenha sido configurado no processo. Confirma a alteração da situação?</value>
+  </data>
+  <data name="AnalisarInscricaoLote_Titulo_Confirmacao_Alteracao_Situacao" xml:space="preserve">
+    <value>Alterar situação</value>
+  </data>
+  <data name="ConsultarInscricaoProcesso_Mensagem_Confirmacao_Alteracao_Situacao" xml:space="preserve">
+    <value>Esta alteração de situação enviará um e-mail de notificação automático para o(s) candidato(s) selecionados, caso isso tenha sido configurado no processo. Confirma a alteração da situação?</value>
+  </data>
+  <data name="ConsultarInscricaoProcesso_Titulo_Confirmacao_Alteracao_Situacao" xml:space="preserve">
+    <value>Alterar situação</value>
+  </data>
+  <data name="Label_Minimo_Itens" xml:space="preserve">
+    <value>Mínimo de itens obrigatórios</value>
+  </data>
+  <data name="_ListaDocumentosEntregues_Titulo_Documentos_Obrigatorios" xml:space="preserve">
+    <value>Documentos obrigatórios</value>
+  </data>
+  <data name="_ListaDocumentosEntregues_Titulo_Documentos_Opcionais" xml:space="preserve">
+    <value>Documentos opcionais</value>
+  </data>
+  <data name="_ListaDocumentosEntregues_Titulo_Grupos_Obrigatorios" xml:space="preserve">
+    <value>Grupos de documentos obrigatórios</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_AlterarDados" xml:space="preserve">
+    <value>Alterar dados do inscrito</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_AlterarDados_Tooltip" xml:space="preserve">
+    <value>Alterar dados do inscrito</value>
+  </data>
+  <data name="ConsultarInscricaoProcesso_AlterarDados_Modal_Titulo" xml:space="preserve">
+    <value>Alteração de Dados do Inscrito</value>
+  </data>
+  <data name="Mensagem_Sucesso_Alteracao_Inscrito" xml:space="preserve">
+    <value>Alteração do inscrito realizado com sucesso.</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_Consultanotificacao" xml:space="preserve">
+    <value>Consultar notificação</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_Consultanotificacao_Tooltip" xml:space="preserve">
+    <value>Consultar notificação</value>
+  </data>
+  <data name="Mensagem_Confirmacao_Inconsistencia_Situacao" xml:space="preserve">
+    <value>Ao desfazer a entrega deste documento, a documentação voltará para “Pendente”, gerando uma inconsistência em relação à situação da inscrição, que só pôde ser confirmada, pelo fato de estar “Entregue”. Deseja continuar?</value>
+  </data>
+  <data name="Mensagem_Confirmacao_Reverter_Situacao" xml:space="preserve">
+    <value>A inscrição deste candidato já foi confirmada. Ao desfazer a entrega deste documento, o candidato voltará para a situação anterior e, caso tenha sido configurada alguma notificação de retorno de situação, ele será comunicado deste fato. Deseja continuar?</value>
+  </data>
+  <data name="_DocumentoEntregue_Titulo_Confirmacao_Reverter_Situacao" xml:space="preserve">
+    <value>Desfazer entrega de documento</value>
+  </data>
+  <data name="ConsultaInscricao_fieldsetCodigosInscricao_Fieldset_Legenda" xml:space="preserve">
+    <value>Código(s) de Autorização</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Botao_Download" xml:space="preserve">
+    <value>Baixar todos os arquivos</value>
+  </data>
+  <data name="Mensagem_Documentacao_Vazia" xml:space="preserve">
+    <value>Não existem documentos anexados para fazer download.</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_Historicosituacao" xml:space="preserve">
+    <value>Consultar histórico de situação da inscrição</value>
+  </data>
+  <data name="HistoricoSituacao_Title" xml:space="preserve">
+    <value>Histórico de Situação</value>
+  </data>
+  <data name="_ListarHistoricoSituacao_gridProcesso_Grid_Titulo" xml:space="preserve">
+    <value>Histórico de Situações</value>
+  </data>
+  <data name="EditarHistoricoSituacao_Title" xml:space="preserve">
+    <value>Editar Histórico de Situação</value>
+  </data>
+  <data name="Mensagem_Sucesso_Alteracao_Historico_Situacao" xml:space="preserve">
+    <value>Alteração de histórico realizada com sucesso.</value>
+  </data>
+  <data name="ConsultaRegistroDocumentacao_Botao_Download_Tooltip" xml:space="preserve">
+    <value>Baixar todos os arquivos</value>
+  </data>
+  <data name="Label_Justificativa" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="Mensagem_Erro_AlterarSituacao_CandidatoConfirmado_Lote" xml:space="preserve">
+    <value>Existe inscrito com resultado lançado. Não é possível alterar a situação da inscrição.</value>
+  </data>
+  <data name="Mensagem_Erro_AlterarSituacao_CandidatoConfirmado" xml:space="preserve">
+    <value>Este inscrito possui resultado lançado. Não é possível alterar a situação da inscrição.</value>
+  </data>
+  <data name="Mensagem_Erro_AlterarSituacao_NotaClassificacao" xml:space="preserve">
+    <value>Este inscrito possui lançamento de nota e/ou classificação. Não é possível alterar a situação da inscrição.</value>
+  </data>
+  <data name="Mensagem_Erro_AlterarSituacao_NotaClassificacao_Lote" xml:space="preserve">
+    <value>Existe inscrito com lançamento de nota e/ou classificação. Não é possível alterar a situação da inscrição.</value>
+  </data>
+  <data name="Enderecos_Eletronicos_Label" xml:space="preserve">
+    <value>Endereço Eletrônico</value>
+  </data>
+  <data name="ConsultaInscricao_Contatos_Label" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="ConsultaInscricao_DadosPessoais_Label" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="ConsultaInscricao_Enderecos_Label" xml:space="preserve">
+    <value>Endereços</value>
+  </data>
+  <data name="_ListarInscricaoProcesso_Botao_Observacao" xml:space="preserve">
+    <value>Cadastrar observação sobre a inscrição</value>
+  </data>
+  <data name="Mensagem_Observacao" xml:space="preserve">
+    <value>Observação salva com sucesso.</value>
+  </data>
+  <data name="Observacao_Modal_Titulo" xml:space="preserve">
+    <value>Observação da Inscrição</value>
+  </data>
+  <data name="fieldsetObservacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Observação</value>
+  </data>
+  <data name="Inscricoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Inscrito(s)</value>
+  </data>
+  <data name="AlterarFormulario_Modal_Titulo" xml:space="preserve">
+    <value>Alterar Formulário</value>
+  </data>
+  <data name="Mensagem_Confirmacao_Exclusao_Inscricao" xml:space="preserve">
+    <value>Ao excluir a inscrição do candidato {0}, também serão excluídas todas as notificações enviadas, as respostas dos formulários de inscrição e os documentos anexados. Deseja continuar?</value>
+  </data>
+  <data name="Titulo_Confirmacao_Exclusao_Inscricao" xml:space="preserve">
+    <value>Exclusão de Inscrição</value>
+  </data>
+  <data name="Mensagem_Sucesso_Exclusao_Inscricao" xml:space="preserve">
+    <value>Inscrição excluída com sucesso.</value>
+  </data>
+  <data name="Botao_Liberaralteracaoinscricao" xml:space="preserve">
+    <value>Liberar alteração da inscrição</value>
+  </data>
+  <data name="Botao_Liberaralteracaoinscricao_Tooltip" xml:space="preserve">
+    <value>Liberar alteração da inscrição</value>
+  </data>
+  <data name="Mensagem_Confirmacao_Liberacao_Alteracao_Inscricao" xml:space="preserve">
+    <value>Ao liberar a alteração dos dados, o comprovante de inscrição do candidato será excluído e a situação da inscrição voltará para “Inscrição Iniciada”, tendo o candidato que fazer os ajustes necessários e confirmar novamente sua inscrição. {0} Se existir notificação de liberação de alteração dos dados da inscrição configurada para o processo, o candidato será notificado. Deseja continuar?</value>
+  </data>
+  <data name="Mensagem_Liberacao_Alteracao_Inscricao_Candidato_Boleto_Nao_Pago" xml:space="preserve">
+    <value>Caso o candidato altere as informações de taxa, seu boleto atual será cancelado e um novo boleto será gerado, quando a inscrição for novamente finalizada. O sistema reconhecerá somente o pagamento do novo boleto gerado.</value>
+  </data>
+  <data name="Mensagem_Liberacao_Alteracao_Inscricao_Candidato_Boleto_Pago" xml:space="preserve">
+    <value>O candidato já pagou o boleto, portanto as taxas não poderão ser alteradas.</value>
+  </data>
+  <data name="Mensagem_Liberacao_Alteracao_Inscricao_Oferta_Nao_Vigente" xml:space="preserve">
+    <value>A oferta selecionada pelo candidato não está mais vigente ou válida. Se a situação da oferta permanecer desta forma, o candidato terá que escolher outra opção para concluir sua inscrição.</value>
+  </data>
+  <data name="Mensagem_Sucesso_Liberacao_Alteracao_Inscricao" xml:space="preserve">
+    <value>Alteração da inscrição liberada com sucesso.</value>
+  </data>
+  <data name="Titulo_Confirmacao_Liberacao_Alteracao_Inscricao" xml:space="preserve">
+    <value>Liberar Alteração da Inscrição</value>
+  </data>
+  <data name="Botao_Excluirinscricao_Nao" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Botao_Excluirinscricao_Sim" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Botao_Naopossuiofertavigente_Nao" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Botao_Naopossuiofertavigente_Sim" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Botao_Mensagemconfirmacao_Nao" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Botao_Mensagemconfirmacao_Sim" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="MSG_ObrigatoriedadeCampos" xml:space="preserve">
+    <value>&lt;p&gt;Se a versão exigida do documento for Cópia Autenticada ou Original e a versão de entrega for Cópia Simples, o campo de Observação se torna de preenchimento obrigatório.&lt;/p&gt;
+&lt;p&gt;É obrigatório anexar arquivos aos documentos requeridos quando a forma de entrega for Anexado ou por E-mail.&lt;/p&gt;</value>
+  </data>
+  <data name="Mensagem_Confirmacao_Desfazer_Entrega" xml:space="preserve">
+    <value>Ao realizar essa alteração, a entrega da documentação será desfeita, gerando uma inconsistência em relação à situação da inscrição, que só pôde ser confirmada, pelo fato de estar entregue. Deseja continuar?</value>
+  </data>
+  <data name="Mensagem_Confirmacao_Situacao_Anterior" xml:space="preserve">
+    <value>A inscrição deste candidato já foi confirmada. Ao realizar essa alteração, a entrega da documentação será desfeita e o candidato voltará para a situação anterior. Caso tenha sido configurada alguma notificação de retorno de situação, ele será comunicado deste fato. Deseja continuar?</value>
+  </data>
+  <data name="Mensagem_Sucesso_Entrega_Documentos" xml:space="preserve">
+    <value>Documentos salvos com sucesso.</value>
+  </data>
+  <data name="ERR_ArquivoAnexadoValidacaoAguardandoEntrega" xml:space="preserve">
+    <value>Não é possível validar o documento como "Aguardando Entrega", pois já existe um anexo. Para coloca-lo como "Aguardando Entrega" é necessário remover o arquivo.</value>
+  </data>
+  <data name="ERR_ArquivoAnexadoValidacaoPendente" xml:space="preserve">
+    <value>Não é possível validar o documento como "Pendente", pois já existe um anexo. Para coloca-lo como "Pendente" é necessário remover o arquivo.</value>
+  </data>
+  <data name="Titulo_Inserir_Erro" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="Label_OfertaAtual" xml:space="preserve">
+    <value>Oferta atual</value>
+  </data>
+  <data name="Label_OfertaOriginal" xml:space="preserve">
+    <value>Oferta original</value>
+  </data>
+  <data name="Label_Informacao_Limite_Quantidade_Upload" xml:space="preserve">
+    <value>Para o(s) tipo(s) de documento(s) {0}, será permitido incluir no máximo 10 arquivos. Se a quantidade exceder este valor, agrupe-os e compacte-os em um único arquivo, respeitando o limite de tamanho de 5 MB.</value>
+  </data>
+  <data name="Label_Informacao_Limite_Upload" xml:space="preserve">
+    <value>Os arquivos anexados devem ter um tamanho máximo de 5 MB. Caso o arquivo ultrapasse esse tamanho, utilize ferramentas de compactação/compressão para reduzí-lo, antes de anexá-lo. Existem sites que permitem reduzir o tamanho de arquivos PDF de forma gratuita.</value>
+  </data>
+  <data name="MSG_AlterarSituacaoInscricao_Integracao_SGA" xml:space="preserve">
+    <value>&lt;b&gt;Essa alteração de situação exportará o(s) candidato(s) selecionado(s) para o SGA e a operação não poderá ser desfeita.&lt;/b&gt; Além disso, será enviado um e-mail de notificação automático para o(s) candidato(s), caso isso tenha sido configurado no processo. Confirma a alteração da situação?</value>
+  </data>
+  <data name="MSG_AlterarSituacaoInscricao_Sem_Integracao_SGA" xml:space="preserve">
+    <value>Essa alteração de situação enviará um e-mail de notificação automático para o(s) candidato(s) selecionado(s), caso isso tenha sido configurado no processo. Confirma a alteração da situação?</value>
+  </data>
+  <data name="MSG_ExibirObservacaoParaInscrito" xml:space="preserve">
+    <value>Ao informar "Sim" o texto preenchido no campo "Observação" será exibido para o inscrito na notificação e na tela de Nova Entrega da Documentação, caso tenham sido configuradas no processo.</value>
+  </data>
+  <data name="DocumentoInscricaoViewModel_Arquivo" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="SituacaoEntregaDocumento_Legenda_Titulo" xml:space="preserve">
+    <value>Situação Documento</value>
+  </data>
+  <data name="fieldsetBolsa_Fieldset_Legenda" xml:space="preserve">
+    <value>Bolsa</value>
+  </data>
+  <data name="EmailConfirmacao" xml:space="preserve">
+    <value>E-mail Confirmação</value>
+  </data>
+  <data name="EnderecosEletronicos_Detalhe_Titulo" xml:space="preserve">
+    <value>Outros Endereços Eletrônicos</value>
+  </data>
+  <data name="fieldsetCadastroEmailInscrito_Fieldset_Legenda" xml:space="preserve">
+    <value>E-mail de contato</value>
+  </data>
+  <data name="fieldsetCadastroFiliacaoInscrito_Fieldset_Legenda" xml:space="preserve">
+    <value>Filiação</value>
+  </data>
+  <data name="fieldsetCadastroNacionalidadeInscrito_Fieldset_Legenda" xml:space="preserve">
+    <value>Nacionalidade</value>
+  </data>
+  <data name="fieldsetCadastroNaturalidadeInscrito_Fieldset_Legenda" xml:space="preserve">
+    <value>Naturalidade</value>
+  </data>
+  <data name="fieldsetCpfPassaporte_Fieldset_Legenda" xml:space="preserve">
+    <value>CPF / Passaporte</value>
+  </data>
+  <data name="fieldsetRGInscrito_Fieldset_Legenda" xml:space="preserve">
+    <value>RG</value>
+  </data>
+  <data name="Telefones_Detalhe_Titulo" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="Botao_Cancelaralteracao" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Botao_Cancelarprocesso" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Mensagem_Validacao_Email" xml:space="preserve">
+    <value>O e-mail e a confirmação do e-mail devem ser iguais.</value>
+  </data>
+  <data name="_AlterarDados_Title" xml:space="preserve">
+    <value>Alterar Dados do Inscrito</value>
+  </data>
+</root>

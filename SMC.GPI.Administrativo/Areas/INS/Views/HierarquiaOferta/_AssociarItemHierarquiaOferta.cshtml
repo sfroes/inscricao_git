@@ -1,0 +1,25 @@
+﻿@model AssociarItemHierarquiaOfertaViewModel
+
+@using (Smc.Div("fieldsetAssociarItemHierarquiaOferta").Begin())
+{
+    if (Model.PossuiIntegracao)
+    {
+        <div class="smc-gpi-instrucoes-iniciais">
+            <span>
+                @Smc.GetUIResource("Label_PossuiIntegracao")
+            </span>
+        </div>
+    }
+
+    @Smc.EditorFor(prop => prop.SeqProcesso).Size(SMCSize.Grid4_24)
+
+    if (Model.SeqPai.HasValue && Model.SeqPai.Value > 0)
+    {
+        @Smc.EditorFor(prop => prop.SeqPai)
+        @Smc.EditorFor(prop => prop.DescricaoPai).Size(SMCSize.Grid12_24)
+    }
+
+    @Smc.EditorFor(prop => prop.SeqItemHierarquiaOferta).Readonly(Model.PossuiIntegracao).Size(SMCSize.Grid20_24)
+    @Smc.EditorFor(prop => prop.Seq).Size(SMCSize.Grid4_24)
+    @Smc.EditorFor(prop => prop.Nome).Readonly(Model.PossuiIntegracao).Size(SMCSize.Grid24_24)
+}

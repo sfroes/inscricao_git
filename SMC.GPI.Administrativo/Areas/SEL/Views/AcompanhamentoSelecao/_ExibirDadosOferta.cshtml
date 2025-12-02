@@ -1,0 +1,32 @@
+﻿@model DadosOfertaViewModel
+
+@{
+    @Smc.DisplayFor(m => m.Candidato);
+
+    if (Model.OfertasIguais)
+    {
+        @Smc.DisplayFor(m => m.Oferta);
+    }
+    else
+    {
+        @Smc.DisplayFor(m => m.OfertaAtual);
+    }
+}
+
+@*Deverá ser exibido somente se a oferta original for diferente da oferta atual.*@
+@if (!Model.OfertasIguais)
+{
+    using (Smc.Fieldset("fieldsetAlteracaoferta").CssClass("smc-gpi-fieldset").Begin())
+    {
+        @Smc.DisplayFor(prop => prop.OfertaOriginal)
+        @Smc.DisplayFor(prop => prop.JustificativaAlteracaoOferta)
+        @*Smc.DisplayFor(prop => prop.UsuarioAlteracaoOferta)
+            @Smc.DisplayFor(prop => prop.DataAlteracaoOferta)*@
+    }
+}
+
+@*   Justificativa da inscrição: este campo deverá ser exibido somente se o inscrito tiver informado uma justificativa para a inscrição na oferta. *@
+@if (!string.IsNullOrEmpty(Model.JustificativaInscricao))
+{
+    @Smc.DisplayFor(m => m.JustificativaInscricao)
+}

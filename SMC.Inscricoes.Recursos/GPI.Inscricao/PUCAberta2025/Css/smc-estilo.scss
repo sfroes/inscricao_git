@@ -1,0 +1,244 @@
+﻿@import "Componentes/buttons";
+@import "Componentes/form";
+@import "Componentes/header";
+@import "Componentes/wizard";
+
+:root {
+    --color-text: #4b4b4b;
+    --color-label: #4b4b4b;
+    --color-text-reading: #000000;
+    --color-text-secondary: #a7a7a7;
+    --color-body: #ffffff;
+    --color-primary: #f39200;
+    --color-primary-dark: #855000;
+    --color-hover: #3b4a6b;
+    --color-primary-2: #3b4a6b;
+    --color-primary-3: #fff6e6;
+    --color-secondary: #f39200;
+    --color-secondary-2: #3b4a6b;
+    --color-secondary-3: #f39200;
+    --color-secondary-4: #be1621;
+    --color-secondary-5: #b8cdd9;
+    --color-secondary-6: #fff9ef;
+    --color-font-h3: #3b4a6b;
+    --color-font-paths: #f39200;
+    --color-detail-h3: #3b4a6b;
+    --color-font-h4: #3b4a6b;
+    --color-detail-h4: #3b4a6b;
+    --color-error: #be1621;
+    --color-alert: #ff7a08;
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #777777;
+    --light-grey: #c3c3c3;
+    --border-default: #ababab;
+    --border-button: #afafaf;
+    --border-button-secondary: #3b4a6b;
+    --background-button-secondary: #f5f5f5;
+    --text-button-secondary: #5c7f81;
+    --message-alert-icon: #f1c98e;
+    --input-border-color: #dbdbdb;
+    --progress-bar-color: #d7d7d7;
+    --progress-value-color: #79c679;
+}
+
+h1 {
+    color: var(--color-text);
+}
+
+.smc-gpi-painel-lateral {
+    box-shadow: none;
+
+    h2 {
+        color: var(--color-text);
+        font-weight: 600;
+
+        &:before {
+            filter: none;
+        }
+    }
+}
+
+.smc-gpi-data-fim {
+    background-color: var(--color-secondary-2);
+}
+
+.smc-gpi-pendencia {
+    color: var(--color-text);
+    font-weight: 600;
+
+    &:before {
+        border-color: transparent transparent transparent var(--color-primary-2);
+    }
+}
+
+.smc-gpi-lista-oferta {
+    p {
+        color: var(--color-text);
+        font-weight: 600;
+
+        &:before {
+            border-color: transparent transparent transparent var(--color-font-paths);
+        }
+    }
+}
+//TELAS INTERNAS DO PROCESSO
+.smc-gpi-nome-grupooferta {
+    color: var(--color-primary-2);
+    font-weight: 600;
+}
+
+.smc-gpi-processo-passo-atual {
+    @include passos-processo(var(--color-font-paths), var(--color-font-paths), var(--color-text), var(--white),"\f101");
+}
+
+.smc-gpi-processo-passo-concluido {
+    @include passos-processo(var(--color-font-paths), var(--color-font-paths), var(--color-text), var(--white),"\f00c");
+}
+
+.smc-gpi-processo-passo-emaberto {
+    span {
+        color: var(--color-text);
+    }
+}
+
+.smc-barra-progresso {
+    p, span {
+        color: var(--color-text);
+        font-weight: 600;
+    }
+}
+
+// INSCRIÇÕES NÃO INICIADAS
+.smc-gpi-lista-vazia {
+    color: var(--color-text);
+}
+
+// SELEÇÃO SEM OFERTA
+.smc-gpi-oferta-vazio {
+    .oferta-vazio-path {
+        fill: var(--color-secondary);
+    }
+}
+
+.smc-gpi-data {
+    border: 1px solid var(--border-default);
+}
+
+.smc-gpi-data-inicio {
+    background-color: var(--color-primary-3);
+
+    &:before {
+        border-color: transparent transparent transparent var(--color-primary-3);
+        filter: drop-shadow(2px 0px 1px rgba(171,171,171,0.5));
+    }
+
+    p {
+        color: var(--color-text);
+        position: relative;
+        z-index: 20;
+    }
+}
+
+.smc-gpi-data-fim {
+    background-color: var(--white);
+
+    p {
+        color: var(--color-text);
+    }
+}
+
+.smc-gpi-inscricoes-item {
+    ul {
+        .smc-list-item {
+            box-shadow: none;
+            border: 1px solid var(--border-default);
+        }
+    }
+}
+
+.smc-instrucoes-preenchimento-janela-conteudo {
+    background-color: var(--color-primary-3);
+    border-color: var(--color-primary);
+}
+
+.fancytree-match {
+    background-color: var(--color-primary-3);
+}
+
+.smc-gpi-instrucoes-selecao {
+    ul {
+        li {
+            img {
+                border: 1px solid var(--color-primary-2);
+            }
+        }
+    }
+}
+
+.smc-gpi-img-sem-itens {
+    background-image: url(../Images/smc-gpi-sem-itens.png);
+}
+
+app-root {
+    p-dialog {
+        .p-dialog-header {
+            border-bottom: 1px solid var(--color-secondary-2);
+
+            span {
+                color: var(--color-secondary-2);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .smc-gpi-dados-formulario.smc-row.mobile-column > .smc-gpi-dados-pessoais {
+        max-width: 92% !important;
+    }
+
+    .smc-gpi-painel-central {
+        width: 87.5%;
+    }
+    .smc-gpi-paineis {
+        max-width: 98.9%;
+    }
+}
+
+.smc-gpi-ingressos-menu {
+    .smc-list-item + .smc-list-item {
+        display: none;
+    }
+
+    .smc-gpi-ingresso-informacao {
+        display: none;
+    }
+
+    .smc-button + .smc-button {
+        display: none;
+    }
+}
+
+.smc-gpi-processo-passo-comalerta {
+    smc-gpi-mensagem-passo-com-alerta {
+        border: 1px solid var(--color-error) !important;
+    }
+
+    a {
+        color: var(--color-error) !important;
+    }
+
+    &:before {
+        border: 1px solid var(--color-error) !important;
+        background-color: var(--color-error) !important;
+    }
+}
+
+#formCadastroSelecaoOferta {
+    div[data-type="smc-sgf-template-arquivo"] {
+        .smc-sgf-template-texto-item {
+            margin: 2em 0;
+        }
+    }
+}

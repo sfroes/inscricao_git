@@ -1,0 +1,9 @@
+﻿@model ProrrogacaoEtapaViewModel
+
+@using (Smc.Div("fieldsetConfiguracoes").Begin())
+{   
+    @(Smc.List("listaConfiguracoes", x => x.Configuracoes)
+    .HtmlTemplate(@<text>@Html.Partial("_ConfiguracaoProrrogacaoEtapa", item.Value)</text>))
+}
+
+@Smc.WizardView()

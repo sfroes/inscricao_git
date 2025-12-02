@@ -1,0 +1,43 @@
+﻿@{
+    var guidProcesso = Session["__GuidProcesso__"].ToString();
+    var urlGPI = "/GPI.Inscricao/Home/IndexProcesso?uidProcesso=";
+    var tokenCss = ViewBag.TokenCss;
+
+    if (HttpContext.Current.Request.Url.PathAndQuery.Contains("/Dev/"))
+    {
+        urlGPI = "/Dev" + urlGPI + guidProcesso;
+    }
+    else
+    {
+        urlGPI = urlGPI + guidProcesso;
+
+    }
+
+    if (!string.IsNullOrEmpty(tokenCss))
+    {
+
+        urlGPI += "&TokenCss=" + tokenCss;
+    }
+
+
+    Layout = "~/Views/Shared/_Layout_NaoAutenticado.cshtml";
+
+    ViewBag.Title = "Index";
+
+    Session["__dadosInscricaoOferta__"] = null;
+    Session["__GuidProcesso__"] = null;
+}
+<div class="smc-gpi-formulario-respondido">
+    <h2>Agradecemos a sua participação!</h2>
+
+
+    <p class="smc-gpi-formularioimpacto-info-inicial">
+        Com o seu feedback, estamos mais próximos de
+        proporcionar experiências ainda mais surpreendentes. Agradecemos pela sua participação e espero encontrar você em nossos próximos eventos!
+    </p>
+    <p class="smc-gpi-formularioimpacto-info-inicial">Caso queira ver mais informações sobre inscrições, clique no botão abaixo:</p>
+    <div class="display-flex">
+        <a href="@urlGPI" class="smc-btn-principal margin-top-20 width-100">Início</a>
+    </div>
+</div>
+

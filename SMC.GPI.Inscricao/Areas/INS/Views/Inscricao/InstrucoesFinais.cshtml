@@ -1,0 +1,82 @@
+﻿@model PaginaInstrucoesFinaisViewModel
+
+@{
+    ViewBag.InscricaoNaoPermiteTrocaLingua = true;
+    Layout = "~/Areas/INS/Views/Shared/_Layout.cshtml";
+}
+
+@section PainelLateral
+{
+    @Html.Partial("_PainelLateralProcesso", Model)
+}
+
+<h3>@Model.Titulo</h3>
+
+@(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_INSTRUCOES))
+
+@using (Smc.Form("formFinalizacaoInscricao").CssClass("smc-gpi-painel-instrucoes-finais").Begin())
+{
+    var buttonset = Smc.ButtonSet().CssClass("smc-botoes-finais");
+
+    if (Model.PossuiTaxas)
+    {
+        buttonset.AddButton(Smc.Button("TaxaInscricao").Action("BoletoInscricao", "Inscricao", new
+        {
+            @area = "INS",
+            @id = SMCDESCrypto.EncryptNumberForURL(Model.id)
+        })
+                .Type(SMCButtonType.Link)
+                .CssClass("smc-btn-secundario")
+                .Text(SMC.GPI.Inscricao.Areas.INS.Views.Inscricao.App_LocalResources.UIResource.
+                        ResourceManager.GetString("Label_Taxa_Inscricao", System.Globalization.CultureInfo.CurrentCulture))
+                .Tooltip(SMC.GPI.Inscricao.Areas.INS.Views.Inscricao.App_LocalResources.UIResource.
+                        ResourceManager.GetString("Label_Taxa_Inscricao_Tooltip", System.Globalization.CultureInfo.CurrentCulture))
+                .Attribute("target", "_blank")
+                .Enabled(Model.ImprimeBoleto)
+                .ButtonInstructions(Model.MensagemImpressaoBoleto));
+    }
+
+
+    if (Model.SeqArquivoComprovante.HasValue)
+    {
+        buttonset.AddButton(Smc.Button("LinkComprovante").Action("DownloadDocumento", "Inscricao", new
+        {
+            @area = "INS",
+            @id = SMCDESCrypto.EncryptNumberForURL(Model.SeqArquivoComprovante.Value)
+        })
+                    .Type(SMCButtonType.Link)
+                    .CssClass("smc-btn-secundario")
+                    .Attribute("target", "_blank")
+                    .Enabled(Model.EmiteComprovante)
+                    .ButtonInstructions(Model.MensagemEmissaoComprovante));
+    }
+
+
+    if (Model.GestaoEventos && Model.HabilitaCheckin)
+    {
+
+
+        <div class="smc-gpi-informacao-botao smc-gpi-ajuste-mensagem-botao-lateral smc-gpi-ajuste-mensagem-botao-central"><p>@Model.MensagemInformativaCheckin</p></div>
+        @(Smc.Button("Ingressos")
+                                            .Type(SMCButtonType.Link)
+                                            .CssClass("smc-btn-principal margin-top-30 margin-bottom-10")
+                                            .Enabled(Model.HabilitarBotaoCheckin)
+                                            .Action("Ingressos", "Inscricao",
+                                                      new
+                                                      {
+                                                          @seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+                                                          @area = "INS"
+                                                      }))
+    }
+
+    @buttonset
+
+    @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_ARQUIVOS))
+
+    @(Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).CssClass("smc-gpi-linha-botoes smc-gpi-linha-sair")
+                .AddButton(Smc.Button("Sair")
+                    .Type(SMCButtonType.Link)
+                    .Action("Index", "Home", new { @area = string.Empty })
+                    .CssClass("smc-gpi-link"))
+    )
+}

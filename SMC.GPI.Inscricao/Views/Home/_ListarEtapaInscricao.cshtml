@@ -1,0 +1,58 @@
+@model SMCPagerModel<SMC.GPI.Inscricao.Models.ProcessoAbertoListaViewModel>
+
+
+@(Smc.List("listaProcessos").HideRowTotalizer()
+    .AutoHideNavigator()
+    .UpdateTargetId("divGridProcessosAbertos")
+    .CssClass("smc-gpi-inicio-lista-itens")
+    .DenyChangeNumberOfRowsPerPage()
+    .HtmlTemplate(
+    @<text>
+        <div class="smc-gpi-inicio-conteudo">
+            <div class="smc-gpi-inicio-descricao smc-col-8">
+                <h2>@item.DescricaoProcesso</h2>
+                <div class="smc-gpi-inicio-texto">
+                    @Html.Raw(HttpUtility.HtmlDecode((item.DescricaoComplementarProcesso)))
+                </div>
+            </div>
+            <div class="smc-gpi-processo-lista">
+                @foreach (var grupo in item.Grupos)
+                {
+                    <h3>@Smc.GetUIResource("Texto_Calendario")</h3>
+                    <h2 class="smc-gpi-cor-texto margin-bottom-5">@grupo.NomeGrupo</h2>
+                    <div class="smc-gpi-processo-lista-grupos display-flex">
+                        <div class="display-flex smc-gpi-data">
+                            <div class="smc-gpi-data-inicio">
+                                <p class="smc-gpi-texto-data">@Smc.GetUIResource("Texto_Inicio")</p>
+                                <p class="smc-gpi-inscricoes-periodo">@grupo.DataInicioConfiguracaoEtapa.ToString("dd/MM/yyyy")</p>
+                                <p class="smc-gpi-inscricoes-hora">@grupo.DataInicioConfiguracaoEtapa.ToString("HH:mm")</p>
+                            </div>
+                            <div class="smc-gpi-data-fim">
+                                <p class="smc-gpi-texto-data">@Smc.GetUIResource("Texto_Fim")</p>
+                                <p class="smc-gpi-inscricoes-periodo">@grupo.DataFimConfiguracaoEtapa.ToString("dd/MM/yyyy")</p>
+                                <p class="smc-gpi-inscricoes-hora">@grupo.DataFimConfiguracaoEtapa.ToString("HH:mm")</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="smc-gpi-inicio-botao">
+            @(Smc.Button("HomeProcesso")
+            .Type(SMCButtonType.Link)
+            .Tooltip("Visualizar")
+            .Action("IndexProcesso", "Home",
+            new
+            {
+                @uidProcesso = @item.UidProcesso,
+                @area = string.Empty
+            }))
+        </div>
+    </text>)
+)
+
+@{ if (Model.Count == 0)
+    {
+    <div class="smc-gpi-no-results">@Smc.GetUIResource("Texto_Nao_foram_encontrados")</div>
+    }
+}

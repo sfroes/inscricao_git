@@ -1,0 +1,35 @@
+﻿@model CopiarConfiguracoesEtapaViewModel
+
+@using (Smc.Fieldset("fieldsetOrigem").Begin())
+{
+    @Html.Action("CabecalhoProcessoEtapa", "EtapaProcesso", new { @seqEtapa = Model.SeqEtapaProcesso, @seqProcesso = Model.SeqProcessoOrigem })
+}
+
+@using (Smc.Fieldset("fieldsetDestino").Begin())
+{
+    @Smc.EditorFor(x => x.SeqProcessoOrigem)
+    @Smc.EditorFor(x => x.SeqEtapaProcesso)
+    @Smc.EditorFor(x => x.SeqTipoTemplateProcessoOrigem)
+    @Smc.EditorFor(x => x.ProcessoDestino)
+    @Smc.EditorFor(x => x.SeqTipoTemplateProcessoDestino)
+    @Smc.EditorFor(x => x.NaoPossuiIdiomasComuns)
+
+    <div class="smc-gpi-instrucoes-iniciais" id="spanMensagemTipoTemplateDiferente" style="display:none">
+        <span>
+            @Smc.GetUIResource("Mensagem_Tipo_Template_Diferente")
+        </span>
+    </div>
+
+    <div class="smc-gpi-instrucoes-iniciais" id="spanMensagemIdiomas" style="display:none">
+        <span>
+            @Smc.GetUIResource("Mensagem_Idiomas_Comum")
+        </span>
+    </div>
+}
+
+@using (Smc.Fieldset("fieldsetItens").Begin())
+{
+    @Smc.EditorFor(x => x.CopiarPaginas)
+    @Smc.EditorFor(x => x.CopiarDocumentacao)
+    @Smc.EditorFor(x => x.Configuracoes)
+}

@@ -1,0 +1,133 @@
+﻿@using SMC.Inscricoes.ServiceContract.Areas.INS.Data.Checkin
+@{
+    Layout = "~/Views/Shared/_Layout_Mobile.cshtml";
+    var listaProcessos = Session["__ProcessoHierarquia__"] as List<ProcessoGestaoEventoQRCodeData>;
+    var dadosUsuario = Session["__ConfiguracaoUsuario__"] == null ? new ConfiguracaoUsuarioData() : Session["__ConfiguracaoUsuario__"] as ConfiguracaoUsuarioData;
+    var ofertas = dadosUsuario.SeqsOferta.SMCAny() ? string.Join("|", dadosUsuario.SeqsOferta) : "";
+}
+<!--PAGINA CONTROLADA POR SCRIPT JS -- ConfiguracaoUsuarioCheckin.JS-->
+<div class="smc-configuracao">
+    @if (listaProcessos.SMCAny() && !listaProcessos.FirstOrDefault().Atendente)
+    {
+            <div class="menu-desktop">
+                <div class="smc-gpi-menu-desktop smc-col-10">
+                    <ul class="display-flex flex-j-end">
+                        <li>
+                            <a href="@Url.Action("Index", "Home", new { Area = "" })" title="Administrativo">Administrativo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        <nav>
+            <div class="smc-gpi-menu smc-col-10">
+                <ul class="display-flex flex-j-end">
+                    <li>
+                        <a href="@Url.Action("Index", "Home", new { Area = "" })" title="Administrativo">Administrativo</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="smc-gpi-menu-backdrop hidden"></div>
+        </nav>
+
+
+        <div class="smc-gpi-toogle display-flex flex-a-center">
+            <a href="#"
+               title="Menu"
+               class="smc-gpi-menu-toogle"
+               role="button">
+                <svg viewBox="0 0 448 512" aria-label="Menu">
+                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                </svg>
+            </a>
+        </div>
+    }
+
+    <div class="smc-gpi-titulo-label">
+        <h2>Configurar Atendimento</h2>
+        <div id="data-hora-atual" class="smc-gpi-data-hora"><p>@DateTime.Now</p></div>
+    </div>
+
+    <div class="smc-gpi-box-checkin">
+        <div class="smc-row">
+            <div class="smc-col-12">
+                <div class="smc-gpi-instrucoes-iniciais">
+                    <p>Selecione as informações referentes aos atendimentos nos quais você irá atuar e clique em "Check-in por QR Code" ou "Check-in manual".</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="form-config" action="#" method="post" class="smc-row width-100">
+            <input type="hidden" value="" name="TokenHistoricoSituacao" id="token-historico-situacao" />
+            <div class="smc-col-6">
+                <input type="hidden" value="@dadosUsuario.SeqProcesso" id="seq-processo-session" />
+                <div class="smc-select margin-top-10" id="divProcesso">
+                    @*<label>Processo</label>*@
+                    <select id="processo" name="seqProcesso" placeholder="" size="1">
+                        <option value="">Selecionar...</option>
+                        @{
+                            foreach (var item in listaProcessos)
+                            {
+                                <option value="@item.SeqProcesso" data-token-historico="@item.TokenHistoricoSituacao">@item.DescricaoProcesso</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="smc-col-6">
+                <input type="hidden" value="@dadosUsuario.SeqGrupoOferta" id="seq-grupo-oferta-session" />
+                <div class="smc-select margin-top-10" id="div-grupo-oferta" hidden="hidden">
+                    @*<label>Grupo Oferta</label>*@
+                    <select id="grupoOferta" name="seqGrupoOferta" placeholder="" size="1">
+                        <option value="">Selecionar...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="smc-col-6">
+                <input type="hidden" value="@dadosUsuario.SeqHierarquia" id="seq-hierarquia-session" />
+                <div class="smc-select margin-top-10" id="div-hierarquia" hidden="hidden">
+                    @*<label>Hierarquia</label>*@
+                    <select id="hierarquia" name="seqHierarquia" placeholder="" size="1">
+                        <option value="">Selecionar...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="smc-col-12">
+                <input type="hidden" value="@ofertas" id="seqsOfertaSession" />
+                <div id="div-ofertas" hidden="hidden" class="margin-top-10">
+                    <label class="text-bold">Atividade(s):</label>
+                    <div class="smc-gpi-selecao-todos">
+                        <a id="link-clicar-todos" href="#div-itens-ofertas" data-selecao="Todos" title="Selecionar todos itens">
+                            <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" /></svg>
+                            Todos
+                        </a>
+                        <a id="link-clicar-desmarcar" href="#div-itens-ofertas" data-selecao="Todos" title="Limpar itens">
+                            <svg viewBox="0 0 576 512"><path d="M290.7 57.4L57.4 290.7c-25 25-25 65.5 0 90.5l80 80c12 12 28.3 18.7 45.3 18.7H288h9.4H512c17.7 0 32-14.3 32-32s-14.3-32-32-32H387.9L518.6 285.3c25-25 25-65.5 0-90.5L381.3 57.4c-25-25-65.5-25-90.5 0zM297.4 416H288l-105.4 0-80-80L227.3 211.3 364.7 348.7 297.4 416z" /></svg>
+                            Limpar
+                        </a>
+                    </div>
+                    <div id="div-itens-ofertas" class="smc-gpi-itens-ofertas-selecao">
+
+                    </div>
+                </div>
+            </div>
+            <div class="smc-button margin-top-20 smc-col-12 smc-gpi-checkin-btn-group">
+                <button id="btn-salvar-qrcode" class="smc-btn-principal smc-btn-svg margin-right-10" title="Check-in por QR Code" type="submit" disabled="disabled" data-url="@Url.Action("Checkin", "Checkin")">
+                    <svg viewBox="0 0 448 512"><path d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM64 96v64h64V96H64zM0 336c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V336zm64 16v64h64V352H64zM304 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48zm80 64H320v64h64V96zM256 304c0-8.8 7.2-16 16-16h64c8.8 0 16 7.2 16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s7.2-16 16-16s16 7.2 16 16v96c0 8.8-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s-7.2-16-16-16s-16 7.2-16 16v64c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V304zM368 480a16 16 0 1 1 0-32 16 16 0 1 1 0 32zm64 0a16 16 0 1 1 0-32 16 16 0 1 1 0 32z" /></svg>
+                    Check-in por QR code
+                </button>
+
+                <button id="btn-salvar-manual" class="smc-btn-principal smc-btn-svg" title="Check-in manual" type="submit" disabled="disabled" data-url="@Url.Action("CheckinManual", "Checkin")">
+                    <svg viewBox="0 0 640 512"><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM504 312V248H440c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V136c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H552v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" /></svg>
+                    Check-in manual
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts
+{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/ConfiguracaoUsuarioCheckin.js")></script>
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/MenuCheckin.js")></script>
+
+}

@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alterar_Item_Hierarquia_Oferta_Modal_Titulo" xml:space="preserve">
+    <value>Alterar Item da Hierarquia de Oferta</value>
+  </data>
+  <data name="Botao_Novo_Item_Raiz_Hierarquia_Oferta" xml:space="preserve">
+    <value>Novo item raiz</value>
+  </data>
+  <data name="Cadastrar_Oferta_Hierarquia_Oferta_Modal_Titulo" xml:space="preserve">
+    <value>Nova Oferta</value>
+  </data>
+  <data name="EnderecosEletronicos_Detalhe_Titulo" xml:space="preserve">
+    <value>Endereços Eletrônicos</value>
+  </data>
+  <data name="HierarquiaOferta_Title" xml:space="preserve">
+    <value>Cadastro de Hierarquia de Oferta</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Aba_Title_tabDadosCancelamento" xml:space="preserve">
+    <value>Cancelar Oferta</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Aba_Title_tabDadosOferta" xml:space="preserve">
+    <value>Dados da Oferta</value>
+  </data>
+  <data name="Texto_Informativo_Item_Arvore" xml:space="preserve">
+    <value>Configurar</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Item_Hierarquia_Oferta_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão do item de hierarquia de oferta "{0}“ e de todos os itens abaixo dele, inclusive suas ofertas?</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Item_Hierarquia_Oferta_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir Item de Hierarquia de Oferta</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Link_Alterar_Item_Arvore_Hierarquia_Oferta" xml:space="preserve">
+    <value>Alterar item</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Link_Cadastro_Oferta_Hierarquia_Oferta" xml:space="preserve">
+    <value>Cadastro de oferta</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Link_Excluir_Item_Arvore_Hierarquia_Oferta" xml:space="preserve">
+    <value>Excluir item</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Link_Novo_Item_Folha_Hierarquia_Oferta" xml:space="preserve">
+    <value>Novo ítem folha</value>
+  </data>
+  <data name="_CadastroOfertaHierarquiaOferta_fieldsetCodigosAutorizacao_Fieldset_Legenda" xml:space="preserve">
+    <value>Códigos de Autorização</value>
+  </data>
+  <data name="Cadastro_Item_Hierarquia_Oferta_Modal_Titulo" xml:space="preserve">
+    <value>Novo Item da Hierarquia de Oferta</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Aba_Title_tabCodigosAutorizacao" xml:space="preserve">
+    <value>Códigos de Autorização</value>
+  </data>
+  <data name="Alterar_Oferta_Hierarquia_Oferta_Modal_Titulo" xml:space="preserve">
+    <value>Alterar Oferta</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Link_Alterar_Oferta_Hierarquia_Oferta" xml:space="preserve">
+    <value>Alterar oferta</value>
+  </data>
+  <data name="Botao_Novo_Item_Raiz_Hierarquia_Oferta_Tooltip" xml:space="preserve">
+    <value>Novo item raiz</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Aba_Title_tabDadosPeriodoTaxa" xml:space="preserve">
+    <value>Período de Taxa</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Aba_Title_tabDadosResponsavel" xml:space="preserve">
+    <value>Responsável</value>
+  </data>
+  <data name="Associar_Item_Hierarquia_Oferta_Modal_Titulo" xml:space="preserve">
+    <value>Novo Item da Hierarquia de Oferta</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Link_Excluir_Oferta_Arvore_Hierarquia_Oferta" xml:space="preserve">
+    <value>Excluir oferta</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Oferta_Hierarquia_Oferta_Excluir_Confirmacao" xml:space="preserve">
+    <value>Confirma a exclusão da oferta "{0}“ e de todos os itens abaixo dela?</value>
+  </data>
+  <data name="_ArvoreItemHierarquiaOferta_Oferta_Hierarquia_Oferta_Excluir_Titulo" xml:space="preserve">
+    <value>Excluir oferta</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_CodigosAutorizacao_Detalhe_Titulo" xml:space="preserve">
+    <value>Códigos de autorização</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_TaxasOferta_Detalhe_Titulo" xml:space="preserve">
+    <value>Taxas da Oferta</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Telefones_Detalhe_Titulo" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="_EditarHierarquiaOferta_Botao_Novo_Oferta_Raiz_Hierarquia_Oferta" xml:space="preserve">
+    <value>Nova oferta raiz</value>
+  </data>
+  <data name="_EditarHierarquiaOferta_Botao_Novo_Oferta_Raiz_Hierarquia_Oferta_Tooltip" xml:space="preserve">
+    <value>Nova oferta raiz</value>
+  </data>
+  <data name="_EditarHierarquiaOferta_Botao_Contextonovaitemhierarquia" xml:space="preserve">
+    <value>Nova raiz</value>
+  </data>
+  <data name="_EditarHierarquiaOferta_Botao_Contextonovaitemhierarquia_Tooltip" xml:space="preserve">
+    <value>Nova raiz</value>
+  </data>
+  <data name="TaxasOferta_Title" xml:space="preserve">
+    <value>Consulta de Período de Taxa</value>
+  </data>
+  <data name="TaxasOferta_Botao_Novo" xml:space="preserve">
+    <value>Cadastrar período de taxa em lote</value>
+  </data>
+  <data name="CadastrarTaxaOferta_Title" xml:space="preserve">
+    <value>Seleção de Ofertas para Manutenção de Taxa em Lote</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_Botao_Excluirtaxaemlote" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_Botao_Excluirtaxaemlote_Tooltip" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_Botao_Incluir_Taxa" xml:space="preserve">
+    <value>Incluir</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_Botao_Incluir_Taxa_Tooltip" xml:space="preserve">
+    <value>Incluir</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_Aba_Title_Exclusao" xml:space="preserve">
+    <value>Exclusão de Período de Taxa em Lote</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_Aba_Title_Inclusao" xml:space="preserve">
+    <value>Inclusão de Período de Taxa em Lote</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_Mensagem_Exclusao_Taxa" xml:space="preserve">
+    <value>Confirma a exclusão de todos os períodos de taxa das ofertas selecionadas?</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_Titulo_Exclusao_Taxa" xml:space="preserve">
+    <value>Confirmação de exclusão de taxas</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_GridExcluir_Grid_Titulo" xml:space="preserve">
+    <value>Ofertas</value>
+  </data>
+  <data name="_AbasCadastroTaxaLote_GridIncluir_Grid_Titulo" xml:space="preserve">
+    <value>Ofertas</value>
+  </data>
+  <data name="CadastrarTaxaOferta_Modal_Incluir_Periodo_Taxa_Titulo" xml:space="preserve">
+    <value>Inclusão de Período de Taxa em Lote</value>
+  </data>
+  <data name="_IncluirTaxaEmLote_Botao_Insert_Taxas" xml:space="preserve">
+    <value>Nova Taxa</value>
+  </data>
+  <data name="_IncluirTaxaEmLote_Botao_Insert_Taxas_Tooltip" xml:space="preserve">
+    <value>Nova Taxa</value>
+  </data>
+  <data name="_IncluirTaxaEmLote_Taxas_Detalhe_Titulo" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="_ListarOfertaPeriodo_Mensagem_Oferta_Sem_Taxas" xml:space="preserve">
+    <value>Não existem taxas cadastradas para esta oferta.</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Mensagem_Taxa_Oferta" xml:space="preserve">
+    <value>Caso as taxas associadas ao boleto do candidato possuam datas de vencimento distintas, o vencimento do boleto será gerado com a data maior.</value>
+  </data>
+  <data name="_IncluirTaxaEmLote_Mensagem_Taxa_Oferta" xml:space="preserve">
+    <value>Caso as taxas associadas ao boleto do candidato possuam datas de vencimento distintas, o vencimento do boleto será gerado com a data maior.</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Mensagem_TaxaPermissao_Oferta" xml:space="preserve">
+    <value>Taxas das permissões de inscrição fora do prazo</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Aba_Title_tabDescricaoComplementar" xml:space="preserve">
+    <value>Descrição Complementar</value>
+  </data>
+  <data name="Mensagem_Bloqueio_PossuiIntegracao" xml:space="preserve">
+    <value>A hierarquia de ofertas deste processo não pode ser alterada, porque ela é gerada a partir da integração com outro sistema.</value>
+  </data>
+  <data name="_AssociarItemHierarquiaOferta_Label_PossuiIntegracao" xml:space="preserve">
+    <value>A hierarquia de ofertas deste processo não pode ser alterada, porque ela é gerada a partir da integração com outro sistema.</value>
+  </data>
+  <data name="_CadastrarOfertaHierarquiaOferta_Label_PossuiIntegracao" xml:space="preserve">
+    <value>O tipo de item de hierarquia de oferta, a descrição da oferta, o número de vagas e o código de origem não podem ser alterados, pois eles dependem de informações cadastradas a partir da integração com outros sistemas.</value>
+  </data>
+  <data name="Atividade_Label" xml:space="preserve">
+    <value>Atividade</value>
+  </data>
+</root>

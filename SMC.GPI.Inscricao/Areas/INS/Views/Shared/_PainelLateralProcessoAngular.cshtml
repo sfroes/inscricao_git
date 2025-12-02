@@ -1,0 +1,98 @@
+﻿@model ModeloPaginaAngularViewModel
+
+<div class="smc-gpi-painel-lateral-processo">
+    @*<span>@Model.DescricaoProcesso</span>*@
+    <span class="smc-gpi-nome-grupooferta">@Model.DescricaoGrupoOferta</span>
+
+    @if (Model.DescricaoOfertas.SMCCount() > 0)
+    {
+        <div class="smc-gpi-painel-lateral-processo-oferta form-group">
+            @*@foreach (var oferta in Model.DescricaoOfertas)
+                {
+                    <p><span>@oferta</span></p>
+                }*@
+            @Smc.DisplayFor(m => m.DescricaoOfertas).HideLabel().CssClass("smc-gpi-lista-oferta")
+        </div>
+    }
+    <div class="smc-barra-progresso">
+        <progress value="0" max="100" style="--value: @Model.NumeroPaginaAtual.ToString(); --max: @Model.FluxoPaginas.Count.ToString();"></progress>
+        <p><span id="percentual"></span>% concluído</p>
+    </div>
+    <div class="smc-gpi-processo-passos">
+        @foreach (var pagina in @Model.FluxoPaginas)
+        {
+
+            string cssClass = "";
+            string url = "";
+            string cssClassAlerta = "";
+            if (!string.IsNullOrEmpty(pagina.Alerta))
+            {
+                cssClassAlerta = "smc-gpi-mensagem-passo-com-alerta";
+            }
+
+            if (Model.Ordem == pagina.Ordem)
+            {
+                cssClass += "smc-gpi-processo-passo-atual";
+            }
+            else if (Model.Ordem > pagina.Ordem)
+            {
+                if (string.IsNullOrEmpty(pagina.Alerta))
+                {
+                    cssClass += "smc-gpi-processo-passo-concluido";
+                }
+                else
+                {
+                    cssClass += "smc-gpi-processo-passo-comalerta";
+                }
+
+                if (Model.InscricaoIniciada)
+                {
+                    url = Url.Action("UrlPagina", "Inscricao", new
+                    {
+                        area = "INS",
+                        token = SMCDESCrypto.EncryptForURL(pagina.Token),
+                        seqConfiguracaoEtapaPagina = SMCDESCrypto.EncryptNumberForURL(pagina.SeqConfiguracaoEtapaPagina),
+                        seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(Model.SeqConfiguracaoEtapa),
+                        seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(Model.SeqGrupoOferta),
+                        seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+                        idioma = Model.Idioma
+                    });
+                }
+            }
+
+            else
+            {
+                cssClass += "smc-gpi-processo-passo-emaberto";
+            }
+
+            <div class="@cssClass">
+                <p class="@cssClassAlerta">@pagina.Alerta</p>
+                @if (!string.IsNullOrEmpty(url))
+                {
+                    <a href="@url">
+                        @pagina.Titulo
+                    </a>
+                }
+                else
+                {
+                    <span>
+                        @pagina.Titulo
+                    </span>
+                }
+            </div>
+
+        }
+
+    </div>
+
+    @*<div class="smc-gpi-painel-lateral-processo-contador">
+        <span>@String.Format(Smc.GetUIResource("Texto_Passo_Atual"), Model.NumeroPaginaAtual.ToString(), Model.FluxoPaginas.Count.ToString())</span>
+    </div>*@
+</div>
+<script>
+let a =  @Model.NumeroPaginaAtual.ToString();
+let b =  @Model.FluxoPaginas.Count.ToString();
+    let x = (a / b) * 100
+
+    document.getElementById("percentual").innerHTML = x.toFixed(0);
+</script>

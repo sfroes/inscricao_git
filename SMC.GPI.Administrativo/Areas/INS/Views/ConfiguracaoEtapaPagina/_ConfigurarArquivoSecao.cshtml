@@ -1,0 +1,17 @@
+﻿@model ConfigurarArquivoSecaoViewModel
+
+@using (Smc.Header("headerCabecalhoConfigurarArquivoSecao", SMCHeaderType.Primary)
+               .Item(prop => prop.Pagina, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+               .Item(prop => prop.Idioma, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+               .Item(prop => prop.Secao, sizeSM: SMCSize.Grid7_24, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+               .Begin())
+{
+
+}
+        @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaPaginaIdioma)
+        @Smc.EditorFor(prop => prop.SeqSecaoPaginaSGF)    
+        @Smc.EditorFor(prop => prop.Arquivos)
+
+
+
+

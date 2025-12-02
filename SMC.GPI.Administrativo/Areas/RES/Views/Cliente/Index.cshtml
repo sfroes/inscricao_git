@@ -1,0 +1,25 @@
+﻿@model ClienteFiltroViewModel
+
+@using (Smc.Form("formPesquisaCliente", "ListarCliente").Ajax("#divGridCliente").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaCliente").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Seq).Focus()
+        @Smc.EditorFor(prop => prop.Nome)
+        @Smc.EditorFor(prop => prop.Sigla) 
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_RES_002_01_02.MANTER_CLIENTE)
+                 .Url(Url.Action("Incluir")))
+        )
+    }
+}
+
+<div id="divGridCliente">
+    @Html.Action("ListarCliente")
+</div>

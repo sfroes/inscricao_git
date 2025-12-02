@@ -1,0 +1,579 @@
+﻿.smc-btn-mais {
+    float: right;
+    border: 1px solid var(--border-button);
+    background-color: var(--white);
+    border-radius: 3px;
+    font-size: 0;
+    height: 2em;
+    padding: 0.5em 0.3em 0em 0.3em;
+
+    i {
+        font-size: 1.6em;
+        color: var(--gray);
+    }
+}
+
+.smc-linha-btn-terciario {
+    text-align: right;
+
+    a {
+        font-size: 0.9em;
+        font-weight: 600;
+        border: 1px solid var(--border-button-secondary);
+        color: var(--color-primary);
+        background-color: var(--background-button-secondary);
+        border-radius: 3px;
+        height: 1.4em;
+        padding: 0.4em 1em 0.4em 1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-style: normal;
+
+        &:hover, &:focus {
+            border: 1px solid var(--color-hover);
+            background-color: var(--white);
+            color: var(--color-hover);
+        }
+    }
+
+    .smc-button {
+        display: block;
+    }
+}
+
+.smc-button {
+    width: 100%;
+    display: flex;
+}
+
+@mixin basebotoes {
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 1.2em;
+    padding: 1em 0 0.1em 0;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    height: 2.2em;
+}
+
+.smc-btn-principal {
+    @include basebotoes;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    width: 100%;
+    height: 2.2em;
+    font-style: normal;
+    font-weight: 600;
+
+    &:hover, &:focus, &:active, &:focus-visible {
+        border: 1px solid var(--color-secondary) !important;
+        background-color: var(--white);
+        color: var(--color-secondary);
+    }
+}
+
+button.smc-btn-principal {
+    height: 3.4em;
+    padding: 0.8em 0 0.5em 0;
+}
+
+.smc-btn-secundario {
+    @include basebotoes;
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    width: 100%;
+
+    &:hover, &:focus, &:active, &:focus-visible {
+        border: 1px solid var(--color-primary-3) !important;
+        background-color: var(--white);
+        color: var(--color-primary-3);
+    }
+}
+button.smc-btn-secundario {
+    padding: 0 0 0.1em 0;
+}
+
+a.smc-btn-secundario {
+    font-style: normal;
+}
+
+.smc-btn-desabilitado {
+    @include basebotoes;
+    background-color: var(--border-button);
+    border: 1px solid var(--border-button);
+    cursor: no-drop;
+
+    &:hover, &:focus {
+        border: 1px solid var(--border-button) !important;
+        background-color: var(--border-button) !important;
+        color: var(--white) !important;
+    }
+}
+// BUTTONSET DA ÁREA DE CADASTRO
+.smc-gpi-linha-botoes {
+    border-top: 1px solid var(--color-detail-h3);
+    margin-top: 2.85em;
+    width: 100%;
+    padding: 2.85em 0 0 0 !important;
+    display: flex;
+}
+
+.gap-botoes {
+    gap: 0.71em;
+}
+
+.smc-gpi-linha-botoes-espacamento {
+    > div:first-child {
+        margin-right: 20%;
+
+        @media screen and ("max-width: 850px") {
+            margin-right: 0;
+        }
+    }
+}
+//ICONOGRAFIA PARA BOTÕES
+
+.proximo {
+    &:after {
+        content: "\f054";
+        font-family: var(--fa-font);
+        color: var(--white);
+        display: inline-block;
+        font-size: 1.28em;
+        margin-left: 1.42em;
+
+        @media screen and ("max-width: 850px") {
+            display: none;
+        }
+    }
+
+    &:hover:after, &:focus:after {
+        color: var(--color-secondary);
+    }
+}
+
+@mixin base-iconografia($icon, $color, $color-hover) {
+    &:before {
+        content: $icon;
+        font-family: var(--fa-font);
+        color: $color;
+        display: inline-block;
+        font-size: 1.28em;
+        margin-right: 1.42em;
+    }
+
+    &:hover:after, &:focus:after {
+        color: $color-hover;
+    }
+}
+
+.voltar, .smc-btn-anterior-icotext {
+    @include base-iconografia("\f053", var(--color-primary-2),var(--color-primary-3));
+
+    @media screen and ("max-width: 850px") {
+        width: 3.21em;
+        height: 3em;
+        padding: 1.74rem;
+        font-size: 0;
+
+        &:before {
+            margin-right: 0;
+        }
+
+        i {
+            &:before {
+                content: "\f053";
+                font-family: var(--fa-font);
+                color: var(--color-primary-2);
+                font-size: 1.28rem;
+                position: relative;
+                left: -10px;
+                top: -10px;
+            }
+        }
+    }
+}
+
+.alterar {
+    @include base-iconografia("\f044", var(--color-primary-2),var(--color-primary-3));
+
+    @media screen and ("max-width: 1120px") {
+
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.concluir {
+    @include base-iconografia("\f00c", var(--white),var(--color-secondary));
+}
+
+.boleto {
+    @include base-iconografia("\f02a", var(--color-primary-2),var(--color-primary-3));
+}
+
+.documento {
+    @include base-iconografia("\f15b",var(--color-primary-2),var(--color-primary-3));
+}
+// BOTÕES PRE DEFINIDOS
+.smc-btn-fechar-icotext {
+    @extend .smc-btn-secundario;
+    height: 3.5em;
+    padding: 0 1.78em;
+
+    i {
+        display: none;
+    }
+}
+
+.smc-btn-confirmar-icotext-destaque {
+    @extend .smc-btn-principal;
+    height: 3.5em !important;
+    padding: 1em 1.78em !important;
+    display: flex;
+}
+// BOTÕES DO WIZARD
+.smc-wizard-barra-acoes {
+    .smc-btn-proximo-icotext-destaque {
+        @extend .smc-btn-principal;
+        @extend .proximo;
+        width: 14.28em;
+        margin-left: auto;
+
+        i {
+            display: none;
+        }
+    }
+
+    .smc-btn-anterior-icotext {
+        position: relative;
+        @extend .smc-btn-secundario;
+        @extend .voltar;
+        margin-right: 51%;
+        height: 2.3em;
+
+
+        @media screen and ("max-width: 1200px") {
+            margin-right: 31%;
+        }
+
+        i {
+            display: none;
+
+            @media screen and ("max-width: 992px") {
+                display: block !important;
+                width: 20px;
+            }
+
+            &::before {
+                @media screen and ("max-width: 992px") {
+                    display: block !important;
+                }
+            }
+        }
+
+        @media screen and ("max-width: 992px") {
+            margin-right: 50%;
+            font-size: 0;
+            padding-left: 1.14em;
+        }
+
+
+        @media screen and ("max-width: 992px") {
+            margin-right: 1%;
+            padding: 1.74rem;
+        }
+    }
+
+    .smc-btn-custom.smc-btn-principal {
+        display: flex;
+        padding: .8em 3.21em .5em 3.21em !important;
+        @extend .smc-btn-principal;
+        @extend .concluir;
+
+        @media screen and ("max-width: 992px") {
+            padding: .8em 1.07em .5em 1.07em !important;
+        }
+
+        &:before {
+            margin-right: 0.71em;
+            margin-top: 0.14em;
+        }
+
+        &:hover {
+            &:before {
+                color: var(--color-secondary) !important;
+            }
+        }
+    }
+
+    .smc-btn-custom.smc-btn-secundario {
+        padding: 1em 3.21em .5em 3.21em !important;
+
+        @media screen and ("max-width: 992px") {
+            padding: 1em 0.8em 0.5em 0.8em !important;
+        }
+    }
+
+    .smc-btn-custom.smc-btn-secundario {
+        height: 1.8em !important;
+    }
+}
+//BOTÕES SOMENTE ÍCONES
+.smc-btn-excluir-ico {
+    background-color: transparent;
+    border-color: var(--color-error);
+    color: var(--color-error);
+    padding: 0.14rem 0.5rem 0 0.92rem;
+    height: 2.6rem;
+    text-align: center;
+    margin-bottom: 0.35em;
+
+    i {
+        margin: 0.71rem 0.57rem 0 0;
+    }
+
+    &:focus {
+        background-color: transparent;
+        border-color: var(--color-error);
+        color: var(--color-error);
+    }
+}
+
+.smc-btn-restaurar-ico {
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    padding: .14rem .42rem 0 .78rem;
+    height: 2.6rem;
+    margin-bottom: 0.35em;
+
+    i {
+        margin: .71rem .57rem 0 0;
+    }
+
+    &:focus {
+        background-color: var(--white);
+        color: var(--color-primary-2);
+        border: 1px solid var(--color-primary-2);
+    }
+}
+
+.smc-btn-buscacep {
+    margin: 1.28rem 0 0 -0.78rem;
+    height: 3.05rem;
+    border-radius: 0 0.21em 0.21em 0;
+    padding: 0 0.71rem;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -1.68rem;
+
+    i {
+        margin: 0 5px;
+    }
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--color-font-h3);
+        border: 1px solid var(--color-font-h3);
+
+        i {
+            color: var(--color-font-h3);
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        left: -2.08rem;
+    }
+
+    @media screen and (max-width: 992px) {
+        width: auto !important;
+    }
+}
+
+.smc-btn-limpacep {
+    margin: 1.2rem 0 0 0;
+    height: 3.15rem;
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    width: 100%;
+    min-width: 51px;
+    padding: 0;
+
+    i {
+        margin: 0.35em 0.78em 0.35em 0.35em;
+        color: var(--color-primary-2);
+    }
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--color-font-h3);
+        border: 1px solid var(--color-font-h3);
+
+        i {
+            color: var(--color-font-h3);
+        }
+    }
+}
+
+//BOTÕES MODAL
+.smc-btn-yes, .smc-btn-no {
+    @extend .smc-btn-secundario;
+    height: 3.5em;
+    padding: 0.5em 1.42em 0.5em 1.42em;
+
+    &:focus {
+        border: 1px solid var(--color-hover) !important;
+        background-color: var(--color-hover) !important;
+        color: var(--white) !important;
+    }
+}
+
+
+
+.smc-botoes-finais {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    float: none;
+    margin-bottom: 3em;
+}
+
+.smc-gpi-link {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: var(--color-primary);
+    text-decoration: underline !important;
+    font-size: 1.2em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:hover {
+        background-color: transparent;
+        border: none;
+        color: var(--color-primary);
+    }
+}
+
+.smc-gpi-linha-sair {
+    .smc-button {
+        display: block;
+        text-align: right;
+    }
+}
+
+// BOTÃO UPLOAD
+.smc-uploadFile-contextWindowControls.smc-btn-desabilitado {
+    padding: 0 0.57em 0 0;
+    background-color: transparent !important;
+    border: none !important;
+
+    .dropdown-toggle.smc-dropdown-btn-toggle-arrow, .smc-btn-custom {
+        background-color: #e3e3e3 !important;
+        color: #8d8d8d !important;
+        border: 1px solid #e3e3e3 !important;
+        cursor: no-drop !important;
+        height: 3.0rem !important;
+        opacity: 1;
+    }
+}
+
+.espacamento-esquerda {
+    .smc-button:first-child {
+        padding-left: 60%;
+
+        @media screen and ("max-width: 992px") {
+            padding-left:0;
+        }
+    }
+}
+
+.smc-btn-download-icotext-destaque {
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    width: 11.14em;
+    text-transform: uppercase;
+    font-size: 1em;
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    font-style: normal;
+    padding-left: 1rem;
+
+    &:hover, &:focus {
+        background-color: var(--white);
+        color: var(--color-primary-2);
+        border: 1px solid var(--color-primary-2);
+    }
+}
+
+.smc-gpi-form-fixed-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    padding: 1rem 8rem;
+    border-top: 1px solid #c4c4c4;
+
+    @media screen and (max-width: 992px) {
+        padding: 1rem;
+    }
+
+    .smc-btn-principal {
+        margin: 0;
+    }
+}
+
+.smc-btn-principal.smc-btn-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 20px;
+        fill: var(--white);
+        margin-right: 0.7rem;
+    }
+
+    &:hover {
+        svg {
+            fill: var(--color-secondary);
+        }
+    }
+}
+
+.smc-button > .smc-btn-svg[disabled] {
+    svg {
+        fill: #7a7a7a !important;
+    }
+}
+
+.smc-gpi-checkin-btn-group {
+    @media screen and (max-width: 992px) {
+        flex-wrap: wrap;
+
+        > button {
+            margin-right: 0 !important;
+            margin-bottom: .8rem;
+        }
+    }
+}

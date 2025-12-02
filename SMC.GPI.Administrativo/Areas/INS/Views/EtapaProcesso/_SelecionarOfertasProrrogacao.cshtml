@@ -1,0 +1,14 @@
+﻿@model ProrrogacaoEtapaViewModel
+
+<div class="smc-gpi-instrucoes-iniciais">
+    <span>@Smc.GetUIResource("Mensagem_Selecao_Oferta")</span>
+</div>
+@using (Smc.Div("fieldsetSelecaoOfertas").CssClass("smc-gpi-selecao-ofertas").Begin()) 
+{
+    @Smc.EditorFor(x=>x.SeqEtapaProcesso)
+    @Smc.EditorFor(x => x.SeqProcesso)
+    @Smc.EditorFor(x => x.Ofertas).Size(SMCSize.Grid24_24) 
+}
+
+@Smc.WizardView()
+

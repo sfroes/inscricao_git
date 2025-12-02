@@ -1,0 +1,22 @@
+﻿@model SMCPagerModel<UnidadeResponsavelListaViewModel>
+
+@(Smc.Grid("gridUnidadeResponsavel")
+     .Action("ListarUnidadeResponsavel", "UnidadeResponsavel")
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes",
+                     item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelListaViewModel).Seq) }, "UnidadeResponsavel")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_RES_001_01_02.MANTER_UNIDADE_RESPONSAVEL),
+
+                     item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelListaViewModel).Seq) }, "UnidadeResponsavel")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_RES_001_01_02.MANTER_UNIDADE_RESPONSAVEL)
+                                .Ajax(isPost: true, updateTargetId: "#divGridUnidadeResponsavel")
+                                .Confirm(Smc.GetUIResource("Exclusao_Unidade_Responsavel_Title"),
+                                             string.Format(Smc.GetUIResource("Exclusao_Unidade_Responsavel_Confirmacao"), (item as UnidadeResponsavelListaViewModel).Nome)),
+
+                     item => Smc.Button("Configurar", "Configurar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelListaViewModel).Seq) }, "UnidadeResponsavel")
+                                .Type(SMCButtonType.Link)
+                                .SecurityToken(UC_RES_001_01_03.PESQUISAR_CONFIGURACAO_UNIDADE_RESPONSAVEL))
+)
+

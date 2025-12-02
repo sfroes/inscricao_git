@@ -1,0 +1,121 @@
+﻿@model OfertaViewModel
+@using SMC.Localidades.UI.Mvc.Extensions
+
+@using (Smc.TabSet("tabCadastroOferta").Begin())
+{
+    using (Smc.Tab("tabDadosOferta").Begin())
+    {
+        using (Smc.Div("fieldsetCadastroOferta").Begin())
+        {
+            if (Model.PossuiIntegracao)
+            {
+                <div class="smc-gpi-instrucoes-iniciais">
+                    <span>
+                        @Smc.GetUIResource("Label_PossuiIntegracao")
+                    </span>
+                </div>
+            }
+
+            @Smc.EditorFor(x => x.SeqProcesso).Size(SMCSize.GridNone_24)
+            @Smc.EditorFor(x => x.SeqPai).Size(SMCSize.GridNone_24)
+
+            @Smc.EditorFor(prop => prop.Seq).Size(SMCSize.GridNone_24)
+            @Smc.EditorFor(prop => prop.DescricaoPai).Size(SMCSize.Grid20_24)
+
+            @Smc.EditorFor(prop => prop.SeqItemHierarquiaOferta).Readonly(Model.PossuiIntegracao).Size(SMCSize.Grid6_24)
+            @Smc.EditorFor(prop => prop.Nome).Readonly(Model.PossuiIntegracao).Size(SMCSize.Grid18_24)
+
+            @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+            @Smc.EditorFor(prop => prop.Ativo)
+            @Smc.EditorFor(prop => prop.DataInicio)
+            @Smc.EditorFor(prop => prop.DataFim)
+
+            @Smc.EditorFor(prop => prop.CodigoOrigem).Readonly(Model.PossuiIntegracao).Size(SMCSize.Grid12_24)
+            @Smc.EditorFor(prop => prop.InscricaoSoPorCliente).Size(SMCSize.Grid6_24)
+            @Smc.EditorFor(prop => prop.NumeroVagas).Readonly(Model.PossuiIntegracao).Size(SMCSize.Grid6_24)
+          
+            @Smc.EditorFor(prop => prop.PossuiCalculoBolsaSocial)
+            @Smc.EditorFor(prop => prop.HabilitaGestaoEventos)
+            
+  
+            if (Model.HabilitaGestaoEventos)
+            {
+                using (Smc.Fieldset("fieldsetAtividade")
+                    .LegendText(@Smc.GetUIResource("Atividade_Label"))
+                    .Size(SMCSize.Grid24_24).Begin())
+                {
+                    @Smc.EditorFor(prop => prop.DataInicioAtividade)
+                    @Smc.EditorFor(prop => prop.DataFimAtividade)
+                    @Smc.EditorFor(prop => prop.CargaHorariaAtividade)
+                    @Smc.EditorFor(prop => prop.HabilitaCheckin)
+                }
+            }
+
+            @Smc.EditorFor(prop => prop.BolsaExAluno)
+            @Smc.EditorFor(prop => prop.LimitePercentualDesconto)
+            @Smc.EditorFor(prop => prop.NumeroVagasBolsa)
+            @Smc.EditorFor(prop => prop.HabilitaPercentualDesconto)
+        }
+    }
+
+    using (Smc.Tab("tabDescricaoComplementar").Begin())
+    {
+        @Smc.EditorFor(m => m.DescricaoComplementar).HideLabel()
+    }
+
+    using (Smc.Tab("tabCodigosAutorizacao").Begin())
+    {
+        using (Smc.Div("fieldsetCodigosAutorizacao").Begin())
+        {
+            @Smc.EditorFor(prop => prop.InscricaoSoComCodigo)
+            @Smc.EditorFor(prop => prop.PermiteVariosCodigos)
+            @Smc.EditorFor(prop => prop.CodigosAutorizacao)
+        }
+    }
+
+    using (Smc.Tab("tabDadosResponsavel").Begin())
+    {
+        using (Smc.Div("fieldsetCadastroResponsavel").Begin())
+        {
+            @Smc.EditorFor(prop => prop.NomeResponsavel)
+            @Smc.EditorFor(prop => prop.Telefones)
+            @Smc.EditorFor(prop => prop.EnderecosEletronicos)
+        }
+    }
+
+    using (Smc.Tab("tabDadosPeriodoTaxa").Begin())
+    {
+        using (Smc.Div("fieldsetCadastroPeriodoTaxa").Begin())
+        {
+            using (Smc.Div("Mensagem_Taxa_Oferta").CssClass("smc-gpi-mensagem").Begin())
+            {
+                <p>@Smc.GetUIResource("Mensagem_Taxa_Oferta")</p>
+            }
+
+            @Smc.EditorFor(prop => prop.TaxasOferta).Size(SMCSize.Grid24_24)
+        }
+
+        if (Model.TaxasPermissoes != null && Model.TaxasPermissoes.Any())
+        {
+            using (Smc.Fieldset("fieldsetPeriodoTaxaPermissao").LegendText(@Smc.GetUIResource("Mensagem_TaxaPermissao_Oferta")).Begin())
+            {
+                @(Smc.List("listaPeriodoTaxaPermissao", m => m.TaxasPermissoes)
+                                                                            .HtmlTemplate(
+                                                                @<text>
+                                                                    @Html.Partial("_TaxasPermissao", item.Value)
+                                                                </text>
+                                                                                                                                                    )
+                )
+            }
+        }
+    }
+
+    if (Model.Seq > 0)
+    {
+        using (Smc.Tab("tabDadosCancelamento").Begin())
+        {
+            @Smc.EditorFor(prop => prop.DataCancelamento)
+            @Smc.EditorFor(prop => prop.MotivoCancelamento)
+        }
+    }
+}

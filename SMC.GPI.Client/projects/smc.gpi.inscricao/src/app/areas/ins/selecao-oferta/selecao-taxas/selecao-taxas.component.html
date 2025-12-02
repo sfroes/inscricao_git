@@ -1,0 +1,313 @@
+@if (isLoading()) {
+  <p-skeleton width="100%" height="90px" /><br />
+} @else {
+  @if (instrucoes()) {
+    <p-accordion value="0" class="smc-gpi-orientacoes">
+      <p-accordion-panel value="0">
+        <p-accordion-header>Orientações</p-accordion-header>
+        <p-accordion-content>
+          <div [innerHTML]="instrucoes()"></div>
+        </p-accordion-content>
+      </p-accordion-panel>
+    </p-accordion>
+  }
+}
+@if (isLoading()) {
+  <p-skeleton width="100%" height="90px" /><br />
+} @else {
+  <section>
+    <div class="smc-gpi-taxas-container linha-inscricao">
+      @if (existeTaxa()) {
+        <div class="smc-gpi-taxas-container-inner-insc">
+          @if (taxasPorOferta.length > 0) {
+            @for (taxas of taxasPorOferta; track taxas.seqOferta) {
+              <div class="smc-gpi-taxas-container-inner">
+                <div class="card-evento">
+                  <div class="descricao-evento">
+                    <span class="titulo-evento">
+                      {{ taxas.descricaoOferta }}
+                    </span>
+                  </div>
+                </div>
+                @for (taxa of taxas.taxasOferta; track taxa.seqTaxa) {
+                  <div class="linha-taxa">
+                    <p class="descricao">{{ taxa.descricaoTaxa }}</p>
+
+                    <p-inputnumber
+                      buttonLayout="horizontal"
+                      spinnerMode="horizontal"
+                      inputId="horizontal"
+                      [max]="taxa.numeroMaximo"
+                      [readonly]="
+                        (taxa.numeroMaximo != null &&
+                          taxa.numeroMinimo != null &&
+                          taxa.numeroMaximo == taxa.numeroMinimo) ||
+                        selecaoOfertaDataService.$selecaoOferta()
+                          .possuiBoletoPago
+                      "
+                      [min]="taxa.numeroMinimo"
+                      [showButtons]="true"
+                      [(ngModel)]="taxa.numeroItens"
+                      [inputStyle]="{ width: '3rem' }"
+                      (onInput)="
+                        numeroItens($event, taxa.seqTaxa, taxas.seqOferta)
+                      "
+                      (onFocus)="bloquearInserirDadosPorTeclado($event)"
+                      (touchstart)="bloquearInserirDadosPorTouch($event)"
+                    >
+                      <ng-template #incrementbuttonicon>
+                        <span class="pi pi-plus"></span>
+                      </ng-template>
+                      <ng-template #decrementbuttonicon>
+                        <span class="pi pi-minus"></span>
+                      </ng-template>
+                    </p-inputnumber>
+
+                    <div class="precos">
+                      <span>R$ {{ taxa.valorItem }}</span>
+                      <span>R$ {{ taxa.valorTotalTaxa }}</span>
+                    </div>
+                  </div>
+                }
+                @for (grupo of grupoTaxa().grupoTaxaOferta; track grupo.seq) {
+                  <div class="smc-gpi-taxas-container-inner">
+                    <div class="card-evento">
+                      <div class="descricao-evento">
+                        <span class="titulo-evento">
+                          {{ grupo.descricao }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  @for (taxa of grupo.taxas; track taxa.seqTaxa) {
+                    @if (taxa.seqOferta === taxas.seqOferta) {
+                      <div class="linha-taxa">
+                        <p class="descricao">{{ taxa.descricao }}</p>
+
+                        <p-inputnumber
+                          buttonLayout="horizontal"
+                          spinnerMode="horizontal"
+                          inputId="horizontal"
+                          [max]="getMaxPermitido(grupo, taxa)"
+                          [readonly]="
+                            (grupo.numeroMaximoItens != null &&
+                              grupo.numeroMinimoItens != null &&
+                              grupo.numeroMaximoItens ==
+                                grupo.numeroMinimoItens) ||
+                            selecaoOfertaDataService.$selecaoOferta()
+                              .possuiBoletoPago
+                          "
+                          [min]="grupo.numeroMinimoItens"
+                          [showButtons]="true"
+                          [(ngModel)]="taxa.numeroItens"
+                          [inputStyle]="{ width: '3rem' }"
+                          (onInput)="
+                            numeroItens(
+                              $event,
+                              taxa.seqTaxa,
+                              taxa.seqOferta,
+                              grupo.seq
+                            )
+                          "
+                          (onFocus)="bloquearInserirDadosPorTeclado($event)"
+                          (touchstart)="bloquearInserirDadosPorTouch($event)"
+                        >
+                          <ng-template #incrementbuttonicon>
+                            <span class="pi pi-plus"></span>
+                          </ng-template>
+                          <ng-template #decrementbuttonicon>
+                            <span class="pi pi-minus"></span>
+                          </ng-template>
+                        </p-inputnumber>
+
+                        <div class="precos">
+                          <span>R$ {{ taxa.valorItem }}</span>
+                          <span>R$ {{ taxa.valorTotalTaxa }}</span>
+                        </div>
+                      </div>
+                    }
+                  }
+                }
+              </div>
+            }
+          }
+          @if (grupoTaxa().grupoTaxaOferta.length > 0) {}
+
+          @if (taxasPorInscircao.length > 0) {
+            <div class="card-evento">
+              <div class="descricao-evento">
+                <span class="titulo-evento"> Taxas gerais </span>
+              </div>
+            </div>
+            <div class="linha-taxa">
+              <p class="descricao">
+                {{ taxasPorInscircao[0].taxasOferta[0].descricaoTaxa }}
+              </p>
+
+              <p-inputnumber
+                buttonLayout="horizontal"
+                spinnerMode="horizontal"
+                inputId="horizontal"
+                [max]="taxasPorInscircao[0].taxasOferta[0].numeroMaximo"
+                [readonly]="
+                  (taxasPorInscircao[0].taxasOferta[0].numeroMaximo != null &&
+                    taxasPorInscircao[0].taxasOferta[0].numeroMinimo != null &&
+                    taxasPorInscircao[0].taxasOferta[0].numeroMaximo ==
+                      taxasPorInscircao[0].taxasOferta[0].numeroMinimo) ||
+                  selecaoOfertaDataService.$selecaoOferta().possuiBoletoPago
+                "
+                [min]="taxasPorInscircao[0].taxasOferta[0].numeroMinimo"
+                [showButtons]="true"
+                [(ngModel)]="taxasPorInscircao[0].taxasOferta[0].numeroItens"
+                [inputStyle]="{ width: '3rem' }"
+                (onInput)="
+                  numeroItens(
+                    $event,
+                    taxasPorInscircao[0].taxasOferta[0].seqTaxa,
+                    taxasPorInscircao[0].seqOferta
+                  )
+                "
+                (onFocus)="bloquearInserirDadosPorTeclado($event)"
+                (touchstart)="bloquearInserirDadosPorTouch($event)"
+              >
+                <ng-template #incrementbuttonicon>
+                  <span class="pi pi-plus"></span>
+                </ng-template>
+                <ng-template #decrementbuttonicon>
+                  <span class="pi pi-minus"></span>
+                </ng-template>
+              </p-inputnumber>
+
+              <div class="precos">
+                <span
+                  >R$ {{ taxasPorInscircao[0].taxasOferta[0].valorItem }}</span
+                >
+                <span
+                  >R$
+                  {{ taxasPorInscircao[0].taxasOferta[0].valorTotalTaxa }}</span
+                >
+              </div>
+            </div>
+          }
+
+          @if (taxasPorQuantidadeOferta.length > 0) {
+            <div class="linha-taxa">
+              <p class="descricao">
+                {{ taxasPorQuantidadeOferta[0].taxasOferta[0].descricaoTaxa }}
+              </p>
+              <p-inputnumber
+                buttonLayout="horizontal"
+                spinnerMode="horizontal"
+                inputId="horizontal"
+                [max]="taxasPorQuantidadeOferta[0].taxasOferta[0].numeroMaximo"
+                [readonly]="true"
+                [min]="taxasPorQuantidadeOferta[0].taxasOferta[0].numeroMinimo"
+                [showButtons]="true"
+                [(ngModel)]="
+                  taxasPorQuantidadeOferta[0].taxasOferta[0].numeroItens
+                "
+                [inputStyle]="{ width: '3rem' }"
+                (onInput)="
+                  numeroItens(
+                    $event,
+                    taxasPorQuantidadeOferta[0].taxasOferta[0].seqTaxa,
+                    taxasPorQuantidadeOferta[0].seqOferta
+                  )
+                "
+                (onFocus)="bloquearInserirDadosPorTeclado($event)"
+                (touchstart)="bloquearInserirDadosPorTouch($event)"
+              >
+                <ng-template #incrementbuttonicon>
+                  <span class="pi pi-plus"></span>
+                </ng-template>
+                <ng-template #decrementbuttonicon>
+                  <span class="pi pi-minus"></span>
+                </ng-template>
+              </p-inputnumber>
+
+              <div class="precos">
+                <span
+                  >
+                  {{
+                   formartarTotal(taxasPorQuantidadeOferta[0].taxasOferta[0].valorItem)
+                  }}</span
+                >
+                <span
+                  >
+                  {{
+                    formartarTotal(taxasPorQuantidadeOferta[0].taxasOferta[0].valorTotalTaxa)
+                  }}</span
+                >
+              </div>
+            </div>
+          }
+        </div>
+
+        @if (grupoTaxa().grupoTaxaInscricao.length > 0) {
+          @for (grupo of grupoTaxa().grupoTaxaInscricao; track grupo.seq) {
+            <div class="smc-gpi-taxas-container-inner-insc">
+              <div class="card-evento">
+                <div class="descricao-evento">
+                  <span class="titulo-evento">
+                    {{ grupo.descricao }}
+                  </span>
+                </div>
+              </div>
+              @for (taxa of grupo.taxas; track taxa.seqTaxa) {
+                <div class="linha-taxa">
+                  <p class="descricao">{{ taxa.descricao }}</p>
+
+                  <p-inputnumber
+                    buttonLayout="horizontal"
+                    spinnerMode="horizontal"
+                    inputId="horizontal"
+                    [max]="getMaxPermitido(grupo, taxa)"
+                    [readonly]="
+                      (grupo.numeroMaximoItens != null &&
+                        grupo.numeroMinimoItens != null &&
+                        grupo.numeroMaximoItens == grupo.numeroMinimoItens) ||
+                      selecaoOfertaDataService.$selecaoOferta().possuiBoletoPago
+                    "
+                    [min]="grupo.numeroMinimoItens"
+                    [showButtons]="true"
+                    [(ngModel)]="taxa.numeroItens"
+                    [inputStyle]="{ width: '3rem' }"
+                    (onInput)="
+                      numeroItens(
+                        $event,
+                        taxa.seqTaxa,
+                        taxa.seqOferta,
+                        grupo.seq
+                      )
+                    "
+                    (onFocus)="bloquearInserirDadosPorTeclado($event)"
+                    (touchstart)="bloquearInserirDadosPorTouch($event)"
+                  >
+                    <ng-template #incrementbuttonicon>
+                      <span class="pi pi-plus"></span>
+                    </ng-template>
+                    <ng-template #decrementbuttonicon>
+                      <span class="pi pi-minus"></span>
+                    </ng-template>
+                  </p-inputnumber>
+
+                  <div class="precos">
+                    <span>{{ formartarTotal(taxa.valorItem) }}</span>
+                    <span>{{ formartarTotal(taxa.valorTotalTaxa)}}</span>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        }
+
+        <div class="smc-gpi-taxas-container-total">
+          <div>
+            <div class="smc-gpi-taxas-total-icone"></div>
+            <span>Total:</span> <span>{{ formartarTotal(totalGeral()) }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+}

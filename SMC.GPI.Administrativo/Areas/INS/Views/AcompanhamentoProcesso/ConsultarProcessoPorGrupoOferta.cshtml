@@ -1,0 +1,48 @@
+﻿@model ConsultaConsolidadaGrupoOfertaFiltroViewModel
+
+@Html.Partial("_CabecalhoConsultaConsolidadaProcesso", Model.Cabecalho)
+
+@*@using (Smc.Form("formPesquisaProcessoGrupoOferta", "ListarProcessoGrupoOferta").Ajax("#divGridProcessoGrupoOferta").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaProcessoGrupoOferta").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(m => m.SeqItemHierarquiaOferta)
+        @Smc.EditorFor(prop => prop.OpcaoLookupOfertas)
+
+        @(Smc.ButtonSet()
+                        .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                        .AddButton(Smc.Button(SMCButtonBehavior.Limpar).Attribute("data-clear", "#divGridProcessoGrupoOferta").DisplayMode(SMCButtonDisplayMode.Icon)))
+    }
+}
+
+<div id="divGridProcessoGrupoOferta">
+    @Smc.ActionList("ListarProcessoGrupoOferta", initialListingDisabled: true)
+</div>*@
+
+
+@using (Smc.Form("formPesquisaProcessoGrupoOferta", "ListarProcessoGrupoOferta").Ajax("#GridProcessoGrupoOferta").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaProcessoGrupoOferta").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(m => m.SeqItemHierarquiaOferta)
+        @Smc.EditorFor(prop => prop.OpcaoLookupOfertas)
+
+        @(Smc.ButtonSet()
+                .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+                )
+    }
+}
+
+<div id="GridProcessoGrupoOferta" data-id="GridProcessoGrupoOferta">
+    @Smc.ActionList("ListarProcessoGrupoOferta", routeValues: Model, initialListingDisabled: true)
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button(SMCButtonBehavior.Voltar, "Index", "AcompanhamentoProcesso").DisplayMode(SMCButtonDisplayMode.TextAndIcon)))
+
+@Html.Partial("_ModalLegendaPosicaoConsolidada")

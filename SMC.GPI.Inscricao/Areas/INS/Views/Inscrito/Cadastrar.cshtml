@@ -1,0 +1,73 @@
+@model  InscritoViewModel
+@using SMC.GPI.Inscricao.Areas.INS.Views.Inscrito.App_LocalResources
+
+<div class="smc-gpi-painel-central">
+
+    <h1 class="smc-col">Meus Dados</h1>
+    @if (Model.EXibirOrientacaoInscrito)
+    {
+        <div class="smc-info-card">
+            <div class="icon-container">
+                <img src="https://web-qualidade.pucminas.br/Recursos/Inscricoes/4.0/GPI.Inscricao/GPI/Images/smc-ico-info-card.svg" alt="">
+            </div>
+            <div>
+                <p>
+                    @Model.OrientacaoCadastroInscrito
+                </p>
+            </div>
+        </div>
+    }
+
+
+    @{
+        var routeValues = new
+        {
+            origem = Model.Origem,
+            uidProcesso = Model.UidProcesso,
+            backUrl = Model.Seq > 0 ? Model.BackUrl : string.Empty
+
+        };
+        //Para usar o Hide do button set ele trabalha com valor inverso para esconder é flase e aparecer é true na funcionalidade do botão
+        var esconderBotaoCancelar = string.IsNullOrEmpty(routeValues.backUrl) && !routeValues.origem.HasValue;
+    }
+
+    @if (TempData["__cadastroIncompleto__"] != null)
+    {
+        <div class="smc-gpi-mensagem-alerta mensagem-com-botao">
+            <div class="smc-gpi-mensagem-alteracaodados">
+                <p>@UIResource.Mensagem_Cadastro_Incorreto</p>
+            </div>
+        </div>
+    }
+
+    @using (Smc.Wizard("wizardInscritos").CssClass("smc-col smc-row").Action("Cadastrar", routeValues).ConfirmUnloadWithoutSaveChanges()
+                    .ButtonSet(1, item => Smc.Button("Concluir").CssClass("smc-btn-principal").Url(Url.Action("Cadastrar", "Inscrito", routeValues)))
+                    .ButtonSet(1, alwaysVisible: true, buttons: item => Smc.Button("cancelarProcesso")
+                        .Action("CancelarCadastro", "Inscrito", routeValues).Type(SMCButtonType.Link)
+                        .Hide(esconderBotaoCancelar)
+                        .CssClass("smc-btn-secundario"))
+        .Begin())
+    {
+        using (Smc.WizardStep(0).Title(Smc.GetUIResource("Passo1_Titulo")).Action("InscritoStep1", new { seq = Model.Seq }).HttpMethod(FormMethod.Post).Begin())
+        {
+        }
+
+        using (Smc.WizardStep(1).Title(Smc.GetUIResource("Passo2_Titulo")).Action("InscritoStep2").HttpMethod(FormMethod.Post).Begin())
+        {
+        }
+    }
+</div>
+@section Scripts
+{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/LimparEstadosCidadesLocalidade.js")"></script>
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/Inscrito/Inscrito.js")"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".smc-gpi-paineis > h1").addClass("hide");
+        });
+    </script>
+
+
+
+}

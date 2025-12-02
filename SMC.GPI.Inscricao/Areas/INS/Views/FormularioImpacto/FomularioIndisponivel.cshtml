@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Formulário indisponível";
+    Layout = "~/Views/Shared/_Layout_NaoAutenticado.cshtml";
+
+    var guidProcesso = Session["__GuidProcesso__"] != null ? Session["__GuidProcesso__"].ToString() : string.Empty;
+    var tokenCss = ViewBag.TokenCss;
+
+    var urlGPI = "/GPI.Inscricao";
+
+    if (HttpContext.Current.Request.Url.PathAndQuery.Contains("/Dev/"))
+    {
+        urlGPI = "/Dev" + urlGPI;
+    }
+
+    if (!string.IsNullOrEmpty(guidProcesso))
+    {
+        urlGPI += "/Home/IndexProcesso?uidProcesso=" + guidProcesso;
+
+        if (!string.IsNullOrEmpty(tokenCss))
+        {
+
+            urlGPI += "&TokenCss=" + tokenCss;
+        }
+    }
+
+
+}
+
+<h2>Formulario Indisponível</h2>
+
+<p class="smc-gpi-formularioimpacto-info-inicial">@ViewBag.Mensagem. Retorne à tela inicial do processo de inscrição</p>
+
+<a href="@urlGPI" class="smc-btn-principal margin-top-20 width-100">Início</a>
+
+

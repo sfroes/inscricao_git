@@ -1,0 +1,11 @@
+﻿// As importações devem ocorrer NECESSARIAMENTE nesta ordem
+
+// ********** ----- IDENTIDADE VISUAL (APLICAÇÃO) ----- ********** //
+@import "identidade/_smc-identidade-visual.scss";
+
+
+// ********** ----- Recursos compatilhados ------ ********** //
+@import "../../Content/Css/smc-recursos.scss";
+
+// ********** ----- ESTILO CUSTOMIZADO (APLICAÇÃO) ----- ********** //
+@import "smc-estilo.scss";

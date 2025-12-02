@@ -1,0 +1,20 @@
+﻿@model RecuperarPaginaEtapaViewModel
+
+@using (Smc.Div("fieldsetRecuperarPaginaEtapa").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+    if (Model.PaginasDisponiveis != null && Model.PaginasDisponiveis.Count > 0)
+    {
+
+        @Smc.EditorFor(prop => prop.SeqPaginas)
+
+    }
+    else
+    {
+        <div class="smc-gpi-instrucoes-iniciais">
+            <label data-type="gpi-mensagem">@Smc.GetUIResource("Mensagem_Paginas_Ja_Adicionada")</label>
+        </div>
+
+    }
+}
+

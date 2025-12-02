@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Index_Title" xml:space="preserve">
+    <value>Associação de Etapa ao Processo</value>
+  </data>
+  <data name="Botao_Configuracaoetapa" xml:space="preserve">
+    <value>Configuração da etapa</value>
+  </data>
+  <data name="Botao_Configuracaoetapa_Tooltip" xml:space="preserve">
+    <value>Configuração da etapa</value>
+  </data>
+  <data name="Editar_Title" xml:space="preserve">
+    <value>Alterar Etapa de Processo</value>
+  </data>
+  <data name="Exclusao_Associacao_Etapa_Confirmacao" xml:space="preserve">
+    <value>Deseja excluir a etapa de processo "{0}" e todas as suas configurações, com todos os seus itens (páginas, documentação requerida e grupos de documentação)?</value>
+  </data>
+  <data name="Exclusao_Associacao_Etapa_Title" xml:space="preserve">
+    <value>Excluir Associação de Etapa ao Processo</value>
+  </data>
+  <data name="Incluir_Title" xml:space="preserve">
+    <value>Nova Etapa de Processo</value>
+  </data>
+  <data name="Index_Botao_Novo" xml:space="preserve">
+    <value>Nova etapa de processo</value>
+  </data>
+  <data name="Index_Botao_Novo_Tolltip" xml:space="preserve">
+    <value>Nova etapa de processo</value>
+  </data>
+  <data name="_ListarEtapaProcesso_gridAssociacaoEtapa_Grid_Titulo" xml:space="preserve">
+    <value>Etapas</value>
+  </data>
+  <data name="Botao_Associacaoetapa" xml:space="preserve">
+    <value>Associação de etapa</value>
+  </data>
+  <data name="Botao_Associacaoetapa_Tooltip" xml:space="preserve">
+    <value>Associação de etapa</value>
+  </data>
+  <data name="Botao_Grupooferta" xml:space="preserve">
+    <value>Grupo de ofertas</value>
+  </data>
+  <data name="Botao_Grupooferta_Tooltip" xml:space="preserve">
+    <value>Grupo de ofertas</value>
+  </data>
+  <data name="Botao_Grupotaxa" xml:space="preserve">
+    <value>Grupo de taxas</value>
+  </data>
+	<data name="Botao_Grupotaxa_Tooltip" xml:space="preserve">
+    <value>Grupo de taxas</value>
+  </data>
+  <data name="Botao_Hierarquiaoferta" xml:space="preserve">
+    <value>Hierarquia de oferta</value>
+  </data>
+  <data name="Botao_Hierarquiaoferta_Tooltip" xml:space="preserve">
+    <value>Hierarquia de oferta</value>
+  </data>
+  <data name="Botao_Insert_CodigosAutorizacao_Tooltip" xml:space="preserve">
+    <value>Inserir código de autorização</value>
+  </data>
+  <data name="Botao_Notificacoes" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="Botao_Notificacoes_tooltip" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="Botao_Configuracaopaginaetapa" xml:space="preserve">
+    <value>Configuração de páginas</value>
+  </data>
+  <data name="Botao_Configuracaopaginaetapa_Tooltip" xml:space="preserve">
+    <value>Configuração de páginas</value>
+  </data>
+  <data name="Botao_Documentacaorequerida" xml:space="preserve">
+    <value>Documentação requerida</value>
+  </data>
+  <data name="Botao_Documentacaorequerida_Tooltip" xml:space="preserve">
+    <value>Documentação requerida</value>
+  </data>
+  <data name="Botao_Grupodocumentacaorequerida" xml:space="preserve">
+    <value>Grupo de documentação</value>
+  </data>
+  <data name="Botao_Grupodocumentacaorequerida_Tooltip" xml:space="preserve">
+    <value>Grupo de documentação</value>
+  </data>
+  <data name="Index_Modal_Copiar_Configuracoes_Titulo" xml:space="preserve">
+    <value>Cópia de configurações da etapa</value>
+  </data>
+  <data name="_CopiarConfiguracoesEtapa_Configuracoes_Detalhe_Titulo" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="_CopiarConfiguracoesEtapa_fieldsetDestino_Fieldset_Legenda" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="_CopiarConfiguracoesEtapa_fieldsetItens_Fieldset_Legenda" xml:space="preserve">
+    <value>Itens</value>
+  </data>
+  <data name="_CopiarConfiguracoesEtapa_fieldsetOrigem_Fieldset_Legenda" xml:space="preserve">
+    <value>Origem</value>
+  </data>
+  <data name="_ListarEtapaProcesso_Botao_Copiar_Configuracoes" xml:space="preserve">
+    <value>Cópia de configurações da etapa</value>
+  </data>
+  <data name="_ListarEtapaProcesso_Botao_Copiar_Configuracoes_Tooltip" xml:space="preserve">
+    <value>Cópia de configurações da etapa</value>
+  </data>
+  <data name="_CopiarConfiguracoesEtapa_Mensagem_Tipo_Template_Diferente" xml:space="preserve">
+    <value>O template do processo destino selecionado é diferente do template do processo de origem, portanto, a configuração das páginas não poderá ser copiada.</value>
+  </data>
+  <data name="Mensagem_Sucesso_Copia_Etapa" xml:space="preserve">
+    <value>Configuração(ões) de etapa copiada(s) com sucesso.</value>
+  </data>
+  <data name="Index_Botao_Copiar" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="Index_Botao_Copiar_Tooltip" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="ProrrogarEtapa_Descricao_Selecao_Oferta" xml:space="preserve">
+    <value>Seleciona uma ou mais ofertas para continuar</value>
+  </data>
+  <data name="ProrrogarEtapa_Title" xml:space="preserve">
+    <value>Prorrogação de etapa</value>
+  </data>
+  <data name="ProrrogarEtapa_Titulo_Dados_Prorrogacao" xml:space="preserve">
+    <value>Prorrogação da etapa</value>
+  </data>
+  <data name="ProrrogarEtapa_Titulo_Selecao_Oferta" xml:space="preserve">
+    <value>Seleção de ofertas</value>
+  </data>
+  <data name="_CopiarConfiguracoesEtapa_Mensagem_Idiomas_Comum" xml:space="preserve">
+    <value>O processo destino selecionado não possui nenhum idioma em comum com o processo de origem, portanto, a configuração das páginas não poderá ser copiada.</value>
+  </data>
+  <data name="_ListarEtapaProcesso_Botao_Prorrogaretapa" xml:space="preserve">
+    <value>Prorrogação de etapa</value>
+  </data>
+  <data name="Titulo_Taxas" xml:space="preserve">
+    <value>Taxas</value>
+  </data>
+  <data name="_SelecionarOfertasProrrogacao_Ofertas_DataSelector_Botao_Abrir" xml:space="preserve">
+    <value>Selecionar ofertas</value>
+  </data>
+  <data name="_ConfiguracaoProrrogacaoEtapa_Mensagem_Taxa_Inexistente" xml:space="preserve">
+    <value>Não existem taxas configuradas para nenhuma das ofertas selecionadas que estão associadas a esta configuração.</value>
+  </data>
+  <data name="Mensagem_Liberacao_Etapa" xml:space="preserve">
+    <value>Etapa liberada com sucesso.</value>
+  </data>
+  <data name="Titulo_Sumario_Prorrogacao" xml:space="preserve">
+    <value>Resumo da prorrogação</value>
+  </data>
+  <data name="_SelecionarOfertasProrrogacao_Mensagem_Selecao_Oferta" xml:space="preserve">
+    <value>Para prorrogar a etapa é necessário selecionar ao menos uma oferta.</value>
+  </data>
+  <data name="Mensagem_Sucesso_Prorrogacao" xml:space="preserve">
+    <value>Prorrogação da etapa efetuada com sucesso.</value>
+  </data>
+  <data name="Label_Tipo_Taxa" xml:space="preserve">
+    <value>Taxa</value>
+  </data>
+  <data name="Label_Valor_Anterior" xml:space="preserve">
+    <value>Valor anterior</value>
+  </data>
+  <data name="Label_Valor_Novo" xml:space="preserve">
+    <value>Valor novo</value>
+  </data>
+  <data name="Label_Vencimento_Anterior" xml:space="preserve">
+    <value>Vencimento anterior</value>
+  </data>
+  <data name="Label_Vencimento_Novo" xml:space="preserve">
+    <value>Vencimento novo</value>
+  </data>
+  <data name="Botao_Prorrogaretapa_Tooltip" xml:space="preserve">
+    <value>Prorrogação de etapa</value>
+  </data>
+  <data name="ProrrogarEtapa_Botao_Salvar" xml:space="preserve">
+    <value>Prorrogar</value>
+  </data>
+</root>

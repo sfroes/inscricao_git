@@ -1,0 +1,52 @@
+﻿@model ConfiguracaoEtapaViewModel
+
+@using (Smc.Form("formCadastroConfiguracaoEtapa").Ajax().ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.Div("fieldsetDadosConfiguracaoEtapa").Begin())
+    {
+        using (Smc.Div("painelEsquerdo").Size(SMCSize.Grid6_24).Begin())
+        {
+            @Smc.EditorFor(prop => prop.Seq)            
+            @Smc.EditorFor(prop => prop.SeqEtapaProcesso)
+            @Smc.EditorFor(prop => prop.SeqProcesso)            
+        }
+
+        using (Smc.Div("painelDireito").Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(prop => prop.Nome)
+            @Smc.EditorFor(prop => prop.DataInicio)
+            @Smc.EditorFor(prop => prop.DataFim)
+            @Smc.EditorFor(prop => prop.NumeroEdital)            
+            @Smc.EditorFor(m => m.ExisteNumeroMaximoPorOferta)
+            @Smc.EditorFor(m => m.NumeroMaximoOfertaPorInscricao)
+            @Smc.EditorFor(m => m.DeveExigirInformarNumeroMaximoConvocacao)
+            @Smc.EditorFor(m => m.NumeroMaximoConvocacaoPorInscricao)
+            @Smc.EditorFor(m => m.ExigeJustificativaOferta)
+            @Smc.EditorFor(m => m.PermiteNovaEntregaDocumentacao)
+        }
+    }
+
+    using (Smc.Fieldset("fieldsetDocumentacao").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.DataLimiteEntregaDocumentacao)
+        @Smc.EditorFor(prop => prop.DescricaoEntregaDocumentacao)
+    }
+
+    using (Smc.Fieldset("fieldsetTermoResponsabilidadeEntregaDocumentacao").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.DescricaoTermoEntregaDocumentacao)
+    }
+
+    @Smc.EditorFor(prop => prop.GruposOferta).Size(SMCSize.Grid24_24)
+
+    @(Smc.ButtonSet()
+        .AddComponent(Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(1, SMCButtonSetGroupedStyle.Arrow)
+            .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Salvar").Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.SalvarNovo).Action("SalvarNovo"))
+            .AddButton(Smc.Button(SMCButtonBehavior.SalvarSair).Action("SalvarSair")))
+
+        .AddButton(Smc.Button("voltar").CssClass("smc-btn-voltar-icotext").Type(SMCButtonType.Link)
+            .Action("Index", "ConfiguracaoEtapa",
+                new { @seqEtapaProcesso = (SMCEncryptedLong)Model.SeqEtapaProcesso, @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso }))
+    )
+}

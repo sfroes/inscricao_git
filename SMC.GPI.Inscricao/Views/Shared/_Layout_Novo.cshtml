@@ -1,0 +1,247 @@
+﻿@inherits SMC.Framework.UI.Mvc.SMCWebViewPage<dynamic>
+@using SMC.Framework.Security
+@using SMC.Framework.UI.Mvc.Html
+@using StackExchange.Profiling;
+@using SMC.Framework.Google.Configuration
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>@Smc.GetUIResource("SiglaAplicacao")</title>
+    <link rel="icon" href="~/Content/Images/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="accept-language" content="pt-br" />
+    <meta name="author" content="GTI - Gerência de Tecnologia da Informação" />
+    <meta name="copyright" content="© 2023 GTI" />
+    <meta name="description" content="Sistema de Gestão de Inscrições - PUC Minas" />
+    <meta name="keywords" content="Sistema de Gestão de Inscrições - PUC Minas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="~/manifest.json">
+
+    @{
+        string urlCSS; // = Request.Url.Scheme + "://" + Request.Url.Authority;
+
+        var cssLayout = Session["__CSSLayout__"];
+
+        if (string.IsNullOrEmpty((string)cssLayout))
+        {
+            urlCSS = Url.SMCBuscarRecursoAplicacao("GPI/Css/smc-recursos.min.css");
+        }
+        else
+        {
+            urlCSS = Url.SMCBuscarRecursoAplicacao(cssLayout.ToString());
+        }
+    }
+    <link href="@urlCSS" rel="stylesheet" />
+
+    <!-- FA 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" integrity="sha512-pZlKGs7nEqF4zoG0egeK167l6yovsuL8ap30d07kA5AJUq+WysFlQ02DLXAmN3n0+H3JVz5ni8SJZnrOaYXWBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- FONT HEEBO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+
+    @{
+        string idsTagManager = string.Empty;
+        if (TempData.ContainsKey(SMC.Inscricoes.UI.Mvc.Attributes.GoogleTagManagerFilterAttribute.TempDataKey))
+        {
+            idsTagManager = TempData[SMC.Inscricoes.UI.Mvc.Attributes.GoogleTagManagerFilterAttribute.TempDataKey].ToString();
+        }
+    }
+
+    @if (!string.IsNullOrEmpty(idsTagManager))
+    {
+        <!-- Google Tag Manager -->
+        <script>
+            @foreach (var item in idsTagManager.Split(','))
+            {
+                <text>
+                    (function (w, d, s, l, i) {
+                        w[l] = w[l] || []; w[l].push({
+                            'gtm.start':
+                                new Date().getTime(), event: 'gtm.js'
+                        }); var f = d.getElementsByTagName(s)[0],
+                            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                    })(window, document, 'script', 'dataLayer', '@item');
+                </text>
+            }
+        </script>
+        <!-- End Google Tag Manager (noscript) -->
+    }
+
+    @Html.SMCGoogleAnalyticsTagManagerHead()
+
+    <!--Para pegar tagsFixas do google para o Angular-->
+    @{
+        var listaGoogleTagFixas = SMCGoogleSection.Current.Accounts
+            .Cast<SMCGoogleAccountElement>()
+            .Select(account => account.Id)
+            .ToList();
+
+        var tagsAngular = !string.IsNullOrEmpty(idsTagManager) ? idsTagManager : string.Empty;
+
+        if (listaGoogleTagFixas.Any())
+        {
+            tagsAngular = string.IsNullOrEmpty(tagsAngular)
+                ? string.Join(",", listaGoogleTagFixas)
+                : tagsAngular + "," + string.Join(",", listaGoogleTagFixas);
+        }
+    }
+
+    <script>
+        (function (h, o, u, n, d) {
+            h = h[d] = h[d] || { q: [], onReady: function (c) { h.q.push(c) } }
+            d = o.createElement(u); d.async = 1; d.src = n
+            n = o.getElementsByTagName(u)[0]; n.parentNode.insertBefore(d, n)
+        })(window, document, 'script', 'https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js', 'DD_RUM')
+        window.DD_RUM.onReady(function () {
+            window.DD_RUM.init({
+                clientToken: 'pub3c3dfe558e5886e3007b0b9abe472baa',
+                applicationId: 'eca05375-486e-4790-9a98-6cf77d59deb1',
+                // `site` refers to the Datadog site parameter of your organization
+                // see https://docs.datadoghq.com/getting_started/site/
+                site: 'datadoghq.com',
+                service: 'iis.gpi.inscricao',
+                env: 'prod',
+                allowedTracingUrls: ["https://web.sistemas.pucminas.br/GPI.Inscricao"],
+                // Specify a version number to identify the deployed version of your application in Datadog
+                // version: '1.0.0',
+                sessionSampleRate: 50,
+                sessionReplaySampleRate: 25,
+                trackUserInteractions: true,
+                trackResources: true,
+                trackLongTasks: true,
+                defaultPrivacyLevel: 'mask-user-input',
+            });
+        })
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          //Armazenar na session storage o css do processo
+          sessionStorage.setItem("cssProcesso", "@urlCSS");
+          //Armazenar na tag mananger do processo
+          sessionStorage.setItem("tagManager", "@tagsAngular");
+      })
+    </script>
+</head>
+<body>
+    @Html.SMCGoogleAnalyticsTagManagerBody()
+
+    @if (!string.IsNullOrEmpty(idsTagManager))
+    {
+        <!-- Google Tag Manager (noscript) -->
+        foreach (var item in idsTagManager.Split(','))
+        {
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id=@item"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+        }
+        <!-- End Google Tag Manager (noscript) -->
+    }
+
+    <!-- componente noscript -->
+    @Html.SMCNoScriptWarning()
+    <header class="smc-ribbon">
+        <a href="@Url.Action("Index", "Home", new { area = string.Empty })" title="Logotipo do site" class="smc-aplicaco-logotipo">
+        </a>
+        <!-- (obrigatório) -->
+        @using (Smc.Div("divAreaUsuario").CssClass("smc-gpi-usuario").Begin())
+        {
+            <span class="smc-gpi-nome-usuario">@User.SMCGetNome()</span>
+            @*-- Área do usuário*@
+            <ul class="nav navbar-nav">
+                @*-- Usuário --*@
+                @(Smc.UserProfileWindow()
+                                                        .Buttons(b => b
+                                                        .ShowProfile()
+                                                        .ChangePassword()
+                                                        .Logout()))
+                <li>
+                    @Smc.ButtonSet().CssClass("smc-ico-meusdados").AddButton(Smc.Button("link-meusdados")
+                    .CssClass("smc-btn-meudados")
+                    .Action("Cadastrar", "Inscrito", new { area = "INS" })
+                    .SecurityToken(SMC.Inscricoes.Common.Areas.INS.Constants.UC_INS_002_01_01.MANTER_INSCRITO)
+                    .Type(SMCButtonType.Link))
+                </li>
+                <li>
+                    @Smc.Accessibility()
+                </li>
+            </ul>
+        }
+    </header>
+    <section class="smc-conteudo-centro">
+        @Smc.MessagePlaceholder(SMCMessagePlaceholders.Default).CssClass("smc-mensagens-principal")
+        @Smc.MessagePlaceholder(SMCMessagePlaceholders.Centro).CssClass("smc-mensagens-centro")
+        <div class="display-flex flex-d-row smc-gpi-paineis">
+            <!-- titulo da página (obrigatório)-->
+            @{
+                var titulo = Smc.RenderTitle();
+            }
+            @if (titulo != null && !string.IsNullOrWhiteSpace(titulo.ToHtmlString()))
+            {
+                <h1>@titulo</h1>
+            }
+            <!-- corpo da página (obrigatório) -->
+            @RenderBody()
+        </div>
+    </section>
+    <footer class="smc-footer">
+        <div class="smc-footer-logo-gti" title="@Smc.GetUIResource("Layout_Titulo_Logotipo_GTI")"></div>
+        <div class="smc-footer-copyright" title="@Smc.GetUIResource("Layout_Legenda_Copyright")">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script>
+        </div>
+    </footer>
+
+    @Smc.MessagePlaceholder(SMCMessagePlaceholders.Footer).IsDefault()
+
+    <!-- componente alerta navegador (obrigatório) -->
+    @(Smc.BrowserAlert()
+                            .RejectBrowser(SMCBrowsers.InternetExplorer, 9)
+                            .RejectBrowser(SMCBrowsers.Chrome, 24)
+                            .RejectBrowser(SMCBrowsers.FireFox, 20)
+                            .RejectBrowser(SMCBrowsers.Safari, 4)
+                            .IconsPath("/Recursos/Images/browsers/")
+    )
+    <!-- componente alerta processando (obrigatório) -->
+    @using (Smc.Div("divAlertaProcessando").CssClass("smc-alerta-processando").Begin())
+    {
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <p>@Smc.GetUIResource("Layout_Texto_Aguarde")</p>
+    }
+
+    <!-- scripts (obrigatório) -->
+    @Html.SMCRegisterBundleScripts()
+
+    <!-- Section para renderização de scrits das views (obrigatório)-->
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+    @MiniProfiler.Current.RenderIncludes()
+    @Html.SMCGoogleAnalytics()
+
+    <script>
+        $(document).ready(function () {
+            if ($("#formConfiguracao").length) {
+                $("#formConfiguracao").parent().find("h1").eq(0).hide();
+            }
+
+            if ($("#formularioAlterarSenha").length) {
+                $("#formularioAlterarSenha").parent().find("h1").eq(0).hide();
+            }
+        });
+    </script>
+
+    <!-- Service Worker -->
+    <!--<script type="text/javascript" src="~/app.js"></script>-->
+</body>
+
+</html>

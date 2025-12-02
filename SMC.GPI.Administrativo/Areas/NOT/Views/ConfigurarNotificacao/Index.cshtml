@@ -1,0 +1,32 @@
+﻿@model ConfigurarNotificacaoFiltroViewModel
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.ConfigurarNotificacao, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = true, area = "INS" })
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+        .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+        .Highlight()
+        .Type(SMCButtonType.Link)
+        .Url(Url.Action("Incluir", "ConfigurarNotificacao", new { seqProcesso = (SMCEncryptedLong)Model.SeqProcesso })))
+)
+
+<div id="divConfiguracaoNotificacao">
+    @Html.Action("ListarConfiguracaoNotificacao")
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar")
+        .CssClass("smc-btn-voltar-icotext")
+        .Type(SMCButtonType.Link)
+        .Action("Index", "Processo", new { area = "INS" }))
+)
+
+@using (Smc.ModalWindow("modalParametrosNotificacao")
+        .Title(Smc.GetUIResource("ParametrosNotificacao"))
+        .Size(SMCModalWindowSize.Large)
+        .Form("SalvarParametros", "SalvarParametros", "ConfigurarNotificacao", null, true, x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+            .Text(Smc.GetUIResource("ParametroNotificacao_Botao_Cancelar")).Tooltip(Smc.GetUIResource("ParametroNotificacao_Botao_Cancelar_Tooltip")))
+        .Begin())
+{ }

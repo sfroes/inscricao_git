@@ -1,0 +1,15 @@
+﻿@using SMC.Formularios.UI.Mvc
+
+@model SMC.Formularios.UI.Mvc.Models.IDadoFormulario
+
+@{
+    var vm = Model as EditarFormularioDadoViewModel;
+}
+
+@Smc.EditorFor(m => vm.SeqInscricao)
+
+<input type="hidden" name="Origem" value="@vm.Origem" />
+
+<div id="formulario">
+    @Smc.SGF(SMC.Formularios.Common.Areas.FRM.Enums.FormaExibicaoSecao.Nenhum, false, true)
+</div>

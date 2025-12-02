@@ -1,0 +1,55 @@
+﻿@model ConsultaNotificacaoFiltroViewModel
+
+
+@using (Smc.Form("formPesquisaNotificacao", "ListarNotificacoes").Ajax("#divConsultaNotificacao").Begin())
+{
+    using (Smc.Fieldset("filtroConsultaNotificacao").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Processo)
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(prop => prop.Oferta)
+        @Smc.EditorFor(prop => prop.SeqTipoNotificacao)
+        @Smc.EditorFor(prop => prop.SeqInscricao)
+        @Smc.EditorFor(prop => prop.Inscrito)
+        @Smc.EditorFor(prop => prop.Assunto)
+
+        using (Smc.Fieldset("fieldsetPeriodoEvio").CssClass("smc-gpi-fieldset-inline").Begin())
+        {
+            @Smc.EditorFor(prop => prop.DataInicio)
+            @Smc.EditorFor(prop => prop.DataFim)
+        }
+
+        @(Smc.ButtonSet()
+                .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+}
+
+@using (Smc.Div("divConsultaNotificacao").Attribute("data-id", "divConsultaNotificacao").CssClass("smc-sga-central-solicitacoes").Size(SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24, SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarNotificacoes", routeValues: Model, initialListingDisabled: Model.AutoPesquisa)
+}
+
+@{
+    var buttonset = Smc.ButtonSet();
+
+    if (Request["Origem"] != null || Request["SeqProcesso"] != null)
+    {
+
+        if (!string.IsNullOrEmpty(Model.BackURL))
+        {
+            buttonset.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+              .CssClass("smc-btn-voltar-icotext")
+              .Url(Model.BackURL));
+        }
+        else
+        {
+            buttonset.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+                .DisplayMode(SMCButtonDisplayMode.TextAndIcon));
+        }
+
+    }
+}
+
+@buttonset

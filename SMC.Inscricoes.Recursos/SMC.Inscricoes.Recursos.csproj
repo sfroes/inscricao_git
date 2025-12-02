@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3FD945E-AFD7-4A05-8EC7-202DC2FC279C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Inscricoes.Recursos</RootNamespace>
+    <AssemblyName>SMC.Inscricoes.Recursos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SMC.Framework.Unity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Unity.4.2.250602.1\lib\net471\SMC.Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.5.3\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Css\smc-login-gpi.css">
+      <DependentUpon>smc-login-gpi.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-login-gpi.min.css">
+      <DependentUpon>smc-login-gpi.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-pdf.css">
+      <DependentUpon>smc-pdf.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-pdf.min.css">
+      <DependentUpon>smc-pdf.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Images\smc-gpi-img-background-login.png" />
+    <Content Include="Content\Images\smc-gpi-img-fundo.png" />
+    <Content Include="Content\Images\smc-gpi-logo-aplicacao.png" />
+    <Content Include="Content\Images\smc-gpi-logotipo-sistema-login.png" />
+    <Content Include="Content\Images\smc-img-preloader.gif" />
+    <Content Include="Content\Images\smc-puc-minas-brasao-preto-novo.png" />
+    <Content Include="Content\Images\smc-puc-minas-brasao-preto.png" />
+    <Content Include="GPI.Administrativo\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Administrativo\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\carousel\swiper-bundle.min.css" />
+    <Content Include="GPI.Administrativo\GPI\Css\smc-login-gpi.css">
+      <DependentUpon>smc-login-gpi.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Administrativo\GPI\Css\smc-login-gpi.min.css">
+      <DependentUpon>smc-login-gpi.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Administrativo\GPI\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Administrativo\GPI\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Administrativo\GPI\Images\gpi-adm-192.png" />
+    <Content Include="GPI.Administrativo\GPI\Images\gpi-adm-512.png" />
+    <Content Include="GPI.Administrativo\GPI\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Administrativo\GPI\Images\smc-logo-gpi-adm.svg" />
+    <Content Include="GPI.Administrativo\GPI\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Administrativo\GPI\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Administrativo\GPI\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Administrativo\Images\smc-btn-selecionar-arquivo.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-ico-arquivo.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-ico-idioma.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-ico-pagina.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-ico-texto.png" />
+    <Content Include="GPI.Administrativo\Images\smc-img-preloader.gif" />
+    <Content Include="GPI.Administrativo\Scripts\AnaliseCheckinLote.js" />
+    <Content Include="GPI.Administrativo\Scripts\AnaliseListagemCheckin.js" />
+    <Content Include="GPI.Administrativo\Scripts\CamposInscrito.js" />
+    <Content Include="GPI.Administrativo\Scripts\CheckinManual.js" />
+    <Content Include="GPI.Administrativo\Scripts\Checkin.js" />
+    <Content Include="GPI.Administrativo\Scripts\Componentes\Qrcode\instascan.min.js" />
+    <Content Include="GPI.Administrativo\Scripts\MenuCheckin.js" />
+    <Content Include="GPI.Administrativo\Scripts\ReloadPagerAjaxDiv.js" />
+    <Content Include="GPI.Administrativo\Scripts\ConfiguracaoUsuarioCheckin.js" />
+    <Content Include="GPI.Administrativo\Scripts\ScanQrCode.js" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-login-aulaoredacao2025.css" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-login-aulaoredacao2025.min.css" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-pdf-ingressos.css" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-pdf-ingressos.min.css" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-recursos.css" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-recursos.min.css" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\logo-puc-branco.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\logo-puc-preto.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-img-detalhe-ondas-login.png" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-img-detalhe-ondas.png" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-logo-aulao-2025.png" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-logo-aulao-Redacao-2025.png" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-logo-aulao.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-logo-login-aulao2025.png" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-logo-login.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Images\smc-separador.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-login-aulaoredacao.css">
+      <DependentUpon>smc-login-aulaoredacao.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-login-aulaoredacao.min.css">
+      <DependentUpon>smc-login-aulaoredacao.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-pdf-ingressos.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-pdf-ingressos.min.css">
+      <DependentUpon>smc-pdf-ingressos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\smc-logo-aulao.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\smc-logo-login.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\smc-separador.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-login-ces.css" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-login-ces.min.css" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-pdf-ingressos-pucminas.css" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-pdf-ingressos-pucminas.min.css" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-pdf-ingressos.css" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-pdf-ingressos.min.css" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-recursos.css" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-recursos.min.css" />
+    <Content Include="GPI.Inscricao\CES\Images\logo-puc-branco.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\logo-vemprapuc-192.png" />
+    <Content Include="GPI.Inscricao\CES\Images\logo-vemprapuc-512.png" />
+    <Content Include="GPI.Inscricao\CES\Images\logo-vemprapuc-branco.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-img-logo-interna-ces.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-img-logo-login-ces-h.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-img-logo-login-ces.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-img-logo-login-puc-e-ces.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\CES\Images\smc-pdc-logo-vemprapuc.svg" />
+    <Content Include="GPI.Inscricao\Css\Componentes\carousel\swiper-bundle.min.css" />
+    <Content Include="GPI.Inscricao\Css\smc-pdf.css">
+      <DependentUpon>smc-pdf.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\Css\smc-pdf.min.css">
+      <DependentUpon>smc-pdf.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Css\smc-login-gpi.css">
+      <DependentUpon>smc-login-gpi.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Css\smc-login-gpi.min.css">
+      <DependentUpon>smc-login-gpi.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Css\smc-pdf-ingressos-gpi.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Css\smc-pdf-ingressos-gpi.min.css">
+      <DependentUpon>smc-pdf-ingressos-gpi.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Css\smc-pdf-ingressos.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Css\smc-pdf-ingressos.min.css">
+      <DependentUpon>smc-pdf-ingressos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\GPI\Images\logo-gpi-192.png" />
+    <Content Include="GPI.Inscricao\GPI\Images\logo-gpi-512.png" />
+    <Content Include="GPI.Inscricao\GPI\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\GPI\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\GPI\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\GPI\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\logo-puc-branco.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\logo-puc-preto.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\GPI\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\Images\smc-gpi-pag-erros.svg" />
+    <Content Include="GPI.Inscricao\Images\smc-ico-info-card.svg" />
+    <Content Include="GPI.Inscricao\Images\smc-puc-minas-brasao-preto.png" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-pdf-ingressos.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-pdf-ingressos.min.css">
+      <DependentUpon>smc-pdf-ingressos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-login-pucaberta2025.css">
+      <DependentUpon>smc-login-pucaberta2025.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-login-pucaberta2025.min.css">
+      <DependentUpon>smc-login-pucaberta2025.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-pdf-ingressos-pucaberta2025.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-pdf-ingressos-pucaberta2025.min.css">
+      <DependentUpon>smc-pdf-ingressos-pucaberta2025.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-pdf-ingressos.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-pdf-ingressos.min.css">
+      <DependentUpon>smc-pdf-ingressos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-pdf-pucaberta2025.css">
+      <DependentUpon>smc-pdf-pucaberta2025.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-pdf-pucaberta2025.min.css">
+      <DependentUpon>smc-pdf-pucaberta2025.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\logo-puc-aberta-192.png" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\logo-puc-aberta-512.png" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\logo-puc-aberta-color.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\logo-puc-aberta.png" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\logo-puc-aberta.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\logo-puc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\logo-puc-preto.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\logo-vemprapuc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\smc-gpi-imagem-formulario-respondido.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Images\smc-pdc-logo-vemprapuc.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-login-puccarreiras2024.css">
+      <DependentUpon>smc-login-puccarreiras2024.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-login-puccarreiras2024.min.css">
+      <DependentUpon>smc-login-puccarreiras2024.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-pdf-ingressos-puccarreiras2024.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-pdf-ingressos-puccarreiras2024.min.css">
+      <DependentUpon>smc-pdf-ingressos-puccarreiras2024.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-pdf-ingressos.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-pdf-ingressos.min.css">
+      <DependentUpon>smc-pdf-ingressos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-pdf-puccarreiras2024.css">
+      <DependentUpon>smc-pdf-puccarreiras2024.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-pdf-puccarreiras2024.min.css">
+      <DependentUpon>smc-pdf-puccarreiras2024.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\calendario.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\logo-puc-aberta-192.png" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\logo-puc-aberta-512.png" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\logo-puc-aberta-color.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\logo-puc-aberta.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\logo-puc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\logo-puc-preto.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\logo-puccarreiras.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\logo-vemprapuc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\puccarreiras-pucminas.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\smc-gpi-imagem-formulario-respondido.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\smc-pdc-logo-vemprapuc.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-login-pucaberta2024.css">
+      <DependentUpon>smc-login-pucaberta2024.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-login-pucaberta2024.min.css">
+      <DependentUpon>smc-login-pucaberta2024.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-pdf-ingressos-pucaberta2024.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-pdf-ingressos-pucaberta2024.min.css">
+      <DependentUpon>smc-pdf-ingressos-pucaberta2024.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-pdf-pucaberta2024.css">
+      <DependentUpon>smc-pdf-pucaberta2024.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-pdf-pucaberta2024.min.css">
+      <DependentUpon>smc-pdf-pucaberta2024.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\logo-puc-aberta-192.png" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\logo-puc-aberta-512.png" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\logo-puc-aberta-color.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\logo-puc-aberta.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\logo-puc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\logo-puc-preto.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\logo-vemprapuc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\smc-gpi-imagem-formulario-respondido.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Images\smc-pdc-logo-vemprapuc.svg" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-login-puc.css">
+      <DependentUpon>smc-login-puc.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-login-puc.min.css">
+      <DependentUpon>smc-login-puc.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-pdf-ingressos-pucminas.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-pdf-ingressos-pucminas.min.css">
+      <DependentUpon>smc-pdf-ingressos-pucminas.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-pdf-ingressos.css">
+      <DependentUpon>smc-pdf-ingressos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-pdf-ingressos.min.css">
+      <DependentUpon>smc-pdf-ingressos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-recursos.css">
+      <DependentUpon>smc-recursos.scss</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-recursos.min.css">
+      <DependentUpon>smc-recursos.css</DependentUpon>
+    </Content>
+    <Content Include="GPI.Inscricao\PUCMinas\Images\logo-puc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\logo-vemprapuc-192.png" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\logo-vemprapuc-512.png" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\logo-vemprapuc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\smc-pdc-logo-vemprapuc.svg" />
+    <Content Include="GPI.InscricaoSilver\Css\smc-recursos.css" />
+    <Content Include="GPI.InscricaoSilver\Css\smc-recursos.min.css" />
+    <Content Include="GPI.InscricaoSilver\Images\favicon.gif" />
+    <Content Include="GPI.InscricaoSilver\Images\favicon.ico" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-btn-selecionar-arquivos.png" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-gpi-bg-instrucoes-comprovante.gif" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-gpi-logo-aplicacao.png" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-gpi-logo.png" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-gpi-logotipo-sistema-login.png" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-ico-idioma-portuguese.png" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-ico-itens-home.png" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-img-preload-gpi.gif" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-img-preloader.gif" />
+    <Content Include="GPI.InscricaoSilver\Images\smc-puc-minas-brasao-preto.png" />
+    <Content Include="GPI.Inscricao\Images\smc-ico-idioma-portuguese.png" />
+    <Content Include="GPI.Administrativo\Css\identidade\_smc-fonte.scss" />
+    <Content Include="GPI.Administrativo\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="GPI.Administrativo\Css\smc-estilo.scss" />
+    <Content Include="Content\Css\smc-pdf.scss" />
+    <None Include="GPI.Administrativo\Css\smc-recursos.scss" />
+    <Content Include="GPI.Inscricao\Images\smc-img-preloader.gif" />
+    <Content Include="Content\Fonts\BreeSerif-Regular.eot" />
+    <Content Include="Content\Fonts\BreeSerif-Regular.otf" />
+    <Content Include="Content\Fonts\BreeSerif-Regular.ttf" />
+    <Content Include="Content\Fonts\BreeSerif-Regular.woff" />
+    <Content Include="Content\Fonts\BreeSerif-Regular.woff2" />
+    <Content Include="Content\Fonts\icomoon.eot" />
+    <Content Include="Content\Fonts\icomoon.ttf" />
+    <Content Include="Content\Fonts\icomoon.woff" />
+    <Content Include="GPI.Inscricao\Fonts\BreeSerif-Regular.eot" />
+    <Content Include="GPI.Inscricao\Fonts\BreeSerif-Regular.otf" />
+    <Content Include="GPI.Inscricao\Fonts\BreeSerif-Regular.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\BreeSerif-Regular.woff" />
+    <Content Include="GPI.Inscricao\Fonts\BreeSerif-Regular.woff2" />
+    <Content Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\Css\identidade\_smc-fonte.scss" />
+    <Content Include="Content\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="Content\Css\smc-estilo.scss" />
+    <Content Include="Content\Css\smc-login-gpi.scss" />
+    <Content Include="Content\Css\smc-recursos.scss" />
+    <Content Include="GPI.Inscricao\Css\identidade\_smc-fonte.scss" />
+    <Content Include="GPI.Inscricao\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="GPI.Inscricao\Css\smc-estilo.scss" />
+    <Content Include="GPI.InscricaoSilver\Css\Componentes\smc-datagrid.scss" />
+    <Content Include="GPI.InscricaoSilver\Css\Componentes\smc-legend.scss" />
+    <Content Include="GPI.InscricaoSilver\Css\identidade\_smc-fonte.scss" />
+    <Content Include="GPI.InscricaoSilver\Css\identidade\_smc-identidade-visual.scss" />
+    <Content Include="GPI.InscricaoSilver\Css\smc-estilo.scss" />
+    <Content Include="GPI.InscricaoSilver\Css\smc-recursos.scss" />
+    <Content Include="GPI.InscricaoSilver\Fonts\BreeSerif-Regular.eot" />
+    <Content Include="GPI.InscricaoSilver\Fonts\BreeSerif-Regular.otf" />
+    <Content Include="GPI.InscricaoSilver\Fonts\BreeSerif-Regular.ttf" />
+    <Content Include="GPI.InscricaoSilver\Fonts\BreeSerif-Regular.woff" />
+    <Content Include="GPI.InscricaoSilver\Fonts\BreeSerif-Regular.woff2" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-recursos.scss" />
+    <Content Include="GPI.Inscricao\GPI\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\GPI\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\GPI\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\GPI\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\GPI\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\GPI\Css\smc-recursos.scss" />
+    <Content Include="GPI.Inscricao\GPI\Css\smc-login-gpi.scss" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-login-puc.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-login-pucaberta2024.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-recursos.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\acessibilidade.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\fancytree\skin-common.less" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\fancytree\skin-common.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\fancytree\ui.fancytree.less" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\fancytree\ui.fancytree.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\footer.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\form.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\grid.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\header.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\list.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\message.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\modal.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\sidebar.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\slider.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\smc-flex-helpers.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\treeview.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\smc-estilo.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\smc-login-gpi.scss" />
+    <Content Include="GPI.Administrativo\GPI\Css\smc-recursos.scss" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\fa-brands-400.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\fa-brands-400.woff2" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\fa-regular-400.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\fa-regular-400.woff2" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\fa-solid-900.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\fa-solid-900.woff2" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\fa-v4compatibility.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\fa-v4compatibility.woff2" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\heebo.black.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\heebo.bold.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\heebo.extrabold.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\heebo.light.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\heebo.medium.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\heebo.regular.ttf" />
+    <Content Include="GPI.Administrativo\GPI\Fonts\heebo.thin.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\fa-brands-400.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\fa-brands-400.woff2" />
+    <Content Include="GPI.Inscricao\Fonts\fa-regular-400.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\fa-regular-400.woff2" />
+    <Content Include="GPI.Inscricao\Fonts\fa-solid-900.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\fa-solid-900.woff2" />
+    <Content Include="GPI.Inscricao\Fonts\fa-v4compatibility.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\fa-v4compatibility.woff2" />
+    <Content Include="GPI.Inscricao\Fonts\heebo.black.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\heebo.bold.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\heebo.extrabold.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\heebo.light.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\heebo.medium.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\heebo.regular.ttf" />
+    <Content Include="GPI.Inscricao\Fonts\heebo.thin.ttf" />
+    <Content Include="GPI.Inscricao\Css\Componentes\fancytree\skin-common.less" />
+    <Content Include="GPI.Inscricao\Css\Componentes\fancytree\skin-common.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\fancytree\ui.fancytree.less" />
+    <Content Include="GPI.Inscricao\Css\Componentes\fancytree\ui.fancytree.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\acessibilidade.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\footer.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\grid.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\list.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\message.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\mixins.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\modal.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\slider.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\smc-flex-helpers.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\treeview.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\Css\smc-login.scss" />
+    <Content Include="GPI.Inscricao\Css\smc-pdf.scss" />
+    <Content Include="GPI.Inscricao\GPI\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2024\Css\smc-pdf-pucaberta2024.scss" />
+    <Content Include="GPI.Inscricao\PUCMinas\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-login-puccarreiras2024.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-pdf-puccarreiras2024.scss" />
+    <Content Include="GPI.Inscricao\PUCCarreiras2024\Css\smc-recursos.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-login-aulaoredacao.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-recursos.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\Componentes\footer.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-login-pucaberta2025.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-pdf-pucaberta2025.scss" />
+    <Content Include="GPI.Inscricao\PUCAberta2025\Css\smc-recursos.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\Componentes\footer.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-login-aulaoredacao2025.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\AulaoRedacao2025\Css\smc-recursos.scss" />
+    <Content Include="GPI.Inscricao\CES\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\CES\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\CES\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\CES\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-login-ces.scss" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\CES\Css\smc-recursos.scss" />
+    <None Include="GPI.Inscricao\Css\Componentes\angular.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\angular\_variables.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\angular\_mixins.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\angular\_selecao-de-ofertas.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\angular\_buttons.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\angular\_modal.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\angular\_forms.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\angular\_popover.scss" />
+    <Content Include="GPI.Inscricao\Css\Componentes\angular\_pagina-de-erros.scss" />
+    <Content Include="GPI.Inscricao\PUC\Css\Componentes\buttons.scss" />
+    <Content Include="GPI.Inscricao\PUC\Css\Componentes\form.scss" />
+    <Content Include="GPI.Inscricao\PUC\Css\Componentes\header.scss" />
+    <Content Include="GPI.Inscricao\PUC\Css\Componentes\wizard.scss" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-estilo.scss" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-login-puc.scss" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-pdf-ingressos.scss" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-recursos.scss" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\icomoon.svg" />
+    <Content Include="GPI.Administrativo\Images\smc-btn-selecionar-arquivos.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-img-background-login.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-img-background.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-img-detalhe.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-logo.png" />
+    <Content Include="GPI.Administrativo\Images\smc-gpi-logotipo-sistema-login.png" />
+    <Content Include="GPI.Administrativo\Images\smc-img-preload-gpi.gif" />
+    <Content Include="GPI.Administrativo\Scripts\AnaliseInscricaoLote.js" />
+    <Content Include="GPI.Administrativo\Scripts\CadastroTaxaOferta.js" />
+    <Content Include="GPI.Administrativo\Scripts\ConfiguracaoNotificacao.js" />
+    <Content Include="GPI.Administrativo\Scripts\ConfiguracaoTipoProcesso.js" />
+    <Content Include="GPI.Administrativo\Scripts\CopiaConfiguracaoEtapa.js" />
+    <Content Include="GPI.Administrativo\Scripts\InclusaoProcesso.js" />
+    <Content Include="GPI.Administrativo\Scripts\RecuperarPagina.js" />
+    <Content Include="GPI.Administrativo\Scripts\RegistroDocumentacaoEntregue.js" />
+    <Content Include="GPI.Administrativo\Scripts\ReloadPagerAjax.js" />
+    <Content Include="Content\Css\smc-boleto-bancario.css" />
+    <Content Include="GPI.Inscricao\Images\favicon.gif" />
+    <Content Include="GPI.Inscricao\Images\favicon.ico" />
+    <Content Include="GPI.Inscricao\Images\smc-btn-selecionar-arquivos.png" />
+    <Content Include="GPI.Inscricao\Images\smc-gpi-bg-instrucoes-comprovante.gif" />
+    <Content Include="GPI.Inscricao\Images\smc-gpi-logo-aplicacao.png" />
+    <Content Include="GPI.Inscricao\Images\smc-gpi-logo.png" />
+    <Content Include="GPI.Inscricao\Images\smc-gpi-logotipo-sistema-login.png" />
+    <Content Include="GPI.Inscricao\Images\smc-ico-itens-home.png" />
+    <Content Include="GPI.Inscricao\Images\smc-img-preload-gpi.gif" />
+    <Content Include="GPI.Administrativo\Scripts\LimparEstadosCidadesLocalidade.js" />
+    <Content Include="GPI.Inscricao\PUCMinas\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-login-puc.css" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-login-puc.min.css" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-pdf-ingressos-pucminas.css" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-pdf-ingressos-pucminas.min.css" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-pdf-ingressos.css" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-pdf-ingressos.min.css" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-recursos.css" />
+    <Content Include="GPI.Inscricao\PUC\Css\smc-recursos.min.css" />
+    <Content Include="GPI.Inscricao\PUC\Images\logo-puc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUC\Images\logo-vemprapuc-192.png" />
+    <Content Include="GPI.Inscricao\PUC\Images\logo-vemprapuc-512.png" />
+    <Content Include="GPI.Inscricao\PUC\Images\logo-vemprapuc-branco.svg" />
+    <Content Include="GPI.Inscricao\PUC\Images\smc-brasao-pucminas.svg" />
+    <Content Include="GPI.Inscricao\PUC\Images\smc-gpi-sem-itens.png" />
+    <Content Include="GPI.Inscricao\PUC\Images\smc-logo-gpi.svg" />
+    <Content Include="GPI.Inscricao\PUC\Images\smc-logo-gti-cinza.svg" />
+    <Content Include="GPI.Inscricao\PUC\Images\smc-logo-puc.svg" />
+    <Content Include="GPI.Inscricao\PUC\Images\smc-pdc-logo-vemprapuc.svg" />
+    <Content Include="GPI.Inscricao\Scripts\Componentes\swiper-bundle.min.js" />
+    <Content Include="GPI.Inscricao\Scripts\Ingresso\Carrossel.js" />
+    <Content Include="GPI.Inscricao\Scripts\Inscricao\FormularioImpacto.js" />
+    <Content Include="GPI.Inscricao\Scripts\Inscricao\FormularioSGF.js" />
+    <Content Include="GPI.Inscricao\Scripts\Inscricao\ConfirmarInscricao.js" />
+    <Content Include="GPI.Inscricao\Scripts\Inscricao\SelecaoOfertaTaxas.js" />
+    <Content Include="GPI.Inscricao\Scripts\Inscrito\Inscrito.js" />
+    <Content Include="GPI.Inscricao\Scripts\LimparEstadosCidadesLocalidade.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GPI.Administrativo\Scripts\ReloadPagerCheckinEmLote.js" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Css\componentes\" />
+    <Folder Include="Content\Scripts\" />
+    <Folder Include="GPI.Administrativo\Css\Componentes\" />
+    <Folder Include="GPI.Administrativo\Fonts\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19300</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Recursos/Inscricoes/4.0</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets'))" />
+  </Target>
+  <Import Project="..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets" Condition="Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

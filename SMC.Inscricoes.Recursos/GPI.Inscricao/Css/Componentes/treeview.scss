@@ -1,0 +1,450 @@
+﻿//A importação do Identidade visual deve permanecer comentada. Descomentar apenas em caso de testes.
+//@import "../identidade/_smc-identidade-visual.scss";
+//@import "../mixins/_smc-hacks-mixin.scss";
+@import "fancytree/skin-common.scss";
+@import "fancytree/ui.fancytree.scss";
+
+// ajustes realizados para linhamento do radio/checkbox para conteúdos que excedem uma linha
+
+span.fancytree-node {
+    display: inline-block;
+
+    .smc-button, .dropdown, .fancytree-checkbox {
+        float: left;
+    }
+}
+
+.fancytree-exp-n span.fancytree-expander, .fancytree-exp-nl span.fancytree-expander {
+    // width: 20px;
+    display: inline-block;
+}
+
+.fancytree-expander + .smc-ico-radio.smc-treeview-selector,
+.fancytree-expander + .smc-ico-radio-selecionado.smc-treeview-selector,
+.fancytree-expander + .smc-treeview-selector {
+    margin-left: -2.35em;
+}
+
+.fancytree-expander + .smc-button {
+    margin-left: -2.42em;
+}
+
+.fancytree-expander + .smc-button + .smc-contextmenu + div + .fancytree-title {
+    margin-left: -1.42em;
+}
+
+span[role=button].fancytree-expander + .smc-button + .smc-contextmenu + div + .fancytree-title {
+    margin-left: -0.14em;
+}
+
+span[role=button].fancytree-expander + .smc-button {
+    margin-left: 0;
+}
+
+.fancytree-expander + .smc-ico-radio.smc-treeview-selector + div + .fancytree-title,
+.fancytree-expander + .smc-ico-radio-selecionado.smc-treeview-selector + div + .fancytree-title,
+.fancytree-expander + .smc-treeview-selector + div + .fancytree-title {
+    // margin-left: -12px;
+}
+
+span[role=button].fancytree-expander + .smc-ico-radio.smc-treeview-selector + div + .fancytree-title,
+span[role=button].fancytree-expander + .smc-ico-radio-selecionado.smc-treeview-selector + div + .fancytree-title,
+span[role=button].fancytree-expander + .smc-treeview-selector + div + .fancytree-title {
+    margin-left: 0.07em;
+}
+
+span[role=button].fancytree-expander + .smc-ico-radio.smc-treeview-selector,
+span[role=button].fancytree-expander + .smc-ico-radio-selecionado.smc-treeview-selector,
+span[role=button].fancytree-expander + .smc-treeview-selector {
+    margin-left: 0.07em;
+    margin-right: 0.07em;
+}
+
+span[role=button].fancytree-expander {
+    margin-left: -15px;
+}
+
+ul.fancytree-container ul {
+    padding: 0 0 0 1.07em;
+}
+
+span.fancytree-expander {
+    float: left !important;
+}
+
+span.fancytree-checkbox {
+    width: 1.28em;
+    display: inline-block;
+}
+
+span.fancytree-title {
+    display: inline-block;
+    width: 90%;
+}
+
+
+ul.fancytree-container {
+    white-space: inherit;
+
+    li {
+        font-size: 1em;
+    }
+}
+
+div[data-type="smc-treeview-content"] {
+    clear: both;
+    text-align: left;
+    padding: 0.71em 0.71em 0.71em 1.42em;
+
+    @media screen and ("max-width: 850px") {
+        padding: 0;
+    }
+}
+
+.smc-treeview-item {
+    display: initial;
+
+    span {
+        font-size: 1rem;
+    }
+
+    a {
+        color: var(--black);
+        font-style: normal;
+        text-decoration: none;
+        font-size: 1rem;
+
+        &:hover {
+            color: var(--color-primary) !important;
+            text-decoration: none;
+        }
+    }
+}
+
+.smc-treeview {
+    .dropdown {
+        display: inline-block;
+    }
+}
+
+.fancytree-title {
+    font-size:1em;
+    .smc-button {
+        margin-left: -0.5em;
+    }
+}
+
+.smc-btn-tree-context {
+    border: none !important;
+    height: 1.42em;
+    padding: 0;
+    background-color: transparent;
+    margin-top: -0.07em;
+    color: var(--color-primary);
+
+    i {
+        margin: 0;
+
+        &::before {
+            font-size: 1.14em;
+        }
+    }
+
+    &:hover {
+        color: var(--color-hover);
+        background-color: transparent;
+    }
+
+    &:active, &:visited, &:focus {
+        color: var(--color-primary);
+    }
+}
+
+.smc-treeview-expander, .smc-treeview-selector {
+    margin-top: 0.21em !important;
+}
+
+.fancytree-match {
+    background-color: #e1f0f1;
+
+    .dropdown .dropdown-menu > .smc-button > a {
+        font-weight: normal;
+    }
+
+    a {
+        font-weight: bold;
+    }
+}
+
+.fancytree-drop-reject {
+    @extend .fa;
+    @extend .fa-ban;
+    color: var(--grey) !important;
+
+    span, a, div, .smc-treeview-item a:hover {
+        color: var(--grey) !important;
+    }
+}
+
+.smc-treeview-blocked {
+    .fancytree-expander {
+        color: var(--grey);
+    }
+}
+
+%base-check-radio {
+    padding: 0.57em;
+    border: 1px solid var(--black);
+    background-color: var(--white);
+    margin-top: 0.14em !important;
+    margin-right: 0.14em;
+}
+
+%base-check-radio-selecionado {
+    padding: 0.57em;
+    border: 1px solid var(--black);
+    background-color: var(--grey);
+    margin-top: 0.14em !important;
+    margin-right: 0.14em;
+
+    &::before {
+        background-color: var(--black);
+        padding: 0 0.35em;
+        height: 0.71em !important;
+        margin-left: -0.35em;
+        position: absolute;
+        content: "";
+        margin-top: -0.35em;
+        width: 0.14em;
+    }
+}
+
+.smc-ico-check {
+    @extend %base-check-radio;
+}
+
+.smc-ico-check-selecionado {
+    @extend %base-check-radio-selecionado;
+}
+
+.smc-ico-radio {
+    @extend %base-check-radio;
+    border-radius: 50px;
+}
+
+.smc-ico-radio-selecionado {
+    @extend %base-check-radio-selecionado;
+    border-radius: 50px;
+
+    &::before {
+        border-radius: 50px;
+    }
+}
+// -----   PESQUISA EM TREEVIEW ----- //
+.smc-treeview-painel-busca {
+    display: flex;
+    flex-direction: row;
+
+    .smc-button {
+        float: left;
+        margin-top: -0.07em;
+        width: auto;
+    }
+
+    & > div[data-type="smc-textbox"] {
+        & > label {
+            display: none;
+        }
+    }
+}
+//botões do treeview
+.smc-treeview-botao-buscar {
+    height: 3rem !important;
+    padding: 0 0.64rem 0 0.92rem;
+    background-color: #f8f8f8 !important;
+    color: var(--color-primary-2) !important;
+    border: 1px solid #ccc !important;
+    border-left: none !important;
+    border-radius: 0 3px 3px 0;
+    margin-left: -0.14em;
+    margin-top: -0.5rem;
+}
+.smc-treeview-botao-limpar {
+    height: 3rem !important;
+    background-color: var(--white);
+    color: var(--color-primary-2);
+    border: 1px solid var(--color-primary-2);
+    padding: 0 0.35rem 0 1rem;
+    margin-top: -0.5rem;
+
+    &:hover {
+        border: 1px solid var(--color-primary-3);
+        background-color: var(--white);
+        color: var(--color-primary-3);
+    }
+}
+
+.smc-treeview-campo-busca {
+    width: 100% !important;
+    height: 2.14em !important;
+    margin-top: -0.7em;
+    float: left;
+
+    &:focus-visible {
+        border: 1px solid var(--color-secondary-2) !important;
+    }
+}
+
+.smc-treeview-no-filtro > div > a {
+    font-weight: normal;
+    color: var(--color-primary) !important;
+}
+
+.smc-treeview-no-removido-filtro {
+    display: none !important;
+}
+// ----- FIM PESQUISA EM TREEVIEW ----- //
+.smc-treeview-sortable-botoes {
+    display: none;
+}
+// Treeview em lookup
+.smc-dataselector-resultado {
+    padding-left: 1.07em;
+    padding-right: 1.07em;
+    text-align: left;
+    border-top: none;
+
+    & > .smc-treeview {
+        padding: 0.35em;
+
+        & .smc-treeview-painel-busca {
+            margin-bottom: 0.71em;
+            height: 2.92em;
+
+            & > div.smc-button {
+                margin-top: -0.14em;
+            }
+        }
+    }
+}
+
+//@media (max-width: $smc-size-screen-sm-max) {
+//    span.fancytree-title {
+//        width: 80%;
+//    }
+//}
+//
+//@media (min-width:$smc-size-screen-md-max) {
+//    span.fancytree-title {
+//        width: 85%;
+//    }
+//}
+
+
+.treeview-select-links {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.71em;
+}
+
+.treeview-marcar-todos {
+    padding: 0.35em 0.71em 1.42em 0.35em;
+    font-size: 0.78em;
+    color: var(--color-primary);
+    margin-right: 0.71em;
+
+    &:before {
+        margin-right: 0.35em;
+        @extend .fa;
+        @extend .fa-check-square-o;
+        color: var(--color-primary);
+    }
+
+    &:hover, &:active {
+        color: var(--color-primary);
+        text-decoration: none;
+
+        &:before {
+            color: var(--color-primary);
+        }
+    }
+
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.treeview-desmarcar-todos {
+    padding: 0.35em 0.71em 1.42em 0.35em;
+    font-size: 11px;
+    color: var(--color-primary);
+
+    &:before {
+        margin-right: 0.35em;
+        @extend .fa;
+        @extend .fa-square-o;
+        color: var(--color-primary);
+    }
+
+    &:hover, &:active {
+        color: var(--color-hover);
+        text-decoration: none;
+
+        &:before {
+            color: var(--color-hover);
+        }
+    }
+
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.smc-treeview {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .smc-ico-radio-selecionado {
+        padding: 0.28em;
+    }
+
+    .smc-btn-visualizar-ico {
+        background-color: var(--white) !important;
+        color: var(--color-primary-2) !important;
+        border: 1px solid var(--color-primary-2) !important;
+
+        &:hover {
+            border: 1px solid var(--color-primary-3) !important;
+            background-color: var(--white) !important;
+            color: var(--color-primary-3) !important;
+        }
+    }
+}
+
+span.fancytree-checkbox {
+    width: 0.92em;
+    height: 0.92em;
+    background-color: var(--white);
+    padding: 0.28em;
+    border-color: #9b9b9b;
+
+    &::before {
+        padding: 0 0.28em;
+        height: 11px !important;
+        margin-left: 0.07em;
+        margin-top: 0.07em;
+        width: 0.21em;
+    }
+}
+.smc-ico-radio-selecionado {
+    background-color: #d6d6d6 !important;
+}
+
+.fancytree-node{
+    display:flex !important;
+}
+
+.fancytree-hide {
+    display: none !important
+}

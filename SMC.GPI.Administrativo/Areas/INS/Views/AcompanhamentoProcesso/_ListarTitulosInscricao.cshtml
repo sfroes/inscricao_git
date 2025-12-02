@@ -1,0 +1,23 @@
+﻿@model SMCPagerModel<TituloInscricaoViewModel>
+
+@(Smc.Grid("gridTitulos").CssClass("smc-gpi-grid-titulos")
+     .HideNavigator()
+     .HideRowNumber()
+     .HideRowsTotalizer()
+     .HidePager()
+     .HideGridTitle()
+     .FieldColumn(x => x.SeqTitulo)
+     .FieldColumn(x => x.TipoBoleto)
+     .ContentColumn(@<text>
+        <ul>
+            @foreach (TaxaTituloInscricaoViewModel taxa in item.Taxas)
+            {
+                <li>@taxa.NumeroItens - @taxa.Descricao</li>
+            }
+        </ul>
+    </text>, header: Smc.GetUIResource("Coluna_Taxas"), cssClass: "smc-gpi-grid-coluna-texto-descricao")
+    .FieldColumn(x=>x.Situacao)
+    .FieldColumn(x => x.DataVencimento)
+    .ContentColumn(@<text> @item.DataGeracao.ToString()</text>,Smc.GetUIResource("Coluna_DataGeracao"))
+    .FieldColumn(x => x.DataPagamento)
+)

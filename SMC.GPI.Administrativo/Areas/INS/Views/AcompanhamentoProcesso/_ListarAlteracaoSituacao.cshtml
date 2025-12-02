@@ -1,0 +1,21 @@
+﻿@using SMC.GPI.Administrativo.Areas.INS.Models
+
+@model AlteracaoSituacaoViewModel
+
+@using (Smc.Header("headerCabecalho", SMCHeaderType.Primary)
+           .Item(prop => prop.DescricaoSituacaoAtual, sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24)
+           .Begin())
+{ }
+
+@using (Smc.Fieldset("fieldsetAlterarSituacao").CssClass("smc-gpi-fieldset").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqTipoProcessoSituacaoDestino)
+    @Smc.EditorFor(prop => prop.SeqMotivoSGF)
+    @Smc.EditorFor(prop => prop.Justificativa)
+    @Smc.HiddenFor(prop => prop.SeqProcesso)
+    @Smc.HiddenFor(prop => prop.Lote)
+    @Smc.HiddenFor(prop => prop.BackUrl)
+
+}
+
+@Smc.MasterDetail(prop => prop.Inscricoes).HideButtons()

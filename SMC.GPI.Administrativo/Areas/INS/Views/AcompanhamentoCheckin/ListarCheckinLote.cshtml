@@ -1,0 +1,40 @@
+﻿@model SMCPagerModel<ListarCheckinLoteViewModel>
+
+<div id="divGridInscritosChekinLote">
+
+    @(Smc.Grid("gridCheckinLote", Model)
+    .AllowSelect(a => a.SeqInscricao)
+    .AllowSort()
+    .HideRowsTotalizer()
+    .HidePager()
+    .FieldColumn(f => f.SeqInscricao)
+    .FieldColumn(f => f.NomeInscrito)
+    .FieldColumn(f => f.PossuiCheckin)
+    .FieldColumn(f => f.DataHoraFormatado)
+    .FieldColumn(f => f.Responsavel)
+)
+</div>
+
+<div id="divBototesLote" class="smc-buttonset-horizontal-primario smc-gpi-linha-botoes-checkin">
+
+    @if (Model.Any() && !Model.FirstOrDefault().PossuiCheckin)
+    {
+        @(Smc.Button("RealizarCheckin")
+                      .CssClass("smc-btn-confirmar-icotext-destaque")
+                      .Url(Url.Action("RealizarCheckinLote", "AcompanhamentoCheckin", new { }))
+                      .Enabled(false)
+                      .Ajax(isPost: true, fieldsContainerToRequest: "#divGridAcompanhamentoInscritoCheckinLote", updateTargetId: "#divGridAcompanhamentoInscritoCheckinLote", onSuccess: "reloadPagerCheckinEmLote()"))
+
+    }
+    else
+    {
+        @(Smc.Button("DesfazerCheckin")
+                      .Url(Url.Action("DesfazerCheckinLote", "AcompanhamentoCheckin", new { }))
+                      .Enabled(false)
+                      .CssClass("smc-btn-desfazer-icotext-destaque")
+                      .Ajax(isPost: true, fieldsContainerToRequest: "#divGridAcompanhamentoInscritoCheckinLote", updateTargetId: "#divGridAcompanhamentoInscritoCheckinLote", onSuccess: "reloadPagerCheckinEmLote()"))
+    }
+    
+</div>
+
+

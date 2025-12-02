@@ -1,0 +1,5 @@
+@if(LayoutHeaderService.isLoading$()){
+<p-skeleton width="100%" height="70px" />
+}@else{
+<div id="header" [innerHtml]="LayoutHeaderService.conteudo$()"></div>
+}

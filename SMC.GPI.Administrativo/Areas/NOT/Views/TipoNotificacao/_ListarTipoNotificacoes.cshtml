@@ -1,0 +1,16 @@
+﻿@model SMCPagerModel<TipoNotificacaoListaViewModel>
+
+@(Smc.Grid("gridNotificaoes")
+     .AutoGenerateColumns()
+     .Action("ListarTipoNotificacoes", "TipoNotificacao")
+     .AllowSort()
+     .HideRowNumber()     
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes",
+                    item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as TipoNotificacaoListaViewModel).Seq) }, "TipoNotificacao")
+                          .DisplayMode(SMCButtonDisplayMode.Icon).SecurityToken(UC_NOT_001_02_02.MANTER_TIPO_NOTIFICACAO),
+                    item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as TipoNotificacaoListaViewModel).Seq) }, "TipoNotificacao")
+                          .DisplayMode(SMCButtonDisplayMode.Icon).SecurityToken(UC_NOT_001_02_02.MANTER_TIPO_NOTIFICACAO)
+                          .Ajax(isPost: true, updateTargetId: "#divConsultaNotificacao")
+                          .Confirm(Smc.GetUIResource("Exclusao_Tipo_Notificacao_Title"),
+                          string.Format(Smc.GetUIResource("Exclusao_Tipo_Notificacao_Confirmacao"), (item as TipoNotificacaoListaViewModel).TipoNotificacao))
+))

@@ -1,0 +1,25 @@
+﻿@model CabecalhoProcessoEtapaConfiguracaoViewModel
+
+@using (Smc.Div("fieldsetCabecalho").Begin())
+{
+    using (Smc.Header("headerCabecalho", SMCHeaderType.Primary).CssClass("smc-header-botao")
+              .Item(prop => prop.SeqProcesso, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+              .Item(prop => prop.DescricaoProcesso, sizeSM: SMCSize.Grid18_24, sizeMD: SMCSize.Grid18_24, sizeLG: SMCSize.Grid18_24, sizeXS: SMCSize.Grid18_24)
+              .Item(prop => prop.DescricaoTipoProcesso, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+              .Item(prop => prop.DescricaoEtapaProcesso, sizeSM: SMCSize.Grid11_24, sizeMD: SMCSize.Grid11_24, sizeLG: SMCSize.Grid11_24, sizeXS: SMCSize.Grid11_24)
+              .Item(prop => prop.DescricaoConfiguracaoEtapa, sizeSM: SMCSize.Grid10_24, sizeMD: SMCSize.Grid10_24, sizeLG: SMCSize.Grid10_24, sizeXS: SMCSize.Grid10_24)
+              .Begin())
+    {
+        if (Model.ExibirBotaoConfiguracaoEtapaProcesso)
+        {
+            // FIX: Migração do HUGO
+            @Html.Partial("_BotaoConfigurarEtapaProcesso", new BotaoConfigurarEtapaProcessoViewModel()
+            {
+                Action = Model.Action,
+                SeqProcesso = (SMCEncryptedLong)Model.SeqProcesso,
+                SeqEtapa = (SMCEncryptedLong)Model.SeqEtapaProcesso,
+                SeqConfiguracaoEtapa = (SMCEncryptedLong)Model.SeqConfiguracaoEtapa
+            })
+        }
+    }
+}

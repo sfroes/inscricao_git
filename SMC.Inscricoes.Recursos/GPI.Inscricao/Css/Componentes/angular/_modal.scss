@@ -1,0 +1,30 @@
+p-dialog {
+    .p-dialog-header {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        padding-bottom: 0.3rem;
+        padding-left: 0;
+        padding-right: 0;
+
+        span {
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
+
+    .smc-btn-custom {
+        margin-left: .1rem !important;
+    }
+
+    .p-dialog-footer {
+        border-top: 1px solid var(--ang-border-default);
+        padding-top: 1rem;
+    }
+
+    .p-dialog {
+        .p-dialog-mask {
+            background: rgba(0,0,0,.1) !important;
+        }
+    }
+}

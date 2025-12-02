@@ -1,0 +1,10 @@
+﻿@model HistoricoSituacaoCabecalhoViewModel
+
+@using (Smc.Header("headerCabecalho", SMCHeaderType.Primary)
+    .Item(prop => prop.DescricaoTipoProcesso, sizeSM: SMCSize.Grid8_24, sizeMD: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24, sizeXS: SMCSize.Grid8_24)
+    .Item(prop => prop.Seq, sizeSM: SMCSize.Grid2_24, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+    .Item(prop => prop.Descricao, sizeSM: SMCSize.Grid9_24, sizeMD: SMCSize.Grid9_24, sizeLG: SMCSize.Grid9_24, sizeXS: SMCSize.Grid9_24)
+    .Item(prop => prop.NomeCliente, sizeSM: SMCSize.Grid10_24, sizeMD: SMCSize.Grid10_24, sizeLG: SMCSize.Grid10_24, sizeXS: SMCSize.Grid10_24)
+    .Item(prop => prop.Inscrito, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+    .Begin())
+{ }

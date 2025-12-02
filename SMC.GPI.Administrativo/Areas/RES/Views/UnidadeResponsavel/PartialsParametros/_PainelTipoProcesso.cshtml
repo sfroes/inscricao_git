@@ -1,0 +1,14 @@
+﻿@model SMCEncryptedLong
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalEditarParametroTipoProcesso")
+        .CssClass("smc-btn-novo-icotext-destaque")
+        .SecurityToken(UC_RES_001_01_05.MANTER_TIPO_PROCESSO)
+        .Ajax(isPost: false, updateTargetId: "painelAjaxIncluirTipoProcesso")
+        .Url(Url.Action("IncluirConfiguracaoTipoProcesso", "UnidadeResponsavel", new { seqUnidadeResponsavel = Model })))
+)
+
+<div id="divGridTipoProcesso">
+    @Html.Action("ListarConfiguracoesTipoProcesso", "UnidadeResponsavel", new { @seqParametro = Model })
+</div>

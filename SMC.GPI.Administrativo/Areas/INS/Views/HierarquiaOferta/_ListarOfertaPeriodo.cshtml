@@ -1,0 +1,30 @@
+﻿@model SMCPagerModel<OfertaTaxaViewModel>
+
+@(Smc.List("listaDetalhaOfertaTaxa", Model)
+    .CssClass("smc-gpi-lista-sem-botoes")
+        .Pager("divListaOfertaPeriodoTaxa", "ListarOfertaPeriodoTaxa", "HierarquiaOferta")
+        .GroupByProperty(prop => prop.Descricao,
+        @<text>
+            @Html.Partial("_CabecalhoOfertaPeriodo", item)
+        </text>)
+        .HtmlTemplate(
+        @<text>
+            @if (item.Taxas != null && item.Taxas.Count() > 0)
+            {
+                foreach (var taxa in item.Taxas)
+                {
+                    <div class="smc-gpi-displayfor-block smc-list-item-agrupado smc-size-md-24 smc-size-lg-24 smc-size-xs-24 smc-size-sm-24">
+                        @Html.Partial("_TaxaPeriodoOferta", taxa)
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="smc-datagrid-no-results"><p>@Smc.GetUIResource("Mensagem_Oferta_Sem_Taxas")</p></div>
+            }
+
+        </text>
+        )
+)
+
+

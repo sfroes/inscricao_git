@@ -1,0 +1,55 @@
+﻿@model TipoHierarquiaOfertaViewModel
+
+@section Scripts{
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.ContextMenu)
+}
+
+@using (Smc.Header("HeaderTipoHierarquiaOferta", SMCHeaderType.Primary).CssClass("smc-header-botao")
+        .Item(prop => prop.Seq, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+        .Item(prop => prop.Descricao, sizeSM: SMCSize.Grid16_24, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+        .Begin())
+{
+    string guid = Guid.NewGuid().ToString();
+
+    @(Smc.ButtonSet()
+        .AddButton(Smc.Button(SMCButtonBehavior.Alterar)
+                 .Action("Editar", "TipoHierarquiaOferta", new { @seq = (SMCEncryptedLong)Model.Seq })
+                 .DisplayMode(SMCButtonDisplayMode.Icon)
+                 .Highlight()
+                 .Type(SMCButtonType.Link))
+    )
+}
+
+@using (Smc.Div("fieldsetCadastroMontagemTipoHierarquiaOferta").Begin())
+{
+
+    @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalAssociarTipoHierarquiaOferta")
+                .Text(Smc.GetUIResource("Botao_Novo_Item_Raiz_Hierarquia_Oferta"))
+                .Tooltip(Smc.GetUIResource("Botao_Novo_Item_Raiz_Hierarquia_Oferta_Tooltip"))
+                .Ajax(isPost: false, updateTargetId: "painelAjaxAssociarTipoHierarquiaOferta")
+                .CssClass("smc-btn-novo-icotext-destaque")
+                .SecurityToken(UC_INS_001_04_02.MANTER_TIPO_HIERARQUIA_OFERTA)
+                    .Url(Url.Action("AssociarTipoHierarquiaOferta", "TipoHierarquiaOferta",
+                        new { @seqTipoHieraquiaOferta = SMCDESCrypto.EncryptNumberForURL(Model.Seq.Value) })))
+
+        <div id="divHierarquiaOferta">
+            @Html.Action("ArvoreTipoHierarquiaOferta", new { seqTipoHierarquiaOferta = (SMCEncryptedLong)Model.Seq })
+        </div>
+}
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button(SMCButtonBehavior.Voltar).Action("Index", "TipoHierarquiaOferta").DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+)
+
+@using (Smc.ModalWindow("modalAssociarTipoHierarquiaOferta")
+        .Title(Smc.GetUIResource("Associar_Tipo_Hierarquia_Oferta_Modal_Titulo"))
+        .Form("AssociarTipoHierarquiaOferta", "SalvarAssociacaoTipoHierarquiaOferta", "TipoHierarquiaOferta", null, true, x => x.Ajax("#divHierarquiaOferta", fieldsContainerToRequest: "#divHierarquiaOferta"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{
+
+}
+
+

@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlteracaoOfertaTaxaNaoPermitidaBoletoPagoValoresDiferentesException" xml:space="preserve">
+    <value>O valor da taxa "{0}" paga é de R${1} e na nova oferta selecionada é de R${2}. Não é permitido selecionar uma nova oferta com valor de taxa distinto, pois o boleto já está pago.</value>
+  </data>
+  <data name="CodigoAutorizacaoInvalidoParaInscricaoException" xml:space="preserve">
+    <value>Authorization code i'snt valid for the selected offer.</value>
+  </data>
+  <data name="ConfiguracaoEtapaInvalidaException" xml:space="preserve">
+    <value>Invalid step configuration</value>
+  </data>
+  <data name="ConfiguracaoEtapaNaoVigenteException" xml:space="preserve">
+    <value>Subscription period for {0} is over.</value>
+  </data>
+  <data name="ConfiguracaoEtapaPaginaIdiomaInvalidaException" xml:space="preserve">
+    <value>Invalid configuration for paage x step x language</value>
+  </data>
+  <data name="DocumentoRequeridoNaoPermiteVariosArquivosException" xml:space="preserve">
+    <value>Uploading more than one file isn't allowed for "{0}".</value>
+  </data>
+  <data name="EnvioNotificacaoException" xml:space="preserve">
+    <value>Sending notification exception.</value>
+  </data>
+  <data name="EtapaProcessoEmManutencaoException" xml:space="preserve">
+    <value>Subscription processes is currently on maintance.</value>
+  </data>
+  <data name="ExtensaoDocumentoInvalidaException" xml:space="preserve">
+    <value>The file {0} is not allowed. Please upload one of the valid extensions: doc, docx, xls, xlsx, jpg, jpeg, png, pdf, rar, zip, ps. &lt;br&gt;</value>
+  </data>
+  <data name="InscricaoCanceladaException" xml:space="preserve">
+    <value>Your subscription is canceled for this proccess.</value>
+  </data>
+  <data name="InscricaoComOfertaInvalidaException" xml:space="preserve">
+    <value>Subscriptions for "{0}" are no longer avaliable. Go back to selection screen and select another option in order to finish your subscription process.</value>
+  </data>
+  <data name="InscricaoExigeCodigoException" xml:space="preserve">
+    <value>The selected offer demands that you enter a authorization code.</value>
+  </data>
+  <data name="InscricaoInvalidaException" xml:space="preserve">
+    <value>Invalid subscripion!</value>
+  </data>
+  <data name="InscricaoJaExistenteException" xml:space="preserve">
+    <value>Subscription already exists!</value>
+  </data>
+  <data name="InscricaoJaFinalizadaException" xml:space="preserve">
+    <value>Your registration is already completed and is not allowed to make changes. Find your subscription under "My Subscriptions" and click "See information" to see the data of your finished subscription.</value>
+  </data>
+  <data name="InscricaoSemTaxaException" xml:space="preserve">
+    <value>Para a oferta selecionada o pagamento de taxa é obrigatório, gentileza informar uma taxa.</value>
+  </data>
+  <data name="InscritoInvalidoException" xml:space="preserve">
+    <value>Invalid subscriber.</value>
+  </data>
+  <data name="JaExisteInscricaoIniciadaParaEsseGrupoOfertaException" xml:space="preserve">
+    <value>You've already started the subscription process for {0}. Please, find your subscritption under "My subscriptions" and click "Continue Subscritpion", to carry on.You'll be allowed to change your data if needed.</value>
+  </data>
+  <data name="LancamentoNotaClassificacaoDuplicadaException" xml:space="preserve">
+    <value>Theres already a candidate in the position {0}.</value>
+  </data>
+  <data name="LancamentoNotaInscricaoCanceladaException" xml:space="preserve">
+    <value>There are selected subscribers with cancelled subscription, thus it is not possible to enter rank and score.</value>
+  </data>
+  <data name="LancamentoNotaInscricaoNaoPossuiConfirmadaException" xml:space="preserve">
+    <value>There are selected subscribers with subscription not yet confirmed, thus it is not possible to enter rank and score.</value>
+  </data>
+  <data name="LancamentoNotaInscricaoNaoPossuiDeferidaException" xml:space="preserve">
+    <value>There are selected subscribers with subscription not yet granted thus it is not possible to enter rank and score.</value>
+  </data>
+  <data name="MaximoInscricoesPorInscritoAtingidoException" xml:space="preserve">
+    <value>You've already subscribed to this process and achieved the maximum of allowed subscriptions. Find your subscription under "My Subscriptions" and click "See information" to see the data of your finished subscription.</value>
+  </data>
+  <data name="NumeroMaximoTaxasExcedidoException" xml:space="preserve">
+    <value>The number of fees for {0} is above the maximum allowed ({1}).</value>
+  </data>
+  <data name="NumeroMinimoTaxasExcedidoException" xml:space="preserve">
+    <value>The number of fees for {0} is bellow the minimum allowed ({1}).</value>
+  </data>
+  <data name="OfertaPeriodoTaxaFechadaException" xml:space="preserve">
+    <value>The fee is not opened for the selected option.</value>
+  </data>
+  <data name="PesquisaInscricaoInvalidaException" xml:space="preserve">
+    <value>It wasn't possible to search for subscriptions.Please, inform more filters. Informe mais opções de filtro.</value>
+  </data>
+  <data name="ProcessoCanceladoException" xml:space="preserve">
+    <value>The selected proccess is canceled.</value>
+  </data>
+  <data name="ProcessoNaoConfiguradoNoIdiomaException" xml:space="preserve">
+    <value>The process is not yet configurated in the selected idiom.</value>
+  </data>
+  <data name="SeqParametroCreiDiferentesException" xml:space="preserve">
+    <value>There's more than one SeqParametroCrei configurado para essa oferta</value>
+  </data>
+  <data name="SituacaoNaoPossuiDestinosManuaisException" xml:space="preserve">
+    <value>The situation {0} doesn't allow manual change.</value>
+  </data>
+  <data name="SituacaoTokenNaoIdentificadaException" xml:space="preserve">
+    <value>It wasn't possible to find the situation "{0}" for the type of process.</value>
+  </data>
+  <data name="SitucaoExigeJustificativaException" xml:space="preserve">
+    <value>The situation "{0}" demands justistificative.Please input it.</value>
+  </data>
+  <data name="UN_inscricao_oferta_01" xml:space="preserve">
+    <value>You may not select the same value for two or more options .</value>
+  </data>
+  <data name="UN_inscrito_01" xml:space="preserve">
+    <value>There's already a subscriber for the logged user.</value>
+  </data>
+  <data name="UN_inscrito_02" xml:space="preserve">
+    <value>There's already a subscriber with that CPF.</value>
+  </data>
+  <data name="UsuarioInvalidoException" xml:space="preserve">
+    <value>It wasn't possible to identify the logged user's Seq.</value>
+  </data>
+  <data name="VersaoEntregueDiferenteExigidaSemObservacaoException" xml:space="preserve">
+    <value>The version of the document {0} is not the same as the required, please input a justication in the field Note.</value>
+  </data>
+</root>

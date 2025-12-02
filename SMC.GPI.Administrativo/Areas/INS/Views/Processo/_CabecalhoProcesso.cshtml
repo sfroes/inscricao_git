@@ -1,0 +1,35 @@
+﻿@model CabecalhoProcessoViewModel
+
+@if (Model.ExibirInformacoesCabecalho)
+{
+    using (Smc.Div("fieldsetCabecalho").Begin())
+    {
+        using (Smc.Header("headerCabecalho", SMCHeaderType.Primary).CssClass("smc-header-botao")
+            .Item(prop => prop.Seq, sizeSM: SMCSize.Grid3_24, sizeMD: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24, sizeXS: SMCSize.Grid3_24)
+            .Item(prop => prop.Descricao, sizeSM: SMCSize.Grid20_24, sizeMD: SMCSize.Grid20_24, sizeLG: SMCSize.Grid20_24, sizeXS: SMCSize.Grid20_24)
+            .Item(prop => prop.DescricaoTipoProcesso, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+
+            .Begin())
+        {
+            if (Model.ExibirBotaoConfiguracaoCabecalho)
+            {
+                @Html.Partial("_BotaoConfigurarProcesso", new BotaoConfigurarProcessoViewModel()
+                {
+                    Action = Model.Action,
+                    SeqProcesso = (SMCEncryptedLong)Model.Seq
+                })
+            }
+        }
+    }
+}
+else if (Model.ExibirBotaoConfiguracaoCabecalho)
+{
+    //using (Smc.ButtonSet().CssClass("smc-btn-configurar-topo-pagina").Begin())
+    //{
+    @Html.Partial("_BotaoConfigurarProcesso", new BotaoConfigurarProcessoViewModel()
+    {
+        Action = Model.Action,
+        SeqProcesso = (SMCEncryptedLong)Model.Seq
+    })
+    //}
+}

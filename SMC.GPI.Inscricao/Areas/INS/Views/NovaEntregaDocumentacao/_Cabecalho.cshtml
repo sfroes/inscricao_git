@@ -1,0 +1,29 @@
+﻿@model  NovaEntregaDocumentacaoCabecalhoViewModel
+
+@{
+    var header = Smc.Header("NovaEntregaDocumentacao", SMCHeaderType.Primary).CssClass("smc-gpi-header-entrega");
+
+    header.Item(prop => prop.Usuario, hideDescription: true);
+    header.Item(prop => prop.Processo, hideDescription: true);
+
+    if (!string.IsNullOrEmpty(Model.GrupoOferta))
+    {
+        header.Item(prop => prop.GrupoOferta,  hideDescription: true);
+    }
+
+    string ofertas = string.Empty;
+    if (Model.Oferta.SMCCount() > 0)
+    {
+        foreach (var oferta in Model.Oferta)
+        {
+            ofertas += "<div class='smc-gpi-lista-inscricoes-multiplas-ofertas smc-gpi-lista-inscricoes-oferta-cabecalho'>" + @oferta + "</div>";
+        }
+    }
+
+    header.Item("ofertas", ofertas, hideDescription: true);
+
+}
+
+@using (header.Begin())
+{
+}

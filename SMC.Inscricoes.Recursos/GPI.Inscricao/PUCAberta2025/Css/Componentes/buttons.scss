@@ -1,0 +1,179 @@
+﻿// BUTTONSET DA ÁREA DE CADASTRO
+.smc-gpi-linha-botoes {
+    border-top: 1px solid var(--color-primary-3);
+}
+
+div.smc-upload {
+    div.smc-uploadFile-contextWindowControls {
+        div.dropdown {
+            button.dropdown-toggle {
+                background: var(--color-secondary-4);
+            }
+        }
+    }
+}
+
+a.smc-btn-secundario,
+#formConfiguracao > .smc-buttonset-horizontal-primario a.smc-btn-voltar-icotext,
+#formConfiguracao #divConteudoPrincipal > .smc-buttonset-horizontal-primario a.smc-btn-voltar-icotext,
+#formularioAlterarSenha > .smc-buttonset-horizontal-primario a.smc-btn-voltar-icotext,
+#formularioAlterarSenha #divConteudoPrincipal > .smc-buttonset-horizontal-primario a.smc-btn-voltar-icotext,
+a.smc-btn-yes, a.smc-btn-no, .smc-wizard-barra-acoes a.smc-btn-anterior-icotext,
+a.smc-btn-fechar-icotext {
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+
+    &:before {
+        color: var(--color-primary);
+    }
+
+    &:hover {
+        color: var(--white);
+        background: var(--color-primary);
+    }
+}
+
+.smc-treeview-botao-limpar,
+.smc-treeview .smc-btn-visualizar-ico {
+    &:hover {
+        background-color: var(--white) !important;
+        color: var(--color-primary-2) !important;
+        border: 1px solid var(--color-primary-2) !important;
+    }
+}
+
+.smc-btn-fechar-icotext {
+    background-color: var(--white);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+
+    &:hover {
+        background-color: var(--color-primary) !important;
+        color: var(--white) !important;
+    }
+}
+
+.smc-buttonset-horizontal-secundario > .smc-button .smc-btn-visualizar-ico,
+.smc-buttonset-vertical-secundario > .smc-button .smc-btn-visualizar-ico {
+    padding: 0 0 3px 3px;
+}
+
+.voltar {
+    i {
+        &:before {
+            color: var(--color-primary);
+        }
+    }
+
+    &:hover {
+        i {
+            &:before {
+                color: var(--white);
+            }
+        }
+    }
+}
+
+.smc-btn-yes,
+.smc-btn-no {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+
+    &:hover,
+    &:focus {
+        background-color: var(--color-primary) !important;
+        color: var(--white) !important;
+        border: 1px solid var(--color-primary) !important;
+    }
+}
+
+.smc-linha-btn-terciario {
+    a {
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+
+        &:hover {
+            background-color: var(--color-primary) !important;
+            color: var(--white) !important;
+            border: 1px solid var(--color-primary);
+        }
+    }
+}
+
+app-root {
+    p-button {
+        button.smc-btn-secundario.smc-gpi-navegacao,
+        button.smc-btn-fechar-icotext.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-gpi-navegacao,
+        button.smc-btn-anterior-icotext.smc-gpi-navegacao,
+        button.smc-btn-yes.smc-gpi-navegacao,
+        button.smc-btn-no.smc-gpi-navegacao,
+        button.smc-btn-custom-secundario {
+            background-color: var(--white) !important;
+            color: var(--color-secondary) !important;
+            border: 1px solid var(--color-secondary) !important;
+
+            &:hover {
+                border: 1px solid var(--color-secondary) !important;
+                background-color: var(--color-secondary) !important;
+                color: var(--white) !important;
+
+                > span {
+                    color: var(--white);
+                }
+            }
+
+            > span {
+                color: var(--color-secondary);
+            }
+        }
+
+        > button.voltar {
+            &:before {
+                color: var(--color-secondary);
+            }
+
+            &:hover {
+                &:before {
+                    color: var(--white);
+                }
+            }
+        }
+
+        button.smc-btn-principal.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-principal.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-confirmar-icotext-destaque.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-proximo-icotext-destaque.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-btn-proximo-icotext-destaque.smc-gpi-navegacao,
+        button.smc-btn-confirmar-icotext-destaque.smc-gpi-navegacao,
+        button.smc-btn-custom {
+            color: var(--white) !important;
+            background-color: var(--color-secondary) !important;
+            border: 1px solid var(--color-secondary) !important;
+
+            &:hover {
+                border: 1px solid var(--color-secondary) !important;
+                background-color: var(--white) !important;
+                color: var(--color-secondary) !important;
+
+                > span {
+                    color: var(--color-secondary);
+                }
+            }
+
+            > span {
+                color: var(--white);
+            }
+        }
+
+        .smc-btn-principal.smc-btn-sm {
+            background-color: var(--color-secondary) !important;
+            border: 1px solid var(--color-secondary) !important;
+
+            &:hover {
+                background-color: var(--white) !important;
+                color: var(--color-secondary) !important;
+            }
+        }
+    }
+}

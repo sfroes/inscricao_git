@@ -1,0 +1,25 @@
+﻿@model List<OpcoesInscricaoViewModel>
+
+@(Smc.Grid("gridOpcoes", new SMCPagerModel<OpcoesInscricaoViewModel>(Model))
+    .AutoGenerateColumns()
+    .HideNavigator()
+    .HideRowNumber()
+    .HideRowsTotalizer()
+    .HideGridTitle()
+    .GridRowConfiguration((options, item) =>
+    {
+    var itemParsed = (item as OpcoesInscricaoViewModel);
+    if (itemParsed.Opcao == ViewBag.Opcao)
+        options.CssClass = "smc-grid-item-destaque";
+})
+)
+
+@*@foreach (var item in Model)
+{
+    using (Smc.Div().Size(SMCSize.Grid24_24).CssClass(item.Opcao == ViewBag.Opcao ? "smc-list-item-destaque" : string.Empty).Begin())
+    {
+        @Smc.DisplayFor(m => item.Opcao)
+        @Smc.DisplayFor(m => item.Oferta)
+        @Smc.DisplayFor(m => item.Situacao)
+    }
+}*@

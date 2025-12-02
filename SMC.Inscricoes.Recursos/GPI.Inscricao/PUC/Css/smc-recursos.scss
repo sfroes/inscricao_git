@@ -1,0 +1,14 @@
+﻿// As importações devem ocorrer NECESSARIAMENTE nesta ordem
+
+// ********** ----- Recursos compatilhados ------ ********** //
+//@import "../../Content/Css/smc-recursos.scss";
+@import "../../../../../Framework4.2/SMC.Recursos/Css/sass-padrao/smc-recursos-flex-simplificado-2.0.scss";
+
+// ********** ----- MIXINS ----- ********** //
+@import "../../Css/Componentes/mixins.scss";
+
+// ********** ----- ESTILO PADRÃO ----- ********** //
+@import "../../Css/smc-estilo.scss";
+
+// ********** ----- ESTILO CUSTOMIZADO (APLICAÇÃO) ----- ********** //
+@import "smc-estilo.scss";

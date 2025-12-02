@@ -1,0 +1,112 @@
+﻿@{
+    Layout = null;
+}
+
+@model ResumoInscricoesProcessoViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SumarioInscricoesProcesso</title>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div>
+        <div>@Model.Descricao</div>
+        <div id="divGrafico" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+        <div id="divTabela">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Inscrições iniciadas</td>
+                        <td>@Model.InscricoesIniciadas</td>
+                    </tr>
+                    <tr>
+                        <td>Inscrições canceladas</td>
+                        <td>@Model.InscricoesCanceladas</td>
+                    </tr>
+                    <tr>
+                        <td>Inscrições finalizadas</td>
+                        <td>@Model.InscricoesFinalizadas</td>
+                    </tr>
+                    <tr>
+                        <td>Inscrições confirmadas</td>
+                        <td>@Model.InscricoesConfirmadas</td>
+                    </tr>
+                    <tr>
+                        <td>Inscrições Deferidas</td>
+                        <td>@Model.InscricoesDeferidas</td>
+                    </tr>
+                    <tr>
+                        <td>Inscrições indeferidas</td>
+                        <td>@Model.InscricoesIndeferidas</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>@Model.Total</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script>
+        $(document).ready(function () {
+            $('#divGrafico').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Inscrições no processo - @Html.Raw(Model.Descricao)'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}:<b>{point.y}</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.y} ',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name:  'Quantidade',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Inscrições iniciadas',
+                        y: @Model.InscricoesIniciadas   },
+                    {
+                        name: 'Inscrições finalizadas',
+                        y: @Model.InscricoesFinalizadas,
+                    }, {
+                        name: 'Inscrições canceladas',
+                        y: @Model.InscricoesCanceladas,
+                    },{
+                        name: 'Inscrições confirmadas',
+                        y: @Model.InscricoesConfirmadas,
+                    },{
+                        name: 'Inscrições deferidas',
+                        y: @Model.InscricoesDeferidas,
+                    },{
+                        name: 'Inscrições indeferidas',
+                        y: @Model.InscricoesIndeferidas,
+                    }]
+                }]
+            });
+        });
+</script>
+</html>

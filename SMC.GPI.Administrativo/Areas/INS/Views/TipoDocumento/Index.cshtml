@@ -1,0 +1,23 @@
+﻿@model TipoDocumentoFiltroViewModel
+
+@using (Smc.Form("formPesquisaTipoDocumento", "ListarTipoDocumento").Ajax("#divGridTipoDocumento").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaTipoDocumento").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Descricao).Focus()
+        @Smc.EditorFor(prop => prop.TipoEmissao)
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_INS_001_05_02.MANTER_TIPO_DOCUMENTO)
+                 .Url(Url.Action("Incluir")))
+        )
+    }
+}
+<div id="divGridTipoDocumento">
+    @Smc.ActionList("ListarTipoDocumento", "TipoDocumento", initialListingDisabled: true)
+</div>

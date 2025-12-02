@@ -1,0 +1,3373 @@
+﻿@import "_smc-fonte.scss";
+
+$smc-caminho-recursos:"../../../../../../Recursos/4.0";
+
+$grid-columns: 24;
+
+// ----- Caminhos das imagens ----- //
+$smc-caminho-compartilhado: $smc-caminho-recursos + "/Images/"!default;
+$smc-caminho-compartilhado-idioma: $smc-caminho-compartilhado + "/smc-ico-idioma/"!default;
+$smc-caminho-aplicacao: "../../Content/Images/" !default;
+$smc-caminho-login: "../../Objectstore/Images/" !default;
+
+// ----- Caminhos das fontes ----- //
+$smc-caminho-fonte: "../../General/" !default;
+$smc-caminho-fonte-compartilhado: $smc-caminho-fonte;
+//$path-awesome: "../General/" !default; //caminho das fontes do font-awesome
+$path-awesome: "../General/" !default; //caminho das fontes do font-awesome
+$smc-caminho-fonte-aplicacao: "../General/" !default;
+$smc-caminho-fonte-login: "/Objectstore/General/" !default;
+
+
+// Font-faces
+// dentro das fontes ( CAMINHO DA FONTE, NOME CHAMADO NA APLICAÇÃO, NOME DO ARQUIVO )
+@include font-face($smc-caminho-fonte-aplicacao, "segoeui", "segoeui");
+@include font-face($smc-caminho-fonte-aplicacao, "BreeSerif-Regular", "BreeSerif-Regular");
+@include font-face($smc-caminho-fonte-login, "FontAwesome", "FontAwesome");
+
+
+// ********** ----- CORES PRINCIPAIS DO SISTEMA / BOTÕES E ITENS GERAIS ----- ********** //
+
+$smc-caminhoPie: "/Recursos/Css/sass-padrao/PIE/PIE.htc"!default;
+
+// ----- Fontes Padrões dos Sistemas ----- //
+%smc-fontePadrao {
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+// ----- Cores do Sistema ----- //
+// Base
+$smc-branco:                #ffffff!default;
+$smc-cinza:                 #7a7a7a!default; // Cinza adotado como padrão para textos gerais na aplicação (por isso, separado da escala de cinza).
+$smc-preto:                 #333333!default;
+$smc-vermelho:              #b02614!default;
+$smc-verde:                 #146504!default;
+$smc-cor-erro-texto:        #b94a48!default;
+$smc-cor-erro-background:   #ffe1e0!default;
+
+// Escala de Cinza
+
+$smc-cinza-01: #f8f8f8!default;
+$smc-cinza-02: #f0f0f0!default;
+$smc-cinza-03: #e5e5e5!default;
+$smc-cinza-04: #dcdcdc!default;
+$smc-cinza-05: #cccccc!default;
+$smc-cinza-06: #b3b3b3!default;
+$smc-cinza-07: #999999!default;
+$smc-cinza-08: #626262!default;
+$smc-cinza-09: #505050!default;
+$smc-cinza-10: #444444!default;
+
+// Paleta de Cores da Aplicação (PRINCIPAIS)
+$smc-cor-principal:     #085259!default;
+$smc-cor-principal-01:  #14727b!default;
+$smc-cor-principal-02:  #18838d!default;
+$smc-cor-principal-03:  #51aaae!default;
+$smc-cor-principal-04:  #3dbdc9!default;
+$smc-cor-principal-05:  #9acdd2!default;
+$smc-cor-principal-06:  #a8dee3!default;
+$smc-cor-principal-07:  #a6f6fd!default;
+$smc-cor-principal-08:  #d0eef1!default;
+$smc-cor-principal-09:  #eff9fa!default;
+$smc-cor-principal-10:  #effeff!default;
+
+
+// Paleta de Cores da Aplicação (SECUNDÁRIAS)
+$smc-cor-secundaria-01: #bb504b; 
+$smc-cor-secundaria-02: #d36147; // Botões login e gadget window (Active)
+$smc-cor-secundaria-03: #e8927e; // Botões login e gadget window (Hover)
+$smc-cor-secundaria-04: #f4dad3; 
+$smc-cor-secundaria-05: #fff0ed; 
+
+// Cores principais da identidade
+$smc-cor-principal:                     #18838d; // Cor principal do sistema.
+$smc-cor-principal-hover:               #3dbdc9; // Cor principal hover para botões primários.
+$smc-cor-principal-hover1:              #eff9fa; // Cor principal hover para botões destaque (highlight) e outros diversos hovers do sistema.
+$smc-cor-principal-bordas:              #9acdd2; // Cor principal das bordas sistema.
+$smc-cor-principal-headers-e-textos:    #085259; // Cor aplicada à headers, painel busca, textos e links (aplicados em fundo de cor clara).
+$smc-cor-principal-paineis-e-textos:    #9acdd2; // Cor aplicada ao painel da esquerda, textos e links (aplicados em funco de cor escura).
+$smc-cor-principal-sombras:             #a6f6fd; // Cor aplicada às sombras dos menus e das janelas de contexto.
+$smc-cor-principal-contextos:           #d0eef1; // Cor aplicada aos fundos de todos as formas de contexto: novo upload, sortpicker, context menu, context window e painel gadget. 
+$smc-cor-principal-backgrounds:         #ffffff; // Cor aplicada ao header (ribbon), à bgs de inputs e de blocos de detalhe editável.
+$smc-cor-principal-focus-destaque:      #effeff; // Cor aplicada ao campo no estado "focus" e à bgs de elementos internos de menus de contexto.
+$smc-cor-principal-titulos:             #bb504b; // Cor aplicada aos títulos das telas do sistema
+
+// Cores secundárias da identidade
+$smc-cor-secundaria:                    #bb504b; 
+$smc-cor-secundaria-titulos:            #bb504b; // Cor aplicada aos títulos secundários do sistema (Por exemplo: <legend> do detalhe editável).
+$smc-cor-secundaria-bordas:             #3dbdc9; // Cor das bordas demarcadoras de regiões no sistema (fieldsets e detalhe editável).
+$smc-cor-secundaria-backgrounds:        #fff0ed; // Cor aplicada aos fundo da linha recém incluída no detalhe editável e em outros
+
+
+// ********** ----- ÍCONES E IMAGENS ESPECÍFICAS DO GPI INSCRIÇÃO ----- ***** //
+$smc-gpi-ico-itens-home:$smc-caminho-aplicacao +"smc-ico-itens-home.png";
+// Cores e imagens específicas da aplicação (GPI Inscrição)
+// Painel da Esquerda
+$smc-gpi-botoes-direita-background: #14727b;
+$smc-gpi-painel-passos-background: #14727b;
+$smc-gpi-painel-passos-processo-contador: #a3e5eb;
+$smc-gpi-painel-passos-item-background: #18838d;
+$smc-gpi-painel-passos-item-concluido-background: #6a9fa4;
+$smc-gpi-painel-passos-item-atual-background: #14727b;
+$smc-gpi-painel-passos-item-emaberto-background: #18838d;
+$smc-gpi-painel-passos-item-emaberto-color: #aed0d3;
+$smc-gpi-painel-passos-ico-passo-atual: $smc-caminho-aplicacao+"smc-gpi-ico-passo-atual.png";
+$smc-gpi-painel-passos-ico-passo-emaberto:  $smc-caminho-aplicacao+"smc-gpi-ico-passo-emaberto.png";
+$smc-gpi-painel-passos-ico-passo-comalerta:  $smc-caminho-aplicacao+"smc-gpi-ico-passo-comalerta.png";
+$smc-gpi-painel-passos-ico-passo-concluido:  $smc-caminho-aplicacao+"smc-gpi-ico-passo-concluido.png";
+$smc-alaranjado: #ffa755;
+$smc-verde-claro:#00fd31;
+$smc-amarelo:#eec326;
+
+
+// Imagens Legenda
+$smc-ico-idioma-portuguese: $smc-caminho-aplicacao + "smc-ico-idioma-portuguese.png";
+
+
+// ----- Cores gerais de campos (INPUTS) ----- //
+// Cores campos (base)
+$smc-cor-borda-input: $smc-cinza-06!default;
+$smc-cor-placeholder: $smc-cinza-04!default;
+
+// Cores contador de caracteres do textarea
+$smc-cor-conta-caracteres: $smc-cinza-06!default;
+$smc-cor-conta-caracteres-cinza: $smc-cinza-05!default;
+$smc-cor-conta-caracteres-vermelho: #ddc0c0!default;
+
+// Cores texto selecionado
+$smc-cor-selecao: $smc-cor-principal-hover!default;
+
+// Cores campos desabilitados
+$smc-campo-desabilitado-borda: $smc-cinza-04!default;
+$smc-campo-desabilitado-background: $smc-cinza-03!default;
+$smc-input-texto-desabilitado-borda: $smc-cinza-05!default;
+$smc-input-texto-desabilitado-texto: $smc-cinza-08!default;
+$smc-input-texto-desabilitado-background: $smc-cinza-01!default;
+
+// Cores de campos com foco
+$smc-cor-campos-foco: $smc-cor-principal-focus-destaque!default;
+$smc-cor-borda-campos-foco: $smc-cor-secundaria-bordas!default;
+$smc-cor-campos-foco-sombra: 2px 2px 2px rgba(253,237,206,0.5)!default;
+$smc-campos-foco-outline:none!default;
+
+// Cor e ícones para validação de Campos
+$smc-cor-label-erro: $smc-cor-erro-texto!default!default;
+$smc-cor-input-erro-background: $smc-cor-erro-background!default;
+
+// Cores e ícones dos checkbox e radiobuttons
+$smc-cor-borda-checkbox: $smc-cinza-05!default;
+$smc-cor-borda-radiobutton: $smc-cinza-05!default;
+
+// ---- Cores e imagens do topo ----- //
+$smc-cor-topo-separador: $smc-cor-secundaria!default;
+//$smc-img-textura-topo: ;
+
+// ----- Imagem animada de preloader ----- //
+$img-preloader-uploadfile: $smc-caminho-compartilhado + "smc-img-uploadimage-loading.gif"!default;
+$img-preloader: $smc-caminho-aplicacao + "smc-img-preloader.gif"!default;
+$img-preloader-min: $smc-caminho-compartilhado + "smc-img-minpreloader.gif"!default;
+
+// ----- Ícones Gerais (ELIMINAR) ----- //
+$ico-confirmar: $smc-caminho-compartilhado + "smc-ico-confirmar.png"!default;
+$smc-ico-timepicker: $smc-caminho-compartilhado + "smc-ico-timepicker.png"!default;
+$ico-upload-loading: $smc-caminho-compartilhado + "smc-img-uploadimage-loading.gif"!default;
+
+// ---- White Space para cross browser ---- //
+$img-whitespace: $smc-caminho-compartilhado + "smc-img-crossbrowser-whitespace.png"!default;
+
+
+// ********** ----- LOGOTIPOS ----- ********** //
+$smc-logo-arquidiocese:"\e100";
+$smc-logo-arquidiocese-vertical:"\e101";
+$smc-logo-arquidiocese-icone:"\e104";
+$smc-logo-gti:"\e105";
+$smc-logo-gti-semassinatura:"\e106";
+$smc-logo-gti-icone:"\e107";
+$smc-logo-pucminas:"\e108";
+$smc-logo-pucminas-assinatura:"\e109";
+$smc-logo-pucminas-brasao:"\e110";
+$smc-logo-sociedade:"\e111";
+$smc-logo-sociedade-semassinatura:"\e112";
+$smc-logo-santamaria:"\e113";
+$smc-logo-santamaria-vertical:"\e114";
+$smc-logo-santamaria-icone:"\e115";
+
+
+// ********** ----- ÍCONES ESTILIZADOS FORA DO FONTAWESOME ----- ********** //
+$smc-font-aplicacoessmc-ico-gerar-relatorio: "\e900";
+
+
+// ********** ----- IMPRESSÃO ----- **********//
+$smc-img-brasao-pucminas-preto: "../Images/smc-puc-minas-brasao-preto.png";
+
+
+// ********** ----- ABAS ----- ********** //
+// Cores abas
+$smc-cor-aba-fonte-selec: $smc-cinza-10!default;
+$smc-cor-aba-fonte: $smc-cinza-07!default;
+$smc-btn-color-sec: $smc-branco!default;
+$smc-sombreamento-abas: $smc-cinza-05 0 -1px 3px 1px!default;
+
+// Configuração geral das abas
+$smc-tabs-content-position: relative!default;
+$smc-tabs-content-background-color: $smc-branco!default;
+$smc-tabs-content-margin-bottom: 30px!default;
+$smc-tabs-content-radius: 0 0 5px 5px!default;
+$smc-tabs-content-overflow:auto!default;
+
+// Abas parte superior
+$smc-tabs-header-height: 40px!default;
+$smc-tabs-header-padding: 5px 0 0 10px!default;
+$smc-tabs-header-overflow: hidden!default;
+
+// Aba base
+$smc-tabs-tab-float: left!default;
+$smc-tabs-tab-border-radius: 3px 3px 0 0!default;
+$smc-tabs-tab-margin: 0 5px 0 0!default;
+$smc-tabs-tab-position: relative!default;
+$smc-tabs-tab-z-index: 0!default;
+$smc-tabs-tab-padding: 10px!default;
+$smc-tabs-tab-background-color: $smc-branco!default;
+$smc-tabs-tab-background-border: solid 1px $smc-cinza-05!default;
+$smc-tabs-tab-font: normal normal bold 14px/16px 'bree_serif'!default;
+$smc-tabs-tab-hover-background-color: $smc-cor-principal-07!default;
+$smc-tabs-tab-hover-color: $smc-branco!default;
+$smc-tabs-tab-hover-background-position: 6px 5px!default;
+
+// Aba selecionada
+$smc-tabs-tab-selected-z-index: 3!default;
+$smc-tabs-tab-selected-border: solid 1px $smc-cinza-05!default;
+$smc-tabs-tab-selected-border-top: 2px solid $smc-cor-principal;
+$smc-tabs-tab-selected-hover-background-color: $smc-branco!default;
+$smc-tabs-tab-selected-color: $smc-cor-principal!default;
+
+// Abas com alinhamentos específicos (LEFT)
+$smc-tabs-align-left-tabs-content-width: 100%!default;
+$smc-tabs-align-left-tabs-content-padding: 2%!default;
+
+// Abas com alinhamentos específicos (CENTER)
+$smc-tabs-align-center-tabs-header-overflow: inherit!default;
+$smc-tabs-align-center-tabs-header-text-align: center!default;
+$smc-tabs-align-center-tabs-header-margin-bottom: -9px!default;
+$smc-tabs-align-center-tabs-tab-float: none!default;
+
+// Abas com alinhamentos específicos (RIGHT)
+$smc-tabs-align-right-tabs-tab-float: right!default;
+
+// Aba loading
+$smc-tabs-tab-loading-opacity: 0.90!default;
+$smc-tabs-tab-loading-filter: alpha(opacity=90)!default;
+$smc-tabs-tab-loading-border: none!default;
+$smc-tabs-tab-loading-color: $smc-branco!default;
+$smc-tabs-tab-loading-background-color: $smc-branco!default;
+$smc-tabs-tab-loading-z-index: 5!default;
+$smc-tabs-tab-loading-display: block!default;
+$smc-tabs-tab-loading-height: 20px!default;
+$smc-tabs-tab-loading-width: 30px!default;
+$smc-tabs-tab-loading-background-position: 50%!default;
+$smc-tabs-tab-loading-position: relative!default;
+$smc-tabs-tab-loading-margin: auto!default;
+
+// Ícones de validação
+$smc-aba-ico-incorreto: $smc-caminho-compartilhado + "smc-ico-validacao-aba-incorreto.png"!default;
+
+// Aba vertical (HEADER)
+$smc-tabs-vertical-header-width: 14%!default;
+$smc-tabs-vertical-header-display: inline-block!default;
+$smc-tabs-vertical-header-float: left!default;
+$smc-tabs-vertical-header-height: auto!default;
+$smc-tabs-vertical-header-span-display: block!default;
+$smc-tabs-vertical-header-span-width: 100%!default;
+$smc-tabs-vertical-header-span-text-align: left!default;
+$smc-tabs-vertical-header-span-clear: both!default;
+
+// Aba vertical (CONTENT)
+$smc-tabs-vertical-content-width: 86%!default;
+$smc-tabs-vertical-content-display: inline-block!default;
+$smc-tabs-vertical-content-height: auto!default;
+$smc-tabs-vertical-content-min-height: 350px!default;
+$smc-tabs-vertical-content-div-h2-color: $smc-cor-secundaria-01!default;
+$smc-tabs-vertical-content-div-h2-margin: 25px 0!default;
+$smc-tabs-vertical-content-div-h2-padding: 0 0 0 3px!default;
+$smc-tabs-vertical-content-div-h2-width: 96%!default;
+$smc-tabs-vertical-content-div-h2-font-size: 25px!default;
+$smc-tabs-vertical-content-div-h2-font-family: 'segoeui'!default;
+$smc-tabs-vertical-content-div-h2-font-weight: normal!default;
+$smc-tabs-vertical-content-div-h2-border-bottom: 1px dashed $smc-cor-principal-06!default;
+$smc-tabs-vertical-content-div-ul-li-min-height: 60px!default;
+$smc-tabs-vertical-content-div-span-color: $smc-cor-secundaria-01!default;
+$smc-tabs-vertical-content-div-span-font-family: 'segoeui', Arial, sans-serif!default;
+$smc-tabs-vertical-content-div-span-font-size: 25px!default;
+$smc-tabs-vertical-content-div-span-position: relative!default;
+$smc-tabs-vertical-content-div-span-top: 37px!default;
+$smc-tabs-vertical-content-div-span-background: transparent!default;
+$smc-tabs-vertical-content-div-span-margin: 0!default;
+$smc-tabs-vertical-content-div-datagrid-conteudo-border: none!default;
+$smc-tabs-vertical-content-fieldset-ul-li-h2-color: $smc-cor-secundaria-01!default;
+$smc-tabs-vertical-content-fieldset-ul-li-h2-margin: 0 0 10px 0!default;
+$smc-tabs-vertical-content-fieldset-ul-li-h2-padding: 0 0 0 3px!default;
+$smc-tabs-vertical-content-fieldset-ul-li-h2-font-size: 15px!default;
+$smc-tabs-vertical-content-fieldset-ul-li-h2-width: 96%!default;
+
+
+// ********** ----- ACESSIBILIDADE ----- ********** //
+$smc-contraste-background:#000!default;
+$smc-contraste-color:#fff !default;
+$smc-contraste-borda:#cecece!default;
+$smc-contraste-background-hover:#4b4b4b!default;
+$smc-contraste-borda-destaque:#fff000!default;
+$smc-contraste-color-destaque: #000 !default;
+
+
+// ********** ----- ACCORDION ----- ********** //
+// Cores acordeom
+$smc-cor-acordeon-titulo: $smc-cinza-08!default;
+$smc-cor-acordeon-texto: $smc-cinza-09!default;
+
+// Estrutura básica acordeon
+$smc-acordeon-borda: solid 1px $smc-cinza-04!default;
+
+// Section acordeon aberta
+$smc-acordeon-section-borda: solid 1px $smc-cor-principal!default;
+
+// Section acordeon
+$smc-acordeon-section-margin: 2px!default;
+$smc-acordeon-section-border-radius: 6px!default;
+$smc-acordeon-section-padding: 0 15px!default;
+$smc-acordeon-section-width:100%!default;
+
+// Section acordeon (H3)
+$smc-acordeon-section-h3-width: 100%!default;
+$smc-acordeon-section-h3-cursor: pointer!default;
+$smc-acordeon-section-h3-position: relative!default;
+$smc-acordeon-section-h3-z-index: 999!default;
+$smc-acordeon-section-h3-margin: -18px 0 0 0!default;
+$smc-acordeon-section-h3-top: -18px!default;
+$smc-acordeon-section-h3-height:35px;
+
+// Section acordeon (A)
+$smc-acordeon-section-a-top: -20px!default;
+$smc-acordeon-section-a-position: absolute!default;
+
+// Section acordeon (SETAS)
+$smc-acordeon-section-setas-font-size: 2em!default;
+$smc-acordeon-section-setas-position: relative!default;
+$smc-acordeon-section-setas-top: 15px!default;
+$smc-acordeon-section-setas-float: right!default;
+$smc-acordeon-section-setas-z-index: 0!default;
+$smc-acordeon-section-seta-up-color: $smc-cor-secundaria-03!default;
+$smc-acordeon-section-seta-down-color: $smc-cinza-03!default;
+
+
+// ********** ----- ALERTAS ----- ********** //
+// Cores alertas
+$smc-alertas-borda: $smc-cor-principal!default;
+$smc-alertas-background: $smc-branco!default;
+$smc-alertas-fechar: $smc-preto!default;
+$smc-alertas-texto: $smc-cor-principal!default;
+$smc-alertas-link: $smc-branco!default;
+
+// Alertas base
+$smc-alertas-line-height: 1.4em!default;
+$smc-alertas-border-radius: 3px!default;
+$smc-alertas-margin: 0 0 5px 0!default;
+$smc-alertas-first-child-display: none!default;
+
+// Alertas header
+$smc-alertas-header-padding: 3px 9px 0!default;
+$smc-alertas-header-border: none!default;
+$smc-alertas-header-font-size: 13px!default;
+
+// Alertas wrapper
+$smc-alertas-wrapper-line-height: 1.3em!default;
+
+// Instruções preenchimento (CONTAINER)
+//$smc-instrucoes-preenchimento-container:;
+$smc-instrucoes-preenchimento-container-float: left!default;
+$smc-instrucoes-preenchimento-container-display: block!default;
+$smc-instrucoes-preenchimento-container-width: 18px!default;
+$smc-instrucoes-preenchimento-container-height: 18px!default;
+$smc-instrucoes-preenchimento-container-z-index: 1040!default;
+$smc-instrucoes-preenchimento-containermax-height: 150px!default;
+
+// Instruções preenchimento (JANELA)
+$smc-instrucoes-preenchimento-janela-min-height:30px!default;
+$smc-instrucoes-preenchimento-janela-max-height:250px!default;
+$smc-instrucoes-preenchimento-janela-min-width:250px!default;
+$smc-instrucoes-preenchimento-janela-maxwidth:50%!default;
+$smc-instrucoes-preenchimento-janela-overflow-y:auto!default;
+$smc-instrucoes-preenchimento-janela-display: none!default;
+$smc-instrucoes-preenchimento-janela-position: absolute!default;
+$smc-instrucoes-preenchimento-janela-z-index: 1040!default;
+$smc-instrucoes-preenchimento-janela-conteudo-box-shadow: -2px 2px 3px 0 #fde5b7!default;
+$smc-instrucoes-preenchimento-janela-conteudo-background-color: #fffef6!default;
+$smc-instrucoes-preenchimento-janela-conteudo-radius: 3px!default;
+$smc-instrucoes-preenchimento-janela-conteudo-padding: 10px!default;
+$smc-instrucoes-preenchimento-janela-border: 1px solid #fde5b7!default;
+
+// Instruções preenchimento (SETA)
+$smc-instrucoes-preenchimento-seta-width: 0!default;
+$smc-instrucoes-preenchimento-seta-height: 0!default;
+$smc-instrucoes-preenchimento-seta-bottom: 18px!default;
+$smc-instrucoes-preenchimento-seta-display: block!default;
+$smc-instrucoes-preenchimento-seta-background-position: 2px -2px!default;
+$smc-instrucoes-preenchimento-seta-padding-left: 1px!default;
+$smc-instrucoes-preenchimento-seta-cor: #fde5b7!default;
+
+// Instruções preenchimento (ICO)
+$smc-instrucoes-preenchimento-ico-instrucoes-width: 20px!default;
+$smc-instrucoes-preenchimento-ico-instrucoes-color: #fdcc6e!default;
+$smc-instrucoes-preenchimento-ico-font-size: 18px!default;
+
+// Alertas bottom (LEFT / RIGHT)
+$smc-alertas-bottom-position: fixed!default;
+$smc-alertas-bottom-bottom: 0!default;
+$smc-alertas-bottom-right: 0!default;
+$smc-alertas-bottom-margin-bottom: 5px!default;
+$smc-alertas-bottom-z-index: 99!default;
+
+// Alertas "close"
+$smc-alertas-fechar-text-align: right!default;
+$smc-alertas-fechar-background-color: transparent!default;
+$smc-alertas-fechar-width: 10px!default;
+$smc-alertas-fechar-float: right!default;
+$smc-alertas-fechar-margin-right: 5px!default;
+
+// Alertas message
+$smc-alertas-message-width: 180px!default;
+$smc-alertas-message-padding: 5px 10px!default;
+$smc-alertas-message-min-height: 40px!default;
+$smc-alertas-message-fechar-z-index: 99!default;
+$smc-alertas-message-fechar-float: right!default;
+$smc-alertas-message-fechar-font-weight: bold!default;
+$smc-alertas-message-fechar-font-size: 1em!default;
+
+// Alertas "closer"
+$smc-alertas-closer-padding-top: 2px!default;
+$smc-alertas-closer-padding-bottom: 2px!default;
+$smc-alertas-closer-font-size: 11px!default;
+$smc-alertas-closer-text-align: center!default;
+$smc-alertas-closer-margin: 0!default;
+
+
+// ********** ----- BUSCA ----- ********** //
+// Cores busca
+$smc-busca-funcionalidade-cor-texto: $smc-branco!default;
+$smc-busca-funcionalidade-cor-botao: $smc-cor-principal-02!default;
+$smc-busca-funcionalidade-cor-texto-destaque: $smc-cinza!default;
+$smc-busca-funcionalidade-cor-texto-hover: $smc-cor-secundaria!default;
+
+// Configurações gerais da busca
+$smc-busca-funcionalidade-ico-botao: $smc-caminho-compartilhado + "smc-ico-lupa.png"!default;
+$smc-busca-funcionalidade-z-index: 60!default;
+$smc-busca-funcionalidade-padding: 10px 15px!default;
+$smc-busca-funcionalidade-margin: 8px 0 8px 0!default;
+$smc-busca-funcionalidade-input-background:$smc-branco!default;
+
+// Input
+$smc-busca-funcionalidade-input-radius: 0!default;
+$smc-busca-funcionalidade-input-width: 96%!default;
+$smc-busca-funcionalidade-input-border: solid 1px $smc-cor-principal-05!default;
+$smc-busca-funcionalidade-input-float: left!default;
+$smc-busca-funcionalidade-position: relative!default;
+$smc-busca-funcionalidade-margin-top: 10px!default;
+
+// Painel
+$smc-busca-funcionalidade-painel-background-color: $smc-cor-principal-headers-e-textos!default;
+$smc-busca-funcionalidade-painel-overflow: hidden!default;
+$smc-busca-funcionalidade-painel-position: absolute!default;
+$smc-busca-funcionalidade-painel-min-width: 96%!default;
+$smc-busca-funcionalidade-painel-display: none!default;
+$smc-busca-funcionalidade-painel-border: solid 1px $smc-cinza-02!default;
+$smc-busca-funcionalidade-painel-box-shadow: none!default;
+$smc-busca-funcionalidade-painel-margin: 31px 0 0 0!default;
+
+// Painel > ul > li - Itens
+$smc-busca-funcionalidade-painel-ul-padding: 15px 20px 15px 20px!default;
+$smc-busca-funcionalidade-painel-ul-li-span-font-size: 16px!default;
+$smc-busca-funcionalidade-painel-ul-li-span-font-family: 'segoeui', Arial, sans-serif!default;
+$smc-busca-funcionalidade-painel-ul-li-span-a-color: $smc-branco!default;
+$smc-busca-funcionalidade-painel-ul-li-width: 200px!default;
+$smc-busca-funcionalidade-painel-ul-li-margin: 0 0 20px 0!default;
+$smc-busca-funcionalidade-painel-ul-li-padding: 15px!default;
+$smc-busca-funcionalidade-painel-ul-li-float: left!default;
+$smc-busca-funcionalidade-painel-ul-li-nth-child-clear: left!default;
+$smc-busca-funcionalidade-painel-ul-li-first-child-padding: 17px 0 0 0!default;
+
+// Não encontrado
+$smc-busca-funcionalidade-nao-encontrado-display: none!default;
+$smc-busca-funcionalidade-nao-encontrado-color: $smc-branco!default;
+$smc-busca-funcionalidade-nao-encontrado-font-family: 'segoeui', Arial, sans-serif!default;
+$smc-busca-funcionalidade-nao-encontrado-font-style: italic!default;
+$smc-busca-funcionalidade-nao-encontrado-width: 100%!default;
+$smc-busca-funcionalidade-nao-encontrado-margin: 0 0 10px 0!default;
+$smc-busca-funcionalidade-nao-encontrado-padding: 0 0 20px 0!default;
+$smc-busca-funcionalidade-nao-encontrado-text-align: center!default;
+
+// Botão
+$smc-busca-funcionalidade-botao-border-radius: 0 3px 3px 0!default;
+$smc-busca-funcionalidade-botao-width: 51px!default;
+$smc-busca-funcionalidade-botao-height: 31px!default;
+$smc-busca-funcionalidade-botao-margin: 8px 0 8px -47px!default;
+$smc-busca-funcionalidade-botao-float: left!default;
+$smc-busca-funcionalidade-botao-background-position: 18px 10px!default;
+$smc-busca-funcionalidade-botao-before-color:$smc-branco !default;
+$smc-busca-funcionalidade-botao-before-font-size: 16px !default;
+$smc-busca-funcionalidade-botao-before-margin-left: 18px !default;
+$smc-busca-funcionalidade-botao-before-line-height: 18px !default;
+
+// Link e Link Destaque
+$smc-busca-funcionalidade-link: $smc-branco!default;
+$smc-busca-funcionalidade-link-font-size: 11px!default;
+$smc-busca-funcionalidade-link-destaque: $smc-branco!default;
+$smc-busca-funcionalidade-link-destaque-font-variant: normal!default;
+$smc-busca-funcionalidade-link-destaque-font-style: normal!default;
+$smc-busca-funcionalidade-link-destaque-font-weight: bolder!default;
+$smc-busca-funcionalidade-link-destaque-letter-spacing: 0!default;
+$smc-busca-funcionalidade-link-destaque-font-size: 13px!default;
+$smc-busca-funcionalidade-link-destaque-font-height: 16px!default;
+$smc-busca-funcionalidade-link-destaque-font-family: 'segoeui', Arial, sans-serif !default;
+
+// Backdrop
+$smc-busca-funcionalidade-backdrop-color: transparent!default;
+$smc-busca-funcionalidade-backdrop-z-index: 50!default;
+$smc-busca-funcionalidade-backdrop-bottom: 0!default;
+$smc-busca-funcionalidade-backdrop-left: 0!default;
+$smc-busca-funcionalidade-backdrop-right: 0!default;
+$smc-busca-funcionalidade-backdrop-top: 0!default;
+$smc-busca-funcionalidade-backdrop-position: fixed!default;
+$smc-busca-funcionalidade-backdrop-display: none!default;
+
+
+// ********** ----- BOTÕES ----- ********** //
+// Cores botões em formato PADRÃO
+$smc-btn-cor-padrao-active-bg: $smc-btn-color-sec!default;
+$smc-btn-cor-padrao-active-borda:$smc-cinza!default;
+$smc-btn-cor-padrao-active-texto: $smc-preto!default;
+$smc-btn-cor-padrao-hover-bg: $smc-cor-principal-hover!default;
+$smc-btn-cor-padrao-hover-borda:$smc-cor-principal!default;
+$smc-btn-cor-padrao-hover-texto: $smc-branco!default;
+//
+$smc-btn-borda: solid 1px!default;
+
+// Cores botões em formato DESTAQUE
+$smc-btn-cor-destaque-active-bg: $smc-cor-principal!default;
+$smc-btn-cor-destaque-active-borda:$smc-cor-principal!default;
+$smc-btn-cor-destaque-active-texto: $smc-branco!default;
+$smc-btn-cor-destaque-hover-bg: $smc-cor-principal-hover1!default;
+$smc-btn-cor-destaque-hover-borda:$smc-cinza!default;
+$smc-btn-cor-destaque-hover-texto: $smc-preto!default;
+
+// Cores botões de ação NEGATIVA
+$smc-btn-cor-negativa-active-bg: $smc-vermelho!default;
+$smc-btn-cor-negativa-active-borda: $smc-vermelho!default;
+$smc-btn-cor-negativa-active-texto: $smc-branco!default;
+$smc-btn-cor-negativa-hover-bg: $smc-branco!default;
+$smc-btn-cor-negativa-hover-borda: $smc-vermelho!default;
+$smc-btn-cor-negativa-hover-texto: $smc-vermelho!default;
+$smc-btn-cor-sombra-foco: 2px 2px 2px rgba(179,179,179,0.5)!default;
+
+// Cores botões SECUNDARIOS em formato DESTAQUE
+$smc-btn-cor-destaque-sec-active-bg: $smc-cor-principal!default;
+$smc-btn-cor-destaque-sec-active-borda: transparent!default;
+$smc-btn-cor-destaque-sec-active-texto: $smc-branco!default;
+$smc-btn-cor-destaque-sec-hover-bg: $smc-cor-principal-hover1!default;
+$smc-btn-cor-destaque-sec-hover-borda: $smc-cinza!default;
+$smc-btn-cor-destaque-sec-hover-texto: $smc-preto!default;
+
+// Cores botões SECUNDARIOS de ação NEGATIVA
+$smc-btn-cor-negativa-sec-active-bg: $smc-vermelho!default;
+$smc-btn-cor-negativa-sec-active-borda: $smc-vermelho!default;
+$smc-btn-cor-negativa-sec-active-texto: $smc-branco!default;
+$smc-btn-cor-negativa-sec-hover-bg: $smc-branco!default;
+$smc-btn-cor-negativa-sec-hover-borda: $smc-vermelho!default;
+$smc-btn-cor-negativa-sec-hover-texto: $smc-vermelho!default;
+
+// Botão desabilitado
+$smc-cor-btn-desabilitado-background: $smc-cinza-04!default;
+$smc-cor-btn-desabilitado-borda: $smc-cinza-04!default;
+$smc-cor-btn-desabilitado-texto: $smc-cinza!default;
+
+// Buttonset Horizontal Primário
+$smc-buttonset-horizontal-primario-display: inline-block!default;
+$smc-buttonset-horizontal-primario-margin-bottom: 15px!default;
+$smc-buttonset-horizontal-primario-text-align: right!default;
+$smc-buttonset-horizontal-primario-float: right!default;
+$smc-buttonset-horizontal-primario-clear:both!default;
+$smc-buttonset-horizontal-primario-interno-float: left!default;
+$smc-buttonset-horizontal-primario-dropdown-float-:right!default;
+//$smc-buttonset-horizontal-primario-dropdown-width:;
+$smc-buttonset-horizontal-primario-dropdown-toggle-float:left!default;
+$smc-fieldset-filter-buttonset-padding-top: 24px!default;
+
+// Buttonset Horizontal Secundário
+$smc-buttonset-horizontal-secundario-display: inline-block!default;
+$smc-buttonset-horizontal-secundario-width: 100%!default;
+$smc-buttonset-horizontal-secundario-clear: both!default;
+$smc-buttonset-horizontal-secundario-dropdown-float:left!default;
+//$smc-buttonset-horizontal-secundario-dropdown-width:;
+
+// Botão Mais Opções (GRUPO)
+$smc-btn-mais-opcoes-grupo-botao-padding-right: 28px!default;
+$smc-btn-mais-opcoes-grupo-botao-margin-right: -17px!default;
+
+// Botão Mais Opções (SETA)
+$smc-btn-mais-opcoes-seta-padding: 0 5px!default;
+$smc-btn-mais-opcoes-seta-margin: 1px 0 0 -4px!default;
+$smc-btn-mais-opcoes-seta-disable-cursor: no-drop!default;
+$smc-btn-mais-opcoes-seta-background-color: $smc-cor-principal!default;
+$smc-btn-mais-opcoes-seta-height: 31px!default;
+$smc-btn-mais-opcoes-seta-border-color: $smc-cor-principal!default;
+$smc-btn-mais-opcoes-seta-border-radius: 0 3px 3px 0!default;
+$smc-btn-mais-opcoes-seta-background-position: center 11px!default;
+$smc-btn-mais-opcoes-seta-background-size: 10px!default;
+$smc-btn-mais-opcoes-seta-hover-background-position: center -12px!default;
+$smc-btn-mais-opcoes-seta-hover-background-color: $smc-branco!default;
+$smc-btn-mais-opcoes-seta-hover-color: $smc-cor-principal!default;
+$smc-btn-mais-opcoes-seta-hover-border-color: $smc-cor-principal!default;
+
+// Cores janela de contexto (DROPDOWN)
+$smc-dropdown-menu-sombreamento: $smc-cor-principal-sombras!default;
+$smc-dropdown-menu-cor-background: $smc-cor-principal-contextos!default;
+$smc-dropdown-menu-borda: solid 1px $smc-cor-principal!default;
+$smc-dropdown-menu-cor-texto: $smc-cor-principal-headers-e-textos!default;
+$smc-dropdown-menu-cor-texto-hover: $smc-cor-secundaria!default;
+$smc-dropdown-menu-cor-texto-font-size:12px !default;
+$smc-dropdown-menu-cor-texto-font-family: 'segoeui', Arial, sans-serif !default;
+
+// Configurações gerais da janela de contexto (DROPDOWN)
+$smc-dropdown-menu-text-align: left!default;
+$smc-dropdown-menu-box-shadow: 0 2px 4px $smc-dropdown-menu-sombreamento!default;
+$smc-dropdown-menu-border-radius: 3px!default;
+$smc-dropdown-menu-div-clear: both!default;
+$smc-dropdown-menu-div-display: block !default;
+$smc-dropdown-menu-div-border: solid 1px $smc-cinza-03 !default; 
+$smc-dropdown-menu-div-padding: 6px 0 10px 0 !default;
+
+// Botões de controle de acessibilidade
+$smc-btn-fonte-acessibilidade-background-color: $smc-cor-principal-01!default;
+$smc-btn-fonte-acessibilidade-border: 1px solid $smc-cor-principal-03!default;
+$smc-btn-fonte-acessibilidade-color: $smc-branco!default;
+$smc-btn-fonte-acessibilidade-margin-left: -2px!default;
+
+// Botão configurar do topo da página
+$smc-btn-configurar-topo-pagina-position: absolute!default;
+$smc-btn-configurar-topo-pagina-z-index: 9!default;
+$smc-btn-configurar-topo-pagina-right: 1.5%!default;
+$smc-btn-configurar-topo-pagina-margin-top: -50px!default;
+
+
+// ********** ----- DATA GRID ----- ********** //
+// Cores Grid
+$smc-grid-cor-cabecalho: $smc-cor-principal-headers-e-textos!default;
+$smc-grid-cor-cabecalho-borda: $smc-cor-principal-headers-e-textos!default;
+$smc-grid-cor-cabecalho-span: $smc-branco!default;
+$smc-grid-cor-header: $smc-cor-principal-02!default;
+$smc-grid-cor-header-texto: $smc-branco!default;
+$smc-grid-cor-linha: $smc-branco!default;
+$smc-grid-cor-linha-hover: $smc-cinza-04!default;
+$smc-grid-cor-alternada: $smc-cinza-01!default;
+$smc-grid-cor-borda: $smc-cinza-02!default;
+$smc-grid-cor-grid-paginador: $smc-cinza-07!default;
+$smc-grid-cor-btn-borda: $smc-cinza-06!default;
+$smc-grid-cor-btn-secundaria: $smc-branco!default;
+$smc-grid-cor-btn-borda-hover: $smc-cinza-06!default;
+$smc-grid-cor-paginador-background: $smc-branco!default;
+$smc-grid-cor-icone-borda: $smc-cor-principal-bordas!default;
+$smc-grid-cor-cinza: $smc-cinza-02!default;
+$smc-grid-border-top: 1px solid $smc-grid-cor-borda !default;
+$smc-grid-border-bottom: 1px solid $smc-grid-cor-borda !default;
+$smc-grid-border-left: 1px solid $smc-grid-cor-borda !default;
+$smc-grid-border-right: 1px solid $smc-grid-cor-borda !default;
+
+// Coluna de botões do grid
+$smc-grid-coluna-botoes-width: 80px!default;
+
+// Número linha
+$smc-grid-numerolinha-color: $smc-cinza-06!default;
+$smc-grid-numerolinha-width: 30px!default;
+$smc-grid-numerolinha-font-size: 11px!default;
+$smc-grid-numerolinha-padding: 0!default;
+
+// Header
+$smc-grid-header-height: 33px!default;
+$smc-grid-header-span-first-child-font-size: 14px!default;
+$smc-grid-header-span-first-child-margin: 7px 0 0 10px!default;
+$smc-grid-header-span-first-child-float: left!default;
+$smc-grid-header-span-first-child-font-family: 'segoeui', Arial, sans-serif !default;
+$smc-grid-header-text-transform: capitalize!default;
+
+// Header (SORTPICKER)
+$smc-grid-header-sortpicker-margin: 0 5px -5px 5px!default;
+$smc-grid-header-sortpicker-margin-button: -3px 1px 0 0!default;
+$smc-grid-header-sortpicker-height: 33px!default;
+$smc-grid-header-sortpicker-text-align: right!default;
+$smc-grid-header-sortpicker-background-color: transparent!default;
+
+// Header (THEAD)
+$smc-grid-thead-tr-th-font-size: 12px!default;
+$smc-grid-thead-tr-th-font-weight: bold!default;
+$smc-grid-thead-tr-th-word-wrap: break-word!default;
+$smc-grid-thead-tr-th-vertical-align: middle!default;
+$smc-grid-thead-tr-th-padding: 3px 10px!default;
+$smc-grid-thead-tr-th-text-align: left!default;
+$smc-grid-thead-tr-th-span-margin: 0 0 0 5px!default;
+$smc-grid-thead-tr-th-background-color: $smc-branco!default;
+
+// Corpo do grid (TBODY)
+$smc-grid-overflow: visible!default;
+$smc-grid-border: solid 1px $smc-cor-principal!default;
+$smc-grid-radius: 0!default;
+$smc-grid-background:$smc-branco!default;
+$smc-grid-table-width: 99.9999%!default;
+$smc-grid-table-border: none!default;
+$smc-grid-tbody-tr-td-height: 28px!default;
+$smc-grid-tbody-tr-td-padding: 5px!default;
+$smc-grid-tbody-tr-td-color: $smc-cinza!default;
+
+// Conteúdo
+$smc-grid-conteudo-margin: 5px 0!default;
+$smc-grid-conteudo-position: relative!default;
+$smc-grid-conteudo-radius: 0!default;
+
+// Alerta processando local
+$smc-grid-alerta-processando-local-imagem: $smc-caminho-compartilhado + "smc-img-minpreloader.gif"!default;
+$smc-grid-alerta-processando-local-background-cor: $smc-branco!default;
+$smc-grid-alerta-processando-local-font-cor: $smc-branco!default;
+$smc-grid-alerta-processando-local-width: 20px!default;
+$smc-grid-alerta-processando-local-display: block!default;
+$smc-grid-alerta-processando-local-height: 20px!default;
+$smc-grid-alerta-processando-local-opacidade: 0.90!default;
+$smc-grid-alerta-processando-local-border: none!default;
+$smc-grid-alerta-processando-local-z-index: 5!default;
+
+// Loading
+$smc-grid-loading-background-color: $smc-branco!default;
+$smc-grid-loading-borda: $smc-branco!default;
+$smc-grid-loading-width: 100%!default;
+$smc-grid-loading-height: 100%!default;
+$smc-grid-loading-margin: -1px!default;
+$smc-grid-loading-background-position: 50%!default;
+
+// Lista com marcadores dentro do grid
+$smc-datagrid-marcadores-ul-padding: 5px 0 7px 0!default;
+$smc-datagrid-marcadores-ul-li-display: block!default;
+$smc-datagrid-marcadores-ul-li-margin: 5px 0!default;
+$smc-datagrid-marcadores-ul-li-before-content: "-"!default;
+
+// Ordenação
+$smc-grid-ordenacao-background-position: right 8px!default;
+
+// No results
+$smc-grid-no-results-padding: 10px 0 0 0!default;
+$smc-grid-no-results-margin: 10px 0 0 0!default;
+$smc-grid-no-results-color: $smc-preto!default;
+$smc-grid-no-results-border-color: $smc-cor-principal!default;
+$smc-grid-no-results-text-align: center!default;
+$smc-grid-no-results-display: block!default;
+$smc-grid-no-results-clear: both!default;
+
+// Barra de ferramentas do grid
+$smc-grid-header-botoes-width: auto!default;
+$smc-grid-header-botoes-position: absolute!default;
+$smc-grid-header-botoes-margin-top: 4px!default;
+$smc-grid-header-botoes-max-height: 27px!default;
+$smc-grid-header-botoes-right: 2.3%!default;
+
+// Ícones barra de ferramentas do grid
+$ico-cresce: $smc-caminho-compartilhado+"smc-ico-reordenar-cresce.png"!default;
+$ico-decresce: $smc-caminho-compartilhado+"smc-ico-reordenar-decresce.png"!default;
+
+// Coluna com checkboxes
+$smc-datagrid-column-check-min-width: 20px!default;
+$smc-datagrid-column-check-padding-left: 5px!default;
+
+// Corpo do grid ((TFOOT)
+$smc-grid-tfoot-grid-paginador-line-height: 26px!default;
+$smc-grid-tfoot-grid-paginador-margin: 0 auto!default;
+$smc-grid-tfoot-grid-paginador-overflow: hidden!default;
+$smc-grid-tfoot-grid-paginador-vertical-align: middle!default;
+$smc-grid-tfoot-grid-paginador-ul-margin: 0 auto!default;
+$smc-grid-tfoot-grid-paginador-ul-width: 310px!default;
+$smc-grid-tfoot-grid-paginador-ul-float: none!default;
+$smc-grid-tfoot-grid-paginador-ul-li-float: left!default;
+$smc-grid-tfoot-grid-paginador-ul-li-display: inline!default;
+$smc-grid-tfoot-grid-paginador-pagina-li-div-margin: 0 4px!default;
+$smc-grid-tfoot-grid-paginador-pagina-li-div-input-height: 15px!default;
+$smc-grid-tfoot-grid-numero-itens-float: left!default;
+$smc-grid-tfoot-grid-numero-itens-margin: 6px 0 5px 3px!default;
+$smc-grid-tfoot-grid-pagina-margin: 0 auto!default;
+$smc-grid-tfoot-grid-pagina-width: 100%!default;
+$smc-grid-tfoot-grid-navega-pagina-font-size: 11px!default;
+$smc-grid-tfoot-grid-navega-pagina-height: 19px!default;
+$smc-grid-tfoot-grid-navega-pagina-line-height: 18px!default;
+$smc-grid-tfoot-grid-navega-pagina-margin: 2px!default;
+$smc-grid-tfoot-grid-navega-pagina-font-weight: bold!default;
+$smc-grid-tfoot-grid-totalizador-text-align: right!default;
+$smc-grid-tfoot-grid-totalizador-margin: 5px auto!default;
+$smc-grid-tfoot-grid-totalizador-width: 99%!default;
+
+
+// ***** ----- DATA GRID (SORTPICKER) ----- ***** //
+// Cores
+$smc-cor-orderby-borda: $smc-cor-secundaria-bordas!default;
+$smc-cor-orderby-borda-botao-ordenador: $smc-cinza-04!default;
+$smc-cor-orderby-borda-botao: $smc-cor-secundaria!default;
+$smc-cor-orderby-background-botao-selecionado: $smc-cor-principal-hover!default;
+$smc-cor-orderby-background-botao: $smc-cinza-04!default;
+$smc-cor-orderby-borda-interna: $smc-cinza-04!default;
+$smc-cor-orderby-background: $smc-branco!default;
+$smc-cor-orderby-item-background: $smc-branco!default;
+$smc-cor-orderby-background-color: $smc-cinza-02!default;
+
+// Ícones
+$ico-ordenacao-alfabetica-crescente: $smc-caminho-compartilhado + "smc-ico-ordenacao-alfabetica-asc.png"!default;
+$ico-ordenacao-alfabetica-decrescente: $smc-caminho-compartilhado + "smc-ico-ordenacao-alfabetica-desc.png"!default;
+$smc-cor-orderby-background-botao-limpar: $smc-cinza-06!default;
+$smc-cor-orderby-background-botao-ordenar: $smc-cor-principal!default;
+
+// Configurações gerais
+$smc-orderby-float: right!default;
+$smc-orderby-window-margin: 25px 0 0 0!default;
+$smc-orderby-window-min-width: 350px!default;
+$smc-orderby-z-index: 49!default;
+$smc-orderby-border-radius: 3px!default;
+$smc-orderby-padding: 7px!default;
+$smc-orderby-color: $smc-cor-principal!default;
+$smc-orderby-itens-selecionados-item-min-height: 32px!default;
+$smc-orderby-itens-selecionados-item-margin-bottom: 0!default;
+$smc-orderby-itens-selecionados-item-border-radius: 3px!default;
+$smc-orderby-itens-selecionados-item-arrow-padding: 0 0 1px 3px!default;
+$smc-orderby-itens-selecionados-item-arrow-float: left!default;
+$smc-orderby-itens-selecionados-item-labelitem-position: absolute!default;
+$smc-orderby-itens-selecionados-item-labelitem-margin: 8px 0 0 28px!default;
+$smc-orderby-itens-selecionados-item-labelitem-label-font-weight: bold!default;
+$smc-orderby-itens-selecionados-item-labelitem-label-margin:-3px 0px 0px 18px!default;
+$smc-orderby-ascdesc-margin: 0 0 0 66%!default;
+$smc-orderby-remove-position: absolute!default;
+$smc-orderby-remove-right: 12px!default;
+$smc-orderby-remove-btn-excluir-border: none!default;
+$smc-orderby-remove-btn-excluir-background-color: transparent!default;
+$smc-orderby-remove-btn-excluir-color: $smc-cinza-05!default;
+$smc-orderby-remove-btn-excluir-hover-color: $smc-cinza-03!default;
+$smc-orderby-remove-btn-excluir-background-position: 9px -21px!default;
+$smc-orderby-remove-btn-excluir-opacity: 0.4!default;
+$smc-orderby-remove-btn-excluir-filter: alpha(opacity=40)!default;
+$smc-orderby-remove-btn-excluir-hover-background-position: 9px -21px!default;
+$smc-orderby-remove-btn-excluir-hover-opacity: 0.6!default;
+$smc-orderby-remove-btn-excluir-hover-filter: alpha(opacity=60)!default;
+$smc-orderby-base-radio-ordenacao-width: 45%!default;
+$smc-orderby-base-radio-ordenacao-position: absolute!default;
+$smc-orderby-base-radio-ordenacao-z-index: 5!default;
+$smc-orderby-base-container-radiobutton-display: inline!default;
+$smc-orderby-base-container-radiobutton-margin: 4px 4px 0 0!default;
+$smc-orderby-base-container-radiobutton-background-color: $smc-cor-principal-09!default;
+$smc-orderby-base-botoes-variaveis-border-radius: 3px!default;
+$smc-orderby-base-botoes-variaveis-height: 22px!default;
+$smc-orderby-base-botoes-variaveis-padding: 22px 0 0 22px!default;
+$smc-orderby-base-botoes-variaveis-width: 7px!default;
+$smc-orderby-base-botoes-variaveis-margin: -1px -1px 0 0!default;
+$smc-orderby-sortpicker-base-botoes-grid-margin: 5px 0 0 0!default;
+$smc-orderby-sortpicker-base-botoes-grid-padding: 0 10px!default;
+
+
+// ********** ----- DATEPICKER ----- ********** //
+// Pelo fato do componente de datepicker não ter sido desenvolvido pela GTI, as possibilidades de customização serão restritas a imagens e cores.
+// Configuração do campo
+$smc-datepicker-icon-before-margin-left:85% !default;
+$smc-datepicker-cor-icone:$smc-cor-principal-01!default;
+
+// Cores datepicker
+$smc-datepicker-data-atual-background:$smc-cor-principal !default;
+$smc-datepicker-data-atual-color:$smc-branco !default;
+$smc-datepicker-data-atual-background-hover:$smc-cor-secundaria-01!default;
+$smc-datepicker-data-atual-color-hover:$smc-branco !default;
+$smc-datepicker-font-family: "segoeui"!default;
+$smc-datepicker-background-hover:$smc-cor-secundaria-01!default;
+$smc-datepicker-color-hover:$smc-branco!default;
+$smc-datepicker-data-atual-outro-mes:$smc-cor-secundaria-01!default; // colore o texto da data atual quando o mês está desabilitado
+$smc-datepicker-data-desabilitada-opacity: 0.3!default;
+
+
+// ********** ----- DETALHE EDITÁVEL ----- ********** //
+// Cores
+$smc-detalhe-editavel-bloco-desabilitado: rgba(206,206,206, 0.6)!default;
+$smc-detalhe-editavel-linha-desabilitada: $smc-cinza-05!default;
+$smc-cinza-claro: $smc-cinza-03!default;
+
+// Configurações gerais de detalhe editável
+$smc-detalhe-editavel-borda: solid 1px $smc-cor-secundaria-05!default;
+$smc-detalhe-editavel-radius: 5px!default;
+$smc-detalhe-editavel-margin: 15px 0 20px 0!default;
+$smc-detalhe-editavel-padding: 10px!default;
+$smc-detalhe-editavel-width: 98%!default;
+$smc-detalhe-editavel-background: $smc-branco!default;
+$smc-detalhe-editavel-overflow:inherit!default;
+
+// Títulos dos detalhes editáveis
+$smc-detalhe-editavel-titulo-color: $smc-cor-secundaria-01!default;
+$smc-detalhe-editavel-titulo-font-size: 17px!default;
+$smc-detalhe-editavel-titulo-position: relative!default;
+$smc-detalhe-editavel-titulo-top: 0!default;
+$smc-detalhe-editavel-titulo-margin: 10px 0 -15px 0!default;
+$smc-detalhe-editavel-titulo-font-family: 'BreeSerif-Regular', Arial, sans-serif!default;
+$smc-detalhe-editavel-titulo-background-color: transparent!default;
+$smc-detalhe-editavel-titulo-padding: 0 10px!default;
+$smc-detalhe-editavel-titulo-border-bottom:none!default;
+$smc-detalhe-editavel-titulo-display: inline-block!default;
+
+// Buttonset dentro dos detalhes editáveis
+$smc-detalhe-editavel-buttonset-horizontal-primario-margin-bottom: 0!default;
+$smc-detalhe-editavel-buttonset-horizontal-primario-margin-top: -28px!default;
+$smc-detalhe-editavel-buttonset-horizontal-primario-border-bottom: 1px dashed $smc-cor-principal-bordas!default;
+$smc-detalhe-editavel-buttonset-horizontal-primario-width: 100%!default;
+$smc-detalhe-editavel-buttonset-horizontal-primario-padding: 0 0 12px 0!default;
+$smc-detalhe-editavel-buttonset-horizontal-primario-div-text-align: right!default;
+$smc-detalhe-editavel-buttonset-horizontal-primario-div-float: right!default;
+
+// Organizador (LINHA DADOS)
+$smc-detalhe-editavel-linha-dados-display: block!default;
+$smc-detalhe-editavel-linha-dados-clear: both!default;
+$smc-detalhe-editavel-linha-dados-margin: 0 0 5px 0!default;
+$smc-detalhe-editavel-linha-dados-background-color: $smc-cor-principal-backgrounds!default;
+$smc-detalhe-editavel-linha-dados-recente-background-color: $smc-cor-secundaria-backgrounds!default;
+$smc-detalhe-editavel-linha-dados-lookup-unico-top: 0!default;
+$smc-detalhe-editavel-linha-dados-lookup-unico-margin-left: -6px!default;
+$smc-detalhe-editavel-linha-dados-textarea-resize: none!default;
+$smc-detalhe-editavel-linha-dados-textarea-margin-bottom: -3px!default;
+$smc-detalhe-editavel-linha-dados-textarea-radius: 0!default;
+$smc-detalhe-editavel-linha-dados-textarea-padding: 5px 9px 9px 9px!default;
+$smc-detalhe-editavel-linha-dados-check-and-radio-container-margin-top: 25px!default;
+$smc-detalhe-editavel-lookup-corpo-acoes-width: 91%!default;
+$smc-detalhe-editavel-lookup-corpo-limpar-margin-left: -33px!default;
+$smc-detalhe-editavel-lookup-corpo-limpar-margin-top: 5px!default;
+$smc-detalhe-editavel-lookup-corpo-limpar-btn-limpar-margin-top: 0!default;
+$smc-detalhe-editavel-treeselect-obrigatorio-position: absolute!default;
+$smc-detalhe-editavel-treeselect-obrigatorio-float: left!default;
+$smc-detalhe-editavel-treeselect-obrigatorio-top: 8px!default;
+$smc-detalhe-editavel-treeselect-obrigatorio-z-index: 1!default;
+$smc-detalhe-editavel-treeselect-obrigatorio-right: 36px!default;
+$smc-detalhe-editavel-treeselect-botao-abrir-margin-left: 30px!default;
+
+// Detalhe editável TABULAR
+$smc-detalhe-editavel-tabular-li-min-height: 56px!default;
+$smc-detalhe-editavel-tabular-li-header-min-height: 20px!default;
+$smc-detalhe-editavel-tabular-linha-dados-padding: 2px 5px 0 5px!default;
+$smc-detalhe-editavel-tabular-linha-dados-radius: 3px!default;
+$smc-detalhe-editavel-tabular-linha-dados-height: 35px!default;
+$smc-detalhe-editavel-tabular-linha-dados-min-height: 35px!default;
+$smc-detalhe-editavel-tabular-linha-dados-btn-excluir-margin-top: 0!default;
+$smc-detalhe-editavel-tabular-linha-dados-btn-remover-e-restaurar-top: -14px!default;
+
+// Lookup em detalhe editável TABULAR
+$smc-detalhe-editavel-tabular-linha-dados-lookup-btn-lg-left: -25px !default;
+$smc-detalhe-editavel-tabular-linha-dados-lookup-btn-lg-right:30% !default;
+$smc-detalhe-editavel-tabular-linha-dados-lookup-btn-sm-left: -30px !default;
+
+// Detalhe editável BLOCOS
+$smc-detalhe-editavel-blocos-linha-dados-padding: 10px!default;
+$smc-detalhe-editavel-blocos-linha-dados-radius: 5px!default;
+$smc-detalhe-editavel-blocos-linha-dados-min-height: auto!default;
+$smc-detalhe-editavel-blocos-label-display: block!default;
+$smc-detalhe-editavel-blocos-label-font-size: 14px!default;
+$smc-detalhe-editavel-blocos-label-line-height: normal!default;
+$smc-detalhe-editavel-linha-dados-overflow: inherit!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-display: block!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-font-weight: normal!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-font-variant: normal!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-font-style: normal!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-font-family: 'segoeui', Arial, sans-serif!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-margin-right: 5px!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-min-right: 14px!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-font-size: 12px!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-label-line-height: 18px!default;
+$smc-detalhe-editavel-blocos-linha-dados-ul-li-btn-excluir-ico-margin-top: 17px!default;
+$smc-detalhe-editavel-blocos-organizador-nth-last-child-position: relative!default;
+$smc-detalhe-editavel-blocos-organizador-nth-last-child-top: -7px!default;
+$smc-detalhe-editavel-blocos-organizador-nth-last-child-float: right!default;
+$smc-detalhe-editavel-blocos-organizador-nth-last-child-margin-top: 5px!default;
+$smc-detalhe-editavel-blocos-organizador-nth-child-2-margin-bottom: 9px!default;
+
+$smc-btn-buscacep-margin: 21px 0 0 -15px!default;
+$smc-btn-limpacep-margins: 21px 0 0 -15px!default;
+$smc-endereco-correspondencia-margin: 26px 0 0 5px!default;
+
+// Header (item opcional)
+$smc-detalhe-editavel-header-display: block!default;
+$smc-detalhe-editavel-header-min-height: 20px!default;
+$smc-detalhe-editavel-header-margin-left: 8px!default;
+
+// Linha removida
+$smc-detalhe-editavel-linha-removida-width: 100%!default;
+$smc-detalhe-editavel-linha-removida-position: absolute!default;
+$smc-detalhe-editavel-linha-removida-margin: -7px 0 0 20px!default;
+$smc-detalhe-editavel-linha-removida-font-size: 10px!default;
+$smc-detalhe-editavel-linha-removida-background-color: $smc-cor-principal-backgrounds!default;
+$smc-detalhe-editavel-linha-removida-opacity: 0.4!default;
+$smc-detalhe-editavel-linha-removida-filter: alpha(opacity=40)!default;
+$smc-detalhe-editavel-linha-removida-li-button-padding: 0 3px!default;
+$smc-detalhe-editavel-linha-removida-li-button-margin: 0!default;
+$smc-detalhe-editavel-linha-removida-li-button-padding-left: 32px!default;
+$smc-detalhe-editavel-linha-removida-li-button-background-position: 8px 6px!default;
+$smc-detalhe-editavel-linha-removida-li-button-top: -6px!default;
+$smc-detalhe-editavel-linha-removida-li-span-display: block!default;
+$smc-detalhe-editavel-linha-removida-li-span-width: 95%!default;
+$smc-detalhe-editavel-linha-removida-li-span-position: absolute!default;
+$smc-detalhe-editavel-linha-removida-li-span-margin-top: 4%!default;
+$smc-detalhe-editavel-linha-removida-li-span-font-size: 27px!default;
+$smc-detalhe-editavel-linha-removida-li-span-text-align: center!default;
+$smc-detalhe-editavel-linha-removida-li-span-color: $smc-cor-secundaria!default;
+$smc-detalhe-editavel-linha-removida-li-span-z-index: 2!default;
+$smc-detalhe-editavel-linha-removida-tr-margin: 10px 0 0 0!default;
+$smc-detalhe-editavel-linha-removida-tr-padding: 0!default;
+$smc-detalhe-editavel-linha-removida-tr-button-height: 20px!default;
+$smc-detalhe-editavel-linha-removida-tr-button-line-height: 21px!default;
+$smc-detalhe-editavel-linha-removida-tr-button-margin: 0 0 0 2px!default;
+$smc-detalhe-editavel-linha-removida-tr-background-position: 2px 2px!default;
+$smc-detalhe-editavel-linha-removida-tr-button-padding-left: 24px!default;
+$smc-detalhe-editavel-linha-removida-tr-button-top: -6px!default;
+
+// Botão Busca CEP
+$smc-detalhe-editavel-cor-botao: $smc-cor-secundaria!default;
+
+// Mestre Detalhe em Modal
+$smc-masterdetail-detailpartial-buttonset-clear: none!default;
+$smc-masterdetail-detailpartial-buttonset-margin-top: -10px!default;
+$smc-masterdetail-detailpartial-buttonset-margin-bottom: -10px!default;
+$smc-masterdetail-detailpartial-buttonset-li-min-height: 60px!default;
+$smc-masterdetail-detailpartial-grid-clear: left!default;
+$smc-masterdetail-detailpartial-grid-margin-top: 30px!default;
+$smc-masterdetail-detailpartial-grid-no-results-border-top: none!default;
+$smc-masterdetail-detailpartial-grid-conteudo-border: none!default;
+$smc-masterdetail-detailpartial-grid-conteudo-header-display: none!default;
+$smc-masterdetail-detailpartial-grid-conteudo-header-span-margin: 0!default;
+$smc-masterdetail-detailpartial-grid-coluna-botoes-width: 70px!default;
+
+// Mensagens Validação
+$smc-detalhe-editavel-mensagens-validacao-right: 18%!default;
+$smc-detalhe-editavel-mensagens-validacao-min-height: 27px!default;
+$smc-detalhe-editavel-mensagens-validacao-z-index: 2!default;
+$smc-detalhe-editavel-mensagens-validacao-opacity: 1!default;
+$smc-detalhe-editavel-mensagens-validacao-padding: 10px 20px 1px 20px!default;
+$smc-detalhe-editavel-mensagens-validacao-radius: 3px!default;
+
+// Numero máximo
+$smc-detalhe-editavel-numero-maximo-atingido-right: 6%!default;
+$smc-detalhe-editavel-numero-maximo-atingido-padding: 10px 20px 0 20px!default;
+$smc-detalhe-editavel-numero-maximo-atingido-radius: 3px!default;
+$smc-detalhe-editavel-numero-maximo-atingido-margin-top: -7px!default;
+
+// Ordenação nos detalhes editáveis
+$smc-detalhe-editavel-ordenacao-position:absolute!default;
+$smc-detalhe-editavel-ordenacao-background-color: $smc-branco!default;
+$smc-detalhe-editavel-ordenacao-border-radius:50px!default;
+$smc-detalhe-editavel-ordenacao-padding: 0px 3px 0px 3px!default;
+$smc-detalhe-editavel-ordenacao-margin-left:-13px!default;
+$smc-detalhe-editavel-ordenacao-margin-top: 10px!default;
+$smc-detalhe-editavel-ordenacao-span-clear:both!default;
+$smc-detalhe-editavel-ordenacao-span-float:left!default;
+$smc-detalhe-editavel-ordenacao-span-font-size: 11px!default;
+$smc-detalhe-editavel-ordenacao-span-padding: 4px 3px 5px 4px!default;
+$smc-detalhe-editavel-ordenacao-span-color: $smc-cor-principal!default;
+$smc-detalhe-editavel-ordenacao-span-font-weight: bold!default;
+$smc-detalhe-editavel-ordenacao-div-smc-btn-padding: 0!default;
+$smc-detalhe-editavel-ordenacao-div-smc-btn-height: 10px!default;
+$smc-detalhe-editavel-ordenacao-div-smc-btn-margin: 1px 0!default;
+$smc-detalhe-editavel-ordenacao-div-smc-btn-overflow: hidden!default;
+$smc-detalhe-editavel-ordenacao-div-smc-btn-width: 18px!default;
+$smc-detalhe-editavel-ordenacao-sortpicker-smc-btn-first-child: none!default;
+$smc-detalhe-editavel-ordenacao-sortpicker-smc-btn-last-child: none!default;
+$smc-detalhe-editavel-linha-dados-orderpick-smc-btn-down-margin-top: 5px!default;
+$smc-detalhe-editavel-linha-dados-orderpick-smc-btn-down-overflow: hidden!default;
+$smc-detalhe-editavel-linha-dados-orderpick-smc-btn-up-i-margin-top: 7px!default;
+$smc-detalhe-editavel-linha-dados-orderpick-smc-btn-dow-i-margin-top:-13px!default;
+$smc-detalhe-editavel-linha-dados-orderpick-smc-btn-dow-i-position: absolute!default;
+
+
+// ********** ----- EDITOR DE TEXTO ----- ********** //
+$smc-cor-editor-texto-ico-borda: $smc-cinza-06!default;
+$smc-cor-editor-texto-ico-ativo-borda: $smc-cinza!default;
+$smc-cor-editor-texto-ico-background: $smc-cinza-04!default;
+$smc-cor-editor-texto-ico-pressionado: $smc-cinza-05!default;
+$smc-cor-editor-texto-background-busca: $smc-branco!default;
+$smc-cor-editor-texto-titulo: $smc-cinza-09!default;
+
+// Cores editor de texto
+$smc-cor-editor-texto-borda: $smc-cinza-06!default;
+$smc-cor-editor-texto-conteudo: $smc-preto!default;
+$smc-cor-editor-texto-barra-ferramentas: $smc-cinza-02!default;
+$smc-cor-editor-texto-barra-ferramentas-borda: $smc-cinza-03!default;
+$smc-cor-editor-texto-box-shadow: inset 0 1px $smc-cor-editor-texto-barra-ferramentas!default;
+$smc-cor-editor-texto-box-shadow-active: inset 0 1px $smc-cor-editor-texto-ico-pressionado!default;
+$smc-cor-editor-texto-box-shadow-jqte-formats: 0 0 5px $smc-cor-editor-texto-ico-borda!default;
+$smc-cor-editor-texto-box-shadow-jqte-fontsizes: 0 0 5px $smc-cor-editor-texto-ico-borda!default;
+
+// Icones Editor de texto
+$smc-ico-editor-texto-barra-ferramentas: $smc-caminho-compartilhado + "jquery-te.png"!default;
+
+// Configurações do container do texteditor
+$smc-richtext-container-margin: 15px 0 0 0!default;
+$smc-richtext-container-span-margin: -20px 0 0 0!default;
+$smc-richtext-container-label-margin: -20px 0 0 13px!default;
+$smc-richtext-cke-dialog-footer-border-radius: 0 0 6px 6px!default;
+$smc-richtext-cke-dialog-footer-box-shadow: 0 1px 0 $smc-branco inset !default;
+$smc-richtext-cke-dialog-title-font-family: 'segoeui'!default;
+
+
+// ********** ----- ESTILO ----- ********** //
+// Cores estilo
+$smc-cor-cabecalho: $smc-cor-principal-backgrounds!default;
+$smc-cor-titulo-principal: $smc-cor-secundaria-titulos!default;
+$smc-cor-subtitulo: $smc-cor-secundaria-titulos!default;
+$smc-cor-background: $smc-branco!default;
+$smc-cor-nome-instituicao: $smc-cinza!default;
+$smc-cor-rodape: transparent!default;
+$smc-cor-rodape-borda: transparent!default;
+$smc-cor-rodape-copyright: $smc-cinza-07!default;
+
+// Fonte adotada em todo o sistema
+$smc-estilo-textos-sistema-font-family: 'segoeui', Arial, sans-serif!default;
+$smc-estilo-textos-sistema-font-size: 14px!default;
+
+// Fonte adotada em todos os títulos do sistema
+$smc-estilo-titulos-sistema-clear: both!default;
+$smc-estilo-titulos-sistema-color: $smc-cor-secundaria!default;
+$smc-estilo-titulos-sistema-font-family: 'BreeSerif-Regular', Arial, sans-serif!default;
+$smc-estilo-titulos-sistema-font-weight: normal!default;
+$smc-estilo-titulos-sistema-border-bottom: none!default;
+$smc-estilo-titulos-sistema-margin: 20px 0 25px 0!default;
+$smc-estilo-titulos-sistema-padding: 0!default;
+
+// Configuração do plano de fundo do sistema
+$smc-estilo-body-background-color: $smc-branco!default;
+$smc-estilo-body-background-image: $smc-caminho-login + "smc-gpi-detalhe.jpg"!default;
+$smc-estilo-body-background-repeat: no-repeat!default;
+$smc-estilo-body-background-position: bottom right!default;
+
+// Alerta processando
+$smc-estilo-alerta-processando-background-color: $smc-cor-principal-01!default; 
+$smc-estilo-alerta-processando-opacity: 0.7!default;
+$smc-estilo-alerta-processando-z-index: 1050!default;
+$smc-estilo-alerta-processando-span-font-family: 'segoeui', Arial, sans-serif!default;
+$smc-estilo-alerta-processando-span-margin: 10% auto 0!default;
+$smc-estilo-alerta-processando-span-border: none!default;
+$smc-estilo-alerta-processando-span-padding: 86px 0 0px 0px!default;
+$smc-estilo-alerta-processando-span-background: url($img-preloader) no-repeat!default;
+$smc-estilo-alerta-processando-span-color: $smc-cinza-08!default;
+$smc-estilo-alerta-processando-padding: 20% 50% !default; 
+$smc-estilo-alerta-processando-span-z-index: 21!default;
+$smc-estilo-alerta-processando-span-width: 110px!default;
+$smc-estilo-alerta-processando-span-display: block!default;
+$smc-estilo-alerta-processando-span-background-color: $smc-branco;
+$smc-estilo-alerta-processando-span-background-size: auto!default;
+$smc-estilo-alerta-processando-span-background-position: center 25px!default;
+$smc-estilo-alerta-processando-span-text-align: center!default;
+$smc-estilo-alerta-processando-span-height: 125px!default;
+$smc-estilo-alerta-processando-span-radius: 3px!default;
+$smc-estilo-alerta-processando-i-span-p-display: none!default;
+$smc-estilo-alerta-processando-div-display:block!default;
+
+// Ribbon
+$smc-estilo-ribbon-background-image: $smc-caminho-login +"topoPUC.png";
+$smc-estilo-ribbon-background-repeat: no-repeat!default;
+$smc-estilo-ribbon-height: auto!default;
+$smc-estilo-ribbon-margin: 0!default;
+$smc-estilo-ribbon-z-index: 50!default;
+$smc-estilo-ribbon-position: relative !default;
+$smc-estilo-ribbon-separador-background-position: 15% 0!default;
+$smc-estilo-ribbon-border-bottom: none!default;
+$smc-estilo-ribbon-login-margin-top: 7px!default;
+$smc-estilo-ribbon-login-float: left!default;
+$smc-estilo-ribbon-login-instituicao-padding: 2px!default;
+$smc-estilo-ribbon-login-instituicao-overflow: hidden!default;
+$smc-estilo-ribbon-login-instituicao-white-space: nowrap!default;
+$smc-estilo-ribbon-login-instituicao-text-overflow: ellipsis!default;
+$smc-estilo-ribbon-login-instituicao-font-style: italic!default;
+$smc-estilo-ribbon-login-instituicao-font-size: 14px!default;
+$smc-estilo-ribbon-login-instituicao-color: $smc-cor-principal!default;
+
+// Ícones de Acessibilidade
+$smc-estilo-acessibilidade-z-index: 51!default;
+$smc-estilo-acessibilidade-dropdown-min-width: 200px!default;
+$smc-estilo-acessibilidade-dropdown-background-color:$smc-branco!default;
+$smc-estilo-acessibilidade-dropdown-padding: 5px 10px!default;
+$smc-estilo-acessibilidade-button-margin-right: 3px!default;
+$smc-estilo-btn-acessibilidade-border: none!default;
+$smc-estilo-btn-acessibilidade-background-color: transparent!default;//$smc-cor-secundaria-01!default;
+$smc-estilo-btn-acessibilidade-color: $smc-cor-principal-02!default;
+$smc-estilo-btn-acessibilidade-radius: 4px!default;
+$smc-estilo-btn-acessibilidade-padding: 2px 5px!default;
+$smc-estilo-btn-acessibilidade-icon-size: 21px!default; 
+$smc-estilo-btn-acessibilidade-icon-shadow: none!default;
+
+// Sigla e botão de troca de instituição
+$smc-estilo-sigla-instituicao-display: block!default; 
+$smc-estilo-sigla-instituicao-padding: 3px 0 0 25px!default;
+$smc-estilo-sigla-instituicao-position: absolute!default;
+$smc-estilo-sigla-instituicao-width:95%!default;
+$smc-estilo-dropdown-menu-box-shadow:0 2px 4px $smc-cinza-06!default;
+$smc-estilo-dropdown-menu-border:solid 4px $smc-cinza-03!default;
+$smc-estilo-botao-selecionar-instituicao-width:95%!default;
+$smc-estilo-botao-selecionar-instituicao-padding: 0!default;
+$smc-estilo-botao-selecionar-instituicao-border: 0!default;
+$smc-estilo-botao-selecionar-instituicao-background: transparent!default;
+$smc-estilo-botao-selecionar-instituicao-radius: 0!default;
+$smc-estilo-botao-selecionar-instituicao-font-size:0!default;
+$smc-estilo-botao-selecionar-instituicao-height:20px!default;
+$smc-estilo-botao-selecionar-instituicao-icone-i-font-size: 0!default;
+$smc-estilo-botao-selecionar-instituicao-icone-color: $smc-cor-principal;
+$smc-estilo-botao-selecionar-instituicao-icone-before-font-size:18px!default;
+$smc-estilo-botao-selecionar-instituicao-focus-box-shadow: none!default;
+$smc-estilo-botao-selecionar-instituicao-before:-5px!default;
+
+// Sistema
+$smc-sistema-margin: 10px 0 0 0!default;
+$smc-sistema-background-color: transparent!default;
+$smc-sistema-background-image: $smc-caminho-aplicacao + "smc-gpi-logo-aplicacao.png"!default;
+$smc-sistema-background-repeat: no-repeat!default;
+$smc-sistema-background-potision: 0 0!default;
+$smc-sistema-height: 68px!default;
+$smc-sistema-img-margin:9px 0 0 8px!default;
+$smc-estilo-navbar-fixed-top-padding: 0!default;
+
+// Menu de Usuário
+$smc-estilo-user-before-font-size: 20px!default; 
+$smc-estilo-user-before-color: $smc-cor-principal-02!default;
+$smc-estilo-user-before-position: absolute!default;
+$smc-estilo-user-menu-float: none!default;
+$smc-estilo-user-menu-min-width: 260px!default;
+$smc-estilo-user-menu-dropdown-left: -200px!default;
+$smc-estilo-user-header-text-align: center!default;
+$smc-estilo-user-header-img-border: solid 1px $smc-cor-principal-bordas!default;
+$smc-estilo-user-header-p-font-weight: 600!default;
+$smc-estilo-user-header-p-font-style: italic!default;
+$smc-estilo-user-header-p-max-width: 235px!default;
+$smc-estilo-user-dropdown-menu-cor-border: $smc-cinza-03!default;
+
+// Menu de Favoritos
+$smc-estilo-usuario-favorito-height: 30px!default;
+$smc-estilo-usuario-favorito-width: 30px!default;
+$smc-estilo-usuario-favorito-float: left!default; 
+$smc-estilo-usuario-favorito-before-font-size: 22px!default;
+$smc-estilo-usuario-favorito-before-color: $smc-cor-principal-02!default;
+$smc-estilo-usuario-favorito-before-position: absolute!default;
+
+// Conteúdo
+$smc-estilo-aplicaco-logotipo-padding-top: 0!default;
+$smc-estilo-aplicaco-logotipo-margin-top: 0!default;
+$smc-estilo-conteudo-margin: 85px 0 60px 33px!default;
+$smc-estilo-conteudo-padding: 0 15px 0 15px!default;
+$smc-estilo-conteudo-position: relative!default;
+$smc-estilo-conteudo-min-height:580px!default;
+$smc-estilo-conteudo-padding-left: 240px!default;
+$smc-estilo-conteudo-background-color: $smc-branco!default;
+$smc-estilo-conteudo-clear: none!default;
+
+// Usuário (Antigo GADGET WINDOW)
+$smc-estilo-user-footer-borda-interna: $smc-cor-principal-bordas!default;
+$smc-estilo-user-footer-box-botoes: $smc-cor-principal!default; 
+$smc-estilo-user-footer-cor-botao: $smc-cor-secundaria-01!default; 
+$smc-estilo-user-footer-cor-texto-botao: $smc-branco!default; 
+$smc-estilo-user-footer-cor-borda-botao: $smc-cor-secundaria-02!default; 
+$smc-estilo-user-footer-cor-botao-hover: $smc-cor-principal-hover!default;
+$smc-estilo-user-footer-cor-texto-botao-hover: $smc-cor-principal!default; 
+$smc-estilo-user-footer-cor-borda-botao-hover: $smc-cor-principal-hover!default;
+$smc-estilo-user-footer-janela-usuario-botoes-width: 100%!default;
+$smc-estilo-user-footer-janela-usuario-botoes-padding: 10px 5px!default;
+$smc-estilo-user-footer-botao-padrao-radius: 3px!default;
+$smc-estilo-user-footer-botao-padrao-font-size: 12px!default;
+$smc-estilo-user-footer-botao-padrao-margin: 0 2px!default;
+$smc-estilo-user-footer-botao-padrao-line-height: 27px!default;
+$smc-estilo-user-footer-botao-padrao-padding: 0 13px!default;
+
+// Favorito
+$smc-menu-favorito-cor:#ecc734!default;
+
+// Rodapé
+$smc-estilo-footer-position: inherit!default;
+$smc-estilo-footer-padding: 5px 0 5px 0!default;
+$smc-estilo-footer-margin-bottom: -4px!default; 
+$smc-estilo-footer-border: 1px solid $smc-cor-rodape-borda!default;
+$smc-estilo-footer-display: block!default;
+$smc-estilo-footer-width: 79%!default;
+$smc-estilo-footer-height: auto!default;
+$smc-estilo-footer-conteudo-height: 71px!default;
+$smc-estilo-footer-copyright-font-style: normal!default;
+$smc-estilo-footer-copyright-font-variant: normal!default;
+$smc-estilo-footer-copyright-font-weight: normal!default;
+$smc-estilo-footer-copyright-font-size: 10px!default;
+$smc-estilo-footer-copyright-font-line-height: normal!default;
+$smc-estilo-footer-copyright-font-family: 'segoeui', Arial, sans-serif!default;
+$smc-estilo-footer-copyright-text-align: left !default;
+$smc-estilo-footer-copyright-padding-top: 15px !default;
+$smc-estilo-footer-copyright-position: absolute!default;
+$smc-estilo-footer-copyright-width: 100%!default;
+$smc-estilo-footer-copyright-padding-top: 29px!default;
+$smc-estilo-logo-do-rodape-width: 95px!default;
+$smc-estilo-logo-do-rodape-height: 40px!default;
+$smc-estilo-logo-do-rodape-margin: 0px 2% 0px 0px !default;
+$smc-estilo-logo-do-rodape-color: $smc-cinza-07!default;
+
+// Conteúdo telas de retorno em layout 4-16-4
+$smc-layout_4_16_4-img-return-margin-top: 20px!default;
+$smc-layout_4_16_4-msg-return-margin-top: 40px!default;
+$smc-layout_4_16_4-msg-return-h2-color: $smc-cinza!default;
+
+// Ajuda
+$smc-estilo-btn-help-border: none!default;
+$smc-estilo-btn-help-background-color: transparent!default;
+$smc-estilo-btn-help-radius: none!default!default;
+$smc-estilo-btn-help-padding:0px 3px!default!default;
+$smc-estilo-btn-help-icon-size: 23px!default!default; 
+$smc-estilo-btn-help-icon-shadow: none!default!default;
+$smc-estilo-btn-help-color: $smc-cor-principal-02!default;
+
+// Dropdown menu ajuda
+$smc-janela-ajuda-dropdown-menu-border: solid 4px $smc-cinza-03!default;
+$smc-janela-ajuda-dropdown-menu-background-color: $smc-branco!default;
+$smc-janela-ajuda-dropdown-menu-background-width: 200px!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-width: 100%!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-border-botton: 1px solid $smc-cinza-05!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-border-radius: 0!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-width: 100%!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-background-color: transparent!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-border: none!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-padding-top: 4px!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-i-color: $smc-cor-secundaria-01!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-i-font-size: 15px!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-i-font-family: FontAwesome!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-i-display: inline-block!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-a-i-margin-right: 10px!default;
+$smc-janela-ajuda-dropdown-menu-background-div-div-last-child-border-bottom: 0!default;
+
+
+// ********** ----- FORMULÁRIOS ----- ********** //
+// Display
+$smc-display-color:$smc-cor-principal !default;
+$smc-display-font-weight: bold !default;
+
+// Fieldsets
+$smc-estilo-fieldset-border: 1px solid $smc-cor-secundaria-04 !default;
+$smc-estilo-fieldset-background:$smc-branco!default;
+$smc-estilo-fieldset-border-radius: 3px !default;
+$smc-estilo-fieldset-margin: 0 !default;
+$smc-estilo-fieldset-width: 99.1%!default;
+$smc-estilo-fieldset-padding: 10px !default;
+$smc-estilo-fieldset-legend-width: auto!default;
+$smc-estilo-fieldset-legend-padding: 0 10px 0 0!default;
+$smc-estilo-fieldset-legend-font-size: 16px!default;
+$smc-estilo-fieldset-legend-color: $smc-cor-principal-titulos!default;
+$smc-estilo-fieldset-legend-border-top: none !default;
+$smc-estilo-fieldset-legend-border-right:none !default;
+$smc-estilo-fieldset-legend-border-bottom:none !default;
+$smc-estilo-fieldset-legend-border-left:none !default;
+$smc-estilo-fieldset-legend-margin:0 0 0 5px!default;
+$smc-estilo-fieldset-legend-background-color:$smc-branco!default;
+$smc-estilo-fieldset-legend-font-family: 'BreeSerif-Regular', Arial, sans-serif!default;
+
+// Fieldset Filter
+$smc-forms-fieldset-filter-margin: 0!default;
+
+// Configurações gerais
+$smc-forms-form-legend-display: none!default;
+$smc-forms-form-ul-li-display: inline!default;
+$smc-forms-form-ul-li-min-height: 60px!default;
+$smc-forms-form-botoes-padding-top: 10px!default;
+
+// Checkbox e Radiobutton
+$smc-radiobutton-size: 18px!default;
+$smc-radiobutton-border-width: 1px!default;
+$smc-radiobutton-transition-speed: 100ms!default;
+$smc-radiobutton-inset-shadow: inset 0 .1em 1px -.1em rgba(0,0,0,.2)!default;
+$smc-radiobutton-pip-color: $smc-preto!default;
+$smc-radiobutton-pip-size: round($smc-radiobutton-size * .6)!default;
+
+// States
+$smc-radiobutton-unchecked-bg: $smc-branco!default;
+$smc-radiobutton-unchecked-border: transparentize($smc-preto, .4)!default;
+$smc-radiobutton-checked-bg: mix($smc-radiobutton-unchecked-bg, $smc-radiobutton-pip-color, 80%)!default;
+$smc-radiobutton-checked-border: $smc-radiobutton-pip-color!default;
+$smc-radiobutton-active-inset-shadow: inset 0 0 2px 3px rgba(0,0,0,.1)!default;
+$smc-radiobutton-focus-shadow: 0 0 0 2px transparentize($smc-preto, .8)!default;
+$smc-radiobutton-focus-shadow-after: 0 1px 1px rgba(0,0,0,.1)!default;
+
+$smc-radiobutton-disabled-bg: lighten(black, 91.8%)!default;
+$smc-radiobutton-disabled-pip-color: lighten(black, 80%)!default;
+
+@if ($smc-radiobutton-pip-size % 2 == 1) {
+    $smc-radiobutton-pip-size: $smc-radiobutton-pip-size - 3!default;
+}
+
+// Preenchimento obrigatório
+$smc-forms-preenchimento-obrigatorio-margin: 0 0 -2px 0!default;
+$smc-forms-preenchimento-obrigatorio-margin-md-max:0 -2px -2px 0 !default;
+$smc-forms-preenchimento-obrigatorio-float: left!default;
+$smc-forms-preenchimento-obrigatorio-font-size: 6px!default;
+$smc-forms-preenchimento-obrigatorio-color: $smc-cor-secundaria-03!default;
+$smc-forms-preenchimento-obrigatorio-margin-top: 4px!default;
+
+// Label
+$smc-forms-label-color: $smc-cinza!default;
+$smc-forms-label-margin-right: 0!default;
+$smc-forms-label-display: block!default;
+$smc-forms-label-min-height: 0!default;
+$smc-forms-label-check-min-height: 24px!default;
+$smc-forms-label-float: left!default;
+
+// Inputs
+$smc-forms-input-radius: 3px!default;
+$smc-forms-input-margin-bottom: 5px!default;
+$smc-forms-input-padding: 4px!default;
+$smc-forms-input-font-size: 12px!default;
+$smc-forms-input-height: 31px!default;
+
+//Textarea tamanho
+$smc-forms-textarea-min-height: 40px!default;
+
+// Textarea preenchimento incorreto
+$smc-forms-textarea-preenchimento-incorreto-padding: 0 2px 3px 3px!default;
+$smc-forms-textarea-preenchimento-incorreto-width: 7px!default;
+$smc-forms-textarea-preenchimento-incorreto-height: 14px!default;
+$smc-forms-textarea-preenchimento-incorreto-margin-right: 2px!default;
+$smc-forms-textarea-preenchimento-incorreto-font-size: 12px!default;
+$smc-forms-textarea-preenchimento-incorreto-font-weight: bold!default;
+$smc-forms-textarea-preenchimento-incorreto-background-position: 2px 1px!default;
+$smc-forms-textarea-preenchimento-incorreto-margin-bottom: -2px!default;
+
+// Span validation error
+$smc-forms-span-validation-error-font-size: 10px!default;
+$smc-forms-span-validation-error-margin-top: 4px!default;
+$smc-forms-span-validation-error-margin-bottom: 0!default;
+$smc-forms-span-validation-error-clear: both!default;
+$smc-forms-span-validation-error-height: 14px!default;
+$smc-forms-span-validation-error-display: block!default;
+$smc-forms-span-validation-error-white-space: nowrap!default;
+
+// Span preenchimento incorreto
+$smc-forms-span-preenchimento-incorreto-padding: 0 2px 1px 4px!default;
+$smc-forms-span-preenchimento-incorreto-width: 7px!default;
+$smc-forms-span-preenchimento-incorreto-height: 14px!default;
+$smc-forms-span-preenchimento-incorreto-margin-right: 2px!default;
+$smc-forms-span-preenchimento-incorreto-font-size: 12px!default;
+$smc-forms-span-preenchimento-incorreto-font-weight: bold!default;
+$smc-forms-span-preenchimento-incorreto-background-position: 4px 0!default;
+$smc-forms-span-preenchimento-incorreto-margin-bottom: -2px!default;
+
+// Barra progresso
+$smc-forms-barra-progresso-height: 2px!default;
+$smc-forms-barra-progresso-margin-bottom: -3px!default;
+$smc-forms-barra-progresso-margin-left: 2px!default;
+$smc-forms-barra-progresso-text-align: right!default;
+
+// Conta caracteres
+$smc-forms-conta-caracteres-float: left!default;
+$smc-forms-conta-caracteres-font-size: 10px!default;
+$smc-forms-conta-caracteres-margin-top: 2px!default;
+$smc-forms-conta-caracteres-text-align: right!default;
+$smc-forms-conta-caracteres-width: 99.9%!default;
+
+// Instruções preenchimento
+$smc-forms-instrucoes-preenchimento-font-size: 11px!default;
+$smc-forms-instrucoes-preenchimento-margin-top: 0!default;
+$smc-forms-instrucoes-preenchimento-margin-bottom: 0!default;
+
+
+// ********** ----- GADGETS ----- ********** //
+$smc-gadgets-cor-borda: $smc-cor-principal-bordas!default;
+$smc-gadgets-cor-header: $smc-branco!default;
+$smc-gadgets-cor-header-texto: $smc-cor-principal-02!default;
+$smc-gadgets-cor-painel-botao: $smc-cor-principal-contextos!default;
+$smc-gadgets-cor-header-borda: $smc-cor-principal-bordas!default;
+$smc-gadgets-cor-header-sombra: $smc-cinza-04!default;
+$smc-gadgets-cor-lista-separador: $smc-cinza-02!default;
+$smc-gadgets-cor-boxshadow: -2px 2px 3px 0 $smc-cinza-06!default;
+
+// Configuração geral
+$smc-gadgets-ico-ordenacao: $smc-caminho-compartilhado + "smc-ico-checkordenacao.png"!default;
+$smc-gadgets-added-overflow: auto!default;
+
+// Configuração da lista de botões dos gadgets
+$smc-gadget-list-buttons-position: fixed!default;
+$smc-gadget-list-buttons-right: 20px!default;
+$smc-gadget-list-buttons-top: 50%!default;
+$smc-gadget-list-buttons-border-radius: 3px 0 0 3px!default;
+$smc-gadget-list-buttons-border-right: 0!default;
+$smc-gadget-list-buttons-border-z-index: 1!default;
+$smc-gadget-list-buttons-border-max-width: 95px!default;
+$smc-gadget-list-buttons-text-align: center!default;
+$smc-gadget-list-buttons-border-min-width: 200px!default;
+$smc-gadget-list-buttons-btn-salvar-margin: 2px!default;
+$smc-gadget-list-buttons-btn-salvar-padding: 10px 7px 0 27px!default;
+$smc-gadget-list-buttons-btn-salvar-bg-position: 7px -21px!default;
+$smc-gadget-list-buttons-btn-salvar-hover-bg-position: 7px 6px!default;
+$smc-gadget-list-buttons-dropdown-border: none !default;
+
+// Gadgets removidos
+$smc-gadget-removed-max-width: 40px!default;
+$smc-gadget-removed-float: left!default;
+$smc-gadget-removed-margin: 0 3px 0 5px!default;
+$smc-gadgets-removed-template-checkbox-container-padding: 5px!default;
+$smc-gadgets-removed-template-label-color: $smc-cor-secundaria!default;
+
+// Gadgets itens
+$smc-gadget-item-margin: 10px 0 0 0!default;
+$smc-gadget-item-vertical-align: top!default;
+$smc-gadget-item-vertical-border-radius:6px 6px 0 0!default;
+$smc-gadgets-area-border-radius: 5px 5px 0 0!default;
+$smc-gadgets-gadget-border-radius: 5px 5px 0 0!default;
+$smc-gadgets-gadget-width: 100%!default;
+
+// Gadgets content
+$smc-gadgets-gadget-content-datagrid-conteudo-border: none!default;
+$smc-gadgets-gadget-content-datagrid-conteudo-margin: 0 3px 10px 3px!default;
+$smc-gadgets-gadget-content-background-color: $smc-branco!default;
+$smc-gadgets-gadget-content-padding: 10px!default;
+$smc-gadgets-gadget-content-min-height: unset!default;
+
+// Can't Drop / Drop
+$smc-gadget-droparea-cantdrop-gadget-content-margin-bottom: 10px!default;
+$smc-gadget-droparea-drop-margin: 3px 0!default;
+$smc-gadget-droparea-drop-min-height: 5px!default;
+$smc-gadget-item-drag-overflow: hidden!default;
+$smc-gadget-item-drag-radius: 5px 5px 0 0!default;
+$smc-gadget-item-drag-position: absolute!default;
+
+// Cabeçalho
+$smc-gadgets-gadget-header-height: 30px!default;
+$smc-gadgets-gadget-header-padding: 10px 0 0 10px!default;
+$smc-gadgets-gadget-header-border-radius: 5px 5px 0 0!default;
+$smc-gadgets-gadget-header-h3-margin: 0 0 10px!default;
+$smc-gadgets-gadget-header-h3-width: auto!default;
+$smc-gadgets-gadget-header-h3-font-size: 14px!default;
+$smc-gadgets-gadget-header-h3-font-weight: 600!default;
+
+// Placeholder
+$smc-gadget-droparea-placeholder-opacity: 0.4!default;
+$smc-gadget-droparea-placeholder-height: 40px!default;
+$smc-gadget-droparea-placeholder-margin: 5px 0 0 0!default;
+$smc-gadget-droparea-placeholder-border-radius: 3px!default;
+$smc-gadget-droparea-placeholder-display: inline-block!default;
+$smc-gadget-droparea-placeholder-width: auto!default;
+
+// Janela conteúdos gadget
+$smc-gadget-window-btn-salvar-background-position: 5px 7px!default;
+$smc-gadget-window-btn-salvar-radius: 3px!default;
+$smc-gadget-window-btn-salvar-color: $smc-branco!default;
+$smc-gadget-window-btn-salvar-float: right!default;
+$smc-gadget-window-btn-salvar-margin: 0!default;
+$smc-gadget-window-btn-salvar-hover-background-position:5px -20px!default;
+$smc-gadget-window-btn-salvar-hover-background-color: $smc-cor-secundaria-backgrounds!default;
+$smc-gadget-window-btn-salvar-hover-color: $smc-preto!default;
+$smc-gadget-window-form-margin: 15px 0 10px 0!default;
+$smc-gadget-window-form-input-margin: 10px 0 0 0!default;
+$smc-gadget-window-form-input-float: right!default;
+
+// Base Check
+$smc-gadget-base-check-width: 7px!default;
+$smc-gadget-base-check-border: none!default;
+
+
+// ********** ----- HEADER ----- ********** //
+$smc-header-position: relative!default;
+$smc-header-min-height: 40px!default;
+$smc-header-display: inline-block!default;
+$smc-header-clear: both!default;
+$smc-header-label-clear: both!default;
+$smc-header-p-clear: both!default;
+
+// Cabeçalho com botão na lateral direita superior
+$smc-header-botao-itens-width: 90%!default;
+$smc-header-botao-buttonset-float: right!default;
+$smc-header-botao-buttonset-clear: none!default;
+$smc-header-botao-buttonset-margin: 6px!default;
+$smc-header-botao-buttonset-width: 5%!default;
+
+// Cabeçalho com label à esquerda do conteúdo formando lista horizontal
+$smc-header-label-esquerda-lista-horizontal-after-content: ":"!default;
+
+// Cabeçalho com label à esquerda do conteúdo formando lista vertical
+$smc-header-label-esquerda-lista-vertical-after-content: ":"!default;
+
+// Primeiro campo do cabeçalho com label oculto e dado usado como título
+$smc-header-first-child-titulo-label-display: none!default;
+$smc-header-first-child-titulo-p-color: $smc-branco!default;
+$smc-header-first-child-titulo-p-font-size: 16px!default;
+$smc-header-first-child-titulo-p-padding: 1px 1px 6px 0!default;
+$smc-header-first-child-titulo-p-border-bottom: solid 1px $smc-branco!default;
+$smc-header-first-child-titulo-p-margin: 0 0 10px 6px!default;
+
+// Configurações para geração das classes de Header
+$smc-header-tipos: "primary", "secondary", "tertiary", "quaternary"!default;
+$smc-header-widths: 100%, 100%, 100%, 100%!default;
+$smc-header-backgrounds: $smc-cor-principal-01, $smc-cor-principal-09, $smc-cor-secundaria-03, $smc-cor-secundaria-02!default;
+$smc-header-borders: solid 1px $smc-cor-principal-01, solid 1px $smc-cor-principal-09, solid 1px $smc-cor-secundaria-03, solid 1px $smc-cor-secundaria-02!default;
+$smc-header-radius: 5px, 10px, 10px, 10px!default;
+$smc-header-shadows: none, none, none, none!default;
+$smc-header-margins: 0, 0, 0 , 0!default;
+$smc-header-paddings: 15px, 15px, 15px, 0!default;
+
+$smc-header-label-fonts: normal normal bold 14px/16px segoeui, normal normal bold 14px/16px segoeui, normal normal bold 14px/16px segoeui, normal normal bold 14px/16px segoeui!default;
+$smc-header-label-colors: $smc-cor-principal-05, $smc-cor-principal-02, $smc-cor-secundaria-02, $smc-cor-secundaria-02!default;
+$smc-header-label-paddings: 2px, 2px, 2px, 2px!default;
+$smc-header-label-margins: 0, 0, 0, 0!default;
+
+$smc-header-grupo-itens-margin: 0 0 5px 0 !default;
+
+$smc-header-p-fonts: normal normal normal 14px/16px segoeui, normal normal normal 14px/16px segoeui, normal normal normal 14px/16px segoeui, normal normal normal 14px/16px segoeui!default;
+$smc-header-p-colors: $smc-branco, $smc-cinza-08, $smc-cinza-08, $smc-cinza-08!default;
+$smc-header-p-paddings: 2px, 2px, 2px, 2px!default;
+$smc-header-p-margins: 0, 0, 0, 0!default;
+
+// Totalizador
+$smc-totalizador-width: 99%!default;
+$smc-totalizador-padding: 10px 0 0 0!default;
+$smc-totalizador-min-height: 50px!default;
+$smc-totalizador-margin: 10px 5px 10px 5px!default;
+$smc-totalizador-border-top: dashed 1px $smc-cor-secundaria-01!default;
+$smc-totalizador-display: inline-block!default;
+$smc-totalizador-background: none!default;
+$smc-totalizador-radius: 5px!default;
+
+// Cabeçalho do totalizador
+$smc-totalizador-header-padding: 0 5px!default;
+$smc-totalizador-header-width: 100%!default;
+$smc-totalizador-header-margin: 0!default;
+$smc-totalizador-header-label-font: italic normal 14px /16px 'segoeui', Arial, sans-serif!default;
+$smc-totalizador-header-label-color: $smc-branco!default;
+$smc-totalizador-header-p-font: italic normal 14px /16px 'segoeui', Arial, sans-serif!default;
+$smc-totalizador-header-p-color: $smc-branco!default;
+
+// Itens do totalizador
+$smc-totalizador-itens-display: block!default;
+$smc-totalizador-itens-float: left!default;
+$smc-totalizador-itens-background-color: $smc-cor-secundaria-05!default;
+//$smc-totalizador-itens-background-image:;
+//$smc-totalizador-itens-background-repeat:;
+//$smc-totalizador-itens-background-position:;
+//$smc-totalizador-itens-background-attachment:;
+$smc-totalizador-itens-margin: 0 4px 8px 4px!default;
+$smc-totalizador-itens-min-height: 30px!default;
+$smc-totalizador-itens-padding: 8px 3px!default;
+$smc-totalizador-itens-radius: 5px!default;
+$smc-totalizador-itens-span-margin-left: 50px!default;
+$smc-totalizador-itens-span-float: left!default;
+$smc-totalizador-itens-label-color: $smc-cor-principal!default;
+$smc-totalizador-itens-label-font-size: 12px!default;
+$smc-totalizador-itens-label-display: block!default;
+$smc-totalizador-itens-label-width: 96%!default;
+$smc-totalizador-itens-p-color: $smc-cor-principal!default;
+$smc-totalizador-itens-p-font-size: 16px!default;
+$smc-totalizador-itens-p-margin-bottom: 0!default;
+
+// Totalizador em pares (left e right)
+$smc-totalizador-left-item-margin: 0 0 4px 4px!default;
+$smc-totalizador-left-item-width: 16%!default;
+$smc-totalizador-left-item-bottom-right-radius: 0!default;
+$smc-totalizador-left-item-top-right-radius: 0!default;
+$smc-totalizador-left-item-background: $smc-cor-secundaria-05!default;
+$smc-totalizador-left-item-span-margin-left: 35px!default;
+$smc-totalizador-right-item-margin: 0 4px 4px 0!default;
+$smc-totalizador-right-item-width: 16%!default;
+$smc-totalizador-right-item-bottom-right-radius: 0!default;
+$smc-totalizador-right-item-top-right-radius: 0!default;
+$smc-totalizador-right-item-background: dashed 1px $smc-cinza!default;
+$smc-totalizador-right-item-background: $smc-cor-secundaria-05!default;
+$smc-totalizador-right-item-span-margin-left: 35px!default;
+
+// Totalizador sem imagem no plano de fundo
+$smc-totalizador-sem-imagem-span-margin-left: 10px!default;
+
+// Configurações para geração das classes de Totalizador
+$smc-totalizador-tipos: "primary", "secondary", "tertiary", "quaternary", "quinary", "senary", "septenary", "octonary"!default;
+$smc-totalizador-widths: 99%, 49.2%, 32.5%, 24.2%, 19.2%, 15.85%, 13.5%, 11.7%!default;
+
+// Particularidades totalizador SENÁRIO (Diminuição da fonte)
+$smc-totalizador-tipo-senary-p-font: normal normal bold 15px /17px 'segoeui', Arial, sans-serif!default;
+$smc-totalizador-single-item-senary-width: 31.2%!default;
+
+// Particularidades totalizador OCTONÁRIO (Diminuição da fonte)
+$smc-totalizador-tipo-octonary-p-font: normal normal bold 15px /17px 'segoeui', Arial, sans-serif!default;
+
+
+// ********** ----- HIDE PANEL ----- ********** //
+// Ícones
+$smc-hidepanel-ico-seta-direita: $smc-caminho-compartilhado + "smc-ico-seta-cinza-direita-min.png"!default;
+$smc-hidepanel-ico-seta-baixo: $smc-caminho-compartilhado + "smc-ico-seta-cinza-baixo-min.png"!default;
+
+// Configurações Gerais
+$smc-hidepanel-background-position: 5px center!default;
+$smc-hidepanel-padding: 0 0 0 15px!default;
+$smc-hidepanel-padding: 10px 20px!default;
+$smc-hidepanel-margin: -1px 0 5px 0!default;
+
+// Botoes
+$smc-hidepanel-button-background: $smc-branco url() no-repeat $smc-hidepanel-background-position !default;
+$smc-hidepanel-button-border: 1px solid $smc-cor-principal !default;
+$smc-hidepanel-panel-border: 1px solid $smc-cor-principal !default;
+
+$smc-hidepanel-button-expanded-border-radius: 3px 3px 0 0!default;
+$smc-hidepanel-border-radius: 0 4px 4px 4px!default;
+$smc-hidepanel-li-before-content: ""!default;
+$smc-hidepanel-li-before-width: 5px!default;
+$smc-hidepanel-li-before-height: 5px!default;
+$smc-hidepanel-li-before-margin: 0 3px 0 5px!default;
+$smc-hidepanel-li-before-font-weight: bold!default;
+$smc-hidepanel-panel-background:$smc-branco!default;
+
+
+// ********** ----- LEGENDA ----- ********** //
+// Ícones de legenda
+$smc-ico-legend-circulo-cheio: "\e900"!default;
+$smc-ico-legend-circulo-vazado: "\e901"!default;
+$smc-ico-legend-quadrado-cheio: "\e902"!default;
+$smc-ico-legend-quadrado-vazado: "\e903"!default;
+$smc-ico-legend-coracao-cheio: "\e904"!default;
+$smc-ico-legend-coracao-vazado: "\e905"!default;
+$smc-ico-legend-estrela-cheia: "\e906"!default;
+$smc-ico-legend-estrela-vazada: "\e907"!default;
+$smc-ico-legend-losango-cheio: "\e908"!default;
+$smc-ico-legend-losango-vazado: "\e909"!default;
+$smc-ico-legend-triangulo-cheio: "\e90a"!default;
+$smc-ico-legend-triangulo-vazado: "\e90b"!default;
+$smc-ico-legend-gota-cheia: "\e90c"!default;
+$smc-ico-legend-gota-vazada: "\e90d"!default;
+$smc-ico-legend-hexagrama-cheia: "\e90e"!default;
+$smc-ico-legend-hexagrama-vazada: "\e90f"!default;
+$smc-ico-legend-flor-cheia: "\e910"!default;
+$smc-ico-legend-flor-vazada: "\e911"!default;
+$smc-ico-legend-octogono-cheio: "\e912"!default;
+$smc-ico-legend-octogono-vazado: "\e913"!default;
+
+// Configuração geral do posicionamento dos ícones
+$smc-base-ico-legend-background-position: 1px 12px!default;
+$smc-base-ico-legend-background-repeat: no-repeat!default;
+$smc-base-ico-legend-display: inline-table!default;
+$smc-base-ico-legend-font-size: 25px!default;
+$smc-base-ico-legend-line-height:10px !default;
+$smc-base-ico-legend-position: relative!default;
+$smc-base-ico-legend-left: 0!default;
+$smc-base-ico-legend-top: 5px!default;
+$smc-base-ico-legend-font-family: "smc-legend"!default;
+
+// Cores de legendas
+// Cores do texto das legendas
+$smc-cor-texto-legenda: $smc-cor-principal!default;
+
+// Variação de Amarelo
+$smc-legend-cor-amarelo: #ffe295,#f2c242,#c59413, #976e00!default;
+
+// Variação de Azul
+$smc-legend-cor-azul: #83b2ef, #4280d0, #003b87, #01214a!default;
+
+// Variação de Rosa
+$smc-legend-cor-rosa: #ffa4f7, #ec3adc, #9e2a8f, #570d51!default;
+
+// Variação de Verde
+$smc-legend-cor-verde: #b0f487, #6eae4c, #137d05, #014a15!default;
+
+// Variação de Vermelho
+$smc-legend-cor-vermelho: #fba6a4, #d44d43, #ac1307, #751100!default;
+
+// Box legenda descritiva
+$smc-legend-box-float: none!default;
+$smc-legend-box-margin: auto!default;
+$smc-legend-box-border: 1px dotted $smc-cinza-06!default;
+$smc-legend-box-background-color: $smc-cinza-02!default;
+$smc-legend-box-padding: 20px!default;
+$smc-legend-box-ul-padding:0 20px!default;
+$smc-legend-box-ul-margin: auto !default;
+$smc-legend-content-title-font-size: 16px!default;
+$smc-legend-content-title-color: $smc-preto!default;
+$smc-legend-content-title-font-weight: 600!default;
+
+// Vertical
+$smc-legend-orientation-vertical-ul-li-display:block !default;
+$smc-legend-orientation-vertical-ul-li-first-child-margin-bottom: 10px;
+$smc-legend-orientation-vertical-ul-li-first-child-display: block;
+
+// Horizontal
+$smc-legend-orientation-horizontal-ul-li-display:inline-table!default;
+$smc-legend-orientation-horizontal-ul-li-padding-right: 10px!default;
+$smc-legend-orientation-horizontal-ul-li-first-child-margin-bottom: 10px!default;
+$smc-legend-orientation-horizontal-ul-li-first-child-display: block!default;
+
+//Legenda de Idiomas
+$smc-legend-idiomas-borda-bandeiras-posicao: $smc-cor-secundaria-02!default;
+$smc-legend-idiomas-cor-login-icones-lista: transparent!default;
+
+
+
+// ********** ----- LISTAS ----- ********** //
+// Cores lista multilinha
+$smc-lista-cor-borda-principal: $smc-cinza-04!default;
+$smc-lista-cor-texto: $smc-cinza!default;
+$smc-lista-cor-titulo: $smc-cinza-08!default;
+$smc-lista-cor-borda-imagem: $smc-cinza-04!default;
+$smc-lista-cor-imagem: $smc-branco!default;
+$smc-listadetalhada-cor-selecionada: $smc-cor-secundaria-04!default;
+$smc-listadetalhada-cor-borda: $smc-cinza-04!default;
+$smc-listadetalhada-cor-periodo: $smc-cinza-02!default;
+
+// Imagem pessoa
+$smc-lista-imagempessoa: $smc-caminho-compartilhado+"smc-ico-imagem-pessoa.png"!default;
+
+// Configurações gerais
+$smc-list-conteudo-clear: both!default;
+$smc-list-conteudo-margin: 0 0 25px 0!default;
+$smc-list-item-padding: 0!default;
+$smc-list-item-margin: 0 0 5px 0!default;
+$smc-list-cabecalho-topo-background-color:transparent !default;
+$smc-list-cabecalho-topo-height:0!default;
+
+// Lista detalhada
+// Item
+$smc-listdetailed-item-border: none!default;
+$smc-listdetailed-item-radius: 0;
+$smc-listdetailed-item-background: $smc-cor-principal-08!default;
+$smc-listdetailed-item-margin: 0 0 10px 0!default;
+$smc-listdetailed-item-padding: 0!default;
+
+// Conteúdo do item
+$smc-listdetailed-conteudo-width: 91.5%!default;
+$smc-listdetailed-conteudo-float: left!default;
+$smc-listdetailed-conteudo-border-right: 1px solid transparent!default;
+$smc-listdetailed-conteudo-background: $smc-cor-principal-10!default;
+$smc-listdetailed-conteudo-padding: 10px!default;
+$smc-listdetailed-conteudo-margin: 0!default;
+
+// Header do conteúdo
+$smc-listdetailed-header-conteudo-margin: 0!default;
+$smc-listdetailed-header-conteudo-width: 99.5%!default;
+$smc-listdetailed-header-conteudo-border-bottom: dotted 1px $smc-cor-principal-bordas!default;
+$smc-listdetailed-header-conteudo-background: transparent!default;
+$smc-listdetailed-header-conteudo-padding: 8px 0 8px 6px!default;
+$smc-listdetailed-header-conteudo-radius: 0!default;
+$smc-listdetailed-header-conteudo-display: inline-block!default;
+$smc-listdetailed-header-conteudo-li-float: left!default;
+$smc-listdetailed-header-conteudo-li-margin: 0 30px 0 0!default;
+$smc-listdetailed-header-conteudo-li-span-label-display: block!default;
+$smc-listdetailed-header-conteudo-li-span-label-color: $smc-cor-principal!default;
+$smc-listdetailed-header-conteudo-li-span-label-font-size: 13px!default;
+$smc-listdetailed-header-conteudo-li-span-label-font-weight: 0!default;
+$smc-listdetailed-header-conteudo-li-span-label-font-family: 'bree_serif', Arial, sans-serif!default;
+$smc-listdetailed-header-conteudo-li-span-label-font-style: normal!default;
+$smc-listdetailed-header-conteudo-li-span-label-font-variant: normal!default;
+//$smc-listdetailed-header-conteudo-li-span-label-font-line-heignt:;
+$smc-listdetailed-header-conteudo-li-span-label-padding: 0!default;
+$smc-listdetailed-header-conteudo-li-span-label-margin: 0!default;
+$smc-listdetailed-header-conteudo-li-span-p-clear: both!default;
+
+// Detalhe do conteúdo
+$smc-listdetailed-detalhes-conteudo-background: transparent!default;
+$smc-listdetailed-detalhes-conteudo-border: solid 1px $smc-cor-principal-bordas!default;
+$smc-listdetailed-detalhes-conteudo-radius: 5px!default;
+$smc-listdetailed-detalhes-conteudo-margin: 10px 0 0 0!default;
+$smc-listdetailed-detalhes-conteudo-padding: 0 0 10px 10px!default;
+$smc-listdetailed-detalhes-conteudo-min-height: 55px!default;
+$smc-listdetailed-detalhes-conteudo-display: inline-table!default;
+$smc-listdetailed-detalhes-conteudo-width: 98.8%!default;
+$smc-listdetailed-detalhes-conteudo-li-color: $smc-cinza!default;
+$smc-listdetailed-detalhes-conteudo-li-margin: 0 0 3px 0!default;
+$smc-listdetailed-detalhes-conteudo-li-list-style: none!default;
+$smc-listdetailed-detalhes-conteudo-li-float: none!default;
+$smc-listdetailed-detalhes-conteudo-li-min-width: auto!default;
+$smc-listdetailed-detalhes-conteudo-li-h2-margin: 0!default;
+$smc-listdetailed-detalhes-conteudo-li-h2-color: $smc-cor-principal-titulos!default;
+$smc-listdetailed-detalhes-conteudo-li-h2-font-style: normal!default;
+$smc-listdetailed-detalhes-conteudo-li-h2-font-variant: normal!default;
+//$smc-listdetailed-detalhes-conteudo-li-h2-font-line-height:;
+$smc-listdetailed-detalhes-conteudo-li-h2-font-family: 'bree_serif', Arial, sans-serif!default;
+$smc-listdetailed-detalhes-conteudo-li-h2-font-size: 13px!default;
+$smc-listdetailed-detalhes-conteudo-li-h2-font-weight: normal!default;
+$smc-listdetailed-detalhes-conteudo-li-h2-float: left!default;
+$smc-listdetailed-detalhes-conteudo-li-span-p-margin: 0!default;
+$smc-listdetailed-detalhes-conteudo-li-span-p-padding: 0!default;
+$smc-listdetailed-detalhes-conteudo-li-span-p-font-size: 12px!default;
+
+// Botões de ação do item
+$smc-listdetailed-botoes-width: 4%!default;
+$smc-listdetailed-botoes-float: right!default;
+$smc-listdetailed-botoes-padding: 0 3px 10px 7px!default;
+$smc-listdetailed-botoes-background: transparent!default;
+$smc-listdetailed-botoes-radius: 0!default;
+$smc-listdetailed-botoes-margin: 10px!default;
+
+// Imagem (caso possua)
+$smc-listdetailed-imagem-border: 1px solid $smc-lista-cor-borda-imagem!default;
+$smc-listdetailed-imagem-radius: 3px!default;
+$smc-listdetailed-imagem-float: left!default;
+$smc-listdetailed-imagem-height: 100px!default;
+$smc-listdetailed-imagem-margin: 10px!default;
+$smc-listdetailed-imagem-width: 85px!default;
+$smc-listdetailed-imagem-background-image: $smc-lista-imagempessoa!default;
+$smc-listdetailed-imagem-background-size: 80%!default;
+$smc-listdetailed-imagem-img-height: auto!default;
+$smc-listdetailed-imagem-img-width: 85px!default;
+
+// Lista tipo agenda
+$smc-list-agenda-border-radius: 5px!default;
+$smc-list-agenda-data-float: left!default;
+$smc-list-agenda-data-width: 52px!default;
+$smc-list-agenda-data-height: 110px!default;
+$smc-list-agenda-data-margin: -1px 15px 15px 10px!default;
+$smc-list-agenda-data-text-align: center!default;
+$smc-list-agenda-data-border-radius: 0 0 3px 3px!default;
+
+// Lista simples
+$smc-list-cor-header: $smc-cor-secundaria!default;
+$smc-list-cor-header-borda: $smc-cor-secundaria-backgrounds!default;
+$smc-list-cor-header-margin: 0 5px -5px 5px!default;
+$smc-list-cor-header-height: 33px!default;
+$smc-list-cor-linha-hover: $smc-cor-secundaria-backgrounds!default;
+$smc-lista-simples-cor-borda: $smc-cor-principal!default;
+$smc-lista-simples-cor-cabecalho-background: $smc-cor-principal!default;
+$smc-lista-simples-cor-cabecalho-texto: $smc-branco!default;
+$smc-lista-simples-cor-pesquisa: $smc-cinza!default;
+$smc-lista-simples-cor-even: $smc-branco!default;
+$smc-lista-simples-cor-odd: $smc-cinza-04!default;
+
+// Header lista detalhada
+$smc-lista-detalhada-botoes-topo-background-color: $smc-cor-principal-headers-e-textos!default;
+$smc-lista-detalhada-botoes-topo-display: inline!default;
+$smc-lista-detalhada-botoes-topo-width: 100%!default;
+$smc-lista-detalhada-botoes-topo-height: 35px!default;
+$smc-lista-detalhada-botoes-topo-radius: 4px!default;
+$smc-lista-detalhada-botoes-topo-float-botao: right!default;
+$smc-lista-detalhada-botoes-topo-margin-botao: 6px 6px 10px 0!default;
+$smc-lista-detalhada-botoes-topo-background-position-botao: 6px 6px!default;
+$smc-lista-detalhada-botoes-topo-height-botao: 24px!default;
+$smc-lista-detalhada-botoes-topo-border-botao: none!default;
+$smc-lista-detalhada-botoes-topo-padding-left-botao: 22px!default;
+$smc-lista-detalhada-botoes-topo-background-size-botao: 62%!default;
+$smc-lista-detalhada-botoes-topo-background-position-botao-hover: 6px -16px!default;
+
+// Lista agrupada (CONTAINER ITEM)
+$smc-list-conteudo-ul-li-ul-border: solid 1px $smc-cor-principal-bordas!default;
+$smc-list-conteudo-ul-li-ul-margin: 6px 0 10px 0!default;
+$smc-list-conteudo-ul-li-ul-padding: 10px!default;
+$smc-list-conteudo-ul-li-ul-radius: 5px!default;
+
+// Lista agrupada (ITENS)
+$smc-grouped-list-itens-borda: solid 1px $smc-cor-principal-bordas!default;
+$smc-grouped-list-itens-radius: 5px!default;
+$smc-grouped-list-itens-margin: 16px 1% 0 1%!default;
+$smc-grouped-list-itens-padding: 0!default;
+$smc-grouped-list-itens-min-height: 55px!default;
+$smc-grouped-list-itens-display: inline-table!default;
+$smc-grouped-list-itens-width: 98%!default;
+$smc-grouped-list-itens-li-clear: none!default;
+$smc-grouped-list-itens-li-span-label-color: $smc-cor-principal!default;
+$smc-grouped-list-itens-li-span-label-font-size: 12px!default;
+$smc-grouped-list-itens-li-span-label-font-weight: 600!default;
+$smc-grouped-list-itens-buttonset-margin-left: -10px!default;
+
+// Lista agrupada (ITENS TÍTULO)
+$smc-grouped-list-itens-titulo-padding: 5px 0 2px 0!default;
+$smc-grouped-list-itens-titulo-color: $smc-cor-principal-titulos!default;
+$smc-grouped-list-itens-titulo-font-family: 'bree_serif', Arial, sans-serif!default;
+//$smc-grouped-list-itens-titulo-font-style:;
+//$smc-grouped-list-itens-titulo-font-variant:;
+//$smc-grouped-list-itens-titulo-font-line-height:;
+$smc-grouped-list-itens-titulo-font-size: 13px!default;
+$smc-grouped-list-itens-titulo-font-weight: normal!default;
+$smc-grouped-list-itens-titulo-float: left!default;
+
+// Lista agrupada (CABEÇALHO)
+$smc-grouped-list-cabecalho-grouped-list-margin: 0!default;
+$smc-grouped-list-cabecalho-grouped-list-padding: 8px 0 18px 6px!default;
+$smc-grouped-list-cabecalho-grouped-list-width: 99.5%!default;
+$smc-grouped-list-cabecalho-grouped-list-min-height: 70px!default;
+$smc-grouped-list-cabecalho-grouped-list-border-radius: 5px 5px 0 0!default;
+$smc-grouped-list-cabecalho-grouped-list-border: none!default;
+$smc-grouped-list-cabecalho-grouped-list-display: inline-block!default;
+$smc-grouped-list-cabecalho-grouped-list-itens-li-min-height: 25px!default;
+$smc-grouped-list-cabecalho-grouped-list-box-shadow: none!default;
+
+// Lista sem resultados (RESULTADO)
+$smc-list-no-results-width: 100%!default;
+$smc-list-no-results-text-align: center!default;
+$smc-list-no-results-padding: 15px!default;
+$smc-list-no-results-border-top: 1px solid $smc-cinza-02!default;
+$smc-list-no-results-margin: 10px 0 0 0!default;
+$smc-list-no-results-font-style: italic!default;
+$smc-list-no-results-color: $smc-cor-principal!default;
+
+
+
+// ********** ----- LOGIN ----- ********** //
+// Processando
+$smc-login-alerta-processando-background-color: $smc-cor-principal-01!default; 
+$smc-login-alerta-processando-opacity: 0.7!default;
+$smc-login-alerta-processando-z-index: 1050!default;
+$smc-login-alerta-processando-span-font-family: segoeui, Arial, sans-serif!default;
+$smc-login-alerta-processando-span-margin: 10% auto 0!default;
+$smc-login-alerta-processando-span-border: none!default;
+$smc-login-alerta-processando-span-padding: 86px 0 0px 0px!default;
+$smc-login-alerta-processando-span-background: url($img-preloader) no-repeat!default;
+$smc-login-alerta-processando-span-color: $smc-cinza-08!default; 
+$smc-login-alerta-processando-span-z-index: 21!default;
+$smc-login-alerta-processando-span-width: 110px!default;
+$smc-login-alerta-processando-span-display: block!default;
+$smc-login-alerta-processando-span-background-color: $smc-branco!default;
+$smc-login-alerta-processando-span-background-size: auto!default;
+$smc-login-alerta-processando-span-background-position: center 25px!default;
+$smc-login-alerta-processando-span-text-align: center!default;
+$smc-login-alerta-processando-span-height: 125px!default;
+$smc-login-alerta-processando-span-radius: 3px!default;
+
+
+// Body
+$smc-login-body-background-color: $smc-branco!default;
+$smc-login-body-border-top: 7px solid $smc-cor-secundaria-02!default;
+$smc-login-body-border-bottom:none!default;
+$smc-login-body-border-left:none!default;
+$smc-login-body-border-right:none!default;
+//$smc-login-body-background-image:;
+$smc-login-body-background-repeat: no-repeat!default;
+$smc-login-body-background-position: left top!default;
+
+// Internacionalização
+$smc-login-btn-internacionalizacao-div-a-border:none!default;
+$smc-login-btn-internacionalizacao-div-a-bg-color:transparent!default;
+$smc-login-btn-internacionalizacao-div-a-color:$smc-preto!default;
+$smc-login-btn-internacionalizacao-div-a-color-hover:$smc-cor-principal-hover!default;
+$smc-login-btn-internacionalizacao-div-a-box-shadow-focus:none!default;
+$smc-login-btn-internacionalizacao-div-a-outline-focus:none!default;
+
+
+// Conteúdo
+$smc-login-conteudo-top:50px!default;
+$smc-login-conteudo-height: 100%!default;
+$smc-login-conteudo-min-height: 580px!default;
+
+// Login Section
+$smc-login-section-background-color: transparent!default;
+$smc-login-section-background-image: none !default;
+$smc-login-section-background-repeat: no-repeat!default;
+$smc-login-section-background-position: 0 0!default;
+$smc-login-section-margin:60px 0 0 0!default;
+
+// Login Section H1
+$smc-login-section-h1-display:block !default;
+$smc-login-section-h1-background-color: transparent!default;
+//$smc-login-section-h1-background-image:;
+$smc-login-section-h1-background-repeat: no-repeat!default;
+$smc-login-section-h1-background-position: center!default;
+$smc-login-section-h1-height:71px !default;
+$smc-login-section-h1-width:188px !default;
+$smc-login-section-h1-font-size:0 !default;
+$smc-login-section-h1-padding:0 !default;
+$smc-login-section-h1-margin:0 0 20px 0 !default;
+
+// Login Section H2
+$smc-login-section-h2-font-size: 15px!default;
+$smc-login-section-h2-color: $smc-cinza!default;
+$smc-login-section-h2-margin: 15px 0!default;
+$smc-login-section-h2-font-weight: normal!default;
+$smc-login-section-h2-width: 100%!default;
+$smc-login-section-label-color:$smc-preto!default;
+
+// Fieldset Lembrar Senha
+$smc-login-fieldset-lembrar-senha-radiobutton-label-margin: -5px 5% 12px 0!default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-font-size:13px!default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-position: relative!default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-display: block!default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-margin-top: -7px !default;
+$smc-login-fieldset-lembrar-senha-radiobutton-label-margin-bottom: 10px!default;
+
+// Login Separador
+$smc-login-separador-width:100%!default;
+$smc-login-separador-display:table!default;
+$smc-login-separador-text-align:center!default;
+$smc-login-separador-border-bottom:1px solid $smc-cor-secundaria!default;
+$smc-login-separador-max-height: 5px!default;
+$smc-login-separador-margin-bottom: 8px!default;
+
+$smc-login-separador-span-padding:0 5px!default;
+$smc-login-separador-span-font-size:13px!default;
+$smc-login-separador-span-color: $smc-cor-principal!default;
+$smc-login-separador-span-display: block!default;
+$smc-login-separador-span-text-align: center!default;
+$smc-login-separador-span-margins: -6px 10% 0 10%!default;
+$smc-login-separador-span-background-color:$smc-branco!default;
+
+// Mensagens de validação
+$smc-login-mensagens-centro-modal-window-auto-width:100%!default;
+$smc-login-mensagens-centro-modal-window-auto-left:0!default;
+$smc-login-mensagens-centro-modal-header-button-left:95%!default;
+
+//Botão Esqueci minha senha
+$smc-login-lembrar-senha-text-align:left!default;
+$smc-login-lembrar-senha-margin-bottom: -23px !default;
+$smc-login-lembrar-senha-button-background-color: transparent!default;
+$smc-login-lembrar-senha-button-border: none!default;
+$smc-login-lembrar-senha-button-color:  $smc-cinza!default;
+$smc-login-lembrar-senha-button-color-hover: $smc-preto!default;
+$smc-login-lembrar-senha-button-text-decoration: underline!default;
+$smc-login-lembrar-senha-button-box-shadow: none!default;
+$smc-login-lembrar-senha-button-outline: none!default;
+
+$smc-detalhe-editavel-tabular-background-color:$smc-cor-secundaria-04!default;
+
+// Lista de itens para recuperação de senha
+$smc-detalhe-editavel-tabular-border: none !default;
+$smc-detalhe-editavel-tabular-span-background-color: transparent!default;
+$smc-detalhe-editavel-tabular-span-font-size: 16px!default;
+$smc-detalhe-editavel-tabular-span-padding: 0!default;
+
+// Grupo Botões de Ação Secundária
+$smc-login-group-acao-secundaria-padding-top:15px!default;
+$smc-login-group-acao-secundaria-float:left !default;
+$smc-login-group-acao-secundaria-display:block!default;
+
+// Botões de Ação Secundária(Tratamento individual)
+$smc-login-btn-acao-secundaria-width:100%!default;
+$smc-login-btn-acao-secundaria-text-align:center!default;
+$smc-login-btn-acao-principal-margin:0 0 40px 0!default;
+$smc-login-btn-acao-principal-float:left !default;
+
+$smc-login-group-acao-secundaria-usuarioderede-bg-color: $smc-branco!default;
+$smc-login-group-acao-secundaria-usuarioderede-bg-color-hover: $smc-cor-principal-hover!default;
+$smc-login-group-acao-secundaria-usuarioderede-border: 1px solid $smc-preto!default;
+$smc-login-group-acao-secundaria-usuarioderede-border-hover:1px solid $smc-preto!default;
+
+$smc-login-group-acao-secundaria-cadastrar-bg-color:$smc-branco!default;
+$smc-login-group-acao-secundaria-cadastrar-bg-color-hover:$smc-cor-principal-hover!default;
+$smc-login-group-acao-secundaria-cadastrar-border:1px solid $smc-preto!default;
+$smc-login-group-acao-secundaria-cadastrar-border-hover:1px solid $smc-preto!default;
+
+$smc-login-group-acao-secundaria-login-bg-color: $smc-branco!default;
+$smc-login-group-acao-secundaria-login-bg-color-hover: $smc-cor-principal-hover!default;
+$smc-login-group-acao-secundaria-login-border:1px solid $smc-preto!default;
+$smc-login-group-acao-secundaria-login-border-hover:1px solid $smc-preto!default;
+
+
+// Form Autentication e Reenvio de Senha
+$smc-login-form-authentication-margin-top:30px!default;
+$smc-login-form-authentication-padding:0!default;
+$smc-login-texto-reenvio-senha-font-size:14px!default;
+
+// Footer
+$smc-login-footer-background: transparent!default;
+$smc-login-footer-padding: 15px 1% 15px 1%!default;
+$smc-login-footer-position: inherit!default;
+$smc-login-footer-margin-bottom: -4px!default;
+$smc-login-footer-height: auto!default;
+$smc-login-footer-display:inline-block!default;
+$smc-login-footer-width: 100%!default;
+
+// Tela Inicial
+$smc-login-inicio-aplicacao-margin-bottom:3px!default;
+$smc-login-inicio-aplicacao-cursor:pointer!default;
+$smc-login-inicio-aplicacao-color: $smc-cinza!default;
+$smc-login-inicio-aplicacao-color-hover:$smc-preto!default;
+$smc-login-inicio-aplicacao-text-decoration:none!default;
+
+
+
+// ********** ----- LOOKUP ----- ********** //
+// Cores e imagens lookup
+$smc-lookup-cor-autocomplete-background: $smc-branco!default;
+$smc-cor-cabecalho-grid: $smc-cinza-05!default;
+$smc-lookup-cor-autocomplete-borda: $smc-cinza-05!default;
+$smc-lookup-cor-autocomplete-selecao: $smc-cor-principal-hover!default;
+$smc-ico-lookup-comando-limpar: $smc-caminho-compartilhado + "smc-ico-lookup-limpar.png"!default;
+//$smc-ico-lookup-comando-abrir: $smc-caminho-compartilhado + "smc-ico-lookup.png"!default;
+
+// Lookup único
+$smc-lookup-unico-corpo-acoes-width: 100%!default;
+$smc-lookup-unico-corpo-acoes-float: left!default;
+$smc-lookup-unico-corpo-limpar-margin: 0 0 0 -33px!default;
+$smc-lookup-unico-corpo-limpar-float: left!default;
+$smc-lookup-unico-corpo-limpar-width: 22px -10px 0 0!default;
+$smc-lookup-unico-corpo-limpar-position: relative!default;
+$smc-lookup-unico-corpo-limpar-btn-height: 22px!default;
+$smc-lookup-unico-corpo-limpar-btn-width: 22px!default;
+$smc-lookup-unico-corpo-limpar-btn-padding-left: 5px!default;
+$smc-lookup-unico-corpo-limpar-btn-margin-top: 19px!default;
+$smc-lookup-unico-corpo-limpar-btn-float: left!default;
+$smc-lookup-unico-corpo-limpar-btn-radius: 12px!default;
+$smc-lookup-unico-corpo-limpar-btn-background-position: 2px -24px!default;
+$smc-lookup-unico-corpo-limpar-btn-hover-background-position: 2px 3px!default;
+$smc-lookup-unico-corpo-limpar-btn-border: solid 1px $smc-cinza-05!default;
+$smc-lookup-unico-corpo-limpar-btn-opacity: 0.4!default;
+$smc-lookup-unico-pesquisa-float: right!default;
+$smc-lookup-unico-pesquisa-width: 35px!default;
+$smc-lookup-unico-pesquisa-left: 97.3%!default;
+$smc-lookup-unico-pesquisa-position: absolute!default;
+
+// Span de instrução
+$smc-dataselector-span-display: block!default;
+$smc-dataselector-span-clear: both!default;
+$smc-dataselector-span-margin-bottom: 15px!default;
+$smc-dataselector-span-padding-left: 9px!default;
+$smc-dataselector-span-color: $smc-cinza!default;
+$smc-dataselector-span-font-style: italic!default;
+
+// Dataselectork
+$smc-dataselector-treeview-width: 96%!default;
+$smc-dataselector-treeview-padding: 5px 2%!default;
+$smc-dataselector-treeview-painel-busca-margin-bottom: 15px!default;
+$smc-dataselector-treeview-painel-busca-height: 30px!default;
+$smc-dataselector-treeview-margin: -10px 0 0 10px!default;
+$smc-dataselector-treeview-radius: 5px!default;
+$smc-dataselector-cor-autocomplete-borda: $smc-cor-principal-bordas!default;
+$smc-treeview-field-busca-float: left!default;
+
+// Lookup múltiplo
+$smc-lookup-multiplo-corpo-margin: 10px 0 10px 0!default;
+$smc-lookup-multiplo-pesquisar-width: 100%!default;
+$smc-lookup-multiplo-pesquisar-text-align: right!default;
+
+// Lookup open command text
+$smc-lookup-open-command-text-radius: 3px!default;
+$smc-lookup-open-command-text-padding: 0 15px 0 40px!default;
+$smc-lookup-open-command-text-color: $smc-branco!default;
+$smc-lookup-open-command-text-background-position: 10px 7px!default;
+$smc-lookup-open-command-text-left: 86%!default;
+$smc-lookup-open-command-text-font-size: 12px!default;
+$smc-lookup-open-command-text-border: $smc-cor-principal!default;
+$smc-lookup-open-command-text-hover-background-position: 10px -20px!default;
+$smc-lookup-open-command-text-hover-border: $smc-cinza!default;
+
+// Lookup open command
+$smc-lookup-open-command-border-radius: 0 3px 3px 0!default;
+$smc-lookup-open-command-padding: 0 5px 0 30px!default;
+$smc-lookup-open-command-display: inline-block!default;
+$smc-lookup-open-command-cursor: pointer!default;
+$smc-lookup-open-command-line-height: 10px!default;
+$smc-lookup-open-command-text-indent: -999999px!default;
+$smc-lookup-open-command-background-position: 10px -20px!default;
+$smc-lookup-open-command-margin: 0 10px 0 -15px!default;
+$smc-lookup-open-command-top: 20px!default;
+$smc-lookup-open-command-position: relative!default;
+$smc-lookup-open-command-left: -9px!default;
+$smc-lookup-open-command-height: 31px!default;
+$smc-lookup-open-command-hover-background-position: 10px 7px!default;
+
+// Lookup open command (DESABILITADO)
+$smc-lookup-open-command: $smc-cinza-06!default;
+$smc-lookup-open-command-desabilitado-borda: $smc-cinza-05!default;
+$smc-lookup-open-command-desabilitado-cor: $smc-cinza-07!default;
+$smc-lookup-open-command-desabilitado-background: $smc-cinza-01!default;
+$smc-lookup-open-command-desabilitado-imagem: "${smc-caminho-compartilhado}smc-ico-lookup-desabilitado.png"!default;
+
+// Painel autocompletar
+$smc-lookup-autocomplete-panel-position: absolute!default;
+$smc-lookup-autocomplete-panel-z-index: 1042!default;
+$smc-lookup-autocomplete-panel-min-width: 338px!default;
+$smc-lookup-autocomplete-panel-padding: 2px 10px!default;
+$smc-lookup-autocomplete-panel-border-radius: 0 0 3px 3px!default;
+$smc-lookup-autocomplete-panel-width: 93%!default;
+$smc-lookup-autocomplete-panel-height: 250px!default;
+$smc-lookup-autocomplete-input-width: 97%!default;
+$smc-lookup-autocomplete-panel-margin-top: -24px!default;
+$smc-lookup-autocomplete-panel-overflow-x: hidden!default;
+$smc-lookup-autocomplete-panel-overflow-y: auto!default;
+$smc-lookup-autocomplete-panel-li-padding: 5px!default;
+$smc-lookup-autocomplete-panel-li-display: block!default;
+$smc-lookup-autocomplete-panel-li-min-height: 10px!default;
+$smc-lookup-autocomplete-panel-li-height: 25px!default;
+$smc-lookup-autocomplete-panel-li-width: 100%!default;
+$smc-lookup-autocomplete-panel-li-font-style: normal!default;
+$smc-lookup-autocomplete-panel-li-font-variant: normal!default;
+$smc-lookup-autocomplete-panel-li-font-weight: normal!default;
+//$smc-lookup-autocomplete-panel-li-font-line-height:;
+$smc-lookup-autocomplete-panel-li-font-family: 'segoeui', Arial, sans-serif!default;
+$smc-lookup-autocomplete-panel-li-color: $smc-preto!default;
+$smc-lookup-autocomplete-panel-li-font-size: 12px!default;
+$smc-lookup-autocomplete-panel-li-hover-background: $smc-cinza!default;
+$smc-lookup-autocomplete-ul-margin-bottom: 7px!default;
+$smc-lookup-autocomplete-ul-li-padding: 3px!default;
+$smc-lookup-autocomplete-ul-li-display: block!default;
+$smc-lookup-autocomplete-ul-li-min-height: 10px!default;
+$smc-lookup-autocomplete-ul-li-padding-bottom: 2px!default;
+$smc-lookup-autocomplete-ul-li-clear: both!default;
+$smc-lookup-autocomplete-ul-li-height: 25px!default;
+$smc-lookup-autocomplete-ul-li-width: 100%!default;
+$smc-lookup-ui-autocomplete-panel-margin-top: -25px!default;
+$smc-lookup-autocomplete-control-positon: relative!default;
+$smc-lookup-autocomplete-control-width: 99%!default;
+
+// Painel mais resultados existente no painel de autocompletar
+$smc-lookup-moreresults-panel-font-size: 10px!default;
+$smc-lookup-moreresults-panel-width: 100px!default;
+$smc-lookup-moreresults-panel-padding: 5px!default;
+
+// Botão Limpar
+$smc-btn-limpar-ico-disabled-opacity: 0.4!default;
+$smc-btn-limpar-ico-disabled-filter: alpha(opacity=40)!default;
+
+// Lookup filters
+$smc-lookup-filters-panel-ul-li-float: left!default;
+$smc-lookup-filters-panel-ul-li-margin-left: 2px!default;
+$smc-lookup-filters-panel-ul-li-height: 65px!default;
+$smc-lookup-filters-panel-ul-li-btn-pesquisar-margin-top: 21px!default;
+$smc-lookup-filters-panel-ul-li-btn-pesquisar-background-position: 10px 8px!default;
+$smc-lookup-filters-panel-ul-li-btn-pesquisar-padding: 0 10px 0 33px!default;
+$smc-lookup-filters-panel-ul-li-btn-pesquisar-radius: 3px!default;
+$smc-lookup-filters-panel-ul-li-btn-pesquisar-font-size: 12px!default;
+$smc-lookup-filters-panel-ul-li-btn-pesquisar-hover-background-position: 8px 7px!default;
+$smc-lookup-filters-panel-ul-li-btn-limpar-background-position: center -20px!default;
+$smc-lookup-filters-panel-ul-li-btn-limpar-padding: 19px 13px 9px 19px!default;
+$smc-lookup-filters-panel-ul-li-btn-limpar-radius: 3px!default;
+$smc-lookup-filters-panel-ul-li-btn-limpar-hover-background-position: center 7px!default;
+
+// Lookup search
+$smc-lookup-search-command-border: 0!default;
+$smc-lookup-search-panel-container-margin-top: 5px!default;
+$smc-lookup-search-panel-container-margin-left: 17px!default;
+$smc-lookup-search-panel-container-btn-confirmar-height: 25px!default;
+$smc-lookup-search-panel-container-btn-confirmar-padding-left: 23px!default;
+$smc-lookup-search-panel-container-btn-confirmar-background-position: 5px -23px!default;
+$smc-lookup-search-panel-container-btn-confirmar-margin-top: 1px!default;
+$smc-lookup-search-panel-container-btn-confirmar-margin-right: -4px!default;
+$smc-lookup-search-panel-container-btn-confirmar-hover-background-position: 5px 3px!default;
+
+// Lookup ordena
+$smc-lookup-ordena-margin-top: 5px!default;
+$smc-lookup-ordena-background-position: 99% 0!default;
+$smc-lookup-ordena-display: block!default;
+
+// Lookup search panel
+$smc-lookup-search-panel-container-tbody-tr-td-select-width: 90%!default;
+$smc-lookup-search-panel-container-tbody-tr-td-select-max-width: 90%!default;
+$smc-lookup-search-panel-container-tbody-tr-td-select-radius: 3px!default;
+$smc-lookup-search-panel-container-tbody-ul-li-display: inline!default;
+$smc-lookup-search-panel-container-tbody-ul-li-min-height: 20px!default;
+$smc-lookup-search-panel-container-tbody-tr-td-vertical-align: middle!default;
+$smc-lookup-search-panel-container-tbody-tr-td-height: 28px!default;
+$smc-lookup-search-panel-container-tbody-tr-td-padding: 10px!default;
+$smc-lookup-search-panel-container-tbody-tr-td-buttonset-margin-top: -11px!default;
+$smc-lookup-search-panel-container-tbody-tr-td-buttonset-margin-right: 7px!default;
+
+
+// ********** ----- MENSAGENS ----- ********** //
+//Configurações gerais
+$smc-mensagem-padding: 0 35px 0 15px!default;
+$smc-mensagem-radius: 0!default;
+$smc-mensagem-margin: 0 auto 5px!default;
+
+// Ícones header
+$smc-mensagem-header-icon-font-size:28px!default;
+$smc-mensagem-header-icon-margin: 0 15px 0 0!default;
+
+// Botão Fechar
+$smc-mensagem-btn-close-margin: 4px -34px 0 0!default;
+$smc-mensagem-btn-close-border: none!default;
+$smc-mensagem-btn-close-bg-color: transparent!default;
+$smc-mensagem-btn-close-color: $smc-cinza-04!default;
+$smc-mensagem-btn-close-hover-color: $smc-branco!default;
+$smc-mensagem-btn-close-font-size: 18px!default;
+
+// Content
+$smc-mensagem-content-margin: 0 0 15px 35px!default;
+
+// Cores e ícones (Mensagens de Aviso)
+$smc-mensagem-informa-cor-background: #D9EDF7!default;
+$smc-mensagem-informa-cor-borda: #59aac3!default;
+$smc-mensagem-informa-cor-texto: #5c7f8f!default;
+
+// Cores e ícones(Mensagens de Erro)
+$smc-mensagem-erro-cor-background: #F2DEDE!default;
+$smc-mensagem-erro-cor-borda: #c43937!default;
+$smc-mensagem-erro-cor-texto: #92302e!default;
+
+// Cores e ícones (Mensagens de Informação)
+$smc-mensagem-aviso-cor-background: #FCF8E3!default;
+$smc-mensagem-aviso-cor-borda: #e4a445!default;
+$smc-mensagem-aviso-cor-texto: #A38147!default;
+
+// Cores e ícones(Mensagens de Sucesso)
+$smc-mensagem-sucesso-cor-background: #DFF0D8!default;
+$smc-mensagem-sucesso-cor-borda: #63ad4b!default;
+$smc-mensagem-sucesso-cor-texto: #546d3e!default;
+
+// Header Message Fixed
+$smc-messagefixed-header-h2-border: none!default;
+
+// Cores e ícones (Mensagens de Pergunta)
+$smc-cor-ico-mensagem-pergunta: #1762c0!default;
+
+// Ícones gerais (Todas as mensagens)
+$smc-cor-background-ico-fechar-mensagem: transparent!default;
+
+// Message Modal (HEADER)
+$smc-messagemodal-header-h2-color: $smc-cor-principal!default;
+$smc-messagemodal-header-h2-margin: 0 0 0 5px!default;
+$smc-messagemodal-header-h2-padding: 5px 0 5px 5px!default;
+$smc-messagemodal-header-h2-font-family: 'bree_serif', Arial, sans-serif!default;
+$smc-messagemodal-header-h2-font-size: 16px!default;
+$smc-messagemodal-header-h2-float: left!default;
+
+
+// ********** ----- MENU DINÂMICO ----- ********** //
+// Cores
+$smc-menu-importante-cor-item-a: $smc-cor-secundaria!default;
+$cor-principal-menu: $smc-cor-principal-01!default;
+$smc-menu-principal-cor-destaque: $smc-cor-secundaria!default;
+$smc-cor-menu-importante: $smc-cor-secundaria-03!default;
+$smc-menu-principal-cor-destaque-hover: $smc-cor-secundaria-04!default;
+$smc-menu-principal-cor-borda: transparent!default;
+$smc-menu-principal-cor-background: $smc-cor-principal-01!default;
+$smc-menu-principal-cor-separador: $smc-cor-principal-07!default;
+$smc-menu-principal-cor-background-hover: $smc-cor-principal-01!default;
+$smc-menu-principal-cor-seta: $smc-cor-principal-04!default;
+$smc-menu-principal-cor-item-selecionado: $smc-cor-secundaria-03!default;
+$smc-menu-principal-cor-link: $smc-branco!default;
+$smc-menu-principal-cor-link-hover: $smc-branco!default;
+$smc-menu-principal-cor-setinha: $smc-cinza-06!default;
+$smc-menu-N2-a-hover-color: $smc-branco!default;
+$smc-menu-N2-a-hover-background-color: $smc-cor-principal!default; 
+$smc-menu-dinamico-box-shadow:none!default;
+
+// Cores complementares menu dinamico
+$smc-menu-dinamico-min-cor: $smc-cinza-06!default;
+$smc-cor-menu-principal-fundo: $smc-cinza-03!default;
+$smc-cor-menu-principal-border-right: $smc-cinza-06!default;
+$smc-cor-menu-subitem-setinha-baixo: $smc-cinza-02!default;
+$smc-cor-menu-bordaseparadora: $smc-cinza-03!default;
+
+// Estrutura do Menu Dinâmico
+$smc-menu-dinamico-principal-float: left!default;
+$smc-menu-dinamico-principal-width: 230px!default;
+$smc-menu-dinamico-principal-overflow-y: auto!default;
+$smc-menu-dinamico-principal-overflow-x: hidden!default;
+
+// Icone de exibir/esconder o menu dinâmico
+$smc-menu-dinamico-ico-referencia-cor:$smc-cor-principal-01!default;
+
+// Item "a" dentro do menu principal
+$smc-menu-dinamico-principal-a-float: left!default;
+$smc-menu-dinamico-principal-a-padding: 11px 0 10px 10px!default;
+$smc-menu-dinamico-principal-a-margin-left: 5px!default;
+$smc-menu-dinamico-principal-a-margin-top: 0!default;
+$smc-menu-dinamico-principal-a-height: 14px!default;
+$smc-menu-dinamico-principal-a-font-size: 14px!default;
+
+// Item "li" dentro do menu principal
+$smc-menu-dinamico-principal-li-padding: 0 0 8px 0!default;
+$smc-menu-dinamico-principal-li-height: 27px!default;
+
+// Seta do menu principal
+$smc-menu-dinamico-principal-seta-cor-transparente: transparent!default;
+$smc-menu-dinamico-principal-seta-border-style: solid!default;
+$smc-menu-dinamico-principal-seta-border-width: 6px 8px 7px 5px!default;
+$smc-menu-dinamico-principal-seta-margin-left: 230px!default;
+$smc-menu-dinamico-principal-seta-margin-top: -33px!default;
+$smc-menu-dinamico-principal-seta-display: block!default;
+$smc-menu-dinamico-principal-seta-float: right!default;
+$smc-menu-dinamico-principal-seta-position: fixed!default;
+$smc-menu-dinamico-principal-seta-z-index: 16!default;
+$smc-menu-dinamico-principal-seta-sombra: rgba(0,0,0,0.2)!default;
+
+// Menu expandido
+$smc-menu-dinamico-float: left!default;
+$smc-menu-dinamico-overflow: hidden!default;
+$smc-menu-dinamico-width: 230px!default;
+$smc-menu-dinamico-margin-right: 10px!default;
+$smc-menu-dinamico-top: 71px!default;
+$smc-menu-dinamico-z-index: 49!default;
+$smc-menu-dinamico-height: 100%!default;
+$smc-menu-dinamico-position: fixed!default;
+
+// Sombra
+$smc-menu-dinamico-box-shadow: 0 0 0 3px rgba(0,0,0,0.2)!default;
+$smc-menu-dinamico-box-shadow-last-child: -1px 0 0 0 rgba(222,222,222,1)!default;
+$smc-menu-dinamico-box-shadow-min: 1px 1px 0 $smc-branco!default;
+
+// Base para fixação do menu
+$base-fixar-menu-icone-width: 40px!default;
+$base-fixar-menu-icone-height: 25px!default;
+$base-fixar-menu-icone-display: block!default;
+$base-fixar-menu-icone-cursor: pointer!default;
+$base-fixar-menu-icone-position: relative!default;
+$base-fixar-menu-icone-background-position: 17px 5px!default;
+$base-fixar-menu-icone-background-repeat: no-repeat!default;
+$base-fixar-menu-icone-margin-top: -35px!default;
+$base-fixar-menu-icone-float: right!default;
+
+// Menu recolhido
+$smc-menu-dinamico-min-width: 36px!default;
+$smc-menu-dinamico-overflow: hidden!default;
+$smc-menu-dinamico-padding-top: 50px!default;
+$smc-menu-dinamico-top: 71px!default;
+$smc-menu-dinamico-z-index: 49!default;
+$smc-menu-dinamico-height: 100%!default;
+$smc-menu-dinamico-position: fixed!default;
+
+// Menu importante
+$smc-menu-importante-height: 41px!default;
+$smc-menu-importante-margin-top: 10px!default;
+$smc-menu-importante-font-size: 15px!default;
+$smc-menu-importante-text-transform: uppercase!default;
+$smc-menu-importante-border-radius: 0 3px 3px 0!default;
+$smc-menu-importante-box-shadow: -1px 0 0 0 $smc-cor-menu-importante!default;
+
+
+
+// Itens do menu importante
+$smc-menu-importante-items-width: 267px!default;
+$smc-menu-importante-items-margin-left: -2px!default;
+
+// Links (itens) do menu importante
+$smc-menu-importante-items-a-font-size: 14px!default;
+$smc-menu-importante-items-a-padding: 21px 35px 20px 20px!default;
+$smc-menu-importante-items-a-font-family: 'segoeui'!default;
+$smc-menu-importante-items-a-position: absolute!default;
+
+// Submenu
+$smc-menu-submenu-display: none!default;
+$smc-menu-submenu-float: left!default;
+$smc-menu-submenu-margin-top: -20px!default;
+$smc-menu-submenu-position: fixed!default;
+$smc-menu-submenu-z-index: 50!default;
+$smc-menu-submenu-min-height: 0!default;
+$smc-menu-submenu-max-height: 600px!default;
+$smc-menu-submenu-border-radius: 2px!default;
+$smc-menu-submenu-box-shadow:0 0 0 0px rgba(0,0,0,.2)!default;
+
+// UL do submenu
+$smc-menu-submenu-ul-float: left!default;
+$smc-menu-submenu-ul-width: auto!default;
+$smc-menu-submenu-ul-min-width: 225px!default;
+
+// Texto do submenu
+$smc-menu-submenu-a-width: 100%!default;
+$smc-menu-submenu-a-display: inline!default;
+$smc-menu-submenu-a-padding: 10px 35px 10px 15px!default;
+$smc-menu-submenu-a-float: left!default;
+$smc-menu-submenu-a-z-index: 5!default;
+$smc-menu-submenu-a-font-size: 13px!default;
+$smc-menu-submenu-a-font-family: segoeui, Arial, sans-serif!default;
+$smc-menu-submenu-a-white-space: nowrap!default;
+
+// Nível 3
+$smc-menu-submenu-nivel3-border-radius: 0 3px 3px 0!default;
+$smc-menu-submenu-nivel3-min-width: 270px!default;
+
+// Item de texto do nível 3
+$smc-menu-submenu-nivel3-a-width: 85%!default;
+$smc-menu-submenu-nivel3-a-margin-right: -26px!default;
+
+// Ícones menu principal
+
+$smc-menu-principal-ico-menu-aberto: $smc-caminho-compartilhado + "smc-ico-menu-dinamico-aberto.png";
+$smc-menu-principal-ico-menu-fixo: $smc-caminho-compartilhado + "smc-ico-menu-dinamico-fixo.png";
+$smc-menu-principal-ico-menu-dinamico: $smc-caminho-compartilhado + "smc-ico-menu-dinamico.png";
+//$smc-menu-principal-ico-menu-favorito: $smc-caminho-compartilhado + "smc-img-icon-estrela_favorito_sprite.png";
+
+
+// ********** ----- NAVIGABLE MENU ----- ********** //
+// Estrutura inicial do menu
+$smc-navigable-menu-position: inherit!default;
+$smc-navigable-menu-z-index: 50!default;
+$smc-navigable-menu-border-radius: 3px!default;
+$smc-navigable-menu-width: 25%!default;
+$smc-navigable-menu-display: none!default;
+$smc-navigable-menu-principal-z-index: 5!default;
+$smc-navigable-menu-principal-position: absolute!default;
+$smc-navigable-menu-li-padding: 5px!default;
+
+// Setinha que apresenta o submenu
+$smc-navigable-menu-cor-transparente: transparent!default;
+$smc-navigable-menu-border-width: 4px 0 5px 4px!default;
+$smc-navigable-menu-margin-right: 2px!default;
+$smc-navigable-menu-margin-top: 3px!default;
+$smc-navigable-menu-float: right!default;
+
+// Itens do ul
+$smc-navigable-menu-ul-border-radius: 3px!default;
+$smc-navigable-menu-ul-width: 250px!default;
+$smc-navigable-menu-ul-display: none!default;
+
+
+// ********** ----- PAGINAÇÃO GRID E COMUM (PAGER)----- ********** //
+// Cores pager
+$smc-paginador-cor-separador: $smc-cinza-03!default;
+$smc-paginador-cor-selecao: $smc-cinza-08!default;
+$smc-paginador-cor-texto: $smc-cinza-07!default;
+$smc-paginador-cor-pag-selecionada:transparent!default;
+$smc-paginador-cor-pag-hover: $smc-cinza-01!default;
+$smc-paginador-cor-navegacao: transparent!default;
+
+// Configuração geral do paginador
+$smc-pager-height: 0!default;
+$smc-pager-border-top: 3px solid $smc-cor-principal-07!default;
+$smc-pager-border: none!default;
+$smc-pager-ul-width: 35%!default;
+$smc-pager-ul-li-margin-top: 5px!default;
+$smc-pager-ul-li-inputtext-border: 1px solid $smc-cor-principal-06!default;
+$smc-pager-ul-li-p-margin-top: 10px!default;
+$smc-pager-ul-li-a-border: none!default;
+$smc-pager-ul-li-a-pagina-selecionada-border-top: 3px solid $smc-cor-principal!default;
+$smc-pager-numero-itens-width: 20%!default;
+$smc-pager-numero-border-top: none!default;
+$smc-list-navegador-inputtext-border: 1px solid $smc-cor-principal-06!default;
+
+// Tamanho do campo número ativo
+$smc-pager-numero-ativo: 150px!default;
+$smc-pager-numero-margin-top: 4px!default;
+$smc-pager-numero-height: 45px!default;
+$smc-pager-numero-width: 55px!default;
+$smc-pager-numero-margin-right: 2px!default;
+
+// Configuração dos botões de navegação (setinhas) do paginador
+$smc-pager-ico-navegacao-border-radius: 3px!default;
+$smc-pager-ico-navegacao-padding: 0 11px 3px 11px!default;
+$smc-pager-ico-navegacao-background-position: 5px 7px!default;
+$smc-pager-ico-font-size: 35px !default;
+$smc-pager-ico-line-height:22px !default;
+
+
+// ********** ----- SCHEDULER ----- ********** //
+// Cores do scheduler
+$smc-cor-scheduler-transparente: transparent!default;
+$smc-cor-scheduler-cabecalho: $smc-cinza-01!default;
+$smc-cor-scheduler-cabecalho-texto: $smc-cinza-10!default;
+$smc-cor-scheduler-cabecalho-fimdesemana: $smc-cinza-03!default;
+$smc-cor-scheduler-coluna-fimdesemana: $smc-cinza-01!default;
+$smc-cor-scheduler-coluna-fimdesemana-borda: $smc-cinza-04!default;
+$smc-cor-scheduler-celula-hover: $smc-cinza-04!default;
+$smc-cor-scheduler-destaque: $smc-cor-secundaria!default;
+$smc-cor-scheduler-maisinformacoes: $smc-cinza!default;
+$smc-cor-scheduler-borda: $smc-cinza-02!default;
+$smc-cor-scheduler-box-shadow: 0 2px 3px rgba(0,0,0,.2)!default;
+
+// Dia atual
+$smc-cor-scheduler-diaatual-borda: $smc-cor-secundaria-bordas!default;
+$smc-cor-scheduler-diaatual-background: $smc-cor-secundaria-backgrounds!default;
+$smc-cor-scheduler-diaatual-texto: $smc-cinza-08!default;
+$smc-cor-scheduler-diaatual-hover: $smc-cinza-04!default;
+
+// Dia fora
+$smc-cor-scheduler-diafora: $smc-cinza-05!default;
+
+//Dia expandido
+$smc-cor-scheduler-diaexpandido-borda: $smc-cinza-01!default;
+$smc-cor-scheduler-diaexpandido-hover: $smc-cinza-04!default;
+$smc-cor-scheduler-diaexpandido-alternado: $smc-cinza-01!default;
+
+//Semana expandida
+$smc-cor-scheduler-semana-borda-destaque: $smc-cor-principal!default;
+$smc-cor-scheduler-semana-background: $smc-cinza-01!default;
+$smc-cor-scheduler-semana-linha-eventos: $smc-cinza-05!default;
+$smc-cor-scheduler-semana-borda: $smc-cinza-02!default;
+$smc-cor-scheduler-semana-borda-base: $smc-cinza-05!default;
+$smc-cor-scheduler-semana-hover: $smc-cinza-04!default;
+$smc-cor-scheduler-semana-celula-diaatual: $smc-cor-principal-backgrounds!default;
+
+// Destaque para marcação da hora atual
+$smc-cor-scheduler-horaatual: $smc-cor-secundaria!default;
+
+// Evento do dia inteiro
+$smc-scheduler-calendar-semana-agendamento-diario-background: $smc-cinza-03!default;
+$smc-scheduler-calendar-semana-agendamento-diario-borda: $smc-cinza-05!default;
+$smc-scheduler-calendar-semana-agendamento-diario-hover: $smc-cinza-04!default;
+
+// Janela para detalhamento do evento
+$smc-scheduler-janela-evento-borda: $smc-cinza-04!default;
+
+// Esquema de cores para agendamentos diversos
+$icone-grupo-evento-0-background: rgba(138,223,16,0.75)!default;
+$icone-grupo-evento-0-borda: #e0ffb3!default;
+$icone-grupo-evento-0-background-hover: #aaff30!default;
+$icone-grupo-evento-0-borda-hover: #6ba21d!default;
+
+$icone-grupo-evento-1-background: rgba(255,198,0,0.75)!default;
+$icone-grupo-evento-1-borda: #ffea9f!default;
+$icone-grupo-evento-1-background-hover: #fff953!default;
+$icone-grupo-evento-1-borda-hover: #fbca1e!default;
+
+$icone-grupo-evento-2-background: rgba(92,228,228,0.75)!default;
+$icone-grupo-evento-2-borda: #d0f9f9!default;
+$icone-grupo-evento-2-background-hover: #79faff!default;
+$icone-grupo-evento-2-borda-hover: #14c1bf!default;
+
+$icone-grupo-evento-3-background: rgba(255,93,0,0.75)!default;
+$icone-grupo-evento-3-borda: #fcccaf!default;
+$icone-grupo-evento-3-background-hover: #ffb83d!default;
+$icone-grupo-evento-3-borda-hover: #db6d2e!default;
+
+$icone-grupo-evento-4-background: rgba(196,66,145,0.75)!default;
+$icone-grupo-evento-4-borda: #fcafde!default;
+$icone-grupo-evento-4-background-hover: #d949a1!default;
+$icone-grupo-evento-4-borda-hover: #952569!default;
+
+$icone-grupo-evento-5-background: rgba(95,65,179,0.75)!default;
+$icone-grupo-evento-5-borda: #cab8ff!default;
+$icone-grupo-evento-5-background-hover: #7d5ed5!default;
+$icone-grupo-evento-5-borda-hover: #391f81!default;
+
+$icone-grupo-evento-6-background: rgba(60,101,208,0.75)!default;
+$icone-grupo-evento-6-borda: #a7bffd!default;
+$icone-grupo-evento-6-background-hover: #4b7af3!default;
+$icone-grupo-evento-6-borda-hover: #0d38a7!default;
+
+$icone-grupo-evento-7-background: rgba(157,0,0,0.75)!default;
+$icone-grupo-evento-7-borda: #ffb3b3!default;
+$icone-grupo-evento-7-background-hover: #ce1e1e!default;
+$icone-grupo-evento-7-borda-hover: #891010!default;
+
+$icone-grupo-evento-8-background: rgba(129,114,34,0.75)!default;
+$icone-grupo-evento-8-borda: #dbd3a4!default;
+$icone-grupo-evento-8-background-hover: #ad9a38!default;
+$icone-grupo-evento-8-borda-hover: #594d0e!default;
+
+$icone-grupo-evento-9-background: rgba(74,74,74,0.75)!default;
+$icone-grupo-evento-9-borda: #c0c0c0!default;
+$icone-grupo-evento-9-background-hover: #6f6f6f!default;
+$icone-grupo-evento-9-borda-hover: #3a3a3a!default;
+
+// Imagens do scheduler
+$smc-ico-scheduler-setaesquerda: $smc-caminho-compartilhado + "smc-ico-seta-esquerda.png"!default;
+$smc-ico-scheduler-setadireita: $smc-caminho-compartilhado + "smc-ico-seta-direita.png"!default;
+$smc-ico-scheduler-calendarfull-relogio: $smc-caminho-compartilhado + "smc-ico-scheduler-relogio.png"!default;
+
+
+// ********** ----- SELECT ----- ********** //
+$smc-ico-select-seta: $smc-caminho-compartilhado + "smc-ico-select-seta.png"!default;
+$smc-ico-select-remover: $smc-caminho-compartilhado + "smc-ico-select-remover.png"!default;
+$smc-ico-select-check: $smc-caminho-compartilhado + "smc-ico-check.png"!default;
+$ico-select-adicionar: $smc-caminho-compartilhado + "smc-ico-paginaproxima.png"!default;
+$ico-select-remover: $smc-caminho-compartilhado + "smc-ico-paginaanterior.png"!default;
+$ico-select-adicionar-todos: $smc-caminho-compartilhado + "smc-ico-paginaultima.png"!default;
+$ico-select-remover-todos: $smc-caminho-compartilhado + "smc-ico-paginaprimeira.png"!default;
+$smc-select-cor-linha-hover: $smc-cor-principal-hover1!default;
+$smc-select-itens-border-radius: 0 0 3px 3px!default;
+$smc-multiselect-disponiveis-font-size: 12px!default;
+$smc-select-multiple-height: 150px!default;
+
+// Botões de transição multiselect
+$smc-select-btn-transicao-float: left!default;
+$smc-select-btn-transicao-margin: 0 0 0 20px!default;
+$smc-select-btn-transicao-padding: 20px 0 0 2%!default;
+$smc-select-btn-transicao-width: 3%!default;
+
+$smc-select-counter-font-size: 10px!default;
+$smc-select-counter-margin-top: -2px!default;
+
+
+// ********** ----- JANELAS (MODAIS OU WINDOW) ----- ********** //
+// Cores
+$smc-janela-cor-backdrop: $smc-cor-principal-01!default;
+$smc-janela-cor: $smc-branco!default;
+$smc-janela-cor-bordas: $smc-cinza-02!default;
+$smc-janela-cor-footer: $smc-branco!default;
+$smc-janela-cor-footer-bordas: $smc-branco!default;
+$smc-btn-color-sec: $smc-branco!default;
+$smc-janela-bordas:1px solid $smc-branco!default;
+
+// tamanhos padrões das janelas
+// Auto
+//$smc-modal-window-auto-width:;
+//$smc-modal-window-auto-left:;
+//$smc-modal-window-auto-modal-content-max-height:;
+//$smc-modal-window-auto-modal-content-overflow-y:;
+$smc-modal-window-auto-form-header-h2-line-height: 30px!default;
+$smc-modal-window-auto-form-close-margin-top: -42px!default;
+
+$smc-modal-window-auto-header-h2-line-height: 6px!default;
+$smc-modal-window-auto-close-margin-top: -16px!default;
+
+// Small
+$smc-modal-window-small-width: 30%!default;
+$smc-modal-window-small-left: 35%!default;
+$smc-modal-window-small-modal-content-max-height: 200px!default;
+$smc-modal-window-small-modal-content-overflow-y: auto!default;
+$smc-modal-window-small-form-header-h2-line-height: 25px!default;
+$smc-modal-window-small-form-close-margin-top: -62px!default;
+
+$smc-modal-window-small-header-h2-line-height: 5px!default;
+$smc-modal-window-small-close-margin-top: -14px!default;
+
+// Medium
+$smc-modal-window-medium-width: 50%!default;
+$smc-modal-window-medium-left: 25%!default;
+$smc-modal-window-medium-modal-content-max-height: 400px!default;
+$smc-modal-window-medium-modal-content-overflow-y: auto!default;
+$smc-modal-window-medium-form-header-h2-line-height: 30px!default;
+$smc-modal-window-medium-form-close-margin-top: -42px!default;
+
+$smc-modal-window-medium-header-h2-line-height: 6px!default;
+$smc-modal-window-medium-close-margin-top: -16px!default;
+
+// Large
+$smc-modal-window-large-width: 70%!default;
+$smc-modal-window-large-left: 15%!default;
+$smc-modal-window-large-modal-content-max-height: 400px!default;
+$smc-modal-window-large-modal-content-overflow-y: auto!default;
+$smc-modal-window-large-form-header-h2-line-height: 30px!default;
+$smc-modal-window-large-form-close-margin-top: 5px!default;
+
+$smc-modal-window-large-header-h2-line-height: 2px!default;
+$smc-modal-window-large-close-margin-top: 5px!default;
+
+// Largest
+$smc-modal-window-largest-width: 90%!default;
+$smc-modal-window-largest-left: 5%!default;
+$smc-modal-window-largest-modal-content-max-height: 400px!default;
+$smc-modal-window-largest-modal-content-overflow-y: auto!default;
+$smc-modal-window-largest-tabs-margin: 0 0 0 15px!default;
+$smc-modal-window-largest-form-header-h2-line-height: 30px!default;
+$smc-modal-window-largest-form-close-margin-top: 5px!default;
+
+$smc-modal-window-largest-header-h2-line-height: 2px!default;
+$smc-modal-window-largest-close-margin-top: 5px!default;
+
+// Janela padrão
+$smc-modal-window-left: 25%!default;
+$smc-modal-window-width: 50%!default;
+$smc-modal-window-z-index: 1040!default;
+
+// Cabeçalho
+$smc-modal-header-cursor: move!default;
+$smc-modal-window-header-margin: 20px 0 15px 15px !default;
+$smc-modal-header-padding: 0!default;
+$smc-modal-header-background: transparent!default;
+$smc-modal-header-display: inline-block!default;
+$smc-modal-header-width: 97%!default;
+$smc-modal-header-radius: 3px 3px 0px 0px!default;
+
+
+$smc-modal-header-h2-color: $smc-cor-secundaria-01!default;
+$smc-modal-header-h2-font-size: 18px!default;
+$smc-modal-header-h2-font-family: 'bree_serif', Arial, sans-serif!default;
+$smc-modal-header-h2-line-height: 30px!default;
+$smc-modal-header-h2-font-weight: normal!default;
+$smc-modal-header-h2-width: 90%!default;
+$smc-modal-header-h2-float: left!default;
+$smc-modal-header-h2-display: inline-block!default;
+$smc-modal-header-h2-margin:3px 0 0 0!default;
+$smc-modal-header-h2-text-transform:capitalize!default;
+$smc-modal-header-h2-width-padding-left: 1.5%!default;
+
+// Botão Fechar
+$smc-modal-close-background-position: 1px -23px!default;
+$smc-modal-close-button-float: right!default;
+$smc-modal-close-button-display:inline-block!default;
+$smc-modal-close-button-width:3%!default;
+
+
+// Conteúdo
+$smc-modal-content-overflow-y: auto!default;
+$smc-modal-content-overflow-x: hidden!default;
+$smc-modal-content-padding: 0 15px!default;
+$smc-modal-content-width: 100%!default;
+$smc-modal-content-max-height: 400px!default;
+$smc-modal-content-min-height: 30px!default;
+$smc-modal-content-padding-bottom: 10px;
+
+// Footer
+$smc-modal-footer-border-radius: 0 0 6px 6px!default;
+$smc-modal-footer-box-shadow: 0 1px 0 $smc-janela-cor inset!default;
+$smc-modal-footer-padding: 10px 15px 10px!default;
+$smc-modal-footer-text-align: right!default;
+$smc-modal-footer-height: 30px!default;
+
+// Bordas
+$smc-janela-bordas: 0!default;
+
+
+// ********** ----- PAINEL LATERAL ----- ********** //
+// Configuração padrão do "corpo" do painel lateral
+$smc-sidepanel-width: 245px!default;
+$smc-sidepanel-position: fixed!default;
+$smc-sidepanel-right: -202px!default;
+$smc-sidepanel-top: 15%!default;
+$smc-sidepanel-z-index: 150!default;
+
+// Botão que aciona a abertura/fechameto do painel
+$smc-sidepanel-aciona-height: 40px!default;
+$smc-sidepanel-aciona-width: 40px!default;
+$smc-sidepanel-aciona-float: right!default;
+$smc-sidepanel-aciona-cursor: pointer!default;
+$smc-sidepanel-aciona-border-radius: 3px 0 0 3px!default;
+$smc-sidepanel-aciona-background-position: 5px 5px!default;
+
+// Área do conteúdo do painel
+$smc-sidepanel-conteudo-float: right!default;
+$smc-sidepanel-conteudo-width: 180px!default;
+$smc-sidepanel-conteudo-height: 400px!default;
+$smc-sidepanel-conteudo-border-radius: 0 0 0 3px!default;
+$smc-sidepanel-conteudo-padding: 10px!default;
+
+// Área do conteúdo do painel esquerda
+$smc-sidepanel-conteudo-esquerda-float: left!default;
+$smc-sidepanel-conteudo-esquerda-width: 180px!default;
+$smc-sidepanel-conteudo-esquerda-height: 400px!default;
+$smc-sidepanel-conteudo-esquerda-border-radius: 0 0 3px 0!default;
+
+// Ícones painel lateral
+$smc-ico-painel-lateral: $smc-caminho-compartilhado + "smc-ico-seta-esquerda.png"!default;
+$smc-ico-painel-lateral-direita: $smc-caminho-compartilhado + "smc-ico-seta-direita.png"!default;
+
+
+// ********** ----- SCROLLBAR ********** -----//
+// Cores
+$smc-cor-scrollbar-backround: $smc-cor-principal-paineis-e-textos!default;
+$smc-cor-scrollbar-borda: $smc-cor-principal-contextos!default;
+$smc-cor-scrollbar-hover: $smc-cor-principal-04!default;
+
+// Gerais
+$smc-scrollbar-width: 10px!default;
+$smc-scrollbar-height: 6px!default;
+$smc-scrollbar-opacity: 0.6!default;
+
+
+// ********** ----- TIMELINE ----- ********** //
+// Cores timeline
+$smc-timeline-cor-principal: $smc-cor-principal!default;
+$smc-timeline-cor-linha-tempo: $smc-cinza-02!default;
+$smc-timeline-cor-conteudo: $smc-cinza-02!default;
+$smc-timeline-cor-conteudo-alternado: $smc-cinza-04!default;
+$smc-timeline-cor-conteudo-texto: $smc-cinza!default;
+$smc-timeline-height: 400px!default;
+$smc-timeline-overflow-y: auto!default;
+$smc-timeline-overflow-x: hidden!default;
+
+// Loading da timeline
+$smc-timeline-loading-default-height: 32px!default;
+
+// Configuração dos itens de data
+$smc-timeline-data-display: block!default;
+$smc-timeline-data-width: 25%!default;
+$smc-timeline-data-position: relative!default;
+$smc-timeline-data-padding: 5px 5px 5px 35px!default;
+$smc-timeline-data-margin-left: -10px!default;
+$smc-timeline-data-font-size: 13px!default;
+$smc-timeline-data-font-weight: bold!default;
+
+// Conteúdo
+$smc-timeline-conteudo-principal-border-radius: 5px!default;
+$smc-timeline-conteudo-principal-margin: 0 0 10px 20px!default;
+$smc-timeline-conteudo-principal-padding: 10px!default;
+$smc-timeline-conteudo-principal-display: block!default;
+
+// Titulo
+$smc-timeline-titulo-margin-top: 0!default;
+$smc-timeline-titulo-padding: 0 0 10px 0!default;
+$smc-timeline-titulo-width: 100%!default;
+$smc-timeline-titulo-font-size: 13px!default;
+
+// Ícones timeline
+$smc-timeline-cor-amarelo: #feb64a!default;
+
+
+// ********** ----- TREEVIEW ----- ********** //
+// Cores Treeview
+$smc-cor-treeview-borda: $smc-cinza-04!default;
+$smc-cor-treeview-background: $smc-cinza-01!default;
+$smc-cor-treeview-conectores: $smc-cinza-07!default;
+$smc-cor-treeview-linha-hover-background: $smc-cinza-02!default;
+$smc-cor-treeview-linha-hover-borda: $smc-cinza-07!default;
+$smc-cor-treeview-linha-hover-texto: $smc-cinza-08!default;
+$smc-cor-treeview-borda-droparea: $smc-cinza-05!default;
+
+// Configuração do droparea
+$smc-treeview-droparea-border: 1px dotted $smc-cor-treeview-borda-droparea!default;
+$smc-treeview-droparea-height: 40px!default;
+$smc-treeview-droparea-background-color: $smc-cinza-02!default;
+
+
+// Configuração principal da treeview
+$smc-treeview-min-height: 35px!default;
+$smc-treeview-padding: 10px 0!default;
+$smc-treeview-margin: 10px 0 20px 0!default;
+$smc-treeview-background-color: transparent!default;
+$smc-treeview-border: none!default;
+$smc-treeview-radius: 0!default;
+$smc-treeview-width: auto!default;
+
+// No filtro
+$smc-treeview-no-filtro-div-a-font-weight: bold!default;
+$smc-treeview-no-filtro-div-a-color: $smc-cor-secundaria!default;
+
+// Busca
+$smc-treeview-painel-busca-margin: -15px 0 0 16px!default;
+$smc-treeview-campo-busca-border: 1px solid $smc-cor-principal!default;
+$smc-treeview-campo-busca-width: 85%!default;
+
+// Nodes
+$smc-treeview-nodes-node-title-a-float: left!default;
+$smc-treeview-nodes-node-title-a-margin-left: 18px!default;
+$smc-treeview-nodes-node-check-containers: 0!default;
+$smc-treeview-nodes-node-title-a-margin-left: 18px!default;
+$smc-treeview-nodes-node-check-a-margin-left: 18px!default;
+$smc-treeview-nodes-node-check-input-checkbox-margin-left: -1px!default;
+$smc-treeview-nodes-node-check-label-margin: 0 0 0 2px!default;
+$smc-treeview-ico-none-height: 17px!default;
+$smc-treeview-ico-none-padding-left: 25px!default;
+$smc-treeview-nodes-node-min-height: 0!default;
+$smc-treeview-nodes-overflow: none!default;
+$smc-treeview-nodes-padding-left: 27px!default;
+$smc-treeview-nodes-padding-bottom: 2px!default;
+$smc-treeview-nodes-display: block!default;
+$smc-treeview-nodes-clear: both!default;
+$smc-treeview-nodes-node-title-margin-top: 9px!default;
+$smc-treeview-nodes-node-title-margin-left: -5px!default;
+$smc-treeview-nodes-node-title-cursor: pointer!default;
+$smc-treeview-nodes-node-title-a-text-decoration: none!default;
+$smc-treeview-nodes-node-title-a-color: $smc-cinza!default;
+$smc-treeview-nodes-node-title-a-cursor: default!default;
+$smc-treeview-nodes-node-children-margin-left: 7px!default;
+$smc-treeview-nodes-node-content-padding-left: 14px!default;
+$smc-treeview-nodes-node-content-margin-left: 3px!default;
+$smc-treeview-nodes-node-content-clear: both!default;
+$smc-treeview-nodes-node-content-cursor: pointer!default;
+
+// Img
+$smc-treeview-div-img-cursor: pointer!default;
+$smc-treeview-div-img-margin-top: -18px!default;
+$smc-treeview-div-img-position: absolute!default;
+
+// Botão Configurar (Engrenagem)
+$smc-treeview-nodes-node-content-btn-config-position: absolute!default;
+$smc-treeview-nodes-node-content-btn-config-margin-top: -22px;
+$smc-treeview-nodes-node-content-btn-config-width: 19px!default;
+$smc-treeview-nodes-node-content-btn-config-padding: 0!default;
+$smc-treeview-nodes-node-content-btn-config-height: 19px!default;
+$smc-treeview-nodes-node-content-btn-config-background-color: transparent!default;
+$smc-treeview-nodes-node-content-btn-config-background-position: 0 -22px!default;
+$smc-treeview-nodes-node-content-btn-config-background-size: 90%!default;
+$smc-treeview-nodes-node-content-btn-config-opacity: 1!default;
+$smc-treeview-nodes-node-content-btn-config-border: none!default;
+$smc-treeview-nodes-node-content-btn-config-hover-background-color:transparent!default; 
+$smc-treeview-nodes-node-content-btn-config-hover-opacity: 0.8!default;
+$smc-treeview-nodes-node-content-btn-config-focus-box-shadow: none!default;
+
+// Ícones Treeview
+$smc-ico-treeview: $smc-caminho-compartilhado+"smc-ico-treeview.png"!default;
+$smc-ico-treeview-mais: $smc-caminho-compartilhado+"smc-ico-treeview-mais.png"!default;
+$smc-ico-treeview-menos: $smc-caminho-compartilhado+"smc-ico-treeview-menos.png"!default;
+$smc-ico-treeview-loading: $smc-caminho-compartilhado+"smc-ico-treeview-loading.gif"!default;
+$smc-ico-treeview-none: $smc-caminho-compartilhado+"smc-ico-treeview-none.png"!default;
+
+
+// ********** ----- UPLOAD ----- ********** //
+// Cores upload
+$smc-uploadfile-background: $smc-cinza-01!default;
+$smc-uploadfile-cor-concluido: #358c00!default;
+$smc-uploadfile-aguardando: $smc-cinza-02!default;
+$smc-uploadfile-progresso: $smc-cinza-02!default;
+$smc-uploadfile-contador: #5eb623!default;
+
+// Imagens Upload
+$smc-ico-pessoa: $smc-caminho-compartilhado + "smc-ico-imagem-upload.png"!default;
+$smc-btn-selecionar-arquivos: $smc-caminho-compartilhado + "smc-btn-selecionar-arquivos.png"!default;
+$smc-btn-selecionar-arquivos-hover: $smc-caminho-compartilhado + "smc-btn-selecionar-arquivos-hover.png"!default;
+$ico-uploadfile-loading: $smc-caminho-compartilhado + "smc-img-upload-progresso.gif"!default;
+
+// Container para todos os tipos de upload
+$smc-upload-margin: 0!default;
+$smc-upload-padding: 0!default;
+$smc-upload-border-radius: 3px!default;
+$smc-upload-border: none!default;
+
+// Upload Files (ARQUIVO)
+$smc-uploadFile-arquivo-padding: 5px!default;
+$smc-uploadFile-arquivo-border-bottom:1px solid $smc-branco!default;
+$smc-uploadFile-arquivo-radius: 3px!default; 
+$smc-uploadFile-arquivo-width: 100%!default;
+$smc-uploadFile-arquivo-span-vertical-align: central!default;
+$smc-uploadFile-arquivo-div-width: 30%!default;
+$smc-uploadFile-arquivo-div-display: inline-block!default;
+$smc-uploadFile-arquivo-div-height: 55px!default;
+$smc-uploadFile-arquivo-div-margin-right: 10px!default;
+$smc-uploadFile-arquivo-div-input-width: 100%!default;
+$smc-uploadFile-arquivo-span-validation-error-float: left!default;
+$smc-uploadFile-arquivo-span-validation-error-margin-top: -5px!default;
+$smc-uploadFile-arquivo-span-display: inline-block!default;
+$smc-uploadFile-arquivo-span-white-space: nowrap!default;
+$smc-uploadFile-arquivo-span-text-overflow: ellipsis!default;
+$smc-uploadFile-arquivo-span-overflow: hidden!default;
+$smc-uploadFile-arquivo-span-vertical-align: middle!default;
+$smc-uploadFile-label-display: block!default;
+$smc-uploadFile-label-width: 100%!default;
+
+//Upload Files (CONTROLES)
+$smc-uploadFile-controles-background-position: left -1px!default;
+$smc-uploadFile-controles-padding: 7px!default;
+$smc-uploadFile-controles-height: 30px!default;
+$smc-uploadFile-controles-clear: both!default;
+$smc-uploadFile-controles-width: 150px!default;
+$smc-uploadFile-controles-radius: 3px!default;
+$smc-uploadFile-controles-input-validacao-position: absolute!default;
+$smc-uploadFile-controles-input-validacao-height: 0!default;
+$smc-uploadFile-controles-input-validacao-cursor: pointer!default;
+$smc-uploadFile-controles-input-validacao-width: 0!default;
+$smc-uploadFile-controles-input-height: 30px!default;
+$smc-uploadFile-controles-input-margin-top: -8px!default;
+$smc-uploadFile-controles-input-margin-left: -7px!default;
+$smc-uploadFile-controles-input-width: 280px!default;
+$smc-uploadFile-controles-input-cursor: pointer!default;
+
+// Upload Files (<p> que representa elemento "smc-uploadFile-noFiles")
+$smc-uploadFile-arquivos-p-font-style: italic!default;
+$smc-uploadFile-arquivos-p-color: $smc-preto!default;
+$smc-uploadFile-arquivos-p-border-top: dotted 1px $smc-preto!default;
+$smc-uploadFile-arquivos-p-margin: 5px 0 10px 0!default;
+$smc-uploadFile-arquivos-p-width: 100%!default;
+
+// Upload Files (ARQUIVO NOME)
+$smc-uploadFile-arquivo-nome-width: 19.5%!default;
+$smc-uploadFile-arquivo-nome-margin-right: 5px!default;
+$smc-uploadFile-arquivo-nome-width-margin-left: 5px!default;
+
+// Upload Files (ARQUIVO TAMANHO)
+$smc-uploadFile-arquivo-tamanho-width: 10%!default;
+$smc-uploadFile-arquivo-tamanho-margin-right: 10px!default;
+
+// File Progress (DONE)
+$smc-uploadFile-fileProgress-done-width: 100px!default;
+$smc-uploadFile-fileProgress-done-height: 14px!default;
+$smc-uploadFile-fileProgress-done-color: $smc-branco!default;
+$smc-uploadFile-fileProgress-done-radius: 3px!default;
+$smc-uploadFile-fileProgress-done-margin-top: -3px!default;
+$smc-uploadFile-fileProgress-done-z-index: 10!default;
+$smc-uploadFile-fileProgress-done-padding: 0 0 0 5px!default;
+$smc-uploadFile-fileProgress-done-background-image: none!default;
+
+// File Progress (WAITING)
+$smc-uploadFile-fileProgress-waiting-width: 105px!default;
+
+// File Progress (UPLOADING)
+$smc-uploadFile-fileProgress-uploading-margin-top: -3px!default;
+$smc-uploadFile-fileProgress-uploading-width: 20%!default;
+
+// File Progress (DIV)
+$smc-uploadFile-fileProgress-div-color: $smc-branco;
+$smc-uploadFile-fileProgress-div-radius: 3px!default;
+$smc-uploadFile-fileProgress-div-z-index: 9!default;
+$smc-uploadFile-fileProgress-div-padding-left: 5px!default;
+$smc-uploadFile-fileProgress-div-height: 14px!default;
+$smc-uploadFile-fileProgress-div-width: 105px!default;
+$smc-uploadFile-fileProgress-div-background-size: 30px 30px!default;
+$smc-uploadFile-fileProgress-div-noProgress-background-position: center!default;
+$smc-uploadFile-fileProgress-div-noProgress-height: 14px!default;
+$smc-uploadFile-fileProgress-width: 100px!default;
+$smc-uploadFile-fileProgress-height: 14px!default;
+$smc-uploadFile-fileProgress-radius: 3px!default;
+$smc-uploadFile-fileProgress-div-cor-background: rgba(255, 255, 255, .15)!default;
+
+// Dropdown de Upload de Arquivos
+$smc-uploadFile-contextWindowControls-dropdown-menu-width: 550px!default;
+$smc-uploadFile-contextWindowControls-dropdown-menu-overflow: hidden!default;
+$smc-uploadFile-contextWindowControls-button-input-padding-right: 25px!default;
+$smc-uploadFile-contextWindowControls-dropdown-input-margin-left: -23px!default;
+
+// Files Counter
+$smc-uploadFile-filesCounter-zindex: 2!default;
+$smc-uploadFile-filesCounter-display: inline-block!default;
+$smc-uploadFile-filesCounter-radius: 12px!default;
+$smc-uploadFile-filesCounter-font-size: 10px!default;
+$smc-uploadFile-filesCounter-height: 20px!default;
+$smc-uploadFile-filesCounter-top: -42px!default;
+$smc-uploadFile-filesCounter-left: -30px!default;
+$smc-uploadFile-filesCounter-position: relative!default;
+$smc-uploadFile-filesCounter-padding: 5px 6px 0 4px!default;
+$smc-uploadFile-filesCounter-text-align: right!default;
+$smc-uploadFile-filesCounter-ico-margin: 0 3px 0 0!default;
+$smc-uploadFile-filesCounter-uploading-height: 18px!default;
+$smc-uploadFile-filesCounter-uploading-width: 13px!default;
+$smc-uploadFile-filesCounter-uploading-display: block!default;
+$smc-uploadFile-filesCounter-uploading-background-size: 17px!default;
+$smc-uploadFile-filesCounter-uploading-left: 60px!default;
+$smc-uploadFile-filesCounter-uploading-top:-40px!default;
+
+// Upload File (BOTÃO ARQUIVO DOWNLOAD)
+$smc-uploadFile-arquivo-download-width: 20px!default;
+$smc-uploadFile-arquivo-download-background: $smc-branco!default; 
+$smc-uploadFile-arquivo-download-height: 25px!default;
+$smc-uploadFile-arquivo-download-display: inline-block!default;
+$smc-uploadFile-arquivo-download-border: solid 1px $smc-cinza-05!default;
+$smc-uploadFile-arquivo-download-radius: 3px!default;
+$smc-uploadFile-arquivo-download-padding: 5px!default;
+$smc-uploadFile-arquivo-download-color: $smc-cor-principal!default;
+$smc-uploadFile-arquivo-download-background-position: 2px 30px!default;
+
+// Botão Remover
+$smc-uploadFile-arquivo-remover-position: absolute!default;
+$smc-uploadFile-arquivo-remover-width-: 24px!default;
+$smc-uploadFile-arquivo-remover-height: 19px!default;
+$smc-uploadFile-arquivo-remover-right: 4px!default;
+$smc-uploadFile-arquivo-remover-top: 6px!default;
+$smc-uploadFile-arquivo-remover-background-position: 6px 5px!default;
+$smc-uploadFile-arquivo-remover-opacity: 0.60!default;
+$smc-uploadFile-arquivo-remover-filter: alpha(opacity=60)!default;
+$smc-uploadFile-arquivo-remover-z-index: 10!default;
+$smc-uploadFile-arquivo-remover-padding: 3px 17px 11px 7px!default;
+$smc-uploadFile-arquivo-remover-background-color: $smc-branco!default;
+$smc-uploadFile-arquivo-remover-radius:2px!default;
+$smc-uploadFile-arquivo-remover-margin: 0 0 0 5px!default;
+
+// Upload Files (ARQUIVO IMAGEM)
+$smc-uploadFile-arquivo-imagem-width: 30px!default;
+$smc-uploadFile-arquivo-imagem-height: 25px!default;
+$smc-uploadFile-arquivo-imagem-margin-right: 5px!default;
+$smc-uploadFile-arquivo-imagem-background: $smc-branco!default;
+$smc-uploadFile-arquivo-imagem-radius: 3px!default;
+$smc-uploadFile-arquivo-imagem-border: solid 1px $smc-cor-principal-bordas!default;
+$smc-uploadFile-arquivo-imagem-padding: 5px!default;
+$smc-uploadFile-arquivo-imagem-color: $smc-cor-principal!default;
+
+// Upload Files (FOCUS)
+$smc-uploadFile-noFiles-border-color: $smc-cor-principal-hover!default;
+$smc-uploadFile-focus-border: none!default;
+$smc-uploadFile-focus-border-color: $smc-cor-secundaria-bordas!default;
+$smc-uploadFile-focus-background:$smc-cor-principal-focus-destaque!default;
+$smc-uploadFile-focus-margin: -1px 0 -1px 0!default;
+$smc-uploadFile-focus-margin-top: 24px!default;
+$smc-uploadFile-focus-border-radius: 0!default;
+
+// Upload Image
+$smc-uploadImage-margins: 24px 0 30px 0!default;
+$smc-uploadImage-height: 154px!default;
+$smc-uploadImage-position: relative!default;
+$smc-uploadImage-border-radius: 3px!default;
+$smc-uploadImage-background-position: center!default;
+$smc-uploadImage-span-validation-error-margin-top: 2px!default;
+$smc-uploadImage-uploadFile-arquivo-remover-top: 10px!default;
+$smc-uploadImage-uploadFile-arquivo-download-top: 36px!default;
+$smc-uploadImage-uploadFile-arquivo-remover-background-position: 2px 2px!default;
+$smc-uploadImage-margin-topo: -24px!default;
+$smc-uploadImage-display: block!default;
+$smc-uploadImage-preenchimento-obrigatorio-margin-top:-20px!default;
+$smc-uploadImage-preenchimento-obrigatorio-height:25px!default;
+
+// Upload Image (CONTROLES)
+$smc-uploadImage-uploadFile-controles-width: 100%!default;
+$smc-uploadImage-uploadFile-controles-height: 100%!default;
+$smc-uploadImage-uploadFile-controles-z-index: 2!default;
+$smc-uploadImage-uploadFile-controles-top: 0!default;
+$smc-uploadImage-uploadFile-controles-left: 0!default;
+$smc-uploadImage-uploadFile-controles-overflow: hidden!default;
+$smc-uploadImage-uploadFile-controles-position: absolute!default;
+$smc-uploadImage-uploadFile-controles-border: $smc-cinza-05!default;
+
+// Upload Image (INPUT)
+$smc-uploadImage-uploadFile-input-width: 100%!default;
+$smc-uploadImage-uploadFile-input-height: 100%!default;
+$smc-uploadImage-uploadFile-input-padding: 0 0 0 0!default;
+$smc-uploadImage-uploadFile-input-font-size: 30px!default;
+$smc-uploadImage-uploadFile-input-position: absolute!default;
+
+// Upload Image (ARQUIVOS)
+$smc-uploadImage-uploadFile-arquivos-width: 100%!default;
+$smc-uploadImage-uploadFile-arquivos-height: 100%!default;
+$smc-uploadImage-uploadFile-arquivos-z-index: 1!default;
+$smc-uploadImage-uploadFile-arquivos-position: absolute!default;
+$smc-uploadImage-uploadFile-arquivos-top: 0!default;
+$smc-uploadImage-uploadFile-arquivos-left: 0!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-width: 100%!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-height: 100%!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-imagem-width: 100%!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-imagem-height: 100%!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-imagem-display: block!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-imagem-background-position: center!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-imagem-margin-left: 1px!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-imagem-margin-top: 1px!default;
+$smc-uploadImage-uploadFile-arquivos-arquivo-imagem-background: auto!default;
+
+// Barra de progresso
+$smc-uploadFile-progresso-width: 50%!default;
+$smc-uploadFile-progresso-height: 50%!default;
+$smc-uploadFile-progresso-display: block!default;
+$smc-uploadFile-progresso-position: absolute!default;
+$smc-uploadFile-progresso-left: 35%!default;
+$smc-uploadFile-progresso-top: 42%!default;
+$smc-uploadFile-progresso-div-position: absolute!default;
+$smc-uploadFile-progresso-div-top: 40%!default;
+$smc-uploadFile-progresso-div-left: 37%!default;
+$smc-uploadFile-progresso-div-width: 50%!default;
+$smc-uploadFile-progresso-div-height: 50%!default;
+
+// Loading
+$smc-uploadFile-progresso-div-noProgress-width: 50%!default;
+$smc-uploadFile-progresso-div-noProgress-height: 50%!default;
+$smc-uploadFile-progresso-div-noProgress-background-position: 50% 50%!default;
+$smc-uploadFile-progresso-div-noProgress-margin: 30% auto!default;
+
+// download
+$smc-uploadFile-arquivo-span-smc-uploadFile-arquivo-download-right:15px !default;
+$smc-uploadFile-arquivo-span-smc-uploadFile-arquivo-download-top:15px !default;
+
+
+
+// ********** ----- WIZARD ----- ********** //
+// Cores
+$smc-wizard-barra-acoes-borda-top: solid 2px $smc-cor-principal-02!default;
+$smc-wizard-passo-desabilitado: $smc-cinza!default;
+$smc-wizard-passo-habilitado: $smc-cor-principal-02!default;
+$smc-wizard-passo-habilitado-texto: $smc-cor-principal-03!default;
+$smc-wizard-passo-visitado: $smc-cor-principal-02!default;
+$smc-wizard-passo-visitado-texto: $smc-cinza!default;
+$smc-wizard-passo-habilitado-background: $smc-cor-principal-02!default;
+
+// Configuração geral do Wizard
+$smc-wizard-margin: 5px 0!default;
+$smc-wizard-position: relative!default;
+$smc-wizard-padding: 10px!default;
+$smc-wizard-border: none!default;
+$smc-wizard-background-image: none!default;
+
+// Espaço do conteúdo
+$smc-wizard-conteudo-display: block!default;
+$smc-wizard-conteudo-margin: 0!default;
+$smc-wizard-conteudo-padding: 0!default;
+$smc-wizard-conteudo-overflow: hidden!default;
+$smc-wizard-conteudo-clear: both!default;
+
+// Barra de botões/ações
+$smc-wizard-barra-acoes-padding-top: 5px!default;
+$smc-wizard-salvar-arrow-position: absolute!default;
+$smc-wizard-salvar-arrow-right: 116px!default;
+
+// Anchor (Abas de passos)
+$smc-wizard-anchor-li-div-float: left!default;
+$smc-wizard-anchor-li-div-width: 20%!default;
+$smc-wizard-anchor-li-div-z-index: 99!default;
+
+// Wizard passo
+$smc-wizard-passo-display: block!default;
+$smc-wizard-passo-padding: 5px!default;
+$smc-wizard-passo-weight: bold!default;
+$smc-wizard-passo-font-family: "BreeSerif-Regular", Arial, sans-serif!default;
+
+// Wizard localização
+$smc-wizard-localizacao-width: 25px!default;
+$smc-wizard-localizacao-height: 25px!default;
+$smc-wizard-localizacao-text-align: center!default;
+$smc-wizard-localizacao-padding: 5px!default;
+$smc-wizard-localizacao-margin-top: 5px!default;
+$smc-wizard-localizacao-float: left!default;
+$smc-wizard-localizacao-margin-right: 10px!default;
+$smc-wizard-localizacao-radius: 100%!default;
+
+// Wizard bolinha com numero
+$smc-wizard-btn-circle-width:30px!default;
+$smc-wizard-btn-circle-height:30px!default;
+$smc-wizard-btn-circle-text-align: center!default;
+$smc-wizard-btn-circle-padding: 4px 0!default;
+$smc-wizard-btn-circle-line-height:1.428571429!default;
+$smc-wizard-btn-circle-border-radius:5px!default;
+
+// Wizard background das bolinhas
+$smc-wizard-stepwizard-background-color:transparent!default;
+
+
+
+// ********** ----- VARIAVEIS BOOTSTRAP ----- ********** //
+$brand-primary: $smc-cor-secundaria-01!default;
+$input-border-focus: $smc-cor-secundaria-02!default;
+
+
+// ********** ----- VARIÁVEIS PARA IMPRESSÃO ----- ********** //
+$smc-cor-padrao: #333!default;
+$smc-cor-background: #fff!default;
+$smc-cor-borda: #ccc!default;
+
+

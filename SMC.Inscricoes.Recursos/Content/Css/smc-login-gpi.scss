@@ -1,0 +1,11 @@
+﻿// As importações devem ocorrer NECESSARIAMENTE nesta ordem
+
+// ********** ----- IDENTIDADE VISUAL (APLICAÇÃO) ----- ********** //
+@import "identidade/_smc-identidade-visual.scss";
+
+// ********** ----- FRAMEWORK PADRÃO ------ ********** //
+@import "../../../../Framework4.2/SMC.Recursos/Css/sass-padrao/smc-login-2.0.scss";
+
+// ********** ----- ESTILO CUSTOMIZADO (APLICAÇÃO) ----- ********** //
+@import "smc-estilo.scss";
+

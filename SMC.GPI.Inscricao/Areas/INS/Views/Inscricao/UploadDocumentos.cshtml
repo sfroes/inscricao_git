@@ -1,0 +1,217 @@
+﻿@model PaginaUploadDocumentosViewModel
+
+@{
+    ViewBag.InscricaoNaoPermiteTrocaLingua = true;
+    Layout = "~/Areas/INS/Views/Shared/_Layout.cshtml";
+}
+
+@section PainelLateral
+{
+    @Html.Partial("_PainelLateralProcesso", Model)
+}
+
+<h3>@Model.Titulo</h3>
+<div class="smc-gpi-conteudo-sgf">
+    @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_INSTRUCOES))
+
+
+    @using (Smc.Div().CssClass("smc-mensagem smc-mensagem-informativa").Begin())
+    {
+        <p>@Smc.GetUIResource("Label_Informacao_Limite_Upload")</p>
+        if (Model.DocumentosAdicionaisUpload != null && Model.DocumentosAdicionaisUpload.Count > 0)
+        {
+            var descricaoTipos = string.Join(", ", Model.DocumentosAdicionaisUpload.Select(d => d.Descricao));
+            <p>@string.Format(Smc.GetUIResource("Label_Informacao_Limite_Quantidade_Upload"), descricaoTipos)</p>
+        }
+    }
+
+    @using (Smc.Form("formUploadDocumentos", "SalvarUploadDocumentos").Begin())
+    {
+        if ((Model.DocumentosObrigatorios != null && Model.DocumentosObrigatorios.Count() > 0)
+        || ((Model.DocumentosGrupo != null && Model.DocumentosGrupo.Count > 0)))
+        {
+            <div class="smc-detalhe-editavel-tabular smc-gpi-upload-documentos">
+                <span class="smc-detalhe-editavel-titulo">@Smc.GetUIResource("Titulo_Documentos_Obrigatorios")</span>
+                <div class="smc-detalhe-editavel-organizador">
+
+                    @if (Model.DocumentosObrigatorios != null && Model.DocumentosObrigatorios.Count() > 0)
+                    {
+                        @*Adição dos documentos configurados como obrigatórios*@
+                        <div class="smc-detalhe-editavel-header">
+                            <div class="smc-size-md-8 smc-size-xs-24 smc-size-sm-8 smc-size-lg-8">
+                                <span class="smc-preenchimento-obrigatorio" data-id="Label_Tipo_Documento" data-type="smc-required-span"></span>
+                                <label>@Smc.GetUIResource("Label_Tipo_Documento")</label>
+                            </div>
+                            <div class="smc-size-md-8 smc-size-xs-24 smc-size-sm-8 smc-size-lg-8">
+                                <label>@Smc.GetUIResource("Label_Descricao")</label>
+                            </div>
+                            <div class="smc-size-md-4 smc-size-xs-24 smc-size-sm-4 smc-size-lg-4">
+                                <span class="smc-preenchimento-obrigatorio" data-id="Label_Arquivo" data-type="smc-required-span"></span>
+                                <label>@Smc.GetUIResource("Label_Arquivo")</label>
+                            </div>
+                        </div>
+                        <div class="smc-detalhe-editavel-linha-dados">
+                            @(Smc.List("listaDocumentosObrigatorios", prop => prop.DocumentosObrigatorios)
+                                .HtmlTemplate(
+                                                @<text>
+                                                    @Html.Partial("_DocumentoUploadObrigatorio", item.Value)
+                                                </text>)
+                        )
+                        </div>
+
+
+                        if (Model.DocumentosGrupo != null && Model.DocumentosGrupo.Count > 0)
+                        {
+                            <div class="smc-gpi-divisao"></div>
+                        }
+                    }
+
+                    @*Adição dos grupos de documentos*@
+                    @if (Model.DocumentosGrupo != null && Model.DocumentosGrupo.Count > 0)
+                    {
+                        <div>
+                            @(Smc.List("listaDocumentosGrupo", prop => prop.DocumentosGrupo)
+                                .HtmlTemplate(
+                                            @<text>
+                                                @Html.Partial("_DocumentoGrupoUpload", item.Value)
+                                            </text>)
+                        )
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+
+        if (Model.DocumentosOpcionaisUpload != null && Model.DocumentosOpcionaisUpload.Count > 0 && Model.DocumentosOpcionais.SMCAny())
+        {
+            <div class="smc-detalhe-editavel-tabular smc-gpi-upload-documentos-opcionais">
+                <span class="smc-detalhe-editavel-titulo">@Smc.GetUIResource("Titulo_Documentos_Opcionais")</span>
+                <div class="smc-detalhe-editavel-organizador">
+                    @*Adição dos documentos configurados como opcionais*@
+                    <div class="smc-detalhe-editavel-header">
+                        <div class="smc-size-md-8 smc-size-xs-24 smc-size-sm-8 smc-size-lg-8">
+                            <label>@Smc.GetUIResource("Label_Tipo_Documento")</label>
+                        </div>
+                        <div  class="smc-size-md-8 smc-size-xs-24 smc-size-sm-8 smc-size-lg-8">
+                            <label>@Smc.GetUIResource("Label_Descricao")</label>
+                        </div>
+                        <div class="smc-size-md-4 smc-size-xs-24 smc-size-sm-4 smc-size-lg-4">
+                            <label>@Smc.GetUIResource("Label_Arquivo")</label>
+                        </div>
+                    </div>
+                    <div class="smc-detalhe-editavel-linha-dados">
+                        @(Smc.List("listaDocumentosOpcionais", prop => prop.DocumentosOpcionais)
+                        .HtmlTemplate(
+                                    @<text>
+                                        @Html.Partial("_DocumentoUploadOpcional", item.Value)
+                                    </text>)
+                    )
+                    </div>
+                </div>
+            </div>
+        }
+
+        @*Adição dos documentos configurados como Adicionais*@
+        if (Model.DocumentosAdicionaisUpload != null && Model.DocumentosAdicionaisUpload.Count > 0)
+        {
+            @Smc.EditorFor(prop => prop.DocumentosAdicionais)
+        }
+
+        <div id="DivTermoResponsabilidadeEntrega" class="smc-gpi-termo-entrega">
+            @Smc.EditorFor(x => x.ExibeTermoPrincipalResponsabilidadeEntrega).HideLabel()
+            @Html.Raw(HttpUtility.HtmlDecode(@Model.DescricaoTermoEntregaDocumentacao))
+        </div>
+
+        if (Model.ExibirMensagemInformativaConversaoPDF)
+        {
+            using (Smc.Div().CssClass("smc-mensagem smc-mensagem-informativa").Begin())
+            {
+                <p>@Smc.GetUIResource("MSG_Informativa_PDF")</p>
+            }
+        }
+        @Smc.EditorFor(x => x.ExibirMensagemInformativaConversaoPDF)
+        @Html.Partial("_BotoesNavegacao", Model)
+    }
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+
+        var depTermos,
+            termos;
+
+        $(window).ready(function () {
+            $("input[name$='EntregaPosterior']").each(function () {
+                $(this).on('change', reloadDependecies);
+            });
+            
+            reloadDependecies();
+            verifyCheckboxEntregaPosterior();
+            $('[data-name="EntregaPosterior"]').on('click', verifyCheckboxEntregaPosterior);
+            $('[data-name="EntregaPosterior"]').on('change', verifyCheckboxEntregaPosterior);
+
+            //quando o form for enviado
+            $("#formUploadDocumentos").on("submit", function (e) {
+                //pega os valores dos checkbox de entrega posterior
+                var values = $("input[name$='EntregaPosterior']").map(function () {
+                    return $(this)[0].checked;
+                }).get();
+                if (values.some((ent) => ent === true)) { //verifica se tem algum checkbox de entrega posterior marcado (true)
+                    if (
+                        $("input[name$='ExibeTermoPrincipalResponsabilidadeEntrega']") //verifica se o checkbox de confirmação da entrega posterior existe
+                        &&
+                        !$("input[name$='ExibeTermoPrincipalResponsabilidadeEntrega']").prop("checked") //verifica se não está marcado
+                    ) {
+                        //cancela o envio do form
+                        e.preventDefault();
+
+                        //exibe a mensagem de erro
+                        smc.core.alertError(
+                            "Erro!",
+                            "Para prosseguir com alguma documentação pendente, é necessário aceitar o termo de entrega da documentação."
+                        );                        
+                        
+                    }
+                }
+              
+            });
+        });
+
+
+
+        function reloadDependecies() {
+            $('#listaDocumentosObrigatorios').ready(function () {
+                var values = $("input[name$='EntregaPosterior']").map(function () {
+                    return $(this)[0].checked;
+                }).get();
+
+                if (values.some((ent) => ent === true)) {
+                    document.getElementById('DivTermoResponsabilidadeEntrega').style.visibility = 'visible';
+                }
+                else {
+                    document.getElementById('DivTermoResponsabilidadeEntrega').style.visibility = 'hidden';
+                }
+            });
+        }
+
+        function verifyCheckboxEntregaPosterior() {
+            var inputsEntregaPosterior = $('label [data-name="EntregaPosterior"]');
+            if (inputsEntregaPosterior.length > 0) {
+                for (var i = 0; i < inputsEntregaPosterior.length; i++) {
+                    if ($(inputsEntregaPosterior[i]).prop('checked')) {
+                        var divButton = $(inputsEntregaPosterior[i]).parent().parent().parent().parent().find(".smc-uploadFile-contextWindowControls");
+                        divButton.addClass('smc-btn-desabilitado');
+                        divButton.find('button').prop('disabled', true);
+
+                    } else {
+                        var divButton = $(inputsEntregaPosterior[i]).parent().parent().parent().parent().find(".smc-uploadFile-contextWindowControls");
+                        divButton.removeClass('smc-btn-desabilitado');
+                        divButton.find('button').prop('disabled', false);
+                    }
+                }
+            }
+        }
+
+    </script>
+}

@@ -1,0 +1,102 @@
+@model ConsultaInscricaoProcessoFiltroViewModel
+
+@Html.Action("CabecalhoProcesso", Model.SeqProcesso)
+
+@using (Smc.Form("formPesquisaConsultaInscricaoProcesso", "ListarInscricaoProcesso").Ajax("#divGridConsultaInscricaoProcesso").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaInscricaoProcesso").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SeqTipoProcessoSituacao)
+        @Smc.EditorFor(prop => prop.SeqMotivo)
+        @Smc.EditorFor(prop => prop.SeqInscricao)
+        @Smc.EditorFor(prop => prop.NomeInscrito)
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+        @Smc.EditorFor(prop => prop.SeqItemHierarquiaOferta)
+        @Smc.EditorFor(prop => prop.Oferta)
+        @Smc.EditorFor(prop => prop.SituacaoDocumentacao)
+
+        if (Model.PossuiTaxa.HasValue && Model.PossuiTaxa.Value)
+        {
+            @Smc.EditorFor(prop => prop.SeqTipoTaxa)
+        }
+
+        @Smc.EditorFor(prop => prop.BolsaExAluno)
+
+        @Smc.EditorFor(prop => prop.RecebeuBolsa)
+        
+        if (Model.HabilitaGestaoEventos.HasValue && Model.HabilitaGestaoEventos.Value)
+        {
+            @Smc.EditorFor(prop => prop.CheckinRealizado)
+        }
+
+        using (Smc.Div("divFiltroSGF").Dependency("SeqGrupoOferta", "ConsultarInscricaoProcessoFiltroSGF", "AcompanhamentoProcesso", "INS", false, "SeqProcesso")
+                                      .Dependency("Oferta", "ConsultarInscricaoProcessoFiltroSGF", "AcompanhamentoProcesso", "INS", false, "SeqProcesso").Size(SMCSize.Grid9_24).Begin())
+        {
+            if (Model.FiltroSGF != null)
+            {
+                @Html.Partial("_ConsultarInscricaoProfessoFiltroSGF", Model)
+            }
+            else
+            {
+                @Html.Action("ConsultarInscricaoProcessoFiltroSGF", new { seqGrupoOferta = Model.SeqGrupoOferta, seqProcesso = Model.SeqProcesso })
+            }
+        }
+
+        @(Smc.ButtonSet()
+                        .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+                        .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon)))
+    }
+}
+
+@if (string.IsNullOrEmpty(Model.BackUrl))
+{
+    Model.BackUrl = Request.Url.AbsoluteUri.ToString();
+}
+
+
+<div id="divGridConsultaInscricaoProcesso">
+    @Smc.ActionList("ListarInscricaoProcesso", new { filtros = Model }, initialListingDisabled: true)
+</div>
+
+@(Smc.ButtonSet()
+            .AddButton(Smc.Button("Voltar")
+                .Type(SMCButtonType.Link)
+                .CssClass("smc-btn-voltar-icotext").Action("Index", "AcompanhamentoProcesso")))
+
+@using (Smc.ModalWindow("modalAlterarSituacao").Size(SMCModalWindowSize.Large)
+        .Title(Smc.GetUIResource("AlterarSituacaoLote_Modal_Titulo"))
+        .Form("AlterarSituacao", "SalvarAlteracaoSituacaoLote", "AcompanhamentoProcesso", null, false, x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+        //.Confirm(Smc.GetUIResource("Titulo_Confirmacao_Alteracao_Situacao"), Smc.GetUIResource("Mensagem_Confirmacao_Alteracao_Situacao"))
+        .Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Fechar_Modal_Alterar_Situacao")))
+        .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalJustificativaSituacao")
+        .Title(Smc.GetUIResource("Label_JustificativaSituacao"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalAlterarDados")
+        .Title(Smc.GetUIResource("AlterarDados_Modal_Titulo"))
+        .Form("AlterarDados", "SalvarAlteracaoDados", "AcompanhamentoProcesso", null, true,
+            x => x.Ajax(onSuccess: "reloadPagerAjax()"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalObservacao")
+        .Title(Smc.GetUIResource("Observacao_Modal_Titulo"))
+        .Form("AlterarObservacao", "SalvarObservacao", "AcompanhamentoProcesso", null, true, x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+
+@section Scripts{
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/ReloadPagerAjax.js")" type="text/javascript"></script>
+}

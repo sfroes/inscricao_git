@@ -1,0 +1,16 @@
+<div class="smc-gpi-oferta-vazio">
+  <span class="smc-gpi-img-sem-itens"></span>
+  <p class="smc-gpi-oferta-vazio-title">Nenhum Item Selecionado</p>
+  <p class="smc-gpi-oferta-vazio-text">
+    Você precisa selecionar ao menos um item para continuar.
+  </p>
+  <p-button
+    class="smc-button"
+    styleClass="smc-btn-salvar smc-btn-principal smc-btn-sm"
+    [disabled]="selecaoOfertaDataService.$desativarBotaoSelecionarOfertas()"
+    [loading]="selecaoOfertaDataService.$desativarBotaoSelecionarOfertas()"
+    (onClick)="selecionarHierarquia()"
+  >
+    Selecionar {{ selecaoOfertaDataService.$selecaoOferta().labelOferta }}
+  </p-button>
+</div>

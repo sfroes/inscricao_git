@@ -1,0 +1,33 @@
+﻿@model ListarConfiguracoesTipoFormularioViewModel
+
+@(Smc.Grid("gridConfiguracaoTipoFormulario", Model.Pager)
+        .HideNavigator()
+        .HideNumberOfRowsPerPageSelector()
+        .HideRowsTotalizer()
+        .HidePager()
+        .AutoGenerateColumns()
+        .ButtonColumn(SMCButtonSetType.Secondary, 2, null, null, "smc-grid-coluna-botoes", false,
+
+                    item => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "AlterarConfiguracaoTipoFormulario", new 
+                    {
+                        @seqFormulario = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelTipoFormularioListaViewModel).Seq), 
+                        @codigoUnidade = Model.CodigoUnidade
+                    }, "UnidadeResponsavel")
+                                    .Attribute(SMCMvcConsts.MODAL_ID, "modalEditarParametroTipoFormulario")
+                                    .Ajax(isPost: false, updateTargetId: "painelAjaxIncluirTipoFormulario")
+                                    .CssClass("smc-btn-alterar-ico")
+                                    .SecurityToken(UC_RES_001_01_04.MANTER_TIPO_FORMULARIO),
+        
+                   item => Smc.Button(SMCButtonBehavior.Excluir, "ExcluirConfiguracaoTipoFormulario",
+                                   new {
+                                       @seqFormulario = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelTipoFormularioListaViewModel).Seq),
+                                       @seqUnidadeResponsavel = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelTipoFormularioListaViewModel).SeqUnidadeResponsavel),
+                                       @codigoUnidade = Model.CodigoUnidade
+                                   }, "UnidadeResponsavel")
+                              .DisplayMode(SMCButtonDisplayMode.Icon)
+                              .SecurityToken(UC_RES_001_01_04.MANTER_TIPO_FORMULARIO)
+                              .Ajax(isPost: true, updateTargetId: "#divGridTipoFormulario")
+                              .Confirm(Smc.GetUIResource("Exclusao_Tipo_Formulario"),
+                                                     string.Format(Smc.GetUIResource("Confirma_Exclusao_Tipo_Formulario"),
+                                                             (item as UnidadeResponsavelTipoFormularioListaViewModel).DescricaoTipoFormulario)))
+)

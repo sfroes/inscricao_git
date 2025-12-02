@@ -1,0 +1,18 @@
+﻿@model SMCPagerModel<TipoProcessoListaViewModel>
+
+@(Smc.Grid("gridTipoProcesso")
+     .Action("ListarTipoProcesso", "TipoProcesso")
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary, "smc-grid-coluna-botoes",
+                     item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as TipoProcessoListaViewModel).Seq) }, "TipoProcesso")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_INS_001_09_02.MANTER_TIPO_PROCESSO),
+
+                         item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as TipoProcessoListaViewModel).Seq) }, "TipoProcesso")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_INS_001_09_02.MANTER_TIPO_PROCESSO)
+                                .Ajax(isPost: true, updateTargetId: "#divGridTipoProcesso")
+                                .Confirm(Smc.GetUIResource("Exclusao_Tipo_Processo_Title"),
+                                                 string.Format(Smc.GetUIResource("Exclusao_Tipo_Processo_Confirmacao"), (item as TipoProcessoListaViewModel).Descricao))
+))
+

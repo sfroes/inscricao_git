@@ -1,0 +1,36 @@
+﻿@model ProcessoHomeViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_NaoAutenticado.cshtml";
+}
+<div class="smc-gpi-formulario-impacto">
+
+    <h2>@Model.FormularioImpacto.DescricaoMensagemInformativa</h2>
+    @if (Model.FormularioImpacto.DataFimResposta.HasValue)
+    {
+        <div class="smc-gpi-data-formulario"><p>Disponível até</p><p>@Model.FormularioImpacto.DataFimResposta.Value.ToShortDateString()</p></div>@*ESTE DIV AQUI NÃO APARECERÁ CASO NÃO TENHA DATA FIM*@
+    }
+    <p class="smc-gpi-formularioimpacto-info-inicial">@Model.FormularioImpacto.MensagemInformativa</p>
+
+    <form id="formulario-impacto" class="smc-gpi-formulario-impacto-conteudo" action="FormularioImpacto/SalvarFormularioImpacto" method="post">
+        <input type="hidden" value="@Model.FormularioImpacto.ExibirFormularioImpacto.ToString()" id="exibir-formulario-impacto" />
+        @Html.Action("CarregarFormulario", "Inscricao", new
+   {
+       @seqDadoFormulario = @Model.FormularioImpacto.SeqDadoFormulario,
+       @seqInscricao = Model.FormularioImpacto.SeqInscricao,
+       @seqFormularioSGF = Model.FormularioImpacto.SeqFormulario,
+       @seqVisaoSGF = @Model.FormularioImpacto.SeqVisaoSGF,
+       @seqProcesso = @Model.SeqProcesso,
+       @tokenCssAlternativoSas = Model.TokenCssAlternativoSas,
+       @uidInscricaoOferta = Model.UidInscricaoOferta,
+       @Area = "INS"
+   })
+
+        <button class="smc-btn-principal" type="submit">Enviar</button>
+
+    </form>
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/Inscricao/FormularioImpacto.js")"></script>
+}

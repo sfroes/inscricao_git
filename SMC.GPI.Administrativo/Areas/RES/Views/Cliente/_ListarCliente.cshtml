@@ -1,0 +1,19 @@
+﻿@model SMCPagerModel<ClienteListaViewModel>
+
+@(Smc.Grid("gridCliente")
+    .Action("ListarCliente", "Cliente")
+    .AutoGenerateColumns()
+    .AllowSort()
+    .ButtonColumn(SMCButtonSetType.Secondary, "smc-grid-coluna-botoes",
+                             item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as ClienteListaViewModel).Seq) }, "Cliente")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_RES_002_01_02.MANTER_CLIENTE),
+
+                             item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as ClienteListaViewModel).Seq) }, "Cliente")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_RES_002_01_02.MANTER_CLIENTE)
+                                .Ajax(isPost: true, updateTargetId: "#divGridCliente")
+                                .Confirm(Smc.GetUIResource("Exclusao_Cliente_Title"),
+                                         string.Format(Smc.GetUIResource("Exclusao_Cliente_Confirmacao"), 
+                                         (item as ClienteListaViewModel).Nome)))
+)

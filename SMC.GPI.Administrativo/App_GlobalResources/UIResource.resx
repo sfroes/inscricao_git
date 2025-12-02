@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Perfil_Usuario_Botao_TrocarSenha" xml:space="preserve">
+    <value>Trocar Senha</value>
+  </data>
+  <data name="SiglaAplicacao" xml:space="preserve">
+    <value>GPI</value>
+  </data>
+  <data name="treeviewSearch_TreeSelect_Pesquisa_Titulo" xml:space="preserve">
+    <value>Pesquisa de ofertas</value>
+  </data>
+  <data name="Upload_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Botao_Clear_Tooltip" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="Treeview_Botao_Buscar_Tooltip" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Treeview_Botao_Limpar_Busca_Tooltip" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="Label_JustificativaSituacao" xml:space="preserve">
+    <value>Motivo/Justificativa da situação</value>
+  </data>
+  <data name="Botao_Open_Tooltip" xml:space="preserve">
+    <value>Legenda</value>
+  </data>
+  <data name="Botao_Ver_Anexo" xml:space="preserve">
+    <value>Ver Anexo</value>
+  </data>
+  <data name="Botao_Upload_Ver_Anexo_Tooltip" xml:space="preserve">
+    <value>Ver anexo</value>
+  </data>
+  <data name="Label_LookupItemGrupoOfertaUtilizada" xml:space="preserve">
+    <value>Oferta associada a um outro grupo.</value>
+  </data>
+  <data name="Botao_No_Tooltip" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Botao_Yes_Tooltip" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Ofertas_Busca_TreeSelect_Pesquisa_Titulo" xml:space="preserve">
+    <value>Pesquisar oferta</value>
+  </data>
+  <data name="Mensagem_Erro_9Digito" xml:space="preserve">
+    <value>Número de telefone inválido</value>
+  </data>
+  <data name="Mensagem_Erro_DDD" xml:space="preserve">
+    <value>Número do DDD inválido</value>
+  </data>
+  <data name="Layout_Texto_Aguarde" xml:space="preserve">
+    <value>Aguarde</value>
+  </data>
+  <data name="Layout_Texto_Copyright" xml:space="preserve">
+    <value>© 2000 . 2017 - Todos direitos reservados.</value>
+  </data>
+  <data name="GRUPO_ConfigurarUnidadeResponsavel" xml:space="preserve">
+    <value>Configuração da Unidade Responsável</value>
+  </data>
+  <data name="Botao_Configuracaopaginaetapa" xml:space="preserve">
+    <value>Configuração de páginas da etapa</value>
+  </data>
+  <data name="Botao_Configuracaopaginaetapa_Tooltip" xml:space="preserve">
+    <value>Configuração de páginas da etapa</value>
+  </data>
+  <data name="Botao_Documentacaorequerida" xml:space="preserve">
+    <value>Documentação Requerida</value>
+  </data>
+  <data name="Botao_Documentacaorequerida_Tooltip" xml:space="preserve">
+    <value>Documentação Requerida</value>
+  </data>
+  <data name="Botao_EditarConfiguracaoEtapa" xml:space="preserve">
+    <value>Alterar Configuração de Etapa</value>
+  </data>
+  <data name="Botao_EditarConfiguracaoEtapa_Tooltip" xml:space="preserve">
+    <value>Alterar Configuração de Etapa</value>
+  </data>
+  <data name="Botao_Grupodocumentacaorequerida" xml:space="preserve">
+    <value>Grupo de Documentação</value>
+  </data>
+  <data name="Botao_Grupodocumentacaorequerida_Tooltip" xml:space="preserve">
+    <value>Grupo de Documentação</value>
+  </data>
+  <data name="Elementos_Detalhe_Titulo" xml:space="preserve">
+    <value>Elementos</value>
+  </data>
+  <data name="Mensagem_Confirmacao_Alteracao_Situacao" xml:space="preserve">
+    <value>Esta alteração de situação enviará um e-mail de notificação automático para o(s) candidato(s) selecionado(s), caso isso tenha sido configurado no processo. Confirma a alteração da situação?</value>
+  </data>
+  <data name="Titulo_Confirmacao_Alteracao_Situacao" xml:space="preserve">
+    <value>Alterar situação</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoProcesso_gridConfiguracaoTipoProcesso_Grid_Titulo" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+</root>

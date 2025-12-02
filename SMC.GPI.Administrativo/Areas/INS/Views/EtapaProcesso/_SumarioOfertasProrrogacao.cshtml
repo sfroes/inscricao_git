@@ -1,0 +1,43 @@
+﻿@model OfertaProrrogacaoViewModel
+
+<div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24 smc-gpi-divisao-taxas">
+    @using (Smc.Header("headerConfiguracaoSumario", SMCHeaderType.Quaternary).CssClass("smc-gpi-sumarioprorrogacao-oferta-secundaria")
+                                        .Item(x => x.Descricao, sizeSM: SMCSize.Grid14_24, sizeMD: SMCSize.Grid14_24, sizeLG: SMCSize.Grid14_24, sizeXS: SMCSize.Grid14_24)
+                                        .Item(x => x.DataFimAntiga, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24)
+                                        .Item(x => x.DataFim, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24, cssClass: Model.CssClassData).Begin()) { }
+    @if (Model.Taxas != null && Model.Taxas.Count() > 0)
+    {
+        <div class="smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+            <div class="smc-size-md-8 smc-size-xs-8 smc-size-sm-8 smc-size-lg-8 smc-label-taxas">
+                <p>@Smc.GetUIResource("Label_Tipo_Taxa")</p>
+            </div>
+            <div class="smc-size-md-4 smc-size-xs-4 smc-size-sm-4 smc-size-lg-4 smc-label-taxas">
+                <p>@Smc.GetUIResource("Label_Vencimento_Anterior")</p>
+            </div>
+            <div class="smc-size-md-4 smc-size-xs-4 smc-size-sm-4 smc-size-lg-4 smc-label-taxas">
+                <p>@Smc.GetUIResource("Label_Vencimento_Novo")</p>
+            </div>
+            <div class="smc-size-md-4 smc-size-xs-4 smc-size-sm-4 smc-size-lg-4 smc-label-taxas">
+                <p>@Smc.GetUIResource("Label_Valor_Anterior")</p>
+            </div>
+            <div class="smc-size-md-4 smc-size-xs-4 smc-size-sm-4 smc-size-lg-4 smc-label-taxas">
+                <p>@Smc.GetUIResource("Label_Valor_Novo")</p>
+            </div>
+
+            @(Smc.List("listaOfertasSumario", x => x.Taxas)
+                .HtmlTemplate(
+            @<text>
+                <div class="smc-gpi-sumarioprorrogacao-taxas">
+                    @Smc.DisplayFor(x => item.Value.Descricao).HideLabel()
+                    @Smc.DisplayFor(x => item.Value.DataVencimentoAntiga).HideLabel()
+                    @Smc.DisplayFor(x => item.Value.DataVencimento).CssClass(item.Value.CssClassData).HideLabel()
+                    @Smc.DisplayFor(x => item.Value.ValorAntigo).HideLabel()
+                    @Smc.DisplayFor(x => item.Value.ValorNovo).CssClass(item.Value.CssClassValor).HideLabel()
+                </div>
+            </text>)
+            )
+
+        </div>
+    }
+</div>
+

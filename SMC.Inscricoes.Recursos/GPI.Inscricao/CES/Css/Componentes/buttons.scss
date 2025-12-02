@@ -1,0 +1,72 @@
+// BUTTONSET DA ÁREA DE CADASTRO
+.smc-gpi-linha-botoes {
+    border-top: 1px solid var(--color-detail-h3);
+}
+
+app-root {
+    p-button {
+        button.smc-btn-secundario.smc-gpi-navegacao,
+        button.smc-btn-fechar-icotext.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-gpi-navegacao,
+        button.smc-btn-anterior-icotext.smc-gpi-navegacao,
+        button.smc-btn-yes.smc-gpi-navegacao,
+        button.smc-btn-no.smc-gpi-navegacao,
+        button.smc-btn-custom-secundario {
+            background-color: var(--white) !important;
+            color: var(--color-primary-2) !important;
+            border: 1px solid var(--color-primary-2) !important;
+
+            > span {
+                color: var(--color-primary-2);
+            }
+        }
+
+        > button.voltar {
+            &:before {
+                color: var(--color-primary-2);
+            }
+        }
+
+        button.smc-btn-principal.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-principal.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-confirmar-icotext-destaque.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-btn-custom.smc-btn-proximo-icotext-destaque.smc-gpi-navegacao,
+        button.smc-wizard-barra-acoes.smc-btn-proximo-icotext-destaque.smc-gpi-navegacao,
+        button.smc-btn-confirmar-icotext-destaque.smc-gpi-navegacao,
+        button.smc-btn-custom {
+            color: var(--white) !important;
+            background-color: var(--color-primary) !important;
+            border: 1px solid var(--color-primary) !important;
+
+            &:hover {
+                border: 1px solid var(--color-primary) !important;
+                background-color: var(--white) !important;
+                color: var(--color-primary) !important;
+
+                > span {
+                    color: var(--color-secondary);
+                }
+            }
+
+            > span {
+                color: var(--white);
+            }
+        }
+
+        .smc-btn-principal.smc-btn-sm {
+            background-color: var(--color-secondary) !important;
+            border: 1px solid var(--color-secondary) !important;
+
+            &:hover {
+                background-color: var(--white) !important;
+                color: var(--color-secondary) !important;
+            }
+        }
+    }
+}
+
+div.smc-button > [disabled] {
+    background-color: var(--color-new-gray) !important;
+    color: var(--white) !important;
+    border: 1px solid var(--color-new-gray) !important;
+}

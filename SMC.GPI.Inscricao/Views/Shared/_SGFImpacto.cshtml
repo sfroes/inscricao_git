@@ -1,0 +1,15 @@
+﻿@model SMC.Formularios.UI.Mvc.Models.IDadoFormulario
+
+@using SMC.Formularios.UI.Mvc
+@using SMC.Framework.Security
+
+@section Scripts{
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.Lookup,
+                                     RegisterHelperControls.TreeView,
+                                     RegisterHelperControls.Window,
+                                     RegisterHelperControls.Fields)
+}
+
+<div id="formulario-impacto">
+    @Smc.SGF(SMC.Formularios.Common.Areas.FRM.Enums.FormaExibicaoSecao.Nenhum, false, true)
+</div>

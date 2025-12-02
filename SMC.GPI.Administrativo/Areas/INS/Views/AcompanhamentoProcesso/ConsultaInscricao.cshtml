@@ -1,0 +1,296 @@
+﻿@model InscricaoViewModel
+
+@Html.Action("CabecalhoProcesso", new { seqProcesso = Model.SeqProcesso })
+@{
+    var header = Smc.Header("headerHeaderProcessoGrupoOfertas", SMCHeaderType.Secondary);
+    header.Item(x => x.SeqInscricao, sizeSM: SMCSize.Grid5_24, cssClass: "smc-gpi-numero-inscricao", sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24);
+    header.Item(m => m.SituacaoInscrito, cssClass: "smc-gpi-situacao-inscrito", sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24);
+    header.Item(x => x.DescricaoGrupoOferta, sizeSM: SMCSize.Grid14_24, cssClass: " smc-gpi-grupo-ofertas-inscricao", sizeMD: SMCSize.Grid14_24, sizeLG: SMCSize.Grid14_24, sizeXS: SMCSize.Grid14_24);
+    header.Item(@Smc.GetUIResource("Coluna_Oferta"), "", sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24);
+
+    foreach (var item in Model.Ofertas.OrderBy(a => a.NumeroOpcao).ToList())
+    {
+        var descricaoOferta = item.DescricaoOferta;
+        if (item.DescricaoOferta != item.DescricaoOfertaOriginal)
+        {
+            descricaoOferta = string.Format("{0}: {1}<br />{2}: {3}", Smc.GetUIResource("Label_OfertaAtual"), item.DescricaoOferta, Smc.GetUIResource("Label_OfertaOriginal"), item.DescricaoOfertaOriginal);
+        }
+
+
+        header.Item(@Smc.GetUIResource("Label_Opcao", parametros: item.NumeroOpcao.ToString()), descricaoOferta, cssClass: "smc-gpi-opcao", sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24);
+        if (!string.IsNullOrWhiteSpace(item.Justificativa))
+        {
+            header.Item(@Smc.GetUIResource("Label_Justificativa"), item.Justificativa, cssClass: "smc-gpi-justificativa-inscricao", sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24);
+        }
+    }
+
+    if (Model.NumeroOpcoesDesejadas.HasValue)
+    {
+        header.Item(m => m.NumeroOpcoesDesejadas, cssClass: "smc-gpi-numero-opcoes", sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24);
+    }
+
+}
+
+@using (header.Begin())
+{ }
+
+@using (Smc.Fieldset("fieldsetDadosPessoais").Size(SMCSize.Grid24_24).LegendText(@Smc.GetUIResource("DadosPessoais_Label")).Begin())
+{
+    using (Smc.Div("dadospessoais").CssClass("smc-gpi-dados-pessoais").Size(SMCSize.Grid14_24).Begin())
+    {
+        @Smc.DisplayFor(prop => prop.DadosInscrito.Nome)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.NomeSocial)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.DataNascimento)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.Sexo)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.EstadoCivil)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.Cpf)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.NumeroPassaporte)
+    }
+
+    using (Smc.Fieldset("identidade").LegendText(@Smc.GetUIResource("Identidade_Label")).Size(SMCSize.Grid10_24).Begin())
+    {
+        @Smc.DisplayFor(prop => prop.DadosInscrito.NumeroIdentidade)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.OrgaoEmissorIdentidade)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.UfIdentidade)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.Nacionalidade)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.PaisNacionalidade)
+    }
+
+    using (Smc.Fieldset("filiacao").LegendText(@Smc.GetUIResource("Filiacao_Label")).CssClass("smc-gpi-separa-itens").Size(SMCSize.Grid13_24).Begin())
+    {
+        @Smc.DisplayFor(prop => prop.DadosInscrito.NomePai)
+        @Smc.DisplayFor(prop => prop.DadosInscrito.NomeMae)
+    }
+
+    using (Smc.Fieldset("naturalidade").LegendText(@Smc.GetUIResource("Naturalidade_Label")).Size(SMCSize.Grid10_24).CssClass("col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1").Begin())
+    {
+        if (Model.DadosInscrito.Nacionalidade == SMC.DadosMestres.Common.Areas.PES.Enums.TipoNacionalidade.Brasileira)
+        {
+            @Smc.DisplayFor(prop => prop.DadosInscrito.UfNaturalidade)
+            @Smc.DisplayFor(prop => prop.DadosInscrito.CidadeNaturalidade)
+        }
+        else
+        {
+            @Smc.DisplayFor(prop => prop.DadosInscrito.DescricaoNaturalidadeEstrangeira)
+        }
+    }
+}
+
+@using (Smc.Fieldset("fieldsetContatos").Size(SMCSize.Grid24_24).CssClass("smc-gpi-campos-block").LegendText(@Smc.GetUIResource("Contatos_Label")).Begin())
+{
+
+    using (Smc.Fieldset("fieldsetenderecos").LegendText(@Smc.GetUIResource("Enderecos_Label")).Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos).CssClass("smc-gpi-controle-endereco smc-gpi-remove-titulo smc-gpi-separa-itens")
+    }
+
+    using (Smc.Fieldset("fieldsetTelefone").LegendText(@Smc.GetUIResource("Telefones_Label")).CssClass("smc-gpi-separa-itens").Size(SMCSize.Grid13_24).Begin())
+    {
+        @Smc.DisplayFor(prop => prop.DadosInscrito.Telefones).CssClass("smc-gpi-remove-titulo smc-gpi-separa-itens")
+
+    }
+
+    using (Smc.Fieldset("div_email").LegendText(@Smc.GetUIResource("Enderecos_Eletronicos_Label")).Size(SMCSize.Grid10_24).CssClass("col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1").Begin())
+    {
+        @Smc.DisplayFor(prop => prop.DadosInscrito.Email)
+        if (Model.DadosInscrito.OutrosEnderecosEletronicos.Count > 0)
+        {
+            for (var i = 0; i < Model.DadosInscrito.OutrosEnderecosEletronicos.Count; i++)
+            {
+                @Smc.DisplayFor(prop => prop.DadosInscrito.OutrosEnderecosEletronicos[i].TipoEnderecoEletronico).HideLabel()
+                @Smc.DisplayFor(prop => prop.DadosInscrito.OutrosEnderecosEletronicos[i].Descricao).HideLabel()
+            }
+        }
+
+    }
+}
+
+@if (Model.CodigosAutorizacao.Count > 0)
+{
+    using (Smc.Fieldset("fieldsetCodigosInscricao").Begin())
+    {
+        foreach (var codigo in Model.CodigosAutorizacao)
+        {
+            <span><p>@codigo</p></span>
+        }
+
+    }
+}
+
+<div class="smc-agrupamento-formulario smc-gpi-consultainscricao">
+    @foreach (var formulario in Model.Formularios)
+    {
+        using (Smc.Fieldset("fieldSetFormularioComprovante")
+                  .LegendText(formulario.TituloFormulario)
+                  .CssClass("smc-gpi-formulario-comprovante smc-gpi-formulario-relatorio")
+                  .Begin())
+        {
+            if (formulario.Editable)
+            {
+                @(Smc.ButtonSet()
+                                                            .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                            .Action("EditarFormulario", "GestaoInscricao", new
+                                                            {
+                                                                seq = (SMCEncryptedLong)formulario.SeqDadoFormulario,
+                                                                seqFormulario = (SMCEncryptedLong)formulario.SeqFormularioSGF,
+                                                                seqVisao = (SMCEncryptedLong)formulario.SeqVisaoSGF,
+                                                                seqInscricao = (SMCEncryptedLong)Model.SeqInscricao,
+                                                                origem = Model.Origem,
+                                                                area = "INS"
+                                                            })
+                                                            .CssClass("smc-btn-alterar-ico-destaque")
+                                                            .Ajax(isPost: false)
+                                                            .Attribute(SMCMvcConsts.MODAL_ID, "modalEditarFormulario")
+                                                            .Text(Smc.GetUIResource("Alterar"))
+                                                            .Tooltip(Smc.GetUIResource("Alterar"))
+                                                            .SecurityToken(UC_INS_003_01_13.ALTERAR_FORMULARIO_INSCRICAO)
+                                                            )
+                )
+            }
+            @Html.Action("RelatorioFormulario", "AcompanhamentoProcesso", new
+       {
+           seqDadoFormulario = @formulario.SeqDadoFormulario,
+           seqEntidade = @formulario.SeqInscricao,
+           seqFormularioSGF = @formulario.SeqFormularioSGF,
+           seqVisaoSGF = @formulario.SeqVisaoSGF,
+           area = "INS"
+       })
+        }
+    }
+</div>
+
+@if (Model.Documentos != null && Model.Documentos.Count > 0)
+{
+    using (Smc.Fieldset("fieldsetDocumentos").Begin())
+    {
+        @Html.Partial("_ListarDocumentosInscricao", Model.Documentos)
+    }
+}
+@if (Model.Titulos != null && Model.Titulos.Count > 0)
+{
+    using (Smc.Fieldset("fieldsetTitulos").Begin())
+    {
+        @Html.Partial("_ListarTitulosInscricao", Model.Titulos)
+    }
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.Observacao))
+{
+    using (Smc.Fieldset("fieldsetObservacao").Begin())
+    {
+        @Smc.DisplayFor(m => m.Observacao).HideLabel()
+    }
+}
+
+@if (Model.RecebeuBolsa)
+{
+    using (Smc.Fieldset("fieldsetBolsa").Begin())
+    {
+        if (Model.BolsaExAluno)
+        {
+            <p>Bolsa Ex-aluno PUC Minas</p>
+        }
+    }
+}
+
+@{
+    var buttonset = Smc.ButtonSet();
+
+    if (string.IsNullOrEmpty(Model.BackURL))
+    {
+
+        if (Request.UrlReferrer == null)
+        {
+            Model.BackURL = Request.Url.AbsoluteUri;
+        }
+        else
+        {
+            Model.BackURL = Request.UrlReferrer.AbsoluteUri;
+        }
+    }
+
+    if (Model.TokenSituacaoInscrito != TOKENS.SITUACAO_INSCRICAO_INICIADA)
+    {
+        var buttonLiberarAlteracaoInscricao = Smc.Button("LiberarAlteracaoInscricao")
+                                                 .Type(SMCButtonType.Link)
+                                                 .SecurityToken(UC_INS_003_01_06.LIBERAR_ALTERACAO_INSCRICAO)
+                                                 .Ajax()
+                                                 .CssClass("smc-btn-encaminhar-icotext-destaque")
+                                                 .Action("LiberarAlteracaoInscricao", "AcompanhamentoProcesso", new { @seqInscricao = new SMCEncryptedLong(Model.SeqInscricao), @seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), @origem = Model.Origem, @backUrl = Model.BackURL });
+
+        //if (!Model.OfertaVigente)
+        //{
+        //    buttonLiberarAlteracaoInscricao.Confirm(Smc.GetUIResource("Titulo_Confirmacao_Liberacao_Alteracao_Inscricao"), string.Format(Smc.GetUIResource("Mensagem_Confirmacao_Liberacao_Alteracao_Inscricao"), Smc.GetUIResource("Mensagem_Liberacao_Alteracao_Inscricao_Oferta_Nao_Vigente")));
+        //}
+        //else if (Model.CandidatoComBoletoPago)
+        //{
+        //    buttonLiberarAlteracaoInscricao.Confirm(Smc.GetUIResource("Titulo_Confirmacao_Liberacao_Alteracao_Inscricao"), string.Format(Smc.GetUIResource("Mensagem_Confirmacao_Liberacao_Alteracao_Inscricao"), Smc.GetUIResource("Mensagem_Liberacao_Alteracao_Inscricao_Candidato_Boleto_Pago")));
+        //}
+        //else if (!Model.CandidatoComBoletoPago)
+        //{
+        //    buttonLiberarAlteracaoInscricao.Confirm(Smc.GetUIResource("Titulo_Confirmacao_Liberacao_Alteracao_Inscricao"), string.Format(Smc.GetUIResource("Mensagem_Confirmacao_Liberacao_Alteracao_Inscricao"), Smc.GetUIResource("Mensagem_Liberacao_Alteracao_Inscricao_Candidato_Boleto_Nao_Pago")));
+        //}
+        //else
+        //{
+        //    buttonLiberarAlteracaoInscricao.Confirm(Smc.GetUIResource("Titulo_Confirmacao_Liberacao_Alteracao_Inscricao"), Smc.GetUIResource("Mensagem_Confirmacao_Liberacao_Alteracao_Inscricao"));
+        //}
+
+        buttonset.AddButton(buttonLiberarAlteracaoInscricao);
+
+    }
+
+    if (Model.SeqArquivoComprovante.HasValue)
+    {
+        buttonset.AddButton(Smc.Button("DownloadComprovante").Type(SMCButtonType.Link)
+            .Action("CarregarDocumento", "Home",
+                new
+                {
+                    @area = "",
+                    @seqArquivo = SMCDESCrypto.EncryptNumberForURL(Model.SeqArquivoComprovante.Value)
+                }).Attribute("target", "_blank").CssClass("smc-btn-visualizar-icotext-destaque"));
+
+    }
+    if (string.IsNullOrEmpty(Model.BackURL))
+    {
+        Model.BackURL = Request.UrlReferrer.ToString();
+    }
+
+    buttonset.AddButton(Smc.Button("Excluir")
+    .Type(SMCButtonType.Link)
+    .SecurityToken(UC_INS_003_01_06.EXCLUIR_INSCRICAO)
+    .Ajax()
+    .CssClass("smc-btn-excluir-icotext").Action("ExcluirInscricao", "AcompanhamentoProcesso", new { @seqInscricao = new SMCEncryptedLong(Model.SeqInscricao), @seqProcesso = new SMCEncryptedLong(Model.SeqProcesso), @nomeInscrito = Model.DadosInscrito.Nome, @backUrl= Model.BackURL }));
+
+    //buttonset.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+    //     .Type(SMCButtonType.Link)
+    //     .CssClass("smc-btn-voltar-icotext"));
+
+    buttonset.AddButton(Smc.Button("Voltar")
+     .Type(SMCButtonType.Link)
+     .CssClass("smc-btn-voltar-icotext")
+     .Url(Model.BackURL));
+
+    //.Confirm(Smc.GetUIResource("Titulo_Confirmacao_Exclusao_Inscricao"), string.Format(Smc.GetUIResource("Mensagem_Confirmacao_Exclusao_Inscricao"), Model.DadosInscrito.Nome)));
+    @*<!--if (@Model.Origem != "SEL")
+        {
+            buttonset.AddButton(Smc.Button("Voltar", "ConsultarInscricaoProcesso", new { seqProcesso = (SMCEncryptedLong)Model.SeqProcesso })
+                                   .CssClass("smc-btn-voltar-icotext")
+                                   .Type(SMCButtonType.Link));
+        }
+        else
+        {-->
+           @* buttonset.AddButton(Smc.Button("Voltar", "ConsultaSelecoesProcesso", new { seqProcesso = (SMCEncryptedLong)Model.SeqProcesso, area = "SEL" }, "AcompanhamentoSelecao")
+                                   .CssClass("smc-btn-voltar-icotext")
+                                   .Type(SMCButtonType.Link));*@
+
+    <!--}-->
+}
+@buttonset
+
+@using (Smc.ModalWindow("modalEditarFormulario")
+        .Form("frmEditarFormulario", "SalvarFormulario", "GestaoInscricao", closeOnSubmit: true, config: x => x.Ajax())
+        .Size(SMCModalWindowSize.Largest)
+        .Title(Smc.GetUIResource("AlterarFormulario_Modal_Titulo"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin()) { }

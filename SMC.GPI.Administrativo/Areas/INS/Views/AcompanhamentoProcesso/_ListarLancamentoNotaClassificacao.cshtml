@@ -1,0 +1,8 @@
+﻿@model LancamentoNotaClassificacaoViewModel
+
+@Smc.EditorFor(prop=>prop.SeqProcesso)
+@Smc.EditorFor(prop => prop.SeqGrupoOferta)
+@Smc.EditorFor(prop => prop.SeqOferta)
+@Smc.MasterDetail(prop => prop.Detalhes).HideButtons().HideHeader()
+
+

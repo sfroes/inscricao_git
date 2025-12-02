@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DetalhesTiposHierarquiaOferta_Detalhe_Titulo" xml:space="preserve">
+    <value>Tipos de Hierarquia de Oferta</value>
+  </data>
+  <data name="IdentidadesVisuais_Detalhe_Titulo" xml:space="preserve">
+    <value>Identidade Visual</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_Modal_Editar_Titulo" xml:space="preserve">
+    <value>Editar idioma</value>
+  </data>
+  <data name="IdiomaProcessoViewModel_Modal_Inserir_Titulo" xml:space="preserve">
+    <value>Inserir idioma</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoFormulario_Botao_Open_Tooltip" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoFormulario_Confirma_Exclusao_Tipo_Formulario" xml:space="preserve">
+    <value>Confirma a exclusão da associação do tipo de formulário "{0}" à unidade responsável?</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoFormulario_Exclusao_Tipo_Formulario" xml:space="preserve">
+    <value>Excluir Associação de Tipo de Formulário</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoFormulario_gridConfiguracaoTipoFormulario_Grid_Titulo" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoProcesso_Botao_Open_Tooltip" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoProcesso_Confirma_Exclusao_Tipo_Processo" xml:space="preserve">
+    <value>Confirma a exclusão da associação do tipo de processo "{0}" à unidade responsável e dos seus tipos de hierarquia de oferta?</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoProcesso_Exclusao_Tipo_Processo" xml:space="preserve">
+    <value>Excluir Associação de Tipo de Processo e Tipos de Hierarquia de Oferta</value>
+  </data>
+  <data name="_ListarConfiguracaoTipoProcesso_gridConfiguracaoTipoProcesso_Grid_Titulo" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="_ModalConfiguracaoTipoProcesso_Botao_Insert_DetalhesTiposHierarquiaOferta_Tooltip" xml:space="preserve">
+    <value>Adicionar Tipo de Hierarquia</value>
+  </data>
+  <data name="_PainelTipoFormulario_Botao_Open" xml:space="preserve">
+    <value>Associar Tipo de Formulário</value>
+  </data>
+  <data name="_PainelTipoFormulario_Botao_Open_Tooltip" xml:space="preserve">
+    <value>Associar Tipo de Formulário</value>
+  </data>
+  <data name="_PainelTipoProcesso_Botao_Open" xml:space="preserve">
+    <value>Associar Tipo de Processo e Tipo de Hierarquia de Oferta</value>
+  </data>
+  <data name="_PainelTipoProcesso_Botao_Open_Tooltip" xml:space="preserve">
+    <value>Associar Tipo de Processo e Tipo de Hierarquia de Oferta</value>
+  </data>
+</root>

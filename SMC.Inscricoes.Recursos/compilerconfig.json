@@ -1,0 +1,166 @@
+[
+    {
+        "outputFile": "Content/Css/smc-login-gpi.css",
+        "inputFile": "Content/Css/smc-login-gpi.scss",
+        "minify": {
+            "enabled": true
+        },
+        "options": {
+            "relativeUrls": false
+        }
+    },
+    {
+        "outputFile": "GPI.Administrativo/GPI/Css/smc-login-gpi.css",
+        "inputFile": "GPI.Administrativo/GPI/Css/smc-login-gpi.scss",
+        "minify": {
+            "enabled": true
+        },
+        "options": {
+            "relativeUrls": false
+        }
+    },
+    {
+        "outputFile": "GPI.Administrativo/Css/smc-recursos.css",
+        "inputFile": "GPI.Administrativo/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Administrativo/GPI/Css/smc-recursos.css",
+        "inputFile": "GPI.Administrativo/GPI/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "Content/Css/smc-recursos.css",
+        "inputFile": "Content/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.InscricaoSilver/Css/smc-recursos.css",
+        "inputFile": "GPI.InscricaoSilver/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "Content/Css/smc-pdf.css",
+        "inputFile": "Content/Css/smc-pdf.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/GPI/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/GPI/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCMinas/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/PUCMinas/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUC/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/PUC/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/CES/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/CES/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/Css/smc-pdf.css",
+        "inputFile": "GPI.Inscricao/Css/smc-pdf.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCAberta2024/Css/smc-pdf-pucaberta2024.css",
+        "inputFile": "GPI.Inscricao/PUCAberta2024/Css/smc-pdf-pucaberta2024.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCAberta2024/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/PUCAberta2024/Css/smc-pdf-ingressos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCAberta2025/Css/smc-pdf-pucaberta2025.css",
+        "inputFile": "GPI.Inscricao/PUCAberta2025/Css/smc-pdf-pucaberta2025.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCAberta2025/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/PUCAberta2025/Css/smc-pdf-ingressos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCMinas/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/PUCMinas/Css/smc-pdf-ingressos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUC/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/PUC/Css/smc-pdf-ingressos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/CES/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/CES/Css/smc-pdf-ingressos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/GPI/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/GPI/Css/smc-pdf-ingressos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCMinas/Css/smc-login-puc.css",
+        "inputFile": "GPI.Inscricao/PUCMinas/Css/smc-login-puc.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUC/Css/smc-login-puc.css",
+        "inputFile": "GPI.Inscricao/PUC/Css/smc-login-puc.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/CES/Css/smc-login-ces.css",
+        "inputFile": "GPI.Inscricao/CES/Css/smc-login-ces.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/GPI/Css/smc-login-gpi.css",
+        "inputFile": "GPI.Inscricao/GPI/Css/smc-login-gpi.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCAberta2024/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/PUCAberta2024/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCAberta2024/Css/smc-login-pucaberta2024.css",
+        "inputFile": "GPI.Inscricao/PUCAberta2024/Css/smc-login-pucaberta2024.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCAberta2025/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/PUCAberta2025/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCAberta2025/Css/smc-login-pucaberta2025.css",
+        "inputFile": "GPI.Inscricao/PUCAberta2025/Css/smc-login-pucaberta2025.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCCarreiras2024/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/PUCCarreiras2024/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCCarreiras2024/Css/smc-login-puccarreiras2024.css",
+        "inputFile": "GPI.Inscricao/PUCCarreiras2024/Css/smc-login-puccarreiras2024.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCCarreiras2024/Css/smc-pdf-puccarreiras2024.css",
+        "inputFile": "GPI.Inscricao/PUCCarreiras2024/Css/smc-pdf-puccarreiras2024.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/PUCCarreiras2024/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/PUCCarreiras2024/Css/smc-pdf-ingressos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/AulaoRedacao/Css/smc-login-aulaoredacao.css",
+        "inputFile": "GPI.Inscricao/AulaoRedacao/Css/smc-login-aulaoredacao.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/AulaoRedacao/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/AulaoRedacao/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/AulaoRedacao/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/AulaoRedacao/Css/smc-pdf-ingressos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/AulaoRedacao2025/Css/smc-login-aulaoredacao2025.css",
+        "inputFile": "GPI.Inscricao/AulaoRedacao2025/Css/smc-login-aulaoredacao2025.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/AulaoRedacao2025/Css/smc-recursos.css",
+        "inputFile": "GPI.Inscricao/AulaoRedacao2025/Css/smc-recursos.scss"
+    },
+    {
+        "outputFile": "GPI.Inscricao/AulaoRedacao2025/Css/smc-pdf-ingressos.css",
+        "inputFile": "GPI.Inscricao/AulaoRedacao2025/Css/smc-pdf-ingressos.scss"
+    }
+]

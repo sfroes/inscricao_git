@@ -1,0 +1,34 @@
+﻿@model InscricaoForaPrazoFiltroViewModel
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.InscricaoForaPrazo, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = true })
+
+@using (Smc.Form("formInscricaoForaPrazo", "ListarInscricoesForaPrazo").Ajax("#divInscricoesForaPrazo").Begin())
+{
+    using (Smc.Fieldset("fieldsetInscricaoForaPrazo").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(m => m.SeqProcesso)
+        @Smc.EditorFor(m => m.DataInicio)
+        @Smc.EditorFor(m => m.DataFim)
+        @Smc.EditorFor(m => m.Inscrito)
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo).Highlight()
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_INS_001_11_02.MANTER_PERMISSAO_INSCRICAO_FORA_PRAZO)
+                 .Url(Url.Action("Incluir", new { @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso })))
+        )
+    }
+}
+
+<div id="divInscricoesForaPrazo">
+    @Html.Action("ListarInscricoesForaPrazo", Model)
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Index", "Processo")
+            .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-voltar-icotext"))
+)

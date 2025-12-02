@@ -1,0 +1,35 @@
+﻿.smc-ribbon {
+    background: var(--color-primary);
+}
+
+.smc-aplicaco-logotipo {
+    margin-top: 0.35em;
+    background-image: url('../../GPI/Images/smc-logo-gpi.svg');
+    height: 4.64em;
+}
+
+.smc-gpi-usuario {
+    &:before {
+        background-color: var(--color-primary-3);
+    }
+
+    .smc-gpi-nome-usuario {
+        color: var(--white);
+    }
+}
+
+.smc-btn-usuario,
+.smc-btn-meudados,
+.smc-btn-acessibilidade {
+    &:before {
+        color: var(--white);
+    }
+}
+
+.smc-ico-meusdados {
+    div {
+        &:before {
+            color: var(--white);
+        }
+    }
+}

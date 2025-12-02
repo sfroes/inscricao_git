@@ -1,0 +1,7 @@
+﻿@(Smc.ButtonSet()
+    .AddComponent(Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(1, SMCButtonSetGroupedStyle.Arrow)
+            .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Salvar").Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.SalvarNovo).Action("SalvarNovo"))
+            .AddButton(Smc.Button(SMCButtonBehavior.SalvarSair).Action("SalvarSair")))
+    .AddButton(Smc.Button("voltar").CssClass("smc-btn-voltar-icotext").Type(SMCButtonType.Link).Url("Index"))
+)

@@ -1,0 +1,12 @@
+﻿@model TipoDocumentoViewModel
+
+@using (Smc.Form("formCadastroTipoDocumento").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.Div("fieldsetCadastroTipoDocumento").Begin())
+    {
+        @Smc.EditorFor(m => m.Novo)
+        @Smc.EditorFor(prop => prop.Seq).Focus()
+        @Smc.EditorFor(prop => prop.TipoEmissao)
+    }
+    @Html.Partial("_BotoesEdicaoPadrao")
+}

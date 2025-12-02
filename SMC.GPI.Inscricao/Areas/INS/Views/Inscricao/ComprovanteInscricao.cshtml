@@ -1,0 +1,457 @@
+﻿@model PaginaComprovanteInscricaoViewModel
+
+@using SMC.Framework.Security
+@using SMC.Framework.UI.Mvc.Html
+
+@{
+    Layout = null;
+    ViewBag.InscricaoNaoPermiteTrocaLingua = true;
+}
+
+<html lang="pt-br">
+<head>
+
+    <title>@Smc.GetUIResource("SiglaAplicacao") - @Smc.RenderTitle()</title>
+
+    <link rel="icon" href="~/Content/Images/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="accept-language" content="pt-br">
+    <meta name="author" content="GTI - Gerência de Tecnologia da Informação">
+    <meta name="copyright" content="© 2023 GTI" />
+    <meta name="description" content="Sistema Padrão">
+    <meta name="keywords" content="Sistema Padrão" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- classes css padrões -->
+    <!-- Necessário ter o caminho da url e o físico do arquivo para conversão de PDF funcionar corretamente -->
+    @{
+        string urlCSS = Url.SMCBuscarRecursoAplicacao("Css/smc-pdf.min.css");
+    }
+    <link href="@urlCSS" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="E:\Aplicativos\Recursos\Inscricoes\4.0\GPI.Inscricao\Css\smc-pdf.min.css" />
+</head>
+<body>
+    <div class="smc-gpi-impresso">
+        <div class="smc-gpi-impresso-cabecalho" id="fieldsetTitulo">
+            <h1>@Model.Titulo</h1>
+            @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNome && !string.IsNullOrEmpty(Model.DadosInscrito.Nome))
+            {
+                <div class="smc-gpi-nome">
+                    <label>Nome:</label>
+                    <p>@Model.DadosInscrito.Nome</p>
+                </div>
+            }
+            <div class="smc-gpi-numeroinscricao">
+                <label>@Smc.GetUIResource("Label_NumeroInscricao")</label>
+                <p>@Model.SeqInscricao</p>
+            </div>
+
+
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(Model.TextoInstrucoes) || !string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) || !string.IsNullOrWhiteSpace(Model.TextoFoto))
+        {
+            <div class="smc-gpi-impresso-instrucoes-gerais smc-gpi-bloco-impresso">
+                <div class="intrucoes-tr">
+
+                    @*Ifs para mudança de tamanho dos blocos de texto em relatório(critério Analista) - Adriana*@
+
+                    @if (!string.IsNullOrWhiteSpace(Model.TextoInstrucoes))
+                    {
+                        //se todos os campos preenchidos - tamanho 50%(instruções) 30%(secretaria) 15%(foto)
+                        if (!string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) && !string.IsNullOrWhiteSpace(Model.TextoFoto))
+                        {
+                            <div id="fieldsetInstrucoes" class="smc-gpi-impresso-instrucoes">
+                                @Html.Raw(Model.TextoInstrucoes)
+                            </div>
+
+                            <div id="fieldsetControleSecretaria" class="smc-gpi-impresso-controlesecretaria">
+                                @Html.Raw(Model.TextoControleSecretaria)
+                            </div>
+
+                            <div id="fieldsetFoto" class="smc-gpi-impresso-foto">
+                                @Html.Raw(Model.TextoFoto)
+                            </div>
+                        }
+                        //se apenas instruções + foto - tamanho 80%(instruções) 15%(foto)
+                        else if (string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) && !string.IsNullOrWhiteSpace(Model.TextoFoto))
+                        {
+                            <div id="fieldsetInstrucoes" class="smc-gpi-impresso-instrucoes smc-gpi-impresso-instrucoes-gerais-width-80">
+                                @Html.Raw(Model.TextoInstrucoes)
+                            </div>
+                            <div id="fieldsetFoto" class="smc-gpi-impresso-foto">
+                                @Html.Raw(Model.TextoFoto)
+                            </div>
+
+                        }
+                        //se apenas instruções + controle secretaria - tamanho = 65%(instruções) e 30%(secretaria)
+                        else if (!string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) && string.IsNullOrWhiteSpace(Model.TextoFoto))
+                        {
+                            <div id="fieldsetInstrucoes" class="smc-gpi-impresso-instrucoes smc-gpi-impresso-instrucoes-gerais-width-65">
+                                @Html.Raw(Model.TextoInstrucoes)
+                            </div>
+                            <div id="fieldsetControleSecretaria" class="smc-gpi-impresso-controlesecretaria">
+                                @Html.Raw(Model.TextoControleSecretaria)
+                            </div>
+
+                        }
+
+                        //se apenas instruções - tamanho = 100% para instruções
+                        else if (string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) && string.IsNullOrWhiteSpace(Model.TextoFoto))
+                        {
+                            <div id="fieldsetInstrucoes" class="smc-gpi-impresso-instrucoes smc-gpi-impresso-instrucoes-gerais-width-100">
+                                @Html.Raw(Model.TextoInstrucoes)
+                            </div>
+                        }
+
+                    }
+                    else
+                    {
+                        //Divs abaixo, nas condicionais, usadas para marcar espaços vazios para flexibilidade de áreas solicitada pela Analista
+
+                        if (!string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) && !string.IsNullOrWhiteSpace(Model.TextoFoto))
+                        {
+                            <div class="smc-gpi-impresso-instrucoes"></div>
+
+                            <div id="fieldsetControleSecretaria" class="smc-gpi-impresso-controlesecretaria">
+                                @Html.Raw(Model.TextoControleSecretaria)
+                            </div>
+
+                            <div id="fieldsetFoto" class="smc-gpi-impresso-foto">
+                                @Html.Raw(Model.TextoFoto)
+                            </div>
+                        }
+                        else if (string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) && !string.IsNullOrWhiteSpace(Model.TextoFoto))
+                        {
+                            <div class="smc-gpi-impresso-instrucoes-gerais-width-80"></div>
+                            <div id="fieldsetFoto" class="smc-gpi-impresso-foto">
+                                @Html.Raw(Model.TextoFoto)
+                            </div>
+
+                        }
+                        else if (!string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) && string.IsNullOrWhiteSpace(Model.TextoFoto))
+                        {
+                            <div class="smc-gpi-impresso-instrucoes-gerais-width-65"></div>
+
+                            <div id="fieldsetControleSecretaria" class="smc-gpi-impresso-controlesecretaria">
+                                @Html.Raw(Model.TextoControleSecretaria)
+                            </div>
+                        }
+
+                        else if (string.IsNullOrWhiteSpace(Model.TextoControleSecretaria) && string.IsNullOrWhiteSpace(Model.TextoFoto))
+                        {
+                            //div vazia ocupando 100%
+                            <div class="smc-gpi-impresso-instrucoes-gerais-width-100"></div>
+                        }
+                    }
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+        }
+
+        @using (Smc.Fieldset("FieldsetProcesso").CssClass("smc-gpi-fieldset-legend smc-gpi-bloco-impresso").LegendText(@Smc.GetUIResource("Processo_Label")).Begin())
+        {
+            <p> @Model.DescricaoProcesso </p>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DescricaoGrupoOferta))
+        {
+            using (Smc.Fieldset("fieldsetGrupoOfertas").CssClass("smc-gpi-fieldset-legend smc-gpi-bloco-impresso").LegendText(@Model.LabelGrupoOferta).Begin())
+            {
+                <p>@Model.DescricaoGrupoOferta</p>
+            }
+        }
+
+        @using (Smc.Fieldset("fieldsetGrupoOfertas").CssClass("smc-gpi-fieldset-legend smc-gpi-bloco-impresso").LegendText(@Model.LabelOferta).Begin())
+        {
+            if (Model.Ofertas.Count > 1)
+            {
+                foreach (var oferta in @Model.Ofertas)
+                {
+                    <p>@Smc.GetUIResource("Label_Opcao_Completa", null, @oferta.NumeroOpcao.ToString(), @oferta.DescricaoCompleta)</p>
+
+                    if (!string.IsNullOrWhiteSpace(oferta.JustificativaInscricao))
+                    {
+                        <p class="smc-gpi-impresso-grupo-ofertas">@Smc.GetUIResource("Label_Justificativa"): @oferta.JustificativaInscricao</p>
+                    }
+                }
+            }
+            else
+            {
+                <p>@Model.Ofertas[0].DescricaoCompleta</p>
+                if (!string.IsNullOrWhiteSpace(Model.Ofertas[0].JustificativaInscricao))
+                {
+                    <p class="smc-gpi-impresso-grupo-ofertas">@Smc.GetUIResource("Label_Justificativa"): @Model.Ofertas[0].JustificativaInscricao</p>
+                }
+            }
+
+            if (Model.NumeroOpcoesDesejadas.HasValue)
+            {
+                @Smc.DisplayFor(m => m.NumeroOpcoesDesejadas).CssClass("smc-gpi-impresso-opcoes-usuario")
+            }
+        }
+
+        @if (Model.ExibeDadosPessoais)
+        {
+
+            using (Smc.Fieldset("fieldsetDadosPessoais").CssClass("smc-gpi-impresso-dadospessoais smc-gpi-bloco-impresso").LegendText(@Smc.GetUIResource("DadosPessoais_Label")).Begin())
+            {
+                <h3>Dados Pessoais</h3>
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirDataNascimento)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.DataNascimento)
+                }
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirSexo)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Sexo)
+                }
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirEstadoCivil)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.DescricaoEstadoCivil)
+                }
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirCPF)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Cpf)
+                }
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirPassaporte)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.NumeroPassaporte)
+                }
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNumeroIdentidade ||
+                    Model.DadosInscrito.CamposInscritoVisiveis.ExibirOrgaoEmissorIdentidade ||
+                    Model.DadosInscrito.CamposInscritoVisiveis.ExibirUfIdentidade)
+                {
+
+                    using (Smc.Fieldset("fieldsetDadosPessoais").CssClass("smc-gpi-impresso-field-rg").LegendText(@Smc.GetUIResource("Identidade_Label")).Begin())
+                    {
+                        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNumeroIdentidade)
+                        {
+                            @Smc.DisplayFor(prop => prop.DadosInscrito.NumeroIdentidade)
+                        }
+
+                        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirOrgaoEmissorIdentidade)
+                        {
+                            @Smc.DisplayFor(prop => prop.DadosInscrito.OrgaoEmissorIdentidade)
+                        }
+
+                        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirUfIdentidade)
+                        {
+
+                            @Smc.DisplayFor(prop => prop.DadosInscrito.UfIdentidade)
+                        }
+                    }
+                }
+
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNacionalidade ||
+                    Model.DadosInscrito.CamposInscritoVisiveis.ExibirPaisOrigem)
+                {
+                    using (Smc.Fieldset("fieldsetDadosPessoais").CssClass("smc-gpi-impresso-field-nacio").LegendText(@Smc.GetUIResource("Nacionalidade_Label")).Begin())
+                    {
+                        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNacionalidade)
+                        {
+                            @Smc.DisplayFor(prop => prop.DadosInscrito.Nacionalidade)
+                        }
+                        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirPaisOrigem)
+                        {
+                            @Smc.DisplayFor(prop => prop.DadosInscrito.PaisNacionalidade)
+                        }
+                    }
+                }
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNaturalidade)
+                {
+                    using (Smc.Fieldset("fieldsetDadosPessoais").CssClass("smc-gpi-impresso-field-natu").LegendText(@Smc.GetUIResource("Naturalidade_Label")).Begin())
+                    {
+                        if (Model.DadosInscrito.Nacionalidade == SMC.DadosMestres.Common.Areas.PES.Enums.TipoNacionalidade.Brasileira)
+                        {
+                            @Smc.DisplayFor(prop => prop.DadosInscrito.UfNaturalidade)
+                            @Smc.DisplayFor(prop => prop.DadosInscrito.CidadeNaturalidade)
+                        }
+                        else
+                        {
+                            @Smc.DisplayFor(prop => prop.DadosInscrito.DescricaoNaturalidadeEstrangeira)
+                        }
+                    }
+                }
+
+                if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirFiliacao)
+                {
+                    using (Smc.Fieldset("fieldsetDadosPessoais").CssClass("smc-gpi-impresso-field-filiacao").LegendText(@Smc.GetUIResource("Filiacao_Label")).Begin())
+                    {
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.NomeMae).CssClass("smc-gpi-impresso-filiacao-mae")
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.NomePai).CssClass("smc-gpi-impresso-filiacao-pai")
+                    }
+                }
+            }
+
+            if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirEndereco)
+            {
+                using (Smc.Fieldset("fieldsetContatos").LegendText(@Smc.GetUIResource("Contatos_Label")).CssClass("smc-gpi-impresso-contatos smc-gpi-bloco-impresso").Begin())
+                {
+                    <h3>Endereço(s)</h3>
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos).HideLabel(SMCDisplayHideLabel.Parent).CssClass("smc-gpi-impresso-endereco")
+
+
+                }
+            }
+            if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirTelefone)
+            {
+                using (Smc.Fieldset("fieldsetDadosTelefone").LegendText(@Smc.GetUIResource("Telefones_Label")).CssClass("smc-gpi-impresso-telefone smc-gpi-bloco-impresso").Begin())
+                {
+                    <h3>Telefone(s)</h3>
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Telefones).HideLabel(SMCDisplayHideLabel.Parent)
+                }
+            }
+
+            if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirEmail)
+            {
+                using (Smc.Fieldset("fieldsetDadosEmail").CssClass("smc-gpi-impresso-email smc-gpi-bloco-impresso").LegendText(@Smc.GetUIResource("Email_Label")).Begin())
+                {
+                    <h3>E-mail(s)</h3>
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Email).HideLabel()
+                }
+            }
+
+            if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirOutrosEnderecosEletronicos)
+            {
+                if (Model.DadosInscrito.EnderecosEletronicos.Count > 0)
+                {
+                    using (Smc.Fieldset("fieldsetDadosOutroEmail").CssClass("smc-gpi-fieldset-legend").LegendText(@Smc.GetUIResource("Outros_Enderecos_Eletronicos_Label")).Begin())
+                    {
+                        for (var i = 0; i < Model.DadosInscrito.EnderecosEletronicos.Count; i++)
+                        {
+                            <div class="smc-gpi-impresso-enderecos-eletronicos">
+                                <p class="smc-gpi-impresso-dadossecundarios-encadeados-item-label">@(((SMC.DadosMestres.Common.Areas.PES.Enums.TipoEnderecoEletronico)Model.DadosInscrito.EnderecosEletronicos[i].TipoEnderecoEletronico).SMCGetDescription())</p>
+                                <div class="smc-gpi-impresso-dadossecundarios-encadeados-item-p">
+                                    @Smc.DisplayFor(prop => prop.DadosInscrito.EnderecosEletronicos[i].Descricao).HideLabel()
+                                </div>
+                            </div>
+
+                        }
+                        if (Model.DadosInscrito.EnderecosEletronicos.SMCCount() <= 0)
+                        {
+                            <p>---</p>
+                        }
+                    }
+                }
+            }
+
+        }
+
+        @if (Model.ExibeCodigosAutorizacao)
+        {
+
+            using (Smc.Fieldset("fieldsetCodigosAutorizacao").LegendText(@Model.LabelCodigoAutorizacao).Begin())
+            {
+                if (Model.CodigosAutorizacao.SMCCount() > 0)
+                {
+                    foreach (var codigoAutorizacao in @Model.CodigosAutorizacao)
+                    {
+                        <p>@codigoAutorizacao.Codigo</p>
+                    }
+                }
+                else
+                {
+                    <p>@Smc.GetUIResource("Mensagem_Nao_Informado")</p>
+                }
+            }
+        }
+
+        @foreach (var formulario in Model.Formularios)
+        {
+            using (Smc.Fieldset("fieldSetFormularioComprovante")
+                      .LegendText(@formulario.TituloFormulario)
+                      .CssClass("smc-gpi-formulario-comprovante smc-gpi-formulario-relatorio")
+                      .Begin())
+            {
+                @Html.Action("RelatorioFormulario", "Inscricao", new
+                {
+                    seqDadoFormulario = @formulario.SeqDadoFormulario,
+                    seqInscricao = @formulario.SeqInscricao,
+                    seqFormularioSGF = @formulario.SeqFormularioSGF,
+                    seqVisaoSGF = @formulario.SeqVisaoSGF,
+                    area = "INS"
+                })
+            }
+        }
+
+        @if (Model.ExibeDocumentacao)
+        {
+            using (Smc.Fieldset("fieldsetDocumentos").CssClass("smc-gpi-fieldset-documentos").Begin())
+            {
+                @Html.Partial("_ListarDocumentos", Model.Documentos)
+            }
+
+            if (Model.ExibeTermoOrientacaoPDF && Model.Documentos.Any(a => a.ConvertidoParaPDF))
+            {
+                using (Smc.Fieldset("fieldsetTermosOrientacaoPDF").Begin())
+                {
+                    <div id="DivTermosOrientacaoPDF">
+                        @Html.Raw(HttpUtility.HtmlDecode(@Model.TermoAceiteConversaoArquivosPDF))
+                    </div>
+                }
+            }
+
+            if (Model.ExibeTermoPrincipalResponsabilidadeEntrega)
+            {
+                using (Smc.Fieldset("fieldsetTermosEntrega").Begin())
+                {
+                    <div id="DivTermoResponsabilidadeEntrega">
+                        @Html.Raw(HttpUtility.HtmlDecode(@Model.DescricaoTermoEntregaDocumentacao))
+                    </div>
+                }
+            }
+        }
+
+        @if (Model.ExibeRodape)
+        {
+            <div id="fieldsetRodape" class="smc-gpi-impresso-secao smc-gpi-data-assinatura">
+                @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_RODAPE))
+            </div>
+        }
+
+        @if (Model.ExibeComprovante)
+        {
+            using (Smc.Fieldset("fieldsetProtocoloEntrega").LegendText(@Smc.GetUIResource("Protocolo_Inscricao_Titulo")).CssClass("smc-gpi-impresso-protocolo-entrega").Begin())
+            {
+
+                <div class="smc-gpi-ico-tesoura">
+
+                </div>
+                <span class="smc-gpi-impresso-protocolo-entrega-inscrito">
+                    @Smc.GetUIResource("Protocolo_Nome_Label"):
+                </span>@Smc.DisplayFor(prop => prop.DadosInscrito.Nome).HideLabel()
+                <div id="fieldsetRodape" class="smc-gpi-impresso-secao-numero">
+                    @Smc.DisplayFor(prop => prop.SeqInscricao).CssClass("smc-gpi-impresso-protocolo-numero")
+                </div>
+                <span class="smc-gpi-impresso-protocolo-entrega-ofertas">@Model.LabelOferta:</span>
+                foreach (var oferta in @Model.Ofertas)
+                {
+                    <p>@Smc.GetUIResource("Label_Opcao_Completa", null, @oferta.NumeroOpcao.ToString(), @oferta.DescricaoCompleta)</p>
+                }
+                <div class="smc-gpi-secao-rodape-assinatura">
+                    <span> @Smc.GetUIResource("Protocolo_Preenchimento_Assinatura")</span>
+                    <span> @Smc.GetUIResource("Protocolo_Assinatura_Atendente")</span>
+                </div>
+                <div class="smc-gpi-secao-rodape-observacoes">
+                    @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_PROTOCOLO_ENTREGA))
+                </div>
+
+            }
+        }
+    </div>
+
+
+</body>
+</html>

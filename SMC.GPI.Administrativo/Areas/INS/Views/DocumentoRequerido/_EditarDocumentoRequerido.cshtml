@@ -1,0 +1,47 @@
+﻿@model DocumentoRequeridoViewModel
+
+@using (Smc.Form("formCadastroDocumentacaoRequerida").Ajax().Begin())
+{
+    @Smc.EditorFor(prop => prop.UploadObrigatorioOriginal)
+    @Smc.EditorFor(prop => prop.TipoDocumentoOriginal)
+    @Smc.EditorFor(prop => prop.VersaoDocumentoOriginal)
+
+    using (Smc.Div("fieldsetDocumentacaoRequerida").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Seq)
+        @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SeqEtapaProcesso)
+        @Smc.EditorFor(prop => prop.SeqTipoDocumento)
+        @Smc.EditorFor(prop => prop.VersaoDocumento)
+        @Smc.EditorFor(prop => prop.PermiteVarios).Required()
+        @Smc.EditorFor(prop => prop.PermiteUploadArquivo).Required()
+        @Smc.EditorFor(prop => prop.UploadObrigatorio)
+        @Smc.EditorFor(prop => prop.PermiteEntregaPosterior).Required()
+        @Smc.EditorFor(prop => prop.ExibeTermoResponsabilidadeEntrega).Required()
+        @Smc.EditorFor(prop => prop.DataLimiteEntrega)
+        @Smc.EditorFor(prop => prop.ValidacaoOutroSetor).Required()
+
+    }
+
+    using (Smc.Fieldset("fieldsetObrigatoriaDocumentacaoRequerida").Size(SMCSize.Grid24_24).Begin())
+    {
+        @Smc.EditorFor(prop => prop.Obrigatorio).Required()
+
+        @Smc.EditorFor(prop => prop.Sexo)
+    }
+
+    @(Smc.ButtonSet()
+        .AddComponent(Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(1, SMCButtonSetGroupedStyle.Arrow)
+            .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Salvar").Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.SalvarNovo).Action("SalvarNovo"))
+            .AddButton(Smc.Button(SMCButtonBehavior.SalvarSair).Action("SalvarSair")))
+        .AddButton(Smc.Button("voltar").CssClass("smc-btn-voltar-icotext").Type(SMCButtonType.Link).Action("Index", "DocumentoRequerido",
+                new
+                {
+                    @seqConfiguracaoEtapa = (SMCEncryptedLong)Model.SeqConfiguracaoEtapa,
+                    @seqEtapa = (SMCEncryptedLong)Model.SeqEtapaProcesso,
+                    @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso
+                }))
+    )
+}

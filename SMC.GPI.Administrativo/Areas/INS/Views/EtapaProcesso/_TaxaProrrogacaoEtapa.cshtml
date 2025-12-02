@@ -1,0 +1,5 @@
+﻿@model TaxaProrrogacaoViewModel
+
+@Smc.DisplayFor(x => x.Descricao).HideLabel().CssClass("smc-label smc-espaco-label")
+@Smc.EditorFor(x=>x.SeqEventoTaxa)
+@Smc.EditorFor(x => x.DataVencimento).Id(new Guid().ToString())

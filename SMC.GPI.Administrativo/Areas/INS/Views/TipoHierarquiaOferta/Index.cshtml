@@ -1,0 +1,24 @@
+﻿@model TipoHierarquiaOfertaFiltroViewModel
+
+@using (Smc.Form("formPesquisaTipoHierarquiaOferta", "ListarTipoHierarquiaOferta").Ajax("#divGridTipoHierarquiaOferta").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaTipoHierarquiaOferta").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Seq).Focus()
+        @Smc.EditorFor(prop => prop.Descricao)
+
+        @(Smc.ButtonSet().Size(SMCSize.Grid6_24)
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_INS_001_04_02.MANTER_TIPO_HIERARQUIA_OFERTA)
+                 .Url(Url.Action("Incluir")))
+        )
+    }
+}
+
+<div id="divGridTipoHierarquiaOferta">
+    @Html.Action("ListarTipoHierarquiaOferta")
+</div>

@@ -1,0 +1,261 @@
+﻿@using SMC.DadosMestres.Common.Areas.PES.Enums;
+@using SMC.GPI.Administrativo.Areas.INS.Views.AcompanhamentoProcesso.App_LocalResources;
+@model RegistroDocumentacaoViewModel
+
+
+@{
+    var totalDocumentos = 0;
+
+    if (Model.DocumentosEntregues != null)
+    {
+        if (Model.DocumentosEntregues.DocumentosObrigatorios != null)
+        {
+            totalDocumentos = Model.DocumentosEntregues.DocumentosObrigatorios.SelectMany(d => d.InscricaoDocumentos).Count();
+        }
+        if (Model.DocumentosEntregues.GruposDocumentos != null)
+        {
+            totalDocumentos += Model.DocumentosEntregues.GruposDocumentos.SelectMany(d => d.DocumentosRequeridosGrupo.SelectMany(g => g.InscricaoDocumentos)).Count();
+        }
+        if (Model.DocumentosEntregues.DocumentosOpcionais != null)
+        {
+            totalDocumentos += Model.DocumentosEntregues.DocumentosOpcionais.SelectMany(d => d.InscricaoDocumentos).Count();
+        }
+    }
+    bool exibirComoModal = (totalDocumentos > 50);
+    ViewBag.Modal = exibirComoModal;
+}
+
+@section Scripts {
+
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/RegistroDocumentacaoEntregue.js")" type="text/javascript"></script>
+    <script>
+        var timerSalvar;
+        $(document).on("focus", ".smc-gpi-situacao-entrega-documento > select", function () {
+            $(this).data('valorAntigo', $(this).val());
+        });
+
+        $(document).on("change", ".smc-gpi-situacao-entrega-documento > select", function () {
+        var select = $(this);
+        var linha = $(this).closest(@Html.Raw(exibirComoModal ? "\".smc-modal\"" : "\".smc-detalhe-editavel-linha-dados\""));
+        var upload = $(linha).find("[data-type='smc-uploadFile']");
+
+        var legenda = $(linha).find(".smc-display-legend");
+        var controlUpload = smc.core.uicontrol(upload);
+        var controlSelect = smc.core.uicontrol(select);
+
+        if ((controlSelect.getValue() == "AguardandoEntrega" || controlSelect.getValue() == 1 || controlSelect.getValue() == "Pendente" || controlSelect.getValue() == 6) && controlUpload.getValue() != null)
+        {
+            if (controlSelect.getValue() == "AguardandoEntrega" || controlSelect.getValue() == 1)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoAguardandoEntrega');
+            }
+            if (controlSelect.getValue() == "Pendente" || controlSelect.getValue() == 6)
+            {
+                smc.core.alertError('@UIResource.Titulo_Inserir_Erro', '@UIResource.ERR_ArquivoAnexadoValidacaoPendente');
+            }
+
+            var valorAntigo = $(select).data("valorAntigo");
+            smc.core.uicontrol(select).setValue(valorAntigo);
+
+
+            //select.val($(select).data("valorAntigo"));
+            //select.trigger("change");
+            }
+
+            if (controlSelect.getValue() == "Pendente" || controlSelect.getValue() == "AguardandoEntrega") {
+                $(linha).find(".smc-upload").addClass("smc-upload-readonly");
+            } else {
+                $(linha).find(".smc-upload").removeClass("smc-upload-readonly");
+            }
+
+            setLegenda(legenda, select.val(), linha);
+        });
+
+        function setLegenda(legenda, situacaoEntrega, relative) {
+
+        var situacoes = {
+            "": { cssSituacao: "", title: "" },
+            "0": { cssSituacao: "smc-legenda-status-nenhum", title: "", valEnum: "Nenhum" },
+            "1": { cssSituacao: "smc-legenda-status-aguardandoentrega", title: "Aguardando entrega", valEnum: "AguardandoEntrega" },
+            "2": { cssSituacao: "smc-legenda-status-aguardandovalidacao", title: "Aguardando validação", valEnum: "AguardandoValidacao" },
+            "3": { cssSituacao: "smc-legenda-status-deferido", title: "Deferido", valEnum: "Deferido" },
+            "4": { cssSituacao: "smc-legenda-status-indeferido", title: "Indeferido", valEnum: "Indeferido" },
+            "5": { cssSituacao: "smc-legenda-status-aguardandoanalise", title: "Aguardando análise do setor responsável", valEnum: "AguardandoAnaliseSetorResponsavel" },
+            "6": { cssSituacao: "smc-legenda-status-pendente", title: "Pendente", valEnum: "Pendente" },
+            "Nenhum": { cssSituacao: "smc-legenda-status-nenhum", title: "", valEnum: "Nenhum" },
+            "AguardandoEntrega": { cssSituacao: "smc-legenda-status-aguardandoentrega", title: "Aguardando entrega", valEnum: "AguardandoEntrega" },
+            "AguardandoValidacao": { cssSituacao: "smc-legenda-status-aguardandovalidacao", title: "Aguardando validação", valEnum: "AguardandoValidacao" },
+            "Deferido": { cssSituacao: "smc-legenda-status-deferido", title: "Deferido", valEnum: "Deferido" },
+            "Indeferido": { cssSituacao: "smc-legenda-status-indeferido", title: "Indeferido", valEnum: "Indeferido" },
+            "AguardandoAnaliseSetorResponsavel": { cssSituacao: "smc-legenda-status-aguardandoanalise", title: "Aguardando análise do setor responsável", valEnum: "AguardandoAnaliseSetorResponsavel" },
+            "Pendente": { cssSituacao: "smc-legenda-status-pendente", title: "Pendente", valEnum: "Pendente" },
+        };
+
+        legenda.children().attr("title", situacoes[situacaoEntrega].title);
+        legenda.children().attr("class", situacoes[situacaoEntrega].cssSituacao);
+        var elementoSituacao = smc.core.findInputs("SituacaoEntregaDocumentoInicial", relative);
+        smc.core.uicontrol(elementoSituacao).setValue(situacoes[situacaoEntrega].valEnum);
+        }
+
+        $(document).on('smcload', function ()
+        {
+            @Html.Raw(exibirComoModal ? "MasterDetailModal()" : "MastreDetailsTabular()");
+            timerSalvar = setInterval(ativarSalvar, 100)
+        });
+
+        function ativarSalvar() {
+            console.log("timmer salvar");
+            if ($('[data-control*="upload"]:not([data-configurated="true"])').length === 0) {
+                $("#SalvarDocumentos").removeAttr("disabled");
+                $("#SalvarSairDocumentos").removeAttr("disabled");
+                clearInterval(timerSalvar);
+                console.log('ok')
+            }
+            else {
+                console.log("nok")
+            }
+        }
+
+        //Ira validar se nas linhas da lista os selects estão como pendentes e se caso estiverem irá adcionar a classe de desabilitado ao botão
+        function MastreDetailsTabular() {
+            var linhasMasterDetailTabular = $(".smc-detalhe-editavel-linha-dados");
+
+            $(linhasMasterDetailTabular).each(function () {
+                var select = $(this).find("select").first();
+                var controlSelect = smc.core.uicontrol(select);
+
+                if (controlSelect.getValue() == "Pendente" || controlSelect.getValue() == "AguardandoEntrega") {
+                    $(this).find(".smc-upload").addClass("smc-upload-readonly");
+                }
+            });
+        }
+
+        //Irá carregar a imagem da tag dentro do grid onde o arquivo anexado possa ser entregue posteriormente e ainda não tenha sido entregue
+        function MasterDetailModal() {
+
+            var linhas = $('input[data-name="EntregaPosterior"]');
+
+            $(linhas).each(function () {
+                if ($(this).val() === 'True') {
+                    var arquivoLinha = $(this).closest('tr[data-control-child="grid"]')
+                        .children(".smc-gpi-documento-arquivo-anexado")
+                        .children(".smc-display");
+
+                    if (arquivoLinha.val() === '') {
+                        arquivoLinha.html('<div class="smc-gpi-entrega-posterior"></div>');
+                    }
+                }
+            });
+
+            var modalContent = $('.smc-modal-content').find('[data-type="smc-uploadFile"][data-readonly="true"]');
+            if (modalContent.length == 1) {
+                $('.smc-modal-content').find(".smc-upload").addClass("smc-upload-readonly");
+            }
+        }
+    </script>
+}
+
+@Html.Action("CabecalhoProcesso", new { seqProcesso = Model.SeqProcesso })
+
+@using (Smc.Header("headerHeaderProcessoGrupoOfertas", SMCHeaderType.Secondary).CssClass("smc-cabecalho-normal-labels smc-gpi-consulta-registro-documentos")
+                                                        .Item(prop => prop.SeqInscricao, sizeSM: SMCSize.Grid3_24, sizeMD: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24, sizeXS: SMCSize.Grid3_24)
+                                                        .Item(prop => prop.NomeInscrito, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                                                        .Item(prop => prop.SituacaoInscrito, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24)
+                                                        .Item(prop => prop.SituacaoDocumentacao, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24)
+                                                        .Item(prop => prop.DescricaoGrupoOferta, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24)
+                                                        .Begin())
+{
+    <div class="smc-header-grupo-itens">
+        <div class="smc-header-item smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+            <label>@Smc.GetUIResource("Coluna_Oferta")</label>
+            @foreach (OfertaInscricaoViewModel oferta in Model.DescricaoOfertas)
+            {
+                <p>@Smc.GetUIResource("Label_Opcao", parametros: @oferta.NumeroOpcao.ToString()) @oferta.DescricaoOferta</p>
+            }
+        </div>
+    </div>
+}
+
+@using (Smc.Form("formDocumentosEntregues", "SalvarDocumentosEntregues").Ajax().ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    <div id="divDocumentosEntregues" class="smc-gpi-documentos-entregues">
+
+        @using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-mensagem smc-mensagem-informativa").Begin())
+        {
+            <p>@Html.Raw(@Smc.GetUIResource("MSG_ObrigatoriedadeCampos"))</p>
+            <p>@Html.Raw(@Smc.GetUIResource("Label_Informacao_Limite_Upload"))</p>
+
+            var documentosVariosObrigatorio = Model.DocumentosEntregues.DocumentosObrigatorios.Where(d => d.PermiteVarios).Select(d => d.DescricaoTipoDocumento);
+            var documentosVariosOpcionais = Model.DocumentosEntregues.DocumentosOpcionais.Where(d => d.PermiteVarios).Select(d => d.DescricaoTipoDocumento);
+            var documentosVariosGrupos = Model.DocumentosEntregues.GruposDocumentos.SelectMany(g => g.DocumentosRequeridosGrupo).Where(d => d.PermiteVarios).Select(d => d.DescricaoTipoDocumento);
+            List<string> descricaoPermiteVarios = new List<string>();
+            if (documentosVariosObrigatorio != null)
+            {
+                descricaoPermiteVarios.AddRange(documentosVariosObrigatorio.ToArray());
+            }
+            if (documentosVariosOpcionais != null)
+            {
+                descricaoPermiteVarios.AddRange(documentosVariosOpcionais);
+            }
+            if (documentosVariosGrupos != null)
+            {
+                descricaoPermiteVarios.AddRange(documentosVariosGrupos);
+            }
+            descricaoPermiteVarios = descricaoPermiteVarios.Distinct().ToList();
+
+            if (descricaoPermiteVarios.Any())
+            {
+                var descricaoTipos = string.Join(", ", descricaoPermiteVarios);
+                <p>@Html.Raw(string.Format(Smc.GetUIResource("Label_Informacao_Limite_Quantidade_Upload"), descricaoTipos))</p>
+            }
+        }
+
+        @(Smc.Legend("SituacaoEntregaDocumento", SMCOrientation.Horizontal).CssClass("smc-gpi-titulo-legenda").Items<SituacaoEntregaDocumento>())
+        @(Smc.ButtonSet().Size(SMCSize.Grid24_24)
+                                                                            .AddButton(Smc.Button("Download")
+                                                                                .Action("DownloadDocumentos", "AcompanhamentoProcesso", new { seqInscricao = Model.SeqInscricao })
+                                                                                .Type(SMCButtonType.Link)
+                                                                                .Attribute("data-behavior-download", "true")
+                                                                                .CssClass("smc-btn-download-icotext-destaque"))
+        )
+        @Html.Partial("_ListaDocumentosEntregues", Model.DocumentosEntregues)
+
+        @Smc.EditorFor(d => d.DataPrazoNovaEntregaDocumentacao)
+
+    </div>
+
+
+    var buttons = Smc.ButtonSet();
+    //O botão será ativado pelo script da tela após inicialização de todos os componentes
+    buttons.AddComponent(Smc.ButtonSet().Orientation(SMCOrientation.Horizontal).Type(SMCButtonSetType.Primary).NumberOfButtonsToShow(1, SMCButtonSetGroupedStyle.Arrow)
+        .AddButton(Smc.Button(SMCButtonBehavior.Salvar).Enabled(false).Id("SalvarDocumentos").DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("SalvarDocumentosEntregues", null, new { @sair = false, @Origem = Model.Origem }).Highlight())
+        .AddButton(Smc.Button(SMCButtonBehavior.SalvarSair).Enabled(false).Id("SalvarSairDocumentos").Action("SalvarDocumentosEntregues", null, new { @sair = true, @Origem = Model.Origem })));
+@*    .AddButton(Smc.Button("Voltar")
+            .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-voltar-icotext")
+                .Action("ConsultarInscricaoProcesso", "AcompanhamentoProcesso",
+                new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso) }))*@
+    //if(Model.Origem == "AcompanhamentoInscrito")
+    //{
+    //    buttons.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+    //        .Type(SMCButtonType.Link)
+    //        .CssClass("smc-btn-voltar-icotext")
+    //        .Url(Url.Action("Index", "AcompanhamentoInscrito", new { Area = "INS" }))
+    //    );
+    //}
+    //else
+    //{
+    //    buttons.AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+    //        .Type(SMCButtonType.Link)
+    //        .CssClass("smc-btn-voltar-icotext")
+
+    //    );
+    //}
+
+    buttons.AddButton(Smc.Button("Voltar")
+    .Type(SMCButtonType.Link)
+    .CssClass("smc-btn-voltar-icotext")
+    .Url(Model.DocumentosEntregues.BackURL));
+
+    @buttons
+}

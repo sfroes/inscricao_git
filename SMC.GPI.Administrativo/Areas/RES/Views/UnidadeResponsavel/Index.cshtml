@@ -1,0 +1,25 @@
+﻿@model UnidadeResponsavelFiltroViewModel
+
+@using (Smc.Form("formPesquisaUnidadeResponsavel", "ListarUnidadeResponsavel").Ajax("#divGridUnidadeResponsavel").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaUnidadeResponsavel").CssClass("smc-fieldset-filter").Begin())
+    {        
+        @Smc.EditorFor(prop => prop.Seq)
+        @Smc.EditorFor(prop => prop.Nome).Focus()
+        @Smc.EditorFor(prop => prop.Sigla)
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_RES_001_01_02.MANTER_UNIDADE_RESPONSAVEL)
+                 .Url(Url.Action("Incluir")))
+        )
+    }
+}
+
+<div id="divGridUnidadeResponsavel">
+    @Html.Action("ListarUnidadeResponsavel")
+</div>

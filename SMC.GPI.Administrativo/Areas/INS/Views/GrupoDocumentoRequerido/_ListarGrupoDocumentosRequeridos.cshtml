@@ -1,0 +1,65 @@
+﻿@model List<GrupoDocumentosRequeridosListaViewModel>
+
+
+@(Smc.List("listaGrupoDocumentacaoRequerida", Model)    
+    .HtmlTemplate(
+    @<text>
+        <div class="smc-listdetailed-item smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+            <div class="smc-size-md-23 smc-size-xs-24 smc-size-sm-24 smc-size-lg-23 smc-listdetailed-conteudo">
+                <div class="smc-listdetailed-header-conteudo smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                    <div class="smc-display smc-size-md-14 smc-size-xs-24 smc-size-sm-24 smc-size-lg-14">
+                            <label>@Smc.GetUIResource("Grupo_Documentacao_Requerida_DescricaoGrupo")</label>
+                            <p>@item.Descricao</p>
+                    </div>
+                    <div class="smc-display smc-size-md-6 smc-size-xs-24 smc-size-sm-24 smc-size-lg-6">
+                            <label>@Smc.GetUIResource("Grupo_Documentacao_Requerida_MinimoDocumentosObrigatorios")</label>
+                            <p>@item.MinimoObrigatorio</p>
+                    </div>
+                    <div class="smc-display smc-size-md-4 smc-size-xs-24 smc-size-sm-24 smc-size-lg-4">
+                            <label>@Smc.GetUIResource("Grupo_Documentacao_Requerida_UploadObrigatorio")</label>
+                            <p>@(item.UploadObrigatorio ? @Smc.GetUIResource("Yes") : @Smc.GetUIResource("No"))</p>
+                    </div>
+                </div>
+
+                <div class="smc-listdetailed-detalhes-conteudo">
+                    <h3>@Smc.GetUIResource("Grupo_Documentacao_Requerida_ItensGrupo")</h3>
+                    @foreach (var itemGrupo in item.Itens)
+                    {
+                        <p>
+                            @itemGrupo
+                        </p>
+                    }
+                </div>
+            </div>
+            <div class="smc-buttonset-vertical-secundario smc-size-md-1 smc-size-xs-24 smc-size-sm-4 smc-size-lg-1">
+                    @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                        .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirGrupoDocumentacaoRequerida")
+                        .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Alter_Grupo_Titulo"))
+                        .Text(Smc.GetUIResource("Botao_Alterar_Grupo_Documentacao_Requerida"))
+                        .Tooltip(Smc.GetUIResource("Botao_Alterar_Grupo_Documentacao_Requerida_Tooltip"))
+                        .Ajax(isPost: false, updateTargetId: "modalAlterarGrupoDocumentacaoRequerida")
+                        .CssClass("smc-btn-alterar-ico")
+                        .SecurityToken(UC_INS_001_03_16.MANTER_GRUPO_DOCUMENTACAO_REQUERIDA)
+                                        .Url(Url.Action("Editar", "GrupoDocumentoRequerido",
+                                        new
+                                        {
+                                            @seqGrupoDocumentacaoRequerida = SMCDESCrypto.EncryptNumberForURL((item as GrupoDocumentosRequeridosListaViewModel).Seq),
+                                            @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL((item as GrupoDocumentosRequeridosListaViewModel).Seq)
+                                        })))
+
+                    @(Smc.Button(SMCButtonBehavior.Excluir, "Excluir",
+                    new
+                    {
+                        @seqGrupoDocumentacaoRequerida = SMCDESCrypto.EncryptNumberForURL((item as GrupoDocumentosRequeridosListaViewModel).Seq),
+                        @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL((item as GrupoDocumentosRequeridosListaViewModel).SeqConfiguracaoEtapa)
+                    }, "GrupoDocumentoRequerido")
+                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .Ajax(isPost: true, updateTargetId: "#divGridGrupoDocumentacaoRequerida")
+                        .SecurityToken(UC_INS_001_03_16.MANTER_GRUPO_DOCUMENTACAO_REQUERIDA)
+                        .Confirm(Smc.GetUIResource("Exclusao_Grupo_Documentacao_Requerida_Title"),
+                                        string.Format(Smc.GetUIResource("Exclusao_Grupo_Documentacao_Requerida_Confirmacao"), (item as GrupoDocumentosRequeridosListaViewModel).Descricao)))
+            </div>
+
+        </div>
+
+    </text>))

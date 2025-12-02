@@ -1,0 +1,20 @@
+﻿@model UnidadeResponsavelCabecalhoViewModel
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+        .Attribute(SMCMvcConsts.MODAL_ID, "modalEditarParametroTipoFormulario")
+        .CssClass("smc-btn-novo-icotext-destaque")
+        .SecurityToken(UC_RES_001_01_04.MANTER_TIPO_FORMULARIO)
+        .Ajax(isPost: false, updateTargetId: "painelAjaxIncluirTipoFormulario")
+                .Url(Url.Action("IncluirConfiguracaoTipoFormulario", "UnidadeResponsavel",
+                new
+                {
+                    seqUnidadeResponsavel = (SMCEncryptedLong)Model.Seq,
+                    codigoUnidade = Model.CodigoUnidade
+                })
+    ))
+)
+
+<div id="divGridTipoFormulario">
+    @Html.Action("ListarConfiguracoesTipoFormulario", "UnidadeResponsavel", new { @seqParametro = Model.Seq, codigoUnidade = Model.CodigoUnidade })
+</div>

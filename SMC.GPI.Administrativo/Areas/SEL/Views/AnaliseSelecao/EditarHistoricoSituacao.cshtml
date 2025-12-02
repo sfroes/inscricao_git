@@ -1,0 +1,42 @@
+﻿@model HistoricoSituacaoViewModel
+
+@using (Smc.Header("headerLancamentoResultado", SMCHeaderType.Primary)
+                                                .Item(prop => prop.TipoProcesso, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                                                .Item(prop => prop.SeqProcesso, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                                                .Item(prop => prop.Descricao, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+                                                .Item(prop => prop.SeqInscricao, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+                                                .Item(prop => prop.Candidato, sizeMD: SMCSize.Grid13_24, sizeLG: SMCSize.Grid13_24, sizeXS: SMCSize.Grid13_24)
+                                                .Item(prop => prop.GrupoOferta, sizeMD: SMCSize.Grid7_24, sizeLG: SMCSize.Grid7_24, sizeXS: SMCSize.Grid7_24)
+                                                .Item(prop => prop.Opcao, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                                                .Item(prop => prop.Oferta, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+                                                .Begin())
+{ }
+
+@{ 
+    var teste = Model;
+}
+@using (Smc.Form("formHistoricoSituacao", "SalvarHistoricoSituacao").Begin())
+{
+    @Smc.EditorFor(m => m.Seq)
+    @Smc.EditorFor(m => m.SeqInscricaoOferta)
+    @Smc.EditorFor(m => m.SeqSituacao)
+    @Smc.EditorFor(m => m.Situacao)
+    @Smc.EditorFor(m => m.Data)
+    @Smc.EditorFor(m => m.Responsavel)
+    @Smc.EditorFor(m => m.SeqMotivo).Readonly(Model.Motivos == null || Model.Motivos.Count == 0)
+    @Smc.EditorFor(m => m.RequerJustificativa)
+    @Smc.EditorFor(m => m.Justificativa)
+    @Smc.EditorFor(m => m.BackUrl)
+
+    @(Smc.ButtonSet()
+        .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).CssClass("smc-btn-salvar-icotext-destaque"))
+        .AddButton(Smc.Button("Voltar").CssClass("smc-btn-voltar-icotext")
+                        .Url(Url.Action("HistoricoSituacao", new
+                        {
+                            seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                            seqInscricaoOferta = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricaoOferta),
+                            backUrl = Model.BackUrl
+                        }))
+                        .Type(SMCButtonType.Link))
+    )
+}

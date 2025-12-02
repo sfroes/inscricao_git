@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CabecalhoProcessoViewModel_Descricao" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="CabecalhoProcessoViewModel_DescricaoTipoProcesso" xml:space="preserve">
+    <value>Tipo processo</value>
+  </data>
+  <data name="CopiaProcessoViewModel_CopiaAnoReferencia" xml:space="preserve">
+    <value>Ano Referência</value>
+  </data>
+  <data name="CopiaProcessoViewModel_CopiaDescricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="CopiaProcessoViewModel_CopiarItens" xml:space="preserve">
+    <value>Hierarquia de Oferta / Grupo de Ofertas</value>
+  </data>
+  <data name="CopiaProcessoViewModel_CopiaSemestreReferencia" xml:space="preserve">
+    <value>Semestre Referência</value>
+  </data>
+  <data name="ProcessoFiltroViewModel_Seq_MaxValue" xml:space="preserve">
+    <value>ID inválido</value>
+  </data>
+  <data name="ProcessoViewModel_LinkProcesso" xml:space="preserve">
+    <value>Link para o processo:</value>
+  </data>
+  <data name="ProcessoViewModel_MaximoInscricoesPorInscrito" xml:space="preserve">
+    <value>Máximo de inscrições por inscrito</value>
+  </data>
+  <data name="ProcessoViewModel_MaximoOfertaPorInscricao" xml:space="preserve">
+    <value>Máximo de ofertas por inscrição</value>
+  </data>
+  <data name="ProcessoViewModel_MaximoOpcoesOfertaPorInscricao" xml:space="preserve">
+    <value>Máximo de opções por inscrição</value>
+  </data>
+  <data name="ProcessoViewModel_SeqEvento" xml:space="preserve">
+    <value>Evento financeiro</value>
+  </data>
+  <data name="ProcessoViewModel_SeqTemplateProcessoSGF" xml:space="preserve">
+    <value>Template de processo</value>
+  </data>
+  <data name="ProcessoViewModel_SeqTipoHierarquiaOferta" xml:space="preserve">
+    <value>Tipo de hierarquia de ofertas</value>
+  </data>
+  <data name="TaxaProcessoViewModel_SelecaoInscricao" xml:space="preserve">
+    <value>Permite seleção na inscrição?</value>
+  </data>
+  <data name="TaxaProcessoViewModel_SelecaoInscricao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="TaxaProcessoViewModel_SelecaoInscricao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="TaxaProcessoViewModel_SeqTipoTaxa" xml:space="preserve">
+    <value>Tipo de taxa</value>
+  </data>
+  <data name="CopiaProcessoViewModel_NovoProcessoAnoReferencia" xml:space="preserve">
+    <value>Ano Referência</value>
+  </data>
+  <data name="CopiaProcessoViewModel_NovoProcessoDescricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="CopiaProcessoViewModel_NovoProcessoSemestreReferencia" xml:space="preserve">
+    <value>Semestre Referência</value>
+  </data>
+  <data name="CopiaEtapaProcesso_CopiarConfiguracoes" xml:space="preserve">
+    <value>Copiar Configurações?</value>
+  </data>
+  <data name="CopiaEtapaProcesso_CopiarConfiguracoes_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="CopiaEtapaProcesso_CopiarConfiguracoes_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="CopiaProcessoViewModel_CopiarNotificacoes" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="ProcessoViewModel_MaximoInscricoesPorInscrito_MinValue" xml:space="preserve">
+    <value>Valor deve ser maior ou igual a {0}</value>
+  </data>
+  <data name="ProcessoViewModel_MaximoOfertaPorInscricao_MinValue" xml:space="preserve">
+    <value>Valor deve ser maior ou igual a {0}</value>
+  </data>
+  <data name="ProcessoViewModel_MaximoOpcoesOfertaPorInscricao_MinValue" xml:space="preserve">
+    <value>Valor deve ser maior ou igual a {0}</value>
+  </data>
+  <data name="CopiaProcessoViewModel_NovoProcessoSemestreReferencia_ValueRange" xml:space="preserve">
+    <value>Valor deve estar entre {0} e {1}</value>
+  </data>
+  <data name="CopiaProcessoViewModel_Descricao" xml:space="preserve">
+    <value>Processo de origem</value>
+  </data>
+  <data name="CopiaProcessoViewModel_DataFimInscricao" xml:space="preserve">
+    <value>Fim inscrição</value>
+  </data>
+  <data name="CopiaProcessoViewModel_DataInicioInscricao" xml:space="preserve">
+    <value>Início inscrição</value>
+  </data>
+  <data name="TaxaProcessoViewModel_CobrarPorOferta" xml:space="preserve">
+    <value>Cobrar por oferta?</value>
+  </data>
+  <data name="TaxaProcessoViewModel_CobrarPorOferta_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="TaxaProcessoViewModel_CobrarPorOferta_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="ProcessoViewModel_ControlaVagaInscricao" xml:space="preserve">
+    <value>Controlar vagas na inscrição</value>
+  </data>
+  <data name="ProcessoViewModel_ControlaVagaInscricao_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ProcessoViewModel_ControlaVagaInscricao_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="ProcessoViewModel_ExibeArvoreFechada" xml:space="preserve">
+    <value>Exibir a hierarquia de ofertas fechada</value>
+  </data>
+  <data name="ProcessoViewModel_ExibeArvoreFechada_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ProcessoViewModel_ExibeArvoreFechada_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="AssinaturaDigital_Fieldset_Legenda" xml:space="preserve">
+    <value>Assinatura Digital</value>
+  </data>
+  <data name="ConfiguracoesModeloDocumentoViewModel_ExibeDocumentoHome_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ConfiguracoesModeloDocumentoViewModel_ExibeDocumentoHome_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="DataFimDocumentoHome" xml:space="preserve">
+    <value>Data final na home</value>
+  </data>
+  <data name="DataFimFormulario" xml:space="preserve">
+    <value>Fim para respostas</value>
+  </data>
+  <data name="DataInicioDocumentoHome" xml:space="preserve">
+    <value>Data inicial na home</value>
+  </data>
+  <data name="DataInicioFormulario" xml:space="preserve">
+    <value>Início para respostas</value>
+  </data>
+  <data name="DataFimEvento" xml:space="preserve">
+    <value>Data fim do evento</value>
+  </data>
+  <data name="DataInicioAtividade" xml:space="preserve">
+    <value>Data de início das atividades</value>
+  </data>
+  <data name="DataInicioEvento" xml:space="preserve">
+    <value>Data de início do evento</value>
+  </data>
+  <data name="ExibeDocumentoHome" xml:space="preserve">
+    <value>Exibir na home?</value>
+  </data>
+  <data name="ArquivoModelo" xml:space="preserve">
+    <value>Modelo do documento</value>
+  </data>
+  <data name="NomeFormulario" xml:space="preserve">
+    <value>Nome do formulário</value>
+  </data>
+  <data name="ProcessoViewModel_DataInicioAtividade_FillInstructions" xml:space="preserve">
+    <value>Esta data é utilizada na emissão do documento e pode indicar, por
+exemplo, a data de início das aulas do aluno ou docente.</value>
+  </data>
+  <data name="SeqFormularioSgf" xml:space="preserve">
+    <value>Formulário</value>
+  </data>
+  <data name="SeqTipoDocumento" xml:space="preserve">
+    <value>Tipo de Documento</value>
+  </data>
+  <data name="SeqTipoFormularioSgf" xml:space="preserve">
+    <value>Tipo de formulário</value>
+  </data>
+  <data name="SeqVisaoSgf" xml:space="preserve">
+    <value>Visão do formulário</value>
+  </data>
+  <data name="TokenConfiguracaoDocumentoGad" xml:space="preserve">
+    <value>Config. de assinatura GAD</value>
+  </data>
+  <data name="ProcessoViewModel_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="ProcessoViewModel_VerificaCoincidenciaHorario_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ProcessoViewModel_VerificaCoincidenciaHorario_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="VerificaCoincidenciaHorario" xml:space="preserve">
+    <value>Verificar coincidência de horários?</value>
+  </data>
+  <data name="ProcessoViewModel_ExibirPeriodoAtividadeOferta" xml:space="preserve">
+    <value>Exibir período da atividade na oferta?</value>
+  </data>
+  <data name="ProcessoViewModel_ExibirPeriodoAtividadeOferta_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ProcessoViewModel_ExibirPeriodoAtividadeOferta_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="ConfiguracoesFormularioViewModel_Mensagem" xml:space="preserve">
+    <value>Mensagem do formulário</value>
+  </data>
+  <data name="ConfiguracoesFormularioViewModel_DisponivelApenasComCheckin_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="ConfiguracoesFormularioViewModel_DisponivelApenasComCheckin_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="DisponivelApenasComCheckin" xml:space="preserve">
+    <value>Requer check-in?</value>
+  </data>
+  <data name="HoraAberturaCheckin" xml:space="preserve">
+    <value>Período para abertura do check-in</value>
+  </data>
+  <data name="ProcessoViewModel_HoraAberturaCheckin_FillInstructions" xml:space="preserve">
+    <value>Informe a quantidade de horas/minutos para iniciar o atendimento do check-in, antes do início das atividades. Os valores devem estar entre 00:00 e 23:59.</value>
+  </data>
+  <data name="CopiaProcessoViewModel_CopiarFormularioEvento" xml:space="preserve">
+    <value>Formulário do Evento</value>
+  </data>
+  <data name="CodigoEventoSAE" xml:space="preserve">
+    <value>Evento SAE</value>
+  </data>
+  <data name="ProcessoViewModel_CodigoEventoSAE_FillInstructions" xml:space="preserve">
+    <value>Obrigatório em eventos que possuem taxa, para o controle orçamentário das receitas.</value>
+  </data>
+  <data name="ERR_ProcessoPossuiTaxaENaoPossuiEventoSaeException" xml:space="preserve">
+    <value>Em processos que possuem gestão de eventos e taxa associada, o Evento SAE deve ser informado, para o controle orçamentário das receitas.</value>
+  </data>
+  <data name="AssinaturaEletronica" xml:space="preserve">
+    <value>Assinatura eletrônica?</value>
+  </data>
+  <data name="AssinaturaEletronica_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="AssinaturaEletronica_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="RequerCheckin" xml:space="preserve">
+    <value>Requer check-in?</value>
+  </data>
+  <data name="RequerCheckin_FALSE" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="RequerCheckin_TRUE" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="CopiaProcessoViewModel_DataInicio" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="CopiaProcessoViewModel_DescricaoTipoProcesso" xml:space="preserve">
+    <value>Tipo de processo origem</value>
+  </data>
+  <data name="ProcessoViewModel_SeqUnidadeResponsavelTipoProcessoIdVisual" xml:space="preserve">
+    <value>Identidade visual</value>
+  </data>
+  <data name="TaxaProcessoViewModel_TipoCobranca" xml:space="preserve">
+    <value>Tipo de cobrança</value>
+  </data>
+  <data name="TaxaProcessoViewModel_DescricaoComplementar" xml:space="preserve">
+    <value>Descrição complementar</value>
+  </data>
+</root>

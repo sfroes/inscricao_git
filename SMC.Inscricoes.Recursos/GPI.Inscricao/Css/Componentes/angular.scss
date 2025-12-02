@@ -1,0 +1,93 @@
+@import "angular/_variables.scss";
+@import "angular/_mixins.scss";
+@import "angular/_popover.scss";
+
+app-root {
+    @import "angular/_buttons.scss";
+    @import "angular/_forms.scss";
+    @import "angular/_modal.scss";
+    @import "angular/_selecao-de-ofertas.scss";
+    @import "angular/_pagina-de-erros.scss";
+
+    .smc-gpi-painel-central-interno {
+        padding-bottom: 7em;
+    }
+
+    .smc-gpi-skeleton-margin {
+        margin-bottom: 15px;
+    }
+
+    .p-skeleton {
+        background-color: #dddddd !important;
+    }
+
+    p-button > button.smc-btn-principal.smc-gpi-navegacao[disabled] {
+        background-color: var(--grey) !important;
+        border-color: var(--grey) !important;
+        color: var(--white) !important;
+        cursor: no-drop;
+        filter: grayscale(100%);
+        transform: scale(0.95);
+        cursor: not-allowed;
+        transition: filter 0.3s ease, transform 0.3s ease;
+    }
+}
+
+//PREVIEW ENQUANTO ARRASTA O ITEM DRAGGABLE (FORA DO APP-ROOT)
+.cdk-drag-preview,
+.cdk-drag-dragging {
+    @include dragging-effect;
+    @include item-drop-list;
+    width: 50% !important;
+
+    .p-tag,
+    .smc-gpi-remove-opcao {
+        display: none !important;
+    }
+}
+
+@media screen and ("max-width: 992px") {
+    .p-toast {
+        right: 2.5% !important;
+        width: 95% !important;
+    }
+}
+
+// DIALOG INSERIDO NA PAGINA DE SELECAO DE OFERTAS
+.smc-gpi-modal-confirmacao-taxas {
+    max-width: 750px;
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+
+    .p-dialog-content {
+        flex-direction: column;
+
+        > i {
+            font-size: 5em;
+            height: auto;
+            width: auto;
+            color: var(--color-primary);
+        }
+
+        > span {
+            text-align: center;
+            font-size: 1.1em;
+        }
+    }
+
+    .p-dialog-footer {
+        padding-top: 2em;
+
+        p-button {
+            .p-confirmdialog-accept-button {
+                color: var(--white) !important;
+                background-color: var(--color-secondary) !important;
+                border: 1px solid var(--color-secondary) !important;
+
+                span {
+                    color: var(--white) !important;
+                }
+            }
+        }
+    }
+}

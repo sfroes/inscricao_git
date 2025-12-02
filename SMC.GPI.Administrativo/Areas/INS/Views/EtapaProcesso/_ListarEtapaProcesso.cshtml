@@ -1,0 +1,40 @@
+﻿@model SMCPagerModel<EtapaProcessoListaViewModel>
+
+@(Smc.Grid("gridAssociacaoEtapa")
+     .Action("ListarAssociacaoEtapa", "EtapaProcesso")
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes",
+                                                    item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as EtapaProcessoListaViewModel).Seq), @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as EtapaProcessoListaViewModel).SeqProcesso) }, "EtapaProcesso")
+                                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                                        .SecurityToken(UC_INS_001_03_02.ASSOCIAR_ETAPA_PROCESSO),
+
+                                                        item => Smc.Button(SMCButtonBehavior.Excluir, "ExcluirEtapaProcesso", new { @seqEtapa = SMCDESCrypto.EncryptNumberForURL((item as EtapaProcessoListaViewModel).Seq), @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as EtapaProcessoListaViewModel).SeqProcesso) }, "EtapaProcesso")
+                                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                                        .SecurityToken(UC_INS_001_03_02.ASSOCIAR_ETAPA_PROCESSO)
+                                        .Ajax(isPost: true, updateTargetId: "#divGridAssociacaoEtapa")
+                                        .Confirm(Smc.GetUIResource("Exclusao_Associacao_Etapa_Title"),
+                                                     string.Format(Smc.GetUIResource("Exclusao_Associacao_Etapa_Confirmacao"), (item as EtapaProcessoListaViewModel).DescricaoEtapaSGF)),
+
+                                                    item => Smc.Button("ConfiguracaoEtapa", "Index", new { @seqEtapaProcesso = SMCDESCrypto.EncryptNumberForURL((item as EtapaProcessoListaViewModel).Seq), @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as EtapaProcessoListaViewModel).SeqProcesso) }, "ConfiguracaoEtapa")
+                                        .Type(SMCButtonType.Link)
+                                            .SecurityToken(UC_INS_001_03_03.PESQUISAR_CONFIGURACAO_ETAPA),
+
+                                                            item => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link)
+                                            .Attribute(SMCMvcConsts.MODAL_ID, "modalCopiarConfiguracoesEtapa")
+                                            .Text(Smc.GetUIResource("Botao_Copiar_Configuracoes"))
+                                            .Tooltip(Smc.GetUIResource("Botao_Copiar_Configuracoes_Tooltip"))
+                                            .Ajax(isPost: false, updateTargetId: "modalCopiarConfiguracoesEtapa")
+                                            .SecurityToken(UC_INS_001_03_05.COPIAR_CONFIGURACOES_ETAPA)
+                                                .Url(Url.Action("CopiaConfiguracoesEtapa", "EtapaProcesso",
+                                                new
+                                                {
+                                                    @seqProcesso = (item as EtapaProcessoListaViewModel).SeqProcesso,
+                                                    @seqEtapa = (item as EtapaProcessoListaViewModel).Seq,
+                                                })),
+
+                                                 item => Smc.Button("ProrrogarEtapa", "ProrrogarEtapa", new { @seqEtapaProcesso = SMCDESCrypto.EncryptNumberForURL((item as EtapaProcessoListaViewModel).Seq), @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as EtapaProcessoListaViewModel).SeqProcesso) }, "EtapaProcesso")
+                                            .Type(SMCButtonType.Link)
+                                            .SecurityToken(UC_INS_001_03_17.ALTERAR_PERIODO_ETAPA_PROCESSO)
+                                            )
+
+)

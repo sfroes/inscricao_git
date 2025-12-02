@@ -1,0 +1,549 @@
+.smc-display{
+    label{
+        margin-right:5px;
+    }
+}
+
+.smc-gpi-btn-link-grid {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: $smc-cor-principal-02;
+    margin: 0;
+    padding: 0;
+
+    &:hover {
+        background: none;
+        border: none;
+        font-size: 14px;
+        color: $smc-cor-principal-04;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.smc-gpi-fieldset-inline { // ver em http://localhost/Dev/GPI.Administrativo/NOT/ConsultaNotificacao?SeqInscrito=4C7B8057E3EFDC2DA3972EF167C78189&SeqProcesso=0F579D9B6418353A&SeqGrupoOferta=1ADD853E50BD3C6C&SeqInscricao=CD039845DB983F6A
+    padding: 0 10px;
+    margin-top: -5px;
+
+    legend {
+        font-size: 14px;
+        margin-bottom: -9px;
+        margin-left: -5px;
+    }
+
+    div {
+        margin-bottom: -5px;
+        margin-top: 5px;
+    }
+
+    div.smc-ico-datepicker {
+        margin-top: -5px;
+        margin-bottom: 5px;
+    }
+}
+
+//Ajuste de Fieldsets em telas de confirmação
+
+.smc-gpi-remove-titulo { // ver em http://localhost/Dev/GPI.Administrativo/INS/AcompanhamentoProcesso/ConsultaInscricao?SeqInscrito=40BDCEF0584D4E0B&SeqInscricao=D11D809CF803EF762FCB7ABC873C833E&SeqProcesso=22E011FD15FE19E9
+    h3 {
+        display: none;
+    }
+
+    & div {
+        & > h3 {
+            display: none;
+        }
+    }
+
+    .container-fluid {
+        border-bottom: dashed 1px $smc-cor-secundaria-04;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 15px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.smc-gpi-separa-itens { // ver em http://localhost/Dev/GPI.Administrativo/INS/AcompanhamentoProcesso/ConsultaInscricao?SeqInscrito=40BDCEF0584D4E0B&SeqInscricao=D11D809CF803EF762FCB7ABC873C833E&SeqProcesso=22E011FD15FE19E9
+    .container-fluid, .smc-gpi-child-separa-itens { //ver exemplo de smc-gpi-child-separa-itens em http://localhost/Dev/GPI.Inscricao/INS/Inscricao/ConfirmarInscricao?seqConfiguracaoEtapaPagina=5CD0D153EF85535AA3972EF167C78189&seqConfiguracaoEtapa=F278E10D8DAA87C7&seqGrupoOferta=0668C8BDFC1A484D&seqInscricao=890BCAD1F9792F691ADD853E50BD3C6C&idioma=Portuguese
+        border-bottom: dashed 1px $smc-cor-secundaria-04;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    & div {
+        & > .container-fluid {
+            border-bottom: dashed 1px $smc-cor-secundaria-04 !important;
+            padding-bottom: 15px !important;
+            margin-bottom: 15px !important;
+        }
+    }
+
+    .smc-size-md-4 {
+        @extend .smc-size-md-5;
+    }
+
+    .smc-size-xs-4 {
+        @extend .smc-size-xs-5;
+    }
+
+    .smc-size-sm-4 {
+        @extend .smc-size-sm-5;
+    }
+
+    .smc-size-lg-4 {
+        @extend .smc-size-lg-5;
+    }
+}
+
+
+.smc-gpi-instrucoes-iniciais { // Estrutura criada para mensagens de atenção. Exibe ícone "balãozinho" e texto.
+    padding: 15px 0 20px 25px; // ver em http://localhost/Dev/GPI.Administrativo/NOT/ConfigurarNotificacao/Incluir?seqProcesso=234012D2C2567C42 e http://localhost/Dev/GPI.Inscricao/INS/Inscricao/SelecaoOferta?seqConfiguracaoEtapaPagina=419F679F60902502A3972EF167C78189&seqConfiguracaoEtapa=F278E10D8DAA87C7&seqGrupoOferta=0668C8BDFC1A484D&seqInscricao=890BCAD1F9792F69874B8EBD81FEBF68&idioma=Portuguese (para SGF)
+    width: 99.9%;
+    margin: 0 0 15px 0;
+    background-color: $smc-cor-secundaria-04;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 3px 8px -2px rgba(187,96,75,0.5);
+    box-shadow: 2px 3px 8px -2px rgba(187,96,75,0.5);
+    @extend .fa;
+    @extend .fa-comment;
+
+    &::before {
+        font-size: 20px;
+        color: $smc-cor-secundaria-01;
+        margin: 0 20px 0 10px;
+    }
+
+    label {
+        float: none;
+    }
+}
+
+
+.smc-gpi-espacamento-sgf-texto-item { //Estrutura criada para atender uma única mensagem de atenção vinda do SGF .http://localhost/Dev/GPI.Inscricao/INS/Inscricao/SelecaoOferta?seqConfiguracaoEtapaPagina=419F679F60902502A3972EF167C78189&seqConfiguracaoEtapa=F278E10D8DAA87C7&seqGrupoOferta=0668C8BDFC1A484D&seqInscricao=890BCAD1F9792F69874B8EBD81FEBF68&idioma=Portuguese
+    padding-top: 50px;
+}
+
+h4 { //  http://localhost/Dev/GPI.Administrativo/INS/AcompanhamentoProcesso/ConsultaInscricao?SeqInscrito=4C7B8057E3EFDC2DA3972EF167C78189&SeqInscricao=CD039845DB983F6A&SeqProcesso=0F579D9B6418353A
+    border-bottom: 1px dotted $smc-cor-secundaria-04;
+    color: $smc-cor-secundaria-03;
+    margin-bottom: 2px;
+}
+
+.smc-label { // label celular, dentro de "telefones" http://localhost/Dev/GPI.Administrativo/INS/AcompanhamentoProcesso/ConsultaInscricao?SeqInscrito=4C7B8057E3EFDC2DA3972EF167C78189&SeqInscricao=CD039845DB983F6A&SeqProcesso=0F579D9B6418353A
+    p {
+        font-weight: bold;
+        color: $smc-cor-principal-03;
+    }
+}
+
+.smc-espaco-label { // ver no menu de contexto "Copiar Processo" http://localhost/Dev/GPI.Administrativo/INS/Processo - cópia de processo
+    margin-top: 19px;
+}
+
+.smc-espaco-display { // ver no menu de contexto "Copiar Processo" http://localhost/Dev/GPI.Administrativo/INS/Processo - cópia de processo
+    margin-top: 26px;
+}
+
+.smc-btn-destaque-icotext { // Coluna situação http://localhost/Dev/GPI.Administrativo/INS/AcompanhamentoProcesso/ConsultarInscricaoProcesso?seqProcesso=0F579D9B6418353A&voltar=true
+    border: none;
+    background-color: transparent;
+    color: $smc-cor-principal-04;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 14px;
+
+    &:hover {
+        border: none;
+        background-color: transparent;
+        color: $smc-cor-principal-02;
+    }
+}
+
+// botões tela de inclusão de documentos
+.smc-espaco-botoes {
+    margin-top: -50px;
+}
+
+.smc-detalhe-editavel-blocos {
+    overflow: inherit;
+    clear: both;
+    height: 100%;
+}
+
+.smc-gpi-cor-texto {
+    color: $smc-cor-principal-02;
+}
+
+
+.smc-gpi-divisao {
+    border-bottom: 1px dashed $smc-cor-principal-05;
+    margin: 15px 0 15px 0;
+}
+
+.smc-gpi-divide-area {
+    border-bottom: 1px dashed $smc-cor-principal-05;
+    margin: 0 0 5px 0;
+    padding-bottom: 15px;
+}
+
+
+// LOGIN
+.smc-login-btn-acao-principal {
+    button, a {
+        background-color: $smc-cor-principal-04 !important;
+        border-color: $smc-cor-principal-04 !important;
+    }
+
+    .smc-btn-voltar-icotext {
+        background-color: $smc-branco !important;
+        border-color: $smc-preto !important;
+
+        &:hover {
+            color: $smc-cor-principal-02;
+            border-color: $smc-cor-principal-02 !important;
+        }
+    }
+}
+
+.smc-login-footer-logo-gti {
+    &:before {
+        color: $smc-branco;
+    }
+}
+
+.smc-login-footer-copyright, .smc-login-lista-itens > .smc-detalhe-editavel-titulo {
+    color: $smc-branco !important;
+}
+
+.smc-login-footer-logo-smc {
+    display: none;
+}
+
+
+.smc-btn-idioma {
+    font-size: 0 !important;
+}
+
+// COMPONENTE DE ACESSIBILIDADE //
+
+.smc-acessibilidade1, .smc-acessibilidade2 {
+    .smc-buttonset-horizontal-secundario > .smc-button .smc-btn-novo {
+        height: 29px;
+    }
+}
+
+.smc-acessibilidade-contraste {
+    
+    //Datepicker
+    & .xdsoft_datetimepicker .xdsoft_label {
+        background-color: $smc-preto;
+    }
+
+    & .smc-datepicker {
+        & .smc-ico-datepicker {
+            &:before {
+                color: $smc-branco;
+            }
+        }
+    }
+
+    & .xdsoft_datetimepicker .xdsoft_next, .xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_today_button {
+        background-color: $smc-branco;
+    }
+    //Detalhe editável
+    & .smc-detalhe-editavel-tabular, .smc-detalhe-editavel-blocos {
+        & .smc-buttonset-horizontal-primario {
+            border-bottom: 1px dashed $smc-branco;
+        }
+    }
+    //Upload
+    & .smc-uploadFile-contextWindowControls {
+        & .smc-button {
+            & button {
+                background-color: $smc-preto;
+                border-color: $smc-preto;
+            }
+        }
+
+        & .dropdown {
+            & .smc-dropdown-btn-toggle-arrow {
+                background-color: $smc-preto;
+                border-color: $smc-preto;
+            }
+        }
+    }
+
+    & .smc-uploadFile .smc-uploadFile-arquivos {
+        & p {
+            color: $smc-branco !important;
+            border-top: dotted 1px $smc-branco;
+        }
+
+        & .smc-uploadFile-arquivo {
+            background-color: $smc-preto;
+
+            & .smc-uploadFile-arquivo-imagem, .smc-ico-upload-unknown, .smc-uploadFile-arquivo-download {
+                color: $smc-preto !important;
+            }
+        }
+    }
+
+    & .smc-uploadFile-filesCounter {
+        background-color: $smc-cinza-10;
+    }
+    //Instruções iniciais
+    & .smc-gpi-instrucoes-iniciais {
+        box-shadow: none !important;
+        border: 1px solid $smc-branco;
+
+        &:before {
+            color: $smc-branco;
+        }
+    }
+
+    & btn {
+        & .btn-default .btn-flat {
+            background-color: $smc-cinza !important;
+        }
+    }
+}
+
+
+// LEGENDA
+.smc-sga-lista-legenda {
+    padding-top: 2%;
+    clear: both;
+}
+
+.smc-sga-legenda, .smc-legend-box {
+    .smc-legend-content-title {
+        display: none !important;
+    }
+
+    span {
+        color: $smc-preto;
+        font-size: 11px;
+        font-weight: bold;
+    }
+}
+
+.smc-sga-legenda-configuracao-principal {
+    @extend .fa;
+    @extend .fa-star;
+    color: $smc-cor-principal-04;
+
+    &:before {
+        margin: 5px 5px 0 8px !important;
+        display: inline-block;
+    }
+}
+
+.smc-sga-titulo-legenda {
+    margin: 0;
+    font-size: 12px;
+    color: $smc-cinza-07;
+}
+// Legenda Bloqueio/Desbloqueio utilizada no SGA Administrativo e SGA Aluno.
+.smc-sga-legenda-base {
+    @extend .fa;
+    font-size: 14px;
+    content: "";
+
+    &:before {
+        margin-right: 2px;
+    }
+}
+
+.smc-sga-legenda-bloqueio {
+    @extend .smc-sga-legenda-base;
+    @extend .fa-ban;
+    color: #a80b00 !important;
+}
+
+
+.smc-sga-legenda-desbloqueio {
+    @extend .smc-sga-legenda-base;
+    @extend .fa-check-circle-o;
+    color: #47a303 !important;
+}
+
+.smc-sga-legenda-final-etapa {
+    @extend .smc-sga-legenda-base;
+    @extend .fa-star;
+    color: $smc-cor-principal-04;
+}
+
+%smc-base-legenda-status {
+    margin-top: 0;
+
+    &:before {
+        @extend .fa;
+        margin-right: 5px;
+        font-size: 16px;
+    }
+}
+
+.smc-legenda-status-aguardandoentrega {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-hourglass-half;
+        color: #3d7ef5;
+    }
+}
+
+.smc-legenda-status-aguardandovalidacao {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-clock-o;
+        color: #e6c616;
+    }
+}
+
+.smc-legenda-status-deferido {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-check;
+        color: #3c9c64;
+    }
+}
+
+.smc-legenda-status-indeferido {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-ban;
+        color: #df6262;
+    }
+}
+
+.smc-legenda-status-aguardandoanalise {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-low-vision;
+        color: #72c6e5;
+    }
+}
+
+.smc-legenda-status-pendente {
+    &:before {
+        @extend %smc-base-legenda-status;
+        @extend .fa-exclamation-triangle;
+        color: #ec9417;
+    }
+}
+
+
+.smc-gpi-minhas-inscricoes-btn {
+    margin-top: 5px !important;
+    text-align: left !important;
+    margin-bottom: 5px;
+}
+
+.smc-gpi-lista-inscricoes-situacao {
+    margin-bottom: 5px;
+}
+
+.smc-gpi-lista-inscricoes-mensagem {
+    color: rgb(107, 80, 0) !important;
+    padding: 10px !important;
+    background: #fff7e0 !important;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+.smc-gpi-processo-lista {
+    border: 1px solid rgb(239, 249, 250);
+    margin-top: 5px;
+    padding: 8px;
+
+    .smc-gpi-processo-lista-grupos {
+        border: 0 !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+.smc-gpi-processo-lista-clear {
+    clear: both !important;
+}
+
+.smc-gpi-detalhe-lang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 9px;
+
+    .smc-gpi-lista-inscricoes-botoes {
+        margin-top: 0 !important;
+    }
+}
+
+.smc-gpi-processo-lista-rodape {
+    clear: both;
+}
+
+.smc-instrucoes-preenchimento-container {
+    margin-top: -5px;
+}
+
+.visualiza-obs-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+@media screen and (max-width: 991px) {
+    .smc-painel-esquerda-conteudo {
+        .smc-buttonset-horizontal-primario {
+            .smc-button {
+                .smc-btn-custom {
+                    max-width: 100% !important;
+                    min-width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .smc-painel-esquerda-conteudo {
+        .smc-buttonset-horizontal-primario {
+            .smc-button {
+                .smc-btn-custom {
+                    width: 70px !important;
+                }
+            }
+        }
+    }
+
+    .smc-header-conteudo {
+        .smc-aplicaco-logotipo {
+            display: flex;
+            height: 87px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .navbar-nav {
+        margin: 0 -15px !important;
+    }
+
+    .navbar-nav .open .dropdown-menu {
+        position: absolute !important;
+        float: left !important;
+        width: auto !important;
+        margin-top: 2px !important;
+        background-color: #fff !important;
+        border: 4px solid rgb(229, 229, 229) !important;
+        box-shadow: rgb(166,246,253) 0px 2px 4px !important;
+    }
+}

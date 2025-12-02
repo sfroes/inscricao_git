@@ -1,0 +1,764 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB915960-67BF-4FD0-B2E8-EC7F0A73F756}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Inscricoes.Domain</RootNamespace>
+    <AssemblyName>SMC.Inscricoes.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.1.0\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.1.0\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SautinSoft.Document, Version=5.6.8.16, Culture=neutral, PublicKeyToken=e759c76c7515592a, processorArchitecture=MSIL">
+      <HintPath>..\packages\sautinsoft.document.5.6.8.16\lib\net461\SautinSoft.Document.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.AssinaturaDigital.ServiceContract, Version=4.2.3.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\AssinaturaDigital\4.2\SMC.AssinaturaDigital.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.Common, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.DadosMestres.Common.4.2.250513.2\lib\net471\SMC.DadosMestres.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.DadosMestres.ServiceContract">
+      <HintPath>..\..\Referencias\DadosMestres\4.2\SMC.DadosMestres.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.Common, Version=4.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.ServiceContract">
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.Common">
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.Service">
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Formularios.ServiceContract">
+      <HintPath>..\..\Referencias\Formularios\4.2\SMC.Formularios.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Core, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Core.4.2.251008.1\lib\net471\SMC.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.DataAnnotations, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.DataAnnotations.4.2.251008.1\lib\net471\SMC.Framework.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Domain, Version=4.2.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Domain.4.2.251008.1\lib\net471\SMC.Framework.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Model, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Model.4.2.251008.1\lib\net471\SMC.Framework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Repository, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Repository.4.2.251008.1\lib\net471\SMC.Framework.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Rest, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Rest.4.2.251008.1\lib\net471\SMC.Framework.Rest.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Security, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Security.4.2.251008.1\lib\net471\SMC.Framework.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Security.DirectoryServices, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Security.DirectoryServices.4.2.251008.1\lib\net471\SMC.Framework.Security.DirectoryServices.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Service, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Service.4.2.251008.1\lib\net471\SMC.Framework.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Specification, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Specification.4.2.251008.1\lib\net471\SMC.Framework.Specification.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Transaction, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Transaction.4.2.251008.1\lib\net471\SMC.Framework.Transaction.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Unity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Unity.4.2.251008.1\lib\net471\SMC.Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.IntegracaoAcademico.ServiceContract">
+      <HintPath>..\..\Referencias\IntegracaoAcademico\4.2\SMC.IntegracaoAcademico.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Financeiro.ServiceContract">
+      <HintPath>..\..\Referencias\Financeiro\4.2\SMC.Financeiro.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Localidades.Common">
+      <HintPath>..\..\Referencias\Localidades\4.2\SMC.Localidades.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Notificacoes.Common">
+      <HintPath>..\..\Referencias\Notificacoes\4.2\SMC.Notificacoes.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Notificacoes.ServiceContract">
+      <HintPath>..\..\Referencias\Notificacoes\4.2\SMC.Notificacoes.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.PDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\SMCPDF\4.2\SMC.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.PDFCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Referencias\SMCPDF\4.2\SMC.PDFCore.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.PDFDatas">
+      <HintPath>..\..\Referencias\SMCPDF\4.2\SMC.PDFDatas.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Pessoas.ServiceContract">
+      <HintPath>..\..\Referencias\Pessoas\4.2\SMC.Pessoas.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Seguranca.ServiceContract">
+      <HintPath>..\..\Referencias\Seguranca\4.2\SMC.Seguranca.ServiceContract.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.5.3\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\INS\CustomFilters\TipoProcessoCustomFilter.cs" />
+    <Compile Include="Areas\INS\DomainServices\GrupoTaxaItemDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\GrupoTaxaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ViewEventoSaeDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ProcessoConfiguracaoFormularioDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoDocumentoEmitidoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ConfiguracaoModeloDocumentoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\GrupoDocumentoRequeridoItemDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoDadoFormularioCampoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscritoAtividadeRelatorioDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ProcessoCampoInscritoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoProcessoDocumentoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoProcessoCampoInscritoDomainService.cs" />
+    <Compile Include="Areas\INS\Models\ConfiguracaoFormulario.cs" />
+    <Compile Include="Areas\INS\Models\ConfiguracaoModeloDocumento.cs" />
+    <Compile Include="Areas\INS\Models\GrupoTaxa.cs" />
+    <Compile Include="Areas\INS\Models\GrupoTaxaItem.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoDocumentoEmitido.cs" />
+    <Compile Include="Areas\INS\Models\ProcessoCampoInscrito.cs" />
+    <Compile Include="Areas\INS\Models\TipoProcessoCampoInscrito.cs" />
+    <Compile Include="Areas\INS\Models\TipoProcessoConsistencia.cs" />
+    <Compile Include="Areas\INS\Models\TipoProcessoDocumento.cs" />
+    <Compile Include="Areas\INS\Models\ViewEventoSae.cs" />
+    <Compile Include="Areas\INS\Specifications\ConfiguracaoModeloDocumento\ConfiguracaoModeloDocumentoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\GrupoDocumentoRequerido\GrupoDocumentoRequeridoItemFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\GrupoTaxa\GrupoTaxaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\GrupoTaxa\GrupoTaxaItemFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDadoFormularioCampo\InscricaoDadoFormularioCampoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDadoFormularioCampo\InscricaoDadoFormularioCampoPorTokenSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDocumentoEmitido\InscricaoDocumentoEmitidoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoEnvioNotificacao\InscricaoEnvioNotificacaoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoHistoricoSituacao\InscricaoHistoricoSituacaoInscricaoJaExistenteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoHistoricoSituacao\InscricaoHistoricoSituacaoPorProcessoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoOferta\InscricaoOfertaInscricoesValidasSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoBolsaSocialSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscrito\InscritoConvocadoSGASpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricoesNaoCanceladasPorMotivoTesteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoOferta\InscricaoOfertasPorProcessoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\PosicaoConsolidadaCheckinFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ProcessoCampoInscrito\ProcessoCampoInscritoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Processo\ProcessoSelectFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Processo\ProcessoSituacaoTipoHierarquiaTipoProcessoUnidadeResponsavelSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Relatorio\InscritoAtividadeRelatorioFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoProcessoCampoInscrito\TipoProcessoCampoInscritoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoProcessoDocumento\TipoProcessoDocumentoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoProcessoTemplate\TipoProcessoTemplateFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoProcesso\TipoProcessoConsistenciaSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ViewEventoSae\ViewEventoSaeFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ViewTipoDocumento\ViewTipoDocumentoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AcompanhamentoCheckin\AcompanhamentoCheckinFiltroVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AcompanhamentoCheckin\AcompanhamentoInscritoCheckinListaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AcompanhamentoCheckin\CheckinLoteVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AcompanhamentoCheckin\ListarCheckinLoteVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AcompanhamentoInscrito\AcompanhamentoInscritoFiltroVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AcompanhamentoInscrito\AcompanhamentoInscritoListarVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ArquivosPendentesIndeferidosVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\CabecalhoCheckinLoteVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\FiltroCheckinVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\CopiaProcessoRetornoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\EtapaProcessoInscricaoOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\DadosFormularioSeminarioVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\GrupoTaxaItemVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\CopiaGrupoTaxaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\GrupoTaxaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\IngressoOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\CheckinVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoCheckinLoteVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscritoAtividadeRelatorioVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\JustificativaSituacaoInscricaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\FormularioImpactoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\OfertaPeriodoTaxaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ResultadoInscricaoOfertaOfertaPosicaoConsolidadaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ResultadoInscricaoPosicaoConsolidadaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ResultadoHistoricoSituacaoPosicaoConsolidadaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ResultadoPosicaoConsolidadaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\RespostaPesquiaOfertaInscritoCheckinVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\RespostaPesquiaOfertaCheckinVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\RespostaCheckinVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProcessoOfertaQRCodeVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProcessoHierarquiaQRcodeVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProcessoGrupoOfertaQRCodeVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProcessoGestaoEventoQRCodeVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\IngressoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoDadoFormularioCampoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProcessoCampoInscritoVisiveisVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProcessoCampoInscritoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoProjetoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscritoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ItemHierarquiaOfertaArvoreVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoDadoFormularioCampoValorVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoTaxaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\DadosLiberacaoInscricaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ItemOfertaHierarquiaOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\HierarquiaOfertaArvoreVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoOfertaPorSituacaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscritoOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\NovaEntregaDocumentacaoCabecalhoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\NovaEntregaDocumentacaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\NovaEntregaDocumentacaoDocumentoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ObservacaoInscricaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\OfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\OfertaFiltroVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\OfertaCabecalhoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\DocumentoRequeridoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\Integracao\DocumentosIntegracaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\Integracao\EnderecoEletronicoPessoaIntegracaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\Integracao\EnderecoPessoaIntegracaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\Integracao\OfertaIntegracaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\Integracao\PessoaIntegracaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\Integracao\TelefonePessoaIntegracaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PortfolioVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProcessoTemplateProcessoSGFVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\TaxaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\DadosDocumentacaoInscricaoVO.cs" />
+    <Compile Include="Areas\RES\DomainServices\UnidadeResponsavelTipoHierarquiaOfertaDomainService.cs" />
+    <Compile Include="Areas\RES\DomainServices\UnidadeResponsavelTipoProcessoIdVisualDomainService.cs" />
+    <Compile Include="Areas\RES\Models\UnidadeResponsavelTipoProcessoIdVisual.cs" />
+    <Compile Include="Areas\RES\Specifications\UnidadeResponsavelConfiguracaoDocumentoFilterSpecification.cs" />
+    <Compile Include="Areas\RES\Specifications\UnidadeResponsavelTipoHierarquiaOfertaFilterSpecification.cs" />
+    <Compile Include="Areas\RES\ValueObjects\UnidadeResponsavelTipoProcessoVO.cs" />
+    <Compile Include="Areas\SEL\DomainServices\InscricaoOfertaHistoricoSituacaoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\PermissaoInscricaoForaPrazoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\PermissaoInscricaoForaPrazoInscritoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ProcessoConfiguracaoNotificacaoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ArquivoSecaoPaginaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ProcessoConfiguracaoNotificacaoIdiomaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TextoSecaoPaginaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\EtapaProcessoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\CodigoAutorizacaoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ArquivoAnexadoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ConfiguracaoEtapaPaginaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ConfiguracaoEtapaPaginaIdiomaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\DocumentoRequeridoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoBoletoTituloDomainService .cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoBoletoTaxaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoCodigoAutorizacaoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoDadoFormularioDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoEnvioNotificacaoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoHistoricoPaginaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoHistoricoSituacaoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\GrupoOfertaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoDocumentoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoBoletoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoOfertaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\HierarquiaOfertaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\OfertaPeriodoTaxaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\OfertaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\GrupoDocumentoRequeridoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ItemHierarquiaOfertaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TaxaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoItemHierarquiaOfertaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoHierarquiaOfertaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoDocumentoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoProcessoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ProcessoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ProcessoIdiomaDomainService .cs" />
+    <Compile Include="Areas\INS\DomainServices\ConfiguracaoEtapaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscricaoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\InscritoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoProcessoSituacaoDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoProcessoTemplateDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\TipoTaxaDomainService.cs" />
+    <Compile Include="Areas\INS\DomainServices\ViewTipoDocumentoDomainService.cs" />
+    <Compile Include="Areas\INS\Models\PermissaoInscricaoForaPrazoInscrito.cs" />
+    <Compile Include="Areas\INS\Partials\ConfiguracaoEtapa.cs" />
+    <Compile Include="Areas\INS\Partials\HierarquiaOferta.cs" />
+    <Compile Include="Areas\INS\Partials\EtapaProcesso.cs" />
+    <Compile Include="Areas\INS\Partials\OfertaPeriodoTaxa.cs" />
+    <Compile Include="Areas\INS\Partials\Oferta.cs" />
+    <Compile Include="Areas\INS\Partials\InscricaoBoletoTitulo.cs" />
+    <Compile Include="Areas\INS\Partials\Processo.cs" />
+    <Compile Include="Areas\INS\Specifications\ArquivoSecaoPagina\ArquivoSecaoPaginaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\CodigoAutorizacao\CodigoAutorizacaoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ConfiguracaoEtapaPaginaIdioma\ConfiguracaoEtapaPaginaIdiomaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ConfiguracaoEtapaPagina\ConfiguracaoEtapaPaginaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ConfiguracaoEtapa\ConfiguracaoEtapaPorOfertasSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ConfiguracaoEtapa\ConfiguracaoEtapaVigenteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ConfiguracaoEtapa\ConfiguracaoEtapaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\DocumentoRequerido\DocumentoRequeridoEmUsoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\HierarquiaOferta\HierarquiaOfertaTipoItemFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDadoFormulario\InscricaoDadoFormularioEmUsoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDocumento\InscricaoDocumentoCadastradoSpecification.cs" />
+    <Compile Include="Areas\SEL\Specifications\InscricaoOfertaHistoricoSituacao\InscricaoOfertaHistoricoPorTokensSpecification.cs" />
+    <Compile Include="Areas\SEL\Specifications\InscricaoOfertaHistoricoSituacao\InscricaoOfertaHistoricoSituacaoFilterSpecification.cs" />
+    <Compile Include="Areas\SEL\Specifications\InscricaoOfertaHistoricoSituacao\InscricaoOfertaHistoricoSituacaoInscricaoSpecification.cs" />
+    <Compile Include="Areas\SEL\Specifications\InscricaoOfertaHistoricoSituacao\InscricaoOfertaHistoricoSituacaoPorProcessoSpecification.cs" />
+    <Compile Include="Areas\SEL\Specifications\InscricaoOfertaHistoricoSituacao\InscricaoOfertaHistoricoSituacaoSpecification.cs" />
+    <Compile Include="Areas\SEL\Specifications\InscricaoOfertaHistoricoSituacao\InscricaoOfertaPorTokenSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\OfertaPeriodoTaxa\OfertaTipoTaxaSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\ProcessoOfertaComTaxaSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoBoletoTaxa\InscricaoComBoletoTaxaSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDocumento\DocumentoRequeridoInscricaoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\DocumentoRequerido\DocumentoRequeridoOpcionalOuMultiploSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\DocumentoRequerido\DocumentoRequeridoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\EtapaProcesso\EtapaProcessoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\EtapaProcesso\EtapaProcessoVigenteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\GrupoDocumentoRequerido\DocumentoRequeridoNoGrupoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\GrupoDocumentoRequerido\GrupoDocumentoRequeridoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\GrupoOferta\GrupoOfertaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\HierarquiaOferta\HierarquiaOfertaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoBoletoTaxa\InscricaoBoletoTaxaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoBoletoTitulo\InscricaoBoletoTituloFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoBoletoTitulo\InscricaoBoletoTituloPagoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoBoletoTitulo\InscricaoBoletoTituloVencidoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoBoleto\InscricaoBoletoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoBoletoTitulo\InscricaoBoletoTituloCanceladoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoCodigoAutorizacao\InscricaoCodigoAutorizacaoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoCodigoAutorizacao\InscricaoCodigoAutorizacaoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDadoFormulario\InscricaoDadoFormularioFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDocumento\InscricaoDocumentoGrupoAlteradoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDocumento\InscricaoDocumentoSexoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoDocumento\InscricaoDocumentoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoHistoricoPagina\InscricaoHistoricoPaginaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoComBoletoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoComFormularioPreenchidoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoComSituacaoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoComDocumentosSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoProcessoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoNoPrazoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoTaxaComNumeroMinimoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoSemCodigoNaOfertaSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoTesteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\SituacaoInscricaoProcessoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\OfertaPeriodoTaxa\OfertaPeriodoTaxaForaPrazoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\OfertaPeriodoTaxa\OfertaPeriodoTaxaVigenteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\OfertaPeriodoTaxa\OfertaPeriodoTaxaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\OfertaInscricaoIndisponivelSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\OfertaTaxaPeriodoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\OfertaTaxaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\OfertaVigenteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\OfertaCanceladaSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\OfertaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\OfertaInscricaoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\PosicaoConsolidadaGrupoOfertaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscricao\InscricaoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoOferta\InscricaoOfertaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Oferta\UltimaOfertaCadastradaSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\PermissaoInscricaoForaPrazoInscrito\PermissaoInscricaoForaPrazoInscritoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\PermissaoInscricaoForaPrazo\PermissaoInscricaoForaPrazoCoincidenteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ProcessoConfiguracaoNotificacaoIdioma\ProcessoConfiguracaoNotificacaoIdiomaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ProcessoIdioma\ProcessoIdiomaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoHistoricoSituacao\InscricaoHistoricoSituacaoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Inscrito\InscritoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ConfiguracaoEtapa\ConfiguracaoEtapaInscricaoEmAbertoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\InscricaoOferta\CandidatosSelecaoProcessoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Processo\ProcessoInscricaoVigenteSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Processo\ProcessoCanceladoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Processo\ProcessoContainsTemplateSGFSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\Processo\ProcessoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\ConfiguracaoEtapaPaginaIdioma\ConfiguracaoEtapaUnidadeResponsavelSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoDocumento\TipoDocumentoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoHierarquiaOferta\ItemHierarquiaOfertaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoHierarquiaOferta\TipoHierarquiaOfertaFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoItemHierarquiaOferta\TipoItemHierarquiaOfertaPorProcessoSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoProcessoSituacao\TipoProcessoSituacaoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoProcesso\TipoProcessoFilterSpecification.cs" />
+    <Compile Include="Areas\INS\Specifications\TipoProcesso\TipoProcessoUnidadeResponsavelSpecification.cs" />
+    <Compile Include="Areas\INS\Validators\OfertaValidator.cs" />
+    <Compile Include="Areas\INS\Validators\ProcessoValidator.cs" />
+    <Compile Include="Areas\INS\Validators\InscritoValidatorStep2.cs" />
+    <Compile Include="Areas\INS\Validators\InscritoValidatorStep1.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AcompanhamentoSelecaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AlteracaoSituacaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ConfiguracaoNotificacaoIdiomaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ConfiguracaoPaginaIdiomaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ConfiguracaoPaginaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ConfigurarNotificacaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ConsultaCandidatosProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\CopiaEtapaProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\CopiaProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\CopiarConfiguracoesEtapaDetalheVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\CopiarConfiguracoesEtapaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\IdiomasPaginasProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ArquivoSecaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\IncluirTaxaEmLoteVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\LancamentoResultadoItemVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PermissaoInscricaoForaPrazoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\NoArvoreConfiguracaoEtapaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ConfiguracaoEtapaInfoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\OfertaPeriodoInscricaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PosicaoConsolidadaPorGrupoOfertaListaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PosicaoConsolidadaPorOfertaListaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProrrogacaoEtapaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\TaxaPeriodoOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\SumarioDocumentosEntreguesVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\GrupoDocumentoEntregueVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\HierarquiaOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoDocumentosUploadVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\FluxoPaginaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\GrupoOfertaConfiguracaoEtapaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\EtapaProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoCodigoAutorizacaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\DadosInscricaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoDadoFormularioVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\DocumentoSimplificadoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoDocumentoGruposVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoTaxaOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\LancamentoNotaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\OpcaoOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoDocumentoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProcessoHomeVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\SituacaoInscricaoInscritoProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\SituacaoInscricaoProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PaginaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PosicaoConsolidadaGrupoOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PosicaoConsolidadaOfertaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PosicaoConsolidadaProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\PosicaoConsolidadaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricoesProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\InscricaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\SecaoPaginaArquivoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\SecaoPaginaTextoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\SecaoPaginaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\OfertaTaxaVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\TaxaTituloInscricaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\TipoProcessoSituacaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ProrrogacaoConfiguracaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\TaxaProrrogacaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\OfertaProrrogacaoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\ResumoInscricoesProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\TotalInscricoesProcessoVO.cs" />
+    <Compile Include="Areas\INS\ValueObjects\TituloInscricaoVO.cs" />
+    <Compile Include="Areas\NOT\DomainServices\ParametroEnvioNotificacaoDomainService.cs" />
+    <Compile Include="Areas\NOT\DomainServices\TipoNotificacaoDomainService.cs" />
+    <Compile Include="Areas\NOT\DomainServices\ViewInscricaoEnvioNotificacaoDomainService.cs" />
+    <Compile Include="Areas\NOT\DomainServices\ViewTipoNotificacaoDomainService.cs" />
+    <Compile Include="Areas\NOT\Specifications\ConfigurarNotificacao\ConfiguraraoNotificacaoSpecification.cs" />
+    <Compile Include="Areas\NOT\Specifications\ConsultaNotificacao\ViewInscricaoEnvioNotificacaoSpecification.cs" />
+    <Compile Include="Areas\NOT\Specifications\TipoNotificacao\TipoNotificacaoSpecification.cs" />
+    <Compile Include="Areas\NOT\Specifications\TipoNotificacao\ViewTipoNotificacaoSpecification.cs" />
+    <Compile Include="Areas\RES\DomainServices\UnidadeResponsavelDomainService.cs" />
+    <Compile Include="Areas\RES\DomainServices\ClienteDomainService.cs" />
+    <Compile Include="Areas\RES\DomainServices\UnidadeResponsavelTipoFormularioDomainService.cs" />
+    <Compile Include="Areas\RES\DomainServices\UnidadeResponsavelTipoProcessoDomainService.cs" />
+    <Compile Include="Areas\RES\Specifications\ClienteFilterSpecification.cs" />
+    <Compile Include="Areas\RES\Specifications\UnidadeResponsavelFilterSpecification.cs" />
+    <Compile Include="Areas\RES\Specifications\UnidadeResponsavelTipoProcessoFilterSpecification_.cs" />
+    <Compile Include="Areas\RES\Specifications\UnidadeResponsavelSpecification.cs" />
+    <Compile Include="Areas\RES\Validators\UnidadeResponsavelValidator.cs" />
+    <Compile Include="Areas\RES\ValueObjects\UnidadeResponsavelTipoFormularioVO.cs" />
+    <Compile Include="Areas\SEL\Models\InscricaoOfertaHistoricoSituacao.cs" />
+    <Compile Include="Areas\INS\ValueObjects\AlterarHistoricoSituacaoVO.cs" />
+    <Compile Include="Areas\SEL\ValueObjects\InscricaoOfertaHistoricoSituacaoVO.cs" />
+    <Compile Include="Areas\SEL\ValueObjects\HistoricoSituacaoVO.cs" />
+    <Compile Include="Areas\Shared\DomainServices\InscricaoContextDomain.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\Const\ACOES_WEBAPI_SHAREPOINT.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\DomainService\BibliotecaApiDoaminService.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\DomainService\ArquivoApiDoaminService.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\DomainService\ProcessoApiDoaminService.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\Models\SharepointApi.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\DomainService\PortfolioApiDoaminService.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ApiUrlAmbiente.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\RequisicoesSharePoint.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\ParametrosArquivoVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\DadosArquivoSharepointVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\DadosProcessoSharepointVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\CriarProcessoVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\CriarPortfolioVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\DadosrPortfolioSharepointVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\RetornoBaseShrepointVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\BuscarIdPortifolioVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\RetornoBibliotecaSharepointVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\RetornoArquivoSharepointVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\RetornoProcessoSharepointVO.cs" />
+    <Compile Include="Areas\Shared\SharePointWebApi\ValueObject\RetornoPortfolioSharepointVO.cs" />
+    <Compile Include="Areas\Shared\DomainServices\DataFilterProviderDomainService.cs" />
+    <Compile Include="Extensions\FormatExtensions.cs" />
+    <Compile Include="Partials\ArquivoAnexado.cs" />
+    <Compile Include="Ioc\MapIocService.cs" />
+    <Compile Include="Areas\INS\Models\Inscrito.cs" />
+    <Compile Include="Areas\INS\Models\TipoHierarquiaOferta.cs" />
+    <Compile Include="Areas\INS\Models\TipoProcesso.cs" />
+    <Compile Include="Areas\RES\Models\UnidadeResponsavel.cs" />
+    <Compile Include="Areas\RES\Models\UnidadeResponsavelTipoFormulario.cs" />
+    <Compile Include="Areas\RES\Models\UnidadeResponsavelTipoHierarquiaOferta.cs" />
+    <Compile Include="Areas\RES\Models\UnidadeResponsavelTipoProcesso.cs" />
+    <Compile Include="Areas\RES\Models\Cliente.cs" />
+    <Compile Include="Areas\INS\Models\ArquivoSecaoPagina.cs" />
+    <Compile Include="Areas\INS\Models\CodigoAutorizacao.cs" />
+    <Compile Include="Areas\INS\Models\ConfiguracaoEtapa.cs" />
+    <Compile Include="Areas\INS\Models\ConfiguracaoEtapaPagina.cs" />
+    <Compile Include="Areas\INS\Models\ConfiguracaoEtapaPaginaIdioma.cs" />
+    <Compile Include="Areas\INS\Models\DocumentoRequerido.cs" />
+    <Compile Include="Areas\INS\Models\EtapaProcesso.cs" />
+    <Compile Include="Areas\INS\Models\GrupoDocumentoRequerido.cs" />
+    <Compile Include="Areas\INS\Models\GrupoDocumentoRequeridoItem.cs" />
+    <Compile Include="Areas\INS\Models\GrupoOferta.cs" />
+    <Compile Include="Areas\INS\Models\GrupoOfertaConfiguracaoEtapa.cs" />
+    <Compile Include="Areas\INS\Models\HierarquiaOferta.cs" />
+    <Compile Include="Areas\INS\Models\ItemHierarquiaOferta.cs" />
+    <Compile Include="Areas\INS\Models\Oferta.cs" />
+    <Compile Include="Areas\INS\Models\OfertaCodigoAutorizacao.cs" />
+    <Compile Include="Areas\INS\Models\Processo.cs" />
+    <Compile Include="Areas\INS\Models\ProcessoIdioma.cs" />
+    <Compile Include="Areas\INS\Models\TextoSecaoPagina.cs" />
+    <Compile Include="Areas\INS\Models\TipoDocumento.cs" />
+    <Compile Include="Areas\INS\Models\TipoItemHierarquiaOferta.cs" />
+    <Compile Include="Areas\INS\Models\TipoProcessoSituacao.cs" />
+    <Compile Include="Areas\INS\Models\TipoProcessoTemplate.cs" />
+    <Compile Include="Areas\INS\Models\Inscricao.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoCodigoAutorizacao.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoDadoFormulario.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoDadoFormularioCampo.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoDocumento.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoHistoricoPagina.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoHistoricoSituacao.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoOferta.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoBoleto.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoBoletoTaxa.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoBoletoTitulo.cs" />
+    <Compile Include="Areas\INS\Models\OfertaPeriodoTaxa.cs" />
+    <Compile Include="Areas\INS\Models\Taxa.cs" />
+    <Compile Include="Areas\INS\Models\InscricaoEnvioNotificacao.cs" />
+    <Compile Include="Areas\RES\Models\UnidadeResponsavelCentroCusto.cs" />
+    <Compile Include="Areas\INS\Models\TipoTaxa.cs" />
+    <Compile Include="Areas\INS\Models\TipoProcessoTipoTaxa.cs" />
+    <Compile Include="Areas\INS\Models\ViewTipoDocumento.cs" />
+    <Compile Include="Areas\NOT\Models\ViewInscricaoEnvioNotificacao.cs" />
+    <Compile Include="Areas\NOT\Models\ParametroEnvioNotificacao.cs" />
+    <Compile Include="Areas\NOT\Models\TipoNotificacao.cs" />
+    <Compile Include="Areas\NOT\Models\TipoNotificacaoAtributoAgendamento.cs" />
+    <Compile Include="Areas\INS\Models\ProcessoConfiguracaoNotificacao.cs" />
+    <Compile Include="Areas\INS\Models\ProcessoConfiguracaoNotificacaoIdioma.cs" />
+    <Compile Include="Areas\NOT\Models\ViewTipoNotificacao.cs" />
+    <Compile Include="Areas\INS\Models\PermissaoInscricaoForaPrazo.cs" />
+    <Compile Include="Models\ArquivoAnexado.cs" />
+    <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\EnderecoEletronico.cs" />
+    <Compile Include="Models\Telefone.cs" />
+    <Compile Include="Partials\Telefone.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\MessagesResource.en.Designer.cs">
+      <DependentUpon>MessagesResource.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\MessagesResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\NOT\Partials\" />
+    <Folder Include="Areas\NOT\Validators\" />
+    <Folder Include="Areas\NOT\ValueObjects\" />
+    <Folder Include="Areas\RES\Partials\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MessagesResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MessagesResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMC.Inscricoes.Common\SMC.Inscricoes.Common.csproj">
+      <Project>{a94711a1-2a12-43dd-8262-d2b60c2084bb}</Project>
+      <Name>SMC.Inscricoes.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Inscricoes.Rest\SMC.Inscricoes.Pdf.csproj">
+      <Project>{14ccdeaf-1636-4df8-9471-2313114d0ff3}</Project>
+      <Name>SMC.Inscricoes.Pdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMC.Inscricoes.ServiceContract\SMC.Inscricoes.ServiceContract.csproj">
+      <Project>{F7AE8A51-D919-43A4-8AF5-D115DE4B85BE}</Project>
+      <Name>SMC.Inscricoes.ServiceContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

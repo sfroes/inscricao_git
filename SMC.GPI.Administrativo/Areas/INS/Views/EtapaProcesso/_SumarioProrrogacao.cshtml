@@ -1,0 +1,12 @@
+﻿@model ProrrogacaoEtapaViewModel
+
+
+@using (Smc.Header("HeaderEtapa", SMCHeaderType.Secondary).CssClass("smc-gpi-sumarioprorrogacao")
+                .Item(x => x.Descricao, sizeSM: SMCSize.Grid14_24, sizeMD: SMCSize.Grid14_24, sizeLG: SMCSize.Grid14_24, sizeXS: SMCSize.Grid14_24)
+                .Item(x => x.DataFimAntiga, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24)
+                .Item(x => x.DataFim, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24, cssClass: Model.CssClassData).Begin()) { }
+
+@(Smc.List("listaConfiguracaoSumario", x => x.Configuracoes).CssClass("smc-gpi-sumarioprorrogacao-configuracao")
+    .HtmlTemplate(@<text> @Html.Partial("_SumarioConfiguracaoProrrogacao", item.Value)</text>))
+
+@Smc.WizardView()

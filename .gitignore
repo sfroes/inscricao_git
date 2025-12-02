@@ -1,0 +1,42 @@
+# --- Artefatos de Compilação (Obrigatório) ---
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+
+# --- Visual Studio (Arquivos de usuário e cache) ---
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+*.opendb
+*.sdv
+
+# --- NuGet (Pacotes não devem ser versionados) ---
+# A pasta packages deve ser restaurada pelo VS, não commitada
+packages/
+*.nupkg
+# Exceção: manter o arquivo de configuração do NuGet se existir
+!packages/repositories.config
+
+# --- Web (Arquivos gerados ou de ambiente local) ---
+# Ignorar logs de erro
+*.log
+# Se usar upload de arquivos localmente, ignore a pasta de uploads
+wwwroot/uploads/
+App_Data/
+
+# Se tiver um arquivo específico para senhas locais:
+appsettings.local.json
+secrets.json
+
+# --- Testes Unitários ---
+TestResults/
+
+# --- Arquivos de Sistema (Windows/Mac) ---
+Thumbs.db
+.DS_Store

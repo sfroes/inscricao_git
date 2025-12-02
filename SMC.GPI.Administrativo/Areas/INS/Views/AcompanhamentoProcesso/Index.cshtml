@@ -1,0 +1,28 @@
+﻿@model ConsultaConsolidadaProcessoFiltroViewModel
+
+@using (Smc.Form("formPesquisaProcesso", "ListarProcessoPosicaoConsolidada").Ajax("#divGridProcesso").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaProcesso").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqUnidadeResponsavel).Focus()
+	    @Smc.EditorFor(prop => prop.SeqTipoProcesso)
+		@Smc.EditorFor(prop => prop.SeqCliente)
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+		@Smc.EditorFor(prop => prop.DescricaoProcesso)
+        @Smc.EditorFor(prop => prop.SemestreReferencia)
+        @Smc.EditorFor(prop => prop.AnoReferencia)
+        @Smc.EditorFor(prop => prop.DataInicio)
+        @Smc.EditorFor(prop => prop.DataFim)
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+	}
+}
+
+<div id="divGridProcesso">
+    @Smc.ActionList("ListarProcessoPosicaoConsolidada", routeValues: Model, initialListingDisabled: Model.AutoPesquisa)
+</div>
+
+@Html.Partial("_ModalLegendaPosicaoConsolidada")

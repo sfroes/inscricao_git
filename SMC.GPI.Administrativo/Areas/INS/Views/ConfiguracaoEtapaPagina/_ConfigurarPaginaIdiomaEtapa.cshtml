@@ -1,0 +1,33 @@
+﻿@model ConfigurarPaginaIdiomaEtapaViewModel
+
+@using (Smc.Header("headerCabecalhoConfigurarPaginaIdiomaEtapa", SMCHeaderType.Primary)
+               .Item(m => m.Pagina, sizeSM: SMCSize.Grid10_24, sizeMD: SMCSize.Grid10_24, sizeLG: SMCSize.Grid10_24, sizeXS: SMCSize.Grid10_24)
+               .Item(m => m.Idioma, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+               .Begin())
+{
+
+}
+
+@using (Smc.Div("fieldsetTituloConfigurarPaginaIdioma").Begin())
+{
+    @Smc.EditorFor(m => m.SeqConfiguracaoEtapaPaginaIdioma)
+    @Smc.EditorFor(m => m.SeqProcesso)
+    @Smc.EditorFor(m => m.SeqConfiguracaoEtapa)
+    @Smc.EditorFor(m => m.SeqEtapa)
+    @Smc.EditorFor(m => m.Titulo)
+
+}
+
+@if (Model.ExibeFormulario)
+{
+    using (Smc.Div("fieldsetAssociarFormularioConfigurarPaginaIdioma").Begin())
+    {
+        @Smc.EditorFor(m => m.SeqTipoFormulario)
+        @Smc.EditorFor(m => m.SeqFormulario)
+        @Smc.EditorFor(m => m.SeqVisao)
+        @Smc.EditorFor(m => m.SeqVisaoGestao)
+        @Smc.EditorFor(m=> m.PaginaToken)
+    }
+}
+
+

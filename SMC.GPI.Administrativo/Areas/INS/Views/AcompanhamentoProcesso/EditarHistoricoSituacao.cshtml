@@ -1,0 +1,45 @@
+﻿@model HistoricoSituacaoViewModel
+
+@Html.Action("CabecalhoHistoricoSituacao", Model.FiltroCabecalho)
+
+@{
+
+    var buttonset = Smc.ButtonSet();
+
+
+    buttonset.Size(SMCSize.Grid24_24)
+    .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+    .Action("SalvarAlteracaoHistoricoSituacao", routeValues: new
+    {
+        @seqInscrito = Request.QueryString["seqInscrito"],
+        @seqProcesso = Request.QueryString["seqProcesso"],
+        @origem = Request.QueryString["origem"],
+        @backURL = Model.BackURL
+    }).Highlight());
+
+
+
+    //if (!string.IsNullOrEmpty(Model.BackURL))
+    //{
+
+    //}
+
+        buttonset.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon));
+    
+
+    //buttonset.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Type(SMCButtonType.Link));
+
+}
+
+@using (Smc.Form("formEditarHistoricoSituacao").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.Div("fieldsetEditarHistoricoSituacao").Begin())
+    {
+        @Smc.EditorForModel()
+    }
+    @buttonset
+}
+
+
+
+

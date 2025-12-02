@@ -1,0 +1,87 @@
+@import "carousel/swiper-bundle.min";
+
+.swiper-wrapper {
+    width: 800px !important;
+}
+
+.smc-gpi-ingresso-slider {
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid var(--border-default);
+    padding: 1rem 2rem;
+    align-items: center;
+    display: flex;
+    margin-bottom: 2rem;
+    background-color: var(--white);
+    column-gap: 2rem;
+
+    @media screen and (max-width: 992px) {
+        flex-direction: column;
+        row-gap: 2rem;
+        padding: 2rem;
+    }
+
+    .smc-qrcode {
+
+        > div {
+            padding-top: 5px;
+
+            canvas {
+                width: 200px;
+                height: 200px;
+
+                @media screen and (max-width: 992px) {
+                    width: 320px;
+                    height: 320px;
+                }
+            }
+        }
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-primary-2) !important;
+}
+
+.swiper{
+    width:100%;
+    display:flex;
+}
+
+.smc-gpi-btn-ingresso-carrossel {
+    margin-bottom: 2.8rem;
+
+    @media screen and (max-width: 652px) {
+        margin-bottom: 4rem;
+    }
+}
+.smc-gpi-ingresso-info-carrossel {
+    position: relative;
+
+    .smc-gpi-informacao-botao {
+        float: none;
+        left: 0;
+        margin-bottom: 0;
+        top: 2px;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+
+        @media screen and (max-width: 652px) {
+            top: -12px;
+        }
+
+        p {
+            font-size: 0.8rem;
+        }
+
+        &:before,
+        &:after {
+            right: auto;
+        }
+    }
+}

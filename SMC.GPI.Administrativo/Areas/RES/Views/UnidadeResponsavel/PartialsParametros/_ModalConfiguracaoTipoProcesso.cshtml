@@ -1,0 +1,17 @@
+﻿@model UnidadeResponsavelTipoProcessoViewModel
+
+@using (Smc.Div("fieldsetConfiguracaoTipoProcessoTipoHierarquiaOferta").Begin())
+{
+    @Smc.EditorFor(x => x.SeqUnidadeResponsavel)
+    @Smc.EditorFor(x => x.Seq)
+    @Smc.EditorFor(x => x.SeqTipoProcesso)
+    @Smc.EditorFor(x => x.TiposProcesso)
+    @Smc.EditorFor(x => x.Ativo)
+
+}
+
+@Smc.EditorFor(x => x.DetalhesTiposHierarquiaOferta)
+
+@Smc.EditorFor(x => x.IdentidadesVisuais).
+
+

@@ -1,0 +1,18 @@
+﻿@model SMCPagerModel<GrupoOfertaListaViewModel>
+
+@(Smc.Grid("gridGrupoOferta")
+     .Action("ListarGrupoOferta", "Processo")
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary,2,"","", "smc-grid-coluna-botoes",
+                             item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as GrupoOfertaListaViewModel).Seq), @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as GrupoOfertaListaViewModel).SeqProcesso) }, "GrupoOferta")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .SecurityToken(UC_INS_001_08_02.MANTER_GRUPO_OFERTAS),
+
+                             item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as GrupoOfertaListaViewModel).Seq), @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as GrupoOfertaListaViewModel).SeqProcesso) }, "GrupoOferta")
+                                .DisplayMode(SMCButtonDisplayMode.Icon)
+                                .Ajax(isPost: true, updateTargetId: "#divGridGrupoOferta")
+                                .SecurityToken(UC_INS_001_08_02.MANTER_GRUPO_OFERTAS)
+                                .Confirm(Smc.GetUIResource("Exclusao_Grupo_Oferta_Title"),
+                                                     string.Format(Smc.GetUIResource("Exclusao_Grupo_Oferta_Confirmacao"), (item as GrupoOfertaListaViewModel).Descricao))
+
+))

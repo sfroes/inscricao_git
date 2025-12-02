@@ -1,0 +1,37 @@
+﻿@model ProcessoAbertoFiltroViewModel
+
+@using (Smc.Form("buscarProcesso", "ListarEtapaInscricao").Ajax("#divGridProcessosAbertos").CssClass("smc-gpi-index-busca").Begin())
+{
+<div id="fieldsetBuscaProcesso" class="smc-busca-funcionalidade">
+    @Smc.EditorFor(x => x.DescricaoProcesso).HideLabel()
+    @(Smc.Button(SMCButtonBehavior.Pesquisar)
+                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                            .Highlight()
+                            .CssClass("smc-gpi-busca"))
+    @(Smc.Button(SMCButtonBehavior.LimparEnviar)
+                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                            .Highlight()
+                            .CssClass("smc-gpi-limpa"))
+
+</div>
+}
+<div id="principal" class="smc-gpi-painel-central">
+    <!-- Colocar o div dos conteúdos abaixo, identificando os mesmos -->
+    @* Lista Processos Abertos *@
+    @* Campo para pesquisa de processos *@
+
+
+    <h1>@Smc.GetUIResource("Titulo_Inscricoes_Em_Aberto")</h1>
+    <div id="divGridProcessosAbertos" data-id="divGridProcessosAbertos">
+        @Html.Action("ListarEtapaInscricao")
+    </div>
+
+
+    @* Lista Minhas Inscrições *@
+    @*<div class="smc-gpi-conteudo-index">
+            <h1>@Smc.GetUIResource("Titulo_Inscricoes")</h1>
+            <div id="divGridInscricoes" data-id="divGridInscricoes">
+                @Html.Action("ListarInscricoes")
+            </div>
+        </div>*@
+</div>

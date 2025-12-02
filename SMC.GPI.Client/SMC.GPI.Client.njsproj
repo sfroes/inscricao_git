@@ -1,0 +1,247 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>SMC.GPI.Client</Name>
+    <RootNamespace>SMC.GPI.Client</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>8de3c30e-24f5-4be5-b3ef-c607313094dd</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <StartWebBrowser>False</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".angular\cache\17.3.8\administrativo\.tsbuildinfo" />
+    <Content Include=".angular\cache\17.3.8\inscricao\.tsbuildinfo" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\%40angular_common.js" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\%40angular_common.js.map" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\%40angular_core.js" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\%40angular_core.js.map" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\%40angular_platform-browser.js" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\%40angular_platform-browser.js.map" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\%40angular_router.js" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\%40angular_router.js.map" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\chunk-RA33G2A7.js" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\chunk-RA33G2A7.js.map" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\chunk-U7PAWJPZ.js" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\chunk-U7PAWJPZ.js.map" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\chunk-VGC5YQ7Y.js" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\chunk-VGC5YQ7Y.js.map" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\package.json" />
+    <Content Include=".angular\cache\17.3.8\vite\deps\_metadata.json" />
+    <Content Include=".editorconfig" />
+    <Content Include=".gitignore" />
+    <Content Include=".vscode\extensions.json" />
+    <Content Include=".vscode\launch.json" />
+    <Content Include=".vscode\tasks.json" />
+    <Content Include="angular.json" />
+    <Content Include="docs\template-refinamento.md" />
+    <Content Include="docs\tutorial testes.md" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="projects\smc.gpi.administrativo\src\app\app.component.html" />
+    <Content Include="projects\smc.gpi.administrativo\src\app\app.component.scss" />
+    <Content Include="projects\smc.gpi.administrativo\src\assets\.gitkeep" />
+    <Content Include="projects\smc.gpi.administrativo\src\favicon.ico" />
+    <Content Include="projects\smc.gpi.administrativo\src\index.html" />
+    <Content Include="projects\smc.gpi.administrativo\src\styles.scss" />
+    <Content Include="projects\smc.gpi.administrativo\tsconfig.app.json" />
+    <Content Include="projects\smc.gpi.administrativo\tsconfig.spec.json" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\app.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa-grupo\selecao-oferta-com-taxa-grupo.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa-simples\selecao-oferta-com-taxa-simples.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-hierarquia\selecao-oferta-hierarquia.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-sem-taxa\selecao-oferta-sem-taxa.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-vazio\selecao-oferta-vazio.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\componentes\pagina-erros\pagina-erros.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\componentes\pagina-erros\pagina-erros.component.scss" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\layout-padrao\layout-padrao.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\layout-padrao\layout-padrao.component.scss" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-footer\layout-footer.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-header\layout-header.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\layout-menu-lateral.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\layout-navegacao.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\layout-processo.component.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\assets\.gitkeep" />
+    <Content Include="projects\smc.gpi.inscricao\src\assets\recursos\style.scss" />
+    <Content Include="projects\smc.gpi.inscricao\src\favicon.ico" />
+    <Content Include="projects\smc.gpi.inscricao\src\index.html" />
+    <Content Include="projects\smc.gpi.inscricao\src\styles.scss" />
+    <Content Include="projects\smc.gpi.inscricao\tsconfig.app.json" />
+    <Content Include="projects\smc.gpi.inscricao\tsconfig.spec.json" />
+    <Content Include="README.md" />
+    <Content Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".angular\" />
+    <Folder Include=".angular\cache\" />
+    <Folder Include=".angular\cache\17.3.8\" />
+    <Folder Include=".angular\cache\17.3.8\administrativo\" />
+    <Folder Include=".angular\cache\17.3.8\inscricao\" />
+    <Folder Include=".angular\cache\17.3.8\vite\" />
+    <Folder Include=".angular\cache\17.3.8\vite\deps\" />
+    <Folder Include=".vscode\" />
+    <Folder Include="docs\" />
+    <Folder Include="projects\" />
+    <Folder Include="projects\shared\" />
+    <Folder Include="projects\shared\events\" />
+    <Folder Include="projects\smc.gpi.administrativo\" />
+    <Folder Include="projects\smc.gpi.administrativo\src\" />
+    <Folder Include="projects\smc.gpi.administrativo\src\app\" />
+    <Folder Include="projects\smc.gpi.administrativo\src\assets\" />
+    <Folder Include="projects\smc.gpi.inscricao\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\interfaces\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\enums\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa-grupo\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa-simples\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-hierarquia\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-hierarquia\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-sem-taxa\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-sem-taxa\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-vazio\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\componentes\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\componentes\pagina-erros\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\componentes\pagina-erros\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\environments\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\inteceptors\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-padrao\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-footer\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-footer\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-header\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-header\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\model\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\service\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\mock\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\models\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\app\core\services\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\assets\" />
+    <Folder Include="projects\smc.gpi.inscricao\src\assets\recursos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="projects\shared\events\single-click.event.ts" />
+    <TypeScriptCompile Include="projects\shared\tools.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.administrativo\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.administrativo\src\app\app.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.administrativo\src\app\app.config.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.administrativo\src\app\app.routes.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.administrativo\src\main.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\app.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\app.config.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\app.routes.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\interfaces\taxas-oferta.interface.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\interfaces\taxas-selecionadas.interface.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\datasource-item.model.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\enums\tipo-cobranca.enum.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\grupo-taxa.model.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\herarquia.model.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\lista-oferta.model.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\selecao-oferta.model.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\model\taxas-selecionadas.model.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa-grupo\selecao-oferta-com-taxa-grupo.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa-grupo\selecao-oferta-com-taxa-grupo.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa-simples\selecao-oferta-com-taxa-simples.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa-simples\selecao-oferta-com-taxa-simples.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\selecao-oferta-com-taxa.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\service\selecao-oferta-com-taxa.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-com-taxa\service\selecao-oferta-com-taxa.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-hierarquia\selecao-oferta-hierarquia.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-hierarquia\selecao-oferta-hierarquia.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-hierarquia\service\selecao-oferta-hierarquia.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-hierarquia\service\selecao-oferta-hierarquia.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-sem-taxa\selecao-oferta-sem-taxa.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-sem-taxa\selecao-oferta-sem-taxa.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-sem-taxa\service\selecao-oferta-sem-taxa.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-sem-taxa\service\selecao-oferta-sem-taxa.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-vazio\selecao-oferta-vazio.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta-vazio\selecao-oferta-vazio.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\selecao-oferta.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\service\selecao-oferta-data.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\service\selecao-oferta.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\areas\ins\selecao-oferta\service\selecao-oferta.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\componentes\pagina-erros\pagina-erros.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\componentes\pagina-erros\pagina-erros.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\componentes\pagina-erros\service\pagina-erros-data.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\componentes\pagina-erros\service\pagina-erros-data.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\environments\environment.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\inteceptors\ErrosInterceptor.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-padrao\layout-padrao.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-padrao\layout-padrao.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-footer\layout-footer.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-footer\layout-footer.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-footer\service\layout-footer.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-footer\service\layout-footer.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-header\layout-header.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-header\layout-header.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-header\service\layout-header.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-header\service\layout-header.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\layout-menu-lateral.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\layout-menu-lateral.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\service\layout-menu-lateral-data.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\service\layout-menu-lateral-data.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\service\layout-menu-lateral.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-menu-lateral\service\layout-menu-lateral.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\layout-navegacao.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\layout-navegacao.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\service\layout-navegacao-data.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\service\layout-navegacao-data.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\service\layout-navegacao.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\componente\layout-navegacao\service\layout-navegacao.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\layout-processo.component.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\layout-processo.component.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\model\filtro-pagina.model.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\model\layout-navegacao.model.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\service\layout-processo-data.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\service\layout-processo.service.spec.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\layout-processo\service\layout-processo.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\mock\tree-node.service.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\app\core\models\GpiLookup.ts" />
+    <TypeScriptCompile Include="projects\smc.gpi.inscricao\src\main.ts" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+</Project>

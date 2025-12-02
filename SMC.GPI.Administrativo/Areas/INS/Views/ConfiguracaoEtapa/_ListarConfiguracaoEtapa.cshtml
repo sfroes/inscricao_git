@@ -1,0 +1,60 @@
+﻿@model SMCPagerModel<ConfiguracaoEtapaListaViewModel>
+
+@(Smc.Grid("gridConfiguracaoEtapa")
+                 .Action("ListarConfiguracaoEtapa", "ConfiguracaoEtapa")
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes",
+                                                item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new
+                                                {
+                                                    @seq = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).Seq)
+                                                }, "ConfiguracaoEtapa")
+                                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                                            .SecurityToken(UC_INS_001_03_04.MANTER_CONFIGURACAO_ETAPA),
+
+                                            item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new
+                                            {
+                                                @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).Seq),
+                                                @seqEtapaProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqEtapaProcesso),
+                                                @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqProcesso)
+                                            }, "ConfiguracaoEtapa")
+                                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                                            .Ajax(isPost: true, updateTargetId: "#divGridConfiguracaoEtapa")
+                                            .SecurityToken(UC_INS_001_03_04.MANTER_CONFIGURACAO_ETAPA)
+                                            .Confirm(Smc.GetUIResource("Exclusao_Configuracao_Etapa_Title"),
+                                                         string.Format(Smc.GetUIResource("Exclusao_Configuracao_Etapa_Confirmacao"), (item as ConfiguracaoEtapaListaViewModel).Nome)),                                      
+
+                                        item => Smc.Button("ConfiguracaoPaginaEtapa", "Index",
+                                                new
+                                                {
+                                                    @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).Seq),
+                                                    @seqEtapa = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqEtapaProcesso),
+                                                    @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqProcesso)
+                                                }, "ConfiguracaoEtapaPagina")
+                                            .Type(SMCButtonType.Link)
+                                            .SecurityToken(UC_INS_001_03_06.CONFIGURAR_PAGINAS_ETAPA),
+                                                item => Smc.Button("DocumentacaoRequerida", "Index",
+                                                    new
+                                                    {
+                                                        @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).Seq),
+                                                        @seqEtapa = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqEtapaProcesso),
+                                                        @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqProcesso)
+                                                    }, "DocumentoRequerido")
+                                            .Type(SMCButtonType.Link)
+                                            .SecurityToken(UC_INS_001_03_13.PESQUISAR_DOCUMENTACAO_REQUERIDA),
+
+                                            item => Smc.Button("GrupoDocumentacaoRequerida", "Index",
+                                                new
+                                                {
+                                                    @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).Seq),
+                                                    @seqEtapa = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqEtapaProcesso),
+                                                    @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqProcesso)
+                                                }, "GrupoDocumentoRequerido")
+                                            .Type(SMCButtonType.Link)
+                                            .SecurityToken(UC_INS_001_03_15.PESQUISAR_GRUPO_DOCUMENTACAO_REQUERIDA)
+
+                                            /*,
+                                        item => Smc.Button("Notificacoes", "Notificacoes", new { @seqEtapa = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqEtapaProcesso), @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConfiguracaoEtapaListaViewModel).SeqProcesso) }, "Processo")
+                                            .Type(SMCButtonType.Link)*/
+
+
+))

@@ -1,0 +1,214 @@
+﻿@inherits SMC.Framework.UI.Mvc.SMCWebViewPage<dynamic>
+@using SMC.Framework.Security
+@using SMC.Framework.UI.Mvc.Html
+@using StackExchange.Profiling;
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <title>@Smc.GetUIResource("SiglaAplicacao")</title>
+
+    <link rel="icon" href="~/Content/Images/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="accept-language" content="pt-br">
+    <meta name="author" content="GTI - Gerência de Tecnologia da Informação">
+    <meta name="copyright" content="© 2023 GTI" />
+    <meta name="description" content="Sistema de Gestão de Inscrições - PUC Minas">
+    <meta name="keywords" content="Sistema de Gestão de Inscrições - PUC Minas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">*@
+    @*<meta name="viewport" content="width=767, initial-scale=1">*@
+
+    <!-- classes css padrões -->
+    @Html.SMCRegisterBaseCss()
+
+    @if (IsSectionDefined("Css"))
+    {
+        @RenderSection("Css")
+    }
+
+    <!-- FA 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" integrity="sha512-pZlKGs7nEqF4zoG0egeK167l6yovsuL8ap30d07kA5AJUq+WysFlQ02DLXAmN3n0+H3JVz5ni8SJZnrOaYXWBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- FONT HEEBO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+
+    @{
+        string idsTagManager = string.Empty;
+        if (TempData.ContainsKey(SMC.Inscricoes.UI.Mvc.Attributes.GoogleTagManagerFilterAttribute.TempDataKey))
+        {
+            idsTagManager = TempData[SMC.Inscricoes.UI.Mvc.Attributes.GoogleTagManagerFilterAttribute.TempDataKey].ToString();
+        }
+    }
+
+    @if (!string.IsNullOrEmpty(idsTagManager))
+    {
+        <!-- Google Tag Manager -->
+        <script>
+            @foreach (var item in idsTagManager.Split(','))
+            {
+                <text>
+                    (function (w, d, s, l, i) {
+                        w[l] = w[l] || []; w[l].push({
+                            'gtm.start':
+                                new Date().getTime(), event: 'gtm.js'
+                        }); var f = d.getElementsByTagName(s)[0],
+                            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                    })(window, document, 'script', 'dataLayer', '@item');
+                </text>
+            }
+        </script>
+        <!-- End Google Tag Manager (noscript) -->
+    }
+
+    @Html.SMCGoogleAnalyticsTagManagerHead()
+</head>
+<body>
+    @Html.SMCGoogleAnalyticsTagManagerBody()
+
+    @if (!string.IsNullOrEmpty(idsTagManager))
+    {
+        <!-- Google Tag Manager (noscript) -->
+        foreach (var item in idsTagManager.Split(','))
+        {
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id=@item"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+        }
+        <!-- End Google Tag Manager (noscript) -->
+    }
+    <!-- componente noscript -->
+    @Html.SMCNoScriptWarning()
+
+
+    @using (Smc.Div("divConteudoPrincipal").CssClass("container-fluid").Begin())
+    {
+        using (Smc.Div("divConteudoPrincipalEstrutura").CssClass("row").Begin())
+        {
+            <header class="smc-ribbon">
+
+                <!-- (obrigatório) -->
+                <div class="smc-header-conteudo">
+                    <a href="@Url.Action("Index", "Home", new { area = string.Empty })" class="smc-aplicaco-logotipo @SMCSizeHelper.GetSizeClasses(SMCSize.Grid5_24, SMCSize.Grid6_24, SMCSize.Grid6_24)">
+                        @*-- Padrão para insersão de logotipo --*@
+                        <img class="img-responsive" src="/Recursos/Inscricoes/4.0/GPI.Inscricao/Images/smc-gpi-logo.png" alt="Logotipo GPI" />
+                    </a>
+
+                    <!-- (obrigatório) -->
+                    @using (Smc.Div("divAreaUsuario").CssClass("smc-gpi-usuario").Size(SMCSize.Grid19_24, SMCSize.Grid18_24, SMCSize.Grid18_24, SMCSize.Grid19_24).Begin())
+                    {
+                        <span class="smc-gpi-nome-usuario">@User.SMCGetNome()</span>
+                        @*-- Área do usuário*@
+                        <ul class="nav navbar-nav @SMCSizeHelper.GetSizeClasses(SMCSize.Grid3_24, SMCSize.Grid8_24, SMCSize.Grid4_24,SMCSize.Grid3_24)">
+                            @*-- Usuário --*@
+                            @(Smc.UserProfileWindow()
+                                                        .Buttons(b => b
+                                                        .ShowProfile()
+                                                        .ChangePassword()
+                                                        .Logout()))
+                            <li>
+                                @Smc.Accessibility()
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </header>
+
+            <!--(obrigatório)-->
+            <div class="smc-principal">
+                <!-- (obrigatório) -->
+                @Smc.MessagePlaceholder(SMCMessagePlaceholders.Default).CssClass("smc-mensagens-principal")
+
+                <div class="smc-painel-esquerda col-xs-3 col-sm-3 col-md-5">
+                    <div class="smc-painel-esquerda-conteudo">
+                        @if (IsSectionDefined("PainelLateral"))
+                        {
+                            @RenderSection("PainelLateral")
+                        }
+                        else
+                        {
+                            @Html.Partial("_PainelLateralHome")
+                        }
+                    </div>
+                </div>
+
+                <!--(obrigatório)-->
+                <div class="col-xs-21 col-xs-offset-3 col-sm-21 col-sm-offset-3 col-md-19 col-md-offset-5">
+
+                    <!-- (obrigatório) -->
+                    @Smc.MessagePlaceholder(SMCMessagePlaceholders.Centro).CssClass("smc-mensagens-centro")
+
+                    <!-- (obrigatório) -->
+                    <div class="smc-conteudo-centro">
+                        <section class="container-fluid">
+                            <!-- titulo da página (obrigatório)-->
+                            @{
+                                var titulo = Smc.RenderTitle();
+                            }
+                            @if (titulo != null && !string.IsNullOrWhiteSpace(titulo.ToHtmlString()))
+                            {
+                                <h1>@titulo</h1>
+                            }
+
+                            <!-- corpo da página (obrigatório) -->
+                            @RenderBody()
+                        </section>
+                    </div>
+
+                </div>
+
+                <!--(opcional)-->
+                <div class="smc-painel-direita">
+                    <!-- (obrigatório) -->
+                    @Smc.MessagePlaceholder(SMCMessagePlaceholders.Direita).CssClass("smc-mensagens-direita")
+                </div>
+
+            </div>
+            <!--(opcional)-->
+            <footer class="smc-footer footer col-xs-21 col-xs-offset-3 col-sm-21 col-sm-offset-3 col-md-19 col-md-offset-5">
+                <ul class="smc-footer-conteudo container">
+                    <li class="smc-footer-copyright" title="@Smc.GetUIResource("Layout_Legenda_Copyright")">@Smc.GetUIResource("Layout_Texto_Copyright")</li>
+                    <li class="smc-footer-logo-gti" title="@Smc.GetUIResource("Layout_Titulo_Logotipo_GTI")"></li>
+                    <li class="smc-footer-logo-smc" title="@Smc.GetUIResource("Layout_Titulo_Logotipo_SMC")"></li>
+                </ul>
+            </footer>
+        }
+    }
+    @Smc.MessagePlaceholder(SMCMessagePlaceholders.Footer).IsDefault()
+
+    <!-- componente alerta navegador (obrigatório) -->
+    @(Smc.BrowserAlert()
+                            .RejectBrowser(SMCBrowsers.InternetExplorer, 9)
+                            .RejectBrowser(SMCBrowsers.Chrome, 24)
+                            .RejectBrowser(SMCBrowsers.FireFox, 20)
+                            .RejectBrowser(SMCBrowsers.Safari, 4)
+                            .IconsPath("/Recursos/Images/browsers/")
+    )
+    <!-- componente alerta processando (obrigatório) -->
+    @using (Smc.Div("divAlertaProcessando").CssClass("smc-alerta-processando").Begin())
+    {
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only"></span>
+        <p>@Smc.GetUIResource("Layout_Texto_Aguarde")</p>
+        <div>@Smc.GetUIResource("Layout_Texto_Aguarde")</div>
+    }
+
+    <!-- scripts (obrigatório) -->
+    @Html.SMCRegisterBundleScripts()
+
+    <!-- Section para renderização de scrits das views (obrigatório)-->
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+    @MiniProfiler.Current.RenderIncludes()
+</body>
+</html>

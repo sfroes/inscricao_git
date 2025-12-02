@@ -1,0 +1,25 @@
+﻿// LEGENDA
+.smc-gpi-legenda {
+
+    td {
+        background-color: transparent !important;
+    }
+
+    > tbody > tr > td > p, > tbody > tr > td > p > font > span, span, p, font, td {
+        margin: 0;
+        font-size: 12px !important;
+        color: $smc-cinza-07;
+    }
+
+    p > table {
+        img {
+            width: 16px;
+            height: 16px;
+        }
+
+        p {
+            font-size: 12px;
+            color: $smc-cinza-07;
+        }
+    }
+}

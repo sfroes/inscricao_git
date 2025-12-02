@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Botao_Continuarinscricaoagendamento" xml:space="preserve">
+    <value>Continuar agendamento</value>
+  </data>
+  <data name="Botao_Continuarinscricaoentrega_De_Documentacao" xml:space="preserve">
+    <value>Continuar entrega</value>
+  </data>
+  <data name="Botao_Continuarinscricaoinscricao" xml:space="preserve">
+    <value>Continuar inscrição</value>
+  </data>
+  <data name="Botao_EmitirDocumentacao" xml:space="preserve">
+    <value>Emitir Documentação</value>
+  </data>
+  <data name="Botao_Emitirdocumentacao_Tooltip" xml:space="preserve">
+    <value>Emitir Documentação</value>
+  </data>
+  <data name="Botao_FormularioImpacato" xml:space="preserve">
+    <value>Avaliar</value>
+  </data>
+  <data name="Botao_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Botao_Ingressos" xml:space="preserve">
+    <value>Ingressos</value>
+  </data>
+  <data name="Botao_Inicio" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Botao_Inscreveragendamento" xml:space="preserve">
+    <value>Realizar agendamento</value>
+  </data>
+  <data name="Botao_Inscreverentrega_De_Documentacao" xml:space="preserve">
+    <value>Entregar Documentação</value>
+  </data>
+  <data name="Botao_Inscreverinscricao" xml:space="preserve">
+    <value>Quero me inscrever</value>
+  </data>
+  <data name="Botao_Linkcomprovante" xml:space="preserve">
+    <value>Comprovante</value>
+  </data>
+  <data name="Botao_Meusdados" xml:space="preserve">
+    <value>Meus dados</value>
+  </data>
+  <data name="Botao_Pesquisar" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Botao_Verinscricoes" xml:space="preserve">
+    <value>Ver todas</value>
+  </data>
+  <data name="Botao_Verprocessos" xml:space="preserve">
+    <value>Ver todos</value>
+  </data>
+  <data name="Chamada_Formulario_Impacto" xml:space="preserve">
+    <value>Conte como foi sua experiência</value>
+  </data>
+  <data name="Chamada_Formulario_Impacto_Complemento" xml:space="preserve">
+    <value>Sua opinião é crucial para aprimorarmos futuros eventos. Por favor, reserve alguns minutos para compartilhar suas impressões. Agradecemos antecipadamente por sua contribuição valiosa, que nos ajudará a oferecer experiências ainda melhores.</value>
+  </data>
+  <data name="Chamada_Formulario_Impacto_Disponivel" xml:space="preserve">
+    <value>Disponível até</value>
+  </data>
+  <data name="FormualarioImpacto_Modal_Titulo" xml:space="preserve">
+    <value>Formulário de Avaliação</value>
+  </data>
+  <data name="Label_Periodo" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="Mensagem_Informativa_Checkin_Desabilitada" xml:space="preserve">
+    <value>Pagamento de taxa em aberto.</value>
+  </data>
+  <data name="Mensagem_Informativa_Checkin_Habilitada" xml:space="preserve">
+    <value>Clique aqui para visualizar os QR Codes de acesso.</value>
+  </data>
+  <data name="Mensagem_Informativa_Entrega_Documentacao" xml:space="preserve">
+    <value>Você possui documentos pendentes. Clique em "Documentação Pendente" para anexá-los. Você tem ate o dia {0} para realizar a nova entrega da documentação.</value>
+  </data>
+  <data name="Mensagem_Informativa_Inscricao_Indisponivel_AGENDAMENTO" xml:space="preserve">
+    <value>Agendamento indisponível.</value>
+  </data>
+  <data name="Mensagem_Informativa_Inscricao_Indisponivel_ENTREGA_DE_DOCUMENTACAO" xml:space="preserve">
+    <value>Entrega de documentação indisponível.</value>
+  </data>
+  <data name="Mensagem_Informativa_Inscricao_Indisponivel_INSCRICAO" xml:space="preserve">
+    <value>Inscrição indisponível.</value>
+  </data>
+  <data name="Mensagem_Informativa_Inscricoes_Em_Manutencao_AGENDAMENTO" xml:space="preserve">
+    <value>O agendamento encontra-se temporariamente indisponível.</value>
+  </data>
+  <data name="Mensagem_Informativa_Inscricoes_Em_Manutencao_ENTREGA_DE_DOCUMENTACAO" xml:space="preserve">
+    <value>A entrega de documentação encontra-se temporariamente indisponível.</value>
+  </data>
+  <data name="Mensagem_Informativa_Inscricoes_Em_Manutencao_INSCRICAO" xml:space="preserve">
+    <value>A inscrição encontra-se temporariamente indisponível.</value>
+  </data>
+  <data name="Mensagem_Informativa_Inscricoes_Nao_Liberada" xml:space="preserve">
+    <value>Este processo encontra-se {0}.</value>
+  </data>
+  <data name="Mensagem_Informativa_Oferta_Nao_Selecionada" xml:space="preserve">
+    <value>{0} não selecionado(a).</value>
+  </data>
+  <data name="Mensagem_Informativa_Processo_Cancelado" xml:space="preserve">
+    <value>Processo cancelado.</value>
+  </data>
+  <data name="Mensagem_Informativa_Processo_Encerrado" xml:space="preserve">
+    <value>Processo encerrado.</value>
+  </data>
+  <data name="Mensagem_NaoIniciouAgendamento" xml:space="preserve">
+    <value>Você ainda não realizou o seu agendamento.</value>
+  </data>
+  <data name="Mensagem_NaoIniciouEntregaDocumentacao" xml:space="preserve">
+    <value>Você ainda não realizou a entrega da sua documentação.</value>
+  </data>
+  <data name="Mensagem_NaoIniciouInscricao" xml:space="preserve">
+    <value>Você ainda não iniciou sua inscrição.</value>
+  </data>
+  <data name="Mensagem_Nenhuma_Inscricao_Aberta" xml:space="preserve">
+    <value>Não existem inscrições em aberto.</value>
+  </data>
+  <data name="Mensagem_Nenhuma_Inscricao_Aberta_AGENDAMENTO" xml:space="preserve">
+    <value>Agendamento indisponível.</value>
+  </data>
+  <data name="Mensagem_Nenhuma_Inscricao_Aberta_ENTREGA_DE_DOCUMENTACAO" xml:space="preserve">
+    <value>Entrega de documentação indisponível.</value>
+  </data>
+  <data name="Mensagem_Nenhuma_Inscricao_Aberta_INSCRICAO" xml:space="preserve">
+    <value>Inscrição indisponível.</value>
+  </data>
+  <data name="Mensagem_Tooltip_Botao_Emitir_Documentacao" xml:space="preserve">
+    <value>{0} disponível para emissão.</value>
+  </data>
+  <data name="Texto_Mais_Informacoes" xml:space="preserve">
+    <value>Mais informações</value>
+  </data>
+  <data name="Titulo_Inscricoes" xml:space="preserve">
+    <value>Suas inscrições</value>
+  </data>
+  <data name="Titulo_Inscricoes_Agendamento" xml:space="preserve">
+    <value>Seus agendamentos</value>
+  </data>
+  <data name="Titulo_Inscricoes_Em_Aberto" xml:space="preserve">
+    <value>Veja o que temos para você:</value>
+  </data>
+  <data name="Titulo_Inscricoes_Entrega_De_Documentacao" xml:space="preserve">
+    <value>Seus Documentos</value>
+  </data>
+  <data name="Titulo_Inscricoes_Inscricao" xml:space="preserve">
+    <value>Suas Inscrições</value>
+  </data>
+  <data name="_ListarEtapaInscricaoProcesso_Botao_Inscrever" xml:space="preserve">
+    <value>Quero me inscrever</value>
+  </data>
+  <data name="_ListarEtapaInscricaoProcesso_Botao_Inscrever_Tooltip" xml:space="preserve">
+    <value>Quero me inscrever</value>
+  </data>
+  <data name="_ListarEtapaInscricao_Botao_Inscrever" xml:space="preserve">
+    <value>Inscreva-se</value>
+  </data>
+  <data name="_ListarEtapaInscricao_Botao_Inscrever_Tooltip" xml:space="preserve">
+    <value>Inscreva-se</value>
+  </data>
+  <data name="_ListarInscricoesProcesso_Botao_Continuarinscricao" xml:space="preserve">
+    <value>Continuar Inscrição</value>
+  </data>
+  <data name="_ListarInscricoesProcesso_Botao_Continuarinscricao_Tooltip" xml:space="preserve">
+    <value>Continuar Inscrição</value>
+  </data>
+  <data name="_ListarInscricoesProcesso_Botao_Novaentregadocumentacao" xml:space="preserve">
+    <value>Documentação Pendente</value>
+  </data>
+  <data name="_ListarInscricoesProcesso_Botao_Novaentregadocumentacao_Tooltip" xml:space="preserve">
+    <value>Documentação Pendente</value>
+  </data>
+  <data name="_ListarInscricoes_Botao_Continuarinscricao" xml:space="preserve">
+    <value>Continuar Inscrição</value>
+  </data>
+  <data name="_ListarInscricoes_Botao_Continuarinscricao_Tooltip" xml:space="preserve">
+    <value>Continuar Inscrição</value>
+  </data>
+  <data name="_ListarInscricoes_Botao_Homeprocesso" xml:space="preserve">
+    <value>Acessar</value>
+  </data>
+  <data name="_ListarInscricoes_Botao_Homeprocesso_Tooltip" xml:space="preserve">
+    <value>Acessar</value>
+  </data>
+  <data name="_ListarInscricoes_Botao_Novaentregadocumentacao" xml:space="preserve">
+    <value>Entregar documentação</value>
+  </data>
+  <data name="_ListarInscricoes_Botao_Novaentregadocumentacao_Tooltip" xml:space="preserve">
+    <value>Entregar documentação</value>
+  </data>
+  <data name="Texto_Calendario" xml:space="preserve">
+    <value>Calendário</value>
+  </data>
+  <data name="Texto_Inicio" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="Texto_Fim" xml:space="preserve">
+    <value>Fim</value>
+  </data>
+  <data name="Texto_Nao_foram_encontrados" xml:space="preserve">
+    <value>Não foram encontrados resultados para a sua pesquisa.</value>
+  </data>
+</root>

@@ -1,0 +1,183 @@
+﻿@import "../../Css/smc-login.scss";
+
+:root {
+    --color-secondary: #0b9e77;
+    --color-primary: #3e86c1;
+    --color-primary-2: #0b9e77;
+    --color-primary-4: #fbe7bb;
+    --color-secondary-4: #e16c19;
+    --color-text: #000000;
+    --light-grey: #f7f7f7;
+    --color-header: #fff6e4;
+    --color-label: #000000;
+    --input-focus-border: #ffd7bc;
+    --input-focus-bg: #fff9f5;
+    --color-body: #fefbf5;
+}
+
+body {
+    background: var(--color-body) !important;
+}
+
+.container-fluid {
+    &:before {
+        border-color: transparent transparent transparent var(--color-primary-4) !important;
+        filter: none;
+    }
+}
+.smc-datepicker > div.smc-ico-datepicker::before {
+    color: var(--color-primary);
+}
+
+.smc-login-body {
+    &:before {
+        background-color: var(--color-primary-4) !important;
+        background-image: url('../Images/smc-logo-login.svg');
+        box-shadow: none;
+        background-position: 45% 50%;
+        background-size: 240px;
+
+        @media screen and (max-width: 767px) {
+            background-image: url('../Images/smc-logo-puc.svg'),url('../Images/smc-separador.svg'), url('../Images/smc-logo-aulao.svg') !important;
+            background-position: 83% 0, 62% 15px, 18% 0.5em;
+            background-size: 83px, 1px, 190px;
+            height: 7.05em;
+        }
+
+        @media screen and (max-width: 375px) {
+            background-position: 90% -3px, 63% 18px, 12% 0.1em;
+        }
+    }
+}
+
+.smc-login-section {
+    @media screen and (max-width: 767px) {
+        margin-top: 4rem;
+    }
+}
+
+.smc-login-conteudo .smc-message-container.smc-mensagens-principal {
+
+    @media screen and (max-width: 767px) {
+        display:none;
+    }
+}
+
+#formularioLogin {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-text) !important;
+        margin-top: 8rem !important;
+
+    }
+}
+
+.smc-login-lembrar-senha {
+    a {
+        color: var(--color-primary-2);
+    }
+}
+
+.smc-login-separador {
+    span {
+        color: var(--color-text);
+    }
+}
+
+.smc-preenchimento-obrigatorio {
+    color: var(--color-secondary-4) !important;
+}
+
+#formularioLembrarSenha,
+#formularioCadastrarUsuario,
+.smc-login-texto-reenvio-senha,
+#formularioRedefinirSenha {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-text);
+    }
+}
+
+input[type=text],
+input[type=password] {
+    &:focus {
+        border: 1px solid var(--input-focus-border) !important;
+        background-color: var(--input-focus-bg) !important;
+    }
+}
+
+.smc-btn-voltar-icotext {
+    color: var(--color-primary-2);
+}
+
+.smc-detalhe-editavel-titulo {
+    color: var(--color-text) !important;
+
+    &:before {
+        border-color: transparent transparent transparent var(--color-secondary-4);
+    }
+}
+
+#fieldsetCadastrarUsuario {
+    &:first-child {
+        a.smc-form-ver-senha {
+            bottom: -38px;
+            float: left;
+            margin-left: -10px;
+        }
+    }
+}
+
+a.smc-form-ver-senha {
+    i {
+        color: var(--color-text);
+    }
+}
+
+div.smc-button {
+    > [disabled] {
+        background-color: var(--color-primary) !important;
+        border: 1px solid var(--color-primary) !important;
+    }
+}
+
+.smc-datepicker > div.smc-ico-datepicker::before {
+    color: var(--color-text);
+}
+
+.smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.smc-btn-cadastrar {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.footer {
+    background-color: var(--color-header);
+}
+
+a.smc-form-ver-senha i, .smc-ico-datepicker::before {
+    color: var(--color-primary) !important;
+}
+
+.smc-login-lista-itens.smc-detalhe-editavel-tabular {
+    .smc-preenchimento-obrigatorio{
+        position:absolute;
+    + label{
+        margin-left:5px;
+    }
+        }
+
+}
+
+.smc-login-texto-reenvio-senha .smc-display-collection p {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+#formularioRedefinirSenha:before {
+    margin-top: 5rem !important;
+}

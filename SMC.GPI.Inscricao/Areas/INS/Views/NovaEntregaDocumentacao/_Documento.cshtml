@@ -1,0 +1,24 @@
+﻿@model  NovaEntregaDocumentacaoDocumentoViewModel
+
+@Smc.EditorFor(x => x.Seq)
+@Smc.EditorFor(x => x.SeqDocumentoRequerido)
+@Smc.EditorFor(x => x.SituacaoEntregaDocumento)
+@Smc.EditorFor(x => x.DescricaoTipoDocumento).CssClass("smc-col-4 smc-gpi-descricao-tipo-documento")
+@Smc.EditorFor(x => x.DescricaoArquivoAnexado).CssClass("smc-col-3")
+@Smc.EditorFor(x => x.SeqArquivoAnexado)
+@Smc.EditorFor(x => x.SeqArquivoAnexadoAnterior)
+@Smc.EditorFor(x => x.ArquivoAnexado).CssClass("smc-gpi-anexo-entrega-documento")
+
+
+<div class="visualiza-obs-container">
+    @if (Model.SeqArquivoAnexadoAnterior.HasValue)
+    {
+        @(Smc.Button(SMCButtonBehavior.Visualizar, "DownloadDocumento", new { @id = SMCDESCrypto.EncryptNumberForURL(Model.SeqArquivoAnexadoAnterior.Value), @area = "" }, "Home")
+                    .Attribute("target", "_blank")
+                    .CssClass("smc-btn-download-icotext-destaque")
+                    .Text("Anexo Anterior"))
+    }
+    @Smc.EditorFor(x => x.Observacao)
+</div>
+
+

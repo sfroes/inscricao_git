@@ -1,0 +1,27 @@
+﻿@model ConvocacaoViewModel
+
+@using (Smc.Header("headerLancamentoResultado", SMCHeaderType.Primary)
+            .Item(prop => prop.GrupoOferta, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+            .Item(prop => prop.DescricaoOferta, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+            .Item(prop => prop.SituacaoAtual, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24)
+            .Begin())
+{ }
+
+@Smc.EditorFor(m => m.SeqProcesso)
+
+@using (Smc.Fieldset("fieldsetAlterarSituacao").CssClass("smc-gpi-fieldset").Begin())
+{
+    @Smc.EditorFor(m => m.SeqTipoProcessoSituacaoDestino)
+    @Smc.EditorFor(m => m.SeqMotivoSGF)
+    @Smc.EditorFor(m => m.Justificativa)
+}
+
+@using (Smc.Fieldset("fieldsetInscritos").Begin())
+{
+    @(Smc.List("listaConvocacao", m => m.Convocados)
+                                .HtmlTemplate(
+                                    @<text>
+                                        @Html.Partial("_ConvocacaoItem", item.Value)
+                                    </text>)
+    )
+}

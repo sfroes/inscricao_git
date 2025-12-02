@@ -1,0 +1,9 @@
+@if (servieLayoutMenuLateral.isLoading$()) {
+  <p-skeleton width="100%" height="10px" styleClass="smc-gpi-skeleton-margin" />
+  <p-skeleton width="100%" height="20px" styleClass="smc-gpi-skeleton-margin" />
+  <p-skeleton width="100%" height="20px" styleClass="smc-gpi-skeleton-margin" />
+  <p-skeleton width="100%" height="20px" styleClass="smc-gpi-skeleton-margin" />
+
+} @else {
+  <div id="menuLateral" [innerHtml]="servieLayoutMenuLateral.conteudo$()"></div>
+}

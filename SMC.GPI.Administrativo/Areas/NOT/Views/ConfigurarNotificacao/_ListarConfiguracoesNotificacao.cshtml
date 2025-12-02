@@ -1,0 +1,36 @@
+﻿@model SMCPagerModel<ConfigurarNotificacaoListaViewModel>
+
+@(Smc.Grid("listaConfiguracaoNotificacao", Model)
+    .AutoGenerateColumns()
+    .AllowSort()
+    .ButtonColumn(
+        SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", false,
+            item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seqConfiguracaoNotificacao = SMCDESCrypto.EncryptNumberForURL((item as ConfigurarNotificacaoListaViewModel).Seq) }, "ConfigurarNotificacao")
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .SecurityToken(UC_INS_001_01_12.MANTER_CONFIGURACAO_NOTIFICACAO),
+
+            item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new
+            {
+                @seqConfiguracaoNotificacao = SMCDESCrypto.EncryptNumberForURL((item as ConfigurarNotificacaoListaViewModel).Seq),
+                seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConfigurarNotificacaoListaViewModel).SeqProcesso)
+            }, "ConfigurarNotificacao")
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .SecurityToken(UC_INS_001_01_12.MANTER_CONFIGURACAO_NOTIFICACAO)
+                .Ajax(isPost: true, updateTargetId: "#divConfiguracaoNotificacao")
+                .Confirm(Smc.GetUIResource("Exclusao_Configuracao_Notificacao_Title"),
+                            string.Format(Smc.GetUIResource("Exclusao_Configuracao_Notificacao_Confirmacao"), (item as ConfigurarNotificacaoListaViewModel).TipoNotificacao)),
+
+            item => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN).Type(SMCButtonType.Link)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalParametrosNotificacao")
+                .Text(Smc.GetUIResource("Botao_ParemetrosEnvio"))
+                .Tooltip(Smc.GetUIResource("Botao_ParemetrosEnvio_Tooltip"))
+                .Ajax(isPost: false)
+                .SecurityToken(UC_INS_001_01_12.MANTER_CONFIGURACAO_NOTIFICACAO)
+                    .Url(Url.Action("ParametrosNotificacao", "ConfigurarNotificacao",
+                    new
+                    {
+                        @seqConfiguracaoNotificacao = SMCDESCrypto.EncryptNumberForURL((item as ConfigurarNotificacaoListaViewModel).Seq),
+                        @seqTipoNotificacao = SMCDESCrypto.EncryptNumberForURL((item as ConfigurarNotificacaoListaViewModel).SeqTipoNotificacao),
+                        @tipoNotificacao = (item as ConfigurarNotificacaoListaViewModel).TipoNotificacao
+                    })))
+)

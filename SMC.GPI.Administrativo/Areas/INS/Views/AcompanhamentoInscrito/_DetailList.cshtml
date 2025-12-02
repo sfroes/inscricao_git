@@ -1,0 +1,175 @@
+﻿
+@model AcompanhamentoInscritoListaViewModel
+
+@*@{
+        if (Model.BackUrl == null)
+        {
+            Model.BackUrl = Request.Url.AbsoluteUri.Replace("AcompanhamentoInscrito/Listar", "AcompanhamentoInscrito");
+        }
+    }*@
+
+
+@{
+    foreach (var item in Model.OpcoesOferta)
+    {
+        item.BackURL = Model.BackUrl;
+    }
+}
+@using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-item smc-gpi-inscricoes-candidato ").Begin())
+{
+    using (Smc.Div().CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid23_24).Begin())
+    { 
+        using (Smc.Div().Size(SMCSize.Grid24_24).CssClass("smc-listdetailed-header-conteudo").Begin())
+        {
+
+            @Smc.DisplayFor(m => m.SeqInscrito).Size(SMCSize.Grid3_24)
+            @Smc.DisplayFor(m => m.CpfouPassaporte).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.NomeInscrito).Size(SMCSize.Grid17_24)
+
+            @Smc.DisplayFor(m => m.SemestreAno).Size(SMCSize.Grid3_24)
+            @Smc.DisplayFor(m => m.SeqInscricao).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.DescricaoProcesso).Size(SMCSize.Grid13_24)
+            @Smc.DisplayFor(m => m.SituacaoInscricao).Size(SMCSize.Grid4_24)
+            @Smc.DisplayFor(m => m.BackUrl).Size(SMCSize.Grid24_24)
+
+
+        }
+
+        @Html.Partial("ListarOfertaDetailList", Model.OpcoesOferta)
+
+
+    }
+
+    using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24)
+            .CssClass("smc-buttonset-vertical-secundario").Begin())
+    {
+
+        SMCButtonFluentConfiguration Editar = Smc.Button("AlterarDados", "AlterarDados",
+                     new
+                     {
+                         @seqInscrito = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscrito),
+                         @Origem = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                         @backUrl = Model.BackUrl,
+                         area = "INS"
+                     }, "AcompanhamentoProcesso")
+             .Text(Smc.GetUIResource("Botao_AlterarDados"))
+             .Tooltip(Smc.GetUIResource("Botao_AlterarDados_Tooltip"))
+             .SecurityToken(UC_INS_003_01_09.ALTERACAO_DADOS_INSCRITO)
+             .Type(SMCButtonType.Link);
+
+        SMCButtonFluentConfiguration ConsultarInscricao = Smc.Button("ConsultaInscricao", "ConsultaInscricao",
+         new
+         {
+             seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+             origem = "INS"
+         }, "AcompanhamentoProcesso")
+     .Type(SMCButtonType.Link)
+     .SecurityToken(UC_INS_003_01_06.CONSULTA_INSCRITO);
+
+        SMCButtonFluentConfiguration CadastrarObservacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                 .Attribute(SMCMvcConsts.MODAL_ID, "modalObservacao")
+                 .Text(Smc.GetUIResource("Botao_Observacao"))
+                 .Tooltip(Smc.GetUIResource("Botao_Observacao"))
+                 .Ajax(isPost: false)
+                 .SecurityToken(UC_INS_003_01_08.ALTERACAO_SITUACAO)
+                 .Url(Url.Action("ObservacaoInscricao", "AcompanhamentoProcesso",
+                     new
+                     {
+                         @seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao)
+                     }))
+                 .Type(SMCButtonType.Link);
+
+        SMCButtonFluentConfiguration RegistrarDocumentacao = Smc.Button("RegistrarDocumentacaoEntregue", "ConsultaRegistroDocumentacao",
+                                                        new
+                                                        {
+                                                            @seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+                                                            @origem = "AcompanhamentoInscrito",
+                                                        }, "AcompanhamentoProcesso")
+                                                    .Type(SMCButtonType.Link)
+                                                    .SecurityToken(UC_INS_003_01_05.REGISTRO_DOCUMENTACAO_ENTREGUE);
+
+        SMCButtonFluentConfiguration AlterarSituacao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                     .Attribute(SMCMvcConsts.MODAL_ID, "modalAlterarSituacao")
+                                                     .Text(Smc.GetUIResource("Botao_AlterarSituacaoInscricao"))
+                                                     .Tooltip(Smc.GetUIResource("Botao_AlterarSituacaoInscricao"))
+                                                     .Ajax(isPost: false, updateTargetId: "painelAjaxAlterarSituacao")
+                                                     .SecurityToken(UC_INS_003_01_08.ALTERACAO_SITUACAO)
+                                                     .Url(Url.Action("ListarAlterarSituacao", "AcompanhamentoProcesso",
+                                                         new
+                                                         {
+                                                             @seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+                                                             @seqSituacao = SMCDESCrypto.EncryptNumberForURL(Model.SeqSituacao),
+                                                             @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                                                             @backUrl = Model.BackUrl
+                                                         }))
+                                                     .Type(SMCButtonType.Link);
+        SMCButtonFluentConfiguration ConsultarHistorico = Smc.Button("HistoricoSituacao", "HistoricoSituacao",
+                     new
+                     {
+                         @seqInscrito = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscrito),
+                         @seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+                         @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                         @backUrl = Model.BackUrl
+                     }, "AcompanhamentoProcesso")
+             .Type(SMCButtonType.Link)
+             .SecurityToken(UC_INS_003_01_10.PESQUISAR_HISTORICO_SITUACAO);
+        SMCButtonFluentConfiguration ConsultarNotificacao = Smc.Button("ConsultaNotificacao", "Index",
+                             new
+                             {
+                                 @SeqInscrito = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscrito),
+                                 @SeqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                                 @SeqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+                                 @backURL = Model.BackUrl,
+                                 area = "NOT",
+                                 @Origem = "AcompanhamentoInscrito",
+                             }, "ConsultaNotificacao")
+                         .Type(SMCButtonType.Link)
+                         .SecurityToken(UC_NOT_001_01_01.CONSULTAR_NOTIFICACAO);
+
+        @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).NumberOfButtonsToShow(0)
+                                                     .AddButton(Editar)
+                                                     .AddButton(ConsultarInscricao)
+                                                     .AddButton(CadastrarObservacao)
+                                                     .AddButton(RegistrarDocumentacao)
+                                                     .AddButton(AlterarSituacao)
+                                                     .AddButton(ConsultarHistorico)
+                                                     .AddButton(ConsultarNotificacao)
+                                                     )
+
+    }
+}
+
+
+@using (Smc.ModalWindow("modalAlterarSituacao").Size(SMCModalWindowSize.Large)
+        .Title(Smc.GetUIResource("AlterarSituacaoLote_Modal_Titulo"))
+        .Form("AlterarSituacao", "SalvarAlteracaoSituacaoLote", "AcompanhamentoProcesso", null, false, x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+        //.Confirm(Smc.GetUIResource("Titulo_Confirmacao_Alteracao_Situacao"), Smc.GetUIResource("Mensagem_Confirmacao_Alteracao_Situacao"))
+        .Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Text(Smc.GetUIResource("Botao_Fechar_Modal_Alterar_Situacao")))
+        .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalJustificativaSituacao")
+        .Title(Smc.GetUIResource("Label_JustificativaSituacao"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalAlterarDados")
+        .Title(Smc.GetUIResource("AlterarDados_Modal_Titulo"))
+        .Form("AlterarDados", "SalvarAlteracaoDados", "AcompanhamentoProcesso", null, true,
+            x => x.Ajax(onSuccess: "reloadPagerAjax()"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalObservacao")
+        .Title(Smc.GetUIResource("Observacao_Modal_Titulo"))
+        .Form("AlterarObservacao", "SalvarObservacao", "AcompanhamentoProcesso", null, true, x => x.Ajax())
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+

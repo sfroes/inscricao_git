@@ -1,0 +1,244 @@
+﻿@import "Componentes/buttons";
+@import "Componentes/form";
+@import "Componentes/header";
+@import "Componentes/wizard";
+
+:root {
+    --color-text: #636362;
+    --color-label: #4b4b4b;
+    --color-text-reading: #000000;
+    --color-text-secondary: #a7a7a7;
+    --color-body: #ffffff;
+    --color-primary-dark: #813300;
+    --color-primary: #ce641e;
+    --color-hover: #ce641e;
+    --color-primary-2: #eab81c;
+    --color-primary-3: #eab81c;
+    --color-secondary: #636362;
+    --color-secondary-2: #636362;
+    --color-secondary-3: #84c4e6;
+    --color-secondary-4: #1e357c;
+    --color-secondary-5: #b8cdd9;
+    --color-font-h3: #636362;
+    --color-font-paths: #2c438e;
+    --color-detail-h3: #636362;
+    --color-font-h4: #636362;
+    --color-detail-h4: #636362;
+    --color-error: #c7311d;
+    --color-alert: #ff7a08;
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #777777;
+    --light-grey: #f7f7f7;
+    --light-grey-1: #fdfdfd;
+    --border-default: #dfdfdf;
+    --border-button: #afafaf;
+    --border-button-secondary: #ce641e;
+    --background-button-secondary: #f5f5f5;
+    --text-button-secondary: #ce641e;
+    --message-alert-icon: #eab81c;
+    --input-border-color: #dbdbdb;
+    --progress-bar-color: #dbdbdb;
+    --progress-value-color: #03c12b;
+    --instrucoes-preenchimento-bg: #fffdfb;
+}
+
+h1 {
+    color: var(--color-text);
+}
+
+h3,
+h4,
+.smc-gpi-conteudo-sgf fieldset legend,
+.smc-gpi-tela-confirmacao fieldset legend {
+    &:before {
+        border-color: transparent transparent transparent var(--color-primary-2);
+    }
+}
+
+.smc-preenchimento-obrigatorio {
+    color: var(--color-primary-2) !important;
+}
+
+.smc-instrucoes-preenchimento-container {
+    .smc-instrucoes-preenchimento-icone {
+        color: var(--color-primary) !important;
+
+        &:before {
+            border: 1px solid var(--color-primary);
+        }
+    }
+}
+
+.smc-detalhe-editavel-titulo {
+    &:before {
+        border-color: transparent transparent transparent var(--color-primary-2);
+    }
+}
+
+.smc-instrucoes-preenchimento-janela-conteudo {
+    background-color: var(--instrucoes-preenchimento-bg);
+    border-color: var(--color-primary-2);
+}
+
+.smc-gpi-usuario {
+    &:before {
+        background-color: var(--light-grey);
+    }
+
+    .smc-gpi-nome-usuario {
+        color: var(--color-text);
+    }
+
+    .smc-btn-usuario,
+    .smc-btn-meudados,
+    .smc-btn-acessibilidade {
+        &:before {
+            color: var(--color-text);
+        }
+    }
+
+    .smc-ico-meusdados {
+        div:before {
+            color: var(--color-text);
+        }
+    }
+}
+
+
+.smc-gpi-lista-home-processo {
+    p, span, font-face, li {
+        font-size: 1em !important;
+        color: var(--color-text) !important;
+        font-family: var(--body-fonts) !important;
+    }
+}
+
+.smc-gpi-data {
+    border: 1px solid var(--border-default);
+}
+
+.smc-gpi-painel-lateral {
+    background: var(--light-grey);
+    box-shadow: none;
+
+    h2 {
+        color: var(--color-text);
+        font-weight: 600;
+
+        &:before {
+            filter: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.smc-gpi-data-inicio {
+    background-color: var(--light-grey);
+
+    p {
+        color: var(--color-text);
+    }
+
+    &:before {
+        border-color: transparent transparent transparent var(--light-grey);
+        webkit-filter: drop-shadow(4px 0px 2px rgba(0,0,0,0.09));
+        filter: drop-shadow(4px 0px 2px rgba(0,0,0,0.09));
+    }
+}
+
+.smc-gpi-data-fim {
+    background-color: var(--light-grey-1);
+
+    p {
+        color: var(---color-text);
+    }
+}
+
+.smc-gpi-pendencia {
+    color: var(--color-text);
+    font-weight: 600;
+
+    &:before {
+        border-color: transparent transparent transparent var(--color-primary-2);
+    }
+}
+
+.smc-gpi-lista-oferta {
+    p {
+        color: var(--color-text);
+        font-weight: 600;
+
+        &:before {
+            border-color: transparent transparent transparent var(--color-font-paths);
+        }
+    }
+}
+//TELAS INTERNAS DO PROCESSO
+.smc-gpi-nome-grupooferta {
+    color: var(--color-primary-2);
+    font-weight: 600;
+}
+
+.smc-gpi-processo-passo-atual {
+    @include passos-processo(var(--color-font-paths), var(--color-font-paths), var(--color-font-paths), var(--white),"\f101");
+}
+
+.smc-gpi-processo-passo-concluido {
+    @include passos-processo(var(--color-font-paths), var(--color-font-paths), var(--color-font-paths), var(--white),"\f00c");
+}
+
+.smc-barra-progresso {
+    p, span {
+        color: var(--color-text);
+        font-weight: 600;
+    }
+}
+
+// INSCRIÇÕES NÃO INICIADAS
+.smc-gpi-lista-vazia {
+    color: var(--color-primary);
+}
+
+.smc-gpi-processo-passo-comalerta a {
+    color: var(--color-alert);
+}
+
+.smc-gpi-convertido-pdfa {
+    background-color: var(--color-secondary);
+}
+
+.smc-gpi-ingressos-menu {
+    .smc-list-item + .smc-list-item {
+        display: none;
+    }
+
+    .smc-gpi-ingresso-informacao {
+        display: none;
+    }
+
+    .smc-button + .smc-button {
+        display: none;
+    }
+}
+
+.smc-ingresso-descricao-nivel {
+    > p,
+    p + p {
+        color: var(--color-text) !important;
+    }
+}
+.smc-gpi-box-conteudo-formulario {
+    flex: none;
+}
+
+// SELEÇÃO SEM OFERTA
+.smc-gpi-oferta-vazio {
+    .oferta-vazio-path {
+        fill: var(--color-primary);
+    }
+}
+
+.smc-gpi-img-sem-itens {
+    background-image: url(../Images/smc-gpi-sem-itens.png);
+}

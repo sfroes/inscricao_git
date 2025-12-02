@@ -1,0 +1,46 @@
+﻿@model DocumentoRequeridoFiltroViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.ContextMenu)
+}
+
+@(Html.Action("CabecalhoProcessoEtapaConfiguracao", "ConfiguracaoEtapa", 
+    new { @seqConfiguracaoEtapa = (SMCEncryptedLong) Model.SeqConfiguracaoEtapa,
+          @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso,
+          @seqEtapa = (SMCEncryptedLong)Model.SeqEtapaProcesso,
+        @action = EtapaProcessoActionsEnum.DocumentacaoRequerida, @exibirBotaoConfiguracaoEtapaProcesso = true }))
+
+@using (Smc.Form("formPesquisaDocumentacaoRequerida", "ListarDocumentacaoRequerida").Ajax("#divGridDocumentacaoRequerida").Begin())
+{
+    using (Smc.Div("fieldsetPesquisaDocumentacaoRequerida").Begin())
+    {
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Highlight()
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_INS_001_03_14.MANTER_DOCUMENTACAO_REQUERIDA)
+                 .Url(Url.Action("Incluir",
+                 new
+                 {
+                     @seqConfiguracaoEtapa = (SMCEncryptedLong)Model.SeqConfiguracaoEtapa,
+                     @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso,
+                     @seqEtapa = (SMCEncryptedLong)Model.SeqEtapaProcesso,
+                 })))
+        )
+    }
+}
+
+<div id="divGridDocumentacaoRequerida">
+    @Html.Action("ListarDocumentosRequeridos", new { @seqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa })
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "Index", new
+    {
+        @seqEtapaProcesso = (SMCEncryptedLong)Model.SeqEtapaProcesso,
+        @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso
+    }, "ConfiguracaoEtapa")
+    .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-voltar-icotext"))
+)

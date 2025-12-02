@@ -1,0 +1,106 @@
+@model SMC.GPI.Inscricao.Areas.INS.Models.IngressoViewModel
+
+<div class="smc-gpi-painel-central">
+    <h1>@Model.DescricaoProcesso</h1>
+    @*<h3>Ingressos</h3>*@
+    <div class="display-flex flex-column smc-gpi-lista-home-processo">
+        <div class="smc-linha-btn-terciario smc-gpi-btn-ingresso-carrossel">
+            @*<a href="www.pucminas.br" target="_blank" title="@Smc.GetUIResource("Texto_Imprimir_Qrcodes")">@Smc.GetUIResource("Texto_Imprimir_Qrcodes")</a>*@
+            @(Smc.Button(Smc.GetUIResource("Texto_Imprimir_Qrcodes"))
+             .Type(SMCButtonType.Link)
+             .Text(Smc.GetUIResource("Texto_Imprimir_Qrcodes"))
+             .CssClass("smc-linha-btn-terciario margin-top-10")
+             .Attribute("target", "_blank")
+             .Action("VisualizarPdfQrCode", "Inscricao",
+                 new
+                 {
+                     @seqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+                     @area = "INS"
+                 }))
+
+        </div>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.MensagemCredenciamento))
+    {
+        <div class="smc-gpi-ingresso-info-carrossel">
+            <div class="smc-gpi-informacao-botao">
+                <p>
+                    @Model.MensagemCredenciamento
+                </p>
+            </div>
+        </div>
+    }
+
+    <div class="swiper mySwiper margin-top-20">
+        <div class="swiper-wrapper">
+            @foreach (var item in Model.Ofertas)
+            {
+                if (item.HabilitaCheckin)
+                {
+                    <div class="swiper-slide">
+                        <div class="smc-gpi-ingresso-slider">
+                            <div class="@item.CSSTagAtividade">
+                                <p>@item.TagAtividade</p>
+                            </div>
+
+
+                            <div class="smc-ingresso-descricao-nivel">
+                                @if (Model.ExibirPeriodoAtividadeOferta.HasValue && Model.ExibirPeriodoAtividadeOferta.Value)
+                                {
+                                    <p class="smc-gpi-datetime-agendamento">
+                                        @item.Titulo
+                                    </p>
+                                }
+                                @if (!string.IsNullOrEmpty(item.DescicaoParte1))
+                                {
+                                    <p>@item.DescicaoParte1</p>
+                                }
+
+                                @if (!string.IsNullOrEmpty(item.DescicaoParte2))
+                                {
+                                    <p>@item.DescicaoParte2</p>
+                                }
+
+                                @if (!string.IsNullOrEmpty(item.DescicaoParte3))
+                                {
+                                    <p>@item.DescicaoParte3</p>
+                                }
+                            </div>
+                            @Smc.QRCode(item.UidInscricaoOferta.ToString()).WithQuietZone()
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<div class="smc-gpi-painel-lateral">
+    <div class="smc-gpi-painel-conteudo">
+        <h2>@Smc.GetUIResource("Titulo_Pagina_Ingressos")</h2>
+        @Html.Action("MenuLateralDireitaIngressos", "Inscricao", new { @area = "INS", @seqProcesso = @Model.SeqProcesso, @tokenResource = Model.TokenResource, @Ingresso = true })
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/Componentes/swiper-bundle.min.js")"></script>
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/Ingresso/Carrossel.js")"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

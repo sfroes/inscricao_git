@@ -1,0 +1,212 @@
+﻿@model  PaginaConfirmarDadosInscritoViewModel
+
+@{
+    ViewBag.InscricaoNaoPermiteTrocaLingua = true;
+    Layout = "~/Areas/INS/Views/Shared/_Layout.cshtml";
+}
+
+@section PainelLateral
+{
+    @Html.Partial("_PainelLateralProcesso", Model)
+}
+<div class="smc-gpi-mensagem-alerta mensagem-com-botao">
+    <div class="smc-gpi-mensagem-alteracaodados">
+        @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_INSTRUCOES))
+
+        @Smc.Button(SMCButtonBehavior.Alterar).CssClass("smc-btn-secundario alterar").Action("Cadastrar", "Inscrito", new { area = "INS", origem = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao), uidProcesso = Model.UidProcesso })
+    </div>
+</div>
+
+<h3>@Model.Titulo</h3>
+<div class="smc-gpi-confirmardadosinscrito">
+    @using (Smc.Div("dadospessoais").CssClass("smc-gpi-dados-formulario smc-gpi-dados-pessoais").Begin())
+    {
+        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNome)
+        {
+            @Smc.DisplayFor(prop => prop.DadosInscrito.Nome)
+        }
+        @*@Smc.DisplayFor(prop => prop.DadosInscrito.NomeSocial)*@
+
+        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirDataNascimento ||
+            Model.DadosInscrito.CamposInscritoVisiveis.ExibirSexo ||
+            Model.DadosInscrito.CamposInscritoVisiveis.ExibirEstadoCivil)
+        {
+            <div class="display-flex smc-gpi-dados-pessoais">
+                @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirDataNascimento)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.DataNascimento)
+                }
+
+                @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirSexo)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Sexo)
+                }
+
+                @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirEstadoCivil)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.DescricaoEstadoCivil)
+                }
+            </div>
+        }
+
+        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirCPF || Model.DadosInscrito.CamposInscritoVisiveis.ExibirPassaporte)
+        {
+            <div class="display-flex smc-gpi-dados-pessoais">
+                @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirCPF)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Cpf)
+                }
+
+                @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirPassaporte)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.NumeroPassaporte)
+                }
+            </div>
+        }
+
+        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNumeroIdentidade ||
+            Model.DadosInscrito.CamposInscritoVisiveis.ExibirOrgaoEmissorIdentidade ||
+            Model.DadosInscrito.CamposInscritoVisiveis.ExibirUfIdentidade)
+        {
+            <div class="display-flex smc-gpi-dados-pessoais">
+                @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNumeroIdentidade)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.NumeroIdentidade)
+                }
+                @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirOrgaoEmissorIdentidade)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.OrgaoEmissorIdentidade)
+                }
+                @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirUfIdentidade)
+                {
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.UfIdentidade)
+                }
+            </div>
+        }
+
+        if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNacionalidade ||
+            Model.DadosInscrito.CamposInscritoVisiveis.ExibirPaisOrigem ||
+            Model.DadosInscrito.CamposInscritoVisiveis.ExibirNaturalidade)
+        {
+
+            if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNacionalidade ||
+                Model.DadosInscrito.CamposInscritoVisiveis.ExibirPaisOrigem)
+            {
+                <div class="display-flex smc-gpi-dados-pessoais">
+                    @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNacionalidade)
+                    {
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.Nacionalidade)
+                    }
+                    @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirPaisOrigem)
+                    {
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.PaisNacionalidade)
+                    }
+                </div>
+            }
+
+            if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirNaturalidade)
+            {
+                <div class="display-flex smc-gpi-dados-pessoais">
+                    @if (string.IsNullOrEmpty(Model.DadosInscrito.DescricaoNaturalidadeEstrangeira))
+                    {
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.UfNaturalidade)
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.CidadeNaturalidade)
+                    }
+                    else
+                    {
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.DescricaoNaturalidadeEstrangeira)
+                    }
+                </div>
+            }
+        }
+    }
+
+    @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirFiliacao)
+    {
+        <h4>@Smc.GetUIResource("Filiacao_Label")</h4>
+        using (Smc.Div("filiacao").CssClass("smc-gpi-dados-formulario smc-gpi-dados-pessoais").Begin())
+        {
+            @Smc.DisplayFor(prop => prop.DadosInscrito.NomePai)
+            @Smc.DisplayFor(prop => prop.DadosInscrito.NomeMae)
+        }
+    }
+
+    @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirEndereco)
+    {
+        for (var i = 0; i < Model.DadosInscrito.Enderecos.Count; i++)
+        {
+            <h4>Endereço @Model.DadosInscrito.Enderecos[i].DescTipoEnderecoSelecionado</h4>
+            using (Smc.Div("div_enderecos").CssClass("smc-gpi-dados-formulario smc-gpi-dados-pessoais").Begin())
+            {
+                @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos[i].Logradouro)
+                <div class="display-flex smc-gpi-dados-pessoais">
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos[i].Numero)
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos[i].Complemento)
+                </div>
+                <div class="display-flex smc-gpi-dados-pessoais">
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos[i].Bairro)
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos[i].NomeCidade)
+                </div>
+                <div class="display-flex smc-gpi-dados-pessoais">
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos[i].SiglaUf)
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos[i].Cep)
+                    <div>
+                        <div class="smc-display" data-control="display" data-type="smc-display">
+                            <label>País</label>
+                            <p>@Model.DadosInscrito.Enderecos[i].DescPaisSelecionado</p>
+                        </div>
+                    </div>
+                    @Smc.DisplayFor(prop => prop.DadosInscrito.Enderecos[i].Correspondencia)
+                </div>
+            }
+        }
+    }
+
+    @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirTelefone ||
+    Model.DadosInscrito.CamposInscritoVisiveis.ExibirOutrosEnderecosEletronicos ||
+    Model.DadosInscrito.CamposInscritoVisiveis.ExibirEmail)
+    {
+        <div class="smc-gpi-dados-formulario smc-row mobile-column">
+            @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirTelefone)
+            {
+                <div class="smc-col display-flex smc-gpi-dados-pessoais flex-column">
+                    <h4>@Smc.GetUIResource("Telefones_Label")</h4>
+                    @using (Smc.Div("div_telefone").CssClass("smc-gpi-dados-formulario smc-gpi-dados-telefone").Begin())
+                    {
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.Telefones).HideLabel(SMCDisplayHideLabel.Parent)
+                    }
+                </div>
+            }
+            @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirOutrosEnderecosEletronicos ||
+                 Model.DadosInscrito.CamposInscritoVisiveis.ExibirEmail)
+            {
+                <div class="smc-col display-flex smc-gpi-dados-pessoais flex-column">
+                    @if (Model.DadosInscrito.CamposInscritoVisiveis.ExibirEmail)
+                    {
+                        <h4>@Smc.GetUIResource("Enderecos_Eletronicos_Label")</h4>
+
+                        @Smc.DisplayFor(prop => prop.DadosInscrito.Email)
+                    }
+
+                    @if (Model.DadosInscrito.EnderecosEletronicos.Count > 0 && Model.DadosInscrito.CamposInscritoVisiveis.ExibirOutrosEnderecosEletronicos)
+                    {
+                        <label>@Smc.GetUIResource("Outros_Enderecos_Eletronicos_Label")</label>
+                        for (var i = 0; i < Model.DadosInscrito.EnderecosEletronicos.Count; i++)
+                        {
+                            <div class="smc-row display-flex flex-d-row smc-gpi-outros-enderecos">
+                                <p class="smc-col-3">@(((SMC.DadosMestres.Common.Areas.PES.Enums.TipoEnderecoEletronico)Model.DadosInscrito.EnderecosEletronicos[i].TipoEnderecoEletronico).SMCGetDescription().Trim())</p>
+                                @Smc.DisplayFor(prop => prop.DadosInscrito.EnderecosEletronicos[i].Descricao).HideLabel()
+                            </div>
+                        }
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
+
+
+@using (Smc.Form("formConfirmarDadosInscrito", "SalvarConfirmarDadosInscrito").CssClass("smc-row").Begin())
+{
+    @Html.Partial("_BotoesNavegacaoConfirmarDadosInscrito", Model)
+}

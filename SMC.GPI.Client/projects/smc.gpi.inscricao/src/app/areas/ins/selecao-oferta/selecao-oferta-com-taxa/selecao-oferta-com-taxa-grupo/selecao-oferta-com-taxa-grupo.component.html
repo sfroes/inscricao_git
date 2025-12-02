@@ -1,0 +1,140 @@
+@for (grupo of $grupoTaxas(); track grupo.seq) {
+  @if (grupo.taxas.length > 0) {
+    <div class="smc-gpi-taxas-container-inner-insc smc-gpi-grupo-taxas">
+      <div
+        [innerHTML]="
+          selecaoOfertaComTaxaService.obterMensagemOrientacaoTaxasTag(
+            grupo,
+            $seqOferta()
+          )
+        "
+      ></div>
+      @for (taxa of grupo.taxas; track taxa) {
+        @if (!$seqOferta()) {
+          <div class="linha-taxa">
+            <div class="nome-taxa">
+              <label>
+                <span>{{ grupo.descricao }}</span>
+              </label>
+              <p class="descricao">
+                {{ taxa.descricao }}
+                <small class="sub-descricao">{{
+                  taxa.descricaoComplementar
+                }}</small>
+              </p>
+            </div>
+            <div class="precos vlr-unit">
+              <label>Valor Unitário</label>
+              <span>{{ formartarTotal(taxa.valorItem) }}</span>
+            </div>
+            <div class="quantidade">
+              <label>Quantidade</label>
+              <p-inputnumber
+                buttonLayout="horizontal"
+                spinnerMode="horizontal"
+                inputId="horizontal"
+                [max]="selecaoOfertaComTaxaService.getMaxPermitido(grupo, taxa)"
+                [readonly]="
+                  this.selecaoOfertaComTaxaService.readOnlyTaxasGrupo()
+                "
+                [min]="taxa.numeroMinimo"
+                [showButtons]="true"
+                [(ngModel)]="taxa.numeroItens"
+                [inputStyle]="{ width: '3rem' }"
+                (onInput)="
+                  selecaoOfertaComTaxaService.numeroItens(
+                    $event,
+                    taxa.seqTaxa,
+                    taxa.seqOferta,
+                    grupo.seq
+                  )
+                "
+                (onFocus)="
+                  selecaoOfertaComTaxaService.bloquearInserirDadosPorTeclado(
+                    $event
+                  )
+                "
+                pInputNumberSingleClick
+              >
+                <ng-template #incrementbuttonicon>
+                  <span class="pi pi-plus"></span>
+                </ng-template>
+                <ng-template #decrementbuttonicon>
+                  <span class="pi pi-minus"></span>
+                </ng-template>
+              </p-inputnumber>
+            </div>
+            <div class="precos vlr-total">
+              <label>Valor Total</label>
+              <span>{{ formartarTotal(taxa.valorTotalTaxa) }}</span>
+            </div>
+          </div>
+        } @else {
+          @if (taxa.seqOferta === $seqOferta()) {
+            <div class="linha-taxa">
+              <div class="nome-taxa">
+                <label>
+                  <span>{{ grupo.descricao }}</span>
+                </label>
+
+                <p class="descricao">
+                  {{ taxa.descricao }}
+                  <small class="sub-descricao">{{
+                    taxa.descricaoComplementar
+                  }}</small>
+                </p>
+              </div>
+
+              <div class="precos vlr-unit">
+                <label>Valor Unitário</label>
+                <span>{{ formartarTotal(taxa.valorItem) }}</span>
+              </div>
+              <div class="quantidade">
+                <label>Quantidade</label>
+                <p-inputnumber
+                  buttonLayout="horizontal"
+                  spinnerMode="horizontal"
+                  inputId="horizontal"
+                  [max]="
+                    selecaoOfertaComTaxaService.getMaxPermitido(grupo, taxa)
+                  "
+                  [readonly]="selecaoOfertaComTaxaService.readOnlyTaxasGrupo()"
+                  [min]="taxa.numeroMinimo"
+                  [showButtons]="true"
+                  [(ngModel)]="taxa.numeroItens"
+                  [inputStyle]="{ width: '3rem' }"
+                  (onInput)="
+                    selecaoOfertaComTaxaService.numeroItens(
+                      $event,
+                      taxa.seqTaxa,
+                      taxa.seqOferta,
+                      grupo.seq
+                    )
+                  "
+                  (onFocus)="
+                    selecaoOfertaComTaxaService.bloquearInserirDadosPorTeclado(
+                      $event
+                    )
+                  "
+                  pInputNumberSingleClick
+                >
+                  <ng-template #incrementbuttonicon>
+                    <span class="pi pi-plus"></span>
+                  </ng-template>
+                  <ng-template #decrementbuttonicon>
+                    <span class="pi pi-minus"></span>
+                  </ng-template>
+                </p-inputnumber>
+              </div>
+
+              <div class="precos vlr-total">
+                <label>Valor Total</label>
+                <span>{{ formartarTotal(taxa.valorTotalTaxa) }}</span>
+              </div>
+            </div>
+          }
+        }
+      }
+    </div>
+  }
+}

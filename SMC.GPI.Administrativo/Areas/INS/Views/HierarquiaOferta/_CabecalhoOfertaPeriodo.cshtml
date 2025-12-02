@@ -1,0 +1,8 @@
+﻿@model OfertaTaxaViewModel
+
+@using (Smc.Header("header_" + Model.SeqOferta, SMCHeaderType.Secondary).CssClass("smc-grouped-list-cabecalho-grouped-list")
+        .Item(prop => prop.Descricao, sizeSM: SMCSize.Grid16_24, sizeMD: SMCSize.Grid16_24, sizeLG: SMCSize.Grid16_24, sizeXS: SMCSize.Grid16_24)
+        .Item(prop => prop.Periodo, sizeSM: SMCSize.Grid8_24, sizeMD: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24, sizeXS: SMCSize.Grid8_24)
+        .Begin())
+{
+}

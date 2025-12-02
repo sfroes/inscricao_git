@@ -1,0 +1,15 @@
+﻿@model TipoHierarquiaOfertaViewModel
+
+@using (Smc.Form("formCadastroTipoHierarquiaOferta").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    using (Smc.Div("fieldsetCadastroTipoHierarquiaOferta").Begin())
+    {
+        @Smc.EditorFor(prop => prop.Seq)
+        @Smc.EditorFor(prop => prop.Descricao).Focus()
+    }
+
+    @(Smc.ButtonSet()
+        .AddButton(Smc.Button(SMCButtonBehavior.Salvar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Action("Salvar").Highlight())
+        .AddButton(Smc.Button(SMCButtonBehavior.Voltar).Action("Index", "TipoHierarquiaOferta").DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+    ) 
+}

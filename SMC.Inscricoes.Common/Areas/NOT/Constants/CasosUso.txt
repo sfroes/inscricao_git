@@ -1,0 +1,5 @@
+﻿UC;Descrição
+UC_NOT_001_01_01.Consultar_Notificacao;Este caso de uso tem como objetivo consultar as notificações enviadas para inscritos.
+UC_NOT_001_01_02.Visualizar_Detalhes_Notificacao;Este caso de uso tem como objetivo consultar os detalhes das notificações enviadas para inscritos.
+UC_NOT_001_02_01.Pesquisar_Tipo_Notificacao;Este caso de uso tem como objetivo pesquisar os parâmetros por tipo de notificação, permitindo exclusão.
+UC_NOT_001_02_02.Manter_Tipo_Notificacao;Este caso de uso tem como objetivo cadastrar ou alterar parâmetros por tipo de notificação.

@@ -1,0 +1,21 @@
+﻿@model TipoNotificacaoFiltroViewModel
+
+@using (Smc.Form("formPesquisaNotificacao", "ListarTipoNotificacoes").Ajax("#divConsultaNotificacao").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaTipoDocumento").CssClass("smc-fieldset-filter").Begin())
+    {
+        @Smc.EditorFor(prop => prop.TipoNotificacao)
+        @Smc.EditorFor(prop => prop.PermiteAgendamento)
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo).DisplayMode(SMCButtonDisplayMode.TextAndIcon).SecurityToken(UC_NOT_001_02_02.MANTER_TIPO_NOTIFICACAO).Type(SMCButtonType.Link).Url(Url.Action("Incluir")))
+        )
+    }
+}
+
+<div id="divConsultaNotificacao" data-id="divConsultaNotificacao">
+    @Html.Action("ListarTipoNotificacoes", Model)
+</div>
+

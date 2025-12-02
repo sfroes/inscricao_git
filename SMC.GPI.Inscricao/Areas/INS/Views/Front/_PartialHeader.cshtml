@@ -1,0 +1,31 @@
+﻿<header class="smc-ribbon">
+    <a href="@Url.Action("Index", "Home", new { area = string.Empty })" title="Logotipo do site" class="smc-aplicaco-logotipo">
+        @*-- Padrão para insersão de logotipo --*@
+        @*<img class="img-responsive" src="data:image/png;base64,@Model.ImagemCabecalho" alt="" />*@
+    </a>
+    <!-- (obrigatório) -->
+    @using (Smc.Div("divAreaUsuario").CssClass("smc-gpi-usuario").Begin())
+    {
+        <span class="smc-gpi-nome-usuario">@User.SMCGetNome()</span>
+        @*-- Área do usuário*@
+        <ul class="nav navbar-nav">
+            @*-- Usuário --*@
+            @(Smc.UserProfileWindow()
+                    .Buttons(b => b
+                    .ShowProfile()
+                    .ChangePassword()
+                    .Logout()))
+
+            <li>
+                @Smc.ButtonSet().CssClass("smc-ico-meusdados").AddButton(Smc.Button("link-meusdados")
+                .CssClass("smc-btn-meudados")
+                .Action("Cadastrar", "Inscrito", new { area = "INS" })
+                .SecurityToken(SMC.Inscricoes.Common.Areas.INS.Constants.UC_INS_002_01_01.MANTER_INSCRITO)
+                .Type(SMCButtonType.Link))
+            </li>
+            <li>
+                @Smc.Accessibility()
+            </li>
+        </ul>
+    }
+</header>

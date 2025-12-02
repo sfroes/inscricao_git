@@ -1,0 +1,5 @@
+﻿@model EtapaProcessoViewModel
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.AssociacaoEtapa, @exibirInformacoesCabecalho = true })
+
+@Html.Partial("_EditarEtapaProcesso", Model)

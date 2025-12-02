@@ -1,0 +1,49 @@
+﻿@model SMCPagerModel<GrupoOfertaProcessoListaVewModel>
+
+
+@(Smc.List("listaOfertas").HideRowTotalizer()
+    .DenyChangeNumberOfRowsPerPage()
+    .AutoHideNavigator()
+    .HideNavigator()
+    .CssClass("smc-col smc-gpi-inscricoes-item")
+    .HtmlTemplate(
+    @<text>
+    <div class="smc-gpi-painel-conteudo">
+        <h2  class="smc-gpi-cor-texto">@item.NomeGrupo</h2>
+            <div class="smc-gpi-processo-lista-grupos display-flex">
+                <div class="display-flex smc-gpi-data">
+                    <div class="smc-gpi-data-inicio">
+                        <p class="smc-gpi-texto-data">Início</p>
+                        <p class="smc-gpi-inscricoes-periodo">@item.DataInicioConfiguracaoEtapa.ToString("dd/MM/yyyy")</p>
+                        <p class="smc-gpi-inscricoes-hora">@item.DataInicioConfiguracaoEtapa.ToString("HH:mm")</p>
+                    </div>
+                    <div class="smc-gpi-data-fim">
+                        <p  class="smc-gpi-texto-data">Fim</p>
+                        <p class="smc-gpi-inscricoes-periodo">@item.DataFimConfiguracaoEtapa.ToString("dd/MM/yyyy")</p>
+                        <p class="smc-gpi-inscricoes-hora">@item.DataFimConfiguracaoEtapa.ToString("HH:mm")</p>
+                    </div>
+                </div>
+            </div>
+        <div>
+            @{
+                if (!string.IsNullOrEmpty(item.MensagemBotaoInscrever))
+                {
+                    <div class="smc-gpi-informacao-botao"><p>@item.MensagemBotaoInscrever</p></div>
+                }
+             }
+
+            @(Smc.Button(item.BotaoInscrever)
+                        .CssClass("smc-btn-principal")
+                        .Enabled(item.HabilitarBotaoInscrever)
+                        .Type(SMCButtonType.Link)
+                        .Action("Inscrever", "Inscricao",
+                        new
+                        {
+                            @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(item.SeqConfiguracaoEtapa),
+                            @seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(item.SeqGrupo),
+                            @idioma = item.IdiomaAtual,
+                            @area = "INS"
+                        }))
+        </div>
+    </div>
+</text>))

@@ -1,0 +1,62 @@
+﻿@model List<GrupoTaxaListaViewModel>
+
+@(Smc.List("listaGrupoTaxa", Model)
+    .HtmlTemplate(
+    @<text>
+        <div class="smc-listdetailed-item smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+            <div class="smc-size-md-23 smc-size-xs-24 smc-size-sm-24 smc-size-lg-23 smc-listdetailed-conteudo">
+                <div class="smc-listdetailed-header-conteudo smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                <div class="smc-display smc-size-md-14 smc-size-xs-24 smc-size-sm-24 smc-size-lg-14">
+                        <label>@Smc.GetMetadataResource("GrupoTaxaListaViewModel_Descricao")</label>
+                        <p>@item.Descricao</p>
+                </div>
+                <div class="smc-display smc-size-md-4 smc-size-xs-24 smc-size-sm-24 smc-size-lg-4">
+                        <label>@Smc.GetMetadataResource("GrupoTaxaListaViewModel_NumeroMinimoItens")</label>
+                        <p>@item.NumeroMinimoItens</p>
+                </div>
+                <div class="smc-display smc-size-md-4 smc-size-xs-24 smc-size-sm-24 smc-size-lg-4">
+                        <label>@Smc.GetMetadataResource("GrupoTaxaListaViewModel_NumeroMaximoItens")</label>
+                        <p>@item.NumeroMaximoItens</p>
+                     </div>
+            </div>
+
+             <div class="smc-listdetailed-detalhes-conteudo">
+                <h3>@Smc.GetMetadataResource("GrupoTaxaListaViewModel_Itens")</h3>
+                @foreach (var itemGrupo in item.Itens)
+                {
+                    <p>
+                        @itemGrupo
+                    </p>
+                }
+            </div>
+
+            </div>
+            <div class="smc-buttonset-vertical-secundario smc-size-md-1 smc-size-xs-24 smc-size-sm-4 smc-size-lg-1">
+            @(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                .Attribute(SMCMvcConsts.MODAL_ID, "modalIncluirGrupoTaxa")
+                .Attribute(SMCMvcConsts.MODAL_TITLE, Smc.GetUIResource("Modal_Alter_Grupo_Taxa_Titulo"))
+                .Text(Smc.GetUIResource("Botao_Alterar_Grupo_Taxa"))
+                .Tooltip(Smc.GetUIResource("Botao_Alterar_Grupo_Taxa_Tooltip"))
+                .Ajax(isPost: false, updateTargetId: "modalAlterarGrupoTaxa")
+                .CssClass("smc-btn-alterar-ico")
+                .SecurityToken(UC_INS_001_12_02.MANTER_GRUPO_TAXAS)
+                                .Url(Url.Action("Editar", "GrupoTaxa",
+                                new { @seqGrupoTaxa = SMCDESCrypto.EncryptNumberForURL((item as GrupoTaxaListaViewModel).Seq) })))
+
+            @(Smc.Button(SMCButtonBehavior.Excluir, "Excluir",
+            new
+            {
+                @seqGrupoTaxa = SMCDESCrypto.EncryptNumberForURL((item as GrupoTaxaListaViewModel).Seq),
+                @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as GrupoTaxaListaViewModel).SeqProcesso)
+            }, "GrupoTaxa")
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                        .Ajax(isPost: true, updateTargetId: "#divGridGrupoTaxa")
+                .SecurityToken(UC_INS_001_12_02.MANTER_GRUPO_TAXAS)
+                .Confirm(Smc.GetUIResource("Exclusao_Grupo_Taxa_Title"),
+                                string.Format(Smc.GetUIResource("Exclusao_Grupo_Taxa_Confirmacao"), (item as GrupoTaxaListaViewModel).Descricao)))
+            </div>
+
+        </div>
+
+    </text>
+))

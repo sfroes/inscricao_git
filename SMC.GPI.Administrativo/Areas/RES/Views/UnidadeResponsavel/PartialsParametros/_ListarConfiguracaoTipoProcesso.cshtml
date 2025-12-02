@@ -1,0 +1,28 @@
+﻿@model SMCPagerModel<UnidadeResponsavelTipoProcessoListaViewModel>
+
+@(Smc.Grid("gridConfiguracaoTipoProcesso")
+        .HideNavigator()
+        .HideNumberOfRowsPerPageSelector()
+        .HideRowsTotalizer()
+        .HidePager()
+        .AutoGenerateColumns()
+        .ButtonColumn(SMCButtonSetType.Secondary, "smc-grid-coluna-botoes",
+
+                       item => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN, "AlterarConfiguracaoTipoProcesso", new { @seqParametro = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelTipoProcessoListaViewModel).Seq) }, "UnidadeResponsavel")
+                                  .Attribute(SMCMvcConsts.MODAL_ID, "modalEditarParametroTipoProcesso")
+                                  .Ajax(isPost: false, updateTargetId: "painelAjaxIncluirTipoProcesso")
+                                  .CssClass("smc-btn-alterar-ico")
+                                  .SecurityToken(UC_RES_001_01_05.MANTER_TIPO_PROCESSO),
+                       
+                       item => Smc.Button(SMCButtonBehavior.Excluir, "ExcluirConfiguracaoTipoProcesso",
+                                       new { 
+                                           @seqParametro = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelTipoProcessoListaViewModel).Seq),
+                                           @seqUnidadeResponsavel = SMCDESCrypto.EncryptNumberForURL((item as UnidadeResponsavelTipoProcessoListaViewModel).SeqUnidadeResponsavel)
+                                       }, "UnidadeResponsavel")
+                                        .DisplayMode(SMCButtonDisplayMode.Icon)
+                                        .SecurityToken(UC_RES_001_01_05.MANTER_TIPO_PROCESSO)
+                                        .Ajax(isPost: true, updateTargetId: "#divGridTipoProcesso")
+                                        .Confirm(Smc.GetUIResource("Exclusao_Tipo_Processo"),
+                                                         string.Format(Smc.GetUIResource("Confirma_Exclusao_Tipo_Processo"),
+                                                                         (item as UnidadeResponsavelTipoProcessoListaViewModel).Descricao)))
+)

@@ -1,0 +1,10 @@
+﻿@model OfertaCabecalhoViewModel
+
+@using (Smc.Header("headerOferta", SMCHeaderType.Primary)
+                      .Item(prop => prop.NumeroInscricao, sizeSM: SMCSize.Grid3_24, sizeMD: SMCSize.Grid3_24, sizeLG: SMCSize.Grid3_24, sizeXS: SMCSize.Grid3_24)
+                      .Item(prop => prop.Candidato, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                      .Item(prop => prop.Opcao, sizeSM: SMCSize.Grid2_24, sizeMD: SMCSize.Grid2_24, sizeLG: SMCSize.Grid2_24, sizeXS: SMCSize.Grid2_24)
+                      .Item(prop => prop.OfertaOriginal, sizeSM: SMCSize.Grid8_24, sizeMD: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24, sizeXS: SMCSize.Grid8_24)
+                      .Item(prop => prop.Situacao, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24)
+                      .Begin())
+{ }

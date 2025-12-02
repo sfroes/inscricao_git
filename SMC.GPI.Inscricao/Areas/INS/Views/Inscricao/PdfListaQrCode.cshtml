@@ -1,0 +1,106 @@
+﻿@model IngressoViewModel
+
+<html lang="pt-br">
+<head>
+
+    <link rel="icon" href="/Dev/GPI.Inscricao/Content/Images/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="accept-language" content="pt-br">
+    <meta name="author" content="GTI - Gerência de Tecnologia da Informação">
+    <meta name="copyright" content="© 2023 GTI" />
+    <meta name="description" content="Sistema Padrão">
+    <meta name="keywords" content="Sistema Padrão" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ingressos</title>
+    <!-- classes css padrões -->
+    <!-- Necessário ter o caminho da url e o físico do arquivo para conversão de PDF funcionar corretamente -->
+    @{
+        string urlCSS = Url.SMCBuscarRecursoAplicacao(Model.CssUrl);
+    }
+    <link href="@urlCSS" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="@Model.CssFisico" />
+</head>
+
+<body>
+    @foreach (var item in Model.Ofertas)
+    {
+        <div class="smc-gpi-impresso">
+            <div class="smc-gpi-impresso-cabecalho" id="fieldsetTitulo">
+                <div class="smc-gpi-numeroinscricao">
+                    <label>Registro:</label>
+                    <p>@Model.SeqInscricao</p>
+                </div>
+                <div class="smc-gpi-comprovante-destaque">
+                    <div class="smc-display" data-control="display" data-type="smc-display"><label>Nome</label><p>@Model.NomeInscrito</p></div>
+                </div>
+            </div>
+
+            <div class="smc-gpi-box-impresso">
+
+                @*@if (Model.DadosCampo.Count() > 0)
+                    {
+                        <fieldset class="smc-gpi-impresso-dadospessoais smc-gpi-bloco-impresso" data-type="smc-formfieldset" id="">
+                            @foreach (var campo in Model.DadosCampo)
+                            {
+
+                                <div class="smc-size-md-12 smc-size-xs-24 smc-size-sm-12 smc-size-lg-12">
+                                    <div class="smc-display" data-control="display" data-type="smc-display">
+                                        <label>@campo.TokenElemento.SMCToPascalCaseName()</label>
+                                        <p>@campo.Valor</p>
+                                    </div>
+                                </div>
+                            }
+                        </fieldset>
+                    }*@
+                @if (!string.IsNullOrEmpty(Model.MensagemCredenciamento))
+                {
+                    <fieldset class="smc-gpi-impresso-dadospessoais smc-gpi-bloco-impresso" data-type="smc-formfieldset" id="">
+                        <p>
+                            @Model.MensagemCredenciamento
+                        </p>
+                    </fieldset>
+                }
+
+                <div class="smc-gpi-item-ingresso">
+                    <fieldset class=" smc-gpi-fieldset-legend smc-gpi-bloco-impresso smc-gpi-fieldset-ofertas" data-type="smc-formfieldset" id="fieldsetGrupoOfertas">
+
+                        @if (Model.ExibirPeriodoAtividadeOferta.HasValue && Model.ExibirPeriodoAtividadeOferta.Value)
+                        {
+                            <p class="smc-gpi-datetime-agendamento">
+                                @item.Titulo
+                            </p>
+                        }
+
+                        @if (!string.IsNullOrEmpty(item.DescicaoParte1))
+                        {
+                            <p class="smc-gpi-oferta-dados">@item.DescicaoParte1</p>
+                        }
+
+                        @if (!string.IsNullOrEmpty(item.DescicaoParte2))
+                        {
+                            <p class="smc-gpi-oferta-dados-1">@item.DescicaoParte2</p>
+                        }
+
+                        @if (!string.IsNullOrEmpty(item.DescicaoParte3))
+                        {
+                            <p class="smc-gpi-oferta-carga-horaria">@item.DescicaoParte3</p>
+                        }
+                    </fieldset>
+
+                    <fieldset class="smc-gpi-QRCode">
+                        @*<img src="@Model.Qrcode" />*@
+                        <img src="@item.QrCodeOferta" />
+                    </fieldset>
+                </div>
+            </div>
+            <div class="smc-gpi-impresso-rodape">
+                <p></p>
+            </div>
+
+        </div>
+    }
+</body>
+</html>

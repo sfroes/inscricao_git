@@ -1,0 +1,10 @@
+﻿@model TipoDocumentoViewModel
+
+@if (Model.TiposDocumento.Count == 0)
+{
+    <div class="smc-gpi-instrucoes-iniciais">
+        <span>@Smc.GetUIResource("Label_TipoDocumentoVazio")</span>
+    </div>
+}
+
+@Html.Partial("_EditarTipoDocumento", Model)

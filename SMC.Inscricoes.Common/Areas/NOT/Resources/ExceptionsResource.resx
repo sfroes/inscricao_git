@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfiguracaoNotificacaoJaEnviadaException" xml:space="preserve">
+    <value>O Tipo de Notificação não pode ser alterado, pois já existem registros de envio desta notificação. Para não enviar mais este tipo de notificação, desative o seu envio automático.</value>
+  </data>
+  <data name="ConfigurarNotificacaoEtapaNaoEncerradaException" xml:space="preserve">
+    <value>Para incluir ou alterar uma configuração de notificação, a situação de todas as etapas do processo que ainda não foram encerradas deve estar “Aguardando Liberação“ou “Em Manutenção”.</value>
+  </data>
+  <data name="ConfigurarNotificacaoSemAgendamentoException" xml:space="preserve">
+    <value>Alteração não permitida. O tipo de notificação que está sendo alterado possui parâmetro de envio cadastrado e só pode ser alterado para um tipo de notificação que permite agendamento de envio de notificação.</value>
+  </data>
+  <data name="ConfigurarNotificacaoSemUnidadeNotificacaoException" xml:space="preserve">
+    <value>Não existe Unidade de Notificação associada à Unidade Resposável do processo. Não é permitindo cadastrar configuração de notificação.</value>
+  </data>
+  <data name="ExcluirConfiguracaoNotificacaoJaEnviadaException" xml:space="preserve">
+    <value>Exclusão não permitida. Já existem registros de envio de notificação com a configuração em questão. Para não enviar mais este tipo de notificação, desative o seu Envio de Notificação Automático.</value>
+  </data>
+  <data name="FK_processo_configuracao_notificacao_02" xml:space="preserve">
+    <value>Não é possível excluir o tipo de notificação. Já existem  configurações de notificação para processos com o tipo de notificação em questão.</value>
+  </data>
+  <data name="ParametroComNotificacaoJaEnviadaException" xml:space="preserve">
+    <value>Já foram enviadas notificações com o parâmetro em questão. Ele não pode ser alterado, tampouco excluído, somente desativado.</value>
+  </data>
+  <data name="ParametroNotificacaoEtapaNaoEncerradaException" xml:space="preserve">
+    <value>Para incluir, alterar ou excluir um parâmetro de envio de notificação, a situação de todas as etapas do processo que ainda não foram encerradas deve estar “Aguardando Liberação“ou “Em Manutenção”.</value>
+  </data>
+  <data name="TipoNotificacaoAlterarAgendamentoComConfiguracaoException" xml:space="preserve">
+    <value>Alteração do parâmetro “Permite agendamento de envio da notificação”não permitida. Já foi configurado um parâmetro de envio para este tipo de notificação.</value>
+  </data>
+  <data name="TipoNotificacaoAlterarAtributoComConfiguracaoException" xml:space="preserve">
+    <value>Alteração/Exclusão de atributo não permitida. Este atributo já está associado a um parâmetro de envio do tipo de notificação da questão.</value>
+  </data>
+  <data name="TipoNotificacaoAlterarTipoComConfiguracaoException" xml:space="preserve">
+    <value>Alteração de Tipo de Notificação não permitida. Já existem registros de configuração de notificação para um processo do tipo em questão.</value>
+  </data>
+  <data name="TipoNotificacaoJaExistenteException" xml:space="preserve">
+    <value>Tipo de notificação já cadastrado.</value>
+  </data>
+  <data name="UN_processo_configuracao_notificacao" xml:space="preserve">
+    <value>Não foi possível realizar a operação pois este tipo de notificação já foi configurado no processo.</value>
+  </data>
+  <data name="UN_tipo_notificacao_atributo_agendamento_01" xml:space="preserve">
+    <value>Não foi possível realizar a operação. Atributo já configurado para o tipo de notificação.</value>
+  </data>
+</root>

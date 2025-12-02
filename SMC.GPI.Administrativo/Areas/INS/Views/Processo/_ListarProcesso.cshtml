@@ -1,0 +1,57 @@
+﻿@model SMCPagerModel<ProcessoListaViewModel>
+
+@(Smc.Grid("gridProcesso")
+     .Action("ListarProcesso", "Processo")
+     //.AllowSort()
+     .AutoGenerateColumns()
+     .ButtonColumn(SMCButtonSetType.Secondary, 2, "", "", "smc-grid-coluna-botoes", false,
+        item => Smc.Button(SMCButtonBehavior.Alterar, "Editar", new { @seq = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) }, "Processo")
+            .DisplayMode(SMCButtonDisplayMode.Icon)
+            .SecurityToken(UC_INS_001_01_02.MANTER_PROCESSO),
+
+        item => Smc.Button(SMCButtonBehavior.Excluir, "Excluir", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) }, "Processo")
+            .DisplayMode(SMCButtonDisplayMode.Icon)
+            .SecurityToken(UC_INS_001_01_02.MANTER_PROCESSO)
+            .Ajax(isPost: true, updateTargetId: "#divGridProcesso")
+            .Confirm(Smc.GetUIResource("Exclusao_Processo_Title"),
+                                    string.Format(Smc.GetUIResource("Exclusao_Processo_Confirmacao"), (item as ProcessoListaViewModel).Descricao)),
+
+        item => Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalCopiarProcesso")
+            .Text(Smc.GetUIResource("Botao_CopiarProcesso"))
+            .Tooltip(Smc.GetUIResource("Botao_CopiarProcesso_Tooltip"))
+            .Type(SMCButtonType.Link)
+            .Ajax(isPost: false, updateTargetId: "modalCopiarItensConfiguracaoEtapa")
+            .SecurityToken(UC_INS_001_01_06.COPIAR_PROCESSO)
+            .Url(Url.Action("CopiarProcesso", "Processo", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) })),
+
+        item => Smc.Button("AssociacaoEtapa", "Index", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) }, "EtapaProcesso")
+            .Type(SMCButtonType.Link)
+            .SecurityToken(UC_INS_001_03_01.PESQUISAR_ASSOCIACAO_ETAPA_PROCESSO),
+
+        item => Smc.Button("HierarquiaOferta", "HierarquiaOferta", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) }, "HierarquiaOferta")
+            .Type(SMCButtonType.Link)
+            .SecurityToken(UC_INS_001_01_03.MANTER_HIERARQUIA_OFERTA),
+
+        item => Smc.Button("GrupoOferta", "Index", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) }, "GrupoOferta")
+            .Type(SMCButtonType.Link)
+            .SecurityToken(UC_INS_001_08_01.PESQUISAR_GRUPO_OFERTAS),
+         
+        item => Smc.Button("GrupoTaxa", "Index", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) }, "GrupoTaxa")
+             .Type(SMCButtonType.Link)
+             .SecurityToken(UC_INS_001_12_01.PESQUISAR_GRUPO_TAXAS),
+
+        item => Smc.Button("TaxasOferta", "TaxaOfertaLote", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) }, "HierarquiaOferta")
+            .Type(SMCButtonType.Link)
+            .Ajax()
+            .SecurityToken(UC_INS_001_01_08.SELECIONAR_OFERTAS_MANUTENCAO_TAXA_LOTE),
+
+        item => Smc.Button("ConfigurarNotificacao", "Index", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq), area = "NOT" }, "ConfigurarNotificacao")
+            .Type(SMCButtonType.Link)
+            .SecurityToken(UC_INS_001_01_11.PESQUISAR_CONFIGURACAO_NOTIFICACAO),
+
+        item => Smc.Button("InscricaoForaPrazo", "Index", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ProcessoListaViewModel).Seq) }, "InscricaoForaPrazo")
+            .Type(SMCButtonType.Link)
+            .SecurityToken(UC_INS_001_11_01.PESQUISAR_PERMISSAO_INSCRICAO_FORA_PRAZO)
+))
+

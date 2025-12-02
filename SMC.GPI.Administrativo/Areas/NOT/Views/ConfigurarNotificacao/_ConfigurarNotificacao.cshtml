@@ -1,0 +1,15 @@
+﻿@using SMC.Notificacoes.UI.Mvc.Extensions
+
+@model ConfiguracaoNotificacaoIdiomaViewModel
+
+@{ 
+    int index = ViewBag.Index;
+}
+
+@using (Smc.Header("headerCabecalho", SMCHeaderType.Secondary)
+                               .Item(prop => prop.Idioma, sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24)
+                               .Begin())
+{ }
+
+@Smc.ConfiguracaoTipoNotificacao(prop => prop.ConfiguracaoNotificacao, string.Format("ConfiguracoesEmail[{0}]", index)).HiddenFields(f => f.Seq, f => f.Descricao, f => f.DataFimValidade, f => f.DataInicioValidade, f => f.Emails)
+

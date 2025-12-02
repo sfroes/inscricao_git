@@ -1,0 +1,124 @@
+﻿@using SMC.Inscricoes.Common.Shared
+<table cellpadding="2" border="1">
+    <tr>
+        <td colspan="2" align="center">
+            Caminhos e propriedades URL do HttpRequest :
+        </td>
+    </tr>
+
+    <tr>
+        <td>Request.ApplicationPath:</td>
+        <td><b> @Request.ApplicationPath </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.CurrentExecutionFilePath:</td>
+        <td><b> @Request.CurrentExecutionFilePath </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.FilePath:</td>
+        <td><b> @Request.FilePath </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Path:</td>
+        <td><b> @Request.Path </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.PathInfo:</td>
+        <td><b> @Request.PathInfo </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.PhysicalApplicationPath:</td>
+        <td><b> @Request.PhysicalApplicationPath </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.RawUrl:</td>
+        <td><b> @Request.RawUrl </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.AbsolutePath:</td>
+        <td><b> @Request.Url.AbsolutePath </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.AbsoluteUri:</td>
+        <td><b> @Request.Url.AbsoluteUri </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.Fragment:</td>
+        <td><b> @Request.Url.Fragment </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.Host:</td>
+        <td><b> @Request.Url.Host </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.Authority:</td>
+        <td><b> @Request.Url.Authority </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.LocalPath:</td>
+        <td><b> @Request.Url.LocalPath </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.PathAndQuery:</td>
+        <td><b> @Request.Url.PathAndQuery </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.Port:</td>
+        <td><b> @Request.Url.Port </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.Query:</td>
+        <td><b> @Request.Url.Query </b></td>
+    </tr>
+
+    <tr>
+        <td>Request.Url.Scheme:</td>
+        <td><b> @Request.Url.Scheme </b></td>
+    </tr>
+
+    <tr>
+        <td>Http Context IsSecureConnection :</td>
+        <td>
+            @HttpContext.Current.Request.IsSecureConnection
+        </td>
+    </tr>
+    <tr>
+        <td>Http Context Schema:</td>
+        <td>
+            @HttpContext.Current.Request.Url.Scheme
+        </td>
+    </tr>
+    <tr>
+        <td>Http Context Port:</td>
+        <td>
+            @HttpContext.Current.Request.Url.Port
+        </td>
+    </tr>
+    <tr>
+        <td>SchemaAmbinte</td>
+        <td>
+            @HttpContextAmbiente.SchemaAmiente
+        </td>
+    </tr>
+    <tr>
+        <td>Ambiente</td>
+        <td>
+            @SMCServerEnvHelper.GetEnvironment()
+        </td>
+    </tr>
+</table>

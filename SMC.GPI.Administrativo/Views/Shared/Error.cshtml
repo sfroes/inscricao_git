@@ -1,0 +1,59 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+<div class="smc-paginaerro">
+    <span class="smc-paginaerro-imagem"></span>
+    <div class="smc-paginaerro-conteudo">
+        @{
+        if (ViewData["Message"] != null && !string.IsNullOrEmpty(ViewData["Message"].ToString()))
+        {
+            <span class="smc-paginaerro-titulo">@ViewData["Message"].ToString()</span>                        
+        }
+        else 
+        {
+        <span class="smc-paginaerro-titulo">Alguma coisa deu errado!</span>
+        <span class="smc-paginaerro-texto">Peço desculpas, mas houve algum erro nesta página. 
+                <br />
+            Para tentar te ajudar, sugiro que utilize o menu ao lado, e talvez você encontre o que deseja.</span>
+            <div data-type="smc-paginaerro-erros" class="smc-paginaerro-erros">
+                @{
+                    <span class="smc-paginaerro-titulo">Detalhes do erro:</span>
+                    if (Model != null && Model.Exception != null && (Model.Exception.Message != null || Model.Exception.StackTrace != null))                        
+                    {
+                        if (Model.Exception.Message != null)
+                        {
+                            <span class="smc-paginaerro-erro">@Model.Exception.Message</span>
+                        }
+                        if (Model.Exception.StackTrace != null)
+                        {
+                            <span class="smc-paginaerro-stacktrace">@Model.Exception.StackTrace</span>
+                        }
+                    }                    
+                    else
+                    {
+                        <span class="smc-paginaerro-stacktrace">Nenhuma informação adicional sobre o erro foi identificada.</span>
+                    }
+                    <p>&nbsp;</p>
+                    <span class="smc-paginaerro-titulo">Última tela carregada antes do erro:</span>
+                    <p>&nbsp;</p>
+                    <span class="smc-paginaerro-screen"></span>
+                }
+            </div>
+        }
+        }
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        var divImg = $(".smc-paginaerro-screen");
+        if (typeof (Storage) !== "undefined" && window.getComputedStyle && localStorage.screen != null) {
+            var img = $("<img />");
+            $(img).attr("src", localStorage.screen);
+            $(img).css("width", "100%");
+            $(img).css("heigth", "auto");
+            $(divImg).append($(img));
+        } else {
+            $(divImg).html("N/A");
+        }
+    </script>
+}

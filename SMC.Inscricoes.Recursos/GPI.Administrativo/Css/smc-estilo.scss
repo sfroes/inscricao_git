@@ -1,0 +1,1810 @@
+﻿.smc-detalhe-editavel-botao-inserir { // classe para os botões de "Novo" espaçamento mais harmônico
+    margin-top: 6px;
+    margin-bottom: -6px;
+}
+
+.smc-gpi-linha-documento-alterada {
+    border: solid 1px $smc-cor-secundaria-04;
+    background: $smc-cor-secundaria-05;
+}
+
+.smc-gpi-lista-itens ul, .smc-gpi-lista-itens li { // estrutura criada para tela de cópia de processo. Para remoção dos marcadores de lista
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.smc-label-taxas {
+    p {
+        font-weight: bold;
+        color: $smc-cor-principal-03;
+        margin: 0 0 -10px 0;
+    }
+}
+
+.smc-gpi-divisao-taxas {
+    border-bottom: 1px dashed $smc-cor-principal-05;
+    margin: 15px 0 15px 0;
+    padding-bottom: 15px;
+}
+
+.smc-gpi-prorrogacao-data > p {
+    color: $smc-cor-secundaria-01 !important;
+    font-weight: bolder !important;
+    padding-left: 15px !important;
+
+    &:before {
+        @extend .fa;
+        @extend .fa-caret-up;
+        font-size: 14px;
+        /*margin: 10px 7px 0 -12px;*/
+        margin: 0 7px 0 -12px;
+        color: $smc-verde !important;
+    }
+}
+
+.smc-gpi-antecipacao-data > p {
+    color: $smc-cor-secundaria-01 !important;
+    font-weight: bolder !important;
+    padding-left: 15px !important;
+
+    &:before {
+        @extend .fa;
+        @extend .fa-caret-down;
+        font-size: 14px;
+        margin: 0 7px 0 -12px;
+        color: $smc-cor-secundaria-01 !important;
+        /*margin: 10px 7px 0 -12px;*/
+    }
+}
+
+.smc-gpi-mensagem { // estrutura para mensagesn gerais na aplicação
+    width: 100%;
+    float: right;
+    background-color: $smc-cor-principal-09;
+    padding: 0 10px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: -10px;
+    position: relative;
+
+    & > p {
+        color: $smc-cinza-10;
+        font-style: italic;
+        font-size: 11px;
+    }
+}
+
+.smc-list-item {
+    overflow: auto !important;
+}
+
+.smc-list-sem-rolagem {
+    .smc-list-item {
+        overflow: unset !important;
+    }
+}
+
+.smc-inscricoes-candidato {
+    .smc-list-item {
+        float: left;
+        width: 100%;
+    }
+}
+
+.smc-list-item-agrupado { // ver em http://localhost/Dev/GPI.Administrativo/INS/AcompanhamentoProcesso/ConsultarProcessoPorGrupoOferta?seqProcesso=0F579D9B6418353A
+    border: solid 1px $smc-cor-secundaria-04;
+    margin: 5px 0;
+    border-radius: 3px;
+
+    .smc-display {
+        label, p {
+            display: block;
+            clear: both;
+        }
+    }
+
+    .smc-buttonset-vertical-secundario {
+        margin-top: 5px;
+    }
+}
+
+.smc-listdetailed-header-conteudo {
+    p {
+        display: block;
+        clear: both;
+    }
+}
+
+.smc-listdetailed-detalhes-conteudo {
+    p {
+        margin: 5px 0;
+    }
+
+    h3 {
+        margin-bottom: 5px;
+    }
+}
+
+.smc-button {
+    z-index: 0;
+}
+
+.smc-uploadFile-contextWindowControls {
+    & > .smc-button {
+        z-index: 1;
+    }
+}
+
+.smc-buttonset-horizontal-secundario {
+    & > .dropdown {
+        & .smc-dropdown-btn-toggle-config {
+            position: static;
+        }
+    }
+}
+
+
+.smc-gpi-lista-sem-botoes {
+    .smc-list-item {
+        overflow: hidden;
+    }
+
+    .smc-gpi-displayfor-block {
+        clear: both;
+        display: block;
+
+        label, p {
+            display: block;
+            clear: both;
+        }
+    }
+}
+
+.smc-wizard-barra-acoes {
+    .smc-buttonset-horizontal-primario {
+        float: none;
+    }
+}
+
+.smc-gpi-base-legenda-registro-documentos { // base para ícones para a seção de registro de documentos
+    &:before {
+        @extend .fa;
+        font-size: 16px;
+        margin: 10px 0 0 12px;
+    }
+}
+
+.smc-legend-circle-fill { // ícones para a seção de registro de documentos
+    &:before {
+        @extend .fa-exclamation-triangle;
+        @extend .smc-gpi-base-legenda-registro-documentos;
+    }
+}
+
+.smc-legend-star-fill { // ícones para a seção de registro de documentos
+    &:before {
+        @extend .fa-check;
+        @extend .smc-gpi-base-legenda-registro-documentos;
+    }
+}
+
+.smc-legend-diamond-fill { // ícones para a seção de registro de documentos
+    &:before {
+        @extend .fa-hourglass-half;
+        @extend .smc-gpi-base-legenda-registro-documentos;
+    }
+}
+
+.smc-detalhe-editavel-tabular,
+.smc-masterdetail-detailpartial,
+.smc-detalhe-editavel-blocos {
+    overflow: visible;
+}
+
+.smc-grid-item-destaque td {
+    background-color: $smc-cor-secundaria-04;
+}
+
+.smc-list-item-destaque {
+    border: solid 1px $smc-cor-secundaria-04;
+}
+
+// ícones da treeview
+.smc-ico-treeview {
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    background-position: 3px center;
+}
+
+.smc-gpi-ico-pagina {
+    .smc-treeview-item {
+        background-image: url($smc-gpi-ico-treeview-pagina);
+        @extend .smc-ico-treeview;
+    }
+}
+
+.smc-gpi-ico-idioma {
+    .smc-treeview-item {
+        background-image: url($smc-gpi-ico-treeview-idioma);
+        @extend .smc-ico-treeview;
+    }
+}
+
+.smc-gpi-ico-texto {
+    .smc-treeview-item {
+        background-image: url($smc-gpi-ico-treeview-texto);
+        @extend .smc-ico-treeview;
+    }
+}
+
+.smc-gpi-ico-arquivo {
+    .smc-treeview-item {
+        background-image: url($smc-gpi-ico-treeview-arquivo);
+        @extend .smc-ico-treeview;
+    }
+}
+
+span.fancytree-node {
+    min-height: 28px;
+}
+
+.smc-gpi-treeview-configuracao {
+    .smc-treeview-painel-busca {
+        width: 89%;
+    }
+}
+
+.smc-gpi-treeview-botao-novo {
+    margin-bottom: -30px;
+}
+
+//Parágrafos de headers: alteração força quebra de linha prejudicada por parágrafo vazio.
+.smc-header-tipo-primary {
+    & > .smc-header-grupo-itens {
+        & > .smc-header-item {
+            & > p {
+                min-height: 20px;
+            }
+        }
+    }
+}
+
+// Ajuste labels de porções vindas do SGF
+.smc-sgf-agrupador {
+    & > div {
+        & > .smc-display {
+            & > label {
+                & > p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.smc-sga-box-enderecos {
+    & > div {
+        & > .smc-display {
+            & > div {
+                & > .container-fluid {
+                    border-top: dotted 1px $smc-cinza-03;
+                    padding-top: 6px;
+                    padding-bottom: 6px;
+
+                    & > .smc-display {
+                        & > p {
+                            clear: both;
+                        }
+                    }
+                }
+
+                & > div.container-fluid:first-child {
+                    border-top: none !important;
+                }
+            }
+        }
+    }
+}
+
+.smc-gpi-lista-ofertas-taxa-lote {
+    background: $smc-cor-principal-09;
+    border: solid 1px $smc-cor-principal-06;
+    padding: 10px 15px 10px 15px;
+
+    & > div {
+        & > div {
+            & > div {
+                & > div {
+                    & > .smc-display {
+                        padding: 0;
+
+                        & > p {
+                            margin: 0;
+                            color: $smc-cor-principal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Acessibilidade
+
+.smc-acessibilidade-contraste {
+    //Botões
+    & .smc-btn-usuario, .smc-acessibilidade, .smc-usuario-help {
+        & i {
+            color: $smc-branco;
+        }
+    }
+
+    & .smc-buttonset-horizontal-secundario, .smc-buttonset-horizontal-primario {
+        & .smc-button {
+            & button {
+                background-color: $smc-contraste-background !important;
+                color: $smc-branco !important;
+                border: 1px solid $smc-branco !important;
+
+                &:hover {
+                    background-color: $smc-cinza !important;
+                    border: none !important;
+                }
+            }
+        }
+    }
+
+    & button:hover {
+        border: solid 1px $smc-branco !important;
+    }
+
+    & .smc-button {
+        & a:hover {
+            background-color: $smc-cinza !important;
+        }
+    }
+    //Menu
+    & aside {
+        border-right: 1px solid $smc-branco;
+    }
+
+    & .smc-menu-N2 {
+        & li {
+            & a:hover {
+                background-color: $smc-cinza;
+            }
+        }
+    }
+    //Menu de contexto
+    & .smc-dropdown-btn-toggle-config {
+        background-color: $smc-contraste-background !important;
+        color: $smc-branco !important;
+        border: 1px solid $smc-branco !important;
+    }
+
+    & .dropdown-menu {
+        & div {
+            & .smc-btn-custom {
+                border: none !important;
+            }
+        }
+    }
+
+    & .smc-dropdown-btn-toggle-arrow {
+        background-color: $smc-contraste-background !important;
+        border: 1px solid $smc-branco !important;
+    }
+
+    & .smc-contextmenu .dropdown {
+        background-color: transparent;
+    }
+    //Busca Funcionalidade
+    & .smc-busca-funcionalidade-botao {
+        background-color: $smc-contraste-background;
+        color: $smc-branco;
+        border: 1px solid $smc-branco;
+
+        &:hover {
+            background-color: $smc-cinza;
+        }
+    }
+
+    & .smc-menu-dinamico-ico-referencia:before {
+        color: $smc-branco;
+    }
+    //Grid
+    & .smc-grid {
+        border: solid 1px $smc-branco;
+    }
+    //Aba
+    & .smc-tabs-tab-selected {
+        border-top: 3px solid $smc-branco;
+    }
+}
+
+.smc-grid {
+    td, th {
+        float: none;
+    }
+}
+
+/*/////////consulta inscrição//////////////*/
+
+.smc-gpi-numero-inscricao {
+    border-bottom: 3px double $smc-cor-principal;
+    margin-bottom: 10px !important;
+
+    & > label {
+        margin-bottom: 5px;
+    }
+
+    & > p {
+        margin-bottom: 10px !important;
+    }
+}
+
+.smc-gpi-situacao-inscrito {
+    border-bottom: 3px double $smc-cor-principal;
+    margin-bottom: 10px !important;
+
+    & > p {
+        margin-bottom: 10px !important;
+    }
+}
+
+
+.smc-gpi-grupo-ofertas-inscricao {
+    border-bottom: 3px double $smc-cor-principal;
+    margin-bottom: 10px !important;
+
+    & > label {
+        margin-bottom: 5px;
+    }
+
+    & > p {
+        margin-bottom: 10px !important;
+    }
+}
+
+.smc-gpi-ofertas-inscricao {
+    border-bottom: 3px double $smc-cor-principal;
+    margin-bottom: 10px !important;
+
+    & > label {
+        margin-bottom: 5px;
+    }
+
+    & > p {
+        margin-bottom: 10px !important;
+    }
+}
+
+.smc-gp-opcoes-inscricao {
+    border-bottom: 1px dashed #afdfe4;
+    margin-bottom: 10px !important;
+
+    & > label {
+        margin-bottom: 5px;
+    }
+
+    & > p {
+        margin-bottom: 10px !important;
+    }
+}
+
+.smc-gpi-justificativa-inscricao {
+    border-bottom: 1px dashed $smc-cor-principal;
+    margin-bottom: 23px !important;
+
+    & > label {
+        margin-bottom: 5px;
+    }
+
+    & > p {
+        margin-bottom: 10px !important;
+    }
+}
+
+
+.smc-gpi-grid-arquivos {
+
+    & > div > table > tbody > tr > td:last-child {
+
+        & > div > p > a {
+            color: $smc-cor-principal;
+            border-radius: 10px;
+            text-transform: lowercase;
+            text-decoration: underline;
+            padding: 9px 12px;
+            font-style: italic;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 190px !important;
+            display: inline-block;
+            // text-align:right;
+        }
+    }
+}
+
+.smc-gpi-grid-titulos {
+
+    & > div > table > tbody > tr > td:first-child {
+
+        & > div > p > a {
+            color: $smc-cor-principal;
+            border-radius: 10px;
+            text-transform: lowercase;
+            text-decoration: underline;
+            padding: 9px 12px;
+            font-style: italic;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 190px !important;
+            display: inline-block;
+            // text-align:right;
+        }
+    }
+}
+
+
+//controle endereço gpi
+.smc-gpi-controle-endereco {
+    // background-color: #ff0000;
+    div > div > div.smc-size-lg-3 {
+        //background-color: #b6ff00;
+        width: 20% !important;
+        padding-left: 5px;
+        padding-right: 5px
+    }
+
+    div > div > div.smc-size-lg-11 {
+        // background-color: #ff6a00;
+        width: 30% !important;
+    }
+}
+
+//arranjo para separação entre opção e justificativa
+.smc-gpi-opcao + .smc-gpi-opcao, .smc-gpi-opcao + .smc-gpi-numero-opcoes {
+    border-top: 1px dashed #18838d;
+    margin-top: 12px !important;
+    padding-top: 12px !important;
+}
+
+/*/////////fim tela consulta//////////////////*/
+.smc-gpi-consultainscricao {
+
+    & > fieldset > div > div > div {
+        & > label {
+            float: none;
+        }
+
+        & > div > div > div > div > label, p {
+            float: none;
+        }
+    }
+}
+
+.smc-gpi-btn-configurar-topo-pagina {
+    position: absolute;
+    z-index: 1;
+    right: 1.5%;
+    margin-top: -50px;
+}
+
+
+//.smc-buttonset-horizontal-primario{
+//    margin-top: 4px;
+//}
+
+//label {
+//    float: none !important;
+//    margin-bottom: 0px;
+//}
+//
+//.smc-display > p {
+//    float: none !important;
+//    margin-bottom: 10px;
+//}
+
+///*****/////////////////////****///
+
+// Classe para tela de Registro de Documentos em Gestão da Inscrição
+
+.smc-gpi-documentos-entregues {
+    .smc-detalhe-editavel-tabular {
+        margin: 5px 0 0 0;
+        padding-bottom: 3px;
+        padding-top: 8px;
+        overflow: inherit;
+
+        .smc-buttonset-horizontal-primario {
+            border-bottom: none;
+        }
+    }
+
+    .smc-detalhe-editavel-blocos {
+        .smc-button.smc-size-lg-2 {
+            width: auto !important;
+        }
+
+        .smc-detalhe-editavel-linha-dados-nova {
+            .smc-gpi-situacao-entrega-documento {
+                // margin-left: 17px;
+            }
+        }
+    }
+
+    .smc-gpi-documentos-agrupados {
+        .smc-detalhe-editavel-blocos {
+            border: 1px dashed $smc-cor-principal-05;
+
+            h3 {
+                color: $smc-cor-principal-02;
+            }
+        }
+    }
+
+    .smc-instrucoes-preenchimento-container {
+        display: inline-block !important;
+    }
+
+    .smc-detalhe-editavel-header {
+        margin-top: 0 !important;
+    }
+
+    .smc-detalhe-editavel-linha-dados {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .smc-detalhe-editavel-header {
+        .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1:first-child {
+            width: 23px;
+            padding: 0;
+        }
+
+        div {
+            label {
+                font-size: 12px !important;
+            }
+        }
+
+        div:nth-child(1) {
+            label {
+                display: none;
+            }
+        }
+
+        div:nth-child(6) {
+            width: 17px;
+        }
+        //comentei pois estava deixando desalinhando o label em alguns casos
+        /*
+        div:nth-child(8) {
+            width: 178px;
+        }
+            */
+    }
+
+    .smc-detalhe-editavel-linha-dados {
+        .smc-size-md-24 {
+            .smc-size-md-1.smc-size-xs-24.smc-size-sm-4.smc-size-lg-1 {
+                width: 17px !important;
+            }
+
+            .smc-size-md-1.smc-size-xs-1.smc-size-sm-1.smc-size-lg-1 {
+                margin-left: -1px;
+                width: 26px
+            }
+
+            .smc-upload {
+                width: 102px;
+            }
+
+            .smc-uploadFile-filesCounter {
+                left: 50px;
+            }
+        }
+    }
+
+    .smc-display-legend {
+        margin-top: 8px;
+        margin-left: -5px;
+    }
+
+    .smc-uploadFile-contextWindowControls {
+        height: 0;
+    }
+}
+
+@media (max-width:1199px) {
+
+    .smc-preenchimento-obrigatorio {
+        margin: 4px 2px -2px 0 !important;
+    }
+
+
+    .smc-aplicaco-logotipo {
+        margin-top: 9px;
+    }
+
+    .img-responsive {
+        display: block;
+        max-width: 123px;
+        height: auto;
+    }
+}
+
+.fancytree-expander + .smc-ico-radio-selecionado.smc-treeview-selector + div + .fancytree-title,
+.fancytree-expander + .smc-treeview-selector + div + .fancytree-title {
+    margin-left: 0;
+}
+
+.smc-gpi-termo-entrega {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.smc-gpi-selecao-ofertas {
+    .smc-lookup-corpo {
+        .smc-grid {
+            margin-top: 20px;
+        }
+    }
+}
+
+.smc-gpi-mensagem {
+    margin-top: 5px;
+}
+
+
+@media (max-width:991px) {
+
+    .smc-aplicaco-logotipo {
+        //background-color: aqua !important; //cor
+        margin-top: 2px;
+    }
+
+    .smc-conteudo {
+        margin: 115px 0 60px 0px !important;
+        //background-color: red !important;
+    }
+
+    .smc-login {
+        margin-top: 0px !important;
+    }
+
+    .smc-menu-dinamico-controls {
+        top: 50px !important;
+        //background-color: #4cff00 !important;
+    }
+
+    .smc-menu-dinamico-ico-referencia {
+        top: 7px !important;
+        height: 33px;
+    }
+}
+
+@media (max-width:767px) {
+
+    .smc-aplicaco-logotipo {
+        //background-color: yellow !important; //cor
+    }
+
+    .img-responsive {
+        display: block;
+        max-width: 123px;
+        /* height: auto; */
+        margin-top: 2px;
+    }
+
+
+    .navbar-nav .open .dropdown-menu {
+        border: solid 4px #e5e5e5;
+    }
+
+    .smc-pager > nav {
+        padding-top: 20px !important;
+    }
+
+    .smc-pager ul li a {
+        padding: 0px 5px !important;
+        padding-top: 0px !important;
+    }
+
+    .smc-pager {
+        height: 76px !important;
+        // background: #ff0000 !important;
+    }
+}
+
+@media (max-width:480px) {
+    .smc-aplicaco-logotipo {
+        //background-color: #f00 !important; //cor
+    }
+
+    .img-responsive {
+        display: block;
+        max-width: 90px;
+        margin-top: 5px;
+    }
+
+    .smc-footer-copyright {
+        position: absolute !important;
+    }
+}
+
+/**/ /////////*/
+
+
+//acessibilidade
+.smc-acessibilidade-contraste {
+
+    .smc-btn-acessibilidade {
+        border: 0px solid !important;
+    }
+
+    .smc-ribbon {
+        border-color: #f8f9f9 !important;
+    }
+
+    .smc-radiobutton {
+        label > input {
+            border: 0px !important;
+        }
+    }
+
+    div.smc-sortpicker {
+        min-width: 226px;
+    }
+
+    .smc-gpi-fieldset-inline {
+        padding: 2px 10px 5px !important;
+    }
+}
+
+
+@media (max-width:991px) {
+    .smc-acessibilidade-contraste {
+        .smc-login {
+            border-top: 1px solid #b5b0b0;
+            border-bottom: 1px solid #b5b0b0;
+        }
+
+        .navbar::after {
+            background-color: #ff0000 !important;
+        }
+    }
+}
+
+
+@media (max-width:767px) {
+    .smc-acessibilidade-contraste {
+
+        .navbar > div > .navbar-nav .open .dropdown-menu {
+            background-color: black !important;
+        }
+
+
+        .smc-pager ul li a {
+            border-color: #000000 !important;
+        }
+    }
+}
+//fim acessibilidade
+
+.smc-modal-window > #detailFormInscricaoDocumentos .smc-display-legend > div::before {
+    margin-top: 27px;
+}
+
+.smc-modal-window > #detailFormInscricaoDocumentos .smc-display .smc-instrucoes-preenchimento-container {
+    margin-top: 14px;
+}
+
+.smc-modal-window > #detailFormInscricaoDocumentos > div.smc-modal-content {
+    min-height: 165px;
+}
+
+.smc-gpi-docs-fix .smc-buttonset-horizontal-secundario {
+    display: flex
+}
+
+.smc-modal-window > #detailFormInscricaoDocumentos > .smc-modal-content > #DataPrazoEntrega,
+.smc-modal-window > #detailFormInscricaoDocumentos > .smc-modal-content > #DataEntrega,
+.smc-modal-window > #detailFormInscricaoDocumentos > .smc-modal-content > #VersaoDocumento,
+.smc-modal-window > #detailFormInscricaoDocumentos > .smc-modal-content > #SituacaoEntregaDocumento,
+.smc-modal-window > #detailFormInscricaoDocumentos > .smc-modal-content > #Observacao,
+.smc-modal-window > #detailFormInscricaoDocumentos > .smc-modal-content > #FormaEntregaDocumento {
+    min-width: 190px !important
+}
+
+
+.smc-gpi-entrega-posterior {
+    // background-color: aqua !important;
+    position: absolute;
+    right: 38px;
+    top: 8px;
+
+    &:hover {
+        &:after {
+        }
+    }
+
+    &:before {
+        content: "Entrega posterior";
+        background-color: #89a0a2;
+        position: absolute;
+        font-size: 10px;
+        text-align: center;
+        border-radius: 0px;
+        padding: 3px 4px;
+        line-height: 10px;
+        color: #fff;
+        //font-style: italic;
+        margin-top: 24px;
+        margin-left: -1px;
+        -webkit-box-shadow: 1px 2px 7px -2px rgba(0,0,0,0.33);
+        box-shadow: 1px 2px 7px -2px rgba(0,0,0,0.33);
+        z-index: 20;
+        border: 1px solid #647c7e;
+        box-shadow: 1px 2px 7px -2px
+    }
+
+    label {
+        display: none !important;
+    }
+}
+
+
+
+
+.smc-gpi-documento-opcional-label-hidden {
+    .smc-gpi-docs-fix {
+        .smc-detalhe-editavel-header {
+            div:nth-child(9), div:nth-child(10) {
+                display: none;
+            }
+        }
+    }
+
+    .smc-gpi-docs-fix {
+        div[ data-type="smc-editabledetail-data-container"] {
+            .smc-detalhe-editavel-linha-dados {
+                div {
+                    div:nth-child(30) {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.smc-datagrid {
+    .smc-gpi-documento-legenda {
+        width: 2%;
+    }
+
+    .smc-gpi-documento-data-prazo-entrega {
+        width: 8%;
+    }
+
+    .smc-gpi-documento-data-entrega {
+        width: 8%;
+    }
+
+    .smc-gpi-documento-versao-documento {
+        width: 15%
+    }
+
+    .smc-gpi-documento-forma-entrega-documento {
+        width: 15%
+    }
+
+    .smc-grid-detalhes-coluna-botoes {
+        width: 7%
+    }
+
+    .smc-gpi-documento-observacao {
+        width: 25%
+    }
+
+    .smc-gpi-documento-arquivo-anexado {
+        width: 20%
+    }
+
+    .smc-gpi-entrega-posterior::before {
+        margin-top: -6px;
+    }
+}
+
+.smc-modal-content {
+    .smc-gpi-documento-data-prazo-entrega {
+        //  width: 8%;
+    }
+
+    .smc-gpi-documento-data-entrega {
+        // width: 8%;
+    }
+
+    .smc-gpi-documento-versao-documento {
+        // width: 15%
+    }
+
+    .smc-gpi-documento-forma-entrega-documento {
+        //  width: 15%
+    }
+
+    .smc-grid-detalhes-coluna-botoes {
+        //  width: 7%
+    }
+
+    .smc-gpi-documento-observacao {
+        // width: 23%
+    }
+
+    .smc-gpi-documento-arquivo-anexado {
+        // width: 7%
+    }
+
+    .smc-size-md-1 {
+        // width: 2%;
+    }
+
+    .smc-gpi-entrega-posterior::before {
+        margin-top: 31px;
+        margin-left: -20px;
+    }
+
+    .smc-gpi-documento-exibir-observacao-para-inscrito {
+        margin-top: 0;
+        height: auto;
+    }
+    //
+    //01
+    //ajusta icones para duas linhas de conteúdo
+    .smc-legenda-status-aguardandoentrega,
+    .smc-legenda-status-pendente,
+    .smc-legenda-status-deferido,
+    .smc-legenda-status-aguardandovalidacao,
+    .smc-legenda-status-indeferido {
+        height: 133px;
+        margin-top: 0px;
+        // background: red;
+    }
+    //
+    //ajustando o smc-display na modal ( sim, tá dando diferença em modais)
+    .smc-display {
+        padding-left: 5px;
+        overflow: hidden;
+        padding: 0;
+    }
+    /*//ajuste fillinstrutiono na modal
+    .smc-instrucoes-preenchimento-container {
+        margin-left: -20px;
+        top: -8px;
+    }*/
+}
+
+
+//02
+//agora ajusta na faixa de 767 diminuindo o heigh
+@media (max-width:767px) {
+    .smc-modal-content {
+        .smc-legenda-status-aguardandoentrega,
+        .smc-legenda-status-pendente,
+        .smc-legenda-status-deferido,
+        .smc-legenda-status-aguardandovalidacao,
+        .smc-legenda-status-indeferido {
+            height: 60px;
+            // background: green;
+        }
+    }
+}
+
+.smc-gpi-documento-exibir-observacao-para-inscrito {
+    margin-top: 7px;
+    height: 10px;
+}
+
+.smc-gpi-titulo-legenda {
+    & > ul > li:first-child {
+        display: block !important;
+        margin: 0 0 10px 0;
+        font-size: 12px;
+        color: $smc-cinza-07;
+    }
+}
+
+.smc-legend-box > ul {
+    padding: 0;
+}
+
+.smc-listdetailed-header-conteudo {
+    padding: 8px 0px 20px 6px !important;
+}
+
+.smc-listdetailed-item-lista {
+    padding-bottom: 12px;
+
+    label {
+        display: block;
+        font-size: 11px !important;
+        font-weight: normal !important;
+        margin-bottom: -1px;
+    }
+
+    p {
+        clear: both;
+    }
+
+    .smc-buttonset-horizontal-secundario {
+        margin-top: 15px;
+    }
+
+    + .smc-listdetailed-item-lista {
+        border-top: 1px solid #d8f0f3;
+    }
+}
+//ajusta a coluna de botoes do grid até 991
+@media (max-width:991px) {
+    //remove o item da coluna de botões que exsite na thead
+    thead .smc-grid-coluna-botoes {
+        display: none;
+    }
+
+    .smc-grid-coluna-botoes {
+        position: absolute;
+        right: 20px;
+        display: flex;
+        background: #ffffff;
+        border: 1px solid #8bc1c6 !important;
+        width: 37px;
+        margin-top: 6px;
+        border-radius: 6px 0 6px 6px;
+        padding: 4px 4px 3px 3px !important;
+        // &:after {
+        //     content: "< rolagem >";
+        //     position: absolute;
+        //     right: 35px;
+        //     margin-top: -4px;
+        //     background: #ceecef;
+        //     padding: 7px 13px 7px 12px;
+        //     border-radius: 4px 0 0 4px;
+        //     /* border: 1px solid; */
+        //     color: #adacac;
+        //     text-align: right;
+        //     width: auto;
+        //     white-space: nowrap;
+        // }
+    }
+}
+//ajusta cor do thumb do scroll
+
+::-webkit-scrollbar-thumb {
+    background-color: #18838d;
+}
+//detalhe que diferencia a consulta-registro-documentos
+
+.smc-gpi-consulta-registro-documentos {
+    //border: 1px solid red;
+
+    & ~ form {
+        div.smc-detalhe-editavel-organizador {
+            // border: 1px solid red;
+
+            .smc-detalhe-editavel-header { //removendo o header com legendas
+                display: none !important;
+            }
+
+            label {
+                // color: red !important;
+                display: inline-block
+            }
+
+            & > div > div.smc-detalhe-editavel-linha-dados {
+                // border: 1px solid green;
+                padding: 11px 0px 19px 10px !important;
+            }
+        }
+        //ajustando os icones de legenda para duas linhas de dados
+        .smc-detalhe-editavel-linha-dados {
+            //border: 1px solid green;
+
+            .smc-legenda-status-aguardandoentrega,
+            .smc-legenda-status-pendente,
+            .smc-legenda-status-deferido,
+            .smc-legenda-status-aguardandovalidacao,
+            .smc-legenda-status-indeferido {
+                // background: red;
+                height: 30px;
+                margin-top: 30px;
+            }
+
+            .smc-button {
+                // border: 2px solid #ff6a00;
+
+
+                & > a {
+                    // border: 1px solid #b6ff00;
+                    margin-top: 22px;
+                }
+            }
+
+            & > div > div:nth-last-child(2) {
+                //border: 1px solid green;
+                position: absolute;
+                right: 0;
+                top: -26px;
+            }
+        }
+
+
+        .smc-linha-removida span.smc-span-linha-removida {
+            height: 80px;
+            padding-top: 42px;
+            // border: 1px solid red;
+        }
+    }
+}
+//ajusta o item de entrega posterior ( checkbox ) que aparecia na responsividade
+@media (max-width:991px) {
+    .smc-gpi-entrega-posterior {
+        &:before {
+            margin-top: 4px;
+        }
+    }
+}
+/*//ajuste fillInstructions mais próximo ao elemento receptor
+.smc-instrucoes-preenchimento-container {
+    margin-left: -10px;
+    position: absolute;
+    z-index: 1;
+}*/
+
+.smc-gpi-inscricoes-candidato {
+    .smc-buttonset-vertical-secundario {
+        .dropdown-menu {
+            min-width: 290px !important;
+        }
+    }
+}
+
+#NomeSocial {
+    label {
+        padding-left: 8px;
+    }
+}
+
+/*#IdsTagManager {
+    label {
+        padding-left: 12px;
+    }
+    .smc-instrucoes-preenchimento-container {
+        margin-left: -5px;
+        margin-top: -2px;
+    }
+}*/
+
+.smc-btn-desabilitado,
+.smc-upload-readonly > .smc-uploadFile-controles,
+.smc-upload-readonly.smc-uploadImage > .smc-uploadFile-controles,
+.smc-upload-readonly > .smc-uploadFile-contextWindowControls > .smc-button > .smc-btn-custom,
+.smc-upload-readonly > .smc-uploadFile-contextWindowControls > .dropdown > .smc-dropdown-btn-toggle-arrow,
+.smc-button > [disabled] {
+    opacity: 1 !important;
+}
+
+button.smc-btn-buscacep {
+    margin: 22px 0px 0px -15px;
+}
+
+div.smc-uploadFile {
+    > label {
+        display: inline-block;
+        width: auto;
+    }
+}
+
+div.smc-instrucoes-preenchimento-container {
+    margin-top: -4px;
+}
+
+.smc-gpi-docs-fix {
+    .smc-gpi-documento-informacao-versao-exigida {
+        position: absolute;
+        margin-left: -35px;
+        margin-top: -9px;
+    }
+
+    .smc-gpi-documento-informacao-exibir-observacao-para-inscrito {
+        position: absolute;
+        margin-left: -10px;
+    }
+}
+
+#CamposInscrito {
+    .smc-checkbox-list-itens {
+        .smc-checkbox {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e1e1e1;
+            transition: all ease .2s;
+
+            label {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+                padding: 13px 10px;
+                color: #4f4f4f;
+
+                input {
+                    margin: 0;
+                    transform: scale(1.2);
+                    top: 0;
+                    margin-right: 10px;
+
+                    &:checked {
+                        &:after {
+                            top: -15px;
+                            left: 5px;
+                            width: 7px;
+                            height: 13px;
+                            border: solid #ffffff;
+                            border-width: 0 3px 3px 0;
+                            transform: rotate(45deg);
+                        }
+
+                        &:before {
+                            background: #18838d;
+                        }
+                    }
+
+                    &:before {
+                        background: #ffffff;
+                        border-color: #636363;
+                    }
+
+                    &:after {
+                        background: transparent;
+                    }
+                }
+
+                input[readonly] {
+                    &:after {
+                        border-color: rgba(24,131,141,.4);
+                    }
+                }
+            }
+
+            &:hover {
+                background: #f1f1f1 !important;
+            }
+
+            &:last-child {
+                border: 0 !important;
+            }
+
+            &:nth-child(even) {
+                background: #fbfbfb;
+            }
+        }
+    }
+}
+
+.smc-gpi-orientacao-cad-inscrito {
+    background: #f5f5e2;
+    color: #474707;
+    margin: 0;
+    padding: 15px 20px;
+    margin-top: 10px;
+}
+
+
+.smc-btn-checkinlote-ico {
+    font-size: 0;
+    line-height: 38px;
+
+    &:before {
+        @extend .fa;
+        @extend .fa-users;
+        font-size: 16px;
+    }
+}
+
+.smc-datagrid {
+    .smc-btn-destaque-icotext {
+        height: auto !important;
+    }
+}
+
+.smc-gpi-linha-botoes-checkin {
+    margin-bottom: -33px;
+    padding-right: 80px;
+}
+
+//CORREÇÃO BUG:http://tfs.pucminas.br:8080/tfs/GTI/ProjetoPiloto/_workitems/edit/64840?src=WorkItemMention&src-action=artifact_link
+.smc-gpi-responsividade-radio {
+    margin-bottom: 1px;
+}
+
+////////// UPLOAD DE ARQUIVOS NA TELA DE CONFIGURAÇÃO DE EMISSÃO DE DOCUMENTOS
+
+.smc-gpi-configuracao-emissao-documentos {
+
+    .smc-radiobutton-list-horizontal .smc-radiobutton > label > input:checked::after,
+    .smc-checkbox-list-horizontal .smc-radiobutton > label > input:checked::after,
+    .smc-radiobutton label > input:checked::after,
+    .smc-radiobutton-list-horizontal .smc-checkbox > label > input:checked::after,
+    .smc-checkbox-list-horizontal .smc-checkbox > label > input:checked::after,
+    .smc-checkbox label > input:checked::after {
+        left: 4px;
+    }
+
+    .smc-uploadFile .smc-uploadFile-arquivos > .smc-uploadFile-arquivo > div {
+        width: 25rem;
+    }
+
+    .smc-uploadFile .smc-uploadFile-controles {
+        float: left;
+    }
+
+    div.smc-size-lg-12 {
+        .smc-uploadFile .smc-uploadFile-controles {
+            //float: none !important;
+        }
+
+        .smc-uploadFile.input-validation-error {
+            margin-top: 5px;
+
+            span.span-validation-error {
+                margin: 0;
+            }
+        }
+    }
+
+    .smc-uploadFile-controles {
+        background: #18838d url("../Images/smc-btn-selecionar-arquivo.png") no-repeat left -1px !important;
+    }
+
+    .smc-uploadFile-arquivos {
+        width: auto;
+        max-width: 230px;
+        float: left;
+        position: relative;
+        height: 3rem;
+        padding-top: 0.1rem;
+        margin-top: 0rem;
+        padding-bottom: 0.1rem;
+        margin-left: -0.3rem;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .smc-button {
+        a.smc-btn-excluir-ico {
+            position: relative;
+            top: -5px;
+        }
+    }
+
+    div.smc-radiobutton label > input::before {
+        left: 0;
+    }
+
+    .smc-uploadFile-arquivo {
+        height: 3rem;
+        margin-top: -0.1rem;
+        padding-top: 0.3rem !important;
+
+        div[data-type="smc-textbox"] {
+            span, label {
+                display: none;
+            }
+        }
+    }
+
+    .smc-uploadFile-fileProgress-done, .smc-uploadFile-arquivo-imagem {
+        display: none !important;
+    }
+
+    .smc-upload {
+        padding-left: 5px;
+
+        .smc-uploadFile-arquivo {
+            > div {
+                display: none;
+            }
+        }
+
+        .smc-uploadFile-contextWindowControls {
+            position: relative;
+
+            .dropdown {
+                position: absolute;
+                display: flex;
+            }
+
+            .open {
+                > .dropdown-menu {
+                    display: block;
+                    position: absolute !important;
+                    z-index: 3;
+                    padding: 0 10px;
+                }
+            }
+
+            .dropdown-menu {
+                display: none;
+                width: 20.71em;
+            }
+        }
+
+        .smc-dropdown-btn-toggle-arrow {
+            height: 3.063rem !important;
+            right: -10em;
+            color: var(--white) !important;
+            border: 1px solid var(--color-primary) !important;
+            border-left: none !important;
+            background-color: var(--color-primary) !important;
+        }
+
+        .smc-uploadFile-contextWindowControls > .smc-button > button {
+            height: 3.5em;
+            display: flex;
+            align-items: center;
+            width: 7.14em;
+            text-transform: uppercase;
+            font-size: 1em;
+            background-color: var(--color-primary);
+            color: var(--white);
+            border: 1px solid var(--color-primary);
+        }
+
+        p[data-type="smc-uploadFile-noFiles"] {
+            font-size: 0.9em;
+            border-top: none;
+        }
+
+        .smc-uploadFile-filesCounter {
+            height: 1rem;
+            top: -0.1rem;
+            left: 6.42rem !important;
+            padding: 0.2rem 0.35rem 0 0.2rem;
+            background-color: var(--color-hover);
+            width: 1.42em !important;
+            position: absolute;
+            flex-direction: row !important;
+
+            i {
+                margin: 0;
+                font-family: var(--fa-font);
+
+                &:before {
+                    font-size: 0.5rem;
+                    margin-right: 0.14rem;
+                    content: "\f00c";
+                }
+            }
+        }
+    }
+
+    .smc-uploadFile-filesCounter-0 {
+        display: none !important;
+    }
+
+    .smc-uploadFile-filesCounter-0.smc-uploadFile-filesCounter-uploading {
+        i {
+            display: none;
+        }
+
+        font-size: 0;
+        width: 10px !important;
+        background-color: var(--white);
+        display: block !important;
+    }
+
+    .smc-uploadFile .smc-uploadFile-arquivos > .smc-uploadFile-arquivo {
+        padding: 2px 5px 0 5px;
+        border-bottom: none;
+        display: flex;
+    }
+
+    .smc-uploadFile-arquivo-imagem, .smc-uploadFile-arquivo-download {
+        display: none;
+    }
+
+    .smc-uploadFile-arquivo-nome {
+        width: auto !important;
+        font-size: 0.9em;
+        margin-bottom: 0;
+        margin-top: 4px;
+    }
+
+    .smc-uploadFile-arquivo-tamanho {
+        width: 4em;
+        font-size: .7em;
+        margin-bottom: 0;
+        margin-top: 7px;
+        margin-right: 0;
+    }
+
+    div.smc-uploadFile div.smc-uploadFile-arquivos {
+        > div.smc-uploadFile-arquivo {
+            margin-left: -155px;
+            background-color: #eff9fa;
+            width: 290px !important;
+            flex-direction: initial !important;
+        }
+    }
+
+    div.smc-detalhe-editavel-linha-dados {
+        &:nth-child(2n) {
+            div.smc-uploadFile-arquivo {
+                background-color: #fbfbfb !important;
+            }
+        }
+    }
+
+    div.smc-detalhe-editavel-linha-dados-nova {
+        div.smc-uploadFile-arquivo {
+            background-color: #fff0ed !important;
+        }
+
+        &:nth-child(2n) {
+            div.smc-uploadFile-arquivo {
+                background-color: #fff0ed !important;
+            }
+        }
+    }
+
+    .smc-uploadFile-fileProgress-waiting {
+        height: 1em;
+        background-color: orange;
+        position: absolute;
+        display: none;
+    }
+
+    .smc-uploadFile .smc-uploadFile-fileProgress-done,
+    .smc-uploadFile-fileProgress-done {
+        width: 88%;
+        height: 0.15rem !important;
+        margin-top: 1.6rem;
+        position: absolute;
+        background-color: #13ed41 !important;
+        font-size: 0;
+        -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
+        left: 15px;
+        display: none;
+    }
+
+    .smc-uploadFile-arquivo-download {
+        right: -17px !important;
+        top: 2px !important;
+        padding: 3px !important;
+        display: none;
+
+        &:before {
+            color: var(--color-primary);
+        }
+    }
+
+    .smc-uploadFile-arquivo-remover {
+        margin: 2px 0 11px 5px !important;
+        color: var(--color-error);
+        display: inline-block !important;
+    }
+
+    .smc-uploadFile-fileProgress-div {
+        font-size: 0;
+        background-color: #13ed41 !important;
+        position: absolute;
+        display: none;
+    }
+
+    .smc-uploadFile .smc-uploadFile-fileProgress-div {
+        position: absolute;
+        left: 15px;
+        margin-right: 15px;
+        height: 0.15rem;
+        max-width: 88%;
+        webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.2);
+        -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,.2);
+        box-shadow: 0 0 2px 0 rgba(0,0,0,.2);
+        margin-top: 1.8rem;
+    }
+
+    .smc-uploadFile-progresso-div {
+        width: 88%;
+        height: 0.28em !important;
+        margin-top: 2.07em;
+        position: absolute;
+        background-color: orange;
+        display: none;
+    }
+
+    .smc-detalhe-editavel-linha-dados {
+        > .smc-size-md-24 {
+            > div {
+                &:nth-child(7),
+                &:nth-child(12) {
+                    clear: both;
+                }
+
+                &:nth-child(12).smc-upload {
+                    margin-bottom: -15px;
+                    position: relative;
+                    z-index: 0;
+
+                    @media screen and (max-width: 767px) {
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/// CÓPIA DO PROCESSO
+.smc-grupo-copia {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 0.1em solid #cecece;
+    padding-bottom: 1.5em;
+    margin-bottom: 1em;
+}
+
+fieldset {
+    > .smc-grupo-copia:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    div[data-type="smc-submitlist-body"] {
+        div[data-control-child="smc-list"]:last-child {
+            > .smc-grupo-copia:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.smc-modal-expandida {
+    > .smc-modal-window-large > .smc-form > .smc-modal-content {
+        max-height: calc(100vh - 170px) !important;
+    }
+}
+
+.smc-modal-largest-expandida {
+    > .smc-modal-window-largest {
+        height: calc(100vh - 150px);
+
+        > .smc-form {
+            position: relative;
+
+            > .smc-modal-content {
+                max-height: calc(100vh - 250px) !important;
+                height: calc(100vh - 250px) !important;
+            }
+        }
+
+        .smc-modal-footer {
+            position: absolute;
+            bottom: -18px;
+        }
+    }
+}
+
+.margin-bottom1 {
+    margin-bottom: 1px;
+}

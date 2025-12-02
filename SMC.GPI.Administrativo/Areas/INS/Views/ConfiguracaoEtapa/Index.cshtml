@@ -1,0 +1,63 @@
+﻿@model ConfiguracaoEtapaFiltroViewModel
+
+@section Scripts {
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.ContextMenu, RegisterHelperControls.Lookup, RegisterHelperControls.TreeView)
+}
+
+@Html.Action("CabecalhoProcessoEtapa", "EtapaProcesso", new { @seqEtapa = Model.SeqEtapaProcesso, @seqProcesso = Model.SeqProcesso, @exibirBotaoAlterarAssociacaoEtapaProcesso = true })
+
+@using (Smc.Form("formPesquisaConfiguracaoEtapa", "ListarConfiguracaoEtapa").Ajax("#divGridConfiguracaoEtapa").Begin())
+{
+    using (Smc.Div("divConfiguracaoEtapa").CssClass("smc-btn-novo-opcoes").Begin())
+    {
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Novo)
+                 .DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                 .Highlight()
+                 .Type(SMCButtonType.Link)
+                 .SecurityToken(UC_INS_001_03_04.MANTER_CONFIGURACAO_ETAPA)
+                 .Url(Url.Action("Incluir", "ConfiguracaoEtapa",
+                        new
+                        {
+                            @seqEtapa = (SMCEncryptedLong)Model.SeqEtapaProcesso,
+                            @seqProcesso = (SMCEncryptedLong)Model.SeqProcesso
+                        })))
+        )
+    }
+}
+
+<div id="divGridConfiguracaoEtapa">
+    @Html.Action("ListarConfiguracaoEtapa")
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar")
+        .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-voltar-icotext")
+        .Url(Html.SMCAction("Index", "EtapaProcesso", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso) })))
+)
+
+@using (Smc.ModalWindow("modalIncluirConfiguracaoEtapaExistente")
+        .Title(Smc.GetUIResource("Incluir_Configuracao_Etapa_Existente"))
+        .Form("IncluirConfiguracaoEtapaExistente", "SalvarConfiguracaoEtapaExistente", "ConfiguracaoEtapa", null, true)
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.Text).Text(Smc.GetUIResource("Configuracao_Etapa_Existente_Botao_Copiar")).Tooltip("Configuracao_Etapa_Existente_Botao_Copiar_Tooltip").Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.Text).Text(Smc.GetUIResource("Configuracao_Etapa_Existente_Botao_Cancelar")).Tooltip("Configuracao_Etapa_Existente_Botao_Cancelar_Tooltip"))
+        .Begin())
+{
+
+}
+
+@using (Smc.ModalWindow("modalCopiarItensConfiguracaoEtapa")
+        .Title(Smc.GetUIResource("Copiar_Itens_Configuracao_Etapa"))
+        .Form("CopiarItensConfiguracaoEtapa", "SalvarCopiaItensConfiguracaoEtapa", "ConfiguracaoEtapa", null, true)
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.Text)
+            .Text(Smc.GetUIResource("Copia_Itens_Configuracao_Etapa_Botao_Copiar"))
+            .Tooltip("Copia_Itens_Configuracao_Etapa_Botao_Copiar_Tooltip")
+            .Confirm(Smc.GetUIResource("Copia_Itens_Configuracao_Etapa_Confirmacao_Titulo"), Smc.GetUIResource("Copia_Itens_Configuracao_Etapa_Confirmacao_Mensagem"))
+            .Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.Text).Text(Smc.GetUIResource("Copia_Itens_Configuracao_Etapa_Botao_Cancelar")).Tooltip("Copia_Itens_Configuracao_Etapa_Botao_Cancelar_Tooltip"))
+        .Begin())
+{
+
+}
+

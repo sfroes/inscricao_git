@@ -1,0 +1,109 @@
+﻿@model SMCPagerModel<SMC.GPI.Inscricao.Models.InscricaoListaViewModel>
+
+@(Smc.List("listaProcessos").HideRowTotalizer()
+    .AutoHideNavigator()
+    .UpdateTargetId("divGridInscricoes")
+    .DenyChangeNumberOfRowsPerPage()
+    .HtmlTemplate(
+    @<text>
+        <span class="smc-gpi-lista-processos-titulo smc-size-md-24 smc-size-sm-24 smc-size-xs-24 smc-size-lg-24">@item.DescricaoProcesso</span>
+        <div class="smc-gpi-processo-lista-grupos smc-size-md-24 smc-size-sm-24 smc-size-xs-24 smc-size-lg-24">
+            @foreach (var inscricao in item.Inscricoes)
+            {
+                <div class="smc-gpi-agrupamento smc-size-md-24 smc-size-sm-24 smc-size-xs-24 smc-size-lg-24">
+
+                    @if (!string.IsNullOrEmpty(inscricao.MensagemInformativaEntregaDocumentos))
+                    {
+                    <div class="smc-gpi-lista-inscricoes-mensagem smc-size-md-24 smc-size-sm-24 smc-size-xs-24 smc-size-lg-24"><i></i> @inscricao.MensagemInformativaEntregaDocumentos</div>
+                    }
+
+                    <span class="smc-gpi-lista-inscricoes-situacao smc-size-md-24 smc-size-sm-24 smc-size-xs-24 smc-size-lg-24">@inscricao.DescricaoSituacaoAtual</span>
+
+                    @if (inscricao.DescricaoOfertas.SMCCount() > 0)
+                    {
+                    foreach (var oferta in inscricao.DescricaoOfertas)
+                    {
+                    <div class="smc-gpi-lista-inscricoes-multiplas-ofertas smc-size-md-24 smc-size-sm-24 smc-size-xs-24 smc-size-lg-24">@oferta</div>
+                    }
+                    }
+                    else
+                    {
+                    <div class="smc-gpi-lista-inscricoes-oferta smc-size-md-24 smc-size-sm-24 smc-size-xs-24 smc-size-lg-24">@inscricao.DescricaoGrupoOferta</div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(inscricao.MensagemInformativa))
+                    {
+                    <div class="smc-gpi-lista-inscricoes-mensagem smc-size-md-24 smc-size-sm-24 smc-size-xs-24 smc-size-lg-24"><i></i> @inscricao.MensagemInformativa</div>
+                    }
+
+                    <div class="smc-buttonset-horizontal-secundario smc-gpi-lista-inscricoes-botoes smc-gpi-minhas-inscricoes-btn smc-size-md-24  smc-size-sm-24 smc-size-xs-24 smc-size-lg-24">
+
+                        @if (inscricao.HabilitarEntregaDocumentacao)
+                        {
+                            @(Smc.Button("NovaEntregaDocumentacao")
+                                     .Type(SMCButtonType.Link)
+                                     .CssClass("smc-btn-novo")
+                                     .Action("Index", "NovaEntregaDocumentacao",
+                                         new
+                                         {
+                                             @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqConfiguracaoEtapa),
+                                             @seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqGrupoOferta),
+                                             @seqInscricao = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqInscricao),
+                                             @idioma = inscricao.IdiomaInscricao,
+                                             @uidProcesso = item.UidProcesso,
+                                             @area = "INS"
+                                         }))
+                        }
+
+                        @if (!inscricao.InscricaoCancelada || inscricao.PaginaAtualInscricao == SMC.Inscricoes.Common.TOKENS.PAGINA_INSTRUCOES_FINAIS)
+                        {
+                            if (inscricao.InscricaoIniciada)
+                            {
+                                @(Smc.Button("ContinuarInscricao")
+                                        .Enabled(!@inscricao.ContinuarInscricaoDesabilitado)
+                                        .Type(SMCButtonType.Link)
+                                        .CssClass("smc-btn-novo")
+                                        .Action("ContinuarInscricao", "Inscricao",
+                                            new
+                                            {
+                                                @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqConfiguracaoEtapa),
+                                                @seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqGrupoOferta),
+                                                @seqInscricao = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqInscricao),
+                                                @idioma = inscricao.IdiomaInscricao,
+                                                @area = "INS"
+                                            }))
+                            }
+                            else
+                            {
+                                @(Smc.Button(SMCButtonBehavior.Visualizar)
+                                        .DisplayMode(SMCButtonDisplayMode.Text)
+                                        .CssClass("smc-btn-visualizar")
+                                        .Action("Visualizar", "Inscricao",
+                                                new
+                                                {
+                                                    @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqConfiguracaoEtapa),
+                                                    @seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqGrupoOferta),
+                                                    @seqInscricao = SMCDESCrypto.EncryptNumberForURL(inscricao.SeqInscricao),
+                                                    @idioma = inscricao.IdiomaInscricao,
+                                                    @area = "INS"
+                                                }))
+                            }
+                        }
+
+                        @(Smc.Button("HomeProcesso")
+                            .Type(SMCButtonType.Link)
+                            .CssClass("smc-btn-novo")
+                            .Action("IndexProcesso", "Home",
+                                new
+                                {
+                                    @uidProcesso = item.UidProcesso,
+                                    @area = string.Empty
+                                }))
+
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="smc-gpi-processo-lista-rodape"> </div>
+    </text>))

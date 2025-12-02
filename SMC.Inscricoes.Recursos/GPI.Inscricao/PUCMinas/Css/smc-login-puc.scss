@@ -1,0 +1,93 @@
+@import "../../Css/smc-login.scss";
+
+:root {
+    --color-primary: #005480;
+    --color-secondary: #539e41;
+    --bg-msg-boas-vindas: #E6EEF3;
+    --border-msg-boas-vindas: #88BFDD;
+    --color-msg-boas-vindas: #005480;
+    --color-btn-secondary: #005480;
+}
+
+.smc-login-body {
+    &:before {
+        background-image: url('../Images/logo-vemprapuc-branco.svg'),url('../Images/logo-puc-branco.svg');
+
+        @media screen and ("max-width: 767px") {
+            background-position: 67% 1.9em, 30% 0.2em;
+            height: 7.05em;
+        }
+    }
+}
+
+.smc-login-section {
+    @media screen and ("max-width: 767px") {
+        margin-top: 9em;
+    }
+}
+
+.smc-login-conteudo .smc-message-container.smc-mensagens-principal {
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+#formularioLogin {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+        margin-top: 6rem;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 3rem !important;
+        }
+    }
+}
+
+.smc-login-lembrar-senha {
+    a {
+        color: var(--color-primary);
+    }
+}
+
+.smc-login-separador {
+    span {
+        color: var(--color-primary);
+    }
+}
+
+#formularioLembrarSenha {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+    }
+}
+
+.smc-btn-voltar-icotext {
+    color: var(--color-primary);
+}
+
+#formularioCadastrarUsuario {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+    }
+}
+
+.smc-login-texto-reenvio-senha {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+    }
+}
+
+#fieldsetCadastrarUsuario {
+    &:first-child {
+        a.smc-form-ver-senha {
+            bottom: -38px;
+            float: left;
+            margin-left: -10px;
+        }
+    }
+}

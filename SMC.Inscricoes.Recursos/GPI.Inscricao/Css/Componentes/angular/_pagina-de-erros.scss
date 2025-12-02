@@ -1,0 +1,52 @@
+.smc-gpi-pag-erros {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 55vh;
+    width: 100%;
+
+    div {
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .img-pag-erro {
+            width: 91px;
+            height: 100px;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 1rem;
+            background-image: url(../../Images/smc-gpi-pag-erros.svg);
+        }
+
+        h2 {
+            font-size: 1.7em;
+            color: var(--color-text);
+            margin: 0;
+            margin-top: .7em;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin-top: 0.4em;
+            margin-bottom: 1.5em;
+            font-size: 1.1em;
+        }
+
+        p-button {
+            button {
+                padding: .6rem 4.5rem;
+
+                i {
+                    display: none;
+                }
+            }
+        }
+    }
+}

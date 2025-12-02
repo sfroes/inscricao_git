@@ -1,0 +1,51 @@
+﻿@model CabecalhoProcessoEtapaViewModel
+
+@using (Smc.Div("fieldsetCabecalho").Begin())
+{
+    using (Smc.Header("headerCabecalho", SMCHeaderType.Primary).CssClass("smc-header-botao")
+              .Item(prop => prop.SeqProcesso, sizeSM: SMCSize.Grid4_24, sizeMD: SMCSize.Grid4_24, sizeLG: SMCSize.Grid4_24, sizeXS: SMCSize.Grid4_24)
+              .Item(prop => prop.DescricaoProcesso, sizeSM: SMCSize.Grid18_24, sizeMD: SMCSize.Grid18_24, sizeLG: SMCSize.Grid18_24, sizeXS: SMCSize.Grid18_24)
+              .Item(prop => prop.DescricaoTipoProcesso, sizeSM: SMCSize.Grid12_24, sizeMD: SMCSize.Grid12_24, sizeLG: SMCSize.Grid12_24, sizeXS: SMCSize.Grid12_24)
+              .Item(prop => prop.DescricaoEtapa, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+              .Begin())
+    {
+        if (Model.ExibirBotaoAlterarAssociacaoEtapaProcesso)
+        {
+            @(Smc.Button(SMCButtonBehavior.Alterar)
+                .DisplayMode(SMCButtonDisplayMode.Icon)
+                .Highlight()
+                .Url(Html.SMCAction("Editar", "EtapaProcesso",
+                new {
+                    @seq = SMCDESCrypto.EncryptNumberForURL(Model.SeqEtapaProcesso),
+                    @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso) })))
+        }
+
+        if (Model.ExibirBotaoCadastroConfiguracaoEtapaProcesso)
+        {
+                string guid = Guid.NewGuid().ToString();
+
+                @(Smc.Button(SMCButtonBehavior.Configurar)
+                    .Attribute("data-context", "menu-componente-config-" + guid)
+                    .DisplayMode(SMCButtonDisplayMode.Icon)
+                    //.CssClassForLi("smc-gpi-botao-topo smc-gpi-cabecalho-botao")
+                    .Type(SMCButtonType.InputButton)
+                )
+
+                @(Smc.ContextMenu("menu-componente-config-" + guid)
+                    .OpenEvent(SMCMouseEvent.LeftClick)
+                        .Item(@Smc.GetUIResource("Botao_Configurar_Etapa_Processo"), "ConfiguracaoEtapa", "ConfiguracaoEtapa", new { @seqEtapa = Model.SeqEtapaProcesso, @seqProcesso = Model.SeqProcesso }).Tooltip("Botao_Configurar_Etapa_Processo_Tooltip")
+                )
+        }
+
+        if (Model.ExibirBotaoConfiguracaoEtapaProcesso)
+        {
+            @Html.Partial("_BotaoConfigurarEtapaProcesso", new BotaoConfigurarEtapaProcessoViewModel()
+            {
+                Action = Model.Action,
+                SeqProcesso = (SMCEncryptedLong)Model.SeqProcesso,
+                SeqEtapa = (SMCEncryptedLong)Model.SeqEtapaProcesso,
+                SeqConfiguracaoEtapa = (SMCEncryptedLong)Model.SeqConfiguracaoEtapa
+            })
+        }
+    }
+}

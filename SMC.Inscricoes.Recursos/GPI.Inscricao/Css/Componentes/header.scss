@@ -1,0 +1,241 @@
+﻿.smc-header {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 0 2em 1em;
+}
+
+.smc-ribbon {
+    height: 5em;
+    //background: var(--color-body);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+.smc-aplicaco-logotipo {
+    width: 15em;
+    margin-left: 5%;
+    background-position: left center, right center;
+    background-repeat: no-repeat;
+    display: flex;
+    background-size: contain;
+}
+
+.smc-gpi-usuario {
+    display: flex;
+    align-self: center;
+    margin-right: 40px;
+
+    @media (max-width:992px) {
+        margin-right: 0;
+    }
+
+    .smc-gpi-nome-usuario {
+        font-size: 1.2em;
+        text-transform: uppercase;
+        margin-top: 0.2em;
+        margin-right: 0.35em;
+
+        @media (max-width:992px) {
+            display: none;
+        }
+    }
+
+    &:before {
+        content: "";
+        width: 30%;
+        height: 1px;
+        position: absolute;
+        top: 69px;
+        right: 0;
+
+        @media (max-width:850px) {
+            display: none;
+        }
+    }
+}
+
+@mixin base-icones-header {
+    font-family: var(--fa-font);
+    background-color: transparent;
+    border: none;
+    margin-right: 0.71em;
+    cursor: pointer;
+
+    &:before {
+        font-size: 1.57em;
+    }
+}
+
+.smc-btn-usuario {
+    @include base-icones-header;
+
+    &:before {
+        content: "\f007";
+    }
+}
+
+.smc-btn-acessibilidade {
+    @include base-icones-header;
+
+    &:before {
+        content: "\f29a";
+    }
+}
+
+.smc-ico-meusdados {
+    div {
+        @include base-icones-header;
+
+        &:before {
+            content: "\f2c2";
+            margin-top: 0.1rem;
+        }
+    }
+
+    .smc-btn-meudados {
+        position: absolute;
+        font-size: 0;
+        border: none;
+        background-color: transparent;
+        font-style: normal;
+        width: 0.3rem;
+    }
+}
+
+.user-footer > ul > .btn-default > .smc-button > a,
+.user-footer > ul > .btn > .smc-button > a,
+.smc-btn-fontenormal,
+.smc-btn-fontemenor,
+.smc-btn-fontemaior,
+.smc-btn-contraste {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.smc-btn-acessibilidade {
+    > i {
+        color: var(--color-primary);
+        font-size: 1.57em;
+    }
+}
+
+//USUÁRIO
+
+.dropdown-menu {
+    display: none;
+}
+
+.smc-ribbon {
+    .open {
+
+        > .dropdown-menu {
+            display: block;
+            display: block;
+            position: absolute !important;
+            right: 1.42em !important;
+            left: auto !important;
+            top: 3.57em !important;
+            z-index: 2;
+        }
+    }
+}
+
+.nav {
+    list-style-type: none;
+    padding-inline-start: 0;
+    display: flex;
+    align-self: center;
+    margin: 0;
+    margin-right: 1.5em;
+
+    @media (max-width:992px) {
+      >  li:last-child {
+            display: none;
+        }
+    }
+}
+
+.dropdown-menu {
+    > ul {
+
+        &:first-child {
+            flex-direction: column;
+        }
+
+        list-style-type: none;
+        padding-inline-start: 0;
+        display: flex;
+        align-self: center;
+        margin: 0;
+        text-align: center;
+    }
+
+    .user-footer {
+        ul {
+            list-style-type: none;
+            padding-inline-start: 0;
+            display: flex;
+            align-self: center;
+            margin: 0;
+            flex-direction: row;
+
+            .smc-btn-custom {
+                color: var(--white);
+                text-transform: uppercase;
+                line-height: 2.35em;
+                font-size: 1em;
+                padding: 0 1.42em;
+                font-style: normal;
+                height: 2.1em;
+
+                @media screen and ("max-width: 992px") {
+                    line-height: 1em;
+                    padding: 0.5em 1.42em;
+                    display: flex;
+                    justify-items: stretch;
+                    height: 10 !important;
+                    align-items: center;
+                }
+
+                &:hover {
+                    background-color: var(--color-hover);
+                    border-color: var(--color-hover);
+                }
+            }
+        }
+    }
+}
+
+.user-header {
+    img {
+        width: 4.64em;
+    }
+}
+
+
+.smc-acessibilidade {
+    .smc-buttonset-horizontal-primario {
+        display: flex;
+        flex-direction: row;
+
+        .smc-button {
+            margin: 0 0.21em;
+
+            .smc-btn-custom {
+                &:hover {
+                    background-color: var(--color-hover);
+                    border-color: var(--color-hover);
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}

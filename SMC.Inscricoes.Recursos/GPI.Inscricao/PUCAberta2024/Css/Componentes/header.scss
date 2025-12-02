@@ -1,0 +1,44 @@
+﻿.smc-ribbon {
+    background: var(--color-body);
+}
+
+
+.smc-aplicaco-logotipo {
+    margin-top: -0.15em;
+    background-image: url('../../PUCAberta2024/Images/logo-puc-aberta-color.svg'),url('../../PUCAberta2024/Images/smc-logo-puc.svg');
+    height: 5.24em;
+
+    &::before {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: #d6d6d6;
+        margin-left: 120px;
+    }
+}
+
+.smc-gpi-usuario {
+    &:before {
+        background-color: var(--color-primary-3);
+    }
+
+    .smc-gpi-nome-usuario {
+        color: var(--color-primary);
+    }
+}
+
+.smc-btn-usuario,
+.smc-btn-meudados,
+.smc-btn-acessibilidade {
+    &:before {
+        color: var(--color-primary);
+    }
+}
+
+.smc-ico-meusdados {
+    div {
+        &:before {
+            color: var(--color-primary);
+        }
+    }
+}

@@ -1,0 +1,119 @@
+﻿@using SMC.Inscricoes.Common.Enums
+
+@model List<SMCTreeViewNode<ArvoreItemConfiguracaoPaginaEtapaViewModel>>
+
+@(Smc.TreeView("treeviewArvoreConfiguracaoPaginaEtapa", Model)
+            .Expanded()
+            .AllowSearch()
+            .CssClass("smc-gpi-treeview-configuracao")
+            .ConfigureNode(n => n.Options.CssClass = "smc-gpi-ico-" + n.Value.Tipo.SMCGetDescription())
+            .ContextMenu(i => Smc.ContextMenu("ctx_" + i.Seq)
+                                  .OpenEvent(SMCMouseEvent.LeftClick)
+                                  
+                                  .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Configurar_Pagina_Etapa"))
+                                                 .Tooltip(Smc.GetUIResource("Link_Configurar_Pagina_Etapa_Tooltip"))
+                                                 .Attribute(SMCMvcConsts.MODAL_ID, "modalConfigurarPaginaEtapa")
+                                                 .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                 .Attribute(SMCMvcConsts.MODAL_TITLE, 
+                                                  String.Format(Smc.GetUIResource("Configurar_Pagina_Etapa_Modal_Titulo"),i.Value.Descricao))
+                                                 .Ajax(isPost: false, updateTargetId: "#divConfiguracaoPaginaEtapa")
+                                                 .SecurityToken(UC_INS_001_03_09.CONFIGURAR_PAGINA)
+                                                 .Url(Html.SMCAction("ConfigurarPaginaConfiguracaoPaginaEtapa", "ConfiguracaoEtapaPagina",
+                                                                    new
+                                                                    {
+                                                                        seqConfiguracaoEtapaPagina = (SMCEncryptedLong)i.Value.SeqItem
+                                                                    }
+                                                            )
+                                                 )
+                                                 .Hide(i.Value.Tipo != TipoItemPaginaEtapa.Pagina || (!i.Value.PaginaPermiteExibicaoOutrasPaginas && !i.Value.PaginaToken.Equals(TOKENS.PAGINA_COMPROVANTE_INSCRICAO))))
+                                                                                                  
+                                  .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Excluir_Pagina_Etapa"))
+                                                  .Tooltip(Smc.GetUIResource("Link_Excluir_Pagina_Etapa_Tooltip"))
+                                                  .Ajax(isPost: false, updateTargetId: "#divConfiguracaoPaginaEtapa")
+                                                  .Confirm(Smc.GetUIResource("Excluir_Pagina_Configuracao_Pagina_Etapa_Confirmacao_Titulo"), string.Format(Smc.GetUIResource("Excluir_Pagina_Configuracao_Pagina_Etapa_Confirmacao_Mensagem"), i.Value.Descricao))
+                                                  .SecurityToken(UC_INS_001_03_08.RECUPERAR_PAGINA)
+                                                  .Url(Html.SMCAction("ExcluirConfiguracaoEtapaPagina", "ConfiguracaoEtapaPagina",
+                                                                          new
+                                                                          {
+                                                                              seqConfiguracaoEtapa = (SMCEncryptedLong)i.Value.SeqConfiguracaoEtapa,
+                                                                              seqConfiguracaoEtapaPagina = (SMCEncryptedLong)i.Value.SeqItem                                                                              
+                                                                          }
+                                                                    )
+                                                  )
+                                                  .Hide(i.Value.Tipo != TipoItemPaginaEtapa.Pagina || i.Value.PaginaObrigatoria))
+                                                  
+                                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Duplicar_Pagina_Etapa"))
+                                                        .Tooltip(Smc.GetUIResource("Link_Duplicar_Pagina_Etapa_Tooltip"))
+                                                        .Ajax(isPost: false, updateTargetId: "#divConfiguracaoPaginaEtapa")
+                                                        .SecurityToken(UC_INS_001_03_08.RECUPERAR_PAGINA)
+                                                        .Url(Html.SMCAction("DuplicarPaginaConfiguracaoEtapaPagina", "ConfiguracaoEtapaPagina",
+                                                                                new
+                                                                                {
+                                                                                    seqConfiguracaoEtapaPagina = (SMCEncryptedLong)i.Value.SeqItem,
+                                                                                    seqConfiguracaoEtapa = (SMCEncryptedLong)i.Value.SeqConfiguracaoEtapa,
+                                                                                }
+                                                                        )
+                                                            )
+                                                            .Hide(i.Value.Tipo != TipoItemPaginaEtapa.Pagina || !i.Value.PaginaExibeFormulario || !i.Value.PaginaPermiteDuplicar))
+
+                                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Configurar_Pagina_Idioma_Etapa"))
+                                                     .Tooltip(Smc.GetUIResource("Link_Configurar_Pagina_Idioma_Etapa_Tooltip"))
+                                                     .Attribute(SMCMvcConsts.MODAL_ID, "modalConfigurarPaginaIdiomaEtapa")
+                                                     .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                     .Ajax(isPost: false, updateTargetId: "#divConfiguracaoPaginaEtapa")
+                                                     .SecurityToken(UC_INS_001_03_10.CONFIGURAR_PAGINA_IDIOMA)
+                                                           .Url(Html.SMCAction("ConfigurarPaginaIdiomaConfiguracaoPaginaEtapa", "ConfiguracaoEtapaPagina",
+                                                                             new
+                                                                             {
+                                                                                 paginaToken = i.Value.PaginaToken,
+                                                                                 seqConfiguracaoEtapaPaginaIdioma = (SMCEncryptedLong)i.Value.SeqItem,
+                                                                                 pagina = i.Parent != null ? i.Parent.Value.Descricao : "",
+                                                                                 idioma = i.Value.Descricao,
+                                                                                 seqConfiguracaoEtapa = (SMCEncryptedLong)i.Value.SeqConfiguracaoEtapa,
+                                                                                 seqProcesso = (SMCEncryptedLong)i.Value.SeqProcesso,
+                                                                                 seqEtapa = (SMCEncryptedLong)i.Value.SeqEtapaProcesso
+                                                                             }
+                                                                       )
+                                                     )
+                                                     .Hide(i.Value.Tipo != TipoItemPaginaEtapa.Idioma))
+
+                                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Configurar_Texto_Secao"))
+                                                         .Tooltip(Smc.GetUIResource("Link_Configurar_Texto_Secao_Tooltip"))
+                                                         .Attribute(SMCMvcConsts.MODAL_ID, "modalConfigurarTextoSecao")
+                                                         .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                         .Ajax(isPost: false, updateTargetId: "#divConfiguracaoPaginaEtapa")
+                                                         .SecurityToken(UC_INS_001_03_11.CONFIGURAR_TEXTO)
+                                                         .Url(Html.SMCAction("ConfigurarTextoSecaoConfiguracaoPaginaEtapa", "ConfiguracaoEtapaPagina",
+                                                                                 new
+                                                                                 {
+                                                                                     seq = (SMCEncryptedLong)i.Value.SeqItem,
+                                                                                     pagina = (i.Parent != null && i.Parent.Parent != null) ? i.Parent.Parent.Value.Descricao : "",
+                                                                                     idioma = i.Parent != null ? i.Parent.Value.Descricao : "",
+                                                                                     secao = i.Value.Descricao
+                                                                                 }
+                                                                           )
+                                                         )
+                                                         .Hide(i.Value.Tipo != TipoItemPaginaEtapa.Secao))
+
+                                    .Item(itemMenu => itemMenu.Text(Smc.GetUIResource("Link_Configurar_Arquivo_Secao"))
+                                                         .Tooltip(Smc.GetUIResource("Link_Configurar_Arquivo_Secao_Tooltip"))
+                                                         .Attribute(SMCMvcConsts.MODAL_ID, "modalConfigurarArquivoSecao")
+                                                         .Attribute(SMCMvcConsts.DATA_BEHAVIOR, SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                                                         .Ajax(isPost: false, updateTargetId: "#divConfiguracaoPaginaEtapa")
+                                                         .SecurityToken(UC_INS_001_03_12.CONFIGURAR_ARQUIVOS)
+                                                         .Url(Html.SMCAction("ConfigurarArquivoSecaoConfiguracaoPaginaEtapa", "ConfiguracaoEtapaPagina",
+                                                                                 new
+                                                                                 {
+                                                                                     seqSecaoPaginaSGF = (SMCEncryptedLong)i.Value.SeqItem,
+                                                                                     seqConfiguracaoEtapaPaginaIdioma = i.Parent != null ? (SMCEncryptedLong)i.Parent.Value.SeqItem : (SMCEncryptedLong)0,
+                                                                                     pagina = (i.Parent != null && i.Parent.Parent != null) ? i.Parent.Parent.Value.Descricao : "",
+                                                                                     idioma = i.Parent != null ? i.Parent.Value.Descricao : "",
+                                                                                     secao = i.Value.Descricao
+                                                                                 }
+                                                                           )
+                                                         )
+                                                         .Hide(i.Value.Tipo != TipoItemPaginaEtapa.Arquivo)),
+                         i => Smc.Button(SMCButtonBehavior.Configurar).DisplayMode(SMCButtonDisplayMode.Icon).Tooltip(Smc.GetUIResource("Texto_Informativo_Item_" + i.Value.Tipo.ToString())),
+                         i => !i.Value.ExibeContextMenu
+            )
+)

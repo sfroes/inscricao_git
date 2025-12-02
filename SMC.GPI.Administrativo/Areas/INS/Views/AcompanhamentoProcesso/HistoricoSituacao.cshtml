@@ -1,0 +1,35 @@
+﻿@model HistoricoSituacaoFiltroViewModel
+
+@Html.Action("CabecalhoHistoricoSituacao", Model)
+
+@Html.Action("ListarHistoricoSituacao", Model)
+
+@*@(Smc.ButtonSet()
+    .AddButton(Smc.Button(SMCButtonBehavior.Voltar)
+           .Type(SMCButtonType.Link)
+           .CssClass("smc-btn-voltar-icotext"))
+*@
+
+@* .AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+    .Action("ConsultarInscricaoProcesso", routeValues: new { seqProcesso = Request.QueryString["seqProcesso"] }, forceForBackBehavior: true))*@
+
+@{
+
+    var buttons = Smc.ButtonSet();
+
+    if (!string.IsNullOrEmpty(Model.BackURL))
+    {
+        buttons.AddButton(Smc.Button("Voltar")
+        .Type(SMCButtonType.Link)
+        .CssClass("smc-btn-voltar-icotext")
+        .Url(Model.BackURL));
+
+    }
+    else
+    {
+        buttons.AddButton(Smc.Button(SMCButtonBehavior.Voltar).DisplayMode(SMCButtonDisplayMode.TextAndIcon));
+    }
+
+}
+
+@(buttons)

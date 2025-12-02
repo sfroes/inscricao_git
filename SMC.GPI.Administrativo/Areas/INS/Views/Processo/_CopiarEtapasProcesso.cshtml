@@ -1,0 +1,10 @@
+﻿@model CopiaEtapaProcesso
+<div class="smc-grupo-copia">
+    @Smc.EditorFor(prop => prop.SeqEtapa)
+    @Smc.EditorFor(prop => prop.SeqEtapaSGF)
+    @Smc.EditorFor(prop => prop.Copiar).CssClass("smc-espaco-label").HideLabel()
+    @Smc.DisplayFor(prop => prop.Etapa).CssClass("smc-espaco-display").HideLabel()
+    @Smc.EditorFor(prop => prop.DataInicio)
+    @Smc.EditorFor(prop => prop.DataFim)
+    @Smc.EditorFor(prop => prop.CopiarConfiguracoes)
+    </div>

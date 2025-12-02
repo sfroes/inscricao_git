@@ -1,0 +1,74 @@
+﻿.smc-ribbon {
+    background: var(--color-body);
+}
+
+
+.smc-aplicaco-logotipo {
+    margin-top: -0.15em;
+    background-image: url('../../PUCAberta2025/Images/logo-puc-aberta.svg'),url('../../PUCAberta2025/Images/smc-logo-puc.svg');
+    height: 5.24em;
+
+    &::before {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: var(--color-secondary-4);
+        margin-left: 111px;
+    }
+}
+
+.smc-gpi-usuario {
+    .smc-gpi-nome-usuario {
+        color: var(--color-text);
+    }
+}
+
+.smc-gpi-usuario-processo {
+    &:before {
+        background-color: var(--color-secondary-4);
+    }
+}
+
+.smc-btn-usuario,
+.smc-btn-meudados,
+.smc-btn-acessibilidade {
+    &:before {
+        color: var(--color-text);
+    }
+}
+
+.smc-ico-meusdados {
+    div {
+        &:before {
+            color: var(--color-text);
+        }
+    }
+}
+
+.dropdown-menu {
+    .user-footer {
+        ul {
+            .smc-btn-custom {
+                &:hover {
+                    background-color: var(--white);
+                    border-color: var(--color-primary);
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+}
+
+.smc-acessibilidade {
+    .smc-buttonset-horizontal-primario {
+        .smc-button {
+            .smc-btn-custom {
+                &:hover {
+                    background-color: var(--white);
+                    border-color: var(--color-primary);
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+}

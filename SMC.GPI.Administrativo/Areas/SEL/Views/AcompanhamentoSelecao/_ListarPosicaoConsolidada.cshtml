@@ -1,0 +1,24 @@
+﻿@model SMCPagerModel<AcompanhamentoSelecaoListaViewModel>
+
+@(Smc.Grid("gridPosicaoConsolidada", Model)
+    .AllowExportToExcel(true)
+    .Button(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalLegendaPosicaoConsolidada")
+            .Text(Smc.GetUIResource("Botao_LegendaPosicao"))
+                .CssClass("smc-btn-ico-ajuda"))
+    .AutoGenerateColumns()
+
+    .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "smc-grid-coluna-botoes", false,
+            item => Smc.Button("ConsultaSelecoesProcesso", "ConsultaSelecoesProcesso", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as AcompanhamentoSelecaoListaViewModel).Seq) }, "AcompanhamentoSelecao")
+                       .Type(SMCButtonType.Link)
+                       .SecurityToken(UC_SEL_001_01_02.CONSULTA_POSICAO_CONSOLIDADA_SELECAO_GRUPO_OFERTAS),
+
+            item => Smc.Button("ConsultaPosiçãoConsolidadaGrupoOFertasOFerta", "ConsultarProcessoPorGrupoOferta", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as AcompanhamentoSelecaoListaViewModel).Seq) }, "AcompanhamentoSelecao")
+                       .Type(SMCButtonType.Link)
+                       .SecurityToken(UC_SEL_001_01_03.CONSULTA_CANDIDATOS_PROCESSO),
+
+            item => Smc.Button("AnaliseLote", "AnaliseLote", new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as AcompanhamentoSelecaoListaViewModel).Seq) }, "AnaliseSelecao")
+                       .Type(SMCButtonType.Link)
+                       .SecurityToken(UC_SEL_001_01_08.ANALISE_SELECAO_LOTE)
+    )
+)

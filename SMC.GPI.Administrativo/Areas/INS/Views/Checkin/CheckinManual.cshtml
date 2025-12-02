@@ -1,0 +1,171 @@
+﻿@model SMC.GPI.Administrativo.Areas.INS.Models.CheckinViewModel
+@{
+    Layout = "~/Views/Shared/_Layout_Mobile.cshtml";
+}
+<!--PAGINA CONTROLADA POR SCRIPT JS -- CheckinManual.JS-->
+<div class="smc-configuracao">
+    <div class="menu-desktop">
+        <div class="smc-gpi-menu-desktop smc-col-10">
+            <ul class="display-flex flex-j-end">
+                <li id="li-qrcode">
+                    <a id="link-qrcode" href="@Url.Action("Checkin", "Checkin")">Check-in por QRCOde</a><!--OU ESTE-->
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Checkin", new {somenteAtendente = Model.Atendente})">Configurar Atendimento</a>
+                </li>
+                @if (!Model.Atendente)
+                {
+                    <li>
+                        <a href="@Url.Action("Index", "Home", new { Area = "" })">Administrativo</a><!--SOMENTE USUÁRIO COM MAIS MENUS-->
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <nav id="Navegacao">
+        <div class="smc-gpi-menu smc-col-10">
+            <ul class="display-flex flex-j-end">
+                <li id="li-qrcode">
+                    <a id="link-qrcode" href="@Url.Action("Checkin", "Checkin")">Check-in por QRCOde</a><!--OU ESTE-->
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Checkin", new {somenteAtendente = Model.Atendente})">Configurar Atendimento</a>
+                </li>
+                @if (!Model.Atendente)
+                {
+                    <li>
+                        <a href="@Url.Action("Index", "Home", new { Area = "" })">Administrativo</a><!--SOMENTE USUÁRIO COM MAIS MENUS-->
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="smc-gpi-menu-backdrop hidden"></div>
+    </nav>
+
+    <div class="smc-gpi-toogle display-flex flex-a-center">
+        <a href="#"
+           title="Menu"
+           class="smc-gpi-menu-toogle"
+           role="button">
+            <svg viewBox="0 0 448 512" aria-label="Menu">
+                <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+            </svg>
+        </a>
+    </div>
+
+    <div class="smc-gpi-titulo-label">
+        <h2>Realizar Check-in</h2>
+    </div>
+
+    <div class="smc-gpi-box-checkin">
+        <div class="smc-row">
+            <div class="smc-col-12">
+                <div id="cabecalho-evento" class="smc-gpi-accordeom">
+                    <label for="state">
+                        <div class="smc-gpi-botao-accordeom">
+                            <p>@Model.DescricaoProcesso </p>
+                            <input type="checkbox" id="state" hidden="" data-gtm-form-interact-field-id="0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" /></svg>
+                            <div class="smc-gpi-botao-accordeom-conteudo">
+                                <ul>
+                                    @foreach (var item in Model.Ofertas)
+                                    {
+                                        <li><p>@item</p></li>
+                                    }
+                                </ul>
+
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="checkin-cpf" class="smc-gpi-form-checkin-container">
+            <form id="form-pesquisa" action="@Url.Action("PesquiarOfertaCheckinManual", "Checkin")" method="post">
+
+                <div class="smc-gpi-form-checkin-identificacao">
+                    <div id="auto-pesquisa" class="smc-gpi-form-checkin">
+                        <label>Pesquise por Nome</label>
+                        <input type="text" placeholder="Nome" name="nome" id="campo-nome" />
+                    </div>
+
+                    <div class="smc-gpi-form-checkin">
+                        <label>ou</label>
+                    </div>
+
+                    <div class="smc-gpi-form-checkin">
+                        <label>Pesquise por CPF</label>
+                        <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/,'')" step="any" placeholder="Somente números" name="cpf" id="cpf" maxlength="11" />
+                    </div>
+                </div>
+
+                <div class="smc-row  margin-bottom-20 ">
+                    <div class="smc-col-6">
+                        <button type="submit" class="smc-btn-secundario margin-top-10" title="Pesquisar">Pesquisar</button>
+                    </div>
+                    <div class="smc-col-6">
+                        <button type="reset" class="smc-btn-secundario margin-top-10" id="btn-limpar" title="Limpar">Limpar</button>
+                    </div>
+                </div>
+
+
+                <div id="corpo-pesquisa" class="smc-gpi-form-checkin-resultados" hidden="hidden">
+                    <div class="smc-col-12">
+                        <p class="text-bold" id="selecionar-inscrito">Selecione o inscrito e confirme o check-in:</p>
+                        <div class="checkin-resultados-container">
+                            <ul id="resultado-pesquisa">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="smc-button smc-gpi-form-fixed-btn">
+                    <button id="btn-salvar" class="smc-btn-principal margin-top-20" disabled="disabled" title="Confirmar check-in">Confirmar Check-in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="mensagem-sucesso" hidden="hidden">
+        <div class="smc-gpi-mensagem-validacao-checkin sucesso">
+            <svg viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z" /></svg>
+            <p class="smc-gpi-hora-checkin">Check-in realizado com sucesso às <span id="hora-checkin">XX:XX</span></p>
+            <p class="smc-gpi-identifica-entrada" id="detalhes-sucesso"></p>
+
+            <button class="smc-btn-principal margin-top-20" id="botao-mensagem-sucesso" title="OK">OK</button>
+        </div>
+        <div class="smc-gpi-mensagem-backdrop"></div>
+    </div>
+
+    <div id="mensagem-erro" hidden="hidden">
+        <div class="smc-gpi-mensagem-validacao-checkin erro">
+            <svg viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" /></svg>
+            <p>Check-in não realizado</p>
+            <p class="smc-gpi-identifica-erro-entrada" id="detalhes-erro">Detalhe do erro</p>
+            <button class="smc-btn-secundario margin-top-20" id="botao-mensagem-erro" title="OK">OK</button>
+        </div>
+        <div class="smc-gpi-mensagem-backdrop"></div>
+    </div>
+
+    <div id="mensagem-confirmacao" hidden="hidden">
+        <div class="smc-gpi-mensagem-validacao-checkin confirmacao">
+            <svg viewBox="0 0 512 512"><path d="M48.5 224H40c-13.3 0-24-10.7-24-24V72c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2L98.6 96.6c87.6-86.5 228.7-86.2 315.8 1c87.5 87.5 87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3c-62.2-62.2-162.7-62.5-225.3-1L185 183c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8H48.5z" /></svg>
+            <p class="smc-gpi-hora-checkin">Confirma desfazer o check-in de:</p>
+            <p class="smc-gpi-identifica-entrada" id="detalhes-confirmacao">Nome</p>
+            <div class="smc-row">
+                <div class="smc-col-6">
+                    <button class="smc-btn-secundario margin-top-20" id="botao-mensagem-confirmacao-sim" title="Sim">Sim</button>
+                </div>
+                <div class="smc-col-6">
+                    <button class="smc-btn-secundario margin-top-20" id="botao-mensagem-confirmacao-nao" title="Não">Não</button>
+                </div>
+            </div>
+        </div>
+        <div class="smc-gpi-mensagem-backdrop"></div>
+    </div>
+</div>
+@section Scripts
+{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/CheckinManual.js")></script>
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/MenuCheckin.js")></script>
+}

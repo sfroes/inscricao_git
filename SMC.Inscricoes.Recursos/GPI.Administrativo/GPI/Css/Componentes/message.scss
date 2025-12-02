@@ -1,0 +1,256 @@
+﻿.smc-mensagem {
+    position: relative;
+}
+
+.smc-gpi-mensagem-alerta, .smc-gpi-instrucoes-iniciais, .smc-gpi-mensagem {
+    background-color: var(--white);
+    padding: 1.42em 2.14em;
+    font-family: var(--fa-font);
+    display: flex;
+    align-items: center;
+    margin: 2.14em 0 0 0;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(166,166,166,1);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(166,166,166,1);
+    box-shadow: 0px 0px 4px 0px rgba(166,166,166,1);
+
+    &:before {
+        content: "\f071";
+        color: var(--message-alert-icon);
+        font-size: 3.24em;
+        margin-right: 2.14rem;
+
+        @media screen and ("max-width: 850px") {
+            margin-right: 15px;
+        }
+    }
+
+    p {
+        color: var(--color-text-reading);
+        margin: 0;
+        line-height: 1.4em;
+        font-size: 1.1em;
+    }
+}
+
+.smc-gpi-mensagem {
+    padding: 0.5em 1em !important;
+
+    &:before {
+        font-size: 2.24em !important;
+        margin-right: 1.5rem !important;
+    }
+
+    h3 {
+        border: none;
+        text-transform: none !important;
+        padding: 0;
+        color: var(--color-text-reading) !important;
+        margin: 0 !important;
+        line-height: 1.4em !important;
+        font-size: 1em !important;
+        font-weight: 200;
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+//// MENSAGENS
+@mixin cores-mensagem ($box-shadow, $cor-icone) {
+    > div.ui-draggable {
+        -webkit-box-shadow: 0px 0px 5px 0px $box-shadow;
+        -moz-box-shadow: 0px 0px 5px 0px $box-shadow;
+        box-shadow: 0px 0px 5px 0px $box-shadow;
+        border: none;
+        border-radius: 0;
+    }
+
+    .smc-modal-header {
+        justify-content: space-between;
+
+        h2 {
+            font-size: 1.2rem !important;
+            display: flex !important;
+            margin-bottom: 0.5em;
+            flex-direction: row;
+            align-items: end;
+            margin-top: 0;
+
+            i {
+                margin: 0.14em 0.64em 0 0 !important;
+                color: $cor-icone !important;
+                font-size: 2.14rem !important;
+            }
+        }
+    }
+
+    .smc-modal-content {
+        font-size: 1em;
+        margin: 0 0 0.71em 1.85em !important;
+    }
+
+    .smc-message-fixed {
+        padding: 0.71em 2.14em 0 2.14em !important;
+        position: fixed;
+        width: 86%;
+        left: 5%;
+        top: 0.78em;
+        z-index: 3;
+
+        @media screen and ("max-width: 992px") {
+            padding: 0.71em 1em 0 1em !important;
+            width: 90% !important;
+            left: 1% !important;
+        }
+    }
+}
+
+.smc-message-success {
+    @include cores-mensagem(rgba(99,173,75,0.6),#546d3e);
+}
+
+.smc-message-error {
+    @include cores-mensagem(rgba(146,48,46,0.6),#92302e);
+
+    @media screen and ("max-width: 850px") {
+        .smc-message-fixed {
+            padding: .71em 1em 0 1em !important;
+            width: 90% !important;
+            left: 1% !important;
+        }
+    }
+}
+
+.smc-mensagem-informativa {
+    background-color: var(--white);
+    border: none;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(89,170,195,0.5);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(89,170,195,0.5);
+    box-shadow: 0px 0px 5px 0px rgba(89,170,195,0.5);
+
+    &:before {
+        font-size: 2.14rem !important;
+        margin: .3rem 0 0 0.8rem;
+    }
+}
+
+.smc-message-alert > div.ui-draggable .smc-modal-header > h2 {
+    font-size: 1.2em !important;
+    margin-left: 0 !important;
+
+    > i:before {
+        font-size: 2.14rem;
+    }
+}
+
+.smc-message-alert > div.ui-draggable {
+    border: none;
+    border-radius: 0;
+
+    .smc-modal-header {
+        .smc-button {
+            left: 92%;
+        }
+    }
+
+    .smc-modal-content {
+        margin: 0 0 0 0.85em;
+
+        p {
+            margin: 0;
+            font-size: 1em;
+        }
+    }
+
+    .smc-modal-footer {
+        padding: 0;
+        min-height: 0;
+    }
+}
+
+.ui-draggable.smc-modal-window-auto.smc-message-fixed > .smc-modal-content {
+    margin-bottom: 2.28em !important;
+}
+
+.mensagem-com-botao {
+
+    @media screen and ("max-width: 992px") {
+        flex-direction: column;
+    }
+
+    .smc-sgf-template-arquivo {
+        width: 70%;
+    }
+
+    .smc-button {
+        width: 18em;
+
+        @media screen and ("max-width: 992px") {
+            margin-top: 2em;
+        }
+    }
+
+    .smc-sgf-template-texto-item {
+        @media screen and ("max-width: 992px") {
+            text-align: center;
+        }
+    }
+}
+
+
+.smc-message-container.smc-mensagens-centro {
+    .smc-message-error.smc-modal {
+        .ui-draggable.smc-modal-window-auto.smc-message-fixed {
+            .smc-modal-header {
+                position: relative;
+
+                .smc-button {
+                    left: 98% !important;
+                    top: 0px;
+                    right: 0 !important;
+                    width: 50px !important;
+                }
+            }
+        }
+    }
+}
+
+.smc-message-container.smc-mensagens-centro .smc-message-error.smc-modal .ui-draggable.smc-modal-window-auto.smc-message-fixed .smc-modal-header .smc-button {
+    @media screen and ("max-width: 992px") {
+        left: 87% !important;
+    }
+}
+
+.smc-message-fixed {
+    .smc-modal-header {
+
+        .smc-button {
+            @media screen and ("max-width: 992px") {
+                left: 87% !important;
+                width: 20px;
+            }
+        }
+    }
+}
+
+.smc-modal > .ui-draggable.smc-modal-window-auto.smc-modal-window {
+    @media screen and ("max-width: 992px") {
+        width: 91% !important;
+        left: 1% !important;
+        padding: 0.71em 1em 0 1em !important;
+
+       .smc-modal-header>div.smc-button{
+            width:6% !important;
+        }
+    }
+}
+
+.smc-modal-window .smc-modal-header > div.smc-button {
+    @media screen and ("max-width: 992px") {
+        float: right;
+        width: 3%;
+        margin-left: -15px;
+    }
+}
+

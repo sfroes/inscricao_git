@@ -1,0 +1,16 @@
+<div class="smc-gpi-pag-erros">
+  <div>
+    <span class="img-pag-erro"></span>
+    <h2>Atenção</h2>
+    <p [innerHTML]="paginaErrosDataService.$mensagemErro()"></p>
+
+    <p-button
+      class="smc-button"
+      styleClass="smc-btn-salvar smc-btn-principal smc-btn-sm"
+      [disabled]="paginaErrosDataService.$acionarBotaoSair()"
+      [loading]="paginaErrosDataService.$acionarBotaoSair()"
+      (onClick)="redirecionar()"
+      ><i></i>Sair</p-button
+    >
+  </div>
+</div>

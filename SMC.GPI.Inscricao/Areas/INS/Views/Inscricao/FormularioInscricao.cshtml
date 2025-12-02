@@ -1,0 +1,44 @@
+﻿@model PaginaFormularioInscricaoViewModel
+
+@{
+    ViewBag.InscricaoNaoPermiteTrocaLingua = true;
+    Layout = "~/Areas/INS/Views/Shared/_Layout.cshtml";
+}
+
+@section PainelLateral
+{
+    @Html.Partial("_PainelLateralProcesso", Model)
+}
+
+@section Scripts{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/Inscricao/FormularioSGF.js")"></script>
+    <script>
+        setTimeout(function () {
+            var smcMsgErrorContainer = $('.smc-message-container, .smc-mensagens-centro')[1].childNodes;
+            if (smcMsgErrorContainer.length > 0) {
+                $(smcMsgErrorContainer).show();
+            }
+        }, 1000);
+    </script>
+}
+
+<h3>@Model.Titulo</h3>
+@Smc.EditorFor(m => m.SeqProcesso)
+
+@using (Smc.Form("formFormularioInscricao", "SalvarFormularioInscricao").ConfirmUnloadWithoutSaveChanges().Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqPaginaIdioma)
+    <div class="smc-gpi-conteudo-sgf">
+        @Html.Action("CarregarFormulario", "Inscricao", new
+        {
+            seqDadoFormulario = Model.SeqDadoFormulario,
+                                                                SeqInscricao = Model.SeqInscricao,
+                                                                seqFormularioSGF = Model.SeqFormularioSGF,
+                                                                seqVisaoSGF = Model.SeqVisaoSGF,
+                                                                seqProcesso = Model.SeqProcesso,
+                                                                area = "INS"
+        })
+    </div>
+
+    @Html.Partial("_BotoesNavegacao", Model)
+}

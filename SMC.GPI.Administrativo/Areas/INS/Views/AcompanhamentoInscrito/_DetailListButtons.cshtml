@@ -1,0 +1,15 @@
+﻿@using SMC.GPI.Administrativo.Areas.INS.Models;
+@model SMCPagerModel<AcompanhamentoInscritoListaViewModel>
+
+@(Smc.Grid("gridProcesso")
+        .Button(Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+            .Attribute(SMCMvcConsts.MODAL_ID, "modalLegendaPosicaoConsolidada")
+            .Text(Smc.GetUIResource("Botao_LegendaPosicao"))
+                .CssClass("smc-btn-ico-ajuda"))
+        .AutoGenerateColumns()
+        .ButtonColumn(SMCButtonSetType.Secondary, 0, "", "", "smc-grid-coluna-botoes",
+            item => Smc.Button("ConsultaInscricoesProcesso", "ConsultarInscricaoProcesso", "AcompanhamentoProcesso") @*new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL((item as ConsultaConsolidadaListaViewModel).Seq) },*@ 
+                       .Type(SMCButtonType.Link)
+    //.SecurityToken(UC_INS_003_01_03.CONSULTA_INSCRICOES_PROCESSO),           
+    )
+)

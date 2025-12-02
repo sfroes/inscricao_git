@@ -1,0 +1,149 @@
+﻿@using SMC.GPI.Administrativo.Areas.INS.Models;
+@model OpcaoOfertaViewModel
+
+
+
+@using (Smc.Div("divItem").CssClass("smc-listdetailed-conteudo").Size(SMCSize.Grid24_24).Begin())
+{
+
+      
+        using (Smc.Div("divLista").CssClass("smc-listdetailed-item-lista").Size(SMCSize.Grid24_24).Begin())
+        {
+
+            @Smc.DisplayFor(m => m.NumeroOpcaoFormatado).Size(SMCSize.Grid3_24)
+            @Smc.DisplayFor(m => m.DescricaoOferta).Size(SMCSize.Grid14_24)
+            @Smc.DisplayFor(m => m.SituacaoOferta).Size(SMCSize.Grid6_24)
+
+            using (Smc.Div().Size(SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24, SMCSize.Grid1_24)
+                    .CssClass("smc-buttonset-vertical-secundario").Begin())
+            {
+
+                SMCButtonFluentConfiguration LancarResultado = Smc.Button("LancamentoResultado", "LancamentoResultado",
+                                                                new
+                                                                {
+                                                                    area = "SEL",
+                                                                    SeqOferta = SMCDESCrypto.EncryptNumberForURL(Model.SeqOferta),
+                                                                    SeqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                                                                    InscricoesOfertas = Model.InscricaoOferta,
+                                                                    SeqInscricaoOferta = Model.SeqInscricaoOferta,
+                                                                    BackUrl = Model.BackURL,
+                                                                    Origem = "AcompanhamentoInscrito",
+
+                                                                }, "AnaliseSelecao")
+                                                                .Type(SMCButtonType.Link).CssClass("smc-btn-editar-icon")
+                                                                .Text(Smc.GetUIResource("btn_lancar_resultado"))
+                                                                .Tooltip(Smc.GetUIResource("tooltip_lancar_resultado"))
+                                                                .SecurityToken(UC_SEL_001_01_04.LANCAMENTO_RESULTADO);
+
+                SMCButtonFluentConfiguration DesfazerLancamento = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                        .Ajax()
+                        .Type(SMCButtonType.Link).CssClass("smc-btn-editar-icon")
+                        .Text(Smc.GetUIResource("btn_desfazer_lancamento"))
+                        .Confirm(Smc.GetUIResource("Mensagem_Titulo_DesfazerLancamento"),
+                            string.Format(Smc.GetUIResource("Mensagem_Texto_DesfazerLancamento"), Model.NomeInscrito))
+                        .Action("DesfazerLancamento", "AnaliseSelecao",
+                        new
+                        {
+                            seqInscricaoOferta = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricaoOferta),
+                            area = "SEL",
+
+                        })
+                        .SecurityToken(UC_SEL_001_01_04.LANCAMENTO_RESULTADO);
+
+                SMCButtonFluentConfiguration AlterarOferta = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                        .Ajax()
+                        .Attribute(SMCMvcConsts.MODAL_ID, "modalAlterarOferta")
+                        .Type(SMCButtonType.Link).CssClass("smc-btn-editar-icon")
+                        .Text(Smc.GetUIResource("btn_alterar_oferta"))
+                        .Tooltip(Smc.GetUIResource("Botao_ModalAlterarOferta_Tooltip"))
+                        .Action("AlterarOferta", "AcompanhamentoSelecao",
+                        new
+                        {
+                            area = "SEL",
+                            SeqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                            SeqInscricao = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricao),
+                            BackUrl = Model.BackURL
+                        })
+                         .SecurityToken(UC_SEL_001_01_10.ALTERAR_OFERTA);
+
+                SMCButtonFluentConfiguration AlterarSituacaoConvocao = Smc.Button(SMCMvcConsts.MODAL_BEHAVIOR_OPEN)
+                         .Attribute(SMCMvcConsts.MODAL_ID, "modalConvocacao")
+                         .Text(Smc.GetUIResource("Botao_Convocacao"))
+                         .Tooltip(Smc.GetUIResource("Botao_Convocacao_Tooltip"))
+                         .Ajax(isPost: false, updateTargetId: "divCandidatosProcesso")
+                         .SecurityToken(UC_SEL_001_01_05.CONVOCACAO)
+                         .Url(Url.Action("Convocacao", "AnaliseSelecao",
+                             new
+                             {
+                                 seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                                 seqOferta = SMCDESCrypto.EncryptNumberForURL(Model.SeqOferta),
+                                 InscricoesOfertas = Model.SeqInscricaoOferta,
+                                 Origem = "AcompanhamentoInscrito",
+                                 Area = "SEL"
+                             }))
+                         .Type(SMCButtonType.Link);
+
+                SMCButtonFluentConfiguration ConsultarHistorico = Smc.Button("HistoricoSituacao", "HistoricoSituacao",
+                             new
+                             {
+                                 @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso),
+                                 @seqInscricaoOferta = SMCDESCrypto.EncryptNumberForURL(Model.SeqInscricaoOferta),
+                                 @backUrl = Model.BackURL,
+                                 Area = "SEL"
+                             }, "AnaliseSelecao")
+                         .Type(SMCButtonType.Link)
+                        .SecurityToken(UC_SEL_001_01_06.PESQUISAR_HISTORICO_SITUACAO_SELECAO);
+                if (Model.ExibeOpcoes || Model.SituacaoOferta == null)
+                {
+                    LancarResultado.ButtonInstructions(Smc.GetUIResource("ButtonInstructions_nv013_botao_desabilitado")).Enabled(false);
+                    DesfazerLancamento.ButtonInstructions(Smc.GetUIResource("ButtonInstructions_nv013_botao_desabilitado")).Enabled(false);
+                    AlterarOferta.ButtonInstructions(Smc.GetUIResource("ButtonInstructions_nv013_botao_desabilitado")).Enabled(false);
+                    AlterarSituacaoConvocao.ButtonInstructions(Smc.GetUIResource("ButtonInstructions_nv013_botao_desabilitado")).Enabled(false);
+                    ConsultarHistorico.ButtonInstructions(Smc.GetUIResource("ButtonInstructions_nv013_botao_desabilitado")).Enabled(false);
+                }
+
+                @(Smc.ButtonSet().Type(SMCButtonSetType.Secondary).NumberOfButtonsToShow(0)
+                                .AddButton(LancarResultado)
+                                .AddButton(DesfazerLancamento)
+                                .AddButton(AlterarOferta)
+                                .AddButton(AlterarSituacaoConvocao)
+                                .AddButton(ConsultarHistorico)
+            )
+            }
+        
+    }
+}
+
+@using (Smc.ModalWindow("modalAlterarDados")
+        .Title(Smc.GetUIResource("AlterarDados_Modal_Titulo"))
+        .Form("AlterarDados", "SalvarAlteracaoDados", "AcompanhamentoProcesso", null, true,
+            x => x.Ajax(onSuccess: "reloadPagerAjax()"))
+        .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalConvocacao")
+            .Title(Smc.GetUIResource("Label_Convocacao"))
+            .Size(SMCModalWindowSize.Large)
+            .Form("AlterarSituacao", "SalvarConvocacao", "AnaliseSelecao", new { Area = "SEL" }, true, x => x.Ajax(onSuccess: "reloadPagerAjaxDiv()"))
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)
+                .Confirm(Smc.GetUIResource("Titulo_Confirmacao_Alteracao_Situacao"),
+                Smc.GetUIResource("Mensagem_Confirmacao_Alteracao_Situacao")).Highlight())
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin())
+{ }
+
+@using (Smc.ModalWindow("modalAlterarOferta")
+            .Title(Smc.GetUIResource("Label_AlterarOferta"))
+            .Size(SMCModalWindowSize.Large)
+            .Form("AlterarOferta", "SalvarOferta", "AcompanhamentoSelecao", new { Area = "SEL" }, true, x => x.Ajax(onSuccess: "reloadPagerAjaxDiv()"))
+            .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+            .Begin())
+{ }
+
+@section Scripts{
+    <script type="text/javascript" src=@Url.SMCBuscarRecursoAplicacao("Scripts/ReloadPagerAjaxDiv.js")></script>
+
+}

@@ -1,0 +1,10 @@
+﻿@model ProcessoViewModel
+
+@section Scripts{
+    @Html.SMCRegisterControlsScripts(RegisterHelperControls.TextEditor)
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/CamposInscrito.js")" type="text/javascript"></script>
+}
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.Seq, @action = ProcessoActionsEnum.Alterar, @exibirBotaoConfiguracaoCabecalho = true })
+
+@Html.Partial("_EditarProcesso", Model)

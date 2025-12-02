@@ -1,0 +1,45 @@
+﻿@*
+    BaseType: SMC.Framework.UI.Mvc.SMCWebViewPage
+    DisableLinePragmas: true
+    Imports: SMC.Framework,
+    SMC.Framework.DataAnnotations,
+    SMC.Framework.Extensions,
+    SMC.Framework.Ioc,
+    SMC.Framework.Mapper,
+    SMC.Framework.Model,
+    SMC.Framework.Security,
+    SMC.Framework.Service.Security,
+    SMC.Framework.UI.Mvc.Dynamic,
+    SMC.Framework.UI.Mvc.Exceptions,
+    SMC.Framework.UI.Mvc.Helpers,
+    SMC.Framework.UI.Mvc.Html,
+    SMC.Framework.UI.Mvc.Util,
+    SMC.Framework.UI.Mvc,
+    SMC.Framework.Util,
+    System,
+    System.Collections.Generic,
+    System.Configuration,
+    System.Web,
+    System.Web.Mvc,
+    System.Web.Mvc.Html
+*@
+
+@using SMC.Framework.UI.Mvc;
+@using SMC.Framework.UI.Mvc.Html;
+@using SMC.Framework.UI.Mvc.Html.DataSelector;
+
+@{
+    object sel = ViewBag.DataSelectorSelectedValue;
+    bool allowSearch = (bool)!ViewBag.DataSelectorTreeViewAllowSearch;
+    var isMultiple = (bool)ViewBag.DataSelectorMultipleSelect;
+    bool expandedTree = (bool)Session["TreeExpanded"];
+    var result = Smc.DataSelectorTreeView(sel, isMultiple, allowSearch, expandedTree);
+
+    if (result is SMCTreeViewFluentConfiguration<object>)
+    {
+        var treeview = result as SMCTreeViewFluentConfiguration<object>;
+        treeview.DisplaySelectAll();
+    }
+}
+
+@result

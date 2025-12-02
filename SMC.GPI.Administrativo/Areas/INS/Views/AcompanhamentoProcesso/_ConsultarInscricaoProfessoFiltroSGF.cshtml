@@ -1,0 +1,7 @@
+﻿@using SMC.Formularios.UI.Mvc.Controls
+@model ConsultaInscricaoProcessoFiltroViewModel
+
+@if (Model.FiltroSGF != null && Model.FiltroSGF.SeqsFormularios.SMCAny())
+{
+    @Smc.SGFFilter(x => x.FiltroSGF).SeqFilter(Model.SeqProcesso)
+} 

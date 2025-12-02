@@ -1,0 +1,5 @@
+﻿@model GrupoOfertaViewModel
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.GrupoOferta, @exibirInformacoesCabecalho = true })
+
+@Html.Partial("_EditarGrupoOferta", Model)

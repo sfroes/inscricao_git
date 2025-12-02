@@ -1,0 +1,77 @@
+﻿@import "../../Css/smc-login.scss";
+
+:root {
+    --color-primary: #dddb00;
+    --color-secondary: #8c3685;
+}
+
+.smc-login-body {
+    &:before {
+        background-image: url('../Images/logo-puc-preto.svg'),url('../Images/logo-puc-aberta.svg');
+
+        @media screen and (max-width: 767px) {
+            background-position: 67% 0,30% .1em;
+        }
+    }
+}
+
+.smc-login-section {
+    @media screen and (max-width: 767px) {
+        margin-top: 0;
+    }
+}
+
+#formularioLogin {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-primary-2);
+        margin-top: 8rem !important;
+    }
+}
+
+.smc-login-lembrar-senha {
+    a {
+        color: var(--color-primary-2);
+    }
+}
+
+.smc-login-separador {
+    span {
+        color: var(--color-primary-2);
+    }
+}
+
+#formularioLembrarSenha {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-primary-2);
+    }
+}
+
+.smc-btn-voltar-icotext {
+    color: var(--color-primary-2);
+}
+
+#formularioCadastrarUsuario {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-primary-2);
+    }
+}
+
+.smc-login-texto-reenvio-senha {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-primary-2);
+    }
+}
+
+#fieldsetCadastrarUsuario {
+    &:first-child {
+        a.smc-form-ver-senha {
+            bottom: -38px;
+            float: left;
+            margin-left: -10px;
+        }
+    }
+}

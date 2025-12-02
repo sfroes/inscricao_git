@@ -1,0 +1,75 @@
+﻿@using (Smc.ModalWindow("modalLegendaPosicaoConsolidada")
+        .Title(Smc.GetUIResource("Titulo_Modal_Legenda"))
+        .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon))
+        .Begin())
+{        
+    <div class="row">
+        <div class="col-md-24">
+            @Smc.GetUIResource("Label_Inicial")
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_CandidatosConfirmados"):
+                </b>
+                @Smc.GetUIResource("Texto_CandidatosConfirmados")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_CandidatosDesistentes"):
+                </b>
+                @Smc.GetUIResource("Texto_CandidatosDesistentes")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_CandidatosReprovados"):
+                </b>
+                @Smc.GetUIResource("Texto_CandidatosReprovados")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_CandidatosSelecionados"):
+                </b>
+                @Smc.GetUIResource("Texto_CandidatosSelecionados")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_CandidatosExcedentes"):
+                </b>
+                @Smc.GetUIResource("Texto_CandidatosExcedentes")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_Convocados"):
+                </b>
+                @Smc.GetUIResource("Texto_Convocados")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_ConvocadosDesistentes"):
+                </b>
+                @Smc.GetUIResource("Texto_ConvocadosDesistentes")
+            </p>
+        </div>
+        <div class="col-md-24">
+            <p>
+                <b class="smc-gpi-cor-texto">
+                    @Smc.GetUIResource("Label_ConvocadosConfirmados"):
+                </b>
+                @Smc.GetUIResource("Texto_ConvocadosConfirmados")
+            </p>
+        </div>       
+    </div>
+}

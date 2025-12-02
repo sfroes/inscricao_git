@@ -1,0 +1,49 @@
+{
+  "name": "smc.gpi.client",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o",
+    "adm": "ng serve --o --project=administrativo --port 5201",
+    "insc": "ng serve --o  --project=inscricao --port 5202",
+    "buildAdministrativo": "npx ng build --configuration production --project=administrativo --base-href=/GPI.Inscricao/App/",
+    "buildInscricao": "npx ng build --configuration production --project=inscricao --base-href=/GPI.Inscricao/App/",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test --project=inscricao",
+    "test:debug": "ng test --watch --browsers=Chrome --project=inscricao"
+
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^19.1.7",
+    "@angular/cdk": "~19.1.5",
+    "@angular/common": "^19.1.7",
+    "@angular/compiler": "^19.1.7",
+    "@angular/core": "^19.1.7",
+    "@angular/forms": "^19.1.7",
+    "@angular/platform-browser": "^19.1.7",
+    "@angular/platform-browser-dynamic": "^19.1.7",
+    "@angular/router": "^19.1.7",
+    "@primeng/themes": "^19.0.8",
+    "primeicons": "^7.0.0",
+    "primeng": "^19.0.8",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.1.8",
+    "@angular/cli": "^19.1.8",
+    "@angular/compiler-cli": "^19.1.7",
+    "@types/jasmine": "~5.1.7",
+    "jasmine-core": "~5.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "typescript": "~5.7.3"
+  }
+}

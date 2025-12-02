@@ -1,0 +1,200 @@
+@import "../../Css/smc-login.scss";
+
+:root {
+    --color-primary: #005480;
+    --color-secondary: #005480;
+    --bg-msg-boas-vindas: #e6f1f2;
+    --border-msg-boas-vindas: #b2e5e9;
+    --color-msg-boas-vindas: #005480;
+    --color-btn-secondary: #005480;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.smc-login-body {
+    &:before {
+        background-image: url('../Images/smc-logo-puc.svg');
+        background-color: #f8f9fa;
+        box-shadow: none;
+
+
+        @media screen and ("max-width: 767px") {
+            background-position: 50% 0.6em;
+            height: 7.45em;
+        }
+    }
+}
+
+.container-fluid {
+    &:before {
+        border-color: transparent transparent transparent #f8f9fa;
+        box-shadow: none;
+        filter: drop-shadow(0px 0px 0px #fff);
+    }
+}
+
+.smc-login-section {
+    display: block;
+
+    @media screen and ("max-width: 767px") {
+        margin-top: 9em;
+    }
+}
+
+.smc-login-conteudo .smc-message-container.smc-mensagens-principal {
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+
+#formularioLogin {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+        margin-top: 6rem;
+
+
+        @media screen and (max-width: 767px) {
+            margin-top: 3rem !important;
+        }
+    }
+}
+
+.smc-login-lembrar-senha {
+    a {
+        color: var(--color-primary);
+    }
+}
+
+.smc-login-separador {
+    span {
+        color: var(--color-primary);
+    }
+}
+
+#formularioLembrarSenha {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+        display: block;
+        margin-bottom: 2rem;
+        clear: both;
+    }
+}
+
+.smc-btn-voltar-icotext {
+    color: var(--color-primary);
+}
+
+#formularioCadastrarUsuario {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+        display: block;
+        margin-bottom: 2rem;
+        clear: both;
+    }
+}
+
+.smc-login-texto-reenvio-senha {
+    &:before {
+        font-size: 2em;
+        color: var(--color-primary);
+    }
+}
+
+#fieldsetCadastrarUsuario {
+    &:first-child {
+        a.smc-form-ver-senha {
+            bottom: -38px;
+            float: left;
+            margin-left: -10px;
+        }
+    }
+}
+
+
+div.smc-login-msg-boas-vindas {
+    margin-top: 3rem;
+    width: 90%;
+    margin-left: -10%;
+
+    @media screen and ("max-width: 767px") {
+        width: 100%;
+        padding: 0 10% !important;
+        margin: 0;
+    }
+}
+
+fieldset.smc-login-agrupador-acesso,
+fieldset.smc-login-agrupador-cadastro {
+    border-top: 1px solid #e3e3e3 !important;
+    margin: 15px 0;
+    margin-top: 20px !important;
+}
+
+#fieldsetFormularioLogin {
+    legend {
+        display: block;
+    }
+}
+
+.smc-login-btn-acao-principal .smc-btn-enviar-icotext-destaque {
+    color: var(--white);
+    font-size: 1.2em;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+
+    &:hover {
+        border: 1px solid var(--color-primary);
+        background-color: var(--white);
+        color: var(--color-primary);
+
+        i:before {
+            color: var(--color-primary) !important;
+        }
+    }
+}
+
+.smc-login-btn-acao-secundaria-usuarioderede,
+.smc-btn-cadastrar {
+    border: 1px solid var(--color-primary);
+    background-color: var(--white);
+    color: var(--color-primary);
+    margin-top: 15px !important;
+    line-height: 14px;
+    padding: 0 !important;
+    padding-top: 18px !important;
+    font-size: 1em;
+
+    &:hover {
+        border: 1px solid #98abb5;
+        background-color: var(--white);
+        color: #98abb5;
+    }
+}
+//
+@media screen and (max-width: 767px) {
+    .smc-btn-cadastrar {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+///ajusta o * em relação ao label ( mesma linha )
+div#Emails_0__Ativo {
+    display: block;
+    margin-bottom: 10px !important;
+}
+
+
+//ajusta btn voltar para a posição correta ( após o btn cadastrar)
+form#recuperaSenhaForm {
+        div > div > a.smc-btn-voltar-icotext {
+            margin-top: 17em;
+        }
+    }

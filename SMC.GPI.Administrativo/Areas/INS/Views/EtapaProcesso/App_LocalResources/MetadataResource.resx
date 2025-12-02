@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CabecalhoProcessoEtapaViewModel_DescricaoEtapa" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="CabecalhoProcessoEtapaViewModel_DescricaoProcesso" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="CabecalhoProcessoEtapaViewModel_SeqProcesso" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="ConfiguracaoProrrogacaoViewModel_DataFim" xml:space="preserve">
+    <value>Fim novo</value>
+  </data>
+  <data name="ConfiguracaoProrrogacaoViewModel_DataFimAntiga" xml:space="preserve">
+    <value>Fim anterior</value>
+  </data>
+  <data name="ConfiguracaoProrrogacaoViewModel_DataLimiteEntregaDocumentacao" xml:space="preserve">
+    <value>Limite documentação novo</value>
+  </data>
+  <data name="ConfiguracaoProrrogacaoViewModel_DataLimiteEntregaDocumentacaoAntiga" xml:space="preserve">
+    <value>Limite documentação anterior</value>
+  </data>
+  <data name="ConfiguracaoProrrogacaoViewModel_Descricao" xml:space="preserve">
+    <value>Configuração</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaDetalheViewModel_DataFim" xml:space="preserve">
+    <value>Fim</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaDetalheViewModel_DataInicio" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaDetalheViewModel_DataLimiteDocumentacao" xml:space="preserve">
+    <value>Data limite entrega de documentação</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaDetalheViewModel_Descricao" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaDetalheViewModel_NumeroEdital" xml:space="preserve">
+    <value>Nº do edital</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaDetalheViewModel_SeqConfiguracaoEtapa" xml:space="preserve">
+    <value>Configuração de origem</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaViewModel_CopiarDocumentacao" xml:space="preserve">
+    <value>Copiar Documentação Requerida e Grupo de Documentação</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaViewModel_CopiarNotificacoes" xml:space="preserve">
+    <value>Copiar Notificações</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaViewModel_CopiarPaginas" xml:space="preserve">
+    <value>Copiar Configuração de Páginas</value>
+  </data>
+  <data name="CopiarConfiguracoesEtapaViewModel_ProcessoDestino" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="EtapaProcessoListaViewModel_DataFimEtapa" xml:space="preserve">
+    <value>Data fim</value>
+  </data>
+  <data name="EtapaProcessoListaViewModel_DataInicioEtapa" xml:space="preserve">
+    <value>Data início</value>
+  </data>
+  <data name="EtapaProcessoListaViewModel_DescricaoEtapaSGF" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="EtapaProcessoListaViewModel_SituacaoEtapa" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="EtapaProcessoViewModel_DataFimEtapa" xml:space="preserve">
+    <value>Data fim</value>
+  </data>
+  <data name="EtapaProcessoViewModel_DataInicioEtapa" xml:space="preserve">
+    <value>Data início</value>
+  </data>
+  <data name="EtapaProcessoViewModel_SeqEtapaSGF" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="EtapaProcessoViewModel_SituacaoEtapa" xml:space="preserve">
+    <value>Situação</value>
+  </data>
+  <data name="OfertaProrrogacaoViewModel_DataFim" xml:space="preserve">
+    <value>Fim novo</value>
+  </data>
+  <data name="OfertaProrrogacaoViewModel_DataFimAntiga" xml:space="preserve">
+    <value>Fim anterior</value>
+  </data>
+  <data name="OfertaProrrogacaoViewModel_Descricao" xml:space="preserve">
+    <value>Oferta</value>
+  </data>
+  <data name="ProrrogacaoEtapaViewModel_DataFim" xml:space="preserve">
+    <value>Fim novo</value>
+  </data>
+  <data name="ProrrogacaoEtapaViewModel_DataFimAntiga" xml:space="preserve">
+    <value>Fim anterior</value>
+  </data>
+  <data name="ProrrogacaoEtapaViewModel_Descricao" xml:space="preserve">
+    <value>Etapa</value>
+  </data>
+  <data name="TaxaProrrogacaoViewModel_DataVencimento" xml:space="preserve">
+    <value>Vencimento novo</value>
+  </data>
+  <data name="TaxaProrrogacaoViewModel_DataVencimentoAntiga" xml:space="preserve">
+    <value>Vencimento anterior</value>
+  </data>
+  <data name="TaxaProrrogacaoViewModel_DataVencimento_FillInstructions" xml:space="preserve">
+    <value>A data de vencimento do título deve ser maior ou igual à data fim de configuração e à data atual.</value>
+  </data>
+  <data name="TaxaProrrogacaoViewModel_Descricao" xml:space="preserve">
+    <value>Taxa</value>
+  </data>
+  <data name="TaxaProrrogacaoViewModel_SeqEventoTaxa" xml:space="preserve">
+    <value>Evento Taxa</value>
+  </data>
+  <data name="TaxaProrrogacaoViewModel_SeqEventoTaxa_FillInstructions" xml:space="preserve">
+    <value>Um novo evento taxa deverá ser informado somente se o valor da taxa precisar ser diferente do último valor utilizado. Caso o valor seja o mesmo, será mantido o evento taxa do último período cadastrado.</value>
+  </data>
+  <data name="TaxaProrrogacaoViewModel_ValorAntigo" xml:space="preserve">
+    <value>Valor anterior</value>
+  </data>
+  <data name="TaxaProrrogacaoViewModel_ValorNovo" xml:space="preserve">
+    <value>Valor novo</value>
+  </data>
+</root>

@@ -1,0 +1,58 @@
+﻿@using SMC.Framework.UI.Mvc.Html
+@using SMC.Localidades.UI.Mvc.Extensions
+
+@model  InscritoViewModel
+
+@if (Model.ExibirEndereco)
+{
+    using (Smc.Div("fieldSetEnderecos").CssClass("smc-gpi-dados-formulario smc-gpi-formulario").Begin())
+    {
+        <div class="smc-gpi-mensagem-alerta">
+            <p>
+                @Smc.GetUIResource("Label_Preenchimento_Endereco")
+            </p>
+        </div>
+
+        @Smc.EditorFor(prop => prop.Enderecos)
+    }
+}
+
+@if (Model.ExibirEmail)
+{
+    <h4>E-mail de contato</h4>
+    <div class="smc-gpi-dados-formulario smc-gpi-formulario display-flex smc-gpi-dados-pessoais">
+
+        @Smc.EditorFor(prop => prop.Email)
+        @Smc.EditorFor(prop => prop.EmailConfirmacao)
+
+    </div>
+}
+
+<div class="smc-gpi-formulario display-flex smc-row">
+
+    @if (Model.ExibirTelefone)
+    {
+        <div class="smc-gpi-dados-formulario display-flex smc-gpi-dados-pessoais telefone">
+            @Smc.EditorFor(prop => prop.Telefones)
+        </div>
+    }
+
+    @if (Model.ExibirOutrosEnderecosEletronicos)
+    {
+        <div class="smc-gpi-dados-formulario display-flex smc-gpi-dados-pessoais endereco-eletronico">
+            @Smc.MasterDetail(prop => prop.EnderecosEletronicos)
+        </div>
+    }
+</div>
+@if (Model.TermoLGPD != null && Model.TermoLGPD.Length > 0)
+{
+    using (Smc.Div("SecaoLGPD").CssClass("smc-gpi-secaolinks").Begin())
+    {
+        <label class="smc-gpi-termo-entrega">
+            @Smc.EditorFor(x => x.ConsentimentoLGPD).HideLabel()
+            @Html.Raw(HttpUtility.HtmlDecode(@Model.TermoLGPD))
+        </label>
+    }
+}
+
+@Smc.WizardView()

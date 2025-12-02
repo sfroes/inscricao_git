@@ -1,0 +1,94 @@
+﻿@model ModeloPaginaAngularViewModel
+
+@*@using (Smc.Div("fieldsetParametros").Begin())
+{
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaEncrypted)
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaPaginaEncrypted)
+    @Smc.EditorFor(prop => prop.SeqGrupoOfertaEncrypted)
+    @Smc.EditorFor(prop => prop.SeqInscricaoEncrypted)
+    @Smc.EditorFor(prop => prop.Idioma)
+    @Smc.EditorFor(prop => prop.TokenProximaPaginaEncrypted)
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapaPaginaProximaEncrypted)
+
+}*@
+
+@{
+    var buttonset = Smc.ButtonSet().CssClass("smc-gpi-linha-botoes gap-botoes smc-gpi-linha-botoes-espacamento");
+
+    if (!string.IsNullOrEmpty(Model.TokenPaginaAnterior))
+    {
+        buttonset.AddButton(Smc.Button(SMCButtonBehavior.Anterior).Action("UrlPagina", "Inscricao", new
+        {
+            @area = "INS",
+            @token = SMCDESCrypto.EncryptForURL(Model.TokenPaginaAnterior),
+            @SeqConfiguracaoEtapaPagina = SMCDESCrypto.EncryptNumberForURL(Model.SeqConfiguracaoEtapaPaginaAnterior),
+            @seqConfiguracaoEtapa = Model.SeqConfiguracaoEtapaEncrypted,
+            @seqGrupoOferta = Model.SeqGrupoOfertaEncrypted,
+            @seqInscricao = Model.SeqInscricaoEncrypted,
+            @idioma = Model.Idioma
+        })
+                    .Type(SMCButtonType.Link)
+                    .Text(Smc.GetUIResource(Model.ChaveTextoBotaoAnterior))
+                    .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoAnterior))
+                    .CssClass("smc-btn-secundario voltar")
+                    .Enabled(Model.InscricaoIniciada));
+    }
+    buttonset.AddButton(Smc.Button(SMCButtonBehavior.Salvar)
+        .Text(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+        .Tooltip(Smc.GetUIResource(Model.ChaveTextoBotaoProximo))
+        .DisplayMode(SMCButtonDisplayMode.Text)
+        .CssClass("smc-btn-principal proximo")
+        .Enabled(Model.InscricaoIniciada));
+
+    if (Model.SeqInscricao == 0)
+    {
+        if (Model.UidProcesso != null && Model.UidProcesso != Guid.Empty)
+        {
+            buttonset.AddButton(Smc.Button("cancelarProcesso")
+            .Type(SMCButtonType.Link)
+            .Action("IndexProcesso", "Home",
+                       new
+                       {
+                           @uidProcesso = Model.UidProcesso,
+                           @area = string.Empty
+                       })
+            .CssClass("smc-btn-secundario"));
+        }
+        else
+        {
+
+            buttonset.AddButton(Smc.Button("cancelarProcesso")
+            .Type(SMCButtonType.Link)
+            .Action("Indexhome", "Home", new { area = string.Empty })
+            .CssClass("smc-btn-secundario"));
+        }
+
+    }
+    else
+    {
+        buttonset.AddButton(Smc.Button("cancelarProcesso")
+                    .Type(SMCButtonType.Link)
+                    .Action("Index", "Home", new { area = string.Empty })
+                    .CssClass("smc-btn-secundario"));
+    }
+
+}
+@buttonset
+
+@section Scripts
+{
+    <script>
+        alert();
+        $(document).ready(function () {
+
+            var errorMessage = $('.smc-message-error').children();
+
+            setInterval(function () {
+                if (errorMessage.is(':visible')) {
+                    document.getElementsByClassName('smc-alerta-processando')[0].remove();
+                }
+            }, 2500);
+        });
+    </script>
+
+}

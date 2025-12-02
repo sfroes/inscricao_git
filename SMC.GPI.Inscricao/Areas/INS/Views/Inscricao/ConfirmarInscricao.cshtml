@@ -1,0 +1,178 @@
+﻿@model PaginaConfirmarInscricaoViewModel
+
+@{
+    ViewBag.InscricaoNaoPermiteTrocaLingua = true;
+    Layout = "~/Areas/INS/Views/Shared/_Layout.cshtml";
+}
+
+@section PainelLateral
+{
+    @Html.Partial("_PainelLateralProcesso", Model)
+}
+
+<h3>@Model.Titulo</h3>
+<div class="smc-gpi-mensagem-alerta">
+    @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_INSTRUCOES))
+</div>
+
+<div class="smc-gpi-tela-confirmacao">
+    @using (Smc.Fieldset("fieldsetProcesso").Begin())
+{
+    @Smc.DisplayFor(prop => prop.DescricaoProcessoVisivel).HideLabel()
+}
+    @*Exibe a seção do grupo apenas se o processo possuir mais de um grupo*@
+    @if (!string.IsNullOrWhiteSpace(Model.DescricaoGrupoOferta))
+    {
+        using (Smc.Fieldset("fieldsetGrupoOferta").LegendText(Model.LabelGrupoOferta).Begin())
+        {
+    @Smc.DisplayFor(prop => prop.DescricaoGrupoOferta).HideLabel();
+        }
+    }
+    @using (Smc.Fieldset("fieldsetOfertas").LegendText(Model.LabelOferta).CssClass("smc-gpi-separa-itens").Begin())
+    {
+        foreach (InscricaoOfertaListaViewModel oferta in Model.Ofertas)
+        {
+    @(Smc.DisplayFor(prop => oferta.DescricaoCompleta)
+                .HideLabel(Model.NumeroMaximoOfertaPorInscricao.GetValueOrDefault() == 1)
+                .Label(@Smc.GetUIResource("Label_Opcao", null, oferta.NumeroOpcao.ToString())))
+
+            if (!string.IsNullOrWhiteSpace(oferta.JustificativaInscricao))
+            {
+    @Smc.DisplayFor(m => oferta.JustificativaInscricao).CssClass("smc-gpi-child-separa-itens")
+            }
+        }
+
+        if (Model.NumeroOpcoesDesejadas.HasValue)
+        {
+    @Smc.DisplayFor(m => m.NumeroOpcoesDesejadas)
+        }
+    }
+</div>
+    @if (Model.Taxas != null && Model.Taxas.Count > 0)
+    {
+        <h4>@Smc.GetUIResource("Fieldset_Taxas")</h4>
+        @(Smc.Grid("gridTaxas", Model.Taxas).CssClass("smc-grid-taxas").HidePager().HideGridTitle()
+                .FieldColumn(x => x.NumeroItens, visible: true, cssClass: "quantidade")
+                .FieldColumn(x => x.DescricaoDisplay, visible: true, cssClass: "descricao")
+                .FieldColumn(x => x.ValorEventoTaxa, visible: true, cssClass: "valor")
+                .FieldColumn(x => x.ValorTotalTaxa, visible: true, cssClass: "total")
+            )
+        <div class="smc-math display-flex totalizador smc-horizontal-align-right">
+            <label>@Smc.GetUIResource("Total_Taxas"):</label> <p>@Model.Taxas.Sum(x => x.ValorTotalTaxa).ToString("#,##0.00")</p>
+        </div>
+    }
+<div class="smc-gpi-tela-confirmacao">
+    @if (Model.ExibeCodigosAutorizacao)
+    {
+        using (Smc.Fieldset("fieldsetCodigoAutorizacao").LegendText(Model.LabelCodigoAutorizacao).Begin())
+        {
+
+            if (Model.CodigosAutorizacao.SMCCount() > 0)
+            {
+                for (var i = 0; i < Model.CodigosAutorizacao.SMCCount(); i++)
+                {
+                    @Smc.DisplayFor(prop => prop.CodigosAutorizacao[i].Codigo).HideLabel()
+                }
+            }
+            else
+            {
+                @Smc.GetUIResource("Mensagem_Nao_Informado")
+            }
+        }
+    }
+
+    @foreach (var formulario in Model.Formularios)
+    {
+
+        using (Smc.Div("fieldSetFormulario")
+                  //  .LegendText(@formulario.TituloFormulario)
+                  .CssClass("smc-gpi-dados-formulario smc-gpi-dados-pessoais")
+                  .Begin())
+        {
+            @Html.Action("RelatorioFormulario", "Inscricao", new
+                               {
+                                   seqDadoFormulario = @formulario.SeqDadoFormulario,
+                                   SeqInscricao = @formulario.SeqInscricao,
+                                   seqFormularioSGF = @formulario.SeqFormularioSGF,
+                                   seqVisaoSGF = @formulario.SeqVisaoSGF,
+                                   area = "INS"
+                               })
+        }
+    }
+
+    @using (Smc.Form("formConfirmarInscricao", "SalvarConfirmarInscricao").Ajax().Confirm(Smc.GetUIResource("ConfirmarInscricao_Confirmacao_Title"), Smc.GetUIResource("ConfirmarInscricao_Confirmacao")).Begin())
+    {
+        if (Model.ExibeDocumentacao)
+        {
+            if (Model.ExibeTermoOrientacaoPDF && Model.Documentos.Any(a => a.ConvertidoParaPDF))
+            {
+                using (Smc.Div().CssClass("smc-mensagem smc-mensagem-informativa").Begin())
+                {
+                    <p>@Html.Raw(HttpUtility.HtmlDecode(@Model.OrientacaoAceiteConversaoArquivosPDF))</p>
+                    <input hidden style="display:none" type="text" name="OrientacaoAceiteConversaoArquivosPDF" value="@Model.OrientacaoAceiteConversaoArquivosPDF" />
+                }
+            }
+            @Html.Partial("_ListarDocumentos", Model.Documentos)
+
+            if (Convert.ToBoolean(ViewBag.Confirmacao))
+            {
+                if (((PaginaConfirmarInscricaoViewModel)Model).ExibeTermoOrientacaoPDF && Model.Documentos.Any(a => a.ConvertidoParaPDF))
+                {
+                    var termo = ((PaginaConfirmarInscricaoViewModel)Model).TermoAceiteConversaoArquivosPDF;
+                    <input hidden style="display:none" type="text" name="TermoAceiteConversaoArquivosPDF" value="@termo" />
+                    using (Smc.Div().CssClass("smc-gpi-termo-entrega").Begin())
+                    {
+                        <label id="AceiteConversaoPDF" data-configurated="true" style="margin:5px 0px;" class="smc-gpi-termo-entrega">
+                            <input class="smc-horizontal-align-left " style="width: 18px; height: 18px; border-radius: 0px; margin-right:7px;" name="AceiteConversaoPDF" data-parsley-required="true" data-parsley-required-message="Preenchimento obrigatório" type="checkbox" id="checkboxAceiteConversaoPDFvisivel" value="true"> @Html.Raw(HttpUtility.HtmlDecode(@termo))
+                            <span style="margin-top: 32px; margin-left: 20px;" class="field-validation-valid span-validation-error" data-valmsg-for="AceiteConversaoPDF" data-valmsg-replace="true"></span>
+                        </label>
+                    }
+
+                }
+            }
+
+            if (Model.ExibeTermoPrincipalResponsabilidadeEntrega)
+            {
+                <h4>@Smc.GetUIResource("ConfirmarInscricao_fieldsetTermosEntrega_Fieldset_Legenda")</h4>
+                <div id="DivTermoResponsabilidadeEntrega">
+                    @Html.Raw(HttpUtility.HtmlDecode(@Model.DescricaoTermoEntregaDocumentacao))
+                </div>
+            }
+        }
+
+        if (Model.ExibeTermoConsentimentoLGPD.GetValueOrDefault())
+        {
+            using (Smc.Div("SecaoLGPD").CssClass("smc-gpi-secaolinks").Begin())
+            {
+                <label class="smc-gpi-termo-entrega">
+                    @Smc.EditorFor(x => x.ConsentimentoLGPD).HideLabel()
+                    @Html.Raw(HttpUtility.HtmlDecode(@Model.TermoLGPD))
+                </label>
+                @Smc.EditorFor(x => x.ExibeTermoConsentimentoLGPD)
+            }
+        }
+        else
+        {
+            @Smc.HiddenFor(x => x.ConsentimentoLGPD)
+        }
+
+
+        @Html.Partial("_BotoesNavegacao", Model)
+    }
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/Inscricao/ConfirmarInscricao.js")"></script>
+    <script>
+        $(document).ready(function () {
+            setInterval(function () {
+                if ($('.smc-message-error').children().is(':visible')) {
+                    smc.core.hideLoadingPanel();
+                }
+            }, 2500);
+        });
+
+
+    </script>
+}

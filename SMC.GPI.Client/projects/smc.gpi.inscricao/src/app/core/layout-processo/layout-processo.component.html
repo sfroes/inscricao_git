@@ -1,0 +1,32 @@
+<app-layout-header></app-layout-header>
+
+<section class="smc-conteudo-centro" id="ancora-desktop">
+  <div class="display-flex flex-d-row smc-gpi-paineis mobile">
+    <!-- (obrigatório) -->
+    @if (layoutProcessoDataService.$exibirComponenteMenuLateral()) {
+      <div class="smc-gpi-painel-lateral">
+        <div class="smc-painel-esquerda-conteudo">
+          <app-layout-menu-lateral></app-layout-menu-lateral>
+        </div>
+      </div>
+    }
+
+    <!--(obrigatório)-->
+
+    <div class="smc-gpi-painel-central-interno">
+      <!-- (obrigatório) -->
+      <div class="smc-conteudo-centro flex-column display-flex">
+        <h1>
+          @if (!this.serviceLayoutProcesso.descricaoProcesso$()) {
+            <p-skeleton id="sk-descricaoprocesso" width="100%" height="12px" />
+          } @else {
+            {{ this.serviceLayoutProcesso.descricaoProcesso$() }}
+          }
+        </h1>
+        <!-- corpo da página (obrigatório) -->
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>
+<app-layout-footer></app-layout-footer>

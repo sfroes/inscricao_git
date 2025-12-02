@@ -1,0 +1,28 @@
+﻿@model ConfiguracaoProrrogacaoViewModel
+
+    <div class="smc-detalhe-editavel-blocos smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+        <h3>@Model.Descricao</h3>
+        @using (Smc.Div("fieldsetConfiguracao" + Model.SeqConfiguracaoEtapa).Size(SMCSize.Grid24_24).Begin())
+        {
+            @Smc.EditorFor(x => x.DataFimMinina)
+            @Smc.EditorFor(x => x.DataFim)
+            @Smc.EditorFor(x => x.DataLimiteEntregaDocumentacao)
+
+            if (Model.Taxas != null && Model.Taxas.Count > 0)
+            {
+                using (Smc.Div("divConfiguracao").Size(SMCSize.Grid24_24).Begin())
+                {
+                    <div class="smc-detalhe-editavel-blocos smc-size-md-24 smc-size-xs-24 smc-size-sm-24 smc-size-lg-24">
+                        <h4>@Smc.GetUIResource("Titulo_Taxas")</h4>
+                        @Smc.List("listaTaxas", x => x.Taxas).HtmlTemplate(@<text>@Html.Partial("_TaxaProrrogacaoEtapa", item.Value)</text>)
+                    </div>
+                    }
+                }
+                else
+                {
+                    <p class="smc-gpi-mensagem">@Smc.GetUIResource("Mensagem_Taxa_Inexistente")</p>
+                }
+        }
+    </div>
+
+

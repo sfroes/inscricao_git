@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+@model TotalInscricoesProcessoViewModel[]
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sumário dos processos para o 2º semestre de 2016</title>
+</head>
+<body>
+    <div>
+        <div>
+            <div>Processo</div>
+            <div>Nº de inscrições</div>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div>
+                <div>@item.Descricao</div>
+                <div>@item.TotalInscricoes</div>
+                <div>
+                    <a href=@(Url.Action("SumarioInscricoesProcesso","ACompanhamentoProcesso",
+                             new { area="INS",seqProcesso=SMCDESCrypto.EncryptNumberForURL(item.SeqProcesso)}))>
+                        Detalhes
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model List<SMC.GPI.Administrativo.Models.LinkViewModel>
+
+    @if (Model.Count() == 1 && Model[0].Action.Contains("Editar"))
+    {
+        @(Smc.ButtonSet().CssClass("smc-gpi-btn-configurar-topo-pagina").NumberOfButtonsToShow(1)
+            .AddButton(Smc.Button(SMCButtonBehavior.Alterar)
+                            .DisplayMode(SMCButtonDisplayMode.Icon)
+                            .Highlight()
+                            .Type(SMCButtonType.Link)
+                            .Action(Model[0].Action, Model[0].Controller, new RouteValueDictionary(Model[0].Parameters)))
+        )
+    }
+    else
+    {
+        var buttonset = Smc.ButtonSet().CssClass("smc-gpi-btn-configurar-topo-pagina").NumberOfButtonsToShow(0);
+
+        foreach (var link in Model)
+        {
+            var button = Smc.Button(link.Action)
+                            .Text(link.Label)
+                            .Tooltip(string.IsNullOrEmpty(link.Tooltip) ? link.Label : link.Tooltip)
+                            .Action(link.Action, link.Controller, new RouteValueDictionary(link.Parameters))
+                            .CssClass(link.CssClass ?? new string[] { })
+                            .SecurityToken(link.SecurityToken ?? new string[] { })
+                            .Attributes(link.Atttributes ?? new Dictionary<string, object> { })
+                            .Hide(link.Hide)
+                            .Type(SMCButtonType.Link);
+
+            if (link.ConfirmConfigured)
+            {
+                button.Confirm(link.ConfirmTitle, link.ConfirmMessage);
+            }
+
+            if (link.AjaxConfigured)
+            {
+                button.Ajax(link.AjaxConfirm, link.AjaxIsPost.Value, link.AjaxInsertMode, link.AjaxLoadingElementId, link.AjaxOnBegin, link.AajaxOnComplete,
+                            link.AjaxOnFailure, link.AjaxOnSuccess, link.AjaxUpdateTargetId, link.AjaxFieldsContainerToRequest, link.AjaxPrepareDataToRequest);
+            }
+
+
+            buttonset.AddButton(button);
+        }
+
+        @buttonset
+    }

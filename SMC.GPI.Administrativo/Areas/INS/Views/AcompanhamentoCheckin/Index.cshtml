@@ -1,0 +1,46 @@
+﻿
+@model AcompanhamentoCheckinFiltroViewModel
+
+@using (Smc.Form("formPesquisaInscritoCheckin", "Listar").Ajax("#divGridAcompanhamentoInscritoCheckin").Begin())
+{
+    using (Smc.Fieldset("fieldsetPesquisaInscrito").CssClass("smc-fieldset-filter").Begin())
+    {
+        @*@Smc.EditorFor(prop => prop.SeqUnidadeResponsavel)
+            @Smc.EditorFor(prop => prop.SeqTipoProcesso)*@
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @*@Smc.EditorFor(prop => prop.SemestreReferencia)
+            @Smc.EditorFor(prop => prop.AnoReferencia)
+            @Smc.EditorFor(prop => prop.SeqItemHierarquiaOferta)*@
+        @Smc.EditorFor(prop => prop.SeqOferta)
+        @Smc.EditorFor(prop => prop.Data)
+
+
+        @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.Limpar).Attribute("data-clear", "#divGridAcompanhamentoInscritoCheckin").DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+}
+
+@using (Smc.Form("formListagemCheckin", "ListagemInscritosAtividade").Attribute("target", "_blank").Begin())
+{
+    <div id="divGridAcompanhamentoInscritoCheckin">
+        @Smc.ActionList("Listar", "AcompanhamentoCheckin", Model, initialListingDisabled: true)
+    </div>
+
+    <div id="divBototesLote" class="smc-buttonset-horizontal-primario">
+        @(Smc.Button(Smc.GetUIResource("Texto_Imprimir_Qrcodes"))
+             .Text(Smc.GetUIResource("Texto_Imprimir_Qrcodes"))
+             .Tooltip(Smc.GetUIResource("Texto_Imprimir_Qrcodes"))
+             .SecurityToken(UC_INS_005_01_06.LISTAGEM_INSCRITOS_ATIVIDADE)
+             .CssClass("smc-btn-imprimir-icotext margin-top-10")
+             .Attribute("target", "_blank")
+             .Enabled(false)
+             .Type(SMCButtonType.Submit)
+             .Attribute("id", "btn-lista-checkin"))
+    </div>
+}
+@section Scripts{
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/AnaliseListagemCheckin.js")" type="text/javascript"></script>
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/ReloadPagerAjax.js")" type="text/javascript"></script>
+}

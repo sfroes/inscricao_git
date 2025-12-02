@@ -1,0 +1,290 @@
+﻿// GRID SYSTEM EM 12 COLUNAS
+$colunas: 12;
+$grid-padding-default: 1rem;
+$grid-min-breakpoint:992px;
+
+* {
+    box-sizing: border-box;
+}
+
+.smc-container {
+    padding-left: $grid-padding-default;
+    padding-right: $grid-padding-default;
+}
+
+.smc-row {
+    display: grid;
+    grid-template-columns: repeat($colunas, 1fr);
+}
+
+// monta as classes do grid system com base no numero de colunas
+@mixin colunas($cols) {
+    @for $i from 0 to $colunas {
+        .smc-col-#{$i+1} {
+            position: relative;
+            grid-column: span $i+1;
+            padding-left: $grid-padding-default;
+            padding-right: $grid-padding-default;
+        }
+    }
+}
+
+// gera as classes do grid system
+@include colunas($colunas);
+
+// monta a media query do grid system
+@mixin grid-breakpoints($size, $fr) {
+    @media screen and ($size) {
+        @for $i from 0 to $fr {
+            .smc-col-#{$i+1} {
+                grid-column: span $colunas;
+            }
+        }
+    }
+}
+
+// gera a media query do grid system neste breakpoint
+@include grid-breakpoints("max-width: #{$grid-min-breakpoint}", $colunas);
+
+
+// FLEX
+.display-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+// flex justify
+@mixin flex-justify($value) {
+    .flex-j-#{$value} {
+        @if $value == center {
+            justify-content: $value;
+        }
+        @else if $value == start {
+            justify-content: flex-#{$value};
+        }
+        @else if $value == end {
+            justify-content: flex-#{$value};
+        }
+        @else {
+            justify-content: space-#{$value};
+        }
+    }
+}
+
+// classe => .flex-j-[posição]
+@include flex-justify(center);
+@include flex-justify(start);
+@include flex-justify(end);
+@include flex-justify(between);
+@include flex-justify(around);
+@include flex-justify(evenly);
+
+// flex align
+@mixin flex-align($value) {
+    .flex-a-#{$value} {
+        @if $value == center {
+            align-items: $value;
+        }
+        @else {
+            align-items: flex-#{$value};
+        }
+    }
+}
+
+// classe => .flex-a-[posição]
+@include flex-align(center);
+@include flex-align(start);
+@include flex-align(end);
+
+
+// GRID
+.display-grid {
+    display: grid;
+}
+
+// column gap
+@mixin column-gap($value, $name) {
+    @for $i from 0 to $value {
+        .grid-c-gap-#{($i + 1) * $name} {
+            column-gap: (($i + 1) * $name)+px;
+        }
+    }
+}
+
+// classe => .grid-c-gap-[5/10/15/20/25/30]
+@include column-gap(6,5);
+
+// row gap
+@mixin row-gap($value, $name) {
+    @for $i from 0 to $value {
+        .grid-r-gap-#{($i + 1) * $name} {
+            row-gap: (($i + 1) * $name)+px;
+        }
+    }
+}
+
+// classe => .grid-r-gap-[5/10/15/20/25/30]
+@include row-gap(6,5);
+
+
+// GERAL
+
+// text align
+@mixin text-align($value) {
+    .text-#{$value} {
+        text-align: $value;
+    }
+}
+
+// classe => .text-[posição]
+@include text-align(center);
+@include text-align(left);
+@include text-align(right);
+
+.margin-0 {
+    margin: 0;
+}
+
+@mixin espacamentos($propriedade,$eixo, $value, $name) {
+    @for $i from 0 to $value {
+        .#{$propriedade}-#{($eixo)}-#{($i + 1) * $name} {
+            #{$propriedade}-#{($eixo)}: (($i + 1) * $name)+px;
+        }
+    }
+}
+
+// classe => .margin-[top/bottom/left/right]-[5/10/15/20/25/30]
+@include espacamentos(margin,top,1,0);
+@include espacamentos(margin,top,6,5);
+@include espacamentos(margin,bottom,1,0);
+@include espacamentos(margin,bottom,6,5);
+@include espacamentos(margin,left,1,0);
+@include espacamentos(margin,left,6,5);
+@include espacamentos(margin,right,1,0);
+@include espacamentos(margin,right,6,5);
+
+.padding-0 {
+    padding: 0;
+}
+
+// classe => .padding-[top/bottom/left/right]-[5/10/15/20/25/30]
+@include espacamentos(padding,top,1,0);
+@include espacamentos(padding,top,6,5);
+@include espacamentos(padding,bottom,1,0);
+@include espacamentos(padding,bottom,6,5);
+@include espacamentos(padding,left,1,0);
+@include espacamentos(padding,left,6,5);
+@include espacamentos(padding,right,1,0);
+@include espacamentos(padding,right,6,5);
+
+.circle-img {
+    border-radius: 50%;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-medium {
+    font-weight: 500;
+}
+
+.text-light {
+    font-weight: 300;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th,
+    td {
+        text-align: left;
+        padding: 0.75rem 1.5rem;
+        white-space: nowrap;
+    }
+
+    thead {
+        tr {
+            th {
+                font-weight: 700;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                border-top: 1px solid;
+            }
+        }
+    }
+}
+
+.show {
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.hidden {
+    opacity: 0 !important;
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.border-0 {
+    border: 0;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.btn-block {
+    width: 100%;
+    display: block;
+}

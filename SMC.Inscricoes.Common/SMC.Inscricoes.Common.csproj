@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A94711A1-2A12-43DD-8262-D2B60C2084BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMC.Inscricoes.Common</RootNamespace>
+    <AssemblyName>SMC.Inscricoes.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseProd|AnyCPU'">
+    <OutputPath>bin\ReleaseProd\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.4.1.0\lib\net461\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler.Shared, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.Shared.4.1.0\lib\net461\MiniProfiler.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Core, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Core.4.2.251008.1\lib\net471\SMC.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.DataAnnotations, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.DataAnnotations.4.2.251008.1\lib\net471\SMC.Framework.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Model, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Model.4.2.251008.1\lib\net471\SMC.Framework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SMC.Framework.Unity, Version=4.2.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SMC.Framework.Unity.4.2.251008.1\lib\net471\SMC.Framework.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.13\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.5.5.3\lib\net47\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net47\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\INS\Constants\CAMPOS_PADRONIZADOS.cs" />
+    <Compile Include="Areas\INS\Constants\TOKENS_TIPO_ITEM_HIERARQUIA_OFERTA.cs" />
+    <Compile Include="Areas\INS\Constants\TOKENS_BOLSA_SOCIAL.cs" />
+    <Compile Include="Areas\INS\Constants\LABELSINSCRICAO.cs" />
+    <Compile Include="Areas\INS\Constants\WEB_API_REST.cs" />
+    <Compile Include="Areas\INS\Enums\CampoInscrito.cs" />
+    <Compile Include="Areas\INS\Enums\SituacaoEtapa.cs" />
+    <Compile Include="Areas\INS\Enums\SituacaoValidacaoOferta.cs" />
+    <Compile Include="Areas\INS\Enums\TipoBoleto.cs" />
+    <Compile Include="Areas\INS\Enums\TipoCheckin.cs" />
+    <Compile Include="Areas\INS\Enums\TipoCobranca.cs" />
+    <Compile Include="Areas\INS\Enums\TipoConsistencia.cs" />
+    <Compile Include="Areas\INS\Enums\TipoEmissao.cs" />
+    <Compile Include="Areas\INS\Exceptions\CodigoAutorizacao\InscricaoExistenteComCodigoAutorizacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\CodigoAutorizacao\CodigoAutorizacaoInvalidoParaInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPaginaIdioma\ConfiguracaoPaginaIdiomaTipoFormularioDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPaginaIdioma\ConfiguracaoEtapaPaginaIdiomaInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPagina\AlteracaoPaginaEtapaComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPagina\AdicionarPaginaEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPagina\AlteracaoPaginaEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPagina\ArquivosSecaoOrdemRepetidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPagina\DuplicacaoPaginaEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPagina\ExclusaoPaginaEtapaComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPagina\ExclusaoPaginaEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapaPagina\VisaoGestaoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ConfiguracaoEtapaIntegracaoNumeroOfertasException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ConfiguracaoEtapaImagemObrigatoriaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\DevePossuirPeriodoTaxaIguaisException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ExclusaoConfiguracaoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\CopiaConfiguracaoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ExisteNotificacaoAvaliacaoEventoNoProcessoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\GrupoJaAssociadoOutraConfiguracaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\OfertaCadastradaSemPeriodoAtividadeConfiguradoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\PeriodoDoEventoNaoConfiguradoNoProcessoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ProcessoDestinoNaoPossuiEtapaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\NotificaoExisteDescricaoDocumentacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\NotificaoExistenteConfiguracaoEtapaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ConfiguracaoOfertaForaPeriodoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ConfiguracaoVigenciaForaEtapaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\RemocaoGrupoComOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\AlteracaoConfiguracaoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ConfiguracaoEtapaNaoVigenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ConfiguracaoEtapa\ConfiguracaoEtapaInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoValidacaoOutroSetorException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoUploadEmGrupoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoObrigatorioGrupoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoUploadObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoTipoDocumentoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoPermiteEntregaPosteriorException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoVariosArquivosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoVersaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracoDocumentoRequeridoSexoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\DocumentoRequeridoAdicionalObrigatorioPosteriormenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\DocumentoRequeridoExibirTermoResponsabilidadeEntregaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\DocumentoRequeridoNaoObrigatorioUploadObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\AlteracaoDocumentoRequeridoExibirTermoResponsabilidadeEntregaException.cs.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\EntregaDocumentoNotificacaoSemDataPrazoNovaEntregaDocumentacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\DocumentoRequeridoPermiteEntregaPosteriorAlteradoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\ExtensaoDocumentoInvalidaPDFException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\ExtensaoDocumentoNovaDocumentacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\NumeroDeDocumentosExcedidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\InclusaoDocumentoRequeridoDocumentacaoEntregueException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\InclusaoDocumentoRequeridoUploadObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\InclusaoDocumentoRequeridoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\ExclusaoDocumentoRequeridoComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\ExclusaoDocumentoRequeridoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\ExtensaoDocumentoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\EntregaDocumentoSemDataException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\VersaoEntregueDiferenteExigidaSemObservacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\DocumentoRequerido\DocumentoRequeridoNaoPermiteVariosArquivosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\DocumentoRequeridoParaSexoNaoConfiguradoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\EtapaConvocacaoProcessoNaoExistenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\EtapaSelecaoProcessoNaoExistenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\EtapaProrrogacaoCoincidePermissaoForaPrazoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaOfertaSemCodigoOrigemException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaProcessoComEventoOfertasSemTaxaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaComDescricaoTermoResponsabilidadeEntregaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaSemDescricaoTermoResponsabilidadeEntregaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaDataLimiteEntregaMenorDataFimEtapaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaTaxaPorOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\ProrrogacaoEtapaDataVencimentoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\ProrrogacaoEtapaDataInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\ProrrogacaoEtapaDataOfertaMaiorConfiguracaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\AdiantamentoOfertaDataFimMaiorException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\ConfiguracaoPaginaExibicaoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\ProrrogacaoEtapaDiferenteInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\EtapaProcessoTipoProcessoDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\EtapaProcessoTipoHierarquiaOfertaDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\EtapaProrrogacaoSituacaoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaCodigoSemPaginaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaNotificacaoNaoConfiguradaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\NumeroEditalNotificacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\DescricaoDocumentacaoNotificacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\ExclusaoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\DataEntregaDocumentacaoNotificacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\AdiantamentoProrrogacaoEtapaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\ProrrogarEtapaValoresDistintosPeriodosCoincidentesException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\UploadPermitidoSemPaginaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\OfertaComCodigoSemPaginaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\NotifacaoSemConfiguracaoIdiomaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaSemConfiguracaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\NotificacaoAgendamentoSemParametroException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\PaginaSemFormularioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\SecaoArquivoNaoCadastradaIdiomasException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\SecaoTextoNaoCadastradaIdiomasException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaSemIdiomasConfiguradosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\LiberacaoEtapaSemOfertaAtivaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\AlteracaoEtapaDataInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\AlteracaoEtapaNaoPermitidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\EtapaProcesso\EtapaProcessoEmManutencaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\AlteracaoGrupoDocumentoDocumentoRequeridoEntregaPosteriorException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\GrupoDocumentoUploadObrigatorioInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\GrupoDocumentoAlteradoItemAlteracoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\GrupoDocumentoMinimoItensInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\GrupoDocumentoDocumentoSemUploadException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\GrupoDocumentoUploadItensAlteradosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\GrupoDocumentoAlteracaoMinimoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\GrupoDocumentoAumentoMinimoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\GrupoDocumentoTermoResponsabilidadePermiteEntregaPosteriorException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\InsclusaoGrupoDocumentoDocumentacaoEntregueException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\ExclusaoGrupoDocumentoComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\ExclusaoGrupoDocumentoInscricaoComDocumentosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoDocumentoRequerido\MudancaGrupoDocumentoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoOferta\AlteracaoGrupoOfertaEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoOferta\AssociacaoOfertaGrupoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoOferta\DesassociacaoOfertaComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoTaxa\MaiorQueNumeroMaximoItensGrupoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoTaxa\QuantidadeTaxaExcedidaNasOfertasDoProcessoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoTaxa\TipoCobrancaTaxaDiferenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoTaxa\MinimoItensTaxaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoTaxa\AssociacaoDuplicadaTaxaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\GrupoTaxa\TaxaDuplicadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\AlteracaoOfertaCodigoAutorizacaoComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\AlteracaoTaxaOfertaNaoCobreBoletosGeradosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\AlterarOfertaTaxaParametroCreiException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\AlterarTaxaOfertaEventoTaxaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\BonusExAlunoNumeroVagasMenorBolsaSelecionadas.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\BonusExAlunoDescontoZeroException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\BonusExAlunoNumeroVagasInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\BonusExAlunoPercentualDescontoNaoInformadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\HierarquiaOfertaTipoProcessoDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\HierarquiaOfertaTipoHierarquiaOfertaDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\ExclusaoTipoTaxaJaUtilizadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\HierarquiaOfertaEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\InscricaoNaOfertaSemTaxaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\NovaOfertaEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\BonusExAlunoNumeroVagasNaoInformadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\OfertaCoincideComPermissaoForaPrazoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\OfertaComCodigoAutorizacaoEtapaNaoLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\OfertaPeriodoTaxaCobradaPorOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\OfertaVencimentoInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\PeriodoAtividadeContidoPeriodoEnventoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\PeriodoIncompletoTaxaOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\MesmaTaxaLancamentosConcorrentesException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\PeriodoVigenciaOfertaInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\InscricaoQuantidadeTaxasSuperiorMaximoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\InscricaoQuantidadeTaxasInferiorMininoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\CancelamentoOfertaInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\AlteracaoOfertaSomenteComCodigoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\AlteracaoOfertaGrupoOfertaComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\AlteracaoOfertaComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\AlteracaoOfertaEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HistoricoSituacao\DesfazerSituacaoMaximoExcedidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HistoricoSituacao\SituacaoInscricaoAlteradaAnteriormenteException - Copy.cs" />
+    <Compile Include="Areas\INS\Exceptions\HistoricoSituacao\SituacaoInscricaoAlteradaIgualAtualException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoBoletoTaxa\NumeroMinimoTaxasExcedidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoBoletoTaxa\NumeroMaximoTaxasExcedidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoBoletoTitulo\EnderecoObrigatorioParaBoletoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoBoletoTitulo\SeqParametroCreiDiferentesException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoDocumento\ExclusaoInscricaoDocumentoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoDocumento\NumeroAnexosGrupoMinimoUltrapassadoInscricaoIniciadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoEnvioNotificacao\EnvioNotificacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoHistoricoSituacao\ExisteInscricaoRegistradaParaEssaInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoHistoricoSituacao\InscricaoHistoricoSituacaoSemHistoricoAnteriorException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoOferta\BolsaNaoPodeUltrapassarDescontoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoOferta\CheckinRealizadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoOferta\InscricaoOfertaAlterarOfertaLimiteDescontoDiferenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoOferta\InscricaoOfertaAlterarOfertaCandidatoJaExportadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoOferta\InscricaoOfertaCandidadoSituacaoInvalidaLancamentoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoHistoricoSituacao\InscricaoHistoricoSituacaoSemHistoricoAtualException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoOferta\PercentualBolsaNaoPodeSerZeroException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\ArquivoAssociadoInscricaoConvertidoPDFException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\ComprovanteInscricaoCanceladaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\ExigeJustificativaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\HorarioEDataCoicidenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoInicacaoCientificaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoExportadaAlterarDeferimentoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoBolsaSocialException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoComMaisOpcoesDesejadasQueOfertasException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoComBoletoPagoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoComEtapaInativaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoForaSituacaoPermitidaAlteracaoExclusaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoComTaxasNaoPermitidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoNaoDeferidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoJaCanceladaInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoJaFinalizadaEntregaDocumentacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoJaFinalizadaAgendamentoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoNaoPermitidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\InscricaoOferta\InscricaoOfertaSemVagasException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoSemOpcoesDesejadasException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoSemTaxaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoComOfertaInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoExigeCodigoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoJaFinalizadaInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\OfertaImpedidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\OfertaNaoDisponivelException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\PermissaoEmitirDocumentacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\RegistroDocumentacaoSituacaoInscricaoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoSeminarioInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\SelecionarPeloMenosUmaOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\UsuarioComDebidoFinanceiroException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\EmailObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\EnderecoEletronicoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\CidadeEnderecoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\DadosPassaporteExeption.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\DataNascimentoInscritoObrigatoriaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\BairroEnderecoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\CepEnderecoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\EstadoEnderecoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\PaisEnderecoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\EnderecoCorrespondenciaObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\EmailInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\EnderecoDuplicadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\MultiploEnderecoCorrespondenciaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\EnderecoResidencialObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\InscritoCpfInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\NacionalidadeInscritoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\CampoExcedeLimiteCaracteresException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\NomeSobrenomeObrigariorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\EnderecoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\CpfObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\LogradouroEnderecoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\NumeroEnderecoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\PaisOrigemInscritoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\TelefoneInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\TelefonePreenchidoMasInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\TelefoneObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\SexoInscritoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\NomeInscritoObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\InscritoNomeMaeNomePaiIdenticosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\InscritoSemNomeMaeOuNomePaiException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\NaturalidadeEstrangeiraInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\NaturalidadeBrasileiraInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\InscritoPassaporteObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\IdentidadeObrigatoriaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\InscritoCpfObrigatorioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\PaisInvalidoParaNacionalidadeEstrangeiraException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\DataNascimentoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\NaoEhProfessorDaCasaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\OfertaPeriodoTaxa\QtdMinOuMaxTaxasOfertaExcedeMaxItensGrpTaxaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\OfertaPeriodoTaxa\SomatorioQtdMinTaxasOfertaMesmoGrpTaxaExcedeException.cs" />
+    <Compile Include="Areas\INS\Exceptions\OfertaPeriodoTaxa\AlteracaoOfertaTaxaNaoPermitidaBoletoPagoValoresDiferentesException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\PermissaoInscricaoDataTaxaOfertaCoincidenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoTipoCobrancaTaxaAssociadaGrupoTaxaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoTipoCobrancaTaxaAssociadaPeriodoTaxaOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoGrupoTaxaComTaxaTipoCobrDistintosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\CamposInscritoIncosistentesNaturalidadeException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\CamposInscritoIncosistentesRGException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\CamposInscritoFaltandoPorTipoProcessoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\CamposNaoIdentificadosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ExisteInscricaoComTaxaDentreOsBoletos.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\IdVisualDesativadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\InscricoesValidasFormularioPreenchidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\PeriodoEventoAtividadeException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoEncerradoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoNaoPossuiTaxaEPossuiEventoSaeException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoPossuiTaxaENaoPossuiEventoSaeException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoTagInvalidaNotificacaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\TaxaAssaociadaAOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\TipoDocumentoDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\TipoFormularioDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\UsarMesmoFormularioException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\UsarMesmoFormularioInscricaoEventoProcessoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\DossieCriadoGedException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\FormatoDeTokenInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\TipoProcessoCampoInscritoEmailException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\TipoProcessoCampoInscritoNaturalidadeException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\TipoProcessoCampoInscritoRGException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\TipoProcessoCampoInscritoCPFPassaporteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\TipoProcessoOrientacaoObrigatoriaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\TipoProcessoCampoInscritoNomeException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcesso\TipoProcessoTermoObrigatoriaException.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesGrupoTaxaItem.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesGrupoTaxa.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesInscricaoBoleto.cs" />
+    <Compile Include="Areas\INS\Resources\ExceptionsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\RES\Exceptions\SistemaOrigemJaAssociadoException.cs" />
+    <Compile Include="Areas\RES\Exceptions\UnidadeResponsavelTipoProcesso\FormatoDeTokenInvalidoException.cs" />
+    <Compile Include="Areas\RES\Exceptions\UnidadeResponsavelTipoProcesso\NaoExisteIdentidadeVisualAtivaException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\CandidatoComSituacaoInvalidaParaConvocacaoException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\ConvocacaoNaoPodeSerDesfeitaException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\ConvocadoExportadoException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\DesfazerLancamentoException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\PercentualBolsaUltrapassaPercentualMaximoException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\LancamentoBolsaUltrapassaLimiteComExcecaoException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\LancamentoBolsaUltrapassaLimiteException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\LancamentoNotaClassificacaoDuplicadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\JaExisteInscricaoIniciadaParaEsseGrupoOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\SituacaoExigeMotivoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\SitucaoExigeJustificativaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\HierarquiaOferta\HierquiaOfertaAlteradaInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\ItemHierarquiaOferta\TipoHierarquiaOfertaAssociadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\OfertaPeriodoTaxa\InclusaoPeriodoTaxaEtapaLiberadaExcetpion.cs" />
+    <Compile Include="Areas\INS\Exceptions\OfertaPeriodoTaxa\ExclusaoPeriodoTaxaEtapaLiberadaExcetpion.cs" />
+    <Compile Include="Areas\INS\Exceptions\OfertaPeriodoTaxa\ExclusaoTaxaComBoletoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\OfertaPeriodoTaxa\CadastroOfertaPeriodoTaxaNaoPermitidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\OfertaPeriodoTaxa\OfertaPeriodoTaxaFechadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\AlteracaoPermissaoInscricaoForaPrazoComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\ExcluirPermissaoInscricaoForaPrazoComInscricaoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\PermissaoInscricaoAposOfertasException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\PermissaoInscricaoForaPrazoCoincidenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\PermissaoInscricaoForaPrazoCoincideOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\PermissaoInscricaoForaPrazoInscricaoComBoletoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\PermissaoInscricaoForaPrazoOfertaComTaxaSemVencimentoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\PermissaoInscricaoForaPrazo\PermissaoInscricaoForaPrazoVencimentoMenorOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlterarCobrancaPorOfertaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\BoletoInscricaoOfertaPeriodoTaxaFechadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ConfiguracaoNotificacaoEtapaLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoIdiomasAlteradosException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\BoletoInscricaoCanceladaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\CopiaProcessoDataOfertaExcedeDataEtapaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoCanceladoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoTemplateDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoTipoHierarquiaDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoEventoTaxaCadastradaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoCentroCustoDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoEventoVencidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoTipoTaxaDesativadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoTipoProcessoDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoMaximoInscricoesInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoTemplateProcessoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoHieraquiaCadastradaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\AlteracaoProcessoInscricaoLiberadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcessoSituacao\AlteracaoTemplateProcessoDesativadoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcessoSituacao\SituacaoNaoPossuiDestinosManuaisException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcessoSituacao\SituacaoTokenNaoIdentificadaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\MaximoInscricoesPorInscritoAtingidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\InscricaoJaExistenteException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscricao\PesquisaInscricaoInvalidaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\InscritoInvalidoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\Processo\ProcessoNaoConfiguradoNoIdiomaException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcessoSituacao\TemplateProcessoAssociadoProcessoException.cs" />
+    <Compile Include="Areas\INS\Exceptions\TipoProcessoSituacao\TipoTaxaAssociadaProcessoException.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesConfiguracaoEtapaPagina.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesEtapaProcesso.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesProcessoConfiguracaoNotificacaoIdioma.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesGrupoDocumentoRequerido.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesConfiguracaoEtapa.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesConfiguracaoEtapaPaginaIdioma.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesDadoFormulario.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesDocumentoRequerido.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesGrupoOferta.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesInscricaoCodigoAutorizacao.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesInscricaoDocumento.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesInscricaoHistoricoPagina.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesInscricaoHistoricoSituacao.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesInscricao.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesItemHierarquiaOferta.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesHierarquiaOferta.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesProcesso.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesInscrito.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesInscricaoOferta.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesOferta.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesTaxa.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesTipoProcesso.cs" />
+    <Compile Include="Areas\INS\Includes\IncludesProcessoConfiguracaoNotificacao.cs" />
+    <Compile Include="Areas\INS\Resources\ExceptionsResource.en.Designer.cs">
+      <DependentUpon>ExceptionsResource.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\NOT\Constants\CasosUso.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CasosUso.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\NOT\Enums\Temporalidade.cs" />
+    <Compile Include="Areas\NOT\Enums\AtributoAgendamento.cs" />
+    <Compile Include="Areas\NOT\Exceptions\ConfigurarNotificacao\ConfiguracaoNotificacaoJaEnviadaException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\ConfigurarNotificacao\ConfigurarNotificacaoEtapaNaoEncerradaException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\ConfigurarNotificacao\ConfigurarNotificacaoSemAgendamentoException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\ConfigurarNotificacao\ExcluirConfiguracaoNotificacaoJaEnviadaException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\ConfigurarNotificacao\ParametroComNotificacaoJaEnviadaException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\ConfigurarNotificacao\ParametroNotificacaoEtapaNaoEncerradaException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\TipoNotificacao\TipoNotificacaoAlterarAgendamentoComConfiguracaoException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\TipoNotificacao\TipoNotificacaoAlterarAtributoComConfiguracaoException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\TipoNotificacao\TipoNotificacaoAlterarTipoComConfiguracaoException.cs" />
+    <Compile Include="Areas\NOT\Exceptions\TipoNotificacao\TipoNotificacaoJaExistenteException.cs" />
+    <Compile Include="Areas\NOT\Includes\IncludesTipoNotificacao.cs" />
+    <Compile Include="Areas\NOT\Resources\ExceptionsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\RES\Constants\CasosUso.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CasosUso.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\RES\Enums\TipoUnidadeResponsavel.cs" />
+    <Compile Include="Areas\INS\Constants\CasosUso.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CasosUso.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\RES\Exceptions\UnidadeResponsavelTipoFormulario\UnidadeResponsavelTipoFormularioAlterException.cs" />
+    <Compile Include="Areas\RES\Exceptions\UnidadeResponsavelTipoFormulario\UnidadeResponsavelTipoFormularioExcludeException.cs" />
+    <Compile Include="Areas\RES\Exceptions\UnidadeResponsavelTipoProcesso\UnidadeResponsavelTipoHierarquiaExcludeException.cs" />
+    <Compile Include="Areas\RES\Exceptions\UnidadeResponsavelTipoProcesso\UnidadeResponsavelTipoProcessoAlterException.cs" />
+    <Compile Include="Areas\RES\Exceptions\UnidadeResponsavelTipoProcesso\UnidadeResponsavelTipoProcessoExcludeException.cs" />
+    <Compile Include="Areas\RES\Includes\IncludesCliente.cs" />
+    <Compile Include="Areas\RES\Includes\IncludesUnidadeResponsavel.cs" />
+    <Compile Include="Areas\RES\Includes\IncludesUnidadeResponsavelTipoFormulario.cs" />
+    <Compile Include="Areas\RES\Includes\IncludesUnidadeResponsavelTipoProcesso.cs" />
+    <Compile Include="Areas\RES\Resources\ExceptionsResource.en.Designer.cs">
+      <DependentUpon>ExceptionsResource.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Areas\SEL\Constants\CasosUso.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CasosUso.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\SEL\Exceptions\MultiplasSituacoesParaConvocacaoException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\DesfazerLancamentoEtapaInvalidaException.cs" />
+    <Compile Include="Areas\SEL\Exceptions\SituacaoNaoPermiteDesfazerLancamentoException.cs" />
+    <Compile Include="Areas\SEL\Resources\ExceptionsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Constants\CONSTANTS.cs" />
+    <Compile Include="Constants\CSS_PROCESSO.cs" />
+    <Compile Include="Constants\FONTE_EXTERNA.cs" />
+    <Compile Include="Constants\REGEX.cs" />
+    <Compile Include="Constants\FILTERS.cs" />
+    <Compile Include="Constants\NAMESPACES.cs" />
+    <Compile Include="Areas\INS\Exceptions\Inscrito\UsuarioInvalidoException.cs" />
+    <Compile Include="Constants\REPORTS.cs" />
+    <Compile Include="Constants\SIGLA_APLICACAO.cs" />
+    <Compile Include="Constants\TAGS_NOTIFICACAO.cs" />
+    <Compile Include="Constants\TOKENS.cs" />
+    <Compile Include="Enums\TipoSistema.cs" />
+    <Compile Include="Enums\MetodoHttp.cs" />
+    <Compile Include="Enums\TipoItemPaginaEtapa.cs" />
+    <Compile Include="Exceptions\ArquivoAnexadoExpurgoDadosException.cs" />
+    <Compile Include="Exceptions\DadosInconsistenteApiGEDException.cs" />
+    <Compile Include="Exceptions\UsuarioSASNaoEncontradoException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Areas\RES\Resources\ExceptionsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ExceptionsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\HttpContextAmbiente.cs" />
+    <Compile Include="Shared\QrCode\SMCQrCode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\SEL\Enums\" />
+    <Folder Include="Areas\SEL\Includes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\INS\Resources\ExceptionsResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionsResource.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\INS\Resources\ExceptionsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>ExceptionsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\NOT\Resources\ExceptionsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\RES\Resources\ExceptionsResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionsResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\RES\Resources\ExceptionsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionsResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\SEL\Resources\ExceptionsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ExceptionsResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Areas\INS\Constants\CasosUso.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CasosUso.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\NOT\Constants\CasosUso.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CasosUso.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\RES\Constants\CasosUso.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CasosUso.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Shared\_TesteRequest.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\INS\Constants\CasosUso.txt" />
+    <Content Include="Areas\NOT\Constants\CasosUso.txt" />
+    <Content Include="Areas\RES\Constants\CasosUso.txt" />
+    <Content Include="Areas\SEL\Constants\CasosUso.txt" />
+    <None Include="Areas\SEL\Constants\CasosUso.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CasosUso.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)..\Referencias\Inscricoes\4.2\"  /R /Y /I /D</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

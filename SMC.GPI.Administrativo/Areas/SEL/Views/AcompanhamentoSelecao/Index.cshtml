@@ -1,0 +1,21 @@
+﻿@model AcompanhamentoSelecaoFiltroViewModel
+
+@using (Smc.Form("formPesquisa", "ListarPosicaoConsolidada").Ajax("#listaAcompanhamentoSelecao").Begin())
+{
+    using (Smc.Div("divFiltroAcompanhamentoSelecao").Begin())
+    {
+        @Smc.EditorForModel()
+    }
+
+    @(Smc.ButtonSet()
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon)))
+}
+
+@using (Smc.Div("listaAcompanhamentoSelecao").Size(SMCSize.Grid24_24).Begin())
+{
+    @Smc.ActionList("ListarPosicaoConsolidada", routeValues: Model, initialListingDisabled: true)
+
+}
+
+@Html.Partial("_ModalLegendaPosicaoConsolidada")

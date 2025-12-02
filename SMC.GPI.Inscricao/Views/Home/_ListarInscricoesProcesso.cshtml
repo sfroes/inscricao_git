@@ -1,0 +1,169 @@
+@model SMCPagerModel<InscricaoProcessoItemViewModel>
+
+@if (Model.SMCCount() == 0)
+{
+    var titulo = Model.SelectedValues.FirstOrDefault().ToString().ToUpper();
+
+    if (titulo.Contains("INSCRICAO"))
+    {
+        <p class="smc-gpi-lista-vazia">@Smc.GetUIResource("Mensagem_NaoIniciouInscricao")</p>
+    }
+    else if (titulo.Contains("AGENDAMENTO"))
+    {
+        <p class="smc-gpi-lista-vazia">@Smc.GetUIResource("Mensagem_NaoIniciouAgendamento")</p>
+    }
+    else if (titulo.Contains("ENTREGA_DE_DOCUMENTACAO"))
+    {
+        <p class="smc-gpi-lista-vazia">@Smc.GetUIResource("Mensagem_NaoIniciouEntregaDocumentacao")</p>
+    }
+}
+else
+{
+<div>
+    @(Smc.List("listaInscricoesProcesso").HideRowTotalizer()
+         .AutoHideNavigator()
+         .DenyChangeNumberOfRowsPerPage()
+         .HtmlTemplate(
+             @<text>
+
+                <div class="smc-gpi-situacao"><span>@item.DescricaoSituacaoAtual</span></div>
+	            <div class="smc-gpi-agrupamento">
+                    @if (!string.IsNullOrEmpty(item.MensagemInformativaEntregaDocumentos))
+                    {
+                        <div class="smc-gpi-lista-inscricoes-mensagem"><i></i> @item.MensagemInformativaEntregaDocumentos</div>
+                    }
+
+                    @if (item.DescricaoOfertas.SMCCount() > 0)
+                    {
+                        <p class="smc-gpi-nome-grupooferta">@item.DescricaoGrupoOferta</p>
+                        foreach (var oferta in item.DescricaoOfertas)
+                        {
+                            <p class="smc-gpi-pendencia">@oferta</p>
+                        }
+                    }
+                    else
+                    {
+                        <p class="smc-gpi-nome-grupooferta">@item.DescricaoGrupoOferta</p>
+                    }
+
+                    @if (!string.IsNullOrEmpty(item.MensagemInformativa) && item.HabilitarBotaoContinuar)
+                    {
+                        <p class="@item.classAlternativa">@item.MensagemInformativa</p>
+                    }
+
+                    @if (item.HabilitarEntregaDocumentacao)
+                    {
+                            @(Smc.Button("NovaEntregaDocumentacao")
+                                    .Type(SMCButtonType.Link)
+                                    .CssClass("smc-btn-principal")
+                                    .Action("Index", "NovaEntregaDocumentacao",
+                                        new
+                                        {
+                                            @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(item.SeqConfiguracaoEtapa),
+                                            @seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(item.SeqGrupoOferta),
+                                            @seqInscricao = SMCDESCrypto.EncryptNumberForURL(item.SeqInscricao),
+                                            @idioma = item.IdiomaInscricao,
+                                            @uidProcesso = item.UidProcesso,
+                                            @area = "INS"
+                                        }))
+                    }
+                    @if (item.ExibirBotaoEmitirDocumentacao)
+                    {
+                        <div class="smc-gpi-informacao-botao smc-gpi-ajuste-mensagem-botao-lateral"><p>@item.MensagemInformativaBotaoEmitirDocumentacao</p></div>
+
+                        @(Smc.Button("EmitirDocumentacao")
+                                .Text(Smc.GetUIResource("Botao_EmitirDocumentacao"))
+                                .Type(SMCButtonType.Link)
+                                .CssClass("smc-btn-principal margin-top-30 margin-bottom-10;")
+                                .Attribute("target", "_blank")
+                                .Action("EmitirDocumentacao", "Home", new {@seqInscricao = SMCDESCrypto.EncryptNumberForURL(item.SeqInscricao),
+                                                                           @seqTipoDocumento = SMCDESCrypto.EncryptNumberForURL(item.SeqTipoDocumento)
+                                }))
+                    }
+                    @if (!item.InscricaoCancelada || item.PaginaAtualInscricao == SMC.Inscricoes.Common.TOKENS.PAGINA_INSTRUCOES_FINAIS)
+                    {
+                            if (item.InscricaoIniciada)
+                            {
+                                if (!string.IsNullOrEmpty(item.MensagemBotaoContinuar))
+                                {
+                                    <div class="smc-gpi-informacao-botao"><p>@item.MensagemBotaoContinuar</p></div>
+                                }
+                                if(!(!@item.ContinuarInscricaoDesabilitado && item.HabilitarBotaoContinuar))
+                                {
+                                    @(Smc.Button(item.BotaoContiuar)
+                                    .Enabled(!@item.ContinuarInscricaoDesabilitado && item.HabilitarBotaoContinuar)
+                                    .Type(SMCButtonType.Link)
+                                    .CssClass("smc-btn-principal"))
+                                }
+                                else
+                                {
+                                    @(Smc.Button(item.BotaoContiuar)
+                                    .Type(SMCButtonType.Link)
+                                    .CssClass("smc-btn-principal")
+                                    .Action("ContinuarInscricao", "Inscricao",
+                                        new
+                                        {
+                                            @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(item.SeqConfiguracaoEtapa),
+                                            @seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(item.SeqGrupoOferta),
+                                            @seqInscricao = SMCDESCrypto.EncryptNumberForURL(item.SeqInscricao),
+                                            @idioma = item.IdiomaInscricao,
+                                            @area = "INS"
+                                        }))
+                            }
+
+                        }
+                        else
+                        {
+
+                            if (item.GestaoEventos && item.HabilitaCheckin)
+                            {
+                                if (!item.ExibirBotaoEmitirDocumentacao)
+                                {
+                                    <div class="smc-gpi-informacao-botao smc-gpi-ajuste-mensagem-botao-lateral"><p>@item.MensagemInformativaCheckin</p></div>
+
+                                    @(Smc.Button("Ingressos")
+                                        .Type(SMCButtonType.Link)
+                                        .CssClass("smc-btn-principal margin-top-30 margin-bottom-10")
+                                        .Enabled(item.HabilitarBotaoCheckin)
+                                        .Action("Ingressos", "Inscricao",
+                                                    new
+                                                    {
+                                                        @seqInscricao = SMCDESCrypto.EncryptNumberForURL(item.SeqInscricao),
+                                                        @area = "INS"
+                                                    }))
+                                }
+                                else{
+                                    @(Smc.Button("Ingressos")
+                                        .Type(SMCButtonType.Link)
+                                        .CssClass("smc-btn-principal margin-top-10 margin-bottom-10")
+                                        .Enabled(item.HabilitarBotaoCheckin)
+                                        .Action("Ingressos", "Inscricao",
+                                                    new
+                                                    {
+                                                        @seqInscricao = SMCDESCrypto.EncryptNumberForURL(item.SeqInscricao),
+                                                        @area = "INS"
+                                                    }))
+                                }
+                            }
+
+                                @(Smc.Button(SMCButtonBehavior.Visualizar)
+                                        .DisplayMode(SMCButtonDisplayMode.Text)
+                                        .CssClass("smc-btn-principal")
+                                        .Action("Visualizar", "Inscricao",
+                                                new
+                                                {
+                                                    @seqConfiguracaoEtapa = SMCDESCrypto.EncryptNumberForURL(item.SeqConfiguracaoEtapa),
+                                                    @seqGrupoOferta = SMCDESCrypto.EncryptNumberForURL(item.SeqGrupoOferta),
+                                                    @seqInscricao = SMCDESCrypto.EncryptNumberForURL(item.SeqInscricao),
+                                                    @idioma = item.IdiomaInscricao,
+                                                    @area = "INS"
+                                                }))
+
+                            }
+                    }
+
+                </div>
+            </text>)
+         )
+</div>
+}

@@ -1,0 +1,27 @@
+﻿@model GrupoDocumentosRequeridosViewModel
+
+@*//Classe colocada para imitar a mensagem do GPI Inscrição na tela de inscrito*@
+<div class="smc-gpi-instrucoes-iniciais">
+    <span>@Smc.GetUIResource("Mensagem_Documentos_Requeridos_Grupo")</span>
+</div>
+
+@using (Smc.Div("fieldsetGrupoDocumentacaoRequerida").Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.SeqProcesso)
+    @Smc.EditorFor(prop => prop.SeqEtapa)
+    @Smc.EditorFor(prop => prop.SeqConfiguracaoEtapa)
+    @Smc.EditorFor(prop => prop.Descricao)
+    @Smc.EditorFor(prop => prop.MinimoObrigatorio)
+    @Smc.EditorFor(prop => prop.UploadObrigatorio)
+    @Smc.EditorFor(prop => prop.ExibeTermoResponsabilidadeEntrega)
+    @Smc.EditorFor(prop => prop.DataLimiteEntrega)
+
+    @Smc.EditorFor(prop => prop.UploadObrigatorioOriginal)
+    @Smc.EditorFor(prop => prop.MinimoObrigatorioOriginal)
+
+    @Smc.EditorFor(prop => prop.Itens).Size(SMCSize.Grid24_24)
+    @Smc.EditorFor(prop => prop.ItensHash)
+
+}
+

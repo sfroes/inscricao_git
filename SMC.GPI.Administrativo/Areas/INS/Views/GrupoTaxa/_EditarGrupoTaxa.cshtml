@@ -1,0 +1,14 @@
+﻿@model GrupoTaxaViewModel
+
+
+@using (Smc.Div("fieldsetGrupoTaxa").Begin())
+{
+    @Smc.EditorFor(prop => prop.Seq)
+    @Smc.EditorFor(prop => prop.SeqProcesso)
+    @Smc.EditorFor(prop => prop.Descricao)
+    @Smc.EditorFor(prop => prop.NumeroMinimoItens)
+    @Smc.EditorFor(prop => prop.NumeroMaximoItens)
+
+    @Smc.EditorFor(prop => prop.Itens).Size(SMCSize.Grid24_24)
+
+}

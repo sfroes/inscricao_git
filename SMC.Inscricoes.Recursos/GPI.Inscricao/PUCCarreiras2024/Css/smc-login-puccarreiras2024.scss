@@ -1,0 +1,138 @@
+@import "../../Css/smc-login.scss";
+
+:root {
+    --color-secondary: #ce641e;
+    --color-primary: #eab81c;
+    --color-text: #636362;
+    --light-grey: #f7f7f7;
+    --color-label: #636362;
+    --input-focus-border: #ffd7bc;
+    --input-focus-bg: #fff9f5;
+    --bg-msg-boas-vindas: #FFF9F5;
+    --border-msg-boas-vindas: #FABA90;
+    --color-msg-boas-vindas: #CE641E;
+    --color-msg-boas-vindas: #ce641e;
+    --color-btn-secondary: #ce641e;
+}
+
+body {
+    background: white !important;
+}
+
+.container-fluid {
+    &:before {
+        border-color: transparent transparent transparent var(--light-grey) !important;
+        filter: none;
+    }
+}
+
+.smc-login-body {
+    &:before {
+        background-color: var(--light-grey) !important;
+        background-image: url('../Images/logo-puc-preto.svg'),url('../Images/logo-puccarreiras.svg') !important;
+        box-shadow: none;
+
+        @media screen and (max-width: 767px) {
+            background-position: 67% 5px, 30% 1.1em;
+            height: 7.05em;
+        }
+    }
+}
+
+.smc-login-section {
+    @media screen and (max-width: 767px) {
+        margin-top: 9em;
+    }
+}
+
+.smc-login-conteudo .smc-message-container.smc-mensagens-principal {
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+#formularioLogin {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-text) !important;
+        margin-top: 6rem;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 3rem !important;
+        }
+    }
+}
+
+.smc-login-lembrar-senha {
+    a {
+        color: var(--color-primary-2);
+    }
+}
+
+.smc-login-separador {
+    span {
+        color: var(--color-text);
+    }
+}
+
+.smc-preenchimento-obrigatorio {
+    color: var(--color-secondary) !important;
+}
+
+#formularioLembrarSenha,
+#formularioCadastrarUsuario,
+.smc-login-texto-reenvio-senha,
+#formularioRedefinirSenha {
+    &:before {
+        font-size: 1.7em;
+        color: var(--color-text);
+    }
+}
+
+input[type=text],
+input[type=password] {
+    &:focus {
+        border: 1px solid var(--input-focus-border) !important;
+        background-color: var(--input-focus-bg) !important;
+    }
+}
+
+.smc-btn-voltar-icotext {
+    color: var(--color-primary-2);
+}
+
+.smc-detalhe-editavel-titulo {
+    color: var(--color-text) !important;
+
+    &:before {
+        border-color: transparent transparent transparent var(--color-primary);
+    }
+}
+
+#fieldsetCadastrarUsuario {
+    &:first-child {
+        a.smc-form-ver-senha {
+            bottom: -38px;
+            float: left;
+            margin-left: -10px;
+        }
+    }
+}
+
+a.smc-form-ver-senha {
+    i {
+        color: var(--color-text);
+    }
+}
+
+div.smc-button {
+    > [disabled] {
+        background-color: var(--color-secondary) !important;
+        border: 1px solid var(--color-secondary) !important;
+    }
+}
+
+.smc-datepicker > div.smc-ico-datepicker::before {
+    color: var(--color-text);
+}

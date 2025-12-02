@@ -1,0 +1,75 @@
+﻿@model  PaginaSelecaoOfertaViewModel
+
+@{
+    ViewBag.InscricaoNaoPermiteTrocaLingua = true;
+    Layout = "~/Areas/INS/Views/Shared/_Layout.cshtml";
+}
+
+@section PainelLateral
+{
+    @Html.Partial("_PainelLateralProcesso", Model)
+}
+
+<h3>@Model.Titulo</h3>
+<div class="smc-gpi-conteudo-sgf">
+    @if (!string.IsNullOrEmpty(Model.AlertaOferta))
+    {
+        <div class="smc-gpi-instrucoes-iniciais">
+            <span>@Model.AlertaOferta</span>
+        </div>
+    }
+
+    @using (Smc.Form("formCadastroSelecaoOferta", "SalvarSelecaoOferta").Ajax().Begin())
+    {
+        @Smc.EditorFor(m => m.NumeroMaximoOfertaPorInscricao)
+        @Smc.EditorFor(m => m.SeqGrupoOferta)
+        @Smc.EditorFor(m => m.ExigeJustificativaOferta)
+        @Smc.EditorFor(m => m.SeqProcesso)
+        @Smc.EditorFor(m => m.CobrancaPorOferta)
+        @Smc.EditorFor(m => m.PossuiBoletoPago)
+        @Smc.EditorFor(m => m.BolsaExAluno)
+
+        @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_INSTRUCOES))
+
+        var ofertas = Smc.MasterDetail(m => m.Ofertas, SMC.Framework.UI.Mvc.DataAnnotations.SMCDetailType.Block)
+            .AllowReorder(Model.NumeroMaximoOfertaPorInscricao.GetValueOrDefault() != 1)
+            .DisplayCounter(true, "NumeroOpcao")
+            .HideButtons(Model.NumeroMaximoOfertaPorInscricao.GetValueOrDefault() == 1 || (Model.PossuiBoletoPago && Model.CobrancaPorOferta))
+            .TitleMasterDetail(Model.LabelOferta)
+            .MinimumItens(1);
+
+        if (Model.NumeroMaximoOfertaPorInscricao.HasValue)
+        {
+            ofertas.MaximumItens(Model.NumeroMaximoOfertaPorInscricao.Value);
+        }
+
+        @ofertas
+
+        if (Model.NumeroMaximoConvocacaoPorInscricao.GetValueOrDefault() > 1)
+        {
+            @Smc.EditorFor(m => m.NumeroOpcoesDesejadas).CssClass("smc-gpi-campo-qtd-opcoes")
+        }
+
+        <div id="divInstrucoesTaxa">
+            @*@if (Model.Taxas.SMCAny(a => a.ValorTitulo.HasValue))
+                {
+                    //@Smc.GetUIResource("Taxa_TituloPago")
+                }*@
+            @(Smc.SGFTemplate().Secao().Token(SMC.Inscricoes.Common.TOKENS.SECAO_INSTRUCOES_TAXA))
+        </div>
+
+        <div id="divListaTaxas" class="smc-gpi-info-taxa" data-url="@Url.Action("ListarTaxasOfertaInscricao", "Inscricao", new { area="INS", seqInscricao = new SMCEncryptedLong(Model.SeqInscricao)})">
+            @Html.Partial("_ListarTaxasOferta", Model)
+        </div>
+
+        @Html.Partial("_BotoesNavegacao", Model)
+    }
+</div>
+@(Smc.ModalWindow("modalVisualizarMaisInformacoes", true)
+          .Title(Smc.GetUIResource("MaisInformacoes"))
+          .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)).ToHtmlString())
+
+@section Scripts
+{
+    <script type="text/javascript" src="@Url.SMCBuscarRecursoAplicacao("Scripts/Inscricao/SelecaoOfertaTaxas.js")"></script>
+}

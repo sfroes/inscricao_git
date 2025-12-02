@@ -1,0 +1,13 @@
+﻿@model ConfiguracaoProrrogacaoViewModel
+
+@using (Smc.Header("headerConfiguracaoSumario", SMCHeaderType.Tertiary).CssClass("smc-gpi-sumarioprorrogacao-oferta")
+                                .Item(x => x.Descricao, sizeSM: SMCSize.Grid24_24, sizeMD: SMCSize.Grid24_24, sizeLG: SMCSize.Grid24_24, sizeXS: SMCSize.Grid24_24)
+                                .Item(x => x.DataFimAntiga, sizeSM: SMCSize.Grid6_24, sizeMD: SMCSize.Grid6_24, sizeLG: SMCSize.Grid6_24, sizeXS: SMCSize.Grid6_24)
+                                .Item(x => x.DataFim, sizeSM: SMCSize.Grid8_24, sizeMD: SMCSize.Grid8_24, sizeLG: SMCSize.Grid8_24, sizeXS: SMCSize.Grid8_24, cssClass: Model.CssClassData)
+                                .Item(x => x.DataLimiteEntregaDocumentacaoAntiga, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24)
+                                .Item(x => x.DataLimiteEntregaDocumentacao, sizeSM: SMCSize.Grid5_24, sizeMD: SMCSize.Grid5_24, sizeLG: SMCSize.Grid5_24, sizeXS: SMCSize.Grid5_24, cssClass: Model.CssClassDocumentacao)
+                                .Begin()) { }
+
+@(Smc.List("listaOfertasSumario", x => x.Ofertas).HtmlTemplate(@<text>@Html.Partial("_SumarioOfertasProrrogacao", item.Value)</text>))
+
+

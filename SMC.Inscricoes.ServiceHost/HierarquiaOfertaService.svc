@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SMC.Inscricoes.Service.Areas.INS.Services.HierarquiaOfertaService" Factory="SMC.Framework.Service.Host.SMCServiceHostFactory, SMC.Framework.Service.Host" %>

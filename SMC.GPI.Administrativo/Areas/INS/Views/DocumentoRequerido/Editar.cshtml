@@ -1,0 +1,5 @@
+﻿@model DocumentoRequeridoViewModel
+
+@Html.Action("CabecalhoProcessoEtapaConfiguracao", "ConfiguracaoEtapa", new {@seqEtapa = Model.SeqEtapaProcesso, @seqProcesso = Model.SeqProcesso, @seqConfiguracaoEtapa = Model.SeqConfiguracaoEtapa })
+
+@Html.Partial("_EditarDocumentoRequerido", Model)

@@ -1,0 +1,62 @@
+﻿@model SMCPagerModel<InscricaoDocumentoListaViewModel>
+
+@(Smc.Grid("gridDocumentos")
+.CssClass("smc-gpi-grid smc-gpi-grid-docs")
+     .AutoGenerateColumns()
+     .ContentColumn(displayContent:
+        @<text>
+
+                    @if (String.IsNullOrEmpty((item as InscricaoDocumentoListaViewModel).NomeArquivoAnexado))
+                    {
+                         if ((item as InscricaoDocumentoListaViewModel).EntregaPosterior)
+                         {
+                             if ((item as InscricaoDocumentoListaViewModel).DataLimiteEntrega.HasValue)
+                             {
+                                 <p class="smc-gpi-texto-entrega-posterior">Entregarei até @((item as InscricaoDocumentoListaViewModel).DataLimiteEntrega.Value.ToShortDateString())</p>
+                             }
+                             else
+                             {
+                                 <p class="smc-gpi-texto-entrega-posterior">Entregarei posteriormente</p>
+                             }
+                         }
+
+                     }
+                     else
+                     {
+                     <div class="smc-gpi-docs-container smc-gpi-docs-container-print">
+                        @if((item as InscricaoDocumentoListaViewModel).ConvertidoParaPDF)
+                        {
+                        <div class="smc-gpi-convertido-pdfa">
+                             <p>Convertido para PDF</p>
+                        </div>
+                     }
+
+                         @(Smc.Button("LinkArquivo")
+                         .Attribute("target", "_blank")
+                         .CssClass("smc-gpi-btn-link-grid")
+                         .Text((item as InscricaoDocumentoListaViewModel).NomeArquivoAnexado)
+                         .Tooltip((item as InscricaoDocumentoListaViewModel).NomeArquivoAnexado)
+                         .Url(Url.Action("DownloadDocumento", "Home",
+                             new
+                             {
+                                 Area = "",
+                                 id = (item as InscricaoDocumentoListaViewModel).Id
+                             }))
+                             .Type(SMCButtonType.Link)
+                        )
+                     </div>
+                     }
+
+        </text>,header: @Smc.GetUIResource("InscricaoDocumentoListaViewModel_NomeArquivoAnexado"), order: 3)
+     .HideNavigator()
+     .HideRowNumber()
+     .HideRowsTotalizer()
+     .HidePager()
+     .HideGridTitle()
+)
+@*@if (Model.Any(a => a.ConvertidoParaPDF))
+    {
+        <div class="smc-gpi-convertido-pdfa-legenda">
+            <p><i></i> <span>*</span> Arquivo(s) convertido(s) para PDF.</p>
+        </div>
+    }*@

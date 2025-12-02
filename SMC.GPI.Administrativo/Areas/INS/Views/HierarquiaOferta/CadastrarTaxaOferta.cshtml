@@ -1,0 +1,44 @@
+﻿@model CadastroOfertaTaxaFiltroViewModel
+
+@section Scripts {    
+    <script src="@Url.SMCBuscarRecursoAplicacao("Scripts/CadastroTaxaOferta.js")"></script>
+}
+
+@Html.Action("CabecalhoProcesso", "Processo", new { @seqProcesso = Model.SeqProcesso, @action = ProcessoActionsEnum.AssociacaoEtapa, @exibirInformacoesCabecalho = true, @exibirBotaoConfiguracaoCabecalho = true })
+
+@using (Smc.Form("formPesquisarOfertaPeriodo", "ListarOfertasTaxa").Ajax("#divOfertaPeriodo").Begin())
+{
+    using (Smc.Div("fieldsetPesquisaInscricaoProcesso").Begin())
+    {
+        @Smc.EditorFor(prop => prop.SeqProcesso)
+        @Smc.EditorFor(prop => prop.SeqTipoTaxa)
+        @Smc.EditorFor(prop => prop.Periodo)    
+        @Smc.EditorFor(prop => prop.SeqGrupoOferta)
+
+
+        @(Smc.ButtonSet().Size(SMCSize.Grid8_24)
+            .AddButton(Smc.Button(SMCButtonBehavior.Pesquisar).DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+            .AddButton(Smc.Button(SMCButtonBehavior.LimparEnviar).DisplayMode(SMCButtonDisplayMode.Icon))
+        )
+    }
+}
+
+<div id="divOfertaPeriodo" data-id="divOfertaPeriodo">
+</div>
+
+@(Smc.ButtonSet()
+    .AddButton(Smc.Button("Voltar", "TaxasOferta",
+        new { @seqProcesso = SMCDESCrypto.EncryptNumberForURL(Model.SeqProcesso) }, "HierarquiaOferta")
+            .Type(SMCButtonType.Link)
+            .CssClass("smc-btn-voltar-icotext"))
+)
+
+@using (Smc.ModalWindow("modalIncluirTaxaLote")
+    .Size(SMCModalWindowSize.Largest)
+    .Title(Smc.GetUIResource("Modal_Incluir_Periodo_Taxa_Titulo"))
+    .Form("SalvarTaxasEmLote", "SalvarTaxasEmLote", "HierarquiaOferta", null, true, x => x.Ajax("#divOfertaPeriodo"))
+    .Button(SMCButtonBehavior.Salvar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon).Highlight())
+    .Button(SMCButtonBehavior.Fechar, config: bnt => bnt.DisplayMode(SMCButtonDisplayMode.TextAndIcon)).Begin())
+{
+
+}

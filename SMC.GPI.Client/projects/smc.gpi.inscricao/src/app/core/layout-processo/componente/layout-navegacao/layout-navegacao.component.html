@@ -1,0 +1,52 @@
+@if (layoutNavegacaoService.isLoading$()) {
+  <p-skeleton width="100%" height="99px" />
+} @else {
+  <div
+    class="smc-buttonset-horizontal-primario smc-gpi-linha-botoes gap-botoes smc-gpi-linha-botoes-espacamento"
+  >
+    <div class="smc-gpi-agrupa-linha-btn">
+      @if (layoutNavegacaoService.exibirBotaoAnterior$()) {
+        <p-button
+          class="smc-button"
+          styleClass="smc-btn-anterior smc-btn-secundario smc-gpi-navegacao voltar"
+          [disabled]="layoutNavegacaoService.desabilitarBotaoAnterior$()"
+          [loading]="layoutNavegacaoService.loadBotaoAnterior$()"
+          (onClick)="botaoAnterior()"
+          ><i></i>Anterior</p-button
+        >
+      }
+
+      <p-button
+        class="smc-button"
+        styleClass="smc-btn-salvar smc-btn-principal smc-gpi-navegacao proximo"
+        [disabled]="layoutNavegacaoService.desabilitarBotaoProximo$()"
+        [loading]="layoutNavegacaoService.loadBotaoProximo$()"
+        (onClick)="botaoProximo()"
+        (mouseover)="errosBotaoProximo($event)"
+        ><i></i>Próximo</p-button
+      >
+    </div>
+
+    <p-button
+      class="smc-button"
+      styleClass="smc-btn-custom smc-btn-secundario smc-gpi-navegacao"
+      [disabled]="layoutNavegacaoService.desabilitarBotaoCancelar$()"
+      [loading]="layoutNavegacaoService.loadBotaoCancelar$()"
+      (onClick)="botaoCancelar()"
+      ><i></i>Cancelar</p-button
+    >
+  </div>
+}
+
+<p-popover #op>
+  <div class="flex flex-col gap-4">
+      <ul class="list-none p-0 m-0 flex flex-col">
+        <li
+          *ngFor="let erro of layoutDataNavegacaoService.$errosBotaoProximo()"
+          class="flex items-center gap-2 px-2 py-3 hover:bg-emphasis cursor-pointer rounded-border"
+        >
+            <span class="font-medium">{{ erro }}</span>
+        </li>
+      </ul>
+  </div>
+</p-popover>
